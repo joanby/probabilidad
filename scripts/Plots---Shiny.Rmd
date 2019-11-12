@@ -1,0 +1,468 @@
+---
+title: "Tema 3 - Gráficos shiny"
+author: "Ricardo Alberich, Juan Gabriel Gomila y  Arnau Mir"
+date: 
+runtime: shiny
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: Mery_style.css
+    logo: Images/matriz_mov.gif
+---
+
+## Gráficos de la  distribución  $Ber(p=0.25)$
+
+```{r fig.align='center',echo=FALSE}
+par(mfrow=c(1,2))
+plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
+     ylim=c(0,1),xlim=c(-1,2),xlab="x",
+     main="Función de probabilidad\n Ber(p=0.25)")
+lines(x=c(0,0,1,1),y=c(0,0.75,0,0.25), type = "h", lty = 2,col="blue")
+curve(pbinom(x,size=1,prob=0.25),
+      xlim=c(-1,2),col="blue",
+      main="Función de distribución\n Ber(p=0.25)")
+par(mfrow=c(1,1))
+```
+
+## Gráficas interactivas $Ber(p)$
+
+```{r shiny_berp, echo = FALSE}
+
+#selectInput("n_breaks", label = "Number of bins:",
+#             choices = c(10, 20, 35, 50), selected = 20)
+
+sliderInput("p", label = "Probabilidad éxito p:",
+              min = 0.01, max = 0.99, value = 0.25, step = 0.01)
+
+renderPlot({
+par(mfrow=c(1,2))
+  p=input$p
+plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=p),
+     ylim=c(0,1),xlim=c(-0.5,2),xlab="x",pch=21,
+     main=paste0(c("Función de probabilidad\n
+                   Ber(p=",p,")"),collapse=""),bg="black")
+segments(x0=0,y0=0,x1=0,y1=1-p, col = "blue", lty =2)
+segments(x0=1,y0=0,x1=1,y1=p, col = "blue", lty =2)
+segments(x0=-1,y0=1-p,x1=0,y1=1-p, col = "blue", lty =2)
+segments(x0=-1,y0=p,x1=1,y1=p, col = "blue", lty =2)
+x=0:1
+y=pbinom(x,size=1,prob=p)
+curve(pbinom(x,size=1,prob=p),
+      xlim=c(-1,2),col="blue",
+      main=paste0(c("Función de disribución\n Ber(p=",p,")"),collapse="")
+      )
+
+par(mfrow=c(1,1))
+})
+```
+
+## Gráficos de la distribución binomial con R
+
+El siguiente código de R dibuja las función de probabilidad y la de distribución de una  $B(n=10,p=0.25)$
+
+
+```{r fig.align='center',echo=FALSE}
+par(mfrow=c(1,2))
+aux=rep(0,22)
+aux[seq(2,22,2)]=dbinom(c(0:10),size=10,prob=0.25)
+plot(x=c(0:10),y=dbinom(c(0:10),size=10,prob=0.25),
+  ylim=c(0,1),xlim=c(-1,11),xlab="x",
+  main="Función de probabilidad\n B(n=10,p=0.25)")
+lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
+curve(pbinom(x,size=10,prob=0.25),
+  xlim=c(-1,11),col="blue",
+  main="Función de distribución\n B(n=10,p=0.25)")
+par(mfrow=c(1,1))
+```
+
+## Gráficos interactivos
+
+
+```{r  echo = FALSE}
+
+#selectInput("n_breaks", label = "Number of bins:",
+#             choices = c(10, 20, 35, 50), selected = 20)
+# textInputRow<-function (inputId, label, value = 10, min=1,max=50,step=1 ) 
+# {
+#     div(style="display:inline-block",
+#         tags$label(label, `for` = inputId), 
+#         tags$input(id = inputId, type = "text", value = value,min=min,max=max,step=step,class="sliderInput"))
+# }
+#         textInputRow(inputId="n", label="Número de repeticiones n:", value = 10, min=1,max=50,step=1)
+#         
+#         textInputRow(inputId="p", label="x-max", value = 0.5)
+
+fluidPage(
+fluidRow(
+  column(6,
+         sliderInput("n_binom", label = "Número de repeticiones n:",
+              min = 1, max = 50, value =10 , step = 1)),
+  column(6,
+          sliderInput("p_binom", label = "Probabilidad éxito p:",
+                     min = 0.01, max = 0.99, value = 0.25, step = 0.01)
+         )
+  )
+)
+
+renderPlot({
+  n=input$n_binom
+  p=input$p_binom
+
+  par(mfrow=c(1,2))
+  aux=rep(0,(n+1)*2)
+  aux[seq(2,(n+1)*2,2)]=dbinom(c(0:n),size=n,prob=p)
+  plot(x=c(0:n),y=dbinom(c(0:n),size=n,prob=p),
+       ylim=c(0,1),xlim=c(-1,n+1),xlab="x",
+       main=paste0(c("Función de probabilidad\n B(n=",n,",p=",p,")"),collapse = ""))
+  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 2,col="blue")
+  curve(pbinom(x,size=n,p=p),
+        xlim=c(-1,n+1),col="blue",
+        main=paste0(c("Función de distribución\n B(n=",n,",p=",p,")"),
+                    collapse = ""))
+        par(mfrow=c(1,1))
+})
+
+```
+
+## Gráficos de la distribución binomial con python
+
+<div class="exercise">
+Ejercicio:
+
+Buscad en los manuales de python cómo se dibuja la función de probabilidad y de distribución de una binomial.
+</div>
+
+<div class="exercise-sol">
+Necesitamos más librerías
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import binom
+```
+
+
+```{python dibu_python1,eval=FALSE}
+n, p = 5, 0.4
+x = np.arange(binom.ppf(0.01, n, p),binom.ppf(0.99, n, p))
+plt.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf')
+plt.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.5)
+```
+</div>
+
+
+
+## Gráficos de la distribución binomial con python (GGGGRANDES)
+
+<div class="center"> 
+
+```{python dibu_python2,echo=FALSE}
+#,fig.width=3,fig.height=3}
+n, p = 5, 0.4
+x = np.arange(binom.ppf(0.01, n, p),binom.ppf(0.99, n, p))
+plt.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf')
+plt.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.5)
+```
+
+
+</div>
+
+
+## Cálculos con R
+
+Veamos los cálculos básicos con  R para la distribución geométrica  $Ge(p=0.25)$ empezando en $0$
+
+
+El siguiente código dibuja las función de probabilidad y la de distribución de una  $Ge(p=0.25)$
+
+```{r eval=FALSE}
+par(mfrow=c(1,2))
+plot(x=c(0:10),y=dgeom(c(0:10),prob=0.25),
+  ylim=c(0,1),xlim=c(-1,11),xlab="x",
+  main="Función de probabilidad\n Ge(p=0.25)")
+lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
+
+aux0=dgeom(c(0:10),prob=0.25)
+ceros=rep(0,21)
+ceros
+aux=ceros
+aux[2*(c(1:11))]<-aux0
+curve(pbinom(x,size=10,prob=0.25),
+curve(pgeom(x,prob=0.25),
+  xlim=c(-1,10),col="blue",
+  main="Función de distribución\n Ge(p=0.25)")
+par(mfrow=c(1,1))
+```
+
+
+##  Los gráficos
+
+
+```{r graficos22, fig.align='center',echo=FALSE}
+par(mfrow=c(1,2))
+plot(x=c(0:10),y=dgeom(c(0:10),prob=0.25),
+  ylim=c(0,1),xlim=c(-1,11),xlab="x",
+  main="Función de probabilidad\n Ge(p=0.25)")
+curve(pgeom(x,prob=0.25),
+  xlim=c(-1,10),col="blue",
+  main="Función de distribución\n Ge(p=0.25)")
+par(mfrow=c(1,1))
+```
+
+
+## Gráficas interactivas
+
+```{r echo = FALSE}
+ 
+sliderInput("p_geom", label = "Probabilidad de éxito:",
+              min = 0.01, max = 0.99, value =0.25 , step = 0.01)
+
+
+renderPlot({
+  par(mfrow=c(1,2))
+  p=input$p_geom
+  n=30
+  aux=rep(0,(n+1)*2)
+  aux[seq(2,(n+1)*2,2)]=dgeom(c(0:n),prob=p)
+  plot(x=c(0:n),y=dgeom(c(0:n),prob=p),
+       ylim=c(0,1),xlim=c(-1,n+1),xlab="x",
+       main=paste0(c("Función de probabilidad\n Ge(p=",p,")"),collapse = ""))
+  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 2,col="blue")
+  curve(pgeom(x,prob=p),
+        xlim=c(-1,n+1),col="blue",
+        main=paste0(c("Función de distribución\n Ge(p=",p,")"),collapse = ""))
+  par(mfrow=c(1,1))
+})
+```
+
+## Python binom carga librerias
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+## Python binom
+
+
+<div class="center">
+```{python dibu_pythonBinom,eval=TRUE,echo=FALSE}
+n, p = 10, 0.25
+x = np.arange(binom.ppf(0.01, n, p),binom.ppf(0.99, n, p))
+
+fig =plt.figure(figsize=(5, 2.7))
+ax = fig.add_subplot(1,2,1)
+ax.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf')
+ax.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.5)
+for tick in ax.xaxis.get_major_ticks():
+  tick.label.set_fontsize(5)
+for tick in ax.yaxis.get_major_ticks():
+  tick.label.set_fontsize(5) 
+  
+ax = fig.add_subplot(1,2,2)
+ax.plot(x, binom.cdf(x, n, p), 'bo', ms=8, label='binom pmf')
+ax.vlines(x, 0, binom.cdf(x, n, p), colors='b', lw=5, alpha=0.5)
+for tick in ax.xaxis.get_major_ticks():
+  tick.label.set_fontsize(5)
+for tick in ax.yaxis.get_major_ticks():
+  tick.label.set_fontsize(5)
+fig.suptitle('Distribucion Binomial')
+plt.show()
+```
+</div>
+
+
+## Gráficos interactivos  proceso $Po(\lambda\cdot t$)
+
+```{r  echo = FALSE,message=FALSE,warning=FALSE}
+
+library(bivariate)
+
+fluidPage(
+fluidRow(
+  column(6,
+         sliderInput("lambdapp", label="Promedio eventos pot unidad de tiempo",
+              min = 0.1, max = 50, value =10 , step = 0.01)
+         ),
+  column(6,
+          sliderInput("t", label = "Intervalo de tiempo [0,t)",
+                     min = 1, max = 120, value =1 , step = 0.5)
+         )
+ )
+)
+
+
+renderPlot({
+  lambda1=input$lambdapp
+  t=input$t
+  lambda=lambda1*t# es lambda* t
+  par(mfrow=c(1,2))
+  n=qpois(0.99,lambda=lambda)
+  #n
+  aux=rep(0,(n+1)*2)
+  aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),lambda=lambda)
+  ymax=ppois(which.max(ppois(0:n,lambda))-1,lambda)+0.05
+  plot(x=c(0:n),y=dpois(c(0:n),lambda=lambda),
+       ylim=c(0,ymax),xlim=c(-1,n+1),xlab="x",ylab="Función de probabilidad",
+       main=paste0(c("Función de probabilidad\n  Po(lambda=",lambda,")"),collapse = ""))
+  lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
+  curve(ppois(x,lambda=lambda),
+        xlim=c(-1,n+1),col="blue",ylab="Función de Distribución",
+         main=paste0(c("Función de distribución \n Po(lambda=",lambda,")"),collapse = ""))
+  
+  par(mfrow=c(1,1))
+  })
+
+```
+
+## Gráficos interactivos $H(m,n,k)$
+
+
+```{r  GRAFICOS_binomial_negativa, echo = FALSE}
+fluidPage(
+fluidRow(
+  column(4,
+         sliderInput("mh", label = "Número de bolas blancas",
+              min = 1, max = 50, value =15, step = 1)),
+  column(4,
+         sliderInput("nh", label = "Número de bolas rojas:",
+              min = 1, max = 50, value =10 , step = 1)),
+  column(4,
+          sliderInput("kh", label = "Número bolas extraídas",
+                     min = 1, max=25, value = 3, step = 1)
+         )
+  )
+)
+
+renderPlot({
+  n=input$nh
+  m=input$mh
+  k=input$kh
+  #n=10
+  #k=3
+  #m=15
+  par(mfrow=c(1,2))
+  a=max(c(0,k-n))
+  b=min(c(m,k))
+  l=b-a+1
+  aux=rep(0,times=2*l)
+  aux[seq(2,2*l,2)]=dhyper(c(a:b),m=m,n=n,k=k)
+  x=a:b
+  plot(x,y=dhyper(c(a:b),m=m,n=n,k=k),
+       ylim=c(0,0.6),xlim=c(a-1,b+1),xlab="x",
+       main=paste0("Función de probabilidad\n H(m=",m,", n=",n,", k=",k,")"))
+  lines(x=rep(a:b,each=2),y=aux, type = "h", lty = 2,col="blue")
+  curve(phyper(x,m=m,n=n,k=k),
+        xlim=c(a-1,b+1),col="blue",
+        main=paste0("Función de distribución\n H(m=",m,", n=",n,", k=",k,")"))
+  par(mfrow=c(1,1))
+})
+```
+
+
+## Gráficas de la densidad y  distribución de una uniforme
+
+
+
+```{r uniforme_plots1_interactivo, echo = FALSE}
+
+fluidPage(
+fluidRow(
+  column(4,
+         sliderInput("a1", label = "Parámetro a",
+              min = -5, max = 9, value =0 , step = 0.1)
+         ),
+  column(4,
+          sliderInput("b1", label = "Parámetro b",
+                     min = 10, max = 15, value = 5, step = 0.1)
+         ),
+  column(4,
+         sliderInput("x1", label="F(X)=P(X<=x)", value=9, min = -5, max = 15, step = 0.1)
+         )
+  
+)
+)
+
+  
+
+
+renderPlot({
+  a=input$a1
+  b=input$b1
+  x=input$x1
+  par(mfrow=c(1,2))
+  #a=0;b=1;x=0.25
+  xx=c(seq(min(a,x),min(b,x),by=0.001))
+  curve(dunif(x,a,b),xlim=c(a-0.25,b+0.25),ylim=c(0,max(1/(b-a)+0.05,0.1)),col="blue",main=paste0("Función densidad U(",a,",",b,")"),
+  ylab=paste0("dunif(x,",a,", ",b,")"))
+  polygon(x=c(a,xx,min(x,b)),y=c(0,dunif(xx,a,b),0),
+          density=20,col="skyblue")
+  curve(punif(x,a,b),xlim=c(a-1,b+1),ylim=c(0,1.3),col="blue",main=paste0("Función de distribución U(",a,",",b,")"),
+  ylab=paste0("punif(x,",a,", ",b,")"))
+  segments(x0=x,y0=0,x1=x,y1=punif(x,a,b),col="skyblue",lty=2)
+  segments(x0=a-1.01,y0=punif(x,a,b),x1=x,y1=punif(x,a,b),col="skyblue",lty=2)
+  
+  
+  par(mfrow=c(1,1))
+})
+
+```
+
+
+
+
+
+## Gráficas cuantiles
+
+
+```{r cuantiles_graficosPOBIN, echo = FALSE}
+
+fluidPage(
+fluidRow(
+  column(3,
+         sliderInput("nq", label = "Par. n B(n.p)",
+              min = 1, max = 20, value =10 , step = 1)
+         ),
+  column(3,
+          sliderInput("pq", label = "Par. p B(n,p)",
+                     min = 0.01, max = 0.99, value = 0.5, step = 0.1)
+         ),
+  column(3,
+         sliderInput("qq", label=" Cuantil q", value=0.75, min = 0.01, max = 0.99, step = 0.01)
+         ),
+  column(3,
+         sliderInput("lq", label="Par. lambda Po(lambda)", value=5, min = 1, max = 20, step = 1)
+         )
+  )
+)
+
+  
+renderPlot({
+  n=input$nq
+  p=input$pq
+  q=input$qq
+  lambda=input$lq
+  par(mfrow=c(1,2))
+  #n=10;p=0.5;q=0.75;lambda=5
+  #xx=c(seq(min(a,x),min(b,x),by=0.001))
+  probsB=pbinom(0:n,n,p)
+  curve(pbinom(x,n,p),xlim=c(0-0.25,n+0.25),ylim=c(0,max(probsB+0.05,0.1)),
+        col="blue",main=paste0("Función distribución\n B(n=",n,", p=",p,")"),
+        ylab=paste0("dbinom(x,",n,", ",p,")"),yaxt="n")
+  segments(x0 = qbinom(q,n,p),y0 = 0,x1 = qbinom(q,n,p),y1 = q,lty=2,col="skyblue")
+  segments(x0 = qbinom(q,n,p),y0 = q,x1 = -0.25,y1 = q,lty=2,col="skyblue")
+  ytick=c(0.0,q,1)
+  axis(side=2, at=ytick, labels = TRUE)
+  axis(side=1, at=qbinom(q,n,p), labels = TRUE)
+  curve(ppois(x,lambda),xlim=c(0-0.25,2.5*lambda),ylim=c(0,1+0.1),
+        col="blue",main=paste0("Función distribución\n Po(lambda=",lambda,")"),
+        ylab=paste0("dpois(x, lambda",lambda,")"),yaxt="n")
+  segments(x0 = qpois(q,lambda),y0 = 0,x1 = qpois(q,lambda),y1 = q,lty=2,col="skyblue")
+  segments(x0 = qpois(q,lambda),y0 = q,x1 = -0.25,y1 = q,lty=2,col="skyblue")
+  ytick=c(0.0,q,1)
+  axis(side=2, at=ytick, labels = TRUE)
+  axis(side=1, at=qpois(q,lambda), labels = TRUE)
+  par(mfrow=c(1,1))
+})
+
+```

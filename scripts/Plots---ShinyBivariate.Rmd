@@ -1,0 +1,54 @@
+---
+title: "Tema 5 - Gráficos shiny"
+author: "Ricardo Alberich, Juan Gabriel Gomila y  Arnau Mir"
+date: 
+runtime: shiny
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: Mery_style.css
+    logo: Images/matriz_mov.gif
+---
+
+
+## Normal bivariada  media (0,0)
+
+
+```{r  echo = FALSE,message=FALSE,warning=FALSE}
+
+library(bivariate)
+
+fluidPage(
+fluidRow(
+  column(4,
+         sliderInput("rho", label="Correlación",
+              min = -1, max = 1, value =0.5 , step = 0.001)
+         ),
+  column(4,
+          sliderInput("sigma2X", label = "VAR(X)",
+                     min = 0.5, max = 5, value =1 , step = 0.01)
+         ),
+column(4,
+          sliderInput("sigma2Y", label = "VAR(Y)",
+                     min = 0.5, max = 5, value =1 , step = 0.01)
+         )
+ )
+)
+
+
+renderPlot({
+  rho=input$rho
+  sigma2X=input$sigma2X
+  sigma2Y=input$sigma2Y
+  f = bivariate::nbvpdf (0, 0, sigma2X, sigma2Y, rho)
+  par(mfrow=c(1,2))
+  plot(f,xlim=c(-4,4),ylim=c(-4,4))
+  plot(f,TRUE,xlim=c(-4,4),ylim=c(-4,4))
+  par(mfrow=c(1,1))
+  })
+
+```
+
+
+
+
