@@ -733,10 +733,12 @@ Como se puede observar, la serie parece que converge.
 
 ## Ejemplo
 
+<div class="center">
 ```{r,echo=FALSE}
 N=1000
 plot(1:N,cumsum(probabilidades.pn),xlab=expression(n),ylab="Sumas parciales",col='red', type='l')
 ```
+</div>
 
 # Teorema Central del Límite
 
