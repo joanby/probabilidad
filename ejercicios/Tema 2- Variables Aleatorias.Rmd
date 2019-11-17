@@ -9,7 +9,6 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 # Variables aleatorias discretas
 
 1. Hay 10 estudiantes inscritos en una clase de Estadística, de entre los cuales 3

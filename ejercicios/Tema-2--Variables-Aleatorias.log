@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.24)  13 NOV 2019 16:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.24)  13 NOV 2019 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Tema-1---Probabilidad.tex
-(./Tema-1---Probabilidad.tex
+**Tema-2--Variables-Aleatorias.tex
+(./Tema-2--Variables-Aleatorias.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -476,8 +476,8 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip48
 \thanksmargin=\skip49
 \droptitle=\skip50
-) (./Tema-1---Probabilidad.aux)
-\openout1 = `Tema-1---Probabilidad.aux'.
+) (./Tema-2--Variables-Aleatorias.aux)
+\openout1 = `Tema-2--Variables-Aleatorias.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
@@ -565,9 +565,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 88.
 LaTeX Info: Redefining \pageref on input line 88.
 LaTeX Info: Redefining \nameref on input line 88.
-(./Tema-1---Probabilidad.out) (./Tema-1---Probabilidad.out)
+(./Tema-2--Variables-Aleatorias.out) (./Tema-2--Variables-Aleatorias.out)
 \@outlinefile=\write3
-\openout3 = `Tema-1---Probabilidad.out'.
+\openout3 = `Tema-2--Variables-Aleatorias.out'.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -597,89 +597,94 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 107.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 107.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 101.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 107.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 101.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 107
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 101
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 107
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 101
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 107.
+(Font)              <10> on input line 101.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 107.
+(Font)              <7> on input line 101.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 107.
-LaTeX Font Info:    Try loading font information for U+msa on input line 107.
+(Font)              <5> on input line 101.
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 107.
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1
-
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+)
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 209.
+(amsmath)                 on input line 108.
 
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 138.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 314.
-(./Tema-1---Probabilidad.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 314.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 314.
-Package rerunfilecheck Info: File `Tema-1---Probabilidad.out' has not changed.
-(rerunfilecheck)             Checksum: 1DABB66379A61215E4B98F602326794C;700.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
+(./Tema-2--Variables-Aleatorias.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 267.
+Package rerunfilecheck Info: File `Tema-2--Variables-Aleatorias.out' has not ch
+anged.
+(rerunfilecheck)             Checksum: 4B2D469E938782691F86ADC2A35F6DCF;646.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 267.
  ) 
 Here is how much of TeX's memory you used:
- 12000 strings out of 492649
- 176317 string characters out of 6129622
- 283541 words of memory out of 5000000
- 15647 multiletter control sequences out of 15000+600000
- 35719 words of font info for 65 fonts, out of 8000000 for 9000
+ 11964 strings out of 492649
+ 176064 string characters out of 6129622
+ 283627 words of memory out of 5000000
+ 15649 multiletter control sequences out of 15000+600000
+ 37473 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,4n,38p,331b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
-18/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2018/texmf-dist
-/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/p
-ublic/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/l
-mmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/lm/lmri12.pfb>
-Output written on Tema-1---Probabilidad.pdf (3 pages, 136546 bytes).
+ 32i,8n,38p,310b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
+cal/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texliv
+e/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2018/texmf-
+dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc
+/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/
+lm-ec.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/lm/lmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7.p
+fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on Tema-2--Variables-Aleatorias.pdf (2 pages, 149937 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
- 33 named destinations out of 1000 (max. 500000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 25 named destinations out of 1000 (max. 500000)
  8217 words of extra memory for PDF output out of 10000 (max. 10000000)
 

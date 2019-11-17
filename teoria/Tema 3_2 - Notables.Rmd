@@ -736,18 +736,13 @@ Supongamos que $t$ se mide en horas y que $\lambda=4$ es el promedio de clientes
 <div class="example-sol">
 
 En este ejemplo la propiedad de la pérdida de memoria significa que
-si el peluquero lleva ya esperando más de $s>0.25$  un cuarto de hora  la probabilidad de que espere $t=0.6$ de hora más (10 minutos) no cambia sigue siendo 
-
-$$P(T>t)=P(T>0.25).$$ 
+si el peluquero lleva ya esperando más de $s>0.25$  un cuarto de hora  la probabilidad de que espere $t=1/6$ de hora más (10 minutos) no cambia sigue siendo $P(T>0.25+1/6|T>0.25)=P(T>1/6).$
 </div>
 
 
 ## Ejemplo distribución exponencial
 
 <div class="example-sol">
-
-
-
 
 El tiempo esperado (en horas) hasta el siguiente cliente es
 
@@ -758,14 +753,14 @@ $$
 y la varianza es 
 
 $$
-Var(X)=\frac{1}{\lambda^2}=\frac{1}{4^2}=0.625.
+Var(X)=\frac{1}{\lambda^2}=\frac{1}{4^2}=`r 1/16`.
 $$
 
 Por último ¿Cuál es la probabilidad de que nuestro peluquero esté sin  clientes (leyendo el periódico) más de 30 minutos (0.5 horas)?
 
 
 $$
-P(X>0.5)=1-P(X\leq 0.5)=1-(1-e^{-3\cdot 0.5 })=e^{-1,5})=0.2231302.
+P(X>0.5)=1-P(X\leq 0.5)=1-(1-e^{-4\cdot 0.5 })=e^{-2})=`r exp(-2)`.
 $$
 </div>
 
@@ -1230,6 +1225,7 @@ $$
 ## Cálculos con la distribución normal
 
 <div class="exercise"> 
+
 **Ejercicio Cálculos con la distribución  normal estándar** 
 
 Sea  $Z$  una distribución $N(0,1)$, calcular las siguientes probabilidades en función de $F_Z$.

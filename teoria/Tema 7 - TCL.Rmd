@@ -591,7 +591,7 @@ Consideremos la sucesión de variables aleatorias $\{X_n^k\}_{n=1}^\infty$. Como
 
 La idea es aplicar la **ley débil de los grandes números** a la sucesión anterior.
 
-El valor medio de cada variable de la sucesión $\{X_n^k\}_{n=1}^\infty$ será: $\tilde{\mu}_n^{(k)}= E(X_n^{(k)})=\momento_k$ el momento de orden $k$.
+El valor medio de cada variable de la sucesión $\{X_n^k\}_{n=1}^\infty$ será: $\tilde{\mu}_n^{(k)}= E(X_n^{k})=\momento_k$ el momento de orden $k$.
 
 Entonces, si hacemos $\frac{1}{n}\sum\limits_{i=1}^n \tilde{\mu}_n^{(k)}$ obtenemos:
 $\frac{1}{n} n\cdot \momento_k=\momento_k.$
@@ -608,7 +608,7 @@ pero $\overline{X^k}_n$ vale:
 $$
 \overline{X^k}_n=\frac{1}{n}\sum_{i=1}^n X_i^k,
 $$
-variable aleatoria que coincide con el momento muestral de orden $k$, $\Momk_k^{(n)}$, tal como queríamos demostrar.
+variable aleatoria que coincide con el momento muestral de orden $k$, $\Momk_n^{(k)}$, tal como queríamos demostrar.
 
 Dejamos como ejercicio la demostración de los momentos centrales. Razonando de la misma manera, no tiene dificultad alguna.
 
@@ -755,7 +755,7 @@ $$
 
 Si además la sucesión de variables $X_n$ son normales todas con media $\mu$ y varianza $\sigma^2$, la sucesión $\left\{\overline{X}_n\right\}_{n=1}^\infty$ serán normales de media $\mu$ y varianza $\frac{\sigma^2}{n}$.
 
-Estandarizando las variables anteriores, podemos concluir que las variables medias estandarizadas $Z_n =\left\{\frac{X_n-\mu}{\frac{\sigma}{\sqrt{n}}}\right\}_{n=1}^\infty$ todas son $N(0,1)$.
+Estandarizando las variables anteriores, podemos concluir que las variables medias estandarizadas $Z_n =\left\{\frac{\overline{X}_n-\mu}{\frac{\sigma}{\sqrt{n}}}\right\}_{n=1}^\infty$ todas son $N(0,1)$.
 
 El **Teorema Central del Límite** generaliza el resultado anterior en el sentido de que si las variables $X_n$ no tienen por qué tener la distribución normal pero son independientes e idénticamente distribuidas, las variables $Z_n$ correspondientes tienden **en ley** a una distribución normal estándar $N(0,1)$.
 
@@ -912,7 +912,7 @@ $$
 Las aproximaciones anteriores se pueden obtener teniendo en cuenta que el **Teorema Central del Límite** nos dice que la variable 
 $Z_n= \frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}}$ es aproximadamente una $N(0,1)$. Por tanto,
 $$
-\frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}} \approx N(0,1),\ \Rightarrow \sum_{i=1}^n X_i\approx \sigma\sqrt{n}\cdot N(0,1)+\mu = N\left(n\mu,\sigma\sqrt{n}\right).
+\frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}} \approx N(0,1),\ \Rightarrow \sum_{i=1}^n X_i\approx \sigma\sqrt{n}\cdot N(0,1)+n\mu = N\left(n\mu,\sigma\sqrt{n}\right).
 $$
 
 Dividiendo por $n$ la aproximación anterior, obtenemos:
