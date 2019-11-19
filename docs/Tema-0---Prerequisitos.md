@@ -465,7 +465,7 @@ $$
 En nuestro caso  con 7 jugadores $n=7$   el número de equipos distintos de $k=5$ es
 
 $$
-{{7}\choose {5}} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!}=
+{7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!}=
 \frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
 $$
 
