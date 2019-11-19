@@ -57,7 +57,7 @@ Estas colecciones o  conjuntos se pueden definir por:
 
 Los  conjuntos suelen tener un conjunto madre como por ejemplo 
 
-* $\mathbb{N}=\{0,1,2,\ldots\}$
+* \(\mathbb{N}=\{0,1,2,\ldots\}\)
 * $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$
 * $\mathbb{Q}=\left\{\frac{p}{q}\quad\Big|\quad p,q\in \mathbb{Z} \mbox{ y } q \not= 0.\right\}$
 * $\mathbb{R}=\{\mbox{Todos los puntos de una recta.}\}$
