@@ -4,10 +4,11 @@ author: "Ricardo Alberich, Juan Gabriel Gomila y  Arnau Mir"
 date: 
 runtime: shiny
 output: 
-  ioslides_presentation:
-    widescreen: true
+  ioslides_presentation: 
     css: Mery_style.css
+    keep_md: yes
     logo: Images/matriz_mov.gif
+    widescreen: yes
 ---
 
 
