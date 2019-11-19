@@ -558,7 +558,7 @@ S_{X_n,Y_n} = \frac{1}{n}\sum_{i=1}^n (X_i-\overline{X}_n)(Y_i-\overline{Y}_n),
 $$
 y el **coeficiente de correlación muestral** como la sucesión de variables aleatorias siguientes:
 $$
-R_{X_n,Y_n}=\frac{S_{X_n,Y_n}}{\sqrt{S_{{X}_n}^2 S_{{Y}_n}^2}}.
+R_{X_n,Y_n}=\frac{S_{X_n,Y_n}}{\sqrt{S_{X_n}^2 S_{{Y}_n}^2}}.
 $$
 
 ## Convergencia de los momentos muestrales
