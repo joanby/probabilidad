@@ -3553,7 +3553,7 @@ n!=1\cdot 2\cdot 3\cdots n.
 <div class="exercise">
 <p><strong>Ejercicio</strong></p>
 
-<p>Carga el paquete <code>combinat</code> de R y investiga las funciones <code>nCm</code> y <code>combn</code> para calcular el número de combinaciones y todas las combinaciones anteriores.</p></div>
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>combinations(n, r, v, set, repeats.allowed)</code> para calcular todas las combinaciones anteriores.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones.</h2></hgroup><article  id="combinatoria.-variaciones.">
 
@@ -3583,6 +3583,11 @@ V^n_k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
 V_{k=2}^{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 \]</p>
 
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>permutations(n, r, v, set, repeats.allowed)</code> para calcular todas las variaciones anteriores.</p></div>
+
 </article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones con repetición.</h2></hgroup><article  id="combinatoria.-variaciones-con-repeticion.">
 
 <p><strong>Variaciones con repetición</strong></p>
@@ -3607,21 +3612,6 @@ VR_{k=2}^{n=3}=n^k.
 P_n=VR_n^n=n!
 \]</p>
 
-<div class="exercise">
-<p><strong>Ejercicio</strong></p>
-
-<p>Carga el paquete <code>combinat</code> de R e investiga la funcion <code>permn</code> para calcular todas las permutaciones anteriores.</p></div>
-
-<div class="exercise">
-<p><strong>Ejercicio</strong></p>
-
-<p>Investiga el paquete <code>itertools</code> y la función <code>comb</code> de <code>scipy.misc</code> de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.</p></div>
-
-<div class="exercise">
-<p><strong>Ejercicio</strong></p>
-
-<p>La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función <code>gamma(x+1)</code> da el mismo valor que la función <code>factorial(x)</code> en <code>R</code> para todo \(x = \{1,2,3\cdots,10\}\).</p></div>
-
 </article></slide><slide class=""><hgroup><h2>Permutaciones</h2></hgroup><article  id="permutaciones-1">
 
 <p>Por ejemplo todos los números que se pueden escribir ordenando todos los dígitos \(\{1,2,3\}\) sin repetir ninguno</p>
@@ -3639,6 +3629,23 @@ for(permutacion in permn(3)) print(permutacion)</pre>
 <p>Efectivamente \[
 P_3=3!=1\cdot  2\cdot 3.
 \]</p>
+
+</article></slide><slide class=""><hgroup><h2>Permutaciones</h2></hgroup><article  id="permutaciones-2">
+
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+
+<p>Carga el paquete <code>combinat</code> de R e investiga la funcion <code>permn</code> para calcular todas las permutaciones anteriores.</p></div>
+
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+
+<p>Investiga el paquete <code>itertools</code> y la función <code>comb</code> de <code>scipy.misc</code> de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.</p></div>
+
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+
+<p>La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función <code>gamma(x+1)</code> da el mismo valor que la función <code>factorial(x)</code> en <code>R</code> para todo \(x = \{1,2,3\cdots,10\}\).</p></div>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Para acabar</h2></hgroup><article  id="para-acabar">
 

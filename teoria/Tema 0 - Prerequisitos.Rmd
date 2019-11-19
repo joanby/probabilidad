@@ -328,7 +328,7 @@ Puedo formar 21 equipos distintos.
 <div class="exercise">
 **Ejercicio**
 
-Carga el paquete `combinat` de R y investiga las funciones  `nCm` y `combn` para calcular el número de combinaciones y todas las combinaciones anteriores.
+Carga el paquete `gtools` de R y investiga la función `combinations(n, r, v, set, repeats.allowed)` para calcular todas las combinaciones anteriores.
 </div>
 
 ## Combinatoria. Variaciones.
@@ -353,6 +353,8 @@ V^n_k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
 $$
 
 
+
+
 ## Combinatoria. Variaciones.
 
 En nuestro ejemplo  con  $n=3$ dígitos  podemos escribir las siguientes variaciones de orden $k=2$
@@ -361,6 +363,11 @@ $$
 V_{k=2}^{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 $$
 
+<div class="exercise">
+**Ejercicio**
+
+Carga el paquete `gtools` de R y investiga la función `permutations(n, r, v, set, repeats.allowed)` para calcular todas las variaciones anteriores.
+</div>
 
 
 ## Combinatoria. Variaciones con repetición.
@@ -389,6 +396,23 @@ $$
 P_n=VR_n^n=n!
 $$
 
+## Permutaciones
+
+Por ejemplo todos los números que se pueden escribir ordenando todos los dígitos $\{1,2,3\}$ sin repetir ninguno
+
+```{r,warning=FALSE,message=FALSE}
+library(combinat)
+for(permutacion in permn(3)) print(permutacion)
+```
+
+Efectivamente 
+$$
+P_3=3!=1\cdot  2\cdot 3.
+$$
+
+
+
+## Permutaciones
 
 <div class="exercise">
 **Ejercicio**
@@ -407,20 +431,6 @@ Investiga el paquete `itertools` y la función `comb` de `scipy.misc` de Python 
 
 La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función `gamma(x+1)` da el mismo valor que la función `factorial(x)` en `R` para todo $x = \{1,2,3\cdots,10\}$.
 </div>
-## Permutaciones
-
-Por ejemplo todos los números que se pueden escribir ordenando todos los dígitos $\{1,2,3\}$ sin repetir ninguno
-
-```{r,warning=FALSE,message=FALSE}
-library(combinat)
-for(permutacion in permn(3)) print(permutacion)
-```
-
-Efectivamente 
-$$
-P_3=3!=1\cdot  2\cdot 3.
-$$
-
 
 # Para acabar
 
