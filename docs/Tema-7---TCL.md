@@ -558,7 +558,7 @@ S_{X_n,Y_n} = \frac{1}{n}\sum_{i=1}^n (X_i-\overline{X}_n)(Y_i-\overline{Y}_n),
 $$
 y el **coeficiente de correlación muestral** como la sucesión de variables aleatorias siguientes:
 $$
-R_{X_n,Y_n}=\frac{S_{X_n,Y_n}}{\sqrt{S_{X_n}^2 S_{{Y}_n}^2}}.
+R_{X_n,Y_n}=\frac{S_{X_n,Y_n}}{\sqrt{S_{X_n}^2 S_{Y_n}^2}}.
 $$
 
 ## Convergencia de los momentos muestrales
@@ -801,7 +801,7 @@ $$
 <l class="prop"> Proposición. </l>
 Sea $Y$ una variable aleatoria. Sea $U=kY$ la variable aleatoria $Y$ multiplicada por un valor real $k$. Entonces, para calcular $\FunCar_{U}$, podemos usar la expresión siguiente:
 $$
-\FunCar_{U}(w)=\FunCar_{Y}(kw),
+\FunCar_{U}(w)=\FunCar_Y(kw),
 $$
 donde $w$ es cualquier valor real.
 
@@ -811,7 +811,7 @@ donde $w$ es cualquier valor real.
 
 Por definición:
 $$
-\FunCar_{U}(w)=E\left(\mathrm{e}^{\mathrm{i} w U}\right) = E\left(\mathrm{e}^{\mathrm{i} w k Y}\right)=\FunCar_{Y}(kw).
+\FunCar_{U}(w)=E\left(\mathrm{e}^{\mathrm{i} w U}\right) = E\left(\mathrm{e}^{\mathrm{i} w k Y}\right)=\FunCar_Y(kw).
 $$
 </div>
 
