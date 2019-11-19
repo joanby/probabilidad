@@ -452,7 +452,7 @@ Por ejemplo si tenemos un equipo  de baloncesto con  7 jugadores ¿cuántos equi
 Nos da el número de subconjuntos de tamaño $k$ de un conjunto de tamaño $n$. Este número es
 
 $$
-{{n}\choose {k}} = \frac{n!}{k!\cdot (n-k)!}.
+{n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
 $$
 
 Recordemos que 
