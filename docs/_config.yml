@@ -1,6 +1,13 @@
 theme: jekyll-theme-dinky
 title: Probabilidad y variables aleatorias para ML con R y Python
 description: Vamos a ver las bases de R y Python aplicado al mundo de las probabilidades y variables aleatoria para Machine Learning
-markdown: kramdown
+lsi: false
+safe: true
+source: ../
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
 kramdown:
-    math_engine: katex
+  math_engine: mathjax
+  syntax_highlighter: rouge
