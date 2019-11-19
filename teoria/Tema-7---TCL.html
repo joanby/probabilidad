@@ -3436,8 +3436,8 @@ P(|X_n|&gt;\epsilon \}) = \int_\epsilon^\infty \lambda n\mathrm{e}^{-\lambda n x
 
 <p>El resultado siguiente simplifica algunas veces comprobar que la sucesión \(X_n\) converge en ley hacia \(X\):</p>
 
-<p><l class="prop"> Proposición. </l> Sea \(\{X_n\}_{n=1}^\infty\) una sucesión de variables aleatorias y sea \(X\) una variable aleatoria definida sobre el mismo espacio muestral \(\Omega\) y con la misma probabilidad de sucesos. Sean \(\phi_{X_n}\) y \(\phi_{X}\) las funciones características de \(X_n\) y \(X\), respectivamente. Entonces, la sucesión converge <strong>en ley</strong> hacia \(X\), \(X_n\stackrel{{\cal L}}{\longrightarrow}X\), si, y sólo si, \[
-\lim_{n} \phi_{X_n}(t) = \phi_{X}(t),
+<p><l class="prop"> Proposición. </l> Sea \(\{X_n\}_{n=1}^\infty\) una sucesión de variables aleatorias y sea \(X\) una variable aleatoria definida sobre el mismo espacio muestral \(\Omega\) y con la misma probabilidad de sucesos. Sean \(\phi_{X_n}\) y \(\phi_X\) las funciones características de \(X_n\) y \(X\), respectivamente. Entonces, la sucesión converge <strong>en ley</strong> hacia \(X\), \(X_n\stackrel{{\cal L}}{\longrightarrow}X\), si, y sólo si, \[
+\lim_{n} \phi_{X_n}(t) = \phi_X(t),
 \] para cualquier número \(t\in\mathbb{R}\).</p>
 
 </article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-6">
@@ -3658,7 +3658,7 @@ M_k^{(n)} = \frac{1}{n}\sum_{i=1}^n X_i^k.
 MC_k^{(n)} = \frac{1}{n}\sum_{i=1}^n (X_i-\overline{X}_n)^k.
 \]</p>
 
-<p><l class="observ"> Observación: </l> el <strong>momento muestral centrado en la media</strong> de orden \(k=2\) es la <strong>varianza muestral</strong> \(S_{{X}_n}^2\).</p>
+<p><l class="observ"> Observación: </l> el <strong>momento muestral centrado en la media</strong> de orden \(k=2\) es la <strong>varianza muestral</strong> \(S_{X_n}^2\).</p>
 
 </article></slide><slide class=""><hgroup><h2>Convergencia de los momentos muestrales</h2></hgroup><article  id="convergencia-de-los-momentos-muestrales-2">
 
@@ -4062,7 +4062,7 @@ P(10\leq X\leq 20) &amp; P(X\leq 20)-P(X\leq 9)\approx P(X_N \leq 20.5)-P(X_N\le
 \overline{X}_n=\frac{1}{n}B\left(n=100,p=\frac{1}{2}\right)\approx N\left(\mu = p=\frac{1}{2}=0.5,\sigma=\sqrt{\frac{\frac{1}{2}\cdot \frac{1}{2}}{100}}=0.05\right).
 \]</p>
 
-<p>Para ver dicha aproximación, en primer lugar vamos a generar una muestra de \(N=1000\) valores de una binomial de parámetros \(n=100\) y \(p=\frac{1}{2}\) y dividiendo por \(n=100\), tenemos una muestra de \(\overline{X}{n}\):</p>
+<p>Para ver dicha aproximación, en primer lugar vamos a generar una muestra de \(N=1000\) valores de una binomial de parámetros \(n=100\) y \(p=\frac{1}{2}\) y dividiendo por \(n=100\), tenemos una muestra de \(\overline{X}_n\):</p>
 
 <pre class = 'prettyprint lang-r'>n=100
 p=1/2

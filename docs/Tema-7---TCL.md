@@ -275,9 +275,9 @@ Lo denotaremos por $X_n\stackrel{{\cal L}}{\longrightarrow}X$.
 El resultado siguiente simplifica algunas veces comprobar que la sucesión $X_n$ converge en ley hacia $X$:
 
 <l class="prop"> Proposición. </l>
-Sea $\{X_n\}_{n=1}^\infty$ una sucesión de variables aleatorias y sea $X$ una variable aleatoria definida sobre el mismo espacio muestral $\Omega$ y con la misma probabilidad de sucesos. Sean $\FunCar_{X_n}$ y $\FunCar_{X}$ las funciones características de $X_n$ y $X$, respectivamente. Entonces, la sucesión converge **en ley** hacia $X$, $X_n\stackrel{{\cal L}}{\longrightarrow}X$, si, y sólo si,
+Sea $\{X_n\}_{n=1}^\infty$ una sucesión de variables aleatorias y sea $X$ una variable aleatoria definida sobre el mismo espacio muestral $\Omega$ y con la misma probabilidad de sucesos. Sean $\FunCar_{X_n}$ y $\FunCar_X$ las funciones características de $X_n$ y $X$, respectivamente. Entonces, la sucesión converge **en ley** hacia $X$, $X_n\stackrel{{\cal L}}{\longrightarrow}X$, si, y sólo si,
 $$
-\lim_{n} \FunCar_{X_n}(t) = \FunCar_{X}(t),
+\lim_{n} \FunCar_{X_n}(t) = \FunCar_X(t),
 $$
 para cualquier número $t\in\mathbb{R}$.
 
@@ -547,7 +547,7 @@ $$
 $$
 
 <l class="observ"> Observación: </l>
-el **momento muestral centrado en la media** de orden $k=2$ es la **varianza muestral** $S_{{X}_n}^2$.
+el **momento muestral centrado en la media** de orden $k=2$ es la **varianza muestral** $S_{X_n}^2$.
 
 
 ## Convergencia de los momentos muestrales
@@ -1063,7 +1063,7 @@ $$
 \overline{X}_n=\frac{1}{n}B\left(n=100,p=\frac{1}{2}\right)\approx N\left(\mu = p=\frac{1}{2}=0.5,\sigma=\sqrt{\frac{\frac{1}{2}\cdot \frac{1}{2}}{100}}=0.05\right).
 $$
 
-Para ver dicha aproximación, en primer lugar vamos a generar una muestra de $N=1000$ valores de una binomial de parámetros $n=100$ y $p=\frac{1}{2}$ y dividiendo por $n=100$, tenemos una muestra de $\overline{X}{n}$:
+Para ver dicha aproximación, en primer lugar vamos a generar una muestra de $N=1000$ valores de una binomial de parámetros $n=100$ y $p=\frac{1}{2}$ y dividiendo por $n=100$, tenemos una muestra de $\overline{X}_n$:
 
 ```r
 n=100
