@@ -10,9 +10,7 @@ output:
     widescreen: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 # Probabilidades Básicas
 
@@ -36,14 +34,7 @@ Tirar un dado de 6 caras y anotar el número de puntos de la cara superior.
 Los sucesos elementales del ejemplo anterior serían:
 
 <div class="center">
-```{r, echo=FALSE}
-knitr::include_graphics(c("Images/proba1dibujos/dice/1.png", 
-                          "Images/proba1dibujos/dice/2.png",
-                          "Images/proba1dibujos/dice/3.png",
-                          "Images/proba1dibujos/dice/4.png",
-                          "Images/proba1dibujos/dice/5.png",
-                          "Images/proba1dibujos/dice/6.png"))
-```
+![](Images/proba1dibujos/dice/1.png)<!-- -->![](Images/proba1dibujos/dice/2.png)<!-- -->![](Images/proba1dibujos/dice/3.png)<!-- -->![](Images/proba1dibujos/dice/4.png)<!-- -->![](Images/proba1dibujos/dice/5.png)<!-- -->![](Images/proba1dibujos/dice/6.png)<!-- -->
 </div>
 </div>
 
@@ -57,12 +48,12 @@ knitr::include_graphics(c("Images/proba1dibujos/dice/1.png",
 
 El espacio muestral del ejemplo anterior del dado es 
 <div class="center">
-$\Omega=\Big\{$`r knitr::include_graphics("Images/proba1dibujos/dice/1.png")`,
-`r knitr::include_graphics("Images/proba1dibujos/dice/2.png")`,
-`r knitr::include_graphics("Images/proba1dibujos/dice/3.png")`,
-`r knitr::include_graphics("Images/proba1dibujos/dice/4.png")`,
-`r knitr::include_graphics("Images/proba1dibujos/dice/5.png")`,
-`r knitr::include_graphics("Images/proba1dibujos/dice/6.png")`$\Big\}$
+$\Omega=\Big\{$![](Images/proba1dibujos/dice/1.png)<!-- -->,
+![](Images/proba1dibujos/dice/2.png)<!-- -->,
+![](Images/proba1dibujos/dice/3.png)<!-- -->,
+![](Images/proba1dibujos/dice/4.png)<!-- -->,
+![](Images/proba1dibujos/dice/5.png)<!-- -->,
+![](Images/proba1dibujos/dice/6.png)<!-- -->$\Big\}$
 </div>
 pero por comodidad, a partir de ahora pondremos
 $$\Omega = \{1,2,3,4,5,6\}$$
