@@ -20,13 +20,13 @@ knitr::opts_chunk$set(echo = TRUE)
 en la otra cara. Se llanza al aire dos veces la moneda. Sea $X$ la suma de los dos números 
 obtenidos y sea $Y$ la diferencia de los dos
 números (el primero menos el segundo). Hallar la función de probabilidad
-conjunta $f_{XY}(x,y)$, la función de probabilidad de $X$, $f_X(x)$ y la función de probabilidad 
-de $Y$, $f_Y(y)$.
+conjunta $P_{XY}(x,y)$, la función de probabilidad de $X$, $P_X(x)$ y la función de probabilidad 
+de $Y$, $P_Y(y)$.
 
 1. Suponemos que se pinta un "+1" en una cara
 de una moneda no trucada y un "-1" en la otra cara. La moneda se llanza al aire dos veces. Sea $X$ el número que sale la primera
 vez y $Y$ el número que sale la segunda vez. Hallar
-$f_{XY}(x,y)$, $E(X)$, $E(Y)$ y $E\left({X\over Y}\right)$.
+$P_{XY}(x,y)$, $E(X)$, $E(Y)$ y $E\left({X\over Y}\right)$.
 
 1. Se llanza 3 veces una moneda no trucada. Sea $X$ el número de caras
 que se obtienen e $Y$ el número de cruces. Hallar la función de probabilidad
@@ -35,7 +35,7 @@ conjunta para $(X,Y)$ y hallar $\sigma_{XY}=E(XY)-E(X)\cdot E(Y)$.
 1. Sean $X$ y $Y$ variables aleatorias discretas con función de probabilidad
 conjunta: 
 $$
-f_{XY}(x,y)=
+P_{XY}(x,y)=
 \left\{\begin{array}{ll}
 {1\over n^2}, & \mbox{por $x=1,2,\ldots,n,\quad
 y=1,2,\ldots,n$},\\
