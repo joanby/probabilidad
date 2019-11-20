@@ -1,0 +1,95 @@
+---
+title: "Ejercicios Tema 3 - Distribuciones Notables"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Distribuciones Notables
+
+## Distribuciones notables discretas
+
+1. **Ley de Bendford** 
+La ley de Benford es una curiosa distribución de probabilidad que suele aparecer en la distribución del primer dígito de las cantidades registradas en  contabilidades y  en observaciones científicas o datos numéricos.
+La variable $X$ sigue una distribución discreta Benford con dominio $D_X=\{1,2,3,4,5,7,8,9\}$ son 9 dígitos (se elimina el cero) y sin función de probabilidad es 
+$$
+P_X(x)=P(X=x)=\log(d+1)-\log(d).
+$$
++ a) Calcular la media y la varianza de $X$.
++ b) Calcular la función de distribución de $X$.
++ c) ¿Cuál es el dígito más frecuente (moda)?
++ d) Construid con R las funciones de probabilidad y de distribución de $X$.
++ e) Dibujar con R  las funciones del apartado anterior.
+
+2. **otra discreta**
+
+## Distribuciones notables continuas
+
+1. **Distribución de pareto** (**Power law**)
+
+Es una distribución que aparece en muchos ámbitos. Consideremos el económico. Supongamos  que en un  gran país consideramos la población activa económicamente; desde el más humilde becario al directivo más adinerado.
+
+Escogemos un individuo al azar de esta población y observamos  la variable $X=$ sus ingresos en euros (digamos que anuales).
+
+Un modelo razonable es el que supone que:
+
+* Hay un ingreso mínimo $x_m>0$.
+* La probabilidad de un ingreso mayor que $x$  decrece de forma inversamente proporcional a $\left(\frac{x_m}{x}\right)^{\gamma\cdot x}$ para algún número real $\gamma >1$.
+
+Maś formalmente. dadp $x>x_m$ 
+
+$$P(X>x)=k\cdot \left(\frac{x_m}{x}\right)^{\gamma}.$$
+Luego su función de distribución es 
+
+$$
+F_X(X)=P(X\leq x)=\left\{
+\begin{array}{ll}
+1-P(X > x)= 1- k\cdot \left(\frac{x_m}{x}\right)^{\gamma} & \mbox{ si } x>x_m\\
+0 & \mbox{ si } <\leq x_m
+\end{array}
+\right.
+$$
+Se pide 
+
++ a) Calcular  en función de $k$ y $\gamma$ la densidad de la variable $X$.
++ b) Para $\gamma>1$ calcular $E(X)$ y $Var(X)$ y su desviación típica.
++ c) ¿Qué sucede con $E(X)$ si $0<\gamma<1$.
++ d) ¿Cómo se calcula está [distribución con R](https://www.rdocumentation.org/packages/EnvStats/versions/2.3.1/topics/Pareto) [y con python](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pareto.html)?
++ e) Dibujad las gráficas de su densidad y distribución para $\gamma=3$ y $\gamma=5$.
++ f) Explorar por internet (wikipedia) cómo es la distribución **power law** y qué relación tiene el concepto de *scale free* con los resultados del apartado c).
+
+
+
+2. **Distribución de Gumbel (teoría del valor extremo)**.
+
+La distribución de Gumbel aparece en variables que miden  lo que se llama un valor extremo: máxima caidad de precipitación,m tiempo máximo transcurrido entre dos terremos, o más comun  en métoos de machine learning el más imo de la  puntuaciones de una algoritmo que compara pares de objetos (fotos, proteinas, etc).
+
+Una variable aleatoria  sigue una ley de distribución   Gumbel (de TIPO I) si su distribución es 
+
+$$
+F_X(x)=\left\{
+\begin{array}{ll}
+  e^{-e^{-\frac{x-\mu}{\beta}}} & \mbox{si} x\geq 0\\
+ 0 & \mbox{si} x< 0\\
+\end{array}
+\right.
+$$
+
+Para $\mu$ y $\beta>0$ parámetros reales. Llamaremos distribución gumble estadar  a la que tiene por parámetros
+$\mu=0$ y $\beta=1.$ 
+
++ a Si $X$ es una Gumbel estándar calular su función de densidad y dibujar su gráfica.
++ b Consideremos la función que si $x\geq 0$ vale $F(x)=e^{-e^{-x}}$ y es cero en el resto de casos. Comprobar que es la función de distribución $P(X\leq x)$ de una v.a. Gumbel estándar.
++ c Buscad un paquete de R que implemente la distribución Gumbel. Aseguraros que es  la (Gumbel Tipo I). Dejando fijo el parámetro $\beta=1$ dibujan la densidad Gumbel para varios valores de $\mu$ y explicad  en que afecta a la gráfica el cambio de $\mu$.
++ d Dejando fijo el parámetro $\mu$ dibujan la densidad Gumbel para varios valores de $\beta>0$ y explicad  en que afecta a la gráfica el cambio  de este parámetro.
++ e Buscad cuales son las fórmulas de la esperanza y varianza de una distribución gumbel en función de $\alpha$ y $\beta$.
++ f Repetid los apartados c y  d con python. Con python se puede pedir a la función la esperanza y varianza de la distribución, comprobar con esta función para algunos valores las fórmulas de la esperanza y la varianza del apartado e.
+
+
+
+
