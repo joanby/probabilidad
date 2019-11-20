@@ -1,10 +1,5 @@
 ---
 title: "Tema 0 - Pre requisitos: Teoría de conjuntos y combinatoria"
-knit: (function(input_file, encoding) {
-  out_dir <- '../docs';
-  rmarkdown::render(input_file,
- encoding=encoding,
- output_file=file.path(dirname(input_file), out_dir, 'melon.html'))})
 author: "Ricardo Alberich , Juan Gabriel Gomila y  Arnau Mir"
 date: 
 output: 
@@ -15,9 +10,7 @@ output:
     widescreen: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 # Antes de empezar
 
 
@@ -203,47 +196,128 @@ Sea $\Omega$ un conjunto y $A$,$B$,$C$ tres subconjuntos de $\Omega$
 
 Con R los conjuntos de pueden definir como vectores
 
-```{r}
+
+```r
 Omega=c(1,2,3,4,5,6,7,8,9,10)
 A=c(1,2,3,4,5)
 B=c(1,4,5)
 C=c(4,6,7,8)
 Omega
 ```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
 ## Con R, ejemplos.
 
-```{r}
+
+```r
 A
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
 B
+```
+
+```
+## [1] 1 4 5
+```
+
+```r
 C
+```
+
+```
+## [1] 4 6 7 8
 ```
 ## Con R, ejemplos.
 $A\cap B$
 
-```{r}
+
+```r
 A
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
 B
+```
+
+```
+## [1] 1 4 5
+```
+
+```r
 intersect(A,B)
+```
+
+```
+## [1] 1 4 5
 ```
 
 ## Con R, ejemplos.
 
 $A\cup B$
 
-```{r}
+
+```r
 A
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
 B
+```
+
+```
+## [1] 1 4 5
+```
+
+```r
 union(A,B)
+```
+
+```
+## [1] 1 2 3 4 5
 ```
 
 ## Con R, ejemplos.
 
 $B-C$
 
-```{r}
+
+```r
 B
+```
+
+```
+## [1] 1 4 5
+```
+
+```r
 C
+```
+
+```
+## [1] 4 6 7 8
+```
+
+```r
 setdiff(B,C)
+```
+
+```
+## [1] 1 5
 ```
 
 
@@ -251,10 +325,29 @@ setdiff(B,C)
 
 $A^c=\Omega-A$
 
-```{r}
+
+```r
 Omega
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+```r
 A
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
 setdiff(Omega,A)
+```
+
+```
+## [1]  6  7  8  9 10
 ```
 
 
@@ -264,7 +357,8 @@ setdiff(Omega,A)
 
 ## Con python
 
-```{python}
+
+```python
 Omega=set([1,2,3,4,5,6,7,8,9,10])
 A=set([1,2,3,4,5])
 B=set([1,4,5])
@@ -272,25 +366,72 @@ C=set([4,6,7,8])
 Omega
 ```
 
+```
+## set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+```
+
 ## Con python
 
-```{python}
+
+```python
 A
+```
+
+```
+## set([1, 2, 3, 4, 5])
+```
+
+```python
 B
+```
+
+```
+## set([1, 4, 5])
+```
+
+```python
 C
 ```
 
+```
+## set([8, 4, 6, 7])
+```
+
 ## Con python
 
-```{python}
+
+```python
 A & B   # intersección (&: and/y)
+```
+
+```
+## set([1, 4, 5])
+```
+
+```python
 A | B   # unión (|: or/o)
+```
+
+```
+## set([1, 2, 3, 4, 5])
 ```
 ## Con python
 
-```{python}
+
+```python
 A - C   # diferencia 
+```
+
+```
+## set([1, 2, 3, 5])
+```
+
+```python
 Omega-C # complementario.
+```
+
+```
+## set([1, 2, 3, 5, 9, 10])
 ```
 
 
@@ -406,9 +547,19 @@ $$
 
 Por ejemplo todos los números que se pueden escribir ordenando todos los dígitos $\{1,2,3\}$ sin repetir ninguno
 
-```{r,warning=FALSE,message=FALSE}
+
+```r
 library(combinat)
 for(permutacion in permn(3)) print(permutacion)
+```
+
+```
+## [1] 1 2 3
+## [1] 1 3 2
+## [1] 3 1 2
+## [1] 3 2 1
+## [1] 2 3 1
+## [1] 2 1 3
 ```
 
 Efectivamente 
