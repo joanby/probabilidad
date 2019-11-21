@@ -1,13 +1,7 @@
 ---
 title: "Probabilidad y variables aleatorias para ML con R y Python"
 author: "Ricardo Alberich , Juan Gabriel Gomila y  Arnau Mir"
-date: 
-output: 
-  html_document:
-    css: Mery_style.css
-    keep_md: yes
-    logo: Images/matriz_mov.gif
-    widescreen: yes
+link: https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7
 ---
 
 
