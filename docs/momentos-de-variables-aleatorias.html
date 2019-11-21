@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 14 Momentos de variables aleatorias | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 14 Momentos de variables aleatorias | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 14 Momentos de variables aleatorias | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="tema-4-variables-aleatorias-complementos.html"/>
+<link rel="next" href="asimetría-de-una-variable-aleatoria.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,171 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="momentos-de-variables-aleatorias" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Momentos de variables aleatorias</h1>
+<div id="momento-de-orden-n-de-una-variable-aleatoria" class="section level2">
+<h2><span class="header-section-number">14.1</span> Momento de orden <span class="math inline">\(n\)</span> de una variable aleatoria</h2>
+<p><l class="definition"> Definición. </l>
+Sea <span class="math inline">\(X\)</span> una variable aleatoria. Definimos el <strong>momento de orden <span class="math inline">\(n\)</span></strong> como
+<span class="math inline">\(\momento_n = E\left(X^n\right)\)</span>.</p>
+<p><l class="observ"> Observación.</l>
+El momento de orden <span class="math inline">\(1\)</span> de una variable aleatoria es su valor medio o <span class="math inline">\(E(X)\)</span>.</p>
+<p>Los momentos de orden <span class="math inline">\(n\)</span> caracterizan una variable <span class="math inline">\(X\)</span>. O sea, que si conocemos todos los momentos de orden <span class="math inline">\(n\)</span>, podemos deducir cuál es la distribución de <span class="math inline">\(X\)</span>.</p>
+<p>En general, el cálculo de los momentos de orden <span class="math inline">\(n\)</span> para una variable <span class="math inline">\(X\)</span> es bastante tedioso.</p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
-
+<div id="ejemplo-momento-de-orden-n" class="section level2">
+<h2><span class="header-section-number">14.2</span> Ejemplo momento de orden <span class="math inline">\(n\)</span></h2>
+<div class="example">
+<p><strong>Ejemplo: momento de orden <span class="math inline">\(n\)</span> de una variable de Bernoulli de parámetro <span class="math inline">\(p\)</span></strong></p>
+<p>Sea <span class="math inline">\(X\)</span> una variable de Bernoulli de parámetro <span class="math inline">\(p\)</span>. Recordemos que su función de probabilidad es:
+<span class="math display">\[
+P_X(0)=q=1-p,\ p_X(1)=p.
+\]</span>
+Su momento de orden <span class="math inline">\(n\)</span> será:
+<span class="math display">\[
+\momento_n = E\left(X^n\right)=p\cdot 1^n+(1-p)\cdot 0^n = p.
+\]</span>
+En este caso, todos los momentos de orden <span class="math inline">\(n\)</span> valen <span class="math inline">\(p\)</span>.</p>
+</div>
+</div>
+<div id="ejemplo-momento-de-orden-n-1" class="section level2">
+<h2><span class="header-section-number">14.3</span> Ejemplo momento de orden <span class="math inline">\(n\)</span></h2>
+<div class="example">
+<p><strong>Ejemplo: momento de orden <span class="math inline">\(n\)</span> de una variable exponencial de parámetro <span class="math inline">\(\lambda\)</span></strong></p>
+<p>Consideremos ahora una variable <span class="math inline">\(X\)</span> exponencial de parámetro <span class="math inline">\(\lambda\)</span>.</p>
+<p>Recordemos que su función de densidad es: <span class="math inline">\(f_X(x)=\lambda \mathrm{e}^{-\lambda x},\)</span> para <span class="math inline">\(x\geq 0\)</span> y <span class="math inline">\(0\)</span>, en caso contrario.</p>
+<p>Su momento de orden <span class="math inline">\(n\)</span> será:
+<span class="math display">\[
+\momento_n = E\left(X^n\right)=\int_0^\infty \lambda \mathrm{e}^{-\lambda x} x^n\, dx =\frac{n!}{\lambda^n}.
+\]</span></p>
+<p>La expresión anterior se puede obtener integrando por partes <span class="math inline">\(n\)</span> veces y resolviendo los límites correspondientes. Dejámos al lector los cálculos correspondientes.</p>
+<p>Fijémonos que los momentos de orden <span class="math inline">\(n\)</span> tienden a infinito a medida que <span class="math inline">\(n\)</span> crece: <span class="math inline">\(\lim\limits_{n\to\infty}\momento_n = \lim\limits_{n\to\infty}\frac{n!}{\lambda^n}=\infty\)</span>.</p>
+</div>
+</div>
+<div id="ejemplo-momento-de-orden-n-2" class="section level2">
+<h2><span class="header-section-number">14.4</span> Ejemplo momento de orden <span class="math inline">\(n\)</span></h2>
+<div class="example">
+<p><strong>Ejemplo: momento de orden <span class="math inline">\(n\)</span> de una variable normal de parámetros <span class="math inline">\(\momento=0\)</span> y <span class="math inline">\(\sigma =1\)</span></strong></p>
+<p>Recordemos que su función de densidad es: <span class="math inline">\(f_X(x)=\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}},\)</span> para <span class="math inline">\(x\in \mathbb{R}\)</span>.</p>
+<p>Su momento de orden 1 será la esperanza de <span class="math inline">\(X\)</span>: <span class="math inline">\(\momento_1 = 0\)</span> i su momento de orden 2 será:
+<span class="math inline">\(\momento_2 = E\left(X^2\right)=\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}}\cdot x^2\, dx = 1.\)</span>
+La integral anterior se resuelve usando técnicas de integrales de dos variables.
+Dicho valor también se puede obtener usando que su varianza vale 1:
+<span class="math inline">\(\momento_2 = \mathrm{Var}(X)+E(X)^2 = \sigma^2 +0^2 = 1.\)</span></p>
+<p>Los momentos de orden impar <span class="math inline">\(n\)</span> serán cero ya que integramos una función impar:
+<span class="math inline">\(\momento_n = E\left(X^n\right)=\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}}\cdot x^n\, dx = 0.\)</span>
+O sea, si consideramos <span class="math inline">\(g(x)=\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}}\cdot x^n\)</span>, se verifica <span class="math inline">\(g(-x)=-g(x)\)</span>, para todo <span class="math inline">\(x\in\mathbb{R}\)</span>.</p>
+<p>Si intentamos calcular el momento de orden 4, obtenemos:
+<span class="math inline">\(\momento_4 = E\left(X^4\right)=\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}}\cdot x^4\, dx = 3,\)</span> usando técnicas de integración de dos variables otra vez.</p>
+</div>
+</div>
+<div id="momento-central-de-orden-n-de-una-variable-aleatoria" class="section level2">
+<h2><span class="header-section-number">14.5</span> Momento central de orden <span class="math inline">\(n\)</span> de una variable aleatoria</h2>
+<p><l class="definition"> Definición. </l>
+Sea <span class="math inline">\(X\)</span> una variable aleatoria. Definimos el <strong>momento central de orden <span class="math inline">\(n\)</span></strong> como
+<span class="math inline">\(\momentocentral_n = E\left((X-\mu)^n\right)\)</span>, donde <span class="math inline">\(\mu =E(X)\)</span> es la media o la esperanza de la variable aleatoria <span class="math inline">\(X\)</span>.</p>
+<p><l class="observ"> Observación.</l>
+El momento central de orden <span class="math inline">\(1\)</span> de una variable aleatoria es siempre 0:
+<span class="math display">\[
+\momentocentral_1 = E\left((X-\mu)\right)=E(X)-E(\mu)=E(X)-E(X)=0.
+\]</span></p>
+</div>
+<div id="momento-central-de-orden-n-de-una-variable-aleatoria-1" class="section level2">
+<h2><span class="header-section-number">14.6</span> Momento central de orden <span class="math inline">\(n\)</span> de una variable aleatoria</h2>
+<p><l class="observ"> Observación.</l>
+El momento central de orden <span class="math inline">\(2\)</span> de una variable aleatoria es la varianza:
+<span class="math display">\[
+\momentocentral_2 = E\left((X-\mu)^2\right):= \mathrm{Var}(X).
+\]</span></p>
+<p>Los momentos centrales de orden <span class="math inline">\(n\)</span> caracterizan también una variable <span class="math inline">\(X\)</span>. O sea, que si conocemos todos los momentos centrales de orden <span class="math inline">\(n\)</span>, podemos deducir cuál es la distribución de <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="momento-central-de-orden-n-de-una-variable-aleatoria-2" class="section level2">
+<h2><span class="header-section-number">14.7</span> Momento central de orden <span class="math inline">\(n\)</span> de una variable aleatoria</h2>
+<p><l class="prop"> Proposición.</l>
+La relación que hay entre los momentos centrales y los momentos de una variable aleatoria es la siguiente:
+<span class="math display">\[
+\momentocentral_n = \sum_{k=0}^n (-1)^{n-k} \binom{n}{k} \mu^{n-k} \momento_k = \sum_{k=0}^n (-1)^{k} \binom{n}{k} \mu^{k} \momento_{n-k},
+\]</span>
+donde <span class="math inline">\(\mu =E(X)\)</span> recordemos que es la esperanza de la variable aleatoria <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="momento-central-de-orden-n-de-una-variable-aleatoria-3" class="section level2">
+<h2><span class="header-section-number">14.8</span> Momento central de orden <span class="math inline">\(n\)</span> de una variable aleatoria</h2>
+<div class="dem">
+<p><strong>Demostración</strong></p>
+<p>Recordemos la definición de momento central de orden <span class="math inline">\(n\)</span> y desarrollemos su expresión aplicando el <strong>binomio de Newton</strong>:
+<span class="math display">\[
+\momentocentral_n = E\left((X-\mu)^n\right) =E\left(\sum_{k=0}^n (-1)^{n-k} \binom{n}{k} X^k\mu^{n-k}\right).
+\]</span>
+Aplicando la propiedad de la esperanza que la esperanza de la suma es la suma de esperanzas, obtenemos la expresión dada por la proposición:
+<span class="math display">\[
+\momentocentral_n =\sum_{k=0}^n (-1)^{n-k} \binom{n}{k} \mu^{n-k} E\left(X^k\right) = \sum_{k=0}^n (-1)^{n-k} \binom{n}{k} \mu^{n-k} \momento_k.
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-momento-central-de-orden-n" class="section level2">
+<h2><span class="header-section-number">14.9</span> Ejemplo momento central de orden <span class="math inline">\(n\)</span></h2>
+<div class="example">
+<p><strong>Ejemplo: momento central de orden <span class="math inline">\(n\)</span> de una variable de Bernoulli de parámetro <span class="math inline">\(p\)</span></strong></p>
+<p>Sea <span class="math inline">\(X\)</span> una variable de Bernoulli de parámetro <span class="math inline">\(p\)</span>. Recordemos que su función de probabilidad es:
+<span class="math display">\[
+P_X(0)=q=1-p,\ P_X(1)=p.
+\]</span>
+Usando que <span class="math inline">\(E(X)=p\)</span>, su momento central de orden <span class="math inline">\(n\)</span> será:
+<span class="math display">\[
+\momentocentral_n = E\left((X-p)^n\right)=p\cdot (1-p)^n+(1-p)\cdot (0-p)^n = p(1-p)^n + (-1)^n (1-p) p^n.
+\]</span></p>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Demostrar que la expresión anterior corresponde a un polinomio de grado <span class="math inline">\(n\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="ejemplo-momento-central-de-orden-n-1" class="section level2">
+<h2><span class="header-section-number">14.10</span> Ejemplo momento central de orden <span class="math inline">\(n\)</span></h2>
+<div class="example">
+<p><strong>Ejemplo: momento central de orden <span class="math inline">\(n\)</span> de una variable exponencial de parámetro <span class="math inline">\(\lambda\)</span></strong></p>
+<p>Consideremos ahora una variable <span class="math inline">\(X\)</span> exponencial de parámetro <span class="math inline">\(\lambda\)</span>.</p>
+<p>Recordemos que su función de densidad es: <span class="math inline">\(f_X(x)=\lambda \mathrm{e}^{-\lambda x},\)</span> para <span class="math inline">\(x\geq 0\)</span>.</p>
+<p>Usando que <span class="math inline">\(E(X)=\frac{1}{\lambda}\)</span>, su momento central de orden <span class="math inline">\(n\)</span> será:
+<span class="math display">\[
+\momentocentral_n = E\left(\left(X-\frac{1}{\lambda}\right)^n\right)=\int_0^\infty \lambda \mathrm{e}^{-\lambda x} \left(x-\frac{1}{\lambda}\right)^n\, dx =\frac{a_n}{\lambda^n},
+\]</span>
+donde <span class="math inline">\(a_n = n!\sum\limits_{k=0}^n \frac{(-1)^k}{k!}.\)</span></p>
+</div>
+</div>
+<div id="ejemplo-momento-central-de-orden-n-2" class="section level2">
+<h2><span class="header-section-number">14.11</span> Ejemplo momento central de orden <span class="math inline">\(n\)</span></h2>
+<div class="example">
+<p><strong>Ejemplo: momento central de orden <span class="math inline">\(n\)</span> de una variable exponencial de parámetro <span class="math inline">\(\lambda\)</span></strong></p>
+<p>La expresión anterior fijado <span class="math inline">\(n\)</span> se puede obtener integrando por partes <span class="math inline">\(n\)</span> veces y resolviendo los límites correspondientes. Dejámos al lector los cálculos correspondientes. Sin embargo, la obtención de la fórmula general para <span class="math inline">\(n\)</span> se sale del nivel del curso.</p>
+<p>Fijémonos que los momentos centrales de orden <span class="math inline">\(n\)</span> también tienden a infinito a medida que <span class="math inline">\(n\)</span> crece: <span class="math inline">\(\lim\limits_{n\to\infty}\momentocentral_n = \lim\limits_{n\to\infty}\frac{a_n}{\lambda^n}=\infty\)</span>:
+<span class="math display">\[
+\lim_{n\to\infty}\momentocentral_n =\lim_{n\to\infty} \frac{n!\sum\limits_{k=0}^n \frac{(-1)^k}{k!}}{\lambda^n}= 
+\lim_{n\to\infty}\sum\limits_{k=0}^n \frac{(-1)^k}{k!}\cdot \lim_{n\to\infty} \frac{n!}{\lambda^n}= \mathrm{e}^{-1}\cdot \infty = \infty.
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-momento-central-de-orden-n-3" class="section level2">
+<h2><span class="header-section-number">14.12</span> Ejemplo momento central de orden <span class="math inline">\(n\)</span></h2>
+<div class="example">
+<p><strong>Ejemplo: momento central de orden <span class="math inline">\(n\)</span> de una variable normal de parámetros <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma\)</span></strong></p>
+<p>Recordemos que su función de densidad es: <span class="math inline">\(f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}},\)</span> para <span class="math inline">\(x\in \mathbb{R}\)</span>.</p>
+<p>Su momento central de orden 2 será la varianza <span class="math inline">\(\sigma^2\)</span>: <span class="math inline">\(\momentocentral_2 =\sigma^2.\)</span></p>
+<p>Los momentos centrales de orden impar <span class="math inline">\(n\)</span> serán cero ya que integramos una función impar respecto <span class="math inline">\(x=\mu\)</span>:
+<span class="math inline">\(\momentocentral_n = E\left((X-\mu)^n\right)=\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}\cdot (x-\mu)^n\, dx = 0.\)</span>
+O sea, si consideramos <span class="math inline">\(g(x)=\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}\cdot (x-\mu)^n\)</span>, se verifica <span class="math inline">\(g(\mu-x)=-g(\mu +x)\)</span>, para todo <span class="math inline">\(x\in\mathbb{R}\)</span>.</p>
+<p>Si intentamos calcular el momento central de orden 4, obtenemos:
+<span class="math inline">\(\momentocentral_4 = E\left((X-\mu)^4\right)=\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}\cdot (x-\mu)^4\, dx = 3\sigma^4.\)</span> La integral anterior puede resolverse con el cambio de variable <span class="math inline">\(t=\frac{x-\mu}{\sigma}\)</span> y usando que: <span class="math inline">\(\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}}\cdot x^4\, dx = 3.\)</span></p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tema-4-variables-aleatorias-complementos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="asimetría-de-una-variable-aleatoria.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +559,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_4_Momentos.Rmd",
 "text": "Edit"
 },
 "history": {

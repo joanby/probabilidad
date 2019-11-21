@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 6 Valores esperados o esperanza | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 6 Valores esperados o esperanza | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 6 Valores esperados o esperanza | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="para-acabar.html"/>
+<link rel="next" href="medidas-de-la-variabilidad.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,220 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="valores-esperados-o-esperanza" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Valores esperados o esperanza</h1>
+<div id="momentos-de-variables-aleatorias-discretas" class="section level2">
+<h2><span class="header-section-number">6.1</span> Momentos de variables aleatorias discretas</h2>
+<ul>
+<li><p>Al igual que en la estadística descriptiva se utilizan distintas medidas para
+resumir los valores centrales y para medir la dispersión de una muestra, podemos definir
+las correspondiente medidas para variables aleatorias.</p></li>
+<li><p>A estas medidas se les suele añadir el adjetivo <em>poblacionales</em> mientras que a las que provienen de la muestra se las adjetiva como <em>muestrales</em>.</p></li>
+</ul>
+<p>Por ejemplo podemos buscar un valor que resuma toda la variable. Este valor es el que “<em>esperamos</em>” que se resuma la v.a. o esperamos que las realizaciones de la v.a. queden cerca de él. Veamos su definición formal.</p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
-
+<div id="esperanza-de-un-variable-aleatoria-discreta" class="section level2">
+<h2><span class="header-section-number">6.2</span> Esperanza de un variable aleatoria discreta</h2>
+<p><l class="definition">Esperanza de una variable aleatoria discreta </l></p>
+<p>El valor <em>esperado o esperanza</em> (<em>expected value</em> en inglés) <span class="math inline">\(E(X)\)</span> de una v.a. discreta <span class="math inline">\(X\)</span>, se define como</p>
+<p><span class="math display">\[
+E(X)=\sum_{x\in X(\Omega)} x P_{X}(x)
+\]</span></p>
+<p>En ocasiones se le domina <em>media</em> (<em>mean</em> en inglés <em>mitjana</em> en catalán) poblacional o simplemente media y muy frecuentemente se la denota <span class="math inline">\(\mu_{X}=E(X)\)</span> o simplemente <span class="math inline">\(\mu=E(X)\)</span>.</p>
+</div>
+<div id="interpretación-de-la-media-aritmética-para-v.a.-discretas" class="section level2">
+<h2><span class="header-section-number">6.3</span> Interpretación de la media aritmética para v.a. discretas</h2>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Supongamos que lanzamos un dado <span class="math inline">\(n\)</span> veces y obtenemos unas frecuencias absolutas <span class="math inline">\(n_{i}\)</span>
+para el resultado <span class="math inline">\(i\)</span> con <span class="math inline">\(i=1,\ldots,6\)</span>. Sea <span class="math inline">\(X\)</span> la v.a. que nos representa el valor de
+una tirada del dado.</p>
+<p>Calculemos la media aritmética (o media muestral) de los datos</p>
+<p><span class="math display">\[
+\overline{x}=\frac{1\cdot n_1+2\cdot  n_2+3\cdot  n_3+4\cdot  n_4+5\cdot  n_5+6 \cdot 
+n_6}{n}=\sum_{x=1}^6 x \frac{n_{x}}{n}.
+\]</span></p>
+<p>Si <span class="math inline">\(n\to \infty\)</span> se tiene que <span class="math inline">\(\displaystyle\lim_{n\to \infty} \frac{n_{x}}{n}=P_{X}(x).\)</span></p>
+<p>Por lo tanto <span class="math inline">\(E(X)=\displaystyle \lim_{n\to\infty}\sum_{x=1}^6x \frac{n_{x}}{n}.\)</span></p>
+<p>Entonces el valor esperado en una v.a. discreta puede entenderse como el valor promedio que
+tomaría una v.a. en un número grande de repeticiones.</p>
+</div>
+</div>
+<div id="ejemplo-13" class="section level2">
+<h2><span class="header-section-number">6.4</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo: Erratas en un texto</strong></p>
+<p>Sea <span class="math inline">\(X\)</span>= número de erratas en una página de un texto con dominio <span class="math inline">\(D_X=\{0,1,2\}\)</span>.</p>
+<p>Resulta que</p>
+<p><span class="math display">\[
+P(X=0)=0.42, P(X=1)=0.4, P(X=2)=0.18.
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+E(X)=0\cdot 0.42+ 1\cdot 0.4 + 2 \cdot 0.18=0.76.
+\]</span></p>
+<p>Elegida una página del texto al azar esperamos encontrar <span class="math inline">\(0.76\)</span> errores por página.</p>
+<p>Supongamos que en el editor nos paga <span class="math inline">\(2\)</span> euros por cada página que
+encontremos con <span class="math inline">\(1\)</span> error y <span class="math inline">\(3\)</span> euros por cada página con dos errores (y nada por las
+páginas correctas) ¿Cuánto esperamos cobrar si analizamos una página?</p>
+<p><span class="math display">\[0\cdot 0.42 + 2\cdot 0.4 + 3\cdot 0.18=1.34\]</span></p>
+</div>
+</div>
+<div id="esperanzas-de-funciones-de-variables-aleatorias-discretas" class="section level2">
+<h2><span class="header-section-number">6.5</span> Esperanzas de funciones de variables aleatorias discretas</h2>
+<p><l class="definition"> <strong>Esperanzas de funciones de variables aleatorias discretas</strong> </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. discreta con función de probabilidad <span class="math inline">\(P_{X}\)</span> y de distribución
+<span class="math inline">\(F_{X}\)</span>. Entonces el <em>valor esperado de una función</em> <span class="math inline">\(g(x)\)</span> es :</p>
+<p><span class="math display">\[E(g(X))=\sum_{x}g(x) P_{X}(x).\]</span></p>
+</div>
+<div id="propiedades-de-los-valores-esperados" class="section level2">
+<h2><span class="header-section-number">6.6</span> Propiedades de los valores esperados</h2>
+<p><l class="prop"> Propiedades</l></p>
+<ul>
+<li><span class="math inline">\(E(k)=k\)</span> para cualquier constante <span class="math inline">\(k\)</span>.</li>
+<li>Si <span class="math inline">\(a\leq X\leq b\)</span> entonces <span class="math inline">\(a\leq E(X)\leq b\)</span>.</li>
+<li>Si <span class="math inline">\(X\)</span> es una v.a. discreta que toma valores enteros no negativos entonces
+<span class="math inline">\(E(X)=\sum_{x=0}^{+\infty}(1- F_X(x)).\)</span></li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>La demostración de las propiedades anteriores se deja como ejercicio.</p>
+</div>
+</div>
+<div id="ejemplo-14" class="section level2">
+<h2><span class="header-section-number">6.7</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo: paleta de colores aleatoria</strong></p>
+<p>Supongamos que estamos sentados delante de nuestro ordenador con un amigo y
+le decimos que en dos minutos podemos programar una paleta para poner colores a unos
+gráficos.</p>
+<p>Queremos la que paleta tenga dos botones con las opciones color rojo y color azul.
+Como hemos programado a gran velocidad resulta que el programa tiene un error; cada vez que
+se abre la paleta los colores se colocan al azar (con igual probabilidad) en cada botón,
+así que no sabemos en que color hemos de pinchar.</p>
+<p>Además, como nos sobraron <span class="math inline">\(15\)</span> segundos
+para hacer el programa y pensando en la comodidad del usuario, la paleta se cierra después de haber seleccionado un
+color y hay que volverla a abrir de nuevo.</p>
+<p>La pregunta es ¿cuál es el valor esperado del
+número de veces que hemos pinchar el botón de color azul antes de obtener este color?</p>
+</div>
+</div>
+<div id="ejemplo-15" class="section level2">
+<h2><span class="header-section-number">6.8</span> Ejemplo</h2>
+<div class="example-sol">
+<p>Llamemos <span class="math inline">\(X\)</span> al número de veces que pinchamos en el botón azul (y nos sale rojo) hasta
+obtener el primer azul. La variable <span class="math inline">\(X\)</span> toma valores en los enteros no negativos. Su
+función de probabilidad queda determinada por</p>
+<p><span class="math display">\[
+P_X(x)=P(X=x)=P(\stackrel{x \mbox{veces}}{\overbrace{rojo, rojo,\ldots,rojo},azul})
+=\left(\frac12\right)^{x+1}.
+\]</span></p>
+</div>
+</div>
+<div id="propiedades-de-las-series-geométricas" class="section level2">
+<h2><span class="header-section-number">6.9</span> Propiedades de las series geométricas</h2>
+<p><l class="prop">Series geométricas</l></p>
+<ul>
+<li>Una <em>progresión geométrica</em> de razón <span class="math inline">\(r\)</span> es una sucesión de la forma<br />
+<span class="math display">\[
+r^0, r^1,\ldots,r^n,\ldots.
+\]</span></li>
+<li>La serie geométrica es la suma de todos los
+valores de la progresión geométrica <span class="math inline">\(\displaystyle\sum_{k=0}^{+\infty} r^k\)</span>.</li>
+<li>Las sumas parciales desde el término <span class="math inline">\(n_0\)</span> al <span class="math inline">\(n\)</span> de una progresión geométrica valen
+<span class="math display">\[
+\sum_{k=n_0}^n r^k=\frac{r^{n_0}- r^n r}{1-r}.
+\]</span></li>
+</ul>
+</div>
+<div id="propiedades-de-las-series-geométricas-1" class="section level2">
+<h2><span class="header-section-number">6.10</span> Propiedades de las series geométricas</h2>
+<p><l class="prop">Propiedades</l></p>
+<ul>
+<li>Si <span class="math inline">\(|r|&lt;1\)</span> la serie geométrica es convergente y <span class="math display">\[\sum_{k=0}^{+\infty }
+r^k=\frac1{1-r}\]</span>.</li>
+<li>En el caso en que se comience en <span class="math inline">\(n_0\)</span> se tiene que
+<span class="math display">\[\sum_{k=n_0}^{+\infty} r^k=\frac{r^{n_0}}{1-r}.\]</span></li>
+</ul>
+</div>
+<div id="propiedades-de-las-series-geométricas-2" class="section level2">
+<h2><span class="header-section-number">6.11</span> Propiedades de las series geométricas</h2>
+<p><l class="prop">Propiedades</l></p>
+<ul>
+<li>Si <span class="math inline">\(|r|&lt;1\)</span> también son convergentes las derivadas, respecto de <span class="math inline">\(r\)</span>, de la serie geométrica y convergen a la derivada correspondiente. Así tenemos que</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+\left(\sum_{k=0}^{+\infty} r^k\right)&#39;= &amp; \sum_{k=1}^{+\infty}k
+r^{k-1} \left(\frac1{1-r}\right)&#39;=\frac1{(1-r)^2}\\
+\left(\sum_{k=0}^{+\infty} r^k\right)^{&#39;&#39;}=&amp; \sum_{k=2}^{+\infty}k (k-1)
+r^{k-2}\left(\frac1{1-r}\right)^{&#39;&#39;}=\frac2{(1-r)^3}
+\end{eqnarray*}\]</span>.</p>
+</div>
+<div id="ejemplo-16" class="section level2">
+<h2><span class="header-section-number">6.12</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo (cont)</strong></p>
+<p>Si seguimos con el ejemplo de la paleta de colores, su esperanza es:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+E(X)&amp;=&amp;\sum_{x=0}^{+\infty} x P(X=x)=\sum_{x=0}^{+\infty} x
+\left(\frac12\right)^{x+1}\\
+&amp;= &amp; \left(\frac12\right)^2\sum_{x=1}^{+\infty} x
+\left(\frac12\right)^{x-1}=\left(\frac12\right)^2
+\frac1{\left(1-\frac12\right)^2}=1.
+\end{eqnarray*}\]</span></p>
+<p>Ahora calculemos su función de distribución</p>
+<p><span class="math display">\[\begin{eqnarray*}
+F_X(x)&amp;=&amp; P(X\leq x)=\sum_{k=0}^x P(X=k)=\sum_{k=0}^x
+\left(\frac12\right)^{k+1}\\
+&amp;=&amp; \frac{\frac12-\frac12^{x+1}
+\frac12}{1-\frac12}=1-\left(\frac12\right)^{x+1}
+\end{eqnarray*}\]</span>.</p>
+</div>
+</div>
+<div id="ejemplo-17" class="section level2">
+<h2><span class="header-section-number">6.13</span> Ejemplo</h2>
+<div class="example">
+<p>Como la variable toma valores enteros positivos, podemos calcular su valor esperado
+de esta otra manera</p>
+<p><span class="math display">\[E(X)=\sum_{x=0}^{+\infty} (1-F_X(x))=\sum_{x=0}^{+\infty}(\frac12)^{x+1}=\frac12
+\frac1{1-\frac12}=1.\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Calculad el valor esperado de la variable</p>
+<p><span class="math display">\[
+Y=\mbox{número de intentos para conseguir el color azul.}
+\]</span></p>
+</div>
+</div>
+<div id="momentos-de-una-variable-aleatoria" class="section level2">
+<h2><span class="header-section-number">6.14</span> Momentos de una variable aleatoria</h2>
+<div class="definition">
+Momentos de orden <span class="math inline">\(m\)</span>
+</div>
+<p>Llamaremos <em>momento de orden <span class="math inline">\(m\)</span></em> respecto al punto <span class="math inline">\(C\)</span> a
+<span class="math display">\[E\left((X-C)^m\right)\]</span></p>
+<ul>
+<li>Cuando <span class="math inline">\(C=0\)</span> los momentos reciben el nombre de <em>momentos respecto al origen</em>.</li>
+<li>Cuando <span class="math inline">\(C=E(X)\)</span> reciben el nombre de <em>momentos centrales o respecto de la media</em>. Luego la esperanza es el momento de orden <span class="math inline">\(1\)</span> respecto al origen. Estos momentos son la versión poblacional de los momentos que vimos en el curso de estadística descriptiva, recibiendo estos último el nombre de momentos muestrales.</li>
+</ul>
+</div>
+<div id="resumen-conceptos" class="section level2">
+<h2><span class="header-section-number">6.15</span> Resumen conceptos</h2>
+<ul>
+<li>Hemos descrito el comportamiento aleatorio de una v.a. discreta mediante sus funciones de probabilidad <span class="math inline">\(P_{X}\)</span> y de distribución <span class="math inline">\(F_{X}\)</span>.</li>
+<li>También tenemos un valor central; el valor esperado <span class="math inline">\(E(X)\)</span>.</li>
+<li>Como medida básica nos queda definir una medida de lo lejos que están los datos del valor central <span class="math inline">\(E(X)\)</span> una de estas medidas es la varianza de <span class="math inline">\(X\)</span>.</li>
+</ul>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="para-acabar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="medidas-de-la-variabilidad.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +608,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_2_VA.Rmd",
 "text": "Edit"
 },
 "history": {

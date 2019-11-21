@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 16 Teorema Central del Límite | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 16 Teorema Central del Límite | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 16 Teorema Central del Límite | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="asimetría-de-una-variable-aleatoria.html"/>
 
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,333 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="teorema-central-del-límite" class="section level1">
+<h1><span class="header-section-number">Chapter 16</span> Teorema Central del Límite</h1>
+<div id="introducción-19" class="section level2">
+<h2><span class="header-section-number">16.1</span> Introducción</h2>
+<p>Sabemos que si una sucesión <span class="math inline">\(\{X_n\}\)</span> está formada por variables normales, la sucesión de medias muestrales <span class="math inline">\(\left\{\overline{X}_n=\frac{\sum\limits_{i=1}^n X_i}{n}\right\}_{n=1}^\infty\)</span> también son normales ya que vimos en el tema de variables multidimensionales que si aplicamos una transformación afín (y, en particular, lineal) a una variable normal multidimensional, el resultado es una normal.</p>
+<p>Para calcular la variable <span class="math inline">\(\overline{X}_n\)</span>, es obvio que la transformación lineal es la siguiente:
+<span class="math display">\[
+\overline{X}_n = \left(\frac{1}{n},\ldots,\frac{1}{n}\right)\begin{pmatrix}X_1 \\\vdots\\ X_n\end{pmatrix}.
+\]</span></p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
+<div id="introducción-20" class="section level2">
+<h2><span class="header-section-number">16.2</span> Introducción</h2>
+<p>Si además la sucesión de variables <span class="math inline">\(X_n\)</span> son normales todas con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>, la sucesión <span class="math inline">\(\left\{\overline{X}_n\right\}_{n=1}^\infty\)</span> serán normales de media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\frac{\sigma^2}{n}\)</span>.</p>
+<p>Estandarizando las variables anteriores, podemos concluir que las variables medias estandarizadas <span class="math inline">\(Z_n =\left\{\frac{\overline{X}_n-\mu}{\frac{\sigma}{\sqrt{n}}}\right\}_{n=1}^\infty\)</span> todas son <span class="math inline">\(N(0,1)\)</span>.</p>
+<p>El <strong>Teorema Central del Límite</strong> generaliza el resultado anterior en el sentido de que si las variables <span class="math inline">\(X_n\)</span> no tienen por qué tener la distribución normal pero son independientes e idénticamente distribuidas, las variables <span class="math inline">\(Z_n\)</span> correspondientes tienden <strong>en ley</strong> a una distribución normal estándar <span class="math inline">\(N(0,1)\)</span>.</p>
+<p>En general, se dice que los valores medios de cualquier secuencia de números aproximadamente corresponde a una muestra de una normal.</p>
+</div>
+<div id="teorema-central-del-límite-1" class="section level2">
+<h2><span class="header-section-number">16.3</span> Teorema Central del Límite</h2>
+<p><l class="prop"> Teorema Central del Límite </l>
+Sea <span class="math inline">\(\{X_n\}_{n=1}^\infty\)</span> una sucesión de variables aleatorias independientes e idénticamente distribuidas con <span class="math inline">\(E(X_n)=\mu\)</span> y <span class="math inline">\(\mathrm{Var}(X_n)=\sigma^2\)</span> para todo <span class="math inline">\(n\)</span>. Entonces:
+<span class="math display">\[
+\frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}}\stackrel{{\cal L}}{\longrightarrow} N(0,1).
+\]</span></p>
+</div>
+<div id="teorema-central-del-límite-2" class="section level2">
+<h2><span class="header-section-number">16.4</span> Teorema Central del Límite</h2>
+<p><l class="observ"> Observación. </l>
+Una condición equivalente a la tesis del <strong>Teorema Central del Límite</strong> es:
+<span class="math display">\[
+\frac{\overline{X}_n-\mu}{\frac{\sigma}{\sqrt{n}}}\stackrel{{\cal L}}{\longrightarrow} N(0,1).
+\]</span>
+Basta dividir por <span class="math inline">\(n\)</span> el numerador y el denominador de la tesis original del <strong>Teorema Central del Límite</strong>.</p>
+</div>
+<div id="demostración-3" class="section level2">
+<h2><span class="header-section-number">16.5</span> Demostración</h2>
+<p>Para la demostración, usaremos dos propiedades de la función característica:</p>
+<p><l class="prop"> Proposición. </l>
+Sea <span class="math inline">\(Y_1,\ldots, Y_n\)</span> <span class="math inline">\(n\)</span> variables aleatorias independientes. Sea <span class="math inline">\(S_n\)</span> la variable aleatoria suma de las variables anteriores, <span class="math inline">\(S_n=\sum\limits_{i=1}^n Y_i\)</span>. Entonces, para calcular <span class="math inline">\(\FunCar_{S_n}\)</span>, podemos usar la expresión siguiente::
+<span class="math display">\[
+\FunCar_{S_n}(w)=\FunCar_{Y_1}(w)\cdots \FunCar_{Y_n}(w),
+\]</span>
+donde <span class="math inline">\(w\)</span> es cualquier valor real.</p>
+</div>
+<div id="demostración-4" class="section level2">
+<h2><span class="header-section-number">16.6</span> Demostración</h2>
+<div class="dem">
+<p><strong>Demostración de la proposición</strong></p>
+<p>Por definición:
+<span class="math display">\[
+\begin{array}{rl}
+\FunCar_{S_n}(w) &amp; =E\left(\mathrm{e}^{\mathrm{i} w S_n}\right)=E\left(\mathrm{e}^{\mathrm{i} w \sum\limits_{i=1}^n Y_i}\right) = E\left(\mathrm{e}^{i w Y_1}\cdots \mathrm{e}^{i w Y_n}\right)\\ &amp; \stackrel{\mbox{$Y_1,\ldots,Y_n$ son independientes}}{=} E\left(\mathrm{e}^{i w Y_1}\right)\cdots E\left(\mathrm{e}^{i w Y_n}\right) =\FunCar_{Y_1}(w)\cdots \FunCar_{Y_n}(w).
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="demostración-5" class="section level2">
+<h2><span class="header-section-number">16.7</span> Demostración</h2>
+<p><l class="prop"> Proposición. </l>
+Sea <span class="math inline">\(Y\)</span> una variable aleatoria. Sea <span class="math inline">\(U=kY\)</span> la variable aleatoria <span class="math inline">\(Y\)</span> multiplicada por un valor real <span class="math inline">\(k\)</span>. Entonces, para calcular <span class="math inline">\(\FunCar_{U}\)</span>, podemos usar la expresión siguiente:
+<span class="math display">\[
+\FunCar_{U}(w)=\FunCar_Y(kw),
+\]</span>
+donde <span class="math inline">\(w\)</span> es cualquier valor real.</p>
+<div class="dem">
+<p><strong>Demostración de la proposición</strong></p>
+<p>Por definición:
+<span class="math display">\[
+\FunCar_{U}(w)=E\left(\mathrm{e}^{\mathrm{i} w U}\right) = E\left(\mathrm{e}^{\mathrm{i} w k Y}\right)=\FunCar_Y(kw).
+\]</span></p>
+</div>
+</div>
+<div id="demostración-6" class="section level2">
+<h2><span class="header-section-number">16.8</span> Demostración</h2>
+<div class="dem">
+<p><strong>Demostración del Teorema Central del Límite</strong></p>
+<p>Usando la proposición que vimos al introducir la <strong>convergencia en ley</strong> que dice que una sucesión <span class="math inline">\(\{X_n\}\)</span> converge <strong>en ley</strong> hacia <span class="math inline">\(X\)</span> si, y sólo si, <span class="math inline">\(\lim\limits_{\FunCar_{X_n}(t)}=\FunCar_{X}(t)\)</span>, donde <span class="math inline">\(\FunCar\)</span> representa la función característica y la condición anterior tiene que verificarse para todo valor <span class="math inline">\(t\in\mathbb{R}\)</span>, basta demostrar que, si llamamos <span class="math inline">\(Z_n\)</span> a
+<span class="math inline">\(Z_n = \frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}},\)</span>
+<span class="math display">\[
+\lim_{n\to \infty}\FunCar_{Z_n}(w)=\FunCar_Z(w),
+\]</span>
+para cualquier valor <span class="math inline">\(w\in\mathbb{R}\)</span>, siendo <span class="math inline">\(Z=N(0,1)\)</span>.</p>
+</div>
+</div>
+<div id="demostración-7" class="section level2">
+<h2><span class="header-section-number">16.9</span> Demostración</h2>
+<div class="dem">
+<p>Seguidamente, simplifiquemos la expresión <span class="math inline">\(\FunCar_{Z_n}(w)=\FunCar_{\frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}}}(w)\)</span> usando las dos proposiciones anteriores. En primer lugar, teniendo en cuenta que las variables <span class="math inline">\(\left\{\frac{X_i-\mu}{\sigma\sqrt{n}}\right\}\)</span> son independientes e idénticamente distribuidas, usando la primera proposición podemos escribir:
+<span class="math display">\[
+\FunCar_{Z_n}(w) = \left(\FunCar_{\frac{X-\mu}{\sigma\sqrt{n}}}(w)\right)^n,
+\]</span>
+donde <span class="math inline">\(X\)</span> representa cualquiera de las variables <span class="math inline">\(X_i\)</span>.</p>
+<p>Usando la segunda proposición, podemos simplificar la expresión anterior aún más:
+<span class="math display">\[
+\FunCar_{Z_n}(w) = \left(\FunCar_{\frac{X-\mu}{\sigma\sqrt{n}}}(w)\right)^n = \left(\FunCar_{X-\mu}\left(\frac{w}{\sigma\sqrt{n}}\right)\right)^n.
+\]</span></p>
+</div>
+</div>
+<div id="demostración-8" class="section level2">
+<h2><span class="header-section-number">16.10</span> Demostración</h2>
+<div class="dem">
+<p>Si desarrollamos por Taylor alrededor del valor <span class="math inline">\(\hat{w}=0\)</span> la función característica <span class="math inline">\(\FunCar_{X-\mu}\left(\hat{w}\right)\)</span> hasta segundo orden, obtenemos:
+<span class="math display">\[
+\FunCar_{X-\mu}\left(\hat{w}\right) = \FunCar_{X-\mu}\left(0\right)+ \FunCar_{X-\mu}&#39;\left(0\right) \hat{w}+ \FunCar_{X-\mu}&#39;&#39;\left(0\right)\frac{\hat{w}^2}{2}+O(\hat{w}^3),
+\]</span>
+donde <span class="math inline">\(O(\hat{w}^3)\)</span> simboliza los términos de orden <span class="math inline">\(\hat{w}^3\)</span> y superiores.</p>
+<p>Los valores <span class="math inline">\(\FunCar_{X-\mu}\left(0\right)\)</span>, <span class="math inline">\(\FunCar_{X-\mu}&#39;\left(0\right)\)</span> y <span class="math inline">\(\FunCar_{X-\mu}&#39;&#39;\left(0\right)\)</span> valen: (ver tema de Complementos de variables aleatorias)
+<span class="math display">\[
+\FunCar_{X-\mu}\left(0\right)=1, \ \FunCar_{X-\mu}&#39;\left(0\right)=\frac{1}{\mathrm{i}}E(X-\mu)=0,\ \FunCar_{X-\mu}&#39;&#39;\left(0\right)=\frac{1}{\mathrm{i}^2}E\left((X-\mu)^2\right)=-\sigma^2.
+\]</span>
+El desarrollo anterior será:
+<span class="math display">\[
+\FunCar_{X-\mu}\left(\hat{w}\right) =1 - \frac{1}{2}\hat{w}^2\sigma^2+O(\hat{w}^3),
+\]</span></p>
+</div>
+</div>
+<div id="demostración-9" class="section level2">
+<h2><span class="header-section-number">16.11</span> Demostración</h2>
+<div class="dem">
+<p>Aplicando la expresión anterior para <span class="math inline">\(\hat{w}=\frac{w}{\sigma\sqrt{n}}\)</span>, obtenemos:
+<span class="math display">\[
+\FunCar_{X-\mu}\left(\frac{w}{\sigma\sqrt{n}}\right) =1 - \frac{1}{2}\left(\frac{w}{\sigma\sqrt{n}}\right)^2\sigma^2+O\left(\frac{w}{\sigma\sqrt{n}}\right)^3= 1-\frac{w^2}{2n}+O\left(\frac{w^3}{n^{\frac{3}{2}}}\right),
+\]</span></p>
+<p>La función característica de la variable <span class="math inline">\(Z_n\)</span> será usando la expresión anterior:
+<span class="math display">\[
+\FunCar_{Z_n}(w)=\left(\FunCar_{X-\mu}\left(\frac{w}{\sigma\sqrt{n}}\right)\right)^n = \left(1-\frac{w^2}{2n}+O\left(\frac{w^3}{n^{\frac{3}{2}}}\right)\right)^n
+\]</span>
+El objetivo es calcular el límite de la expresión anterior:
+<span class="math display">\[
+\lim_{n\to \infty}\FunCar_{Z_n}(w) = \lim_{n\to\infty} \left(1-\frac{w^2}{2n}+O\left(\frac{w^3}{n^{\frac{3}{2}}}\right)\right)^n = 
+\lim_{n\to \infty}\mathrm{e}^{n\cdot \ln \left(1-\frac{w^2}{2n}+O\left(\frac{w^3}{n^{\frac{3}{2}}}\right)\right)}.
+\]</span></p>
+</div>
+</div>
+<div id="demostración-10" class="section level2">
+<h2><span class="header-section-number">16.12</span> Demostración</h2>
+<div class="dem">
+<p>Usando que para <span class="math inline">\(z\approx 0\)</span>, <span class="math inline">\(\ln(1-z)=z+O(z^2)\)</span>, el límite anterior será:
+<span class="math display">\[
+\lim_{n\to \infty}\FunCar_{Z_n}(w) = 
+\lim_{n\to \infty}\mathrm{e}^{n\cdot \left(-\frac{w^2}{2n}+O\left(\frac{w^4}{n^{2}}\right)\right)} = \lim_{n\to \infty}\mathrm{e}^{ \left(-\frac{w^2}{2}+O\left(\frac{w^4}{n}\right)\right)} = \mathrm{e}^{-\frac{w^2}{2}},
+\]</span>
+y dicha expresión coincide con la función característica de la variable <span class="math inline">\(N(0,1)\)</span>, <span class="math inline">\(\FunCar_{Z}(w)\)</span>.</p>
+<p>Recordad que en el tema de Complementos de variables aleatorias vimos que si la variable <span class="math inline">\(U\)</span> era <span class="math inline">\(N(\mu,\sigma)\)</span>, <span class="math inline">\(\FunCar_{U}(w)=\mathrm{e}^{\mathrm{i}w\mu-\frac{w^2\sigma^2}{2}}\)</span>. Aplicando la fórmula anterior para <span class="math inline">\(\mu=0\)</span> y <span class="math inline">\(\sigma=1\)</span>, obtenemos <span class="math inline">\(\FunCar_{Z}(w)=\mathrm{e}^{-\frac{w^2}{2}}.\)</span></p>
+</div>
+</div>
+<div id="teorema-central-del-límite-en-la-práctica" class="section level2">
+<h2><span class="header-section-number">16.13</span> Teorema Central del Límite en la práctica</h2>
+<p>El <strong>Teorema Central del Límite</strong> se aplica a la práctica en la forma siguiente:</p>
+<p>Sea <span class="math inline">\(\{X_n\}_{n=1}^\infty\)</span> una sucesión de variables aleatorias independientes e idénticamente distribuidas con <span class="math inline">\(E(X_i)=\mu\)</span> y <span class="math inline">\(\mathrm{Var}(X_i)=\sigma^2\)</span>. Entonces, podemos aproximar para <span class="math inline">\(n\)</span> grande (<span class="math inline">\(n\geq 30\)</span>), la media muestral <span class="math inline">\(\overline{X}_n\)</span> por:
+<span class="math display">\[
+\overline{X}_n =\frac{1}{n}\sum_{i=1}^n X_i \approx N\left(\mu,\frac{\sigma}{\sqrt{n}}\right),
+\]</span>
+o también:
+<span class="math display">\[
+\sum_{i=1}^n X_i \approx N\left(n\mu,\sigma\sqrt{n}\right),
+\]</span></p>
+</div>
+<div id="teorema-central-del-límite-en-la-práctica-1" class="section level2">
+<h2><span class="header-section-number">16.14</span> Teorema Central del Límite en la práctica</h2>
+<p>Las aproximaciones anteriores se pueden obtener teniendo en cuenta que el <strong>Teorema Central del Límite</strong> nos dice que la variable
+<span class="math inline">\(Z_n= \frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}}\)</span> es aproximadamente una <span class="math inline">\(N(0,1)\)</span>. Por tanto,
+<span class="math display">\[
+\frac{\sum\limits_{i=1}^n X_i-n\mu}{\sigma\sqrt{n}} \approx N(0,1),\ \Rightarrow \sum_{i=1}^n X_i\approx \sigma\sqrt{n}\cdot N(0,1)+n\mu = N\left(n\mu,\sigma\sqrt{n}\right).
+\]</span></p>
+<p>Dividiendo por <span class="math inline">\(n\)</span> la aproximación anterior, obtenemos:
+<span class="math display">\[
+\overline{X}_n =\frac{1}{n}\sum_{i=1}^n X_i \approx \frac{1}{n}N\left(n\mu,\sigma\sqrt{n}\right) =N\left(\mu,\frac{\sigma}{\sqrt{n}}\right).
+\]</span></p>
+</div>
+<div id="teorema-de-moivre-laplace" class="section level2">
+<h2><span class="header-section-number">16.15</span> Teorema de Moivre-Laplace</h2>
+<p>Si aplicamos el <strong>Teorema Central del Límite</strong> en el caso en que las variables <span class="math inline">\(X_n\)</span> son de Bernoulli de parámetro <span class="math inline">\(p\)</span>, obtenemos el llamado <strong>Teorema de Moivre-Laplace</strong>:</p>
+<p><l class="prop"> Teorema de Moivre-Laplace </l>
+Sea <span class="math inline">\(\{X_n\}_{n=1}^\infty\)</span> una sucesión de variables aleatorias independientes Bernoulli de parámetro <span class="math inline">\(p\)</span>. La variable <span class="math inline">\(\sum\limits_{i=1}^n X_i\)</span> será binomial de parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span>, <span class="math inline">\(B(n,p)\)</span>. Entonces:
+<span class="math display">\[
+\frac{B(n,p)-np}{\sqrt{n\cdot p\cdot (1-p)}}\stackrel{{\cal L}}{\longrightarrow} N(0,1).
+\]</span></p>
+</div>
+<div id="teorema-de-moivre-laplace-1" class="section level2">
+<h2><span class="header-section-number">16.16</span> Teorema de Moivre-Laplace</h2>
+<p>En la práctica, decimos que podemos aproximar una variable binomial de parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> por una distribución normal de parámetros <span class="math inline">\(\mu=np\)</span> y <span class="math inline">\(\sigma =\sqrt{n\cdot p\cdot (1-p)}\)</span>:
+<span class="math display">\[
+B(n,p)\approx N(np,\sqrt{n\cdot p\cdot (1-p)}).
+\]</span></p>
+</div>
+<div id="aproximación-de-una-suma-de-variables-poisson" class="section level2">
+<h2><span class="header-section-number">16.17</span> Aproximación de una suma de variables Poisson</h2>
+<p>Si aplicamos el <strong>Teorema Central del Límite</strong> en el caso en que las variables <span class="math inline">\(X_n\)</span> son de Poisson de parámetro <span class="math inline">\(\lambda\)</span>, obtenemos el resultado siguiente:</p>
+<p><l class="prop"> Proposición. </l>
+Sea <span class="math inline">\(\{X_n\}_{n=1}^\infty\)</span> una sucesión de variables aleatorias independientes Poisson de parámetro <span class="math inline">\(\lambda\)</span>. Entonces:
+<span class="math display">\[
+\frac{\sum\limits_{i=1}^n X_i -n\lambda}{\sqrt{n\cdot \lambda}}\stackrel{{\cal L}}{\longrightarrow} N(0,1).
+\]</span></p>
+</div>
+<div id="aproximación-de-una-suma-de-variables-poisson-1" class="section level2">
+<h2><span class="header-section-number">16.18</span> Aproximación de una suma de variables Poisson</h2>
+<p>Antes de ver la aplicación práctica del resultado anterior, veamos que suma de variables Poisson independientes de parámetro <span class="math inline">\(\lambda\)</span> es una variable Poisson de parámetro <span class="math inline">\(n\lambda\)</span>:</p>
+<p><l class="prop"> Proposición. </l>
+Sea <span class="math inline">\(\{X_n\}_{n=1}^\infty\)</span> una sucesión de variables aleatorias independientes Poisson de parámetro <span class="math inline">\(\lambda\)</span>. Entonces la variable <span class="math inline">\(\sum\limits_{i=1}^n X_i\)</span> sigue la distribución de Poisson de parámetro <span class="math inline">\(n\lambda\)</span>.</p>
+</div>
+<div id="aproximación-de-una-suma-de-variables-poisson-2" class="section level2">
+<h2><span class="header-section-number">16.19</span> Aproximación de una suma de variables Poisson</h2>
+<div class="dem">
+<p><strong>Demostración</strong></p>
+<p>En primer lugar, hallemos la función característica de la distribución de Poisson de parámetro <span class="math inline">\(\lambda\)</span>. Sea <span class="math inline">\(X=Poiss(\lambda)\)</span>. Su función característica en un valor <span class="math inline">\(w\)</span> será:
+<span class="math display">\[
+\FunCar_X(w)=E\left(\mathrm{e}^{\mathrm{i} w X}\right)=\sum_{k=0}^\infty \mathrm{e}^{i w k}\frac{\lambda^k}{k!}\mathrm{e}^{-\lambda}=\mathrm{e}^{-\lambda} \sum_{k=0}^\infty \frac{\left(\lambda\mathrm{e}^{iw}\right)^k}{k!}=\mathrm{e}^{-\lambda}\cdot \mathrm{e}^{\lambda\mathrm{e}^{iw}}=\mathrm{e}^{\lambda \left(\mathrm{e}^{iw}-1\right)}.
+\]</span>
+Sea ahora la variable <span class="math inline">\(S_n=\sum\limits_{i=1}^n X_i\)</span>. Usando la proposición anterior que nos calcula la función característica de sumas de variables independientes, podemos escribir:
+<span class="math display">\[
+\FunCar_{S_n}(w)=\FunCar_{X_1}(w)\cdots \FunCar_{X_n}(w)=\left(\mathrm{e}^{\lambda \left(\mathrm{e}^{iw}-1\right)}\right)^n =\mathrm{e}^{n\lambda \left(\mathrm{e}^{iw}-1\right)},
+\]</span>
+función característica que corresponde a una variable de Poisson de parámetro <span class="math inline">\(n\lambda\)</span>, <span class="math inline">\(Poiss(n\lambda)\)</span>.</p>
+</div>
+</div>
+<div id="aproximación-de-una-suma-de-variables-poisson-3" class="section level2">
+<h2><span class="header-section-number">16.20</span> Aproximación de una suma de variables Poisson</h2>
+<p>Usando la proposición anterior, tenemos que la suma de variables Poisson independientes de parámetro <span class="math inline">\(\lambda\)</span> sigue una distribución Poisson de parámetro <span class="math inline">\(n\lambda\)</span>. Por tanto, podemos escribir usando el corolario del <strong>Teorema Central del Límite</strong> aplicado a variables Poisson:
+<span class="math display">\[
+Poiss(n\lambda)\approx N(n\lambda,\sqrt{n\lambda}).
+\]</span></p>
+</div>
+<div id="ejemplo-152" class="section level2">
+<h2><span class="header-section-number">16.21</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo de aplicación del Teorema de Moivre-Laplace</strong></p>
+<p>Sea <span class="math inline">\(X\)</span> una distribución binomial de parámetros <span class="math inline">\(n=50\)</span> y <span class="math inline">\(p=\frac{1}{3}\)</span>.</p>
+<p>Imaginemos que nos piden <span class="math inline">\(P(X &lt; 15)\)</span> y <span class="math inline">\(P(10\leq X\leq 20)\)</span>.</p>
+<p>Vamos a calcular las probabilidades anteriores usando el <strong>Teorema de Moivre-Laplace</strong>.</p>
+<p>La variable <span class="math inline">\(X\)</span> es aproximadamente una distribución normal <span class="math inline">\(X_N\)</span> de parámetros <span class="math inline">\(\mu = np=\frac{50}{3}=16.6667\)</span> y <span class="math inline">\(\sigma=\sqrt{50\cdot\frac{1}{3}\cdot \frac{2}{3}}=3.3333\)</span>.</p>
+<p>Por tanto:
+<span class="math display">\[
+\begin{array}{rl}
+P(X&lt; 15) &amp; = P(X\leq 14) \approx P(X_N \leq 14)=P\left(Z\leq \frac{14-16.6667}{3.3333}\right) =P(Z\leq -0.8) = 0.2119,\\
+P(10\leq X\leq 20) &amp; \approx P(10\leq X_N \leq 20) = P\left(\frac{10-16.6667}{3.3333}\leq  Z\leq \frac{20-16.6667}{3.3333}\right) = P(-2\leq Z\leq 1) \\ &amp; = P(Z\leq 1)-P(Z\leq -2)=0.8413447-0.0227501 = 0.8186,
+\end{array}
+\]</span>
+donde <span class="math inline">\(Z=N(0,1)\)</span>.</p>
+</div>
+</div>
+<div id="ejemplo-153" class="section level2">
+<h2><span class="header-section-number">16.22</span> Ejemplo</h2>
+<div class="example">
+<p>Comparemos los valores aproximados anteriores con los valores “exactos” proporcionados por <code>R</code>:</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">pbinom</span>(<span class="dv">14</span>,<span class="dv">50</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.2612386</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="kw">pbinom</span>(<span class="dv">20</span>,<span class="dv">50</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)<span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">9</span>,<span class="dv">50</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.8613685</code></pre>
+<p>Tenemos errores de 0.04938 y 0.04277, respectivamente.</p>
+<p>Aunque <span class="math inline">\(n\)</span> no es pequeño, <span class="math inline">\(n=50\)</span>, los errores anteriores no son demasiado pequeños.</p>
+<p>Una razón por la que dichos errores no son pequeños es que aproximamos una distribución discreta (Binomial) cuyos valores van de 1 en 1 por una distribución normal, que es continua.</p>
+<p>La corrección de continuidad de Fisher nos mejora la aproximación disminuyendo dichos errores.</p>
+</div>
+</div>
+<div id="corrección-de-continuidad-de-fisher" class="section level2">
+<h2><span class="header-section-number">16.23</span> Corrección de continuidad de Fisher</h2>
+<p>Cuando aplicamos el <strong>Teorema Central del Límite</strong> y aproximamos una distribución discreta que tiene valores enteros por una normal, hemos de aplicar lo que se llama <strong>corrección de continuidad de Fisher</strong>.</p>
+<p>Sea <span class="math inline">\(X\)</span> la variable discreta que queremos aproximar y <span class="math inline">\(X_N\)</span> la variable normal que nos aparece cuando aplicamos el <strong>Teorema Central del Límite</strong>. Supongamos que queremos calcular <span class="math inline">\(P(X\leq k)\)</span>, para un <span class="math inline">\(k\)</span> entero. Entonces debemos hacer:
+<span class="math display">\[
+P(X\leq k)\approx P(X_N\leq k+0.5).
+\]</span>
+O sea, para tener en cuenta el valor <span class="math inline">\(k\)</span> en la aproximación <span class="math inline">\(X_N\)</span> hay que sumarle la mitad entre dos valores consecutivos (0.5 si los valores son enteros) de la variable <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="corrección-de-continuidad-de-fisher-1" class="section level2">
+<h2><span class="header-section-number">16.24</span> Corrección de continuidad de Fisher</h2>
+<p>Id con cuidado, si queremos calcular <span class="math inline">\(P(X&lt;k)\)</span>, hay que hacer <span class="math inline">\(P(X&lt;k) =P(X\leq k-1)\approx P(X_N \leq k-1+0.5)=P(X_N\leq k-0.5)\)</span>.</p>
+<div class="example">
+<p><strong>Ejemplo anterior</strong></p>
+<p>Si aplicamos la continuidad de Fisher en el ejemplo anterior, obtenemos:
+<span class="math display">\[
+\begin{array}{rl}
+P(X&lt; 15) &amp; = P(X\leq 14) \approx P(X_N \leq 14.5)=P\left(Z\leq \frac{14.5-16.6667}{3.3333}\right) =P(Z\leq -0.65) = 0.2578,\\
+P(10\leq X\leq 20) &amp; P(X\leq 20)-P(X\leq 9)\approx P(X_N \leq 20.5)-P(X_N\leq 9.5) \\ &amp; = P\left(Z\leq \frac{20.5-16.6667}{3.3333}\right) - P\left(Z\leq \frac{9.5-16.6667}{3.3333}\right)=  P(Z\leq 1.15)-P(Z\leq -2.15)\\ &amp; =0.8749281-0.0157776 = 0.8592,
+\end{array}
+\]</span>
+obteniendo unos errores de sólo 0.00339 y 0.00222, respectivamente.</p>
+</div>
+</div>
+<div id="simulación-del-teorema-central-del-límite" class="section level2">
+<h2><span class="header-section-number">16.25</span> Simulación del Teorema Central del Límite</h2>
+<div class="example">
+<p><strong>Ejemplo de simulación de la aproximación de una variable binomial a una distribución normal</strong></p>
+<p>Para realizar la simulación anterior, consideremos una distribución binomial de parámetros <span class="math inline">\(n=100\)</span> y <span class="math inline">\(p=\frac{1}{2}\)</span>.</p>
+<p>Según el <strong>Teorema Central del Límite</strong>, tenemos que
+<span class="math display">\[
+\overline{X}_n=\frac{1}{n}B\left(n=100,p=\frac{1}{2}\right)\approx N\left(\mu = p=\frac{1}{2}=0.5,\sigma=\sqrt{\frac{\frac{1}{2}\cdot \frac{1}{2}}{100}}=0.05\right).
+\]</span></p>
+<p>Para ver dicha aproximación, en primer lugar vamos a generar una muestra de <span class="math inline">\(N=1000\)</span> valores de una binomial de parámetros <span class="math inline">\(n=100\)</span> y <span class="math inline">\(p=\frac{1}{2}\)</span> y dividiendo por <span class="math inline">\(n=100\)</span>, tenemos una muestra de <span class="math inline">\(\overline{X}_n\)</span>:</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">n=<span class="dv">100</span></a>
+<a class="sourceLine" id="cb124-2" data-line-number="2">p=<span class="dv">1</span><span class="op">/</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb124-3" data-line-number="3">sigma=p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)</a>
+<a class="sourceLine" id="cb124-4" data-line-number="4"><span class="kw">set.seed</span>(<span class="dv">2019</span>)</a>
+<a class="sourceLine" id="cb124-5" data-line-number="5">muestra.binomial =<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">1000</span>,n,p)</a>
+<a class="sourceLine" id="cb124-6" data-line-number="6">muestra.xnbarra =<span class="st"> </span>muestra.binomial<span class="op">/</span>n</a></code></pre></div>
+</div>
+</div>
+<div id="simulación-del-teorema-central-del-límite-1" class="section level2">
+<h2><span class="header-section-number">16.26</span> Simulación del Teorema Central del Límite</h2>
+<div class="example">
+<p>Para ver si la aproximación funciona, dibujaremos en una misma gráfica el histograma de frecuencias relativas de la muestra anterior y la curva de la función de densidad de la distribución normal de parámetros <span class="math inline">\(\mu =\frac{1}{2}\)</span> y <span class="math inline">\(\sigma = 0.05\)</span>:</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="kw">hist</span>(muestra.xnbarra,<span class="dt">freq=</span><span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb125-2" data-line-number="2">     <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dt">from=</span><span class="kw">min</span>(muestra.xnbarra)<span class="op">-</span><span class="fl">0.1</span>,<span class="dt">to=</span><span class="kw">max</span>(muestra.xnbarra)<span class="op">+</span><span class="fl">0.1</span>,<span class="dt">by=</span><span class="fl">0.01</span>),</a>
+<a class="sourceLine" id="cb125-3" data-line-number="3">     <span class="dt">main=</span><span class="st">&quot;Histograma de la distribución de las medias muestrales&quot;</span>,</a>
+<a class="sourceLine" id="cb125-4" data-line-number="4">     <span class="dt">xlab=</span><span class="st">&quot;valores variable&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;frecuencias relativas&quot;</span>)</a>
+<a class="sourceLine" id="cb125-5" data-line-number="5">mu=p</a>
+<a class="sourceLine" id="cb125-6" data-line-number="6">sigma.xnbarra=<span class="kw">sqrt</span>(p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>n)</a>
+<a class="sourceLine" id="cb125-7" data-line-number="7">x=<span class="kw">seq</span>(<span class="dt">from=</span><span class="kw">min</span>(muestra.xnbarra),<span class="dt">to=</span><span class="kw">max</span>(muestra.xnbarra),<span class="dt">by=</span><span class="fl">0.01</span>)</a>
+<a class="sourceLine" id="cb125-8" data-line-number="8"><span class="kw">lines</span>(x,<span class="kw">dnorm</span>(x,mu,sigma.xnbarra),<span class="dt">col=</span><span class="st">&#39;red&#39;</span>)</a></code></pre></div>
+<p>Observamos que la aproximación es bastante buena.</p>
+</div>
+</div>
+<div id="simulación-del-teorema-central-del-límite-2" class="section level2">
+<h2><span class="header-section-number">16.27</span> Simulación del Teorema Central del Límite</h2>
+<div class="center">
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+</div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="asimetría-de-una-variable-aleatoria.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +721,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_7_TCL.Rmd",
 "text": "Edit"
 },
 "history": {

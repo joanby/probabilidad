@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 4 Combinatoria | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 4 Combinatoria | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 4 Combinatoria | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="antes-de-empezar.html"/>
+<link rel="next" href="para-acabar.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,122 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="combinatoria" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Combinatoria</h1>
+<div id="combinatoria.-introducción." class="section level2">
+<h2><span class="header-section-number">4.1</span> Combinatoria. Introducción.</h2>
+<p>La combinatoria es una rama de la matemática discreta que entre otras cosas cuenta distintas configuraciones de objetos de un conjunto.</p>
+<p>Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipos de 5 jugadores distintos podemos formar?</p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
-
+<div id="combinatoria.-número-binomial." class="section level2">
+<h2><span class="header-section-number">4.2</span> Combinatoria. Número binomial.</h2>
+<p><strong>Número combinatorio o número binomial</strong></p>
+<p>Nos da el número de subconjuntos de tamaño <span class="math inline">\(k\)</span> de un conjunto de tamaño <span class="math inline">\(n\)</span>. Este número es</p>
+<p><span class="math display">\[
+{n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
+\]</span></p>
+<p>Recordemos que
+<span class="math display">\[
+n!=1\cdot 2\cdot 3\cdots n.
+\]</span></p>
+</div>
+<div id="combinatoria.-número-binomial.-1" class="section level2">
+<h2><span class="header-section-number">4.3</span> Combinatoria. Número binomial.</h2>
+<p>En nuestro caso con 7 jugadores <span class="math inline">\(n=7\)</span> el número de equipos distintos de <span class="math inline">\(k=5\)</span> es</p>
+<p><span class="math display">\[
+{7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!}=
+\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
+\]</span></p>
+<p>Puedo formar 21 equipos distintos.</p>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>combinations(n, r, v, set, repeats.allowed)</code> para calcular todas las combinaciones anteriores.</p>
+</div>
+</div>
+<div id="combinatoria.-variaciones." class="section level2">
+<h2><span class="header-section-number">4.4</span> Combinatoria. Variaciones.</h2>
+<p><strong>Variaciones</strong></p>
+<p>Con los número <span class="math inline">\(\{1,2,3\}\)</span> ¿cuántos números de dos cifras distintas podemos formar sin repetir ninguna cifra?</p>
+<p>La podemos escribir</p>
+<p><span class="math display">\[12,13,21,23,31,32\]</span></p>
+<p>Luego hay seis casos</p>
+</div>
+<div id="combinatoria.-variaciones-sin-repetición." class="section level2">
+<h2><span class="header-section-number">4.5</span> Combinatoria. Variaciones (sin repetición).</h2>
+<p>Denotaremos las variaciones (sin repetición) de <span class="math inline">\(k\)</span> elementos (de orden <span class="math inline">\(k\)</span>) de un conjunto de <span class="math inline">\(n\)</span> elementos por <span class="math inline">\(V^n_k\)</span> su valor es</p>
+<p><span class="math display">\[
+V^n_k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
+\]</span></p>
+</div>
+<div id="combinatoria.-variaciones.-1" class="section level2">
+<h2><span class="header-section-number">4.6</span> Combinatoria. Variaciones.</h2>
+<p>En nuestro ejemplo con <span class="math inline">\(n=3\)</span> dígitos podemos escribir las siguientes variaciones de orden <span class="math inline">\(k=2\)</span></p>
+<p><span class="math display">\[
+V_{k=2}^{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
+\]</span></p>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>permutations(n, r, v, set, repeats.allowed)</code> para calcular todas las variaciones anteriores.</p>
+</div>
+</div>
+<div id="combinatoria.-variaciones-con-repetición." class="section level2">
+<h2><span class="header-section-number">4.7</span> Combinatoria. Variaciones con repetición.</h2>
+<p><strong>Variaciones con repetición</strong></p>
+<p>¿Y repitiendo algún dígito?</p>
+<p><span class="math display">\[VR^n_k=n^k\]</span></p>
+<p>Efectivamente en nuestro caso</p>
+<p><span class="math display">\[11,12,13,21,22,23,31,32,33\]</span></p>
+<p><span class="math display">\[
+VR_{k=2}^{n=3}=n^k.
+\]</span></p>
+</div>
+<div id="permutaciones" class="section level2">
+<h2><span class="header-section-number">4.8</span> Permutaciones</h2>
+<p>Las permutaciones de un conjunto de cardinal <span class="math inline">\(n\)</span> son todas las variaciones de orden máximo <span class="math inline">\(n\)</span>.
+Las denotamos y valen:</p>
+<p><span class="math display">\[
+P_n=VR_n^n=n!
+\]</span></p>
+</div>
+<div id="permutaciones-1" class="section level2">
+<h2><span class="header-section-number">4.9</span> Permutaciones</h2>
+<p>Por ejemplo todos los números que se pueden escribir ordenando todos los dígitos <span class="math inline">\(\{1,2,3\}\)</span> sin repetir ninguno</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">library</span>(combinat)</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="cf">for</span>(permutacion <span class="cf">in</span> <span class="kw">permn</span>(<span class="dv">3</span>)) <span class="kw">print</span>(permutacion)</a></code></pre></div>
+<pre><code>## [1] 1 2 3
+## [1] 1 3 2
+## [1] 3 1 2
+## [1] 3 2 1
+## [1] 2 3 1
+## [1] 2 1 3</code></pre>
+<p>Efectivamente
+<span class="math display">\[
+P_3=3!=1\cdot  2\cdot 3.
+\]</span></p>
+</div>
+<div id="permutaciones-2" class="section level2">
+<h2><span class="header-section-number">4.10</span> Permutaciones</h2>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Carga el paquete <code>combinat</code> de R e investiga la funcion <code>permn</code> para calcular todas las permutaciones anteriores.</p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Investiga el paquete <code>itertools</code> y la función <code>comb</code> de <code>scipy.misc</code> de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.</p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función <code>gamma(x+1)</code> da el mismo valor que la función <code>factorial(x)</code> en <code>R</code> para todo <span class="math inline">\(x = \{1,2,3\cdots,10\}\)</span>.</p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="antes-de-empezar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="para-acabar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +510,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_0_Prerequisitos.Rmd",
 "text": "Edit"
 },
 "history": {

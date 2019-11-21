@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 9 Variables aleatorias continuas | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 9 Variables aleatorias continuas | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 9 Variables aleatorias continuas | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="esperanza-y-varianza-de-transformaciones-lineales-.html"/>
+<link rel="next" href="esperanza-y-varianza-para-variables-aleatorias-continuas.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,269 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="variables-aleatorias-continuas" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Variables aleatorias continuas</h1>
+<div id="variables-aleatorias-continuas-definición." class="section level2">
+<h2><span class="header-section-number">9.1</span> Variables aleatorias continuas definición.</h2>
+<ul>
+<li>Como ya hemos dicho las variables aleatorias continuas toman valores en
+intervalos o áreas.</li>
+<li>Lo más habitual es que estas variables tengan función de distribución continua y
+derivable (salvo a los más en una cantidad finita o numerable de puntos:-)).</li>
+<li>En lo que sigue supondremos que la función de distribución de variables
+aleatorias continuas cumplen estas propiedades.</li>
+<li>Notemos que si <span class="math inline">\(X\)</span> es una v.a. con función de distribución continua se tiene que
+<span class="math inline">\(P(X=x_0)=F_X(x_0)-F(x_0^{-})=0\)</span>. Por lo que no tiene sentido definir <em>función de probabilidad</em>.</li>
+</ul>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
+<div id="variables-aleatorias-continuas-1" class="section level2">
+<h2><span class="header-section-number">9.2</span> Variables aleatorias continuas</h2>
+<ul>
+<li>En general tendremos que <span class="math inline">\(P(X&lt;x_0)=P(X\leq x_0)\)</span>.</li>
+<li>Por otra parte podemos utilizar una regla parecida del
+cociente entre casos favorables y casos posibles de Laplace pero en
+este caso el conteo se hace por la <em>medida</em> de los casos
+posibles partida por la <em>medida</em> de los casos favorables.</li>
+<li>Veamos un ejemplo de v.a. continua, que ampliaremos en el tema siguiente, en el que se utilizan todos estos conceptos.</li>
+</ul>
+</div>
+<div id="ejemplo-distribución-uniforme-en-01." class="section level2">
+<h2><span class="header-section-number">9.3</span> Ejemplo: Distribución uniforme en <span class="math inline">\([0,1]\)</span>.</h2>
+<div class="example">
+<p><strong>Ejemplo: distancia el dardo centro</strong></p>
+<p>Supongamos que lanzamos un dardo a una diana de radio <span class="math inline">\(1\)</span>, de forma que sea <em>equiprobable</em> cualquier distancia al centro (¡Cuidado! esto no es equivalente
+a que cualquier punto de la diana sea <em>equiprobable</em>).</p>
+<p>Consideremos la v.a. continua <span class="math inline">\(X=\)</span> distancia al centro.</p>
+</div>
+<div class="example-sol">
 
+<p>Su función de distribución es</p>
+<p><span class="math display">\[
+F_{X}(x)=
+\left\{
+\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+x &amp; \mbox{si } 0&lt;x&lt;1\\
+1 &amp; \mbox{si } x\geq 1
+\end{array}
+\right.
+.
+\]</span></p>
+<p>Ya que</p>
+<ul>
+<li>C.F. <em>longitud favorable</em> es <span class="math inline">\(x-0\)</span>.</li>
+<li>C.P. <em>longitud posible</em> es <span class="math inline">\(1-0\)</span>.</li>
+<li>Luego
+<span class="math display">\[P(X\leq x)=\frac{C.F.}{C.P.}=\frac{x-0}{1-0}=x\]</span></li>
+</ul>
+</div>
+<div id="gráfica-de-la-función-de-distribución-uniforme" class="section level2">
+<h2><span class="header-section-number">9.4</span> Gráfica de la función de distribución uniforme</h2>
+<p><img src="bookdown-demo_files/figure-html/figUNIF-7.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="propiedades-18" class="section level2">
+<h2><span class="header-section-number">9.5</span> Propiedades</h2>
+<p>En las variables continuas los sucesos del tipo <span class="math inline">\(\{X\leq x \}\)</span> y <span class="math inline">\(\{X&lt; x \}\)</span> tendrán la
+misma probabilidad, y otros tipos de sucesos similares también, algunas de estas
+propiedades se explicitan en la siguiente proposición.</p>
+<p><l class="prop">Propiedades</l></p>
+<p>Dada una v.a. continua <span class="math inline">\(X\)</span> se tiene que:</p>
+<ul>
+<li><span class="math inline">\(P(X\leq b)=P(X&lt;b)\)</span></li>
+<li><span class="math inline">\(P(X&lt;b)=P(X&lt;a)+P(a&lt;X&lt;b)\)</span></li>
+<li><span class="math inline">\(P(a&lt;X&lt;b)=P(X&lt;b)-P(X&lt;a)\)</span></li>
+</ul>
+</div>
+<div id="demostración-2" class="section level2">
+<h2><span class="header-section-number">9.6</span> Demostración</h2>
+<div class="dem">
+<p><strong>Demostración:</strong></p>
+<p>La primera es evidente <span class="math inline">\(P(X\leq b)=P(X&lt;b)+P(X=b)=P(X&lt;b)\)</span></p>
+<p>Para demostrar la segunda, tenemos</p>
+<p><span class="math display">\[\{X&lt;a\}\cap \{a&lt;X&lt;b\}=\emptyset\]</span>
+<span class="math display">\[\{X&lt;a\}\cup \{a&lt;X&lt;b\}=\{X&lt;b\}\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(X\leq b)= &amp; P(\{X&lt;a\}\cup \{a&lt;X&lt;b\})\\
+&amp; = P(X&lt;a)+P(a&lt;X&lt;b)
+\end{eqnarray*}\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>La demostración de la tercera propiedad es similar a la segunda pero aplicando la primera. Queda de ejercicio.</p>
+</div>
+</div>
+<div id="propiedades-de-la-función-de-distribución-1" class="section level2">
+<h2><span class="header-section-number">9.7</span> Propiedades de la función de distribución</h2>
+<p>Las propiedades anteriores y combinaciones de ellas se pueden
+escribir utilizando la función de distribución de <span class="math inline">\(X\)</span>:</p>
+<p><l class="prop"> Propiedades de la Función de Distribución </l></p>
+<p>Dada una variable aleatoria continua se tiene que:</p>
+<ul>
+<li><span class="math inline">\(F_{X}(b)=F_{X}(a)+P(a&lt;X&lt;b)\)</span></li>
+<li><span class="math inline">\(P(a&lt;X&lt;b)=F_{X}(b)-F_{X}(a)\)</span></li>
+<li><span class="math inline">\(P(a\leq X\leq b)=F_{X}(b)-F_{X}(a)\)</span></li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Se deja la demostración como ejercicio</p>
+</div>
+</div>
+<div id="ejemplo-20" class="section level2">
+<h2><span class="header-section-number">9.8</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo: lanzamiento de dardos</strong></p>
+<p>En los dardos:
+<span class="math display">\[P(0.25&lt;X&lt;0.3)=F_{X}(0.3)-F_{X}(0.25)=\]</span>
+<span class="math display">\[=0.3-0.25=0.05\]</span></p>
+</div>
+</div>
+<div id="función-de-densidad" class="section level2">
+<h2><span class="header-section-number">9.9</span> Función de densidad</h2>
+<p><l class="definition"> <strong>Función de densidad</strong> </l></p>
+<p>Una función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> es una función de densidad sobre <span class="math inline">\(\mathbb{R}\)</span> si cumple que</p>
+<ul>
+<li><span class="math inline">\(f_{X}(x)\geq 0\)</span> para todo <span class="math inline">\(x \in\mathbb{R}.\)</span></li>
+<li><span class="math inline">\(f\)</span> es continua salvo a lo más en una cantidad finita de puntos sobre
+cada intervalo acotado de <span class="math inline">\(\mathbb{R}\)</span>.</li>
+<li><span class="math inline">\(\displaystyle\int\limits_{-\infty}^{+\infty} f_{X}(x) dx=1.\)</span></li>
+</ul>
+</div>
+<div id="función-de-densidad-de-una-variable-aleatoria." class="section level2">
+<h2><span class="header-section-number">9.10</span> Función de densidad de una variable aleatoria.</h2>
+<p><l class="definition"> <strong>Función de densidad de una variable aleatoria</strong> </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. con función de distribución <span class="math inline">\(F_X\)</span>. Sea <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> una función de densidad tal que</p>
+<p><span class="math display">\[F_X(x)=\displaystyle\int_{-\infty}^{x} f_X(t) dt.\mbox{ para todo } x\in\mathbb{R}.\]</span></p>
+<p>Entonces <span class="math inline">\(X\)</span> es una variable aleatoria continua y <span class="math inline">\(f_X\)</span> es la densidad de la v.a. <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="dominio-de-una-variable-aleatoria-continua" class="section level2">
+<h2><span class="header-section-number">9.11</span> Dominio de una variable aleatoria continua</h2>
+<p>El conjunto <span class="math inline">\(D_X=\{x\in\mathbb{R}| f_x(x)&gt;0\}\)</span> recibe el nombre de <l class="definition"> soporte o dominio de la
+variable aleatoria continua</l> y se interpreta su conjunto de resultados posibles.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En nuestra diana, la función <span class="math inline">\(f\)</span> es una densidad</p>
+<p><span class="math display">\[
+f_{X}(x)=\left\{
+\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+1 &amp; \mbox{si } 0 &lt; x &lt; 1\\
+0 &amp; \mbox{si } 1\leq x
+\end{array}\right.
+\]</span></p>
+<p>que es la densidad de <span class="math inline">\(X\)</span>, en efecto:</p>
+</div>
+</div>
+<div id="densidad-diana" class="section level2">
+<h2><span class="header-section-number">9.12</span> Densidad diana</h2>
+<div class="example-sol">
+<p><span class="math display">\[
+f_{X}(x)=\left\{
+\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+1 &amp; \mbox{si } 0 &lt; x &lt; 1\\
+0 &amp; \mbox{si } 1\leq x
+\end{array}\right.
+\]</span></p>
+<p>Si <span class="math inline">\(x \leq 0\)</span> entonces <span class="math inline">\(\displaystyle\int_{-\infty}^x f_X(t) dt = 0.\)</span></p>
+<p>Si <span class="math inline">\(0\leq x\leq 1\)</span> entonces <span class="math inline">\(\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^x 1 dt = x.\)</span></p>
+<p>Si <span class="math inline">\(x\geq 1\)</span> entonces <span class="math inline">\(\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^1 1 dt = 1.\)</span></p>
+<p>Por lo tanto <span class="math inline">\(F_X(x)=\displaystyle\int_{-\infty}^x f_X(t) dt\)</span> para todo <span class="math inline">\(x\in\mathbb{R}.\)</span></p>
+</div>
+</div>
+<div id="densidad-diana-1" class="section level2">
+<h2><span class="header-section-number">9.13</span> Densidad diana</h2>
+<div class="example-sol">
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">curve</span>(<span class="kw">dunif</span>(x,<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">1.5</span>),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2">      <span class="dt">main=</span><span class="st">&quot;Densidad de la distribución uniforme en [0,1]&quot;</span>)</a></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="utilidad-de-la-función-de-densidad" class="section level2">
+<h2><span class="header-section-number">9.14</span> Utilidad de la función de densidad</h2>
+<p>La función de densidad nos permite calcular diversas probabilidades.</p>
+<p><l class="prop">Propiedades de la función de densidad </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua con función de distribución <span class="math inline">\(F_X\)</span> y de
+densidad <span class="math inline">\(f_X\)</span>, entonces</p>
+<ul>
+<li><p><span class="math display">\[\begin{eqnarray*}
+P(a&lt; X&lt; b) &amp;=&amp;  P(a&lt;X\leq b)= P(a\leq X&lt; b)=\\
+ &amp; &amp; P(a\leq X\leq b)= \displaystyle\int_{a}^b f_X(x) dx.
+\end{eqnarray*}\]</span></p></li>
+<li><p>Si <span class="math inline">\(A\)</span> es un conjunto adecuado de <span class="math inline">\(\mathbb{R}\)</span> entonces
+<span class="math display">\[P(X\in A)=\displaystyle\int_{A} f(x) dx=\displaystyle\int_{A\cap D_X} f(x) dx.
+\]</span></p></li>
+</ul>
+</div>
+<div id="utilidad-de-la-función-de-densidad-1" class="section level2">
+<h2><span class="header-section-number">9.15</span> Utilidad de la función de densidad</h2>
+<p><l class="prop">Propiedades de la función de densidad </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua con función de distribución <span class="math inline">\(F_X\)</span> y de densidad <span class="math inline">\(f_X\)</span>, entonces:</p>
+<ul>
+<li>Si <span class="math inline">\(f_x\)</span> es continua en un punto <span class="math inline">\(x\)</span>, <span class="math inline">\(F_X\)</span> es derivable en ese punto y
+<span class="math inline">\(F_X&#39;(x)=f_X(x).\)</span></li>
+<li><span class="math inline">\(P(X=x)=0\)</span> para todo <span class="math inline">\(x\in\mathbb{R}.\)</span></li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+Comprobar estas propiedades en el ejemplo de la diana.
+</div>
+</div>
+<div id="ejemplo-tiempo-ejecución-de-un-proceso" class="section level2">
+<h2><span class="header-section-number">9.16</span> Ejemplo tiempo ejecución de un proceso</h2>
+<div class="example">
+<p><strong>Ejemplo: Tiempo ejecución de un proceso.</strong></p>
+<p>Sea <span class="math inline">\(X=\)</span> tiempo de ejecución de un proceso. Se supone que <span class="math inline">\(X\)</span> sigue una distribución uniforme en dos unidades de tiempo, si tarda más el proceso se cancela.</p>
+<p>Calculemos la función de densidad y de distribución de la v.a <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="example-sol">
+<p>Entonces</p>
+<p><span class="math display">\[
+F_{X}(x)=P(X\leq x)=\frac{CF}{CP}=\frac{x}2
+\]</span></p>
+<p>Luego su función de distribución es:</p>
+<p><span class="math display">\[
+F_{X}(x)=\left\{\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+\frac{x}2 &amp; \mbox{si } 0&lt;x&lt;2\\
+1 &amp; \mbox{si } 2\leq x
+\end{array}\right.
+\]</span></p>
+<h2 id="ejemplo-tiempo-ejecución-de-un-proceso-1"><span class="header-section-number">9.16</span> Ejemplo tiempo ejecución de un proceso</h2>
+<p>Su función de densidad por su lado es:
+<span class="math display">\[
+f_{X}(x)=F_{X}&#39;(x)=\left\{\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+\frac12 &amp; \mbox{si } 0&lt;x\leq 2\\
+0 &amp; \mbox{si } 2\leq x
+\end{array}\right.
+\]</span></p>
+<p>Efectivamente</p>
+<ul>
+<li><span class="math inline">\(f_{X}(x)\geq 0,\)</span> y tiene un conjunto finito de discontinuidades.</li>
+<li><span class="math inline">\(F_X(x)=\int_{-\infty}^x f_X(t) dt.\)</span> para todo <span class="math inline">\(x\in \mathbb{R}\)</span> <l class="exercise">(Ejercicio,
+resolverlo gráficamente.)</l></li>
+<li><span class="math inline">\(\int\limits_{-\infty}^{+\infty}f_{X}(x)dx= \int\limits_0^2\frac12dx=\frac{x}2\mid_0^2= =\frac22-\frac02=1.\)</span></li>
+</ul>
+</div>
+</div>
+<div id="ejemplo-tiempo-ejecución-de-un-proceso-2" class="section level2">
+<h2><span class="header-section-number">9.17</span> Ejemplo tiempo ejecución de un proceso</h2>
+<div class="exercise">
+<p><strong>Ejercicio: Tiempo de un proceso:</strong></p>
+<p>Calcular la probabilidad de que uno de nuestros procesos tarde
+más de una unidad de tiempo en ser procesado. Calcular también la probabilidad de
+que dure entre <span class="math inline">\(0.5\)</span> y <span class="math inline">\(1.5\)</span> unidades de tiempo.</p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="esperanza-y-varianza-de-transformaciones-lineales-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="esperanza-y-varianza-para-variables-aleatorias-continuas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +657,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_2_VA.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 7 Medidas de la variabilidad | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 7 Medidas de la variabilidad | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 7 Medidas de la variabilidad | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="valores-esperados-o-esperanza.html"/>
+<link rel="next" href="esperanza-y-varianza-de-transformaciones-lineales-.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="medidas-de-la-variabilidad" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Medidas de la variabilidad</h1>
+<div id="medidas-de-la-variabilidad-la-varianza" class="section level2">
+<h2><span class="header-section-number">7.1</span> Medidas de la variabilidad: la varianza</h2>
+<div class="definition">
+Varianza
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
-
+<p>Sea <span class="math inline">\(X\)</span> una v.a. Llamaremos <em>varianza</em> de <span class="math inline">\(X\)</span> a</p>
+<p><span class="math display">\[Var(X)=E((X-E(X))^2)\]</span></p>
+<p>Por lo tanto la varianza es el momento central de orden <span class="math inline">\(2\)</span>.</p>
+<p>De forma frecuente se utiliza la notación <span class="math display">\[\sigma_{X}^2=Var(X).\]</span></p>
+<p>A la raíz cuadrada positiva de la varianza
+<span class="math display">\[\sigma_{X}=\sqrt{Var(X)}\]</span></p>
+<p>se la denomina desviación típica o estándar de <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="propiedades-de-la-varianza" class="section level2">
+<h2><span class="header-section-number">7.2</span> Propiedades de la varianza</h2>
+<p><l class="prop"> Propiedad </l></p>
+<ul>
+<li>Si <span class="math inline">\(X\)</span> es una v.a. discreta con función de probabilidad <span class="math inline">\(P_X\)</span> su varianza es
+<span class="math display">\[\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2 P_{X}(x).\]</span></li>
+<li>Sea <span class="math inline">\(X\)</span> una v.a.
+<span class="math display">\[Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2 P_{X}(X)-(E(X))^2\]</span></li>
+</ul>
+</div>
+<div id="demostración" class="section level2">
+<h2><span class="header-section-number">7.3</span> Demostración</h2>
+<div class="dem">
+<p><strong>Demostración de b)</strong></p>
+<p><span class="math display">\[\begin{eqnarray*}
+Var(X)&amp;= &amp; \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2 x E(X)+(E(X)^2) P_{X}(x)\\
+&amp;=&amp; \sum_{x}x^2P_{X}(x) -  E(X)\sum_{x}2 x P_{X}(x) + (E(X)^2)\sum_{x} P_{X}(x)\\
+&amp;=&amp; E(X^2)- 2 E(X) E(X) + (E(X))^2=E(X^2)-(E(X))^2.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="ejemplo-18" class="section level2">
+<h2><span class="header-section-number">7.4</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Calculemos en el ejemplo anterior la varianza del número de errores.</p>
+</div>
+<div class="example-sol">
+<p>Recordemos que:</p>
+<p><span class="math display">\[
+P(X=0)=0.42,\quad P(X=1)=0.4, \quad P(X=2)=0.18
+\]</span></p>
+<p>y que</p>
+<p><span class="math display">\[
+E(X)=0.76
+\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+Var(X)=E(X^2)-(E(X))^2 = E(X^2)-(0.76)^2.
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-19" class="section level2">
+<h2><span class="header-section-number">7.5</span> Ejemplo</h2>
+<div class="example-sol">
+<p>Ahora necesitamos calcular</p>
+<p><span class="math display">\[E(X^2)= 0^2 (0.41)+ 1^2 (0.4)+ 2^2 (0.18)=0.4+0.72=1.12\]</span>
+y por lo tanto</p>
+<p><span class="math display">\[Var(X)= E(X^2)-(0.76)^2=1.12-0.5776=0.542\]</span>
+y <span class="math display">\[\sqrt{Var(X)}=\sqrt{0.542}\]</span></p>
+<p>En resumen <span class="math inline">\(\sigma_{X}^2=0.542\)</span> y <span class="math inline">\(\sigma_{X}=\sqrt{0.542}\)</span></p>
+</div>
+</div>
+<div id="propiedades-de-la-varianza-1" class="section level2">
+<h2><span class="header-section-number">7.6</span> Propiedades de la varianza</h2>
+<p><l class="prop"> <strong>Propiedades de la varianza</strong></l></p>
+<ul>
+<li><span class="math inline">\(Var(X)\geq 0\)</span></li>
+<li><span class="math inline">\(Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0\)</span></li>
+<li>El mínimo de <span class="math inline">\(E((X-C)^2)\)</span> se alcanza cuando <span class="math inline">\(C=E(X)\)</span> y es <span class="math inline">\(Var(X)\)</span>. Esta propiedad es una de las que hace útil a la varianza como medida de dispersión.</li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Se deja como ejercicio la demostración de estas propiedades.</p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="valores-esperados-o-esperanza.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="esperanza-y-varianza-de-transformaciones-lineales-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +483,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_2_VA.Rmd",
 "text": "Edit"
 },
 "history": {

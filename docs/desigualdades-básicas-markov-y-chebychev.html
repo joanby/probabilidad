@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 12 Desigualdades básicas: Markov y Chebychev | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 12 Desigualdades básicas: Markov y Chebychev | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 12 Desigualdades básicas: Markov y Chebychev | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="transformaciones-de-variables-aleatorias.html"/>
+<link rel="next" href="tema-4-variables-aleatorias-complementos.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,170 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="desigualdades-básicas-markov-y-chebychev" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> Desigualdades básicas: Markov y Chebychev</h1>
+<div id="desigualdades-de-markov-y-de-chebychev" class="section level2">
+<h2><span class="header-section-number">12.1</span> Desigualdades de Markov y de Chebychev</h2>
+<ul>
+<li>En esta sección distintas desigualdades que acotan determinadas probabilidades de
+una variable aleatoria.</li>
+<li>Estas desigualdades sirven en algunos casos para acotar probabilidades de determinados sucesos.</li>
+<li>También son útiles desde el punto de vista teórico, por ejemplo para justificar que la varianza es una mediada de la dispersión de
+los datos.</li>
+</ul>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
+<div id="desigualdad-de-markov" class="section level2">
+<h2><span class="header-section-number">12.2</span> Desigualdad de Markov</h2>
+<p><l class="prop"> Desigualdad de Markov</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. positiva con <span class="math inline">\(E(X)\)</span> finita. Entonces</p>
+<p><span class="math display">\[P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a&gt;0.\]</span></p>
+<div class="dem">
+<p><strong>Demostración</strong>:</p>
+<p>Si <span class="math inline">\(X\)</span> es continua y solo toma valores positivos</p>
+<p><span class="math display">\[\begin{eqnarray*}
+E(X) &amp;=&amp; \int_{-\infty}^{+\infty} x f_{X}(x) dx=  \int_0^{+\infty} x f_{X}(x) dx=  \int_0^{a} x f_{X}(x) dx +\int_{a}^{+\infty} x f_{X}(x) dx \\
+&amp; &amp;\geq   \int_{a}^{+\infty} x
+f_{X}(x) dx \geq a \int_{a}^{+\infty}
+f_{X}(x) dx = a \cdot  P(X\geq a)
+\end{eqnarray*}\]</span>.</p>
+<p>de donde se sigue que</p>
+<p><span class="math display">\[P(X\geq a)\leq \frac{E(X)}{a}.\]</span></p>
+</div>
+</div>
+<div id="desigualdad-de-markov-1" class="section level2">
+<h2><span class="header-section-number">12.3</span> Desigualdad de Markov</h2>
+<p><l class="prop"> Corolario</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. con <span class="math inline">\(E(X)\)</span> finita entonces para todo <span class="math inline">\(a&gt;0\)</span></p>
+<span class="math display">\[P(|X|\geq a )\leq \frac{E(|X|)}{a}.\]</span>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Demuestra el corolario anterior a partir de la desigualdad de Markov.</p>
+</div>
+</div>
+<div id="desigualdad-de-chebychev" class="section level2">
+<h2><span class="header-section-number">12.4</span> Desigualdad de Chebychev</h2>
+<p>La desigualdad de Chebychev también se denomina de Chebyshov y en inglés Chebyshev.</p>
+<p><l class="prop"> Desigualdad de Chebychev</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a.con <span class="math inline">\(E(X)=\mu\)</span> y <span class="math inline">\(Var(X)=\sigma^2\)</span> entonces para todo <span class="math inline">\(a&gt;0\)</span></p>
+<p><span class="math display">\[P(|X-\mu|\geq a)\leq \frac{\sigma^2}{a^2}\]</span></p>
+</div>
+<div id="demostración-desigualdad-de-chebychev" class="section level2">
+<h2><span class="header-section-number">12.5</span> Demostración desigualdad de Chebychev</h2>
+<div class="dem">
+<p><strong>Demostración</strong></p>
+<p>Apliquemos la consecuencia de la desigualdad de Markov a la v.a.
+no negativa</p>
+<p><span class="math display">\[Y^2=(X-\mu)^2\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+P(Y^2\geq a^2) \leq 
+\frac{E(Y^2)}{a^2}=\frac{E((X-\mu)^2)}{a^2}
+= \frac{Var(X)}{a^2}=\frac{\sigma^2}{a^2}
+.
+\]</span></p>
+<p>Por otra parte</p>
+<p><span class="math display">\[
+P(Y^2\geq a^2)=P(|Y|\geq a)= P(|X-\mu|\geq a).
+\]</span></p>
+<p>hecho que, junto con la desigualdad anterior,
+demuestra el resultado.</p>
+</div>
+</div>
+<div id="uso-de-la-desigualdad-de-chebychev" class="section level2">
+<h2><span class="header-section-number">12.6</span> Uso de la desigualdad de Chebychev</h2>
+<div class="observ">
+<strong>Utilidad básica de la desigualdad de Chebychev</strong>
+</div>
+<p>Supongamos que <span class="math inline">\(X\)</span> es una v.a. con <span class="math inline">\(Var(X)=0\)</span>
+entonces.</p>
+<p>Aplicando la desigualdad anterior</p>
+<p><span class="math display">\[P(|X-E(X)|\geq a )=0\mbox{ para todo }a&gt;0\]</span>
+lo que implica que</p>
+<p><span class="math display">\[P(X=E(X))=1.\]</span></p>
+<p>Por lo que probabilidad de que <span class="math inline">\(X\)</span> sea
+constantemente <span class="math inline">\(E(X)\)</span> es 1.</p>
+<p>Lo que nos confirma la utilidad de la varianza es una
+medida de la dispersión de los datos.</p>
+</div>
+<div id="ejemplo-23" class="section level2">
+<h2><span class="header-section-number">12.7</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Se sabe que el tiempo de respuesta medio y la desviación típica de un sistema multiusuario son 15 y 3 u.t.respectivamente. Entonces:</p>
+<p><span class="math display">\[
+P(|X-15|\geq 5)\leq \frac9{25}=0.36.
+\]</span></p>
+</div>
+<p>Si substituimos <span class="math inline">\(a\)</span> por <span class="math inline">\(a\cdot \sigma\)</span> en la
+desigualdad de Chebychev, nos queda:</p>
+<p><span class="math display">\[
+P(|X-\mu|\geq a \sigma)\leq
+\frac{\sigma^2}{(a\sigma)^2}=\frac1{a^2}.
+\]</span></p>
+<p>Que es otra manera de expresar la desigualdad de Chebychev.</p>
+</div>
+<div id="más-formas-de-la-desgualdad-de-chebychev" class="section level2">
+<h2><span class="header-section-number">12.8</span> Más formas de la desgualdad de Chebychev</h2>
+<p>La desigualdad de Chebychev también se puede escribir de al menos dos maneras más:</p>
+<p><span class="math display">\[
+P(\mu-a\leq X\leq \mu+a)\geq 1-\frac{\sigma^2}{a^2}
+\]</span></p>
+<p>y tomado como <span class="math inline">\(a=k\cdot \sigma\)</span></p>
+<p><span class="math display">\[
+P(\mu-k\cdot \sigma\leq X\leq \mu+ k \cdot \sigma)\geq 1-\frac1{k^2}
+\]</span></p>
+</div>
+<div id="la-varianza-como-medida-de-dispersión" class="section level2">
+<h2><span class="header-section-number">12.9</span> La varianza como medida de dispersión</h2>
+<p>Tomando la segunda expresión que hemos visto para la desigualdad de
+Chebychev para distintos valores de <span class="math inline">\(k&gt;0\)</span> tenemos la siguiente tabla.</p>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th>k</th>
+<th><span class="math inline">\(P(|X-E(X)|\geq k \cdot \sigma)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">\(\leq 1\)</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">\(\leq 0.25\)</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><span class="math inline">\(\leq 0.111\)</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><span class="math inline">\(\leq 0.0025\)</span></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<div id="interpretación-de-la-desigualdad" class="section level2">
+<h2><span class="header-section-number">12.10</span> Interpretación de la desigualdad</h2>
+<ul>
+<li><p>Por ejemplo para <span class="math inline">\(k=2\)</span> esta desigualdad se puede interpretar como que dada una v.a. <span class="math inline">\(X\)</span> con cualquier distribución que tenga <span class="math inline">\(E(X)\)</span> y <span class="math inline">\(Var(X)\)</span> finitos <em>la probabilidad de que un valor se aleje de la media <span class="math inline">\(\mu\)</span> más de <span class="math inline">\(a=2\)</span> desviaciones típicas es menor o igual que <span class="math inline">\(0.25\)</span></em>.</p></li>
+<li><p>Es decir sólo el 25% de los valores estarán alejados de la media
+más de <span class="math inline">\(2\sigma\)</span></p></li>
+</ul>
+<p>¡<em>Sea cual sea la distribución de la v.a.</em>!</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="transformaciones-de-variables-aleatorias.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tema-4-variables-aleatorias-complementos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +558,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_2_VA.Rmd",
 "text": "Edit"
 },
 "history": {

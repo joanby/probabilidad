@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Chapter 10 Esperanza y varianza para variables aleatorias continuas | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Chapter 10 Esperanza y varianza para variables aleatorias continuas | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Chapter 10 Esperanza y varianza para variables aleatorias continuas | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="variables-aleatorias-continuas.html"/>
+<link rel="next" href="transformaciones-de-variables-aleatorias.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -365,38 +365,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Esperanza y varianza para variables aleatorias continuas</h1>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas-1" class="section level2">
+<h2><span class="header-section-number">10.1</span> Esperanza y varianza para variables aleatorias continuas</h2>
+<p>Los mismos comentarios y definiciones que se dieron en la sección correspondiente del tema
+de estadística descriptiva son aplicables aquí.</p>
+<p>Así que sólo daremos las definiciones, la forma de cálculo y algunos ejemplos.</p>
+<p>En lo que sigue, salvo que diagamos lo contrario, <span class="math inline">\(X\)</span> es una v.a. continua con función de densidad <span class="math inline">\(f_{X}(x)\)</span></p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
-<ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
-</ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">run_shiny =<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(shiny)</a></code></pre></div>
-
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas-2" class="section level2">
+<h2><span class="header-section-number">10.2</span> Esperanza y varianza para variables aleatorias continuas</h2>
+<p><l class="definition"> Esperanza v.a. continuas </l></p>
+<ul>
+<li>Su esperanza es:
+<span class="math display">\[E(X)=\displaystyle\int\limits_{-\infty}^{+\infty} xf_{X}(x)dx.\]</span></li>
+<li>Si <span class="math inline">\(g(x)\)</span> es una función de la variable <span class="math inline">\(X\)</span> entonces:
+<span class="math display">\[E(g(X))=\displaystyle\int\limits_{-\infty}^{+\infty} g(x)\cdot f_{X}(x)dx.\]</span></li>
+</ul>
+</div>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas-3" class="section level2">
+<h2><span class="header-section-number">10.3</span> Esperanza y varianza para variables aleatorias continuas</h2>
+<p><l class="definition"> Varianza v.a. continuas </l></p>
+<ul>
+<li>Su varianza es:
+<span class="math display">\[
+Var(X)=\sigma_{X}^2=E((X-\mu_{X})^2)=
+\displaystyle\int\limits_{-\infty}^{+\infty} (x-\mu_{X})^2 f_{X}(x)dx.
+\]</span></li>
+<li>Su desviación típica es: <span class="math display">\[\sigma_{X}=+\sqrt{\sigma_{X}^2}.\]</span></li>
+</ul>
+</div>
+<div id="propiedades-19" class="section level2">
+<h2><span class="header-section-number">10.4</span> Propiedades</h2>
+<p><l class="prop"> Propiedades </l></p>
+<ul>
+<li><span class="math inline">\(\sigma_{X}^2\geq 0\)</span></li>
+<li><span class="math inline">\(Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0\)</span></li>
+<li><span class="math inline">\(Var(x)=E(X^2)-\mu_{X}^2=\int\limits_{-\infty}^{+\infty}x^2 f_{X}(x)dx - \mu_{X}^2.\)</span></li>
+<li>El mínimo de <span class="math inline">\(E((X-C)^2)\)</span> se alcanza cuando <span class="math inline">\(C=E(X)\)</span> y es <span class="math inline">\(Var(X)\)</span>.</li>
+</ul>
+</div>
+<div id="ejemplo-21" class="section level2">
+<h2><span class="header-section-number">10.5</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo: Dardo</strong></p>
+<p>Calcular <span class="math inline">\(\mu_{X}\)</span> y <span class="math inline">\(\sigma_{X}^2\)</span> en el dardo.</p>
+</div>
+<div class="example-sol">
+<p>Resultado
+<span class="math display">\[\mu_{X}=\frac12,\]</span>
+<span class="math display">\[E(X^2)=\frac13,\]</span>
+<span class="math display">\[Var(X)=\frac1{12}.\]</span></p>
+</div>
+</div>
+<div id="esperanza-de-trasformaciones-lineales-de-v.a.-continuas" class="section level2">
+<h2><span class="header-section-number">10.6</span> Esperanza de trasformaciones lineales de v.a. continuas</h2>
+<p><l class="prop"> Proposición</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua con <span class="math inline">\(E(X)=\mu_{X}\)</span> y <span class="math inline">\(Var(X)=\sigma_{X}^2\)</span> sea <span class="math inline">\(Y=a+b X\)</span>, donde
+<span class="math inline">\(a,b\in\mathbb{R}\)</span>, es una nueva v.a. continua obtenida mediante una transformación lineal de <span class="math inline">\(X\)</span>.
+Se verifican las mismas propiedades que en el caso discreto:</p>
+<ul>
+<li><span class="math inline">\(E(Y)=E(a+b X)=a+b E(X)\)</span></li>
+<li><span class="math inline">\(Var(Y)=Var(a+b X)=b^2 Var(X)\)</span></li>
+<li><span class="math inline">\(\sigma_{Y}=|b| \sigma_{X}\)</span></li>
+<li><span class="math inline">\(Z=\frac{X-\mu_{X}}{\sigma_{X}}\)</span> es una transformación
+lineal de <span class="math inline">\(X\)</span> de forma que
+<span class="math display">\[E(Z)=0 \mbox{ y } Var(Z)=1\]</span></li>
+</ul>
+</div>
+<div id="ejemplo-22" class="section level2">
+<h2><span class="header-section-number">10.7</span> Ejemplo</h2>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En una empresa de venta de vinos por internet, sea
+<span class="math inline">\(X=\)</span> número de litros de vino del país vendidos en un año.
+Supongamos que sabemos que <span class="math inline">\(E(X)=10000\)</span> y que <span class="math inline">\(Var(X)=100\)</span>
+Supongamos que los gastos fijos de distribución son
+50.000 € y el beneficio por litro es de 10 € por botella.
+Definimos <span class="math inline">\(T=10 X-50000\)</span> que será el beneficio después de gastos.</p>
+</div>
+<div class="example-sol">
+<p>Entonces la esperanza del beneficio es
+<span class="math display">\[E(T)=10 E(X)-50000 = 50000\]</span>
+y
+<span class="math display">\[Var(T)=10^2 Var(X)= 10000\]</span></p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="tema-0-pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="variables-aleatorias-continuas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="transformaciones-de-variables-aleatorias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -426,7 +489,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/Tema_2_VA.Rmd",
 "text": "Edit"
 },
 "history": {
