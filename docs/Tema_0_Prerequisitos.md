@@ -3,7 +3,8 @@ title: "Tema 0 - Pre requisitos: Teoría de conjuntos y combinatoria"
 author: "Ricardo Alberich , Juan Gabriel Gomila y  Arnau Mir"
 date: 
 output: 
-  ioslides_presentation: 
+  ioslides_presentation:
+      mathjax: "http://example.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
     css: Mery_style.css
     keep_md: yes
     logo: Images/matriz_mov.gif
