@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Pre requisitos: Teoría de conjuntos y combinatoria | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Pre requisitos: Teoría de conjuntos y combinatoria | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Pre requisitos: Teoría de conjuntos y combinatoria | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="probabilidad.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -333,35 +333,389 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
-</div>
-<div id="prerequisites" class="section level1 unnumbered">
-<h1>Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
+<div id="pre-requisitos-teoría-de-conjuntos-y-combinatoria" class="section level1 unnumbered">
+<h1>Pre requisitos: Teoría de conjuntos y combinatoria</h1>
+<div id="antes-de-empezar" class="section level2">
+<h2><span class="header-section-number">0.1</span> Antes de empezar</h2>
+<div id="consideraciones" class="section level3">
+<h3><span class="header-section-number">0.1.1</span> Consideraciones</h3>
+<p>Para aprender cálculo de probabilidades son necesarios conocimientos de:</p>
 <ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
+<li>Cálculo: Derivadas, integrales, límites, sumas de series…</li>
+<li>Geometría básica y álgebra lineal : rectas, hiperplanos, volúmenes… Matrices, valores propios…</li>
+<li>Teoría de conjuntos y combinatoria…..</li>
 </ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
+</div>
+<div id="consideraciones-1" class="section level3">
+<h3><span class="header-section-number">0.1.2</span> Consideraciones</h3>
+<p>Por experiencia sabemos que la mayoría de estudiantes tienen más conocimientos de cálculo, geometría y matrices.</p>
+<p>Pero muchos tienen una falta de conocimientos en teoría básica de conjuntos y combinatoria (matemática discreta).</p>
+</div>
+<div id="teoría-de-conjuntos" class="section level3">
+<h3><span class="header-section-number">0.1.3</span> Teoría de conjuntos</h3>
+<p><l class="definition"> Definición de conjunto </l></p>
+<p>La definición de conjunto es una <a href="https://es.wikipedia.org/wiki/Concepto_primitivo">idea o noción primitiva</a>. Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes… cualquier cosa, jugadores de fútbol, palabras, colores ….</p>
+<p>La teoría de conjuntos básicas es simple y natural y es la que necesitamos para este curso.</p>
+<p>La teoría de conjuntos matemática es más complejas y presenta varias paradojas como la <a href="https://es.wikipedia.org/wiki/Paradoja_de_Russell">paradoja de Russell</a>.</p>
+</div>
+<div id="teoría-de-conjuntos-1" class="section level3">
+<h3><span class="header-section-number">0.1.4</span> Teoría de conjuntos</h3>
+<p>La idea o noción práctica de conjunto es la de una colección de objetos de un cierto tipo.</p>
+<p>Estas colecciones o conjuntos se pueden definir por:</p>
+<ul>
+<li>Compresión: reuniendo los objetos que cumplen una propiedad <span class="math inline">\(p\)</span></li>
+<li>Extensión: dando una lista exhaustiva de los miembros del conjunto</li>
+</ul>
+</div>
+<div id="conjuntos-básicos" class="section level3">
+<h3><span class="header-section-number">0.1.5</span> Conjuntos básicos</h3>
+<p>Los conjuntos suelen tener un conjunto madre como por ejemplo</p>
+<ul>
+<li><span class="math inline">\(\mathbb{N}=\{0,1,2,\ldots\}\)</span></li>
+<li><span class="math inline">\(\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}\)</span></li>
+<li><span class="math inline">\(\mathbb{Q}=\left\{\frac{p}{q}\quad\Big|\quad p,q\in \mathbb{Z} \mbox{ y } q \not= 0.\right\}\)</span></li>
+<li><span class="math inline">\(\mathbb{R}=\{\mbox{Todos los puntos de una recta.}\}\)</span></li>
+</ul>
+</div>
+<div id="conjuntos-básicos-1" class="section level3">
+<h3><span class="header-section-number">0.1.6</span> Conjuntos básicos</h3>
+<ul>
+<li><span class="math inline">\(\mathbb{C}= \left\{a+b\cdot i\quad \big|\quad a,b\in \mathbb{R}\right\}\mbox{Los números complejos}\quad a+b\cdot i.\)</span></li>
+<li>Alfabeto = <span class="math inline">\(\{a,b,c,\ldots, A,B,C,\ldots\}.\)</span></li>
+<li>Palabras = <span class="math inline">\(\{paz, guerra, amor, probabilidad,\ldots\}.\)</span></li>
+</ul>
+<p>Recordemos que <span class="math inline">\(i\)</span> es la unidad imaginaria que cumple que <span class="math inline">\(\sqrt{i}=-1\)</span>.</p>
+</div>
+<div id="características-y-propiedades-básicas-de-los-conjuntos" class="section level3">
+<h3><span class="header-section-number">0.1.7</span> Características y propiedades básicas de los conjuntos</h3>
+<ul>
+<li>Si a cada objeto <span class="math inline">\(x\)</span> de <span class="math inline">\(\Omega\)</span> le llamaremos <strong>elemento del conjunto</strong> <span class="math inline">\(\Omega\)</span> y diremos que <span class="math inline">\(x\)</span> pertenece a <span class="math inline">\(\Omega\)</span>. Lo denotaremos por <span class="math inline">\(x\in \Omega\)</span>.</li>
+<li>Un <strong>conjunto de un elemento</strong>, por ejemplo <span class="math inline">\(\{1\}\)</span> recibe el nombre de <strong>conjunto elemental</strong> (o <strong>singleton</strong> del inglés).</li>
+<li>Sea <span class="math inline">\(A\)</span> otro conjunto diremos que <span class="math inline">\(A\)</span> <strong>es igual a</strong> <span class="math inline">\(B\)</span> si todos los elementos <span class="math inline">\(A\)</span> están en <span class="math inline">\(B\)</span> y todos los elementos de <span class="math inline">\(B\)</span> están en <span class="math inline">\(A\)</span>. Por ejemplo <span class="math inline">\(A=\{1,2,3\}\)</span> es igual a <span class="math inline">\(B=\{3,1,2\}\)</span>.</li>
+</ul>
+</div>
+<div id="características-y-propiedades-básicas-de-los-conjuntos-1" class="section level3">
+<h3><span class="header-section-number">0.1.8</span> Características y propiedades básicas de los conjuntos</h3>
+<ul>
+<li>Si <span class="math inline">\(A\)</span> es otro conjunto tal que si <span class="math inline">\(x\in A\)</span> entonces <span class="math inline">\(x\in B\)</span> diremos que <span class="math inline">\(A\)</span> es un subconjunto de o que está contenido en <span class="math inline">\(B\)</span>. Lo denotaremos por <span class="math inline">\(A\subseteq B.\)</span></li>
+<li>El conjunto que no tiene elementos se denomina conjunto vacío y se denota por el símbolo <span class="math inline">\(\emptyset\)</span>.</li>
+<li>Dado <span class="math inline">\(A\)</span> un conjunto cualquiera obviamente <span class="math inline">\(\emptyset\subseteq A.\)</span></li>
+</ul>
+</div>
+<div id="características-y-propiedades-básicas-de-los-conjuntos-2" class="section level3">
+<h3><span class="header-section-number">0.1.9</span> Características y propiedades básicas de los conjuntos</h3>
+<p>Tomemos como conjunto base <span class="math inline">\(\Omega=\{1,2,3\}\)</span></p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span> es un conjunto de cardinal 3, se denota por <span class="math inline">\(\#(\Omega)=3\)</span> o por <span class="math inline">\(|\Omega|=3\)</span></li>
+<li>El conjunto <span class="math inline">\(\Omega\)</span> tiene <span class="math inline">\(2^3=8\)</span> subconjuntos.</li>
+<li>el vacio <span class="math inline">\(\emptyset\)</span> y los elementales <span class="math inline">\(\{1\},\{3\},\{3\}\)</span></li>
+<li>los subconjuntos de dos elementos: <span class="math inline">\(\{1,2\},\{1,3\},\{2,3\}\)</span></li>
+<li>El conjunto total de tres elementos <span class="math inline">\(\Omega=\{1,2,3\}.\)</span></li>
+</ul>
+</div>
+<div id="características-y-propiedades-básicas-de-los-conjuntos-3" class="section level3">
+<h3><span class="header-section-number">0.1.10</span> Características y propiedades básicas de los conjuntos</h3>
+<p>Dado un conjunto <span class="math inline">\(\Omega\)</span> podemos construir el <strong>conjunto de todas sus partes</strong> (todos sus subconjuntos) al que denotamos por <span class="math inline">\(\mathcal{P}(\Omega)\)</span>. También se denomina de forma directa partes de <span class="math inline">\(\Omega\)</span>.</p>
+<p><l class="prop"> Cardinal de las partes de un conjunto </l></p>
+<p>El cardinal de la partes de un conjunto es <span class="math inline">\(\#(\mathcal{P}(\Omega))=2^{\#(\Omega)}.\)</span></p>
+</div>
+<div id="características-y-propiedades-básicas-de-los-conjuntos-4" class="section level3">
+<h3><span class="header-section-number">0.1.11</span> Características y propiedades básicas de los conjuntos</h3>
+<p>Por ejemplo <span class="math inline">\(\#\left(\mathcal{P}(\{1,2,3\})\right)=2^{\#(\{1,2,3\})}=2^3=8.\)</span></p>
+<p>Efectivamente</p>
+<p><span class="math display">\[\mathcal{P}(\{1,2,3\})=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}.\]</span></p>
+</div>
+<div id="características-y-propiedades-básicas-de-los-conjuntos-5" class="section level3">
+<h3><span class="header-section-number">0.1.12</span> Características y propiedades básicas de los conjuntos</h3>
+<p>Dado un subconjunto <span class="math inline">\(A\)</span> de <span class="math inline">\(\Omega\)</span> podemos construir la función característica de <span class="math inline">\(A\)</span>
+<span class="math display">\[\chi_A:\Omega \to \{0,1\}\]</span></p>
+<p>dado un <span class="math inline">\(\omega\in \Omega\)</span></p>
+<p><span class="math display">\[
+\chi_A(\omega)=
+\left\{
+\begin{array}{ll}
+1 &amp;  \mbox{si }\omega \in A\\
+0 &amp;  \mbox{si }\omega \not\in A
+\end{array}
+\right.
+\]</span></p>
+</div>
+<div id="operaciones-conjuntos-intersección." class="section level3">
+<h3><span class="header-section-number">0.1.13</span> Operaciones conjuntos: Intersección.</h3>
+<p>Sea <span class="math inline">\(\Omega\)</span> un conjunto y <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos subconjuntos de <span class="math inline">\(\Omega\)</span>.</p>
+<p>El conjunto <strong>intersección</strong> de <span class="math inline">\(A\)</span> <span class="math inline">\(B\)</span> es el formado por todos los elementos que perteneces a <span class="math inline">\(A\)</span>  <span class="math inline">\(B\)</span>, se denota por <span class="math inline">\(A\cap B\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A\cap B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\in B\right\}.
+\]</span></p>
+</div>
+<div id="operaciones-conjuntos-unión." class="section level3">
+<h3><span class="header-section-number">0.1.14</span> Operaciones conjuntos: Unión.</h3>
+<p>El conjunto <strong>unión</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es el formado por todos los elementos que perteneces a <span class="math inline">\(A\)</span>  pertenecen a <span class="math inline">\(B\)</span>, se denota por <span class="math inline">\(A\cup B\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A\cup B=\left\{x\in\Omega \big| x\in A \mbox{ o } x\in B\right\}.
+\]</span></p>
+</div>
+<div id="operaciones-conjuntos-diferencia." class="section level3">
+<h3><span class="header-section-number">0.1.15</span> Operaciones conjuntos: Diferencia.</h3>
+<p>El conjunto <strong>diferencia</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es el formado por todos los elementos que perteneces a <span class="math inline">\(A\)</span>  pertenecen a <span class="math inline">\(B\)</span>, se denota por <span class="math inline">\(A-B=A-(A\cap B)\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A- B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\notin B\right\}.
+\]</span></p>
+</div>
+<div id="operaciones-conjuntos-complementario" class="section level3">
+<h3><span class="header-section-number">0.1.16</span> Operaciones conjuntos: Complementario</h3>
+<p>El <strong>complementario</strong> de un subconjunto <span class="math inline">\(A\)</span> de <span class="math inline">\(\Omega\)</span> es <span class="math inline">\(\Omega-A\)</span> Y se denota por <span class="math inline">\(A^c\)</span> o <span class="math inline">\(\overline{A}\)</span>.</p>
+<p>Más formalmente</p>
+<p><span class="math display">\[
+A^c=\left\{x\in\Omega \big| x\not\in A\right\}.
+\]</span></p>
+</div>
+<div id="más-propiedades-y-definiciones" class="section level3">
+<h3><span class="header-section-number">0.1.17</span> Más propiedades y definiciones</h3>
+<p>Sea <span class="math inline">\(\Omega\)</span> un conjunto y <span class="math inline">\(A\)</span>,<span class="math inline">\(B\)</span>,<span class="math inline">\(C\)</span> tres subconjuntos de <span class="math inline">\(\Omega\)</span></p>
+<ul>
+<li>Se dice que dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> <strong>son disjuntos</strong> si <span class="math inline">\(A\cap B=\emptyset.\)</span></li>
+<li><span class="math inline">\(\Omega^c=\emptyset\)</span>.</li>
+<li><span class="math inline">\(\emptyset^c=\Omega\)</span>.</li>
+<li><span class="math inline">\(A\cup B=B \cup A\)</span> , <span class="math inline">\(A\cap B=B\cap A\)</span> conmutativas</li>
+<li><span class="math inline">\((A\cup B) \cup C = A \cup( B \cup C)\)</span> , <span class="math inline">\((A\cap B) \cap C = A \cap( B \cap C)\)</span> asociativas</li>
+<li><span class="math inline">\(A\cup (B\cap C)=(A\cup B) \cap (A\cup C)\)</span> , <span class="math inline">\(A\cap (B\cup C)=(A\cap B) \cup (A\cap C)\)</span> distributivas</li>
+<li><span class="math inline">\(\left(A^c\right)^c=A\)</span> doble complementario</li>
+<li><span class="math inline">\(\left(A\cup B\right)^c=A^c \cap B^c\)</span>, <span class="math inline">\(\left(A\cap B\right)^c=A^c \cup B^c\)</span> <a href="https://es.wikipedia.org/wiki/Leyes_de_De_Morgan">leyes de De Morgan</a></li>
+</ul>
+</div>
+<div id="con-r-ejemplos." class="section level3">
+<h3><span class="header-section-number">0.1.18</span> Con R, ejemplos.</h3>
+<p>Con R los conjuntos de pueden definir como vectores</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">Omega=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">A=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">B=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">C=<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">Omega</a></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div id="con-r-ejemplos.-1" class="section level3">
+<h3><span class="header-section-number">0.1.19</span> Con R, ejemplos.</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">A</a></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">B</a></code></pre></div>
+<pre><code>## [1] 1 4 5</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">C</a></code></pre></div>
+<pre><code>## [1] 4 6 7 8</code></pre>
+</div>
+<div id="con-r-ejemplos.-2" class="section level3">
+<h3><span class="header-section-number">0.1.20</span> Con R, ejemplos.</h3>
+<p><span class="math inline">\(A\cap B\)</span></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">A</a></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">B</a></code></pre></div>
+<pre><code>## [1] 1 4 5</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">intersect</span>(A,B)</a></code></pre></div>
+<pre><code>## [1] 1 4 5</code></pre>
+</div>
+<div id="con-r-ejemplos.-3" class="section level3">
+<h3><span class="header-section-number">0.1.21</span> Con R, ejemplos.</h3>
+<p><span class="math inline">\(A\cup B\)</span></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">A</a></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">B</a></code></pre></div>
+<pre><code>## [1] 1 4 5</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">union</span>(A,B)</a></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+</div>
+<div id="con-r-ejemplos.-4" class="section level3">
+<h3><span class="header-section-number">0.1.22</span> Con R, ejemplos.</h3>
+<p><span class="math inline">\(B-C\)</span></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">B</a></code></pre></div>
+<pre><code>## [1] 1 4 5</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">C</a></code></pre></div>
+<pre><code>## [1] 4 6 7 8</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">setdiff</span>(B,C)</a></code></pre></div>
+<pre><code>## [1] 1 5</code></pre>
+</div>
+<div id="con-r-ejemplos.-5" class="section level3">
+<h3><span class="header-section-number">0.1.23</span> Con R, ejemplos.</h3>
+<p><span class="math inline">\(A^c=\Omega-A\)</span></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">Omega</a></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">A</a></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">setdiff</span>(Omega,A)</a></code></pre></div>
+<pre><code>## [1]  6  7  8  9 10</code></pre>
+</div>
+<div id="con-python" class="section level3">
+<h3><span class="header-section-number">0.1.24</span> Con python</h3>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">Omega<span class="op">=</span><span class="bu">set</span>([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>])</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">A<span class="op">=</span><span class="bu">set</span>([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])</a>
+<a class="sourceLine" id="cb33-3" data-line-number="3">B<span class="op">=</span><span class="bu">set</span>([<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>])</a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">C<span class="op">=</span><span class="bu">set</span>([<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>])</a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">Omega</a></code></pre></div>
+<pre><code>## set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</code></pre>
+</div>
+<div id="con-python-1" class="section level3">
+<h3><span class="header-section-number">0.1.25</span> Con python</h3>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">A</a></code></pre></div>
+<pre><code>## set([1, 2, 3, 4, 5])</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">B</a></code></pre></div>
+<pre><code>## set([1, 4, 5])</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1">C</a></code></pre></div>
+<pre><code>## set([8, 4, 6, 7])</code></pre>
+</div>
+<div id="con-python-2" class="section level3">
+<h3><span class="header-section-number">0.1.26</span> Con python</h3>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1">A <span class="op">&amp;</span> B   <span class="co">## intersección (&amp;: and/y)</span></a></code></pre></div>
+<pre><code>## set([1, 4, 5])</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1">A <span class="op">|</span> B   <span class="co">## unión (|: or/o)</span></a></code></pre></div>
+<pre><code>## set([1, 2, 3, 4, 5])</code></pre>
+</div>
+<div id="con-python-3" class="section level3">
+<h3><span class="header-section-number">0.1.27</span> Con python</h3>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1">A <span class="op">-</span> C   <span class="co">## diferencia </span></a></code></pre></div>
+<pre><code>## set([1, 2, 3, 5])</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">Omega<span class="op">-</span>C <span class="co">## complementario.</span></a></code></pre></div>
+<pre><code>## set([1, 2, 3, 5, 9, 10])</code></pre>
+</div>
+</div>
+<div id="combinatoria" class="section level2">
+<h2><span class="header-section-number">0.2</span> Combinatoria</h2>
+<div id="combinatoria.-introducción." class="section level3">
+<h3><span class="header-section-number">0.2.1</span> Combinatoria. Introducción.</h3>
+<p>La combinatoria es una rama de la matemática discreta que entre otras cosas cuenta distintas configuraciones de objetos de un conjunto.</p>
+<p>Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipos de 5 jugadores distintos podemos formar?</p>
+</div>
+<div id="combinatoria.-número-binomial." class="section level3">
+<h3><span class="header-section-number">0.2.2</span> Combinatoria. Número binomial.</h3>
+<p><strong>Número combinatorio o número binomial</strong></p>
+<p>Nos da el número de subconjuntos de tamaño <span class="math inline">\(k\)</span> de un conjunto de tamaño <span class="math inline">\(n\)</span>. Este número es</p>
+<p><span class="math display">\[
+{n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
+\]</span></p>
+<p>Recordemos que
+<span class="math display">\[
+n!=1\cdot 2\cdot 3\cdots n.
+\]</span></p>
+</div>
+<div id="combinatoria.-número-binomial.-1" class="section level3">
+<h3><span class="header-section-number">0.2.3</span> Combinatoria. Número binomial.</h3>
+<p>En nuestro caso con 7 jugadores <span class="math inline">\(n=7\)</span> el número de equipos distintos de <span class="math inline">\(k=5\)</span> es</p>
+<p><span class="math display">\[
+{7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!}=
+\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
+\]</span></p>
+<p>Puedo formar 21 equipos distintos.</p>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>combinations(n, r, v, set, repeats.allowed)</code> para calcular todas las combinaciones anteriores.</p>
+</div>
+</div>
+<div id="combinatoria.-variaciones." class="section level3">
+<h3><span class="header-section-number">0.2.4</span> Combinatoria. Variaciones.</h3>
+<p><strong>Variaciones</strong></p>
+<p>Con los número <span class="math inline">\(\{1,2,3\}\)</span> ¿cuántos números de dos cifras distintas podemos formar sin repetir ninguna cifra?</p>
+<p>La podemos escribir</p>
+<p><span class="math display">\[12,13,21,23,31,32\]</span></p>
+<p>Luego hay seis casos</p>
+</div>
+<div id="combinatoria.-variaciones-sin-repetición." class="section level3">
+<h3><span class="header-section-number">0.2.5</span> Combinatoria. Variaciones (sin repetición).</h3>
+<p>Denotaremos las variaciones (sin repetición) de <span class="math inline">\(k\)</span> elementos (de orden <span class="math inline">\(k\)</span>) de un conjunto de <span class="math inline">\(n\)</span> elementos por <span class="math inline">\(V^n_k\)</span> su valor es</p>
+<p><span class="math display">\[
+V^n_k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
+\]</span></p>
+</div>
+<div id="combinatoria.-variaciones.-1" class="section level3">
+<h3><span class="header-section-number">0.2.6</span> Combinatoria. Variaciones.</h3>
+<p>En nuestro ejemplo con <span class="math inline">\(n=3\)</span> dígitos podemos escribir las siguientes variaciones de orden <span class="math inline">\(k=2\)</span></p>
+<p><span class="math display">\[
+V_{k=2}^{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
+\]</span></p>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Carga el paquete <code>gtools</code> de R y investiga la función <code>permutations(n, r, v, set, repeats.allowed)</code> para calcular todas las variaciones anteriores.</p>
+</div>
+</div>
+<div id="combinatoria.-variaciones-con-repetición." class="section level3">
+<h3><span class="header-section-number">0.2.7</span> Combinatoria. Variaciones con repetición.</h3>
+<p><strong>Variaciones con repetición</strong></p>
+<p>¿Y repitiendo algún dígito?</p>
+<p><span class="math display">\[VR^n_k=n^k\]</span></p>
+<p>Efectivamente en nuestro caso</p>
+<p><span class="math display">\[11,12,13,21,22,23,31,32,33\]</span></p>
+<p><span class="math display">\[
+VR_{k=2}^{n=3}=n^k.
+\]</span></p>
+</div>
+<div id="permutaciones" class="section level3">
+<h3><span class="header-section-number">0.2.8</span> Permutaciones</h3>
+<p>Las permutaciones de un conjunto de cardinal <span class="math inline">\(n\)</span> son todas las variaciones de orden máximo <span class="math inline">\(n\)</span>.
+Las denotamos y valen:</p>
+<p><span class="math display">\[
+P_n=VR_n^n=n!
+\]</span></p>
+</div>
+<div id="permutaciones-1" class="section level3">
+<h3><span class="header-section-number">0.2.9</span> Permutaciones</h3>
+<p>Por ejemplo todos los números que se pueden escribir ordenando todos los dígitos <span class="math inline">\(\{1,2,3\}\)</span> sin repetir ninguno</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">library</span>(combinat)</a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="cf">for</span>(permutacion <span class="cf">in</span> <span class="kw">permn</span>(<span class="dv">3</span>)) <span class="kw">print</span>(permutacion)</a></code></pre></div>
+<pre><code>## [1] 1 2 3
+## [1] 1 3 2
+## [1] 3 1 2
+## [1] 3 2 1
+## [1] 2 3 1
+## [1] 2 1 3</code></pre>
+<p>Efectivamente
+<span class="math display">\[
+P_3=3!=1\cdot  2\cdot 3.
+\]</span></p>
+</div>
+<div id="permutaciones-2" class="section level3">
+<h3><span class="header-section-number">0.2.10</span> Permutaciones</h3>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Carga el paquete <code>combinat</code> de R e investiga la funcion <code>permn</code> para calcular todas las permutaciones anteriores.</p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Investiga el paquete <code>itertools</code> y la función <code>comb</code> de <code>scipy.misc</code> de Python e investiga sus funciones para todas las formas de contar que hemos visto en este tema.</p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función <code>gamma(x+1)</code> da el mismo valor que la función <code>factorial(x)</code> en <code>R</code> para todo <span class="math inline">\(x = \{1,2,3\cdots,10\}\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="para-acabar" class="section level2">
+<h2><span class="header-section-number">0.3</span> Para acabar</h2>
+<div id="otros-asuntos-básicos" class="section level3">
+<h3><span class="header-section-number">0.3.1</span> Otros asuntos básicos</h3>
+<p>Evidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como:</p>
+<ul>
+<li>Números multinomiales.</li>
+<li>Combinaciones con repetición</li>
+<li>Propiedades de los números combinatorios.</li>
+<li>Binomio de Newton.</li>
+<li>Multinomio de Newton.</li>
+</ul>
+<p>Si nos son necesarias las volveremos a repetir a lo largo del curso o bien daremos enlaces para que las podáis estudiar en paralelo.</p>
+<div class="exercise">
+<p><strong>Nota</strong></p>
+<p>Puedes repasar todos esos conceptos con ejercicios y más en el <a href="https://www.udemy.com/course/estadistica-descriptiva?couponCode=JB_PROMO_OFF">Curso de estadística descriptiva con <code>R</code> y <code>Python</code></a> con M. Santos y J.G. Gomila.</p>
+</div>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probabilidad.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -391,7 +745,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/0.Rmd",
 "text": "Edit"
 },
 "history": {
