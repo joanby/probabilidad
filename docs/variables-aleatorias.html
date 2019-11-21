@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Tema 2 Variables Aleatorias | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Tema 2 Variables Aleatorias | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Tema 2 Variables Aleatorias | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="probabilidad.html"/>
+<link rel="next" href="variables-aleatorias-complementos.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -584,35 +584,1291 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="variables-aleatorias" class="section level1">
+<h1><span class="header-section-number">Tema 2</span> Variables Aleatorias</h1>
+<div id="introducción-a-las-variables-aleatorias" class="section level2">
+<h2><span class="header-section-number">2.1</span> Introducción a las variables aleatorias</h2>
+<ul>
+<li>Hasta ahora nuestros sucesos han sido de varios tipos: <span class="math inline">\(\{C,+\}\)</span> en
+la moneda, nombres de periódicos, ángulos en una ruleta, número de
+veces que sale cara en el lanzamiento de una moneda etc.</li>
+<li>Necesitamos estandarizar de alguna manera todos estos sucesos. Una
+solución es asignar a cada suceso un cierto conjunto de
+números reales, es decir, convertir todos los sucesos en
+<em>sucesos de números reales</em> para trabajar con ellos de forma
+unificada.</li>
+<li>Para conseguirlo utilizaremos unas funciones que
+transformen los elementos del espacio muestral en números; esta funciones son las
+variables aleatorias.</li>
+</ul>
+<div id="definición-de-variable-aleatoria" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Definición de variable aleatoria</h3>
+<p>Comenzaremos dando una definición poco rigurosa, pero suficiente, de variable aleatoria.</p>
+<p><l class="definition"> <em>Variable Aleatoria (definición práctica)</em> </l></p>
+<p>Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos determinados por el resultado de un experimento aleatorio</p>
+<p><l class="observ"><strong>Notación</strong>:</l></p>
+<ul>
+<li>Normalmente representaremos las v.a. por letras mayúsculas <span class="math inline">\(X,Y,Z\)</span></li>
+<li>Los valores que “<em>toman</em>” las v.a. los representaremos por letras minúsculas (las mismas en principio) <span class="math inline">\(x,y,z\ldots\)</span></li>
+</ul>
 </div>
-<div id="prerequisites" class="section level1 unnumbered">
-<h1>Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
+<div id="ejemplo-2" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Lanzamos un dado convencional de parchís el espacio muestral del experimento es</p>
+<p><span class="math display">\[\Omega=\{1,2, 3, 4,  5, 6\}\]</span></p>
+</div>
+<div class="example-sol">
+<p>Una v.a <span class="math inline">\(X:\Omega\to\mathbb{R}\)</span>
+sobre este espacio queda definida por</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{split}
+X(1)&amp;=1,X(2)=2,X(3)=3,\\
+X(4)&amp;=4,X(5)=5,X(6)=6.
+\end{split}
+\end{equation*}\]</span></p>
+<ul>
+<li>Ahora el suceso <span class="math inline">\(A=\{2, 4, 6\}\)</span>, es decir “salir
+número par”, es equivalente a <span class="math inline">\(\{X=2,X=4,X=6\}\)</span>.</li>
+<li>El suceso <span class="math inline">\(B=\{1,2,3\}\)</span>, es decir “salir un número
+inferior o igual a <span class="math inline">\(3\)</span>” es en términos de la v.a. <span class="math inline">\(\{X=1,X=2,X=3\}\)</span> o también <span class="math inline">\(\{X\leq 3\}\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="ejemplo-3" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Consideremos el experimento lanzar una anilla al cuello de una botella. Si acertamos a
+ensartar la anilla en la botella el resultado del experimento es <em>éxito</em> y
+<em>fracaso</em> en caso contrario.</p>
+</div>
+<div class="example-sol">
+<p>El espacio muestral asociado a este experimento será
+<span class="math inline">\(\Omega=\{\mbox{éxito, fracaso}\}\)</span>. Construyamos la siguiente variable aleatoria:</p>
+<p><span class="math display">\[X:\{\mbox{éxito, fracaso}\}\to\mathbb{R}\]</span></p>
+<p>definida por</p>
+<p><span class="math display">\[X(\mbox{éxito})=1 \mbox{ y } X(\mbox{fracaso})=0.\]</span></p>
+</div>
+</div>
+<div id="tipos-de-variables-aleatorias" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Tipos de variables aleatorias</h3>
+<p>Hay dos tipos fundamentales de variables aleatorias, las discretas y las continuas.</p>
+<p>Damos a continuación una definición informal.</p>
+<p><l class="definition">Variables Aleatórias Discretas y Continuas </l></p>
+<ul>
+<li>Una variable aleatoria es <strong>discreta</strong> si sólo puede tomar una cantidad numerable de valores con probabilidad positiva.</li>
+<li>Las variables aleatorias <strong>continuas</strong> toman valores en intervalos.</li>
+<li>También existen las variables aleatorias <strong>mixtas</strong>; con una parte discreta y otra continua.</li>
+</ul>
+</div>
+<div id="ejemplo-4" class="section level3">
+<h3><span class="header-section-number">2.1.5</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Son variables <em>aleatorias discretas</em>:</p>
+<ul>
+<li>Número de artículos defectuosos en un cargamento.</li>
+<li>Número de clientes que llegan a una ventanilla de un banco en una hora.</li>
+<li>Número de errores detectados en las cuentas de una compañía.</li>
+<li>Número de reclamaciones de una póliza de un seguro médico.</li>
+</ul>
+<p>Son variables <em>aleatorias continuas</em>:</p>
+<ul>
+<li>Renta anual de una familia.</li>
+<li>Cantidad de petróleo importado por un país</li>
+<li>Variación del precio de las acciones de una compañía de telecomunicaciones.</li>
+<li>Porcentaje de impurezas en un lote de productos químicos.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-aleatorias-discretas" class="section level2">
+<h2><span class="header-section-number">2.2</span> Variables aleatorias discretas</h2>
+<div id="distribuciones-de-probabilidad-para-v.a.-discretas." class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Distribuciones de probabilidad para v.a. discretas.</h3>
+<ul>
+<li>Pasamos ahora a describir el comportamiento de la v.a.
+Para ello utilizaremos distintas
+funciones que nos darán algunas probabilidades de la variable aleatoria.</li>
+<li>En el caso discreto estas funciones son la de probabilidad, y la función de distribución o de probabilidad acumulada.</li>
+<li>En el caso discreto la función de probabilidad es la que nos da las probabilidades de los
+sucesos elementales de la v.a. que definimos a continuación.</li>
+</ul>
+</div>
+<div id="función-de-probabilidad-para-variables-discretas" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Función de probabilidad para variables discretas</h3>
+<p><l class="definition"> <strong>Función de Probabilidad</strong></l>
+La <em>función de probabilidad</em> (<em>probability mass function</em> o incluso abusando de notación <em>probability density function</em>)</p>
+<p>de una variable aleatoria discreta <span class="math inline">\(X\)</span> a la que denotaremos por <span class="math inline">\(P_{X}(x)\)</span>
+está definida por</p>
+<p><span class="math display">\[P_{X}(x)=P(X=x)\]</span></p>
+<p>es decir la probabilidad de que <span class="math inline">\(X\)</span> tome el valor <span class="math inline">\(x\)</span>.</p>
+<p>Si <span class="math inline">\(X\)</span> no asume ese valor <span class="math inline">\(x\)</span>, entonces
+<span class="math inline">\(P_{X}(x)=0\)</span>.</p>
+</div>
+<div id="funcion-probabilidad-discretas" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Funcion probabilidad discretas</h3>
+<p><l class="definition"> <strong>Dominio de una variable aleatoria discreta</strong> </l></p>
+<p>El conjunto <span class="math display">\[D_X=\{ x\in\mathbb{R} \mid P_X(x)&gt;0\}\]</span> recibe el nombre de
+<em>dominio</em> de la v.a. y son los valores posibles de esta variable.</p>
+<p>En el caso discreto lo más habitual es que <span class="math inline">\(X(\Omega)=D_X\)</span>.</p>
+</div>
+<div id="ejemplo-5" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo parchís</strong></p>
+<p>Lanzamos un dado de parchís una vez, en esta ocasión representaremos los
+sucesos elementales por el número de puntos de la cara obtenida, tenemos que
+<span class="math display">\[\Omega=\{\mbox{1-puntos,2-puntos,3-puntos,4-puntos,5-puntos,6-puntos}\}\]</span>
+y la variables aleatoria <span class="math inline">\(X:\Omega\to \mathbb{R}\)</span> viene definida por</p>
+<p><span class="math display">\[X(\mbox{i-puntos})=i\mbox{ para } i=1,2,3,4,5,6.\]</span></p>
+</div>
+<div class="example-sol">
+<p>Supongamos que el dado está bien balanceado. Entonces
+<span class="math display">\[P_{X}(1)=P_{X}(2)=P_{X}(3)=P_{X}(4)=P_{X}(5)=P_{X}(6)=\frac16\]</span>
+Concretamente:
+<span class="math display">\[
+P_{X}(x)=
+  \left\{
+  \begin{array}{ll}
+   \frac16 &amp; \mbox{si } x=1,2,3,4,5,6\\
+  0 &amp; \mbox{en otro caso }
+  \end{array}
+  \right.
+\]</span></p>
+<p>Su dominio es <span class="math display">\[D_X=\{1,2,3,4,5,6\}.\]</span></p>
+</div>
+</div>
+<div id="ejemplo-6" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo lanzamiento moneda</strong></p>
+<p>Sea <span class="math inline">\(X\)</span> la v.a. asociada al lanzamiento de una moneda. Su espacio muestral es <span class="math inline">\(\Omega=\{c,+\}\)</span>, la v.a. queda definida por:</p>
+<p><span class="math display">\[X(\omega)=\left\{\begin{array}{ll} 1 &amp; \mbox{si } \omega=c \\
+0 &amp; \mbox{si }\omega=+\end{array}\right.\]</span></p>
+</div>
+<div class="example-sol">
+<p>Su función de probabilidad es:</p>
+<p><span class="math display">\[P_{X}(x)=P(X=x)=\left\{\begin{array}{ll} \frac12 &amp; \mbox{si } x=0,1\\
+0 &amp; \mbox{en otro caso}\end{array}\right.\]</span></p>
+<p>Finalmente su dominio es <span class="math inline">\(D_X=\{0,1\}.\)</span></p>
+</div>
+</div>
+<div id="ejemplo-7" class="section level3">
+<h3><span class="header-section-number">2.2.6</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo urna con bolas</strong></p>
+<p>Tenemos una urna con tres bolas rojas, una negra y dos blancas. Realizamos una extracción y observamos el color de la bola entonces un espacio muestral es
+<span class="math display">\[\Omega=\{roja, blanca, negra\}.\]</span></p>
+</div>
+<div class="example-sol">
+<p>Una variable aleatoria asociada al experimento es:</p>
+<p><span class="math display">\[X(\omega)=\left\{\begin{array}{ll} 1 &amp; \mbox{si } \omega=roja  \\
+2 &amp; \mbox{si }\omega=negra \\ 3 &amp; \mbox{si } \omega=blanca \end{array}\right.\]</span></p>
+</div>
+</div>
+<div id="ejemplo-8" class="section level3">
+<h3><span class="header-section-number">2.2.7</span> Ejemplo</h3>
+<div class="example-sol">
+<p>La función de probabilidad es</p>
+<p><span class="math display">\[P_{X}(x)=\left\{\begin{array}{ll} \frac36 &amp; \mbox{si } x=1\\
+\frac16 &amp; \mbox{si } x=2\\ \frac26 &amp; \mbox{si } x=3\\ 0 &amp; \mbox{en otro
+caso}\end{array}\right.\]</span></p>
+<p>El dominio de la v.a. <span class="math inline">\(X\)</span> es <span class="math inline">\(D_X=\{1,2,3\}.\)</span></p>
+</div>
+</div>
+<div id="propiedades-de-la-función-de-probabilidad." class="section level3">
+<h3><span class="header-section-number">2.2.8</span> Propiedades de la función de probabilidad.</h3>
+<p><l class="prop"> Propiedades básicas de la función de porbabilidad </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. discreta <span class="math inline">\(X:\Omega:\to\mathbb{R}\)</span> con dominio <span class="math inline">\(D_X\)</span>. Su función de probabilidad <span class="math inline">\(P_{X}\)</span> verifica las siguientes propiedades:</p>
+<ul>
+<li><span class="math inline">\(0\leq P_{X}(x)\leq 1\)</span> para todo <span class="math inline">\(x\in\mathbb{R}\)</span></li>
+<li><span class="math inline">\(\sum\limits_{x\in D_X} P_{X}(x)=1\)</span></li>
+</ul>
+</div>
+<div id="ejemplo-9" class="section level3">
+<h3><span class="header-section-number">2.2.9</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo: Lanzamiento moneda</strong></p>
+<p>Lanzamos al aire tres veces, de forma independiente, una moneda perfecta. El espacio muestral de este experimento es
+<span class="math display">\[\Omega=\{ccc,cc+,c+c,+cc,c++,+c+,++c,+++\}\]</span> (expresados en orden de aparición).</p>
+</div>
+<div class="example-sol">
+<p>Este espacio tiene todos los sucesos elementales
+equiprobables.</p>
+<p>Consideremos la variable aleatoria asociada a este experimento:</p>
+<p><span class="math display">\[X=\mbox{ número de caras en los tres lanzamientos}.\]</span></p>
+<p>Su función de probabilidad es:</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(X=0)=P(\{+++\})=\frac18\\ P(X=1)=P(\{c++,+c+,++c\})=\frac38\\
+    P(X=2)=P(\{cc+,c+c,+cc\})=\frac38\\
+    P(X=3)=P(\{ccc\})=\frac18
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-10" class="section level3">
+<h3><span class="header-section-number">2.2.10</span> Ejemplo</h3>
+<div class="example-sol">
+<p>Podemos reescribir la función de probabilidad de <span class="math inline">\(X\)</span> de forma simplificada:</p>
+<p><span class="math display">\[P_{X}(x)=\left\{\begin{array}{ll} \frac18 &amp; \mbox{si } x=0, 3\\
+\frac38 &amp; \mbox{si } x=1,2\\ 0 &amp; \mbox{en otro caso}\end{array}\right.\]</span></p>
+<p>Efectivamente los valores de la función de distribución suman 1</p>
+<p><span class="math display">\[\sum_{x=0}^3 P_X(x)= \frac18+\frac38+\frac38+\frac18=1.\]</span></p>
+</div>
+</div>
+<div id="función-de-distribución-de-variables-aleatorias" class="section level3">
+<h3><span class="header-section-number">2.2.11</span> Función de distribución de variables aleatorias</h3>
+<p><l class="definition"> <strong>Distribución de Probabilidad</strong></l></p>
+<p>La función de <em>distribución de probabilidad</em> (acumulada) de la v.a. <span class="math inline">\(X\)</span> (de cualquier tipo;
+discreta o continua) <span class="math inline">\(F_{X}(x)\)</span> representa la probabilidad de que <span class="math inline">\(X\)</span> tome un menor o igual que <span class="math inline">\(x\)</span> es decir</p>
+<p><span class="math display">\[F_{X}(x)=P(X\leq x)\]</span></p>
+<p>Esta función también se denomina función de <em>distribución de
+probabilidad o simplemente función de distribución</em> de una v.a., y en inglés
+<em>cumulative distribution function</em> por lo que se abrevia con el acrónimo <code>cdf</code>.</p>
+</div>
+<div id="propiedades-12" class="section level3">
+<h3><span class="header-section-number">2.2.12</span> Propiedades</h3>
+<p><l class="definition"> <strong>Propiedades de la Función de Distribución</strong></l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. y <span class="math inline">\(F_{X}\)</span> su función
+de distribución:</p>
 <ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
+<li><span class="math inline">\(P(X&gt;x)=1-P(X\leq x)=1-F_{X}(x)\)</span></li>
+<li>Sea a y b tales que <span class="math inline">\(a&lt;b\)</span>, <span class="math inline">\(P(a&lt;X\leq b)=P(X\leq b)-P(X\leq a)=F_{X}(b)-F_{X}(a)\)</span></li>
 </ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
+</div>
+<div id="propiedades-13" class="section level3">
+<h3><span class="header-section-number">2.2.13</span> Propiedades</h3>
+<div class="dem">
+<p><strong>Demostración</strong>:</p>
+<p>Tenemos que el complementario de <span class="math inline">\(X\)</span> mayor que <span class="math inline">\(x\)</span> es: <span class="math inline">\(\overline{\left\{X&gt;x\right\}}=\left\{X&gt;x\right\}^c=\left\{X\leq x\right\}\)</span>. Además</p>
+<p><span class="math display">\[P(X&gt;x)=1-P(\overline{\left\{X&gt;x\right\}})=1-P(X\leq x)=1-F_{X}(x)\]</span></p>
+<p>lo que demuestra la primera propiedad</p>
+<p>Por otro lado, que <span class="math inline">\(X\)</span> se encuentre entre dos valores <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> es <span class="math inline">\(\left\{a&lt; X \leq b\right\}= \left\{X\leq b\right\}-\left\{X\leq a\right\}\)</span></p>
+<p>ahora podemos hacer</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(a&lt;X\leq b)&amp;=&amp;P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
+&amp;=&amp; P(\left\{X\leq b\right\})-P(\left\{X\leq a\right\})\\
+&amp;=&amp; F_{X}(b)-F_{X}(a).
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="propiedades-14" class="section level3">
+<h3><span class="header-section-number">2.2.14</span> Propiedades</h3>
+<p><l class="definition"> <strong>Propiedades de la Función de Distribución</strong></l></p>
+<p>Sea <span class="math inline">\(F_{X}\)</span> la función de distribución de una v.a. <span class="math inline">\(X\)</span> entonces:</p>
+<ul>
+<li><span class="math inline">\(0\leq F_{X}(x)\leq 1\)</span>.</li>
+<li>La función <span class="math inline">\(F_{X}\)</span> es no decreciente.</li>
+<li>La función <span class="math inline">\(F_{X}\)</span> es continua por la derecha.</li>
+<li>Si denotamos por <span class="math inline">\(F_X(x_0^{-})=\displaystyle \lim_{x\to x_0^{-}} F(x)\)</span>,
+entonces se cumple que <span class="math inline">\(P(X&lt; x_0)=F_X(x_0^{-})\)</span> y que <span class="math inline">\(P(X=x_0)=F_X(x_0)-F_X(x_0^{-})\)</span>.</li>
+</ul>
+</div>
+<div id="propiedades-15" class="section level3">
+<h3><span class="header-section-number">2.2.15</span> Propiedades</h3>
+<p><l class="definition"> <strong>Propiedades de la Función de Distribución</strong></l></p>
+<ul>
+<li>Se cumple que <span class="math inline">\(\displaystyle \lim_{x\to\infty} F_{X}(x)=1\)</span>; <span class="math inline">\(\displaystyle \lim_{x\to-\infty}F_{X}(x)=0\)</span>.</li>
+<li>Toda función <span class="math inline">\(F\)</span> verificando las propiedades anteriores es función de distribución de alguna v.a. <span class="math inline">\(X\)</span>.</li>
+<li><span class="math inline">\(P(X&gt;x)=1-F_{X}(x)\)</span></li>
+<li>Dados <span class="math inline">\(a,b\in \mathbb{R}\)</span> con <span class="math inline">\(a&lt;b\)</span> <span class="math display">\[P(a&lt;X\leq b)=F_{X}(b)-F_{X}(a).\]</span></li>
+</ul>
+</div>
+<div id="advertencia-desigualdades-estrictas" class="section level3">
+<h3><span class="header-section-number">2.2.16</span> Advertencia desigualdades estrictas</h3>
+<p>En las propiedades anteriores no se pueden cambiar en general las desigualdades de
+estrictas o no estrictas.</p>
+<p>Veamos que propiedades tenemos cuando se cambian estas
+desigualdades.</p>
+<p>Dada una <span class="math inline">\(F_{X}\)</span> una función de distribución de la v.a. <span class="math inline">\(X\)</span> y denotamos por <span class="math display">\[F_{X}(x_0^{-})=\displaystyle \lim_{x\to x_0^{-}} F_{X}(x),\]</span>,</p>
+<p>entonces se cumplen las siguientes igualdades…</p>
+</div>
+<div id="advertencia-desigualdades-estrictas-1" class="section level3">
+<h3><span class="header-section-number">2.2.17</span> Advertencia desigualdades estrictas</h3>
+<p><l class="prop">Propiedades </l></p>
+<ul>
+<li><span class="math inline">\(P(X=x)=F_{X}(x)-F_{X}(x^{-})\)</span></li>
+<li><span class="math inline">\(P(a&lt; X&lt; b)=F_{X}(b^{-})-F_{X}(a)\)</span></li>
+<li><span class="math inline">\(P(a\leq X&lt; b)=F_{X}(b^{-})-F_{X}(a^{-})\)</span></li>
+<li><span class="math inline">\(P(X&lt;a)=F_{X}(a^{-})\)</span></li>
+<li><span class="math inline">\(P(a\leq X\leq b)=F_{X}(b)-F_{X}(a^{-})\)</span></li>
+<li><span class="math inline">\(P(X\geq a)=1-F_{X}(a^{-})\)</span></li>
+</ul>
+</div>
+<div id="propiedades-16" class="section level3">
+<h3><span class="header-section-number">2.2.18</span> Propiedades</h3>
+<p><l class="prop">Más propiedades de la función de distribución </l></p>
+<ul>
+<li>Si <span class="math inline">\(F_X\)</span> es continua en <span class="math inline">\(x\)</span> se tiene que <span class="math inline">\(P(X=x)=0\)</span>.
+Así que si la v.a. es continua <span class="math inline">\(P(X\leq a)=P(X&lt; a)+P(X=a)=P(X&lt;a)\)</span> y propiedades similares.</li>
+<li>Sea <span class="math inline">\(X\)</span> una variable aleatoria discreta que con dominio <span class="math inline">\(D_X\)</span> y
+que tiene por función de probabilidad <span class="math inline">\(P_{X}(x)\)</span> entonces su función de distribución
+<span class="math inline">\(F_{X}(x_0)\)</span> es
+<span class="math display">\[F_{X}(x_0)=\sum_{x\leq x_0} P_{X}(x)\]</span></li>
+</ul>
+<p>donde <span class="math inline">\(\sum_{x\leq x_0}\)</span> indica que sumamos todos los <span class="math inline">\(x \in D_X\)</span> tales que <span class="math inline">\(x\leq x_0\)</span></p>
+</div>
+<div id="propiedades-17" class="section level3">
+<h3><span class="header-section-number">2.2.19</span> Propiedades</h3>
+<div class="dem">
+<p><strong>Demostración</strong>:</p>
+<p>Si <span class="math inline">\(X\)</span> es continua <span class="math display">\[P(X=a)=F(a)-F(a^{-})=F(a)-F(a)=0\]</span>
+por lo tanto</p>
+<p><span class="math display">\[P(X\leq a)=P(X&lt;a)+P(X=a)= P(X&lt;a)+0= P(X&lt;a).\]</span></p>
+<p>lo que demuestra la primera propiedad.</p>
+<p>Para demostrar la segunda basta hacer</p>
+<p><span class="math display">\[ 
+F_{X}(x_0)= P(X\leq x_0)=P\left(\bigcup_{x\leq
+x_0; x\in D_X} \{x\}\right)= \sum_{x\leq x_0}P(X=x)= \sum_{x\leq x_0}P_{X}(x).
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-11" class="section level3">
+<h3><span class="header-section-number">2.2.20</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En el experimento del dado se tiene que:</p>
+<p><span class="math display">\[P_{X}(x)=\left\{\begin{array}{ll} \frac16 &amp; \mbox{si } x=1,2,3,4,5,6\\ 0 &amp; \mbox{en el resto de casos}\end{array}\right.,\]</span></p>
+<p>por lo tanto</p>
+<p><span class="math display">\[F_{X}(x)=P(X\leq x)=\left\{\begin{array}{ll}
+   0 &amp; \mbox{si } x&lt;1\\
+   \frac16 &amp;\mbox{si } 1\leq x&lt;2\\
+   \frac26 &amp;\mbox{si } 2\leq x&lt;3\\
+   \frac36 &amp;\mbox{si } 3\leq x&lt;4\\
+   \frac46 &amp;\mbox{si } 4\leq x&lt;5\\
+   \frac56 &amp;\mbox{si } 5\leq x&lt;6\\
+   1 &amp;\mbox{si } 6\leq x\end{array}\right.\]</span></p>
+</div>
+</div>
+<div id="ejemplo-12" class="section level3">
+<h3><span class="header-section-number">2.2.21</span> Ejemplo</h3>
+<div class="example-sol">
+<p>Calculemos más detalladamente algún valor de <span class="math inline">\(F_{X}\)</span>, por ejemplo:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+F_{X}(3.5) &amp; = &amp; P(X\leq 3.5)=  P(\{X=1\}\cup\{X=2\}\cup \{X=3\})\\
+&amp;=&amp; P(\{X=1\})+P(\{X=2\})+P(\{X=3\})\\
+&amp;=&amp; \frac16+\frac16+\frac16=\frac36 =\frac12,
+\end{eqnarray*}\]</span></p>
+<p>o de otra forma</p>
+<p><span class="math display">\[\begin{eqnarray*}
+F_{X}(3.5)&amp;=&amp;\sum_{x\leq 3.5} P_X(x)=\sum_{x=1}^3 P(X=x)\\&amp;=&amp;\sum_{x=1}^3 \frac16= 3 \cdot
+   \frac16=\frac12.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="propiedades-de-la-función-de-distribución" class="section level3">
+<h3><span class="header-section-number">2.2.22</span> Propiedades de la función de distribución</h3>
+<p><l class="prop"> Propiedad</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una variable con función de distribución <span class="math inline">\(F_{X}\)</span> entonces:</p>
+<ul>
+<li><span class="math inline">\(0\leq F_{X}(x)\leq 1\)</span> para todo <span class="math inline">\(x\)</span></li>
+<li>Si <span class="math inline">\(x&lt;x&#39;\)</span> entonces <span class="math display">\[F_{X}(x)\leq F_{X}(x&#39;).\]</span>
+Es una función creciente, no necesariamente estrictamente creciente.</li>
+<li><span class="math inline">\(\displaystyle \lim_{x\to -\infty}F_{X}(x)=0\)</span> y <span class="math inline">\(\displaystyle \lim_{x\to +\infty}F_{X}(x)=1\)</span></li>
+<li>Es continua por la derecha <span class="math inline">\(\displaystyle \lim_{x\to x_0^{+}}F_{X}(x)=F_{X}(x_0)\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="valores-esperados-o-esperanza" class="section level2">
+<h2><span class="header-section-number">2.3</span> Valores esperados o esperanza</h2>
+<div id="momentos-de-variables-aleatorias-discretas" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Momentos de variables aleatorias discretas</h3>
+<ul>
+<li><p>Al igual que en la estadística descriptiva se utilizan distintas medidas para
+resumir los valores centrales y para medir la dispersión de una muestra, podemos definir
+las correspondiente medidas para variables aleatorias.</p></li>
+<li><p>A estas medidas se les suele añadir el adjetivo <em>poblacionales</em> mientras que a las que provienen de la muestra se las adjetiva como <em>muestrales</em>.</p></li>
+</ul>
+<p>Por ejemplo podemos buscar un valor que resuma toda la variable. Este valor es el que “<em>esperamos</em>” que se resuma la v.a. o esperamos que las realizaciones de la v.a. queden cerca de él. Veamos su definición formal.</p>
+</div>
+<div id="esperanza-de-un-variable-aleatoria-discreta" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Esperanza de un variable aleatoria discreta</h3>
+<p><l class="definition">Esperanza de una variable aleatoria discreta </l></p>
+<p>El valor <em>esperado o esperanza</em> (<em>expected value</em> en inglés) <span class="math inline">\(E(X)\)</span> de una v.a. discreta <span class="math inline">\(X\)</span>, se define como</p>
+<p><span class="math display">\[
+E(X)=\sum_{x\in X(\Omega)} x P_{X}(x)
+\]</span></p>
+<p>En ocasiones se le domina <em>media</em> (<em>mean</em> en inglés <em>mitjana</em> en catalán) poblacional o simplemente media y muy frecuentemente se la denota <span class="math inline">\(\mu_{X}=E(X)\)</span> o simplemente <span class="math inline">\(\mu=E(X)\)</span>.</p>
+</div>
+<div id="interpretación-de-la-media-aritmética-para-v.a.-discretas" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Interpretación de la media aritmética para v.a. discretas</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Supongamos que lanzamos un dado <span class="math inline">\(n\)</span> veces y obtenemos unas frecuencias absolutas <span class="math inline">\(n_{i}\)</span>
+para el resultado <span class="math inline">\(i\)</span> con <span class="math inline">\(i=1,\ldots,6\)</span>. Sea <span class="math inline">\(X\)</span> la v.a. que nos representa el valor de
+una tirada del dado.</p>
+<p>Calculemos la media aritmética (o media muestral) de los datos</p>
+<p><span class="math display">\[
+\overline{x}=\frac{1\cdot n_1+2\cdot  n_2+3\cdot  n_3+4\cdot  n_4+5\cdot  n_5+6 \cdot 
+n_6}{n}=\sum_{x=1}^6 x \frac{n_{x}}{n}.
+\]</span></p>
+<p>Si <span class="math inline">\(n\to \infty\)</span> se tiene que <span class="math inline">\(\displaystyle\lim_{n\to \infty} \frac{n_{x}}{n}=P_{X}(x).\)</span></p>
+<p>Por lo tanto <span class="math inline">\(E(X)=\displaystyle \lim_{n\to\infty}\sum_{x=1}^6x \frac{n_{x}}{n}.\)</span></p>
+<p>Entonces el valor esperado en una v.a. discreta puede entenderse como el valor promedio que
+tomaría una v.a. en un número grande de repeticiones.</p>
+</div>
+</div>
+<div id="ejemplo-13" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo: Erratas en un texto</strong></p>
+<p>Sea <span class="math inline">\(X\)</span>= número de erratas en una página de un texto con dominio <span class="math inline">\(D_X=\{0,1,2\}\)</span>.</p>
+<p>Resulta que</p>
+<p><span class="math display">\[
+P(X=0)=0.42, P(X=1)=0.4, P(X=2)=0.18.
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+E(X)=0\cdot 0.42+ 1\cdot 0.4 + 2 \cdot 0.18=0.76.
+\]</span></p>
+<p>Elegida una página del texto al azar esperamos encontrar <span class="math inline">\(0.76\)</span> errores por página.</p>
+<p>Supongamos que en el editor nos paga <span class="math inline">\(2\)</span> euros por cada página que
+encontremos con <span class="math inline">\(1\)</span> error y <span class="math inline">\(3\)</span> euros por cada página con dos errores (y nada por las
+páginas correctas) ¿Cuánto esperamos cobrar si analizamos una página?</p>
+<p><span class="math display">\[0\cdot 0.42 + 2\cdot 0.4 + 3\cdot 0.18=1.34\]</span></p>
+</div>
+</div>
+<div id="esperanzas-de-funciones-de-variables-aleatorias-discretas" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> Esperanzas de funciones de variables aleatorias discretas</h3>
+<p><l class="definition"> <strong>Esperanzas de funciones de variables aleatorias discretas</strong> </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. discreta con función de probabilidad <span class="math inline">\(P_{X}\)</span> y de distribución
+<span class="math inline">\(F_{X}\)</span>. Entonces el <em>valor esperado de una función</em> <span class="math inline">\(g(x)\)</span> es :</p>
+<p><span class="math display">\[E(g(X))=\sum_{x}g(x) P_{X}(x).\]</span></p>
+</div>
+<div id="propiedades-de-los-valores-esperados" class="section level3">
+<h3><span class="header-section-number">2.3.6</span> Propiedades de los valores esperados</h3>
+<p><l class="prop"> Propiedades</l></p>
+<ul>
+<li><span class="math inline">\(E(k)=k\)</span> para cualquier constante <span class="math inline">\(k\)</span>.</li>
+<li>Si <span class="math inline">\(a\leq X\leq b\)</span> entonces <span class="math inline">\(a\leq E(X)\leq b\)</span>.</li>
+<li>Si <span class="math inline">\(X\)</span> es una v.a. discreta que toma valores enteros no negativos entonces
+<span class="math inline">\(E(X)=\sum_{x=0}^{+\infty}(1- F_X(x)).\)</span></li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>La demostración de las propiedades anteriores se deja como ejercicio.</p>
+</div>
+</div>
+<div id="ejemplo-14" class="section level3">
+<h3><span class="header-section-number">2.3.7</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo: paleta de colores aleatoria</strong></p>
+<p>Supongamos que estamos sentados delante de nuestro ordenador con un amigo y
+le decimos que en dos minutos podemos programar una paleta para poner colores a unos
+gráficos.</p>
+<p>Queremos la que paleta tenga dos botones con las opciones color rojo y color azul.
+Como hemos programado a gran velocidad resulta que el programa tiene un error; cada vez que
+se abre la paleta los colores se colocan al azar (con igual probabilidad) en cada botón,
+así que no sabemos en que color hemos de pinchar.</p>
+<p>Además, como nos sobraron <span class="math inline">\(15\)</span> segundos
+para hacer el programa y pensando en la comodidad del usuario, la paleta se cierra después de haber seleccionado un
+color y hay que volverla a abrir de nuevo.</p>
+<p>La pregunta es ¿cuál es el valor esperado del
+número de veces que hemos pinchar el botón de color azul antes de obtener este color?</p>
+</div>
+</div>
+<div id="ejemplo-15" class="section level3">
+<h3><span class="header-section-number">2.3.8</span> Ejemplo</h3>
+<div class="example-sol">
+<p>Llamemos <span class="math inline">\(X\)</span> al número de veces que pinchamos en el botón azul (y nos sale rojo) hasta
+obtener el primer azul. La variable <span class="math inline">\(X\)</span> toma valores en los enteros no negativos. Su
+función de probabilidad queda determinada por</p>
+<p><span class="math display">\[
+P_X(x)=P(X=x)=P(\stackrel{x \mbox{veces}}{\overbrace{rojo, rojo,\ldots,rojo},azul})
+=\left(\frac12\right)^{x+1}.
+\]</span></p>
+</div>
+</div>
+<div id="propiedades-de-las-series-geométricas" class="section level3">
+<h3><span class="header-section-number">2.3.9</span> Propiedades de las series geométricas</h3>
+<p><l class="prop">Series geométricas</l></p>
+<ul>
+<li>Una <em>progresión geométrica</em> de razón <span class="math inline">\(r\)</span> es una sucesión de la forma<br />
+<span class="math display">\[
+r^0, r^1,\ldots,r^n,\ldots.
+\]</span></li>
+<li>La serie geométrica es la suma de todos los
+valores de la progresión geométrica <span class="math inline">\(\displaystyle\sum_{k=0}^{+\infty} r^k\)</span>.</li>
+<li>Las sumas parciales desde el término <span class="math inline">\(n_0\)</span> al <span class="math inline">\(n\)</span> de una progresión geométrica valen
+<span class="math display">\[
+\sum_{k=n_0}^n r^k=\frac{r^{n_0}- r^n r}{1-r}.
+\]</span></li>
+</ul>
+</div>
+<div id="propiedades-de-las-series-geométricas-1" class="section level3">
+<h3><span class="header-section-number">2.3.10</span> Propiedades de las series geométricas</h3>
+<p><l class="prop">Propiedades</l></p>
+<ul>
+<li>Si <span class="math inline">\(|r|&lt;1\)</span> la serie geométrica es convergente y <span class="math display">\[\sum_{k=0}^{+\infty }
+r^k=\frac1{1-r}\]</span>.</li>
+<li>En el caso en que se comience en <span class="math inline">\(n_0\)</span> se tiene que
+<span class="math display">\[\sum_{k=n_0}^{+\infty} r^k=\frac{r^{n_0}}{1-r}.\]</span></li>
+</ul>
+</div>
+<div id="propiedades-de-las-series-geométricas-2" class="section level3">
+<h3><span class="header-section-number">2.3.11</span> Propiedades de las series geométricas</h3>
+<p><l class="prop">Propiedades</l></p>
+<ul>
+<li>Si <span class="math inline">\(|r|&lt;1\)</span> también son convergentes las derivadas, respecto de <span class="math inline">\(r\)</span>, de la serie geométrica y convergen a la derivada correspondiente. Así tenemos que</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+\left(\sum_{k=0}^{+\infty} r^k\right)&#39;= &amp; \sum_{k=1}^{+\infty}k
+r^{k-1} \left(\frac1{1-r}\right)&#39;=\frac1{(1-r)^2}\\
+\left(\sum_{k=0}^{+\infty} r^k\right)^{&#39;&#39;}=&amp; \sum_{k=2}^{+\infty}k (k-1)
+r^{k-2}\left(\frac1{1-r}\right)^{&#39;&#39;}=\frac2{(1-r)^3}
+\end{eqnarray*}\]</span>.</p>
+</div>
+<div id="ejemplo-16" class="section level3">
+<h3><span class="header-section-number">2.3.12</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo (cont)</strong></p>
+<p>Si seguimos con el ejemplo de la paleta de colores, su esperanza es:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+E(X)&amp;=&amp;\sum_{x=0}^{+\infty} x P(X=x)=\sum_{x=0}^{+\infty} x
+\left(\frac12\right)^{x+1}\\
+&amp;= &amp; \left(\frac12\right)^2\sum_{x=1}^{+\infty} x
+\left(\frac12\right)^{x-1}=\left(\frac12\right)^2
+\frac1{\left(1-\frac12\right)^2}=1.
+\end{eqnarray*}\]</span></p>
+<p>Ahora calculemos su función de distribución</p>
+<p><span class="math display">\[\begin{eqnarray*}
+F_X(x)&amp;=&amp; P(X\leq x)=\sum_{k=0}^x P(X=k)=\sum_{k=0}^x
+\left(\frac12\right)^{k+1}\\
+&amp;=&amp; \frac{\frac12-\frac12^{x+1}
+\frac12}{1-\frac12}=1-\left(\frac12\right)^{x+1}
+\end{eqnarray*}\]</span>.</p>
+</div>
+</div>
+<div id="ejemplo-17" class="section level3">
+<h3><span class="header-section-number">2.3.13</span> Ejemplo</h3>
+<div class="example">
+<p>Como la variable toma valores enteros positivos, podemos calcular su valor esperado
+de esta otra manera</p>
+<p><span class="math display">\[E(X)=\sum_{x=0}^{+\infty} (1-F_X(x))=\sum_{x=0}^{+\infty}(\frac12)^{x+1}=\frac12
+\frac1{1-\frac12}=1.\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Calculad el valor esperado de la variable</p>
+<p><span class="math display">\[
+Y=\mbox{número de intentos para conseguir el color azul.}
+\]</span></p>
+</div>
+</div>
+<div id="momentos-de-una-variable-aleatoria" class="section level3">
+<h3><span class="header-section-number">2.3.14</span> Momentos de una variable aleatoria</h3>
+<p><l class="definition"> Momentos de orden <span class="math inline">\(m\)</span></l></p>
+<p>Llamaremos <em>momento de orden <span class="math inline">\(m\)</span></em> respecto al punto <span class="math inline">\(C\)</span> a
+<span class="math display">\[E\left((X-C)^m\right)\]</span></p>
+<ul>
+<li>Cuando <span class="math inline">\(C=0\)</span> los momentos reciben el nombre de <em>momentos respecto al origen</em>.</li>
+<li>Cuando <span class="math inline">\(C=E(X)\)</span> reciben el nombre de <em>momentos centrales o respecto de la media</em>. Luego la esperanza es el momento de orden <span class="math inline">\(1\)</span> respecto al origen. Estos momentos son la versión poblacional de los momentos que vimos en el curso de estadística descriptiva, recibiendo estos último el nombre de momentos muestrales.</li>
+</ul>
+</div>
+<div id="resumen-conceptos" class="section level3">
+<h3><span class="header-section-number">2.3.15</span> Resumen conceptos</h3>
+<ul>
+<li>Hemos descrito el comportamiento aleatorio de una v.a. discreta mediante sus funciones de probabilidad <span class="math inline">\(P_{X}\)</span> y de distribución <span class="math inline">\(F_{X}\)</span>.</li>
+<li>También tenemos un valor central; el valor esperado <span class="math inline">\(E(X)\)</span>.</li>
+<li>Como medida básica nos queda definir una medida de lo lejos que están los datos del valor central <span class="math inline">\(E(X)\)</span> una de estas medidas es la varianza de <span class="math inline">\(X\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="medidas-de-la-variabilidad" class="section level2">
+<h2><span class="header-section-number">2.4</span> Medidas de la variabilidad</h2>
+<div id="medidas-de-la-variabilidad-la-varianza" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Medidas de la variabilidad: la varianza</h3>
+<p><l class="definition"> Varianza </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. Llamaremos <em>varianza</em> de <span class="math inline">\(X\)</span> a</p>
+<p><span class="math display">\[Var(X)=E((X-E(X))^2)\]</span></p>
+<p>Por lo tanto la varianza es el momento central de orden <span class="math inline">\(2\)</span>.</p>
+<p>De forma frecuente se utiliza la notación <span class="math display">\[\sigma_{X}^2=Var(X).\]</span></p>
+<p>A la raíz cuadrada positiva de la varianza
+<span class="math display">\[\sigma_{X}=\sqrt{Var(X)}\]</span></p>
+<p>se la denomina desviación típica o estándar de <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="propiedades-de-la-varianza" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Propiedades de la varianza</h3>
+<p><l class="prop"> Propiedad </l></p>
+<ul>
+<li>Si <span class="math inline">\(X\)</span> es una v.a. discreta con función de probabilidad <span class="math inline">\(P_X\)</span> su varianza es
+<span class="math display">\[\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2 P_{X}(x).\]</span></li>
+<li>Sea <span class="math inline">\(X\)</span> una v.a.
+<span class="math display">\[Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2 P_{X}(X)-(E(X))^2\]</span></li>
+</ul>
+</div>
+<div id="demostración" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Demostración</h3>
+<div class="dem">
+<p><strong>Demostración de b)</strong></p>
+<p><span class="math display">\[\begin{eqnarray*}
+Var(X)&amp;= &amp; \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2 x E(X)+(E(X)^2) P_{X}(x)\\
+&amp;=&amp; \sum_{x}x^2P_{X}(x) -  E(X)\sum_{x}2 x P_{X}(x) + (E(X)^2)\sum_{x} P_{X}(x)\\
+&amp;=&amp; E(X^2)- 2 E(X) E(X) + (E(X))^2=E(X^2)-(E(X))^2.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="ejemplo-18" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Calculemos en el ejemplo anterior la varianza del número de errores.</p>
+</div>
+<div class="example-sol">
+<p>Recordemos que:</p>
+<p><span class="math display">\[
+P(X=0)=0.42,\quad P(X=1)=0.4, \quad P(X=2)=0.18
+\]</span></p>
+<p>y que</p>
+<p><span class="math display">\[
+E(X)=0.76
+\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+Var(X)=E(X^2)-(E(X))^2 = E(X^2)-(0.76)^2.
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-19" class="section level3">
+<h3><span class="header-section-number">2.4.5</span> Ejemplo</h3>
+<div class="example-sol">
+<p>Ahora necesitamos calcular</p>
+<p><span class="math display">\[E(X^2)= 0^2 (0.41)+ 1^2 (0.4)+ 2^2 (0.18)=0.4+0.72=1.12\]</span>
+y por lo tanto</p>
+<p><span class="math display">\[Var(X)= E(X^2)-(0.76)^2=1.12-0.5776=0.542\]</span>
+y <span class="math display">\[\sqrt{Var(X)}=\sqrt{0.542}\]</span></p>
+<p>En resumen <span class="math inline">\(\sigma_{X}^2=0.542\)</span> y <span class="math inline">\(\sigma_{X}=\sqrt{0.542}\)</span></p>
+</div>
+</div>
+<div id="propiedades-de-la-varianza-1" class="section level3">
+<h3><span class="header-section-number">2.4.6</span> Propiedades de la varianza</h3>
+<p><l class="prop"> <strong>Propiedades de la varianza</strong></l></p>
+<ul>
+<li><span class="math inline">\(Var(X)\geq 0\)</span></li>
+<li><span class="math inline">\(Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0\)</span></li>
+<li>El mínimo de <span class="math inline">\(E((X-C)^2)\)</span> se alcanza cuando <span class="math inline">\(C=E(X)\)</span> y es <span class="math inline">\(Var(X)\)</span>. Esta propiedad es una de las que hace útil a la varianza como medida de dispersión.</li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Se deja como ejercicio la demostración de estas propiedades.</p>
+</div>
+</div>
+</div>
+<div id="esperanza-y-varianza-de-transformaciones-lineales." class="section level2">
+<h2><span class="header-section-number">2.5</span> Esperanza y varianza de transformaciones lineales.</h2>
+<div id="transformaciones-lineales." class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Transformaciones lineales.</h3>
+<p><l class="definition"> Transformación lineal </l></p>
+<p>Un <strong>cambio de variable lineal</strong> o <strong>transformación lineal</strong> de una v.a. <span class="math inline">\(X\)</span> es otra v.a. <span class="math inline">\(Y= a+ b X\)</span> donde <span class="math inline">\(a,b\in\mathbb{R}\)</span>.</p>
+<p><l class="prop"> Esperanza de una transformación lineal</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. con <span class="math inline">\(E(X)=\mu_{X}\)</span> y <span class="math inline">\(Var(X)=\sigma_{X}^2\)</span> y <span class="math inline">\(a,b\in\mathbb{R}\)</span>.
+Entonces si <span class="math inline">\(Y=a+b X\)</span>:</p>
+<ul>
+<li><span class="math inline">\(E(Y)=E(a + b X)=a+ b E(X)= a + b \mu_{X}\)</span>.</li>
+<li><span class="math inline">\(Var(Y)=Var(a+bX)=b^2 Var(X)= b^2 \sigma_{X}^2\)</span></li>
+<li><span class="math inline">\(\sigma_{Y}=\sqrt{Var(Y)}=\sqrt{b^2 Var(X)}=|b| \sigma_{X}\)</span></li>
+</ul>
+</div>
+<div id="demostración-1" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Demostración</h3>
+<div class="dem">
+<p><strong>Demostración</strong>:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+E(Y)&amp;=&amp; E(a+bX)=\sum_{x}(a+b\cdot X)\cdot P_{X}(x)\\
+&amp;=&amp; a \sum_{x} P_{X}(x) + b \sum_{x} x\cdot P_{X}(x)\\ 
+&amp;=&amp; a + b\cdot E(X)=a + b \mu_{X}
+\end{eqnarray*}\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Las demostración de las demás propiedades se dejan como ejercicio.</p>
+</div>
+</div>
+</div>
+<div id="variables-aleatorias-continuas" class="section level2">
+<h2><span class="header-section-number">2.6</span> Variables aleatorias continuas</h2>
+<div id="variables-aleatorias-continuas-definición." class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Variables aleatorias continuas definición.</h3>
+<ul>
+<li>Como ya hemos dicho las variables aleatorias continuas toman valores en
+intervalos o áreas.</li>
+<li>Lo más habitual es que estas variables tengan función de distribución continua y
+derivable (salvo a los más en una cantidad finita o numerable de puntos:-)).</li>
+<li>En lo que sigue supondremos que la función de distribución de variables
+aleatorias continuas cumplen estas propiedades.</li>
+<li>Notemos que si <span class="math inline">\(X\)</span> es una v.a. con función de distribución continua se tiene que
+<span class="math inline">\(P(X=x_0)=F_X(x_0)-F(x_0^{-})=0\)</span>. Por lo que no tiene sentido definir <em>función de probabilidad</em>.</li>
+</ul>
+</div>
+<div id="variables-aleatorias-continuas-1" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Variables aleatorias continuas</h3>
+<ul>
+<li>En general tendremos que <span class="math inline">\(P(X&lt;x_0)=P(X\leq x_0)\)</span>.</li>
+<li>Por otra parte podemos utilizar una regla parecida del
+cociente entre casos favorables y casos posibles de Laplace pero en
+este caso el conteo se hace por la <em>medida</em> de los casos
+posibles partida por la <em>medida</em> de los casos favorables.</li>
+<li>Veamos un ejemplo de v.a. continua, que ampliaremos en el tema siguiente, en el que se utilizan todos estos conceptos.</li>
+</ul>
+</div>
+<div id="ejemplo-distribución-uniforme-en-01." class="section level3">
+<h3><span class="header-section-number">2.6.3</span> Ejemplo: Distribución uniforme en <span class="math inline">\([0,1]\)</span>.</h3>
+<div class="example">
+<p><strong>Ejemplo: distancia el dardo centro</strong></p>
+<p>Supongamos que lanzamos un dardo a una diana de radio <span class="math inline">\(1\)</span>, de forma que sea <em>equiprobable</em> cualquier distancia al centro (¡Cuidado! esto no es equivalente
+a que cualquier punto de la diana sea <em>equiprobable</em>).</p>
+<p>Consideremos la v.a. continua <span class="math inline">\(X=\)</span> distancia al centro.</p>
+</div>
+<div class="example-sol">
+<p>Su función de distribución es</p>
+<p><span class="math display">\[
+F_{X}(x)=
+\left\{
+\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+x &amp; \mbox{si } 0&lt;x&lt;1\\
+1 &amp; \mbox{si } x\geq 1
+\end{array}
+\right.
+.
+\]</span></p>
+<p>Ya que</p>
+<ul>
+<li>C.F. <em>longitud favorable</em> es <span class="math inline">\(x-0\)</span>.</li>
+<li>C.P. <em>longitud posible</em> es <span class="math inline">\(1-0\)</span>.</li>
+<li>Luego
+<span class="math display">\[P(X\leq x)=\frac{C.F.}{C.P.}=\frac{x-0}{1-0}=x\]</span></li>
+</ul>
+</div>
+</div>
+<div id="gráfica-de-la-función-de-distribución-uniforme" class="section level3">
+<h3><span class="header-section-number">2.6.4</span> Gráfica de la función de distribución uniforme</h3>
+<p><img src="curso-probabilidad-udemy_files/figure-html/figUNIF-7.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="propiedades-18" class="section level3">
+<h3><span class="header-section-number">2.6.5</span> Propiedades</h3>
+<p>En las variables continuas los sucesos del tipo <span class="math inline">\(\{X\leq x \}\)</span> y <span class="math inline">\(\{X&lt; x \}\)</span> tendrán la
+misma probabilidad, y otros tipos de sucesos similares también, algunas de estas
+propiedades se explicitan en la siguiente proposición.</p>
+<p><l class="prop">Propiedades</l></p>
+<p>Dada una v.a. continua <span class="math inline">\(X\)</span> se tiene que:</p>
+<ul>
+<li><span class="math inline">\(P(X\leq b)=P(X&lt;b)\)</span></li>
+<li><span class="math inline">\(P(X&lt;b)=P(X&lt;a)+P(a&lt;X&lt;b)\)</span></li>
+<li><span class="math inline">\(P(a&lt;X&lt;b)=P(X&lt;b)-P(X&lt;a)\)</span></li>
+</ul>
+</div>
+<div id="demostración-2" class="section level3">
+<h3><span class="header-section-number">2.6.6</span> Demostración</h3>
+<div class="dem">
+<p><strong>Demostración:</strong></p>
+<p>La primera es evidente <span class="math inline">\(P(X\leq b)=P(X&lt;b)+P(X=b)=P(X&lt;b)\)</span></p>
+<p>Para demostrar la segunda, tenemos</p>
+<p><span class="math display">\[\{X&lt;a\}\cap \{a&lt;X&lt;b\}=\emptyset\]</span>
+<span class="math display">\[\{X&lt;a\}\cup \{a&lt;X&lt;b\}=\{X&lt;b\}\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(X\leq b)= &amp; P(\{X&lt;a\}\cup \{a&lt;X&lt;b\})\\
+&amp; = P(X&lt;a)+P(a&lt;X&lt;b)
+\end{eqnarray*}\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>La demostración de la tercera propiedad es similar a la segunda pero aplicando la primera. Queda de ejercicio.</p>
+</div>
+</div>
+<div id="propiedades-de-la-función-de-distribución-1" class="section level3">
+<h3><span class="header-section-number">2.6.7</span> Propiedades de la función de distribución</h3>
+<p>Las propiedades anteriores y combinaciones de ellas se pueden
+escribir utilizando la función de distribución de <span class="math inline">\(X\)</span>:</p>
+<p><l class="prop"> Propiedades de la Función de Distribución </l></p>
+<p>Dada una variable aleatoria continua se tiene que:</p>
+<ul>
+<li><span class="math inline">\(F_{X}(b)=F_{X}(a)+P(a&lt;X&lt;b)\)</span></li>
+<li><span class="math inline">\(P(a&lt;X&lt;b)=F_{X}(b)-F_{X}(a)\)</span></li>
+<li><span class="math inline">\(P(a\leq X\leq b)=F_{X}(b)-F_{X}(a)\)</span></li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Se deja la demostración como ejercicio</p>
+</div>
+</div>
+<div id="ejemplo-20" class="section level3">
+<h3><span class="header-section-number">2.6.8</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo: lanzamiento de dardos</strong></p>
+<p>En los dardos:
+<span class="math display">\[P(0.25&lt;X&lt;0.3)=F_{X}(0.3)-F_{X}(0.25)=\]</span>
+<span class="math display">\[=0.3-0.25=0.05\]</span></p>
+</div>
+</div>
+<div id="función-de-densidad" class="section level3">
+<h3><span class="header-section-number">2.6.9</span> Función de densidad</h3>
+<p><l class="definition"> <strong>Función de densidad</strong> </l></p>
+<p>Una función <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> es una función de densidad sobre <span class="math inline">\(\mathbb{R}\)</span> si cumple que</p>
+<ul>
+<li><span class="math inline">\(f_{X}(x)\geq 0\)</span> para todo <span class="math inline">\(x \in\mathbb{R}.\)</span></li>
+<li><span class="math inline">\(f\)</span> es continua salvo a lo más en una cantidad finita de puntos sobre
+cada intervalo acotado de <span class="math inline">\(\mathbb{R}\)</span>.</li>
+<li><span class="math inline">\(\displaystyle\int\limits_{-\infty}^{+\infty} f_{X}(x) dx=1.\)</span></li>
+</ul>
+</div>
+<div id="función-de-densidad-de-una-variable-aleatoria." class="section level3">
+<h3><span class="header-section-number">2.6.10</span> Función de densidad de una variable aleatoria.</h3>
+<p><l class="definition"> <strong>Función de densidad de una variable aleatoria</strong> </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. con función de distribución <span class="math inline">\(F_X\)</span>. Sea <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> una función de densidad tal que</p>
+<p><span class="math display">\[F_X(x)=\displaystyle\int_{-\infty}^{x} f_X(t) dt.\mbox{ para todo } x\in\mathbb{R}.\]</span></p>
+<p>Entonces <span class="math inline">\(X\)</span> es una variable aleatoria continua y <span class="math inline">\(f_X\)</span> es la densidad de la v.a. <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="dominio-de-una-variable-aleatoria-continua" class="section level3">
+<h3><span class="header-section-number">2.6.11</span> Dominio de una variable aleatoria continua</h3>
+<p>El conjunto <span class="math inline">\(D_X=\{x\in\mathbb{R}| f_x(x)&gt;0\}\)</span> recibe el nombre de <l class="definition"> soporte o dominio de la
+variable aleatoria continua</l> y se interpreta su conjunto de resultados posibles.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En nuestra diana, la función <span class="math inline">\(f\)</span> es una densidad</p>
+<p><span class="math display">\[
+f_{X}(x)=\left\{
+\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+1 &amp; \mbox{si } 0 &lt; x &lt; 1\\
+0 &amp; \mbox{si } 1\leq x
+\end{array}\right.
+\]</span></p>
+<p>que es la densidad de <span class="math inline">\(X\)</span>, en efecto:</p>
+</div>
+</div>
+<div id="densidad-diana" class="section level3">
+<h3><span class="header-section-number">2.6.12</span> Densidad diana</h3>
+<div class="example-sol">
+<p><span class="math display">\[
+f_{X}(x)=\left\{
+\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+1 &amp; \mbox{si } 0 &lt; x &lt; 1\\
+0 &amp; \mbox{si } 1\leq x
+\end{array}\right.
+\]</span></p>
+<p>Si <span class="math inline">\(x \leq 0\)</span> entonces <span class="math inline">\(\displaystyle\int_{-\infty}^x f_X(t) dt = 0.\)</span></p>
+<p>Si <span class="math inline">\(0\leq x\leq 1\)</span> entonces <span class="math inline">\(\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^x 1 dt = x.\)</span></p>
+<p>Si <span class="math inline">\(x\geq 1\)</span> entonces <span class="math inline">\(\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^1 1 dt = 1.\)</span></p>
+<p>Por lo tanto <span class="math inline">\(F_X(x)=\displaystyle\int_{-\infty}^x f_X(t) dt\)</span> para todo <span class="math inline">\(x\in\mathbb{R}.\)</span></p>
+</div>
+</div>
+<div id="densidad-diana-1" class="section level3">
+<h3><span class="header-section-number">2.6.13</span> Densidad diana</h3>
+<div class="example-sol">
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">curve</span>(<span class="kw">dunif</span>(x,<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">1.5</span>),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">      <span class="dt">main=</span><span class="st">&quot;Densidad de la distribución uniforme en [0,1]&quot;</span>)</a></code></pre></div>
+<p><img src="curso-probabilidad-udemy_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="utilidad-de-la-función-de-densidad" class="section level3">
+<h3><span class="header-section-number">2.6.14</span> Utilidad de la función de densidad</h3>
+<p>La función de densidad nos permite calcular diversas probabilidades.</p>
+<p><l class="prop">Propiedades de la función de densidad </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua con función de distribución <span class="math inline">\(F_X\)</span> y de
+densidad <span class="math inline">\(f_X\)</span>, entonces</p>
+<ul>
+<li><p><span class="math display">\[\begin{eqnarray*}
+P(a&lt; X&lt; b) &amp;=&amp;  P(a&lt;X\leq b)= P(a\leq X&lt; b)=\\
+ &amp; &amp; P(a\leq X\leq b)= \displaystyle\int_{a}^b f_X(x) dx.
+\end{eqnarray*}\]</span></p></li>
+<li><p>Si <span class="math inline">\(A\)</span> es un conjunto adecuado de <span class="math inline">\(\mathbb{R}\)</span> entonces</p></li>
+</ul>
+<p><span class="math display">\[
+P(X\in A)=\displaystyle\int_{A} f(x) dx=\displaystyle\int_{A\cap D_X} f(x) dx.
+\]</span></p>
+</div>
+<div id="utilidad-de-la-función-de-densidad-1" class="section level3">
+<h3><span class="header-section-number">2.6.15</span> Utilidad de la función de densidad</h3>
+<p><l class="prop">Propiedades de la función de densidad </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua con función de distribución <span class="math inline">\(F_X\)</span> y de densidad <span class="math inline">\(f_X\)</span>, entonces:</p>
+<ul>
+<li>Si <span class="math inline">\(f_x\)</span> es continua en un punto <span class="math inline">\(x\)</span>, <span class="math inline">\(F_X\)</span> es derivable en ese punto y
+<span class="math inline">\(F_X&#39;(x)=f_X(x).\)</span></li>
+<li><span class="math inline">\(P(X=x)=0\)</span> para todo <span class="math inline">\(x\in\mathbb{R}.\)</span></li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+Comprobar estas propiedades en el ejemplo de la diana.
+</div>
+</div>
+<div id="ejemplo-tiempo-ejecución-de-un-proceso" class="section level3">
+<h3><span class="header-section-number">2.6.16</span> Ejemplo tiempo ejecución de un proceso</h3>
+<div class="example">
+<p><strong>Ejemplo: Tiempo ejecución de un proceso.</strong></p>
+<p>Sea <span class="math inline">\(X=\)</span> tiempo de ejecución de un proceso. Se supone que <span class="math inline">\(X\)</span> sigue una distribución uniforme en dos unidades de tiempo, si tarda más el proceso se cancela.</p>
+<p>Calculemos la función de densidad y de distribución de la v.a <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="example-sol">
+<p>Entonces</p>
+<p><span class="math display">\[
+F_{X}(x)=P(X\leq x)=\frac{CF}{CP}=\frac{x}2
+\]</span></p>
+<p>Luego su función de distribución es:</p>
+<p><span class="math display">\[
+F_{X}(x)=\left\{\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+\frac{x}2 &amp; \mbox{si } 0&lt;x&lt;2\\
+1 &amp; \mbox{si } 2\leq x
+\end{array}\right.
+\]</span></p>
+<h3 id="ejemplo-tiempo-ejecución-de-un-proceso-1"><span class="header-section-number">2.6.16</span> Ejemplo tiempo ejecución de un proceso</h3>
+<p>Su función de densidad por su lado es:
+<span class="math display">\[
+f_{X}(x)=F_{X}&#39;(x)=\left\{\begin{array}{ll}
+0 &amp; \mbox{si } x\leq 0\\
+\frac12 &amp; \mbox{si } 0&lt;x\leq 2\\
+0 &amp; \mbox{si } 2\leq x
+\end{array}\right.
+\]</span></p>
+<p>Efectivamente</p>
+<ul>
+<li><span class="math inline">\(f_{X}(x)\geq 0,\)</span> y tiene un conjunto finito de discontinuidades.</li>
+<li><span class="math inline">\(F_X(x)=\int_{-\infty}^x f_X(t) dt.\)</span> para todo <span class="math inline">\(x\in \mathbb{R}\)</span> <l class="exercise">(Ejercicio,
+resolverlo gráficamente.)</l></li>
+<li><span class="math inline">\(\int\limits_{-\infty}^{+\infty}f_{X}(x)dx= \int\limits_0^2\frac12dx=\frac{x}2\mid_0^2= =\frac22-\frac02=1.\)</span></li>
+</ul>
+</div>
+</div>
+<div id="ejemplo-tiempo-ejecución-de-un-proceso-2" class="section level3">
+<h3><span class="header-section-number">2.6.17</span> Ejemplo tiempo ejecución de un proceso</h3>
+<div class="exercise">
+<p><strong>Ejercicio: Tiempo de un proceso:</strong></p>
+<p>Calcular la probabilidad de que uno de nuestros procesos tarde
+más de una unidad de tiempo en ser procesado. Calcular también la probabilidad de
+que dure entre <span class="math inline">\(0.5\)</span> y <span class="math inline">\(1.5\)</span> unidades de tiempo.</p>
+</div>
+</div>
+</div>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas" class="section level2">
+<h2><span class="header-section-number">2.7</span> Esperanza y varianza para variables aleatorias continuas</h2>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas-1" class="section level3">
+<h3><span class="header-section-number">2.7.1</span> Esperanza y varianza para variables aleatorias continuas</h3>
+<p>Los mismos comentarios y definiciones que se dieron en la sección correspondiente del tema
+de estadística descriptiva son aplicables aquí.</p>
+<p>Así que sólo daremos las definiciones, la forma de cálculo y algunos ejemplos.</p>
+<p>En lo que sigue, salvo que diagamos lo contrario, <span class="math inline">\(X\)</span> es una v.a. continua con función de densidad <span class="math inline">\(f_{X}(x)\)</span></p>
+</div>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas-2" class="section level3">
+<h3><span class="header-section-number">2.7.2</span> Esperanza y varianza para variables aleatorias continuas</h3>
+<p><l class="definition"> Esperanza v.a. continuas </l></p>
+<ul>
+<li>Su esperanza es:
+<span class="math display">\[E(X)=\displaystyle\int\limits_{-\infty}^{+\infty} xf_{X}(x)dx.\]</span></li>
+<li>Si <span class="math inline">\(g(x)\)</span> es una función de la variable <span class="math inline">\(X\)</span> entonces:
+<span class="math display">\[E(g(X))=\displaystyle\int\limits_{-\infty}^{+\infty} g(x)\cdot f_{X}(x)dx.\]</span></li>
+</ul>
+</div>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas-3" class="section level3">
+<h3><span class="header-section-number">2.7.3</span> Esperanza y varianza para variables aleatorias continuas</h3>
+<p><l class="definition"> Varianza v.a. continuas </l></p>
+<ul>
+<li>Su varianza es:
+<span class="math display">\[
+Var(X)=\sigma_{X}^2=E((X-\mu_{X})^2)=
+\displaystyle\int\limits_{-\infty}^{+\infty} (x-\mu_{X})^2 f_{X}(x)dx.
+\]</span></li>
+<li>Su desviación típica es: <span class="math display">\[\sigma_{X}=+\sqrt{\sigma_{X}^2}.\]</span></li>
+</ul>
+</div>
+<div id="propiedades-19" class="section level3">
+<h3><span class="header-section-number">2.7.4</span> Propiedades</h3>
+<p><l class="prop"> Propiedades </l></p>
+<ul>
+<li><span class="math inline">\(\sigma_{X}^2\geq 0\)</span></li>
+<li><span class="math inline">\(Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0\)</span></li>
+<li><span class="math inline">\(Var(x)=E(X^2)-\mu_{X}^2=\int\limits_{-\infty}^{+\infty}x^2 f_{X}(x)dx - \mu_{X}^2.\)</span></li>
+<li>El mínimo de <span class="math inline">\(E((X-C)^2)\)</span> se alcanza cuando <span class="math inline">\(C=E(X)\)</span> y es <span class="math inline">\(Var(X)\)</span>.</li>
+</ul>
+</div>
+<div id="ejemplo-21" class="section level3">
+<h3><span class="header-section-number">2.7.5</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo: Dardo</strong></p>
+<p>Calcular <span class="math inline">\(\mu_{X}\)</span> y <span class="math inline">\(\sigma_{X}^2\)</span> en el dardo.</p>
+</div>
+<div class="example-sol">
+<p>Resultado
+<span class="math display">\[\mu_{X}=\frac12,\]</span>
+<span class="math display">\[E(X^2)=\frac13,\]</span>
+<span class="math display">\[Var(X)=\frac1{12}.\]</span></p>
+</div>
+</div>
+<div id="esperanza-de-trasformaciones-lineales-de-v.a.-continuas" class="section level3">
+<h3><span class="header-section-number">2.7.6</span> Esperanza de trasformaciones lineales de v.a. continuas</h3>
+<p><l class="prop"> Proposición</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua con <span class="math inline">\(E(X)=\mu_{X}\)</span> y <span class="math inline">\(Var(X)=\sigma_{X}^2\)</span> sea <span class="math inline">\(Y=a+b X\)</span>, donde
+<span class="math inline">\(a,b\in\mathbb{R}\)</span>, es una nueva v.a. continua obtenida mediante una transformación lineal de <span class="math inline">\(X\)</span>.
+Se verifican las mismas propiedades que en el caso discreto:</p>
+<ul>
+<li><span class="math inline">\(E(Y)=E(a+b X)=a+b E(X)\)</span></li>
+<li><span class="math inline">\(Var(Y)=Var(a+b X)=b^2 Var(X)\)</span></li>
+<li><span class="math inline">\(\sigma_{Y}=|b| \sigma_{X}\)</span></li>
+<li><span class="math inline">\(Z=\frac{X-\mu_{X}}{\sigma_{X}}\)</span> es una transformación
+lineal de <span class="math inline">\(X\)</span> de forma que
+<span class="math display">\[E(Z)=0 \mbox{ y } Var(Z)=1\]</span></li>
+</ul>
+</div>
+<div id="ejemplo-22" class="section level3">
+<h3><span class="header-section-number">2.7.7</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En una empresa de venta de vinos por internet, sea
+<span class="math inline">\(X=\)</span> número de litros de vino del país vendidos en un año.
+Supongamos que sabemos que <span class="math inline">\(E(X)=10000\)</span> y que <span class="math inline">\(Var(X)=100\)</span>
+Supongamos que los gastos fijos de distribución son
+50.000 € y el beneficio por litro es de 10 € por botella.
+Definimos <span class="math inline">\(T=10 X-50000\)</span> que será el beneficio después de gastos.</p>
+</div>
+<div class="example-sol">
+<p>Entonces la esperanza del beneficio es
+<span class="math display">\[E(T)=10 E(X)-50000 = 50000\]</span>
+y
+<span class="math display">\[Var(T)=10^2 Var(X)= 10000\]</span></p>
+</div>
+</div>
+</div>
+<div id="transformaciones-de-variables-aleatorias" class="section level2">
+<h2><span class="header-section-number">2.8</span> Transformaciones de variables aleatorias</h2>
+<div id="transformaciones-de-variables-aleatorias-1" class="section level3">
+<h3><span class="header-section-number">2.8.1</span> Transformaciones de variables aleatorias</h3>
+<p>Muchas variables aleatorias son funciones de otras v.a. En lo que sigue resumiremos diversas técnicas para dada una v.a. <span class="math inline">\(X\)</span> y una
+transformación <span class="math inline">\(Y=h(X)\)</span> encontrar <span class="math inline">\(F_{Y}\)</span> a
+partir de <span class="math inline">\(F_{X}\)</span>.</p>
+</div>
+<div id="propiedad" class="section level3">
+<h3><span class="header-section-number">2.8.2</span> Propiedad</h3>
+<p><l class="prop">Tranformación de v.a. discretas </l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. discreta con <span class="math inline">\(X(\Omega)=\{x_1,x_2,\ldots,x_{n},..\}\)</span> y sea <span class="math inline">\(h:\mathbb{R}\to\mathbb{R}\)</span> una aplicación.
+Entonces <span class="math inline">\(Y=h(X)\)</span> es también una v.a. discreta. Además si <span class="math inline">\(P_X\)</span>
+y <span class="math inline">\(F_{X}\)</span> son las funciones de probabilidad y de distribución de
+<span class="math inline">\(X\)</span> entonces</p>
+<ul>
+<li><span class="math inline">\(\displaystyle P_{Y}(y)=\sum_{x_{i}|h(x_{i})=y}P_X(x_{i}).\)</span></li>
+<li><span class="math inline">\(\displaystyle F_{Y}(y)=\sum_{x_{i}|h(x_{i})\leq y} P_X(x_{i}).\)</span></li>
+</ul>
+</div>
+<div id="propiedades-20" class="section level3">
+<h3><span class="header-section-number">2.8.3</span> Propiedades</h3>
+<p>Desafortunadamente para variables no discetas el asunto no es tan sencillo como el anterior, pues la transformación de, por ejemplo, una v.a. continua puede ser continua, discreta, mixta…</p>
+<p><l class="prop">Transformación de v.a. continuas en continuas</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua cuya función de densidad es <span class="math inline">\(f_{X}\)</span>. Sea
+<span class="math inline">\(h:\mathbb{R}\to\mathbb{R}\)</span> una aplicación estrictamente monótona y derivable, tal
+que <span class="math inline">\(h&#39;(x)\not=0\)</span> para todo <span class="math inline">\(x\in\mathbb{R}\)</span>. Sea <span class="math inline">\(Y=h(X)\)</span> la
+transformación de <span class="math inline">\(X\)</span> por <span class="math inline">\(h\)</span>. Entonces <span class="math inline">\(Y\)</span> es una v.a. continua con función
+de densidad</p>
+<p><span class="math display">\[f_{Y}(y)=\left.\frac{f_{X}(x)}
+{\left|h&#39;(x)\right|}\right|_{x=h^{-1}(y)}\]</span></p>
+</div>
+<div id="propiedades-21" class="section level3">
+<h3><span class="header-section-number">2.8.4</span> Propiedades</h3>
+<p><l class="prop"> Densidad de una transformación de una v.a. continua</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. continua cuya función de densidad es <span class="math inline">\(f_{X}\)</span>. Sea
+<span class="math display">\[h:\mathbb{R}\to\mathbb{R}\]</span>
+una aplicación, no necesariamente monótona tal que :</p>
+<ul>
+<li>sea derivable con derivada no nula</li>
+<li>la ecuación <span class="math inline">\(h(x)=y\)</span> tiene un número finito de soluciones
+<span class="math inline">\(x_1,x_2,..,x_{n}\)</span></li>
+</ul>
+<p>entonces:</p>
+<p><span class="math display">\[
+\displaystyle f_{Y}(y)=\left.\sum_{k=1}^{n} \frac{f_{X}(x)}
+{\left|h&#39;(x)\right|}\right|_{x=x_{k}}.
+\]</span></p>
+</div>
+<div id="método-general-del-transformación-de-v.a." class="section level3">
+<h3><span class="header-section-number">2.8.5</span> Método general del transformación de v.a.</h3>
+<p>Cuando no podamos aplicar las propiedades anteriores intentaremos
+calcular primero la función de distribución de la transformación
+y luego su densidad.</p>
+<p>Notemos que en general si <span class="math inline">\(Y=g(X)\)</span> es una v.a. transformación de la
+v.a. <span class="math inline">\(X\)</span> entonces</p>
+<p><span class="math display">\[
+F_{Y}(y)=P(Y\leq y)=P(g(X)\leq y).
+\]</span></p>
+</div>
+<div id="método-general-del-transformación-de-variables-aleatorias" class="section level3">
+<h3><span class="header-section-number">2.8.6</span> Método general del transformación de variables aleatorias</h3>
+<p>Por ejemplo si <span class="math inline">\(g\)</span> es estrictamente creciente y cont.</p>
+<p><span class="math display">\[
+F_{Y}(y)=P(g(X)\leq y)=P(X\leq g^{-1}(y))=F_{X}(g^{-1}(y)).
+\]</span></p>
+<p>y si <span class="math inline">\(g\)</span> es estrictamente decreciente y cont.
+<span class="math display">\[
+F_{Y}(y)=P(g(X)\leq y)=P(X\geq g^{-1}(y))=1-F_{X}(g^{-1}(y)).
+\]</span></p>
+</div>
+</div>
+<div id="desigualdades-básicas-markov-y-chebychev" class="section level2">
+<h2><span class="header-section-number">2.9</span> Desigualdades básicas: Markov y Chebychev</h2>
+<div id="desigualdades-de-markov-y-de-chebychev" class="section level3">
+<h3><span class="header-section-number">2.9.1</span> Desigualdades de Markov y de Chebychev</h3>
+<ul>
+<li>En esta sección distintas desigualdades que acotan determinadas probabilidades de
+una variable aleatoria.</li>
+<li>Estas desigualdades sirven en algunos casos para acotar probabilidades de determinados sucesos.</li>
+<li>También son útiles desde el punto de vista teórico, por ejemplo para justificar que la varianza es una mediada de la dispersión de
+los datos.</li>
+</ul>
+</div>
+<div id="desigualdad-de-markov" class="section level3">
+<h3><span class="header-section-number">2.9.2</span> Desigualdad de Markov</h3>
+<p><l class="prop"> Desigualdad de Markov</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. positiva con <span class="math inline">\(E(X)\)</span> finita. Entonces</p>
+<p><span class="math display">\[P(X\geq a)\leq \frac{E(X)}{a}\mbox{ para todo }a&gt;0.\]</span></p>
+<div class="dem">
+<p><strong>Demostración</strong>:</p>
+<p>Si <span class="math inline">\(X\)</span> es continua y solo toma valores positivos</p>
+<p><span class="math display">\[\begin{eqnarray*}
+E(X) &amp;=&amp; \int_{-\infty}^{+\infty} x f_{X}(x) dx=  \int_0^{+\infty} x f_{X}(x) dx=  \int_0^{a} x f_{X}(x) dx +\int_{a}^{+\infty} x f_{X}(x) dx \\
+&amp; &amp;\geq   \int_{a}^{+\infty} x
+f_{X}(x) dx \geq a \int_{a}^{+\infty}
+f_{X}(x) dx = a \cdot  P(X\geq a)
+\end{eqnarray*}\]</span>.</p>
+<p>de donde se sigue que</p>
+<p><span class="math display">\[P(X\geq a)\leq \frac{E(X)}{a}.\]</span></p>
+</div>
+</div>
+<div id="desigualdad-de-markov-1" class="section level3">
+<h3><span class="header-section-number">2.9.3</span> Desigualdad de Markov</h3>
+<p><l class="prop"> Corolario</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. con <span class="math inline">\(E(X)\)</span> finita entonces para todo <span class="math inline">\(a&gt;0\)</span></p>
+<span class="math display">\[P(|X|\geq a )\leq \frac{E(|X|)}{a}.\]</span>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Demuestra el corolario anterior a partir de la desigualdad de Markov.</p>
+</div>
+</div>
+<div id="desigualdad-de-chebychev" class="section level3">
+<h3><span class="header-section-number">2.9.4</span> Desigualdad de Chebychev</h3>
+<p>La desigualdad de Chebychev también se denomina de Chebyshov y en inglés Chebyshev.</p>
+<p><l class="prop"> Desigualdad de Chebychev</l></p>
+<p>Sea <span class="math inline">\(X\)</span> una v.a.con <span class="math inline">\(E(X)=\mu\)</span> y <span class="math inline">\(Var(X)=\sigma^2\)</span> entonces para todo <span class="math inline">\(a&gt;0\)</span></p>
+<p><span class="math display">\[P(|X-\mu|\geq a)\leq \frac{\sigma^2}{a^2}\]</span></p>
+</div>
+<div id="demostración-desigualdad-de-chebychev" class="section level3">
+<h3><span class="header-section-number">2.9.5</span> Demostración desigualdad de Chebychev</h3>
+<div class="dem">
+<p><strong>Demostración</strong></p>
+<p>Apliquemos la consecuencia de la desigualdad de Markov a la v.a.
+no negativa</p>
+<p><span class="math display">\[Y^2=(X-\mu)^2\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+P(Y^2\geq a^2) \leq 
+\frac{E(Y^2)}{a^2}=\frac{E((X-\mu)^2)}{a^2}
+= \frac{Var(X)}{a^2}=\frac{\sigma^2}{a^2}
+.
+\]</span></p>
+<p>Por otra parte</p>
+<p><span class="math display">\[
+P(Y^2\geq a^2)=P(|Y|\geq a)= P(|X-\mu|\geq a).
+\]</span></p>
+<p>hecho que, junto con la desigualdad anterior,
+demuestra el resultado.</p>
+</div>
+</div>
+<div id="uso-de-la-desigualdad-de-chebychev" class="section level3">
+<h3><span class="header-section-number">2.9.6</span> Uso de la desigualdad de Chebychev</h3>
+<p><l class="observ"> <strong>Utilidad básica de la desigualdad de Chebychev</strong></l></p>
+<p>Supongamos que <span class="math inline">\(X\)</span> es una v.a. con <span class="math inline">\(Var(X)=0\)</span>
+entonces.</p>
+<p>Aplicando la desigualdad anterior</p>
+<p><span class="math display">\[P(|X-E(X)|\geq a )=0\mbox{ para todo }a&gt;0\]</span>
+lo que implica que</p>
+<p><span class="math display">\[P(X=E(X))=1.\]</span></p>
+<p>Por lo que probabilidad de que <span class="math inline">\(X\)</span> sea
+constantemente <span class="math inline">\(E(X)\)</span> es 1.</p>
+<p>Lo que nos confirma la utilidad de la varianza es una
+medida de la dispersión de los datos.</p>
+</div>
+<div id="ejemplo-23" class="section level3">
+<h3><span class="header-section-number">2.9.7</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Se sabe que el tiempo de respuesta medio y la desviación típica de un sistema multiusuario son 15 y 3 u.t.respectivamente. Entonces:</p>
+<p><span class="math display">\[
+P(|X-15|\geq 5)\leq \frac9{25}=0.36.
+\]</span></p>
+</div>
+<p>Si substituimos <span class="math inline">\(a\)</span> por <span class="math inline">\(a\cdot \sigma\)</span> en la
+desigualdad de Chebychev, nos queda:</p>
+<p><span class="math display">\[
+P(|X-\mu|\geq a \sigma)\leq
+\frac{\sigma^2}{(a\sigma)^2}=\frac1{a^2}.
+\]</span></p>
+<p>Que es otra manera de expresar la desigualdad de Chebychev.</p>
+</div>
+<div id="más-formas-de-la-desgualdad-de-chebychev" class="section level3">
+<h3><span class="header-section-number">2.9.8</span> Más formas de la desgualdad de Chebychev</h3>
+<p>La desigualdad de Chebychev también se puede escribir de al menos dos maneras más:</p>
+<p><span class="math display">\[
+P(\mu-a\leq X\leq \mu+a)\geq 1-\frac{\sigma^2}{a^2}
+\]</span></p>
+<p>y tomado como <span class="math inline">\(a=k\cdot \sigma\)</span></p>
+<p><span class="math display">\[
+P(\mu-k\cdot \sigma\leq X\leq \mu+ k \cdot \sigma)\geq 1-\frac1{k^2}
+\]</span></p>
+</div>
+<div id="la-varianza-como-medida-de-dispersión" class="section level3">
+<h3><span class="header-section-number">2.9.9</span> La varianza como medida de dispersión</h3>
+<p>Tomando la segunda expresión que hemos visto para la desigualdad de
+Chebychev para distintos valores de <span class="math inline">\(k&gt;0\)</span> tenemos la siguiente tabla.</p>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th>k</th>
+<th><span class="math inline">\(P(|X-E(X)|\geq k \cdot \sigma)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">\(\leq 1\)</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">\(\leq 0.25\)</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><span class="math inline">\(\leq 0.111\)</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><span class="math inline">\(\leq 0.0025\)</span></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<div id="interpretación-de-la-desigualdad" class="section level3">
+<h3><span class="header-section-number">2.9.10</span> Interpretación de la desigualdad</h3>
+<ul>
+<li><p>Por ejemplo para <span class="math inline">\(k=2\)</span> esta desigualdad se puede interpretar como que dada una v.a. <span class="math inline">\(X\)</span> con cualquier distribución que tenga <span class="math inline">\(E(X)\)</span> y <span class="math inline">\(Var(X)\)</span> finitos <em>la probabilidad de que un valor se aleje de la media <span class="math inline">\(\mu\)</span> más de <span class="math inline">\(a=2\)</span> desviaciones típicas es menor o igual que <span class="math inline">\(0.25\)</span></em>.</p></li>
+<li><p>Es decir sólo el 25% de los valores estarán alejados de la media
+más de <span class="math inline">\(2\sigma\)</span></p></li>
+</ul>
+<p>¡<em>Sea cual sea la distribución de la v.a.</em>!</p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probabilidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables-aleatorias-complementos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -642,7 +1898,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/2.Rmd",
 "text": "Edit"
 },
 "history": {

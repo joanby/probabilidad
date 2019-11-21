@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidad y variables aleatorias para ML con R y Python</title>
+  <title>Tema 1 Probabilidad | Probabilidad y variables aleatorias para ML con R y Python</title>
   <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:title" content="Tema 1 Probabilidad | Probabilidad y variables aleatorias para ML con R y Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta name="twitter:title" content="Tema 1 Probabilidad | Probabilidad y variables aleatorias para ML con R y Python" />
   
   <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="prev" href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="next" href="variables-aleatorias.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -584,35 +584,1097 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidad y variables aleatorias para ML con R y Python</h1>
-<p class="author"><em>Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir</em></p>
-<p class="date"><em>2019-11-21</em></p>
+<div id="probabilidad" class="section level1">
+<h1><span class="header-section-number">Tema 1</span> Probabilidad</h1>
+<div id="probabilidades-básicas" class="section level2">
+<h2><span class="header-section-number">1.1</span> Probabilidades Básicas</h2>
+<p><l class="definition"> Experimento aleatorio</l>: experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Tirar un dado de 6 caras y anotar el número de puntos de la cara superior.</p>
 </div>
-<div id="prerequisites" class="section level1 unnumbered">
-<h1>Prerequisites</h1>
-<p>Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en <a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7">Udemy</a></p>
-<p>Puedes consultar todas las transparecias del curso en formato HTML desde nuestro <a href="https://joanby.github.io/probabilidad/">Gihub.io</a></p>
-<p>Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos.</p>
+<p><l class="definition" >Suceso elemental</l>: cada uno de los posibles resultados del experimento aleatorio</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Los sucesos elementales del ejemplo anterior serían:</p>
+<div class="center">
+<p><img src="Images/proba1dibujos/dice/1.png" /><!-- --><img src="Images/proba1dibujos/dice/2.png" /><!-- --><img src="Images/proba1dibujos/dice/3.png" /><!-- --><img src="Images/proba1dibujos/dice/4.png" /><!-- --><img src="Images/proba1dibujos/dice/5.png" /><!-- --><img src="Images/proba1dibujos/dice/6.png" /><!-- --></p>
+</div>
+</div>
+<div id="definiciones-básicas" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Definiciones básicas</h3>
+<p><l class="definition"> Espacio muestral</l>: el conjunto <span class="math inline">\(\Omega\)</span> formado por todos los sucesos elementales del experimento aleatorio</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+El espacio muestral del ejemplo anterior del dado es
+<div class="center">
+<p><span class="math inline">\(\Omega=\Big\{\)</span><img src="Images/proba1dibujos/dice/1.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/2.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/3.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/4.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/5.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/6.png" /><!-- --><span class="math inline">\(\Big\}\)</span></p>
+</div>
+<p>pero por comodidad, a partir de ahora pondremos
+<span class="math display">\[\Omega = \{1,2,3,4,5,6\}\]</span></p>
+</div>
+</div>
+<div id="definiciones-básicas-1" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Definiciones básicas</h3>
+<p><l class="definition"> Suceso </l> : Cualquier subconjunto del espacio muestral.</p>
+<p>Alguno sucesos notables que merece la pena nombrar son:</p>
+<ul>
+<li><l class="definition">Suceso seguro o cierto</l>: <span class="math inline">\(\Omega\)</span></li>
+<li><l class="definition">Suceso imposible o vacio</l>: <span class="math inline">\(\emptyset\)</span></li>
+<li><l class="definition">Partes de un conjunto</l>: <span class="math inline">\(\mathcal{P}(\Omega)\)</span>: conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de <span class="math inline">\(\Omega\)</span>)</li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>¿Cuantos elementos contiene el conjunto de partes de <span class="math inline">\(\Omega\)</span> del experimento anterior?</p>
+</div>
+</div>
+<div id="ejemplo-n-grama" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Ejemplo <span class="math inline">\(n\)</span>-grama</h3>
+<p>Se define un <span class="math inline">\(n\)</span>-grama de una palabra como el conjunto de <span class="math inline">\(n\)</span> letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como “_”).</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Consideremos el experimento aleatorio que consiste en escoger al azar un 3-grama de la palabra “_Baleares_”. Vamos a escribir el espacio muestral y algunos sucesos elementales del mismo.</p>
+</div>
+<div class="example-sol">
+<p>En este caso, si consideramos la palabra “_Baleares_”, el espacio muestral del experimento sería:</p>
+<p><span class="math display">\[\Omega=\{\_Ba, Bal, ale, lea, ear, are, res, es\_\}\]</span></p>
+<p>Algunos sucesos serían:</p>
+<ul>
+<li>3-gramas que empiezan por <span class="math inline">\(a\)</span>: <span class="math inline">\(\{ale,are\}\)</span></li>
+<li>3-gramas de inicio y final de palabra: <span class="math inline">\(\{\_Ba,es\_\}\)</span></li>
+<li>3-gramas que contengan una <span class="math inline">\(l\)</span>: <span class="math inline">\(\{Bal,ale,lea\}\)</span></li>
+</ul>
+</div>
+</div>
+<div id="operaciones-con-sucesos" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Operaciones con sucesos</h3>
+<p>Si tenemos dos sucesos <span class="math inline">\(A,B\subseteq \Omega\)</span>, podemos definir:</p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span>: <em>suceso</em> total o <em>seguro</em></li>
+<li><span class="math inline">\(\emptyset\)</span>:suceso <em>vacío</em> o <em>imposible</em></li>
+<li><span class="math inline">\(A\cup B\)</span>: suceso <em>unión</em>; el que ocurre si sucede <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(A\cap B\)</span>: suceso <em>intersección</em>; el que ocurre si sucede <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(A^c\)</span>: suceso <em>complementario</em> el que sucede si NO sucede <span class="math inline">\(A\)</span>.</li>
+<li><span class="math inline">\(A- B=A\cap B^c\)</span>: suceso <em>diferencia</em>, que acontece si sucede <span class="math inline">\(A\)</span> y NO sucede <span class="math inline">\(B\)</span>.</li>
+</ul>
+<p><l class="definition"> Sucesos incompatibles</l>: <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <em>incompatibles</em> (o <em>disjuntos</em>) cuando <span class="math inline">\(A\cap B=\emptyset\)</span>.</p>
+</div>
+<div id="ejemplo-género" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> Ejemplo género</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Supongamos que el sexo se divide entre Mujeres y Hombres. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>Estudiantes de esta clase: <span class="math inline">\(\Omega\)</span></li>
+<li>Mujeres de esta clase: <span class="math inline">\(A\)</span></li>
+<li>Estudiantes que son zurdos <span class="math inline">\(B\)</span></li>
+</ul>
+<p>Algunas operaciones entre los conjuntos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: Est. que son mujeres o que son zurdos.</li>
+<li><span class="math inline">\(A\cap B\)</span>: Mujeres de esta clase que son zurdas.</li>
+<li><span class="math inline">\(A^c\)</span>: Hombres de esta clase.</li>
+<li><span class="math inline">\(A-B\)</span>: Mujeres de la clases que NO son zurdas.</li>
+<li><span class="math inline">\(B-A\)</span>: Hombres de la clase que son zurdos</li>
+<li>¡Cuidado! No son incompatibles</li>
+</ul>
+</div>
+</div>
+<div id="propiedades" class="section level3">
+<h3><span class="header-section-number">1.1.6</span> Propiedades</h3>
+<p><l class="definition">Conmutativas</l>:</p>
+<p><span class="math display">\[A\cup B=B\cup A, \quad A\cap B=B\cap A\]</span></p>
+<p><l class="definition">Asociativas</l>:</p>
+<p><span class="math display">\[A\cup(B\cup C)=(A\cup B)\cup C, \quad A\cap(B\cap C)=(A\cap B)\cap C\]</span></p>
+<p><l class="definition">Distributivas</l>:</p>
+<p><span class="math display">\[A\cap(B\cup C)=(A\cap B)\cup (A\cap C), \quad A\cup(B\cap C)=(A\cup B)\cap (A\cup C)\]</span></p>
+</div>
+<div id="propiedades-1" class="section level3">
+<h3><span class="header-section-number">1.1.7</span> Propiedades</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\)</span></th>
+<th align="center"><span class="math inline">\(B\cap C\)</span></th>
+<th align="center"><span class="math inline">\(A\cup (B\cap C)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/distr11.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr12.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr13.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="propiedades-2" class="section level3">
+<h3><span class="header-section-number">1.1.8</span> Propiedades</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\cup B\)</span></th>
+<th align="center"><span class="math inline">\(A\cup C\)</span></th>
+<th align="center"><span class="math inline">\((A\cup B)\cap (A\cup C)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/distr21.jpg" class="image-caption" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr22.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr23.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="propiedades-3" class="section level3">
+<h3><span class="header-section-number">1.1.9</span> Propiedades</h3>
+<p><l class="definition"> Complementario del complementario </l>
+<span class="math display">\[(A^c)^c=A\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\)</span></th>
+<th align="center"><span class="math inline">\(A^c\)</span></th>
+<th align="center"><span class="math inline">\((A^c)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/dd2.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/dd1.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/dd3.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="propiedades-4" class="section level3">
+<h3><span class="header-section-number">1.1.10</span> Propiedades</h3>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cup B)^c=A^c\cap B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\cup B\)</span></th>
+<th align="center"><span class="math inline">\((A\cup B)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan6.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan7.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="propiedades-5" class="section level3">
+<h3><span class="header-section-number">1.1.11</span> Propiedades</h3>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cup B)^c=A^c\cap B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A^c\)</span></th>
+<th align="center"><span class="math inline">\(B^c\)</span></th>
+<th align="center"><span class="math inline">\(A^c\cap B^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan8.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan9.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan10.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="propiedades-6" class="section level3">
+<h3><span class="header-section-number">1.1.12</span> Propiedades</h3>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cap B)^c=A^c\cup B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\cap B\)</span></th>
+<th align="center"><span class="math inline">\((A\cap B)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan1.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan2.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="propiedades-7" class="section level3">
+<h3><span class="header-section-number">1.1.13</span> Propiedades</h3>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cap B)^c=A^c\cup B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A^c\)</span></th>
+<th align="center"><span class="math inline">\(B^c\)</span></th>
+<th align="center"><span class="math inline">\(A^c\cup B^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan3.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan5.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan4.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="definición-de-probabilidad" class="section level3">
+<h3><span class="header-section-number">1.1.14</span> Definición de probabilidad</h3>
+<p>La probabilidad de un suceso es una puntuación (<em>score</em>) numérico entre 0 y 1 que mide la verosimilitud de que este evento se produzca.</p>
+<p>Esta verosimilitud puede estar justificada por</p>
+<ul>
+<li><p>Estimación personal</p></li>
+<li><p>Estimación de expertos</p></li>
+<li><p>La frecuencia con la que se da</p></li>
+<li><p>Cálculo formal</p></li>
+</ul>
+</div>
+<div id="definición-de-probabilidad-1" class="section level3">
+<h3><span class="header-section-number">1.1.15</span> Definición de probabilidad</h3>
+<p>Sea <span class="math inline">\(\Omega\)</span> el espacio muestral de un experimento aleatorio.
+Supongamos que el número de posibles resultados, por el momento, es finito.</p>
+<p>Una probabilidad sobre <span class="math inline">\(\Omega\)</span> es una aplicación <span class="math inline">\(P:\mathcal{P}(\Omega)\to [0,1]\)</span> con las siguientes propiedades:</p>
 <ol style="list-style-type: decimal">
-<li>Probabilidad</li>
-<li>Variables aleatorias</li>
-<li>Distribuciones notables</li>
-<li>Complementos avanzados</li>
-<li>Variables bidimnsionales</li>
-<li>Variables multidimensionales</li>
-<li>Convergencia y Teorema Central del límite</li>
+<li><span class="math inline">\(0\leq P(A)\leq 1\)</span>, para todo suceso <span class="math inline">\(A\)</span></li>
+<li><span class="math inline">\(P(\Omega)=1\)</span></li>
+<li>Si <span class="math inline">\(\{A_1,A_2,\ldots,A_n\}\)</span> son sucesos disjuntos dos a dos, entonces</li>
 </ol>
-<p>Y todo con más de 30 horas de vídeo a demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.</p>
+<p><span class="math display">\[
+P(A_1\cup A_2\cup \cdots \cup A_n)=P(A_1)+P(A_2)+\cdots +P(A_n)
+\]</span></p>
+<p>Si <span class="math inline">\(a\in \Omega\)</span> es un suceso elemental cometeremos el abuso de notación de poner <span class="math inline">\(P(a)\)</span> en lugar de <span class="math inline">\(P(\{a\})\)</span></p>
+</div>
+<div id="ejemplo-grupos-sangíneos" class="section level3">
+<h3><span class="header-section-number">1.1.16</span> Ejemplo: grupos sangíneos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En la página de la <a href="http://www.donasang.org/que-es-la-sang/es_frequencies-dels-diferents-grups.html">Fundación Banco de Sangre y Tejidos de las Islas Baleares</a> podemos encontrar información sobre los porcentajes de tipos de sangre de los donantes de las Islas Baleares:</p>
+<p><span class="math display">\[A: 46\%; B: 7.5\%; AB: 3.5\%; O: 43\%\]</span></p>
+<p>¿Cuál es la probabilidad de que un balear donante de sangre no sea del tipo 0?</p>
+</div>
+<div class="example-sol">
+<p><strong>Experimento aleatorio:</strong> tipo de sangre de un paciente humano</p>
+<p><span class="math display">\[\Omega=\{\mbox{A,B,AB,O}\}\]</span></p>
+<p><strong>Probabilidad</strong> de un suceso: se asimila al porcentaje observado de individuos</p>
+<p><strong>Suceso:</strong> <span class="math inline">\(\{\mbox{O}\}^c=\{\mbox{A,B,AB}\}\)</span></p>
+<p><span class="math display">\[P(\{\mbox{O}\}^c)\!=\!P(\{\mbox{A,B,AB}\})\!=\!
+P(\mbox{A})+P (\mbox{B})+P(\mbox{AB})\!=\!0.57\]</span></p>
+</div>
+</div>
+<div id="propiedades-8" class="section level3">
+<h3><span class="header-section-number">1.1.17</span> Propiedades</h3>
+<div class="prop">
+Propiedades básicas de la probabilidad
+</div>
+<ul>
+<li><p><span class="math inline">\(P(\emptyset)=0\)</span></p></li>
+<li><p><span class="math inline">\(P(A-B)=P(A)-P(A\cap B)\)</span> porque <span class="math inline">\(P(A)=P(A-B)+P(A\cap B)\)</span></p></li>
+</ul>
+<div class="center">
+<p><img src="Images/proba1dibujos/A-B.jpg" height="200" /></p>
+</div>
+<ul>
+<li><p>Si <span class="math inline">\(B\subseteq A\)</span>, entonces <span class="math inline">\(0\leq P(B)\leq P(A)\)</span></p></li>
+<li><p><span class="math inline">\(P(A^c)=1-P(A)\)</span></p></li>
+</ul>
+</div>
+<div id="propiedades-9" class="section level3">
+<h3><span class="header-section-number">1.1.18</span> Propiedades</h3>
+<ul>
+<li><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</span> porque</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A)+P(B)-P(A\cap B) &amp;=&amp; P(A-B)+P(A\cap B)+\\
+ &amp; &amp; P(B-A)+ P(A\cap  B)-P(A\cap  B)\\
+&amp;=&amp; P(A-B)+P(A\cap B)+ P(B-A) \\
+&amp;=&amp; P(A\cup B)
+\end{eqnarray*}\]</span></p>
+<div class="center">
+<p><img src="Images/proba1dibujos/A-B.jpg" height="200" /></p>
+</div>
+</div>
+<div id="propiedades-10" class="section level3">
+<h3><span class="header-section-number">1.1.19</span> Propiedades</h3>
+<ul>
+<li><span class="math display">\[\begin{eqnarray*}
+P(A\cup B\cup C)&amp;=&amp;P(A)+P(B)+P(C)  \\ &amp;&amp;-P(A\cap B)-P(A\cap C)-P(B\cap C)  +P(A\cap B\cap C)
+\end{eqnarray*}\]</span></li>
+</ul>
+<div class="center">
+<p><img src="Images/proba1dibujos/tresconjunts.jpg" height="200" /></p>
+</div>
+<p><span class="math display">\[P(A\cup B\cup C)=P(1)+P(2)+P(3)+P(4)+P(5)+P(6)+P(7)\]</span></p>
+</div>
+<div id="propiedades-11" class="section level3">
+<h3><span class="header-section-number">1.1.20</span> Propiedades</h3>
+<ul>
+<li><p>Si <span class="math inline">\(A=\{a_1,a_2,\ldots,a_k\}\)</span>, entonces
+<span class="math display">\[
+P(A)=P(a_1)+P(a_2)+\cdots+P(a_k)
+\]</span></p></li>
+<li><p>Si todos los sucesos elementales tienen la misma probabilidad,
+<span class="math display">\[
+P(A)=\frac{|A|}{|\Omega|}\Big(=\frac{\mbox{casos favorables}}{\mbox{casos posibles}}\Big)
+\]</span></p></li>
+</ul>
+</div>
+<div id="ejemplo-frecuencia-de-vocales" class="section level3">
+<h3><span class="header-section-number">1.1.21</span> Ejemplo: Frecuencia de vocales</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Los porcentajes de vocales de un determinado idioma (de alfabeto latino) según la <a href="https://es.wikipedia.org/wiki/Frecuencia_de_aparici%C3%B3n_de_letras">Wikipedia</a> son:</p>
+<p><span class="math display">\[A: 18.7\%; E: 26.1\%; I: 25.7\%; O: 24.4\% U: 5.1\%\]</span></p>
+<p>¿Cuál es la probabilidad que una vocal escogida al azar de este idioma sea una E o una O?</p>
+</div>
+<div class="example-sol">
+<p>El espacio muestral del experimento es <span class="math inline">\(\Omega=\{A,E,I,O,U\}\)</span>.</p>
+<p>El suceso que deseamos analizar es <span class="math inline">\(\{E,0\}\)</span>.</p>
+<p>Y su probabilidad es</p>
+<p><span class="math display">\[P(\{E,O\})=P(E)+P(O)=0.261+0.244=0.505.\]</span></p>
+</div>
+</div>
+<div id="ejemplo-consumo-de-drogas" class="section level3">
+<h3><span class="header-section-number">1.1.22</span> Ejemplo: Consumo de drogas</h3>
+<div class="example">
+<p>Segun un árticulo de <a href="https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html">El País</a>, en un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
+<p>¿Cuál es la probabilidad que un individuo analizado en el control de drogas escogido al azar no de positivo en ninguno de lo dos test?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos elementales del enunciado del problema son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: dar positivo en alguno de los dos test; <span class="math inline">\(P(A\cup B)=0.0105\)</span></li>
+<li><span class="math inline">\((A\cup B)^c\)</span>: no dar positivo en ninguno de los test</li>
+</ul>
+<p>de donde, por tanto:
+<span class="math display">\[P((A\cup B)^c)=1-P(A\cup B)=1-0.0105=0.9895.\]</span></p>
+</div>
+</div>
+<div id="ejemplos-consumo-de-drogas" class="section level3">
+<h3><span class="header-section-number">1.1.23</span> Ejemplos: Consumo de drogas</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
+<p>¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test en cocaína y cannabis?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos elementales son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: dar positivo en algún de los dos test; <span class="math inline">\(P(A\cup B)=0.0105\)</span></li>
+<li><span class="math inline">\(A\cap B\)</span>: dar positivo en los dos test</li>
+</ul>
+<p>de donde, por tanto:</p>
+<p><span class="math display">\[\begin{array}{rl}
+{P(A\cap B)} &amp;{=P(A)+P(B)-P(A\cup B)}\\ &amp;{=0.001+0.01-0.0105=0.0005}
+\end{array}\]</span></p>
+</div>
+</div>
+<div id="ejemplo-control-de-drogas" class="section level3">
+<h3><span class="header-section-number">1.1.24</span> Ejemplo: Control de drogas</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
+<p>¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína pero no en cannabis?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos elementales son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cap B\)</span>: dar positivo en los dos test; <span class="math inline">\(P(A\cap B)=0.0005\)</span></li>
+<li><span class="math inline">\(B-A\)</span>: dar positivo en cocaína pero no en cannabis</li>
+</ul>
+<p>de donde, por tanto:</p>
+<p><span class="math display">\[P(B-A) =P(B)-P(A\cap B) =0.01-0.0005=0.0095\]</span></p>
+</div>
+</div>
+</div>
+<div id="probabilidad-condicionada" class="section level2">
+<h2><span class="header-section-number">1.2</span> Probabilidad condicionada</h2>
+<div id="probabilidad-condicionada-1" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Probabilidad condicionada</h3>
+<p><l class="definition"> Probabilidad condicionada</l>: Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, con <span class="math inline">\(P(A)&gt;0\)</span>, la probabilidad <span class="math inline">\(P(B|A)\)</span> de <span class="math inline">\(B\)</span> condicionado a <span class="math inline">\(A\)</span> es la probabilidad</p>
+<ul>
+<li>de que suceda <span class="math inline">\(B\)</span> suponiendo que pasa <span class="math inline">\(A\)</span></li>
+<li>de que si pasa <span class="math inline">\(A\)</span>, entonces suceda <span class="math inline">\(B\)</span></li>
+<li>de que un resultado de <span class="math inline">\(A\)</span> también pertenezca a <span class="math inline">\(B\)</span></li>
+</ul>
+<p>Se calcula a través de la definición:</p>
+<p><span class="math display">\[
+P(B|A)=\frac{P(A\cap B)}{P(A)}
+\]</span></p>
+</div>
+<div id="ejemplo-frecuencia-género-y-gafas" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Ejemplo: frecuencia género y gafas</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>¿Cuál es la probabilidad de que un alumno lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{33}{50}
+\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad de que un alumno sea mujer y lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{50}
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo-sexo-y-gafas" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Ejemplo: sexo y gafas</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>¿Cuál es la probabilidad de que un chica lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{30}=\frac{18/50}{30/50}=\frac{P(\mbox{mujer  y gafas})}{P(\mbox{mujer})}
+\]</span></p>
+<ul>
+<li>Si escogemos un estudiante al azar ¿Cuál es la probabilidad que si es mujer, entonces lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{30}
+\]</span></p>
+</div>
+</div>
+<div id="ejemplo" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>¿Cuál es la probabilidad de que un alumno que lleve gafas sea mujer?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{33}=\frac{18/50}{33/50}=\frac{P(\mbox{mujer y gafas})}{P(\mbox{gafas})}
+\]</span></p>
+<ul>
+<li>Si escogemos un estudiante al azar ¿Cuál es la probabilidad de que si lleva gafas, entonces sea mujer?
+<span class="math display">\[
+\frac{18}{33}
+\]</span></li>
+</ul>
+</div>
+</div>
+<div id="atención" class="section level3">
+<h3><span class="header-section-number">1.2.5</span> ¡Atención!</h3>
+<p>Hay que distinguir bien entre</p>
+<ul>
+<li><span class="math inline">\(P(A\cap B)\)</span>: probabilidad de <span class="math inline">\(A\)</span> <span class="math inline">\(\color{red}{\text{y}}\)</span> <span class="math inline">\(B\)</span></li>
+</ul>
+<p><em>Probabilidad de que sea mujer y lleve gafas</em></p>
+<ul>
+<li><span class="math inline">\(P(A|B)\)</span>: probabilidad de que <span class="math inline">\(\color{red}{\text{si}}\)</span> pasa <span class="math inline">\(B\)</span>, <span class="math inline">\(\color{red}{\text{entonces}}\)</span> pase <span class="math inline">\(A\)</span>.</li>
+</ul>
+<p><em>Probabilidad de que, si es mujer, lleve gafas</em></p>
+<p>Cuando utilizamos probabilidad condicional <span class="math inline">\(P(A|B)\)</span> estamos restringiendo el espacio muestral a <span class="math inline">\(B\)</span></p>
+</div>
+<div id="probabilidad-condicionada.-propiedades" class="section level3">
+<h3><span class="header-section-number">1.2.6</span> Probabilidad condicionada. Propiedades</h3>
+<p>La probabilidad condicionada es una probabilidad</p>
+<div class="prop">
+Proposición
+</div>
+<p>Sea <span class="math inline">\(A\subseteq \Omega\)</span> un suceso tal que <span class="math inline">\(P(A)&gt;0\)</span>. entonces</p>
+<p><span class="math display">\[
+\begin{array}{rccl}
+P(-|A):&amp; \mathcal{P}(\Omega) &amp; \to &amp; [0,1]\\
+&amp;B &amp; \mapsto &amp; P(B|A)
+\end{array}
+\]</span>
+satisface las propiedades de las probabilidades, como por ejemplo:</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(B^c|A)=1-P(B|A)\\
+P(B_1\cup B_2|A)=P(B_1|A)+P(B_2|A)-P(B_1\cap B_2|A)
+\end{array}
+\]</span></p>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Escribid el resto de propiedades que cumpliría una probabilidad condicionada al evento <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<div id="ejemplos" class="section level3">
+<h3><span class="header-section-number">1.2.7</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.</p>
+<p>Si un adulto cree que es hipertenso, ¿cuál es la probabilidad que lo sea?</p>
+</div>
+<div class="example-sol">
+<p>Sean los sucesos</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: ser hipertenso; <span class="math inline">\(P(A)=0.15\)</span></li>
+<li><span class="math inline">\(B\)</span>: creer ser hipertenso; <span class="math inline">\(P(B)=0.25\)</span></li>
+</ul>
+<p>entonces podemos definir el suceso:</p>
+<ul>
+<li><span class="math inline">\(A\cap B\)</span>: ser hipertenso y creerlo; <span class="math inline">\(P(A\cap B)=0.09\)</span></li>
+</ul>
+<p>de donde, la probabilidad condicionada de ser hipertenso creyéndonos que lo somos es:</p>
+<p><span class="math display">\[P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0.09}{0.25}=0.36\]</span></p>
+</div>
+</div>
+<div id="ejemplo-1" class="section level3">
+<h3><span class="header-section-number">1.2.8</span> Ejemplo</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.</p>
+<p>Si un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?</p>
+</div>
+<div class="example-sol">
+<p>Si tenemos los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: ser hipertenso;</li>
+<li><span class="math inline">\(B\)</span>: creer ser hipertenso</li>
+</ul>
+<p>entonces buscamos la probabilidad <span class="math inline">\(P(B|A)\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B|A) &amp; =\dfrac{P(A\cap B)}{P(A)}=\dfrac{0.09}{0.15}=
+0.6
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="ejemplos-dígitos-de-control" class="section level3">
+<h3><span class="header-section-number">1.2.9</span> Ejemplos: dígitos de control</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un dígito de control de error toma el valor 0 en el 99% de los casos en que hay un error. Si la probabilidad de error en un mensaje es del <span class="math inline">\(0.5\%\)</span>. \blue{¿cuál es la probabilidad de que el mensaje sea erróneo y el código de error tenga valor 0?</p>
+</div>
+<div class="example-sol">
+<ul>
+<li><span class="math inline">\(B\)</span>: mensaje con error; <span class="math inline">\(P(B)=0.005\)</span></li>
+<li><span class="math inline">\(A\)</span>: código de error vale 0;</li>
+<li><span class="math inline">\(P(A|B)=0.99\)</span></li>
+</ul>
+<p>entonces:
+<span class="math display">\[P(A\cap B)=P(B)\cdot P(A|B)=0.005\cdot 0.99=0.00495\]</span></p>
+</div>
+</div>
+<div id="ejemplos-1" class="section level3">
+<h3><span class="header-section-number">1.2.10</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</li>
+<li>¿Cuál es la probabilidad que un correo <strong>no</strong> tenga adjuntos si <strong>no</strong> es SPAM?</li>
+</ul>
+</div>
+</div>
+<div id="ejemplos-2" class="section level3">
+<h3><span class="header-section-number">1.2.11</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</li>
+</ul>
+</div>
+<div class="example-sol">
+<ul>
+<li><span class="math inline">\(A\)</span>: llevar adjuntos; <span class="math inline">\(P(A)=0.5\)</span></li>
+<li><span class="math inline">\(S\)</span>: SPAM; <span class="math inline">\(P(S)=0.65\)</span></li>
+<li><span class="math inline">\(A^c\cap S^c=(A\cup S)^c\)</span>: no llevar adjunto y no ser SPAM; <span class="math inline">\(P((A\cup S)^c)=0.15\)</span></li>
+</ul>
+<p><span class="math display">\[P(A|S)=\dfrac{P(A\cap S)}{P(S)}=?\]</span></p>
+</div>
+</div>
+<div id="ejemplos-3" class="section level3">
+<h3><span class="header-section-number">1.2.12</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</li>
+</ul>
+</div>
+<div class="example-sol">
+<ul>
+<li><p><span class="math inline">\(P(A)=0.5, P(S)=0.65, P(A^c\cap S^c)=P((A\cup S)^c)=0.15\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cup S)=1-P((A\cup S)^c)=0.85\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cap S)=P(A)+P(S)-P(A\cup S)=0.3\)</span></p></li>
+</ul>
+<p><span class="math display">\[P(A|S)=\dfrac{P(A\cap S)}{P(S)}=\dfrac{0.3}{0.65}\approx 0.46\]</span></p>
+</div>
+</div>
+<div id="ejemplos-spam-continuación" class="section level3">
+<h3><span class="header-section-number">1.2.13</span> Ejemplos SPAM continuación</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.</p>
+<ul>
+<li>¿Cuál es la probabilidad de que un correo no lleve adjuntos si no es SPAM?</li>
+</ul>
+</div>
+<div class="example-sol">
+<ul>
+<li><span class="math inline">\(P(A)=0.5, P(S)=0.65, P(A^c\cap S^c)=P((A\cup S)^c)=0.15\)</span></li>
+</ul>
+<p><span class="math display">\[P(A^c|S^c)=\dfrac{P(A^c\cap S^c)}{P(S^c)}=\dfrac{P(A^c\cap S^c)}{1-P(S)}=\dfrac{0.15}{0.35}\approx 0.43\]</span></p>
+</div>
+</div>
+<div id="teorema-de-la-probabilidad-total" class="section level3">
+<h3><span class="header-section-number">1.2.14</span> Teorema de la probabilidad total</h3>
+<div class="prop">
+Teorema de la probabilidad total
+</div>
+<p>Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se tiene que</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B)&amp;= P(B\cap A) +P(B\cap A^c)\\
+&amp; =P(A)\cdot P(B|A)+ P(A^c)\cdot P(B|A^c)
+\end{array}
+\]</span></p>
+</div>
+<div id="teorema-de-la-probabilidad-total-1" class="section level3">
+<h3><span class="header-section-number">1.2.15</span> Teorema de la probabilidad total</h3>
+<div class="prop">
+Partición del espacio espacio muestral
+</div>
+<p>Los sucesos <span class="math inline">\(A_1,A_2,\ldots, A_n\)</span> son una <strong>partición</strong> del espacio muestral <span class="math inline">\(\Omega\)</span> de un determinado experimento aleatorio, si cumplen las condiciones siguientes:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A_1\cup A_2\cup\ldots\cup A_n=\Omega\)</span></li>
+<li><span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> son incompatibles dos a dos (<span class="math inline">\(A_i\cap A_j=\emptyset\)</span>)</li>
+</ol>
+<div class="prop">
+Teorema de la probabilidad total
+</div>
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición de <span class="math inline">\(\Omega\)</span>. Sea <span class="math inline">\(B\)</span> un suceso cualquiera. Entonces</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B)&amp;= P(B\cap A_1)+\cdots +P(B\cap A_n)\\
+&amp; =P(A_1)\cdot P(B|A_1)+\ldots+P(A_n)\cdot P(B|A_n)
+\end{array}
+\]</span></p>
+</div>
+<div id="ejemplos-4" class="section level3">
+<h3><span class="header-section-number">1.2.16</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un dígito de control de error toma el valor 0 en un <span class="math inline">\(99\%\)</span> de los casos en que hay un error y en un <span class="math inline">\(5\%\)</span> de los mensajes sin error.
+La probabilidad de error en un mensaje es del <span class="math inline">\(0.5\%\)</span></p>
+<p>¿Cuál es la probabilidad de que un mensaje escogido al azar tenga el dígito de control a 0?</p>
+</div>
+<div class="example-sol">
+<p>Sean los sucesos del enunciado:</p>
+<ul>
+<li><span class="math inline">\(B\)</span>: mensaje con error; <span class="math inline">\(P(B)=0.005\)</span></li>
+<li><span class="math inline">\(A\)</span>: código de error vale 0;</li>
+</ul>
+<p>entonces obtenemos las probabilidades a partir del enunciado:</p>
+<ul>
+<li><span class="math inline">\(P(A|B)=0.99\)</span></li>
+<li><span class="math inline">\(P(A|B^c)= 0.05\)</span></li>
+</ul>
+<p>y por tanto,</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(A) &amp; =P(B)\cdot P(A|B)+P(B^c)\cdot P(A|B^c)\\ &amp;
+=0.005\cdot 0.99+0.995\cdot 0.05=0.0547\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="clasificación-o-diagnósticos" class="section level3">
+<h3><span class="header-section-number">1.2.17</span> Clasificación o Diagnósticos</h3>
+<p>Consideremos alguna de las siguientes situaciones:</p>
+<ul>
+<li>Un algoritmo detecta si una transacción con tarjeta de crédito es fraude o no.</li>
+<li>Un algoritmo detecta si tiene o no que mostrar un anuncio en una web.</li>
+<li>Un prueba de embarazo.</li>
+<li>Una prueba médica para una enfermedad concreta.</li>
+</ul>
+<p>Nos ceñiremos a la casuística más elemental el algoritmo de clasificación o la diagnosis solo da dos resultado <strong>Positivo</strong> (sí tienes la enfermedad, sí es un fraude) o <strong>Negativo</strong> (en caso contrario).</p>
+</div>
+<div id="clasificación-o-diagnósticos-1" class="section level3">
+<h3><span class="header-section-number">1.2.18</span> Clasificación o Diagnósticos</h3>
+<p>En todas estas situaciones podemos calcular lo que se llama <strong>matriz de confusión</strong> que representa todas las situaciones posibles. En el caso de estudiar una condición de tipo binario,</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">El Test da Positivo</th>
+<th align="center">El Test da Negativo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Condición Positiva</td>
+<td align="center">Correcto</td>
+<td align="center">Error</td>
+</tr>
+<tr class="even">
+<td align="center">Condición Negativa</td>
+<td align="center">Error</td>
+<td align="center">Correcto</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="clasificación-o-diagnósticos-2" class="section level3">
+<h3><span class="header-section-number">1.2.19</span> Clasificación o Diagnósticos</h3>
+<p>En general los modelos y algoritmos de clasificación suelen aportar puntuaciones (<em>scores</em>) que determinan el grado de pertenencia a una clase, o que miden si dos objetos están en la misma clase.</p>
+<p>Así el resultado del clasificador o del diagnóstico puede ser:</p>
+<ul>
+<li><strong>un número real</strong>, en cuyo caso debe clasificador entre cada clase debe determinarse por un valor umbral (<em>threshold</em>) por ejemplo para determinar si una persona está estresado podemos dar un <em>scores</em> entre 0 y 1 (1 máximo estrés 0 estrés nulo):</li>
+<li><strong>un resultado discreto</strong> que indica directamente una de las clases (esto es necesario si es un algoritmo que debe decidir qué hacer con el objeto.</li>
+</ul>
+</div>
+<div id="clasificación-o-diagnósticos-3" class="section level3">
+<h3><span class="header-section-number">1.2.20</span> Clasificación o Diagnósticos</h3>
+<!--<div class="center">
+[![SiliconValley]](https://www.youtube.com/watch?v=pqTntG1RXSY "SiliconValley")
+</div>-->
+</div>
+<div id="clasificación-o-diagnósticos-4" class="section level3">
+<h3><span class="header-section-number">1.2.21</span> Clasificación o Diagnósticos</h3>
+<div class="definition">
+Positivos y Negativos en Clasificación
+</div>
+<p>Consideremos un problema de predicción de clases binario, en la que los resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles resultados a partir de un clasificador binario como el propuesto.</p>
+<ul>
+<li>Si el resultado de una exploración es P y el valor dado es también P, entonces se conoce como un Verdadero Positivo (VP).</li>
+<li>Sin embargo si el valor real es N entonces se conoce como un Falso Positivo (FP).</li>
+<li>De igual modo, tenemos un Verdadero Negativo (VN) cuando tanto la exploración como el valor dado son N.</li>
+<li>Un Falso Negativo (FN) cuando el resultado de la predicción es N pero el valor real es P.</li>
+</ul>
+</div>
+<div id="clasificación-o-diagnósticos-5" class="section level3">
+<h3><span class="header-section-number">1.2.22</span> Clasificación o Diagnósticos</h3>
+<p>Un ejemplo aproximado de un problema real es el siguiente: consideremos una prueba diagnóstica que persiga determinar si una persona tiene una cierta enfermedad.</p>
+<ul>
+<li>Un falso positivo en este caso ocurre cuando la prueba predice que el resultado es positivo, cuando la persona no tiene realmente la enfermedad.</li>
+<li>Un falso negativo, por el contrario, ocurre cuando el resultado de la prueba es negativo, sugiriendo que no tiene la enfermedad cuando realmente sí la tiene.</li>
+</ul>
+</div>
+<div id="clasificación-o-diagnósticos-6" class="section level3">
+<h3><span class="header-section-number">1.2.23</span> Clasificación o Diagnósticos</h3>
+<p>En un diagnósticos de una cierta condición (por ejemplo, test embarazo, test de enfermedad), tenemos dos tipos de sucesos:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: el test da positivo</li>
+<li><span class="math inline">\(M\)</span>: el sujeto satisface la condición</li>
+</ul>
+<p><l class="definition"> Falsos Positivos y Falsos Negativos</l></p>
+<ul>
+<li><strong>Falsos positivos</strong> <span class="math inline">\(T\cap M^c\)</span>: El test da positivo, pero la condición no es da</li>
+<li><strong>Coeficiente de falsos positivos</strong> <span class="math inline">\(P(T|M^c)\)</span></li>
+<li><strong>Falsos negativos</strong> <span class="math inline">\(T^c\cap M\)</span>: El test da negativo, pero la condición sí que se da</li>
+<li><strong>Coeficiente de falsos negativos</strong>: <span class="math inline">\(P(T^c|M)\)</span></li>
+</ul>
+</div>
+<div id="clasificación-o-diagnósticos-7" class="section level3">
+<h3><span class="header-section-number">1.2.24</span> Clasificación o Diagnósticos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un test diseñado para diagnosticar una determinada enfermedad tiene un coeficiente de falsos negativos de 0.06, y un coeficiente de falsos positivos de 0.04. En un estudio masivo se observa que un 15% de la población da positivo al test.</p>
+<p>¿Cuál es la probabilidad que una persona escogida aleatoriamente tenga esta enfermedad?</p>
+</div>
+<div class="example-sol">
+<p>Los datos del problema son:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: dar positivo al test; <span class="math inline">\(P(T)=0.15\)</span></li>
+<li><span class="math inline">\(M\)</span>: tener la enfermedad</li>
+<li><span class="math inline">\(P(T)=0.15\)</span>, <span class="math inline">\(P(T^c|M)=0.06\)</span>, <span class="math inline">\(P(T|M^c)=0.04\)</span></li>
+<li>¿<span class="math inline">\(P(M)\)</span>?</li>
+</ul>
+</div>
+</div>
+<div id="ejemplos-5" class="section level3">
+<h3><span class="header-section-number">1.2.25</span> Ejemplos</h3>
+<div class="example-sol">
+<ul>
+<li><span class="math inline">\(P(T)=0.15\)</span>, <span class="math inline">\(P(T^c|M)=0.06\)</span>, <span class="math inline">\(P(T|M^c)=0.04\)</span></li>
+</ul>
+<p><span class="math display">\[
+P(T) =P(M)\cdot P(T|M)+P(M^c)\cdot P(T|M^c)
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(T|M)=1-P(T^c|M)=0.94 \\[1ex]
+P(M^c)=1-P(M)
+\end{array}
+\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+0.15 &amp; = P(M)\cdot 0.94+(1-P(M))\cdot 0.04\\
+ &amp; =0.04+0.9P(M)\\[1ex]
+P(M) &amp; =\dfrac{0.11}{0.9}\approx 0.1222.
+\end{array}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="bayes" class="section level2">
+<h2><span class="header-section-number">1.3</span> Bayes</h2>
+<div id="fórmula-de-bayes" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Fórmula de Bayes</h3>
+<div class="definition">
+Teorema de Bayes
+</div>
+<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos sucesos. Si <span class="math inline">\(P(B)&gt;0\)</span>, entonces</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A|B) &amp; = &amp; \frac{P(A)\cdot P(B\big|A)}{P(B)}\\
+&amp;=&amp; \frac{P(A)\cdot P(B\big|A)}{P(A)\cdot P(B\big|A)+P(A^c)\cdot P(B\big|A^c)}
+\end{eqnarray*}\]</span></p>
+<div class="example">
+<p><strong>Ejercicio</strong></p>
+<p>Demostrar el teorema de Bayes utilizando que</p>
+<p><span class="math display">\[P(A|B) =\frac{P(A\cap B)}{P(B)}=\cdots\]</span></p>
+</div>
+</div>
+<div id="fórmula-de-bayes-1" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Fórmula de Bayes</h3>
+<div class="definition">
+Teorema de Bayes
+</div>
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición de <span class="math inline">\(\Omega\)</span>. Sea <span class="math inline">\(B\)</span> un suceso tal que <span class="math inline">\(P(B)&gt;0\)</span>. entonces(para cualquier <span class="math inline">\(i=1,2,\ldots,n\)</span>):</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A_i|B) &amp; =&amp; \dfrac{P(A_i)\cdot P(B|A_i)}{P(B)}\\
+&amp; =&amp; \dfrac{P(A_i)\cdot P(B|A_i)}{P(A_1)\cdot P(B|A_1)+\cdots+P(A_n)\cdot P(B|A_n)}
+\end{eqnarray*}\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejercicio</strong></p>
+<p>Demostrar el teorema de Bayes utilizando que</p>
+<p><span class="math display">\[P(A_i|B) =\dfrac{P(A_i\cap B)}{P(B)}=\cdots\]</span></p>
+</div>
+</div>
+<div id="ejemplos-6" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un <span class="math inline">\(0.5\%\)</span> de infectados por VIH, ¿cuál es la probabilidad que un individuo que haya dado positivo en el test esté infectado?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: individuo infectado</li>
+<li><span class="math inline">\(B\)</span>: el test da positivo</li>
+</ul>
+<p>de donde podemos calcular:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A|B) &amp; =&amp; \dfrac{P(B|A)\cdot P(A)}{P(B|A)\cdot P(A)+P(B|A^c)\cdot P(A^c)}\\
+&amp;=&amp;\dfrac{0.99\cdot 0.005}{0.005\cdot 0.99+0.995\cdot 0.05}=0.09
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="ejemplos-7" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un <span class="math inline">\(0.5\%\)</span> de infectados por VIH, ¿cuál es la probabilidad de que un individuo que haya dado <strong>negativo</strong> en el test <strong>no</strong> esté infectado?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: individuo infectado</li>
+<li><span class="math inline">\(B\)</span>: el test da positivo</li>
+</ul>
+<p>de donde podemos calcular:</p>
+<p><span class="math display">\[
+\begin{array}{rl} P(A^c|B^c)&amp; =\dfrac{P(B^c|A^c)\cdot P(A^c)}{P(B^c|A)\cdot P(A)+P(B^c|A^c)\cdot P(A^c)}\\ &amp; =\dfrac{0.95\cdot 0.995}{0.01\cdot 0.005+0.95\cdot 0.995}=0.999947\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="ejemplos-8" class="section level3">
+<h3><span class="header-section-number">1.3.5</span> Ejemplos</h3>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Se ha observado que los cientes de una empresa de ventas por internet son de tres tipos, A, B y C, disjuntos dos a dos. La probabilidad que ser de cualquiera de cada uno de los tipos es <span class="math inline">\(1/3\)</span>, pero la probabilidad de compra de cada tipo es diferente: si es de tipo A compra un 50% de las veces, si de tipo B, un 75% de las veces, y de tipo C, un 60%.</p>
+<p>Supongamos que llega un cliente ¿cuál es la probabilidad de que si ha comprado sea del tipo B?</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>Los sucesos del ejercicio son <span class="math inline">\(A\)</span>: el cliente es de tipo A; <span class="math inline">\(B\)</span>: el cliente es de tipo B; <span class="math inline">\(C\)</span>: el cliente es de tipo C;</li>
+</ul>
+<p><span class="math display">\[P(A)=P(B)=P(C)=1/3\]</span></p>
+<p>Buscamos estrudiar el suceso <span class="math inline">\(E\)</span>: el cliente compra</p>
+<p><span class="math display">\[P(E|A)=0.5, P(E|B)=0.75, P(E|C)=0.6\]</span></p>
+<p><span class="math display">\[P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P(B)\!+\!P(E|C)\!\cdot\! P(C)}\!=\!\ldots\]</span></p>
+</div>
+</div>
+<div id="ejemplos-9" class="section level3">
+<h3><span class="header-section-number">1.3.6</span> Ejemplos</h3>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Un test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?</li>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?</li>
+<li>¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?</li>
+</ul>
+</div>
+<div class="example-sol">
+<p>Definimos los sucesos y datos del ejercicio:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: Dar positivo al test</li>
+<li><span class="math inline">\(B\)</span>: darse de baja; <span class="math inline">\(P(B)=0.02\)</span></li>
+<li><span class="math inline">\(P(T|B)=0.975, P(T|B^c)=0.12\)</span></li>
+</ul>
+</div>
+</div>
+<div id="ejemplos-10" class="section level3">
+<h3><span class="header-section-number">1.3.7</span> Ejemplos</h3>
+<div class="exercise-sol">
+<p><span class="math display">\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+P(T) &amp;= &amp; P(B)\cdot P(T|B)+P(B^c)\cdot P(T|B^c)\\
+&amp; = &amp;0.02\cdot 0.975+0.98\cdot 0.12=0.1371
+\end{eqnarray*}\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?</li>
+</ul>
+<p><span class="math display">\[P(B\cap T)= P(B)\cdot P(T|B)=0.02\cdot 0.975=0.0195\]</span></p>
+</div>
+</div>
+<div id="ejemplos-11" class="section level3">
+<h3><span class="header-section-number">1.3.8</span> Ejemplos</h3>
+<div class="exercise-sol">
+<p><span class="math display">\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+P(B|T^c) &amp; = &amp;\displaystyle \frac{P(B\cap T^c)}{P(T^c)}=
+\frac{P(B)-P(B\cap T)}{1-P(T)}\\
+&amp; = &amp; \displaystyle
+\frac{0.02-0.0195}{1-0.1371}\approx 0.00058
+\end{eqnarray*}\]</span></p>
+<ul>
+<li>O también se obtiene así
+<span class="math display">\[
+P(B|T^c)=\frac{P(T^c|B)\cdot P(B)}{P(T^c|B)\cdot P(B)+P(T^c|B^c)\cdot P(B^c)}
+\]</span></li>
+</ul>
+<p>donde</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(T^c|B)&amp;=&amp;1-P(T|B)=0.025,\\ P(T^c|B^c)&amp;=&amp;1-P(T|B^c)=0.88
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+</div>
+<div id="independencia-de-sucesos" class="section level2">
+<h2><span class="header-section-number">1.4</span> Independencia de sucesos</h2>
+<div id="sucesos-independientes" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Sucesos independientes</h3>
+<p><l class="definition"> Sucesos Independientes </l></p>
+<p>Diremos que los sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>independientes</strong> si <span class="math inline">\(P(A\cap B)=P(A)\cdot P(B)\)</span></p>
+<p><span class="math inline">\(A_1,\ldots, A_n\)</span> son sucesos <strong>independientes</strong> cuando, para toda
+subfamilia <span class="math inline">\(A_{i_1},\ldots,A_{i_k}\)</span>,
+<span class="math display">\[
+P(A_{i_1}\cap \cdots\cap A_{i_k})=P(A_{i_1})\cdots P(A_{i_k})
+\]</span></p>
+<p><l class="prop"> Proposición </l>
+Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> con <span class="math inline">\(P(A),P(B)&gt;0\)</span>, las siguientes afirmaciones son equivalentes:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes</li>
+<li><span class="math inline">\(P(A|B)=P(A)\)</span></li>
+<li><span class="math inline">\(P(B|A)=P(B)\)</span>
+</l></li>
+</ol>
+</div>
+<div id="sucesos-independientes-1" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Sucesos independientes</h3>
+<p><l class="prop"> Proposición </l></p>
+<p>Las siguientes afirmaciones son equivalentes:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes.</li>
+<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span> son independientes.</li>
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
+<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
+</ol>
+</div>
+<div id="ejemplo-billete-avión" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> Ejemplo billete avión</h3>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En la web de viajes WEBTravel, el 55% de los clientes compra billete de avión, el <span class="math inline">\(20\%\)</span> alojamiento en hotel, y el <span class="math inline">\(60\%\)</span> billete de avión o alojamiento en hotel. ¿Son los sucesos comprar billete de avión y comprar alojamiento en hotel independientes?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos y datos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: comprar billete de avión; <span class="math inline">\(P(A)=0.55\)</span></li>
+<li><span class="math inline">\(B\)</span>: comprar alojamiento; <span class="math inline">\(P(B)=0.2\)</span></li>
+</ul>
+<p>por tanto, podemos calcular las probabilidades siguientes</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A\cap B) &amp; = &amp;P(A)+P(B)-P(A\cup B)\\ 
+&amp; = &amp;0.55+0.2-0.6=0.15\\ 
+P(A)\cdot P(B) &amp; = &amp; 0.55\cdot 0.2=0.11
+\end{eqnarray*}\]</span></p>
+<p>Por tanto, concluimos que son dependientes, ya que <span class="math inline">\(P(A\cap B)\neq P(A)\cdot P(B)\)</span>.</p>
+</div>
+</div>
+<div id="sucesos-independientes-vs-disjuntos" class="section level3">
+<h3><span class="header-section-number">1.4.4</span> Sucesos independientes vs disjuntos</h3>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<ol style="list-style-type: decimal">
+<li>Dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> disjuntos, ¿son necesariamente independientes?</li>
+<li>Dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> independientes, ¿son necesariamente disjuntos?</li>
+<li><span class="math inline">\(\emptyset\)</span> y un suceso cualquiera <span class="math inline">\(A\)</span>, ¿son necesariamente independientes?</li>
+<li><span class="math inline">\(\Omega\)</span> y un suceso cualquiera <span class="math inline">\(A\)</span>, ¿son necesariamente independientes?</li>
+<li>¿Qué condiciones se tienen que dar para que un suceso <span class="math inline">\(A\)</span> sea independiente de si mismo?</li>
+</ol>
+</div>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables-aleatorias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -642,7 +1704,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/joanby/probabilidad/edit/master/index.Rmd",
+"link": "https://github.com/joanby/probabilidad/edit/master/1.Rmd",
 "text": "Edit"
 },
 "history": {
