@@ -17,31 +17,31 @@ knitr::opts_chunk$set(echo = TRUE)
 $(0,2)$ e $Y$ es una variable exponencial con parámetro $\lambda$. Calcular
 el valor de $\lambda$ tal que $P(X<1)=P(Y<1)$. 
 
-1. El tiempo $X$ que necesita un corredor
+2. El tiempo $X$ que necesita un corredor
 de fondo  para recorrer un  kilómetro es una variable normal  con parámetros $\mu =3$
 minutos  45 segundos y  $\sigma = 10$ segundos.  
 
 + a) ¿Cuál es la probabilidad de que este atleta  recorra la milla en menos de 4 minutos?  
 + b) ¿Y en más de 3.5 minutos? 
 
-1. Las marcas de un atleta de salto de altura  siguen, aproximadamente, una ley normal  con $\mu=2$ Y $\sigma=0.8$
-  + a) ¿Cuál es la  altura máxima que puede saltar con una probabilidad del $9.95$
+3. Las marcas de un atleta de salto de altura  siguen, aproximadamente, una ley normal  con $\mu=2$ Y $\sigma=0.8$
+  + a) ¿Cuál es la  altura máxima que puede saltar con una probabilidad del $0.95$
   + b) ¿Cuál es la altura que salta  en el 40\% de los peores intentos?
 
-4. Una  centro de atención telefónica por voz (*call center*) recibe  por termino medio 100 llamadas por hora.
-  + a) Calcular la probabilidad que pasen al menos 25 minutos hasta recibir la
+4. Un centro de atención telefónica por voz (*call center*) recibe  por termino medio 100 llamadas por hora. Suponed que el número de llamadas sigue un proceso Poisson
+  + a) Sea X el tiempo entre dos llamadas consecutivas ¿cuál es la distribución de X? 
+  + b) Calcular la probabilidad que pasen al menos 25 minutos hasta recibir la
 primera llamada.
-  + b) Calcular la probabilidad que pasen al menos 30 minutos hasta recibir la
+  + c) Calcular la probabilidad que pasen al menos 30 minutos hasta recibir la
 segunda llamada.
-  + c) Si denotamos por  $p_k$ la probabilidad de que pasen al menos 30
-minutos hasta recibir la $k-$ésima llamada, encontrar la relación  que hay entre 
-$p_k$ y $p_{k-1}$.
+  + d) Si denotamos por  $p_k$ la probabilidad de que pasen al menos 30
+minutos hasta recibir la $k-$ésima llamada, encontrar la relación  que hay entre $p_k$ y $p_{k-1}$.
 
 5. Sea $X$ una variable aleatoria normal con parámetros $\mu=1$ y
-$\sigma^2=1$. Calculad el valor de $b$ tal que $P\left((X-1)^2\leq b\right)=0.1$.
+$\sigma=1$. Calculad el valor de $b$ tal que $P\left((X-1)^2\leq b\right)=0.1$.
 
 6. Sea $Z$ una variable aleatoria $N(0,1)$. Calcular
-$P\left(\left(Z-\frac{1}{4}\right)^2\right) >\frac{1}{16}$.
+$P\left(\left(Z-\frac{1}{4}\right)^2 >\frac{1}{16}\right)$.
 
 7. Las peticiones a un servidor informático llegan a un ritmo de medio de 15 peticiones por segundo.
 Sabemos que el nombre de peticiones que llegan en un segundo es una variable

@@ -40,7 +40,7 @@ impar de intentos sea $0.5$?
 
 6. Se ha observado que el aforo  medio de  vehículos  en un determinado paso  de un camino rural es de 3 coches/hora.
 Suponer que los instantes en que pasan automóviles son independientes. Sea
-$X$ el número de coche  que pasas por este lugar  en un  intervalo de 20 minutos.
+$X$ el número de coches  que pasas por este lugar  en un  intervalo de 20 minutos.
 Calcular $P(X=0)$ y $P(X\geq 2)$.
 
 7. La proporción de niños pelirrojos es 1  cada 10.000. En una gran ciudad  se produjeron 5.000

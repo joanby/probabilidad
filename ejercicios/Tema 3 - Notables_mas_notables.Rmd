@@ -49,7 +49,7 @@ $$
 F_X(X)=P(X\leq x)=\left\{
 \begin{array}{ll}
 1-P(X > x)= 1- k\cdot \left(\frac{x_m}{x}\right)^{\gamma} & \mbox{ si } x>x_m\\
-0 & \mbox{ si } <\leq x_m
+0 & \mbox{ si } x\leq x_m
 \end{array}
 \right.
 $$
