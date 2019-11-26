@@ -1,4 +1,3 @@
-
 # Benrnouilli
 
 sliderInput("p_ber", label = "Probabilidad éxito p:",
