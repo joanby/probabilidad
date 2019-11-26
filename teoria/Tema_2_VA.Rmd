@@ -64,12 +64,12 @@ $$\Omega=\{1,2, 3, 4,  5, 6\}$$
 Una v.a $X:\Omega\to\mathbb{R}$
 sobre este espacio queda definida por 
 
-$$\begin{equation*}
+\begin{equation*}
 \begin{split}
 X(1)&=1,X(2)=2,X(3)=3,\\
 X(4)&=4,X(5)=5,X(6)=6.
 \end{split}
-\end{equation*}$$
+\end{equation*}
 
 * Ahora el suceso $A=\{2, 4, 6\}$, es decir "salir
 número par", es equivalente a $\{X=2,X=4,X=6\}$.

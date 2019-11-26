@@ -5,7 +5,6 @@ date:
 runtime: shiny
 output: 
   ioslides_presentation: 
-    keep_md: yes
     css: Mery_style.css
     logo: Images/matriz_mov.gif
     widescreen: yes
@@ -390,7 +389,6 @@ rbinom(100,size = 20,prob=0.5)
 
 El ejemplo anterior correspondería a repetir 100 veces el experimento lanzar una moneda  20 veces y contar el número de caras.
 
-</div>
 
 ##  Cálculos distribución binomial con python
 
@@ -3008,6 +3006,7 @@ poisson.rvs(mu=3,size=40)
 
 ## Gráficos con python
 
+<font size="3">
 
 ```{python py_poiss1,eval=FALSE,echo=TRUE,size="scriptsize"}
 from scipy.stats import poisson
@@ -3383,7 +3382,6 @@ Y por lo tanto su desviación típica es
 $$
 +\sqrt{Var(X)}=+\sqrt{0.66}=`r round(sqrt(0.66),6)`.
 $$
-</div>
 
 
 ## Cálculos con R
@@ -3480,7 +3478,7 @@ renderPlot({
 
 
 
-## Comparación $H(m,n,k)$ y $B\left(k,\frac{m}{n+m}\right)$.
+## Gráficos con R comparación $H(m,n,k)$ y $B(k,\frac{m}{n+m})$.
 
 
 ```{r  GRAFICOS_Hiper_interac_compara, echo = FALSE}
