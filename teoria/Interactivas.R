@@ -1,30 +1,5 @@
-knitr::opts_chunk$set(echo = TRUE, comment = NA)
-library(reticulate)
 
-dbinom(0,size=1,prob=0.25)
-dbinom(1,size=1,prob=0.25)
-rbinom(n=20,size = 1,prob=0.25)
-
-## par(mfrow=c(1,2))
-## plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
-##      ylim=c(0,1),xlim=c(-1,2),xlab="x",
-##      main="Función de probabilidad\n Ber(p=0.25)")
-## lines(x=c(0,0,1,1),y=c(0,0.75,0,0.25), type = "h", lty = 2,col="blue")
-## curve(pbinom(x,size=1,prob=0.25),
-##       xlim=c(-1,2),col="blue",
-##       main="Función de distribución\n Ber(p=0.25)")
-## par(mfrow=c(1,1))
-
-par(mfrow=c(1,2))
-plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
-     ylim=c(0,1),xlim=c(-1,2),xlab="x",
-     main="Función de probabilidad\n Ber(p=0.25)")
-lines(x=c(0,0,1,1),y=c(0,0.75,0,0.25), type = "h", lty = 2,col="blue")
-curve(pbinom(x,size=1,prob=0.25),
-      xlim=c(-1,2),col="blue",
-      main="Función de distribución\n Ber(p=0.25)")
-par(mfrow=c(1,1))
-
+# Benrnouilli
 
 sliderInput("p_ber", label = "Probabilidad éxito p:",
               min = 0.01, max = 0.99, value = 0.25, step = 0.01)
@@ -50,68 +25,8 @@ curve(pbinom(x,size=1,prob=p),
 par(mfrow=c(1,1))
 })
 
-choose(6,5)
 
-choose(10,5)
-
-choose(22,10)
-
-pbinom(0,size=10,prob=0.25)
-
-pbinom(4,size=10,prob=0.25)
-
-dbinom(0,size=10,prob=0.25)
-
-dbinom(4,size=10,prob=0.25)
-
-set.seed(2019)
-rbinom(100,size = 20,prob=0.5)
-
-## from scipy.stats import binom
-
-
-## binom.pmf(k, n, p, loc) =  binom.pmf(k - loc, n, p)
-
-
-## binom.cdf(0,n=10,p=0.25)
-
-
-## binom.pmf(0,n=10,p=0.25)
-
-
-## binom.rvs(n=20,p=0.25,size = 100)
-
-
-## binom.rvs(n=20,p=0.25,size = 100)
-
-
-## binom.cdf(5,n=10,p=0.25)
-
-
-## par(mfrow=c(1,2))
-## aux=rep(0,22)
-## aux[seq(2,22,2)]=dbinom(c(0:10),size=10,prob=0.25)
-## plot(x=c(0:10),y=dbinom(c(0:10),size=10,prob=0.25),
-##   ylim=c(0,1),xlim=c(-1,11),xlab="x",
-##   main="Función de probabilidad\n B(n=10,p=0.25)")
-## lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
-## curve(pbinom(x,size=10,prob=0.25),
-##   xlim=c(-1,11),col="blue",
-##   main="Función de distribución\n B(n=10,p=0.25)")
-## par(mfrow=c(1,1))
-
-par(mfrow=c(1,2))
-aux=rep(0,22)
-aux[seq(2,22,2)]=dbinom(c(0:10),size=10,prob=0.25)
-plot(x=c(0:10),y=dbinom(c(0:10),size=10,prob=0.25),
-  ylim=c(0,1),xlim=c(-1,11),xlab="x",
-  main="Función de probabilidad\n B(n=10,p=0.25)")
-lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
-curve(pbinom(x,size=10,prob=0.25),
-  xlim=c(-1,11),col="blue",
-  main="Función de distribución\n B(n=10,p=0.25)")
-par(mfrow=c(1,1))
-
+# Binomial
 
 fluidPage(
 fluidRow(
@@ -144,70 +59,9 @@ renderPlot({
 })
 
 
-## import numpy as np
 
 
-## n, p = 10, 0.25
-
-
-## n, p = 10, 0.25
-
-
-dbinom(4,size=10,prob = 0.4)
-
-pbinom(3,10,0.4)
-
-1-pbinom(3,10,0.4)
-
-pbinom(3,10,0.4,lower.tail = FALSE)
-
-dbinom(0,10,0.4)+dbinom(1,10,0.4)+dbinom(2,10,0.4)
-pbinom(2,10,0.4)
-
-## print("E(X) = {m}".format(m=binom.stats(n = 10, p = 0.4, moments='m')))
-
-
-## print("Var(X) = {v}".format(v=binom.stats(n = 10, p = 0.4, moments='v')))
-
-
-dgeom(0,prob=0.25)
-
-pgeom(0,prob=0.25)
-
-pgeom(4,prob=0.25)
-
-rgeom(n=25,prob=0.25)
-
-## par(mfrow=c(1,2))
-## x=c(0:10)
-## plot(x=x,y=dgeom(x,prob=0.25),
-##   ylim=c(0,1),xlim=c(-1,11),xlab="x",
-##   main="Función de probabilidad\n Ge(p=0.25)")
-## lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
-## aux0=dgeom(c(0:10),prob=0.25)
-## ceros=rep(0,21)
-## ceros
-## aux=ceros
-## aux[2*(c(1:11))]<-aux0
-## curve(pgeom(x,prob=0.25),
-##   xlim=c(-1,10),col="blue",
-##   main="Función de distribución\n Ge(p=0.25)")
-## par(mfrow=c(1,1))
-
-  par(mfrow=c(1,2))
-  p=0.25
-  n=30
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dgeom(c(0:n),prob=p)
-  plot(x=c(0:n),y=dgeom(c(0:n),prob=p),
-       ylim=c(0,1),xlim=c(-1,n+1),xlab="x",
-       main=paste0(c("Función de probabilidad\n Ge(p=",p,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 2,col="blue")
-  curve(pgeom(x,prob=p),
-        xlim=c(-1,n+1),col="blue",
-        main=paste0(c("Función de distribución\n Ge(p=",p,")"),collapse = ""))
-  par(mfrow=c(1,1))
-
+# Geometrica
  
 sliderInput("p_geom", label = "Probabilidad de éxito:",
               min = 0.01, max = 0.99, value =0.25 , step = 0.01)
@@ -227,87 +81,10 @@ renderPlot({
   par(mfrow=c(1,1))
 })
 
-## from scipy.stats import geom
 
 
-## geom.pmf(0,p=0.25,loc=-1)
 
-
-## geom.cdf(0,p=0.25,loc=-1)
-
-
-## geom.cdf(4,p=0.25,loc=-1)
-
-
-## geom.rvs(p=0.25, size=20, loc=-1)
-
-
-## geom.cdf(range(5),p=0.3,loc=0)
-
-
-## geom.stats(p=0.25, loc=0, moments='mv')
-
-
-## p = 0.25
-
-
-## 
-
-choose(-6,4)
-
-## pnbinom(4-2,2,0.1)
-## 0.1^2+ 2* 0.9 * 0.1^2+ 3*0.9^2* 0.1^2
-## dnbinom(0,2,0.1)
-## 0.1^2
-## dnbinom(1,2,0.1)
-## 2* 0.9 * 0.1^2
-## dnbinom(2,2,0.1)
-## 3*0.9^2* 0.1^2
-
-dnbinom(5,size=2,p=0.1)
-
-pnbinom(4,size=2,p=0.1)
-1-pnbinom(4,size=2,p=0.1)
-pnbinom(4,size=2,p=0.1,lower.tail=FALSE)
-
-## from scipy.stats import nbinom
-
-
-## nbinom.pmf(k, n, p, loc) = nbinom.pmf(k-loc, n, p)`
-
-
-## nbinom.pmf(k=5,n=2,p=0.1)
-
-
-## nbinom.rvs(n=2, p=0.1, size=100)
-
-
-## n, p=2,0.1
-
-
-## par(mfrow=c(1,2))
-## aux=rep(0,22)
-## aux[seq(2,22,2)]=dnbinom(c(0:10),size=2,prob=0.1)
-## plot(x=c(0:10),y=dnbinom(c(0:10),size=2,prob=0.1),
-##   ylim=c(0,1),xlim=c(-1,11),xlab="x",
-##   main="Función de probabilidad\n BN(n=2,p=0.1)")
-## lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
-## curve(pnbinom(x,size=2,prob=0,1),
-##   xlim=c(-1,11),col="blue",
-##   main="Función de distribución\n BN(n=2,p=0.1)")
-## par(mfrow=c(1,1))
-
-par(mfrow=c(1,2))
-aux=rep(0,22)
-aux[seq(2,22,2)]=dnbinom(c(0:10),size=2,prob=0.1)
-plot(x=c(0:10),y=dnbinom(c(0:10),size=2,prob=0.1),
-  ylim=c(0,1),xlim=c(-1,11),xlab="x",
-  main="Función de probabilidad\n BN(n=2,p=0.1)")
-lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
-curve(pnbinom(x,size=2,prob=0.1),
-  xlim=c(-1,11),col="blue",
-  main="Función de distribución\n BN(n=2,p=0.1)")
-par(mfrow=c(1,1))
+# Binomial negativa
 
 
 fluidPage(
@@ -341,28 +118,8 @@ renderPlot({
 })
 
 
-## import numpy as np
 
-
-## n, p = 10, 0.25
-
-
-## n, p = 10, 0.25
-
-
-choose(152,2)*0.999^150*0.001^3
-
-dnbinom(150,size=3,p=0.001)
-
-## from  scipy.special import binom
-
-
-pnbinom(150,3,0.001)
-
-## nbinom.cdf(150,n=3,p=0.001)
-
-
-## params = nbinom.stats(n=3,p=0.001,moments='mv')
+# No se quees
 
 
 fluidPage(
@@ -404,59 +161,6 @@ renderPlot({
 })
 
 
-20^21/factorial(21)*exp(-20)
-dpois(21,lambda = 20)
-
-dpois(0,lambda = 3)
-dpois(1,lambda = 3)
-
-ppois(0,lambda = 3)
-ppois(1,lambda = 3)
-dpois(0,lambda = 3)+dpois(1,lambda = 3) ## es igual a ppois(1,lambda=3)
-
-dpois(0:10,3)
-sum(dpois(0:10,3))
-ppois(10,3)
-
-rpois(n=100,lambda = 3)
-
-dpois(21,lambda=20)# P(X=21)
-
-ppois(5,lambda=20)
-1-ppois(5,lambda=20) # es 1-P(X<=5)=P(X>=6)
-ppois(5,lambda=20,lower.tail =FALSE ) # acumula hacia arriba P(X>5)=P(X>=6)=P(X=6)+P(X=7)+...
-
-## lambda=20
-## par(mfrow=c(1,2))
-## n=qpois(0.99,lambda=lambda)
-## aux=rep(0,(n+1)*2)
-## aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),lambda=lambda)
-## ymax=max(ppois(0:n,lambda=lambda))
-## plot(x=c(0:n),y=dpois(c(0:n),lambda=lambda),
-##      ylim=c(0,ymax),xlim=c(-1,n+1),xlab="x",ylab="Función de probabilidad",
-##      main=paste0(c("Función de probabilidad\n  Po(lambda=",lambda,")"),collapse = ""))
-## lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
-## curve(ppois(x,lambda=lambda),
-##       xlim=c(-1,n+1),col="blue",ylab="Función de Distribución",
-##       main=paste0(c("Función de distribución \n Po(lambda=",lambda,")"),collapse = ""))
-## par(mfrow=c(1,1))
-
-lambda=20
-par(mfrow=c(1,2))
-n=qpois(0.99,lambda=lambda)
-aux=rep(0,(n+1)*2)
-aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),lambda=lambda)
-ymax=max(ppois(0:n,lambda=lambda))
-plot(x=c(0:n),y=dpois(c(0:n),lambda=lambda),
-     ylim=c(0,ymax),xlim=c(-1,n+1),xlab="x",ylab="Función de probabilidad",
-     main=paste0(c("Función de probabilidad\n  Po(lambda=",lambda,")"),collapse = ""))
-lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
-curve(ppois(x,lambda=lambda),
-      xlim=c(-1,n+1),col="blue",ylab="Función de Distribución",
-      main=paste0(c("Función de distribución \n Po(lambda=",lambda,")"),collapse = ""))
-par(mfrow=c(1,1))
-
-
 sliderInput("lambda", label = "Promedio de eventos lambda",
               min = 1, max = 100, value =20 , step = 1)
 renderPlot({
@@ -477,34 +181,7 @@ renderPlot({
   par(mfrow=c(1,1))
 })
 
-## from scipy.stats import poisson
-
-
-## poisson.cdf(0,mu = 3)
-
-
-## range(0,10)
-
-
-## poisson.pmf(21,mu=20)
-
-
-## 1-poisson.cdf(5,mu=20)
-
-
-## poisson.stats(mu=3, moments='mv')
-
-
-## poisson.rvs(mu=3,size=40)
-
-
-## from scipy.stats import poisson
-
-
-## from scipy.stats import poisson
-
-
-
+# Proceso Poisson
 fluidPage(
 fluidRow(
   column(6,
@@ -539,39 +216,9 @@ renderPlot({
   par(mfrow=c(1,1))
   })
 
-1-dpois(25,lambda=3)
 
-6^0/factorial(0)*exp(-6)
-ppois(0,lambda=3*2)
+# Hipergeométrica
 
-c(choose(15,2), choose(10,1), choose(25,3))
-
-## phyper(2,15,10,3)
-
-dhyper(x=2,m=15,10,k=3)
-phyper(q=1,m=15,n=10,k=3)# sí, le han puesto q ya veremos el porqué
-1-phyper(q=1,m=15,n=10,k=3)
-
-rhyper(nn=200,m=15,n=10,k=3)
-
-par(mfrow=c(1,2))
-m=15
-n=10
-k=3
-a=max(c(0,k-n))
-b=min(c(m,k))
-l=b-a+1
-aux=rep(0,2*l)
-aux[seq(2,2*l,2)]=dhyper(c(a:b),m=m,n=n,k=k)
-x=a:b
-plot(x,y=dhyper(x,m=m,n=n,k=k),
-  ylim=c(0,0.6),xlim=c(a-1,b+1),xlab="x",
-  main=paste0("Función de probabilidad\n H(m=",m,", n=",n,", k=",k,")"))
-lines(x=rep(a:b,each=2),y=aux, type = "h", lty = 2,col="blue")
-curve(phyper(x,m=m,n=n,k=k),
-  xlim=c(a-1,b+1),col="blue",
-  main=paste0("Función de distribución\n H(m=",m,", n=",n,", k=",k,")"))
-par(mfrow=c(1,1))
 
 fluidPage(
 fluidRow(
@@ -612,6 +259,9 @@ renderPlot({
   par(mfrow=c(1,1))
 })
 
+
+
+# Hipergeometrica
 
 fluidPage(
 fluidRow(
@@ -665,17 +315,179 @@ renderPlot({
   par(mfrow=c(1,1))
 })
 
-## from scipy.stats import hypergeom
 
 
-## hypergeom.pmf(1,M=15+10,n=15,N=3)
+# Uniforme
+
+fluidPage(
+  fluidRow(
+    column(4,
+           sliderInput("a1", label = "Parámetro a",
+                       min = -5, max = 9, value =0 , step = 0.1)
+    ),
+    column(4,
+           sliderInput("b1", label = "Parámetro b",
+                       min = 10, max = 15, value = 5, step = 0.1)
+    ),
+    column(4,
+           sliderInput("x1", label="x", value=9, min = -5, max = 15, step = 0.1)
+    )
+    
+  )
+)
+
+renderPlot({
+  a=input$a1
+  b=input$b1
+  x=input$x1
+  par(mfrow=c(1,2))
+  #a=0;b=1;x=0.25
+  xx=c(seq(min(a,x),min(b,x),by=0.001))
+  curve(dunif(x,a,b),xlim=c(a-0.25,b+0.25),ylim=c(0,max(1/(b-a)+0.05,0.1)),col="blue",main=paste0("Función densidad U(",a,",",b,")"),
+        ylab=paste0("dunif(x,",a,", ",b,")"),xaxt="n")
+  axis(side=1, at=c(a,x,b), labels = TRUE)
+  polygon(x=c(a,xx,min(x,b)),y=c(0,dunif(xx,a,b),0),
+          density=20,col="skyblue")
+  curve(punif(x,a,b),xlim=c(a-1,b+1),ylim=c(0,1.1),col="blue",main=paste0("Función de distribución U(",a,",",b,")"),
+        ylab=paste0("punif(x,",a,", ",b,")"),xaxt="n",yaxt="n")
+  segments(x0=x,y0=0,x1=x,y1=punif(x,a,b),col="red",lty=2)
+  segments(x0=a-1.01,y0=punif(x,a,b),x1=x,y1=punif(x,a,b),col="red",lty=2)
+  axis(side=2, at=c(0,round(punif(x,a,b),1),2), labels = TRUE)
+  axis(side=1, at=c(a,x,b), labels = TRUE)
+  par(mfrow=c(1,1))
+})
+
+# Binomial Poison cuantil
+
+fluidPage(
+  fluidRow(
+    column(3,
+           sliderInput("nq", label = "Par. n B(n,p)",
+                       min = 1, max = 20, value =10 , step = 1)
+    ),
+    column(3,
+           sliderInput("pq", label = "Par. p B(n,p)",
+                       min = 0.01, max = 0.99, value = 0.5, step = 0.1)
+    ),
+    column(3,
+           sliderInput("qq", label=" Cuantil q", value=0.75, min = 0.01, max = 0.99, step = 0.01)
+    ),
+    column(3,
+           sliderInput("lq", label="Par. lambda Po(lambda)", value=5, min = 1, max = 20, step = 1)
+    )
+  )
+)
 
 
-## hypergeom.rvs(M=15+10,n=15,N=3,size=100)
+renderPlot({
+  n=input$nq
+  p=input$pq
+  q=input$qq
+  lambda=input$lq
+  par(mfrow=c(1,2))
+  #n=10;p=0.5;q=0.75;lambda=5
+  #xx=c(seq(min(a,x),min(b,x),by=0.001))
+  probsB=pbinom(0:n,n,p)
+  curve(pbinom(x,n,p),xlim=c(0-0.25,n+0.25),ylim=c(0,max(probsB+0.05,0.1)),
+        col="blue",main=paste0("Función distribución\n B(n=",n,", p=",p,")"),
+        ylab=paste0("dbinom(x,",n,", ",p,")"),yaxt="n")
+  segments(x0 = qbinom(q,n,p),y0 = 0,x1 = qbinom(q,n,p),y1 = q,lty=2,col="red")
+  segments(x0 = qbinom(q,n,p),y0 = q,x1 = -0.25,y1 = q,lty=2,col="red")
+  ytick=c(0.0,q,1)
+  axis(side=2, at=ytick, labels = TRUE)
+  axis(side=1, at=qbinom(q,n,p), labels = TRUE)
+  curve(ppois(x,lambda),xlim=c(0-0.25,2.5*lambda),ylim=c(0,1+0.1),
+        col="blue",main=paste0("Función distribución \n Po(lambda=",lambda,")"),
+        ylab=paste0("dpois(x, lambda",lambda,")"),yaxt="n")
+  segments(x0 = qpois(q,lambda),y0 = 0,x1 = qpois(q,lambda),y1 = q,lty=2,col="red")
+  segments(x0 = qpois(q,lambda),y0 = q,x1 = -0.25,y1 = q,lty=2,col="red")
+  ytick=c(0.0,q,1)
+  axis(side=2, at=ytick, labels = TRUE)
+  axis(side=1, at=qpois(q,lambda), labels = TRUE)
+  par(mfrow=c(1,1))
+})
 
 
-## from scipy.stats import hypergeom
 
 
-## from scipy.stats import hypergeom
+
+# Exponencial
+fluidPage(
+  fluidRow(
+    column(4,
+           sliderInput("le", label = "lambda",
+                       min = 0.1, max = 3, value =1 , step = 0.1)
+    ),
+    column(4,
+           sliderInput("xe", label = "X=x",
+                       min = 0, max = 5, value = 5, step = 0.1)
+    ),
+    column(4,
+           sliderInput("pe", label = "Cuantil p",
+                       min = 0.01, max = 1, value = 0.75, step = 0.01)
+    )
+  )
+)
+
+renderPlot({
+  lambda=input$le
+  p=input$pe
+  x=input$xe
+  #lambda=10;p=0.75;x=0.4
+  xx=seq(0,x,by=0.001)
+  par(mfrow=c(1,2))
+  curve(dexp(x,rate=lambda),xlim=c(-0.05,round(qexp(0.999,rate=lambda),2)),
+        ylim=c(0,dexp(0,lambda)+0.1),col="blue",main=paste0("Función densidad Exp(",lambda,")"),
+        ylab=paste0("dexp(x,",lambda,")"),xaxt="n")
+  axis(side=1, at=c(0,x,round(qexp(0.999,rate=lambda),2)),cex.axis=0.8)
+  polygon(x=c(0,xx,max(x,xx)),y=c(0,dexp(xx, rate=lambda),0),
+          density=20,col="skyblue")
+  curve(pexp(x,rate=lambda),xlim=c(0.01,qexp(0.999,rate=lambda)+0.1),ylim=c(0,1.1),col="blue",
+        main=paste0("Función de distribución Exp(",lambda,")"),
+        ylab=paste0("pexp(x,",lambda,")"),xaxt="n",yaxt="n")
+  segments(x0=qexp(p,lambda),x1=qexp(p,lambda),y0=0,y1=p,col="red",lty=2)
+  segments(x0=0-0.05,y0=p,x1=qexp(p,lambda),y1=p,col="red",lty=2)
+  axis(side=2, at=seq(0,1,0.1), labels = TRUE)
+  axis(side=1, at=seq(0,round(qexp(0.999,rate=lambda),2),by=0.1), labels = TRUE)
+  par(mfrow=c(1,1))
+})
+
+
+
+fluidPage(
+  fluidRow(
+    column(3,
+           sliderInput("m1", label = "mu1",
+                       min = -10, max = 10, value =0 , step = 0.05)
+    ),
+    column(3,
+           sliderInput("s1", label = "sigma1",
+                       min =0.1, max = 5, value = 1, step = 0.1)
+    ),
+    column(3,
+           sliderInput("m2", label="mu2", value=4, min = -10, max = 10, step = 0.05)
+    ),
+    column(3,
+           sliderInput("s2", label = "sigma2",
+                       min =0.1, max = 5, value = 1, step = 0.1)
+    )
+    
+  )
+)
+
+renderPlot({
+  m1=input$m1
+  m2=input$m2
+  s1=input$s1
+  s2=input$s2
+  mins2=min(c(s1^2,s2^2))
+  m=min(c(qnorm(0.01,m1,s1),qnorm(0.01,m2,s2)))
+  M=max(c(qnorm(0.99,m1,s1),qnorm(0.99,m2,s2)))
+  
+  curve(dnorm(x,m1,s1),xlim=c(m,M),ylim=c(0,1/sqrt(2*pi*mins2)),col="red",lty=1)
+  legend("toplef",legend=c(expression(N(mu[1],sigma[1])),expression(N(mu[2],sigma[2]))),col=c("red","blue"),lty=c(1,2))
+  curve(dnorm(x,m2,s2),add=TRUE,col="blue",lty=2)
+})
+
+
 
