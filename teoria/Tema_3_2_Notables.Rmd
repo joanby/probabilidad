@@ -1275,9 +1275,7 @@ $$
 
 ## Relación entre una  distribución normal y la normal estándar.
 
-</div class="prop">
-
-**Propiedad**
+<l class="prop">**Propiedad**</l>
 
 * Cuando tengamos un intervalo
 
@@ -1292,7 +1290,6 @@ $$
 
 * Si $\delta>0$ $P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot  F_Z\left(\frac{\delta}{\sigma}\right)-1$
 
-</div>
 
 ## Ejemplo cálculo probabilidades normal
 
