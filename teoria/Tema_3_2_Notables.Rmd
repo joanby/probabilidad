@@ -1275,7 +1275,9 @@ $$
 
 ## Relación entre una  distribución normal y la normal estándar.
 
-<l class="prop">**Propiedad**</l>
+</div class="prop">
+
+**Propiedad**
 
 * Cuando tengamos un intervalo
 
@@ -1290,6 +1292,7 @@ $$
 
 * Si $\delta>0$ $P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot  F_Z\left(\frac{\delta}{\sigma}\right)-1$
 
+</div>
 
 ## Ejemplo cálculo probabilidades normal
 
@@ -1372,5 +1375,3 @@ En los temas que siguen veremos como, bajo determinadas condiciones:
 * La distribución normal puede aproximar la distribución binomial
 * La distribución normal puede aproximar la distribución Poisson
 * La distribución normal  es la distribución límite de la media aritmética.
-
-
