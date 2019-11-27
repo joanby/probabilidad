@@ -2016,6 +2016,8 @@ Vemos que la **correlación** entre las variables $X$ e $Y$ es positiva pero no 
 
 ## Ejemplo normal bidimensional
 <div class="example">
+**Ejemplo**
+
 Recordemos que la **función de densidad** de la variable aleatoria **normal bidimensional** es:
 $f_{XY}(x,y)=\frac{1}{2\pi\sqrt{1-\rho^2}}\mathrm{e}^{-\frac{(x^2-2\rho xy+y^2)}{2(1-\rho^2)}},\ -\infty <x,y<\infty.$
 
@@ -2515,6 +2517,8 @@ sum(valores.cond.s8*prob.cond.s8.buena)
 
 ## Ejemplo
 <div class="example">
+**Ejemplo**
+
 Recordemos el ejemplo de la variable aleatoria bidimensional continua con **función de densidad**:
 $$
 f_{XY}(x,y)=\begin{cases}
@@ -2701,6 +2705,8 @@ y $f_Z(z)=0$ en caso contrario.
 
 ## Ejemplo de la suma de dos normales 
 <div class="example">
+**Ejemplo**
+
 Consideremos el caso en que la variable aleatoria $(X,Y)$ tenga distribución **normal bidimensional**. 
 
 Recordemos que su **función de densidad conjunta** era:

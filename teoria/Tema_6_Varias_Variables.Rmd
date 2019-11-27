@@ -18,9 +18,9 @@ knitr::opts_chunk$set(echo = TRUE)
 # Varias variables aleatorias
 
 ## Introducción
-En el capítulo anterior trabajamos con **variables aleatorias $n$-dimensionales**
+En el capítulo anterior trabajamos con **variables aleatorias bidimensionales**
 
-En este capítulo vamos a generalizar los conceptos introducidos para **variables aleatorias bidimensionales**, con $n\geq 3$.
+En este capítulo vamos a generalizar los conceptos introducidos para **variables aleatorias $n$-dimensionales**, con $n\geq 3$.
 
 El ejemplo que comentamos en el capítulo de variables aleatorias de medir la temperatura media un día determinado del año durante 10 años sería un ejemplo de variable aleatoria 10-dimensional.
 
@@ -107,7 +107,7 @@ Por ejemplo, si consideramos $B=\{X_1+X_2+\cdots +X_n\leq 1\}$, $P((X_1,X_2,\ldo
 
 # Función de distribución conjunta
 
-## Función de distribución conjunta. Introducción
+## Función de distribución conjunta. Definición
 Dada una **variable aleatoria $n$-dimensional** $(X_1,X_2,\ldots,X_n)$, queremos estudiar cómo se distribuye la probabilidad de sucesos cualesquiera de la forma $\{(X_1,X_2,\ldots,X_n)\in B\}$, donde $B$ es una región del espació $n$-dimensional $\mathbb{R}^n$.
 
 Para ello, definimos la **función de distribución conjunta**:
@@ -121,7 +121,7 @@ F_{X_1\ldots X_n}: \mathbb{R}^n & \longrightarrow \mathbb{R}\\
 \end{array}
 $$
 
-## Función de distribución conjunta. Introducción
+## Función de distribución conjunta. Definición
 
 O sea, dado un valor $(x_1,\ldots,x_n)\in \mathbb{R}^n$, consideramos la región del espacio $n$-dimensional $(-\infty,x_1]\times\cdots\times (-\infty,x_n]$.
 
@@ -134,7 +134,7 @@ F_{X_1\ldots X_n}(x_1,\ldots,x_n) & =P\{w\in\Omega,\ |\ (X_1(w),\ldots,X_n(w)) \
 $$
 
 
-## Función de distribución conjunta. Introducción
+## Función de distribución conjunta. Definición
 El gráfico siguiente muestra el conjunto $(-\infty,x_1]\times (-\infty,x_2]\times (-\infty,x_3]$ en $\mathbb{R}^3$ para un valor $(x,y,z)$:
 
 <div class="center">
@@ -1671,12 +1671,12 @@ Sea $Z=g(X_1,\ldots,X_n)$ una **variable aleatoria unidimensional** función de 
 * Media geométrica de las $n$ variables $g(x_1,\ldots,x_n)=\sqrt[n]{x_1\cdots x_n}$: $Z=\sqrt[n]{X_1\cdots X_n}$.
 * Suma de los cuadrados de las variables $g(x_1,\ldots,x_n)=x_1^2+\cdots +x_n^2$: $Z=X_1^2+\cdots +X_n^2$.
 
-## Valor esperado de una función de dos variables aleatorias
+## Valor esperado de una función de $n$ variables aleatorias 
 Hay que tener en cuenta que $Z$, como **variable aleatoria unidimensional** tiene una **función de probabilidad** $P_Z$ en el caso en que $(X_1,\ldots,X_n)$ sea discreta y una **función de densidad** $f_Z$ en el caso en que $(X_1,\ldots,X_n)$ sea continua.
 
 El siguiente resultado nos dice cómo calcular el **valor esperado** de $Z$ sin tener que calcular $P_Z$ o $f_Z$, sólo usando la información de la **variable aleatoria conjunta** $(X_1,\ldots,X_n)$:
 
-## Valor esperado de una función de dos variables aleatorias
+## Valor esperado de una función de $n$ variables aleatorias 
 
 <l class="prop">Proposición. </l>
 El valor esperado de $Z$ se puede hallar usando la expresión siguiente:
@@ -1686,7 +1686,7 @@ $$
 E(Z)  = E(g(X_1\ldots,X_n))  =\sum_{x_{i_1}}\cdots\sum_{x_{i_n}}g(x_{i_1},\ldots,x_{i_n})P(x_{i_1},\ldots,x_{i_n}),
 $$
 
-## Valor esperado de una función de dos variables aleatorias
+## Valor esperado de una función de $n$ variables aleatorias 
 * en el caso en que $(X_1,\ldots,X_n)$ sea continua:
 $$
 \begin{array}{rl}
@@ -1842,7 +1842,7 @@ $$
 E(Z)=E(g(X_1\ldots,X_n))=E_{X_1}(g_1(X_1))\cdots E_{X_n}(g_n(X_n)).
 $$
 
-## Valor esperado de una función de dos variables aleatorias independientes
+## Valor esperado de una función de $n$ variables aleatorias independientes
 O sea, el cálculo de $E(g(X_1\ldots,X_n))$ que sería una suma múltiple en el caso de que $(X_1,\ldots,X_n)$ sea **discreta** o una integral múltiple en el caso en que $(X_1,\ldots,X_n)$ sea continua se transforma en el producto de $n$ sumas simples (caso **discreto**) o el producto de $n$ integrales simples (caso **continuo**):
 $$
 \begin{array}{rl}
@@ -1851,7 +1851,7 @@ E(Z) & =E(g(X_1\ldots,X_n)) \\ & =\left(\int_{-\infty}^\infty g_1(x_1)\cdot f_{X
 \end{array}
 $$
 
-## Valor esperado de una función de dos variables aleatorias independientes
+## Valor esperado de una función de $n$ variables aleatorias independientes
 Un caso particular de aplicación de la proposición anterior sería cuando queramos calcular $E(X_1\cdots X_n)$. En este caso $g(x_1,\ldots,x_n)=x_1\cdots x_n$, $g_1(x_1)=x_1$, y $g_n(x_n)=x_n$. 
 
 Podemos escribir, por tanto:

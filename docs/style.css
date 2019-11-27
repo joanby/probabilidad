@@ -55,7 +55,7 @@ pre code {
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   background-color: #c9b2f8;
-  font-size: 0.7em;
+  font-size: 0.99em;
   color: black;
 }
 
@@ -65,7 +65,7 @@ pre code {
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   background-color: #F2F2F2;
-  font-size: 0.7em;
+  font-size: 0.99em;
   font-family: "Courier", monospace;
 }
 
@@ -75,11 +75,11 @@ pre code {
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   background-color: #bfeeff;
-  font-size: 0.7em;
+  font-size: 0.99em;
 }
 
 .example-sol{
-  font-size: 0.7em;
+  font-size: 0.99em;
 }
 
 .exercise{
@@ -88,14 +88,14 @@ pre code {
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   background-color: #92e394;
-  font-size: 0.7em;
+  font-size: 0.99em;
 }
 
 .exercise-sol{
-  font-size: 0.7em;
+  font-size: 0.99em;
 }
 
 .phototext{
-  font-size: 0.5em
+  font-size: 0.7em
 }
 
