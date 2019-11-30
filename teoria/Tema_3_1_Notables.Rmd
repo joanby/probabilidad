@@ -5,7 +5,6 @@ date:
 runtime: shiny
 output: 
   ioslides_presentation: 
-    keep_md: yes
     css: Mery_style.css
     logo: Images/matriz_mov.gif
     widescreen: yes
