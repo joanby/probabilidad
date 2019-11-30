@@ -210,6 +210,7 @@ El espacio muestral $\Omega$ estará formado por cadenas de $E$'s y $F$'s de lon
 Consideremos la v.a.
 
 $$X(\overbrace{EFFF\ldots EEF}^{n})=\mbox{número de éxitos en la cadena}.$$
+A la variable aleatoria anterior se le conoce como distribución binomial de parámetros $n$ y $p$, y lo denotaremos por $X\equiv B(n,p).$
 
 ## Función de probabilidad de una  binomial
 
@@ -252,9 +253,9 @@ $$
 
 ## Números binomiales con R
 
-Los números binomiales alculan el número de equipos de baloncestodistintos que  ($k=5$ jugadores) se pueden hacer con 6 jugadores ($n=6$).
+Los números binomiales alculan el número de equipos de baloncesto distintos que  ($k=5$ jugadores) se pueden hacer con 6 jugadores ($n=6$).
 
-Es decir cuántas  manearas distintas hay para elegir (*choose*) 5 jugadores en un conjunto de 6 jugadores. Todo el mundo diría 
+Es decir cuántas  maneras distintas hay para elegir (*choose*) 5 jugadores en un conjunto de 6 jugadores. Todo el mundo diría 
 ¡¡¡6!!!. Efectivamente con R es 
 
 ```{r}
@@ -268,8 +269,7 @@ Con 10 jugadores  el número de equipos de  5 distintos es bastante más grande
 ```{r}
 choose(10,5)
 ```
-
-Y por ejemplo con un equipo de fútbol profesional  que tiene en plantilla 22 jugadores  (quitando los guardametas) se pueden formar ¡¡nada menos que!!
+Y, por ejemplo, con un equipo de fútbol profesional  que tiene en plantilla 22 jugadores  (quitando los guardametas) se pueden formar ¡¡nada menos que!!
 
 ```{r}
 choose(22,10)
@@ -278,11 +278,7 @@ un bonito número capicúa que nos da el número de equipos distintos que se pue
 
 ##  Distribución Binomial
 
-En las anteriores circunstancias diremos que la v.a. sigue una **ley de probabilidad binomial** ... con parámetros $n$ y $p$ y lo denotaremos así 
-    
-$$X\equiv B(n,p).$$ 
-    
-Obviamente se tiene que una bernoulli es una binomial con $n=1$
+Obviamente se tiene que una v.a. Bernoulli es una binomial con $n=1$
 
 $$B(1,p)=Ber(p).$$
 
@@ -301,7 +297,7 @@ para distintos valores de $n$ y $p$ para que disfrutéis de tan ancestral métod
 * Cualquier paquete estadístico, hoja de cálculo dispone de
 funciones para el cálculo de estas probabilidades, así que el **uso de las tablas** queda **totalmente anticuado**. 
 
-## Esperanza  de una $X$  $B(n,p)$
+## Esperanza  de una $B(n,p)$
 
 Su **esperanza** es 
 $$E(X)=\displaystyle\sum_{k=0}^n k \cdot  {n \choose k }\cdot p^k\cdot q^{n-k} = n\cdot p.$$
@@ -315,7 +311,7 @@ E(X^2)&=& \displaystyle\sum_{k=0}^n k^2 \cdot  {n \choose k }\cdot p^k\cdot q^{n
 \end{eqnarray*}
 $$
 
-## Varianza de una $X$  $B(n,p)$
+## Varianza de una $B(n,p)$
 
 Su **varianza** es 
 
@@ -326,12 +322,12 @@ Su desviación  típica es
  $$\sqrt{n\cdot p\cdot q}=\sqrt{n\cdot p\cdot (1-p)}.$$
  
  
-En otos temas veremos una forma sencilla del cálculo de la esperanza y varianza de una $B(n,p)$ como las suma de n $Ber(p)$ independientes.
+En temas posteriores veremos una forma sencilla del cálculo de la esperanza y varianza de una $B(n,p)$ como las suma de $n$ v.a. $Ber(p)$ independientes.
 
 <div class="exercise">
 **Ejercicio**
 
-Justificar de forma intuitiva que si $X_i$ con $i=1,2,\ldots, n$ son v.a. $Ber(p)$ independientes  entonces $X=\displaystyle\sum_{i=1}^n X_i$    sigue una distribuciń $B(n,p).$ 
+Justificar de forma intuitiva que si $X_i$ con $i=1,2,\ldots, n$ son v.a. $Ber(p)$ independientes  entonces $X=\displaystyle\sum_{i=1}^n X_i$ sigue una distribución $B(n,p).$ 
 </div>
 
 
@@ -342,7 +338,7 @@ $X$ binomial | $B(n,p)$
 -------------:|:--------
 $D_X=$ |  $\{0,1,\ldots n\}$ 
 $P_X(x)=P(X=x)=$ |$\left\{\begin{array}{ll}{n\choose x}\cdot  p^x\cdot  (1-p)^{n-x} & \mbox{ si } x=0,1,\ldots,n\\0  & \mbox{ en otro caso.}\end{array}\right.$
-$F_X(x)=P(X\leq X)=$ | no tiene fórmula (utilizad funciones de R o python)
+$F_X(x)=P(X\leq X)=$ | no tiene fórmula (utilizad funciones de `R` o python)
 $E(X)=$ |  $n\cdot p$
 $Var(X)=$ | $n\cdot p \cdot (1-p)$
 
@@ -350,13 +346,13 @@ $Var(X)=$ | $n\cdot p \cdot (1-p)$
 
 Veamos los cálculos básicos con funciones de R para una v.a $X$ con distribución  binomial  $B(n=10,p=0.25)$. 
 
-Si queremos calcular con R algún valor de la función de distribución como por ejemplo $F_X(0)=P(X\leq 0)$ 
+Si queremos calcular con `R` algún valor de la función de distribución como por ejemplo $F_X(0)=P(X\leq 0)$, tenemos que hacer:
 
 ```{r binomialfuncionesA}
 pbinom(0,size=10,prob=0.25)
 ```
 
-y si queremos por ejemplo $F_X(4)=P(X\leq 4)$:
+y si queremos por ejemplo $F_X(4)=P(X\leq 4)$, tenemos que hacer:
 
 ```{r}
 pbinom(4,size=10,prob=0.25)
@@ -364,7 +360,7 @@ pbinom(4,size=10,prob=0.25)
 
 ## Cálculos binomial con R
 
-Sin embargo, si queremos calcular algún valor de la función de probabilidad como por ejemplo $P(X=0)$:
+Sin embargo, si queremos calcular algún valor de la función de probabilidad como por ejemplo $P(X=0)$, tenemos que hacer:
 
 ```{r binomialfunciones2A_dbinom}
 dbinom(0,size=10,prob=0.25)
@@ -378,7 +374,7 @@ dbinom(4,size=10,prob=0.25)
 
 ## Generación de muestras aleatorias con R
 
-Generaremos una muestra aleatoria  de  100 valores  de una población $B(20,0.5)$
+Generaremos una muestra aleatoria  de  100 valores  de una población con distribución $B(20,0.5)$
 
 ```{r semilla_binomial}
 set.seed(2019)
@@ -388,7 +384,7 @@ rbinom(100,size = 20,prob=0.5)
 <div class="example"> 
 **Ejemplo**
 
-El ejemplo anterior correspondería a repetir 100 veces el experimento lanzar una moneda  20 veces y contar el número de caras.
+El ejemplo anterior correspondería a repetir 100 veces el experimento de lanzar una moneda  20 veces y contar el número de caras.
 
 
 ##  Cálculos distribución binomial con python
@@ -440,7 +436,7 @@ binom.rvs(n=20,p=0.25,size = 100)
 ##  Cálculos distribución binomial con python
 
 <l class="observ"> Observación</l>
-Notemos que la secuencia aleatoria generada no es la misma que con R. De hecho si volvemos a ejecutar esta función obtendremos una muestra aleatoria distinta.
+Notemos que la secuencia aleatoria generada no es la misma que con `R`. De hecho, si volvemos a ejecutar esta función obtendremos una muestra aleatoria distinta.
 
 
 ```{python bino4_py}
