@@ -33,7 +33,7 @@ Pero muchos  tienen  una falta de conocimientos  en teoría básica de conjuntos
 
 ##  Teoría de conjuntos
 
-<l class="definition"> Definición de conjunto </l>
+<l class="definition">**Definición de conjunto** </l>
 
 La definición de conjunto es una [idea o noción primitiva](https://es.wikipedia.org/wiki/Concepto_primitivo). Es decir es una idea básica del pensamiento humano: un conjunto es una colección de objetos: números, imágenes... cualquier cosa, jugadores de fútbol, palabras, colores ....
 
@@ -57,14 +57,14 @@ Estas colecciones o  conjuntos se pueden definir por:
 
 Los  conjuntos suelen tener un conjunto madre como por ejemplo 
 
-* \(\mathbb{N}=\{0,1,2,\ldots\}\)
+* $\mathbb{N}=\{0,1,2,\ldots\}$
 * $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$
 * $\mathbb{Q}=\left\{\frac{p}{q}\quad\Big|\quad p,q\in \mathbb{Z} \mbox{ y } q \not= 0.\right\}$
 * $\mathbb{R}=\{\mbox{Todos los puntos de una recta.}\}$
 
 ##  Conjuntos básicos
 
-* $\mathbb{C}= \left\{a+b\cdot i\quad \big|\quad a,b\in \mathbb{R}\right\}\mbox{Los números complejos}\quad a+b\cdot i.$
+* $\mathbb{C}= \left\{a+b\cdot i\quad \big|\quad a,b\in \mathbb{R}\right\}\mbox{ los números complejos}\quad a+b\cdot i.$
 * Alfabeto = $\{a,b,c,\ldots, A,B,C,\ldots\}.$
 * Palabras = $\{paz, guerra, amor, probabilidad,\ldots\}.$
 
@@ -89,9 +89,9 @@ Tomemos como conjunto base $\Omega=\{1,2,3\}$
 
 * $\Omega$ es un conjunto de cardinal 3, se denota por $\#(\Omega)=3$  o por $|\Omega|=3$ 
 *  El conjunto $\Omega$ tiene  $2^3=8$ subconjuntos.
-  + el vacio $\emptyset$ y los elementales $\{1\},\{3\},\{3\}$
-  + los subconjuntos de dos elementos: $\{1,2\},\{1,3\},\{2,3\}$
-  + El conjunto total de tres elementos $\Omega=\{1,2,3\}.$
+   + el vacio $\emptyset$ y los elementales $\{1\},\{3\},\{3\}$
+   + los subconjuntos de dos elementos: $\{1,2\},\{1,3\},\{2,3\}$
+   + el conjunto total de tres elementos $\Omega=\{1,2,3\}.$
 
 
 ## Características y propiedades básicas de los conjuntos
@@ -102,7 +102,7 @@ Dado un conjunto $\Omega$ podemos construir el **conjunto de todas sus partes** 
 
 <l class="prop"> Cardinal  de las partes de un conjunto </l>
 
-El cardinal de la partes de un conjunto  es $\#(\mathcal{P}(\Omega))=2^{\#(\Omega)}.$
+El **cardinal de la partes de un conjunto**  es $\#(\mathcal{P}(\Omega))=2^{\#(\Omega)}.$
 
 
 ## Características y propiedades básicas de los conjuntos
@@ -137,7 +137,7 @@ $$
 
 Sea $\Omega$ un conjunto y $A$ y $B$ dos subconjuntos de $\Omega$.
 
-El conjunto **intersección** de $A$ $B$ es el formado por todos los elementos que perteneces a $A$ \mbox{Y} $B$, se denota por $A\cap B$.
+El conjunto **intersección** de $A$ $B$ es el formado por todos los elementos que perteneces a $A$ **Y** $B$, se denota por $A\cap B$.
 
 Más formalmente
 
@@ -147,7 +147,7 @@ $$
 
 ## Operaciones conjuntos: Unión.
 
-El conjunto **unión** de $A$ y $B$ es el formado por todos los elementos que perteneces a $A$ \mbox{O que } pertenecen a $B$, se denota por $A\cup B$.
+El conjunto **unión** de $A$ y $B$ es el formado por todos los elementos que perteneces a $A$ **O** pertenecen a $B$, se denota por $A\cup B$.
 
 
 Más formalmente
@@ -158,7 +158,7 @@ $$
 
 ## Operaciones conjuntos: Diferencia.
 
-El conjunto **diferencia** de $A$ y $B$ es el formado por todos los elementos que perteneces a $A$ \mbox{Y NO } pertenecen a $B$, se denota por $A-B=A-(A\cap B)$.
+El conjunto **diferencia** de $A$ y $B$ es el formado por todos los elementos que perteneces a $A$ **Y NO**  pertenecen a $B$, se denota por $A-B=A-(A\cap B)$.
 
 Más formalmente
 
@@ -169,7 +169,7 @@ $$
 
 ## Operaciones conjuntos: Complementario
 
-El **complementario** de un  subconjunto  $A$ de $\Omega$  es $\Omega-A$ Y se denota por $A^c$ o $\overline{A}$.
+El **complementario** de un  subconjunto  $A$ de $\Omega$  es $\Omega-A$ y se denota por $A^c$ o $\overline{A}$.
 
 Más formalmente
 
@@ -180,16 +180,16 @@ $$
 
 ## Más propiedades y definiciones
 
-Sea $\Omega$ un conjunto y $A$,$B$,$C$ tres subconjuntos de $\Omega$
+Sea $\Omega$ un conjunto y $A$, $B$, $C$ tres subconjuntos de $\Omega$
 
 * Se dice que dos conjuntos $A$ y $B$ **son disjuntos** si $A\cap B=\emptyset.$
 * $\Omega^c=\emptyset$.
 * $\emptyset^c=\Omega$.
-* $A\cup B=B \cup A$ , $A\cap B=B\cap A$ conmutativas
-* $(A\cup B) \cup C = A \cup( B \cup C)$ , $(A\cap B) \cap C = A \cap( B \cap C)$ asociativas
-* $A\cup (B\cap C)=(A\cup B) \cap (A\cup C)$ , $A\cap (B\cup C)=(A\cap B) \cup (A\cap C)$ distributivas
-* $\left(A^c\right)^c=A$ doble complementario
-* $\left(A\cup B\right)^c=A^c \cap B^c$, $\left(A\cap B\right)^c=A^c \cup B^c$ [leyes de De Morgan](https://es.wikipedia.org/wiki/Leyes_de_De_Morgan)
+* $A\cup B=B \cup A$ , $A\cap B=B\cap A$ conmutativas.
+* $(A\cup B) \cup C = A \cup( B \cup C)$ , $(A\cap B) \cap C = A \cap( B \cap C)$ asociativas.
+* $A\cup (B\cap C)=(A\cup B) \cap (A\cup C)$ , $A\cap (B\cup C)=(A\cap B) \cup (A\cap C)$ distributivas.
+* $\left(A^c\right)^c=A$ doble complementario.
+* $\left(A\cup B\right)^c=A^c \cap B^c$, $\left(A\cap B\right)^c=A^c \cup B^c$ [leyes de De Morgan](https://es.wikipedia.org/wiki/Leyes_de_De_Morgan).
 
 
 ## Con R, ejemplos.
@@ -392,7 +392,7 @@ Las permutaciones de un conjunto de cardinal $n$ son todas las variaciones de or
 Las denotamos y valen:
 
 $$
-P_n=VR_n^n=n!
+P_n=V_n^n=n!
 $$
 
 ## Permutaciones

@@ -1,0 +1,496 @@
+---
+title: "Ejercicios Tema 3 - Distribuciones Notables: más distribuciones notables"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Distribuciones Notables: más distribuciones notables.
+
+## **Ley de Bendford** 
+La ley de Benford es una curiosa distribución de probabilidad que suele aparecer en la distribución del primer dígito de las cantidades registradas en  contabilidades y  en observaciones científicas o datos numéricos.
+La variable $X$ sigue una distribución discreta Benford con dominio $D_X=\{1,2,3,4,5,7,8,9\}$ son 9 dígitos (se elimina el cero) y sin función de probabilidad es 
+$$
+P_X(x)=P(X=x)=\log(d+1)-\log(d).
+$$
+
++ a) Calcular la media y la varianza de $X$.
++ b) Calcular la función de distribución de $X$.
++ c) ¿Cuál es el dígito más frecuente (moda)?
++ d) Construid con R las funciones de probabilidad y de distribución de $X$.
++ e) Dibujar con R  las funciones del apartado anterior.
+
+### Solución
+
+a) Recordad que en R `log10` es el logartimo en base 10 
+
+Como $\log(d+1)-\log(d)=\log(\frac{d+1}{d})$. Podemos implementar la función de probabilidad de Bendford con el siguiente código R
+
+```{r}
+dBendford = function(x){
+  sapply(x, FUN=function(x1)
+  {
+    if (x1 %in% 1:9)
+    {log10(x1+1)-log10(x1)}
+    else{0}
+  })
+}
+
+dBendford(1:9)
+sum(dBendford(1:9))
+```
+
+Así la media $\mu$ será
+
+```{r}
+mu=sum(c(1:9)*dBendford(1:9))
+mu
+sumx2=sum(c(1:9)^2*dBendford(1:9))
+sumx2
+sigma2=sumx2-mu^2
+sigma2
+sigma=sqrt(sigma2)
+sigma
+```
+
+En resumen  La variable de Bendford tiene dominio $D_X=\{1,2,3,4,5,6,7,8,9\}$ y función de probabilidad
+
+$$
+P_X(x)=P(X=x)=\left\{
+\begin{array}{ll}
+`r dBendford(1)` &  \mbox{si } x=1\\
+`r dBendford(2)` &  \mbox{si } x=2\\
+`r dBendford(3)` &  \mbox{si } x=3\\
+`r dBendford(4)` &  \mbox{si } x=4\\
+`r dBendford(5)` &  \mbox{si } x=5\\
+`r dBendford(6)` &  \mbox{si } x=6\\
+`r dBendford(7)` &  \mbox{si } x=7\\
+`r dBendford(8)` &  \mbox{si } x=8\\
+`r dBendford(9)` &  \mbox{si } x=9\\
+0 & \mbox{ en otro caso}
+\end{array}
+\right.
+$$
+
+
+\begin{eqnarray*}
+E(X) &=& \sum_{k=1}^9 x\cdot P_X(x)= 1 \cdot `r dBendford(1)`+ 2 \cdot `r dBendford(2)`+3 \cdot `r dBendford(3)`+4 \cdot `r dBendford(4)`+5 \cdot `r dBendford(5)`\\
+     &+&  6 \cdot `r dBendford(6)`+ 7 \cdot `r dBendford(7)`+ 8 \cdot `r dBendford(8)`+9 \cdot `r dBendford(9)`\\
+     &=& `r mu`
+\end{eqnarray*}
+
+\begin{eqnarray*}
+E(X^2) &=& \sum_{k=1}^9 x^2\cdot P_X(x)= 1 \cdot `r dBendford(1)`+ 4 \cdot `r dBendford(2)`+9 \cdot `r dBendford(3)`+ 16 \cdot `r dBendford(4)`+25 \cdot `r dBendford(5)`\\
+     &+&  36 \cdot `r dBendford(6)`+ 49 \cdot `r dBendford(7)`+ 64 \cdot `r dBendford(8)`+81 \cdot `r dBendford(9)`\\
+     &=& `r mu`
+\end{eqnarray*}
+
+Y por último $Var(X)=E(X^2)-(E(X))^2=`r sumx2`-(`r mu`)^2=`r sigma2`$ y  la desviación tçípica es $\sqrt{Var(X)}=`r sqrt(sigma2)`.$
+
+b)   Ahora nos piden $F_X(x)=P(X\leq x)$. Con R es
+```{r}
+pBendford=function(x){
+  sapply(x,FUN=function(x){
+  probs=cumsum(dBendford(1:9))
+  xfloor=floor(x)
+  if(xfloor<1){0} else {if(xfloor>8) {1} else {probs[xfloor]}}
+})
+}
+
+pBendford(0:9)
+pBendford(0)
+pBendford(10)
+```
+
+
+
+Así  tenemos que 
+
+$$
+F_X(x)=P(X\leq x)=\left\{
+\begin{array}{ll}
+0 & \mbox{si } x<1\\
+`r pBendford(1)` & \mbox{si } 1\leq x < 2\\
+`r pBendford(2)` & \mbox{si } 2\leq x < 3\\
+`r pBendford(3)` & \mbox{si } 3\leq x < 4\\
+`r pBendford(4)` & \mbox{si } 4\leq x < 5\\
+`r pBendford(5)` & \mbox{si } 5\leq x < 6\\
+`r pBendford(6)` & \mbox{si } 6\leq x < 7\\
+`r pBendford(7)` & \mbox{si } 7\leq x < 8\\
+`r pBendford(8)` & \mbox{si } 8\leq x < 9\\
+1  & \mbox{si } 9\leq x
+\end{array}
+\right.
+$$
+c) EL dígito más frecuente  es  el 1
+
+```{r}
+dBendford(1:9)
+max(dBendford(1:9))
+which.max(dBendford(1:9))
+```
+
+d)  Ya lo hemos hecho....
+
+e) Dibujemos
+
+```{r}
+par(mfrow=c(1,2))
+aux=rep(0,18)
+aux[seq(2,18,2)]=dBendford(c(1:9))
+x=c(1:9)
+plot(x,y=dBendford(c(1:9)),
+  ylim=c(0,1),xlim=c(0,10),xlab="x",
+  main="Función de probabilidad \n Bendford")
+lines(x=rep(1:9,each=2),y=aux, type = "h", lty = 2,col="blue")
+curve(pBendford(x), xlim=c(-1,11),col="blue", main="Función de distribución\n Bendford")
+par(mfrow=c(1,1))
+```
+
+
+## **Distribución de Pareto** (**Power law**)
+Es una distribución que aparece en muchos ámbitos. Consideremos el económico. Supongamos  que en un  gran país consideramos la población activa económicamente; desde el más humilde becario al directivo más adinerado.
+
+Escogemos un individuo al azar de esta población y observamos  la variable $X=$ sus ingresos en euros (digamos que anuales).
+
+Un modelo razonable es el que supone que:
+
+* Hay un ingreso mínimo $x_m>0$.
+* La probabilidad de un ingreso mayor que $x$  decrece de forma inversamente proporcional al ingreso $x$, es decir proporcional a 
+$\left(\frac{x_m}{x}\right)^{\gamma}$ para algún número real $\gamma >1.$
+
+Maś formalmente. dado $x>x_m$ 
+
+$$P(X>x)=k\cdot \left(\frac{x_m}{x}\right)^{\gamma}.$$
+Luego su función de distribución es 
+
+$$
+F_X(X)=P(X\leq x)=\left\{
+\begin{array}{ll}
+1-P(X > x)= 1- k\cdot \left(\frac{x_m}{x}\right)^{\gamma} & \mbox{ si } x>x_m\\
+0 & \mbox{ si } x\leq x_m
+\end{array}
+\right.
+$$
+Se pide 
+
++ a) Calcular  en función de $k$ y $\gamma$ la densidad de la variable $X$.
++ b) Para $\gamma>1$ calcular $E(X)$ y $Var(X)$ y su desviación típica.
++ c) ¿Qué sucede con $E(X)$ si $0<\gamma<1$.
++ d) ¿Cómo se calcula está [distribución con R](https://www.rdocumentation.org/packages/EnvStats/versions/2.3.1/topics/Pareto) [y con python](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.Pareto.html)?
++ e) Dibujar las gráficas de su densidad y distribución para $\gamma=3$ y $\gamma=5$.
++ f) Explorar por internet (wikipedia) cómo es la distribución **power law** y qué relación tiene el concepto de *scale free* con los resultados del apartado c).
+
+### Solución
+a) La densidad será la derivada de la distribución $F_X$ respecto de $x$ , si $x\geq x_m>0$
+
+
+\begin{eqnarray*}
+f_X(x)=(F_X(x))'&=& \left(1- k\cdot \left(\frac{x_m}{x}\right)^{\gamma}\right)'=
+\left(1- k\cdot x_m^{\gamma} \cdot  x^{-\gamma} \right)'= \left(1- k\cdot x_m^{\gamma} \cdot  x^{-\gamma} \right)'\\
+&=& -\gamma\cdot(-k\cdot x_m^{\gamma}) \cdot  x^{-\gamma-1}=\gamma\cdot k\cdot x_m^{\gamma} \cdot  x^{-\gamma-1}
+\end{eqnarray*}
+
+
+Si tenemos $x<x_m$ entonces $f_X(x)=0$ en resumen
+
+
+$$
+f_X(x)=\left\{
+\begin{array}{ll}
+\gamma \cdot x_m^{\gamma} \cdot  x^{-\gamma-1} &\mbox{ si } x\geq x_m\\
+0 &\mbox{ si } x< x_m\\
+\end{array}
+\right.
+$$
+Notemos que $\gamma$ es un parámetro pero $k$ es na constante a determinar pues la densidad debe integrar 1 en el dominio $D_X=[x_m,+\infty)$
+
+
+\begin{eqnarray*}
+\int_{x_m}^{+\infty} f_X(x) dx &=&\int_{x_m}^{+\infty} \gamma \cdot k\cdot x_m^{\gamma} \cdot  x^{-\gamma-1}\cdot dx=
+\left[- k\cdot x_m^{\gamma} \cdot  x^{-\gamma}\right]_{x=x_m}^{+\infty}=
+\lim_{x\to \infty} \left[- k\cdot x_m^{\gamma} \cdot  x^{-\gamma}\right] - \left(- k\cdot x_m^{\gamma} \cdot  x_m^{-\gamma}\right)\\
+&=& 0 + k\cdot x_m^{\gamma} \cdot  {x_m}^{-\gamma}=k.
+\end{eqnarray*}
+
+
+
+Notemos que el límite es $0$ pues $\gamma>0$ y $x_m>0$. Luego $k=1$ y la función de densidad  y la de distribución se puede escribir como  damos dos versiones
+
+
+$$
+f_X(x)=\left\{
+\begin{array}{ll}
+\gamma\cdot x_m^{\gamma} \cdot  x^{-(\gamma+1)} &\mbox{ si } x\geq x_m\\
+0 &\mbox{ si } x< x_m\\
+\end{array}
+\right.=
+\left\{
+\begin{array}{ll}
+\frac{\gamma\cdot x_m^{\gamma}}{x^{(\gamma+1)}} &\mbox{ si } x\geq x_m\\
+0 &\mbox{ si } x< x_m\\
+\end{array}
+\right.
+$$
+
+$$
+f_X(x)=\left\{
+\begin{array}{ll}
+\gamma\cdot x_m^{\gamma} \cdot  x^{-(\gamma+1)} &\mbox{ si } x\geq x_m\\
+0 &\mbox{ si } x< x_m\\
+\end{array}
+\right.=
+\left\{
+\begin{array}{ll}
+\frac{\gamma\cdot x_m^{\gamma}}{x^{(\gamma+1)}} &\mbox{ si } x\geq x_m\\
+0 &\mbox{ si } x< x_m\\
+\end{array}
+\right.
+$$
+
+y la distribución 
+
+$$
+F_X(X)=
+\left\{
+\begin{array}{ll}
+1-  x_m^\gamma \cdot x^{-\gamma} & \mbox{ si } x>x_m\\
+0 & \mbox{ si } x\leq x_m
+\end{array}
+\right.
+=\left\{
+\begin{array}{ll}
+1-  \left(\frac{x_m}{x}\right)^{\gamma} & \mbox{ si } x>x_m\\
+0 & \mbox{ si } x\leq x_m
+\end{array}
+\right.
+$$
+
+
+c) 
+
+Calculemos su esperanza
+
+
+\begin{eqnarray*}
+E(X)&=&\int_{x_m}^{+\infty} x\cdot f_X(x)\cdot dx=
+\int_{x_m}^{+\infty} x\cdot \gamma\cdot x_m^{\gamma} \cdot  x^{-\gamma-1}\cdot dx=
+\int_{x_m}^{+\infty} \gamma\cdot x_m^{\gamma} \cdot  x^{-\gamma}\cdot dx=
+\left[\frac{\gamma}{-\gamma+1}\cdot x_m^{\gamma} \cdot  x^{-\gamma+1}\right]_{x=x_m}^{+\infty}
+\\
+&=& \lim_{x\to \infty} \left[\frac{\gamma}{-\gamma+1}\cdot x_m^{\gamma} \cdot  x^{-\gamma+1}\right] - \left(\frac{\gamma}{-\gamma+1} \cdot x_m^{\gamma} \cdot  x_m^{-\gamma+1}\right)=
+\lim_{x\to \infty} \left[\frac{\gamma}{-\gamma+1}\cdot x_m^{\gamma} \cdot  x^{-\gamma+1}\right] + \frac{\gamma\cdot x_m}{\gamma-1}  
+\end{eqnarray*}
+
+
+
+
+
+
+Ahora tenemos dos casos para el límite que $0<\gamma\leq 1$  o que $\gamma>1$, es decir que  $-\gamma+1$ sea negativo o positivo, entonces
+
+$$
+\lim_{x\to \infty} 
+\left[
+\frac{\gamma}{-\gamma+1}\cdot x_m^{\gamma} \cdot  x^{-\gamma+1}
+\right]=
+\left\{
+\begin{array}{ll}
++\infty & \mbox{ diverge si }  0<\gamma\leq 1 \\
+\frac{\gamma\cdot x_m}{\gamma-1}   & \mbox{ converge si } \gamma > 1\\
+\end{array}
+\right.
+$$
+
+Así que **no siempre existe** $E(X)$, si   en una distribución pareto $\gamma\leq 1$ su media diverge  se dice entonces que es una distribución **de escala libre**, en inglés **scale free** en el sentido de que carece de media.
+
+
+
+e)  Podemos  programar pero ya lo han hecho en el paquete  *Environmental Statistics* (`EnvStats`) y el *Extra Distributions* (`extraDistr`) utilizaremos el segundo paquete en el que las funciones están implementadas en C++) instalarlo si no lo tenéis.
+
+```{r}
+par(mfrow=c(1,2))# el parametro gamma es a y el parámetro xm es b
+curve(extraDistr::dpareto(x,a=1,b=1),xlim=c(1,50),
+      ylim=c(0,0.04),lty=1,main="Densidad  Pareto.")
+curve(extraDistr::dpareto(x,a=3,b=4),
+      add=TRUE,col="red",lty=2)
+curve(extraDistr::dpareto(x,a=4,b=10),
+      add=TRUE,col="green",lty=3)
+legend("topright",pch=21,
+       legend=c("gamma=1 xm=1","gamma=1 xm=1","gamma=1 xm=1"),
+       col=c("black","red","green"),lty=c(1,2,3),cex=0.5)
+curve(extraDistr::ppareto(x,a=1,b=1),
+      xlim=c(1,50),ylim=c(0,1),lty=1,main="Distribución  Pareto.")
+curve(extraDistr::ppareto(x,a=3,b=4),
+      add=TRUE,col="red",lty=2)
+curve(extraDistr::ppareto(x,a=4,b=10),
+      add=TRUE,col="green",lty=3)
+par(mfrow=c(1,1))
+```
+
+f) Buscad los enlaces del la wikipedia. Tenéis que buscar la *Power law* y la *Zipf's law*. Ambas distribuciones son famosas aparecen en la distribución de contactos en una ley social, en  la longitud de un mensaje en un foro y en otros aspectos empíricos muy interesantes. Si hay ocasión y el curso es un éxito ampliaremos estas distribuciones.
+
+
+##  **Distribución de Gumbel (teoría del valor extremo)**.
+La distribución de Gumbel aparece en variables que miden  lo que se llama un valor extremo: precipitación máxima de lluvia, tiempo máximo transcurrido entre dos terremotos, o en métodos de *machine learning* el máximo de las  puntuaciones de una algoritmo; por ejemplo comparar pares de objetos (fotos, proteínas, etc.).
+
+Una variable aleatoria sigue una ley de distribución Gumbel (de TIPO I) si su distribución es:
+
+$$
+F_X(x)=\left\{
+\begin{array}{ll}
+  e^{-e^{-\frac{x-\mu}{\beta}}} & \mbox{si} x\geq 0\\
+ 0 & \mbox{si} x< 0\\
+\end{array}
+\right.
+$$
+
+Para $\mu$ y $\beta>0$ parámetros reales. Llamaremos distribución Gumbel estándar  a la que tiene por parámetros
+$\mu=0$ y $\beta=1.$ 
+
++ a) Si $X$ es una Gumbel estándar calcular su función de densidad y dibujar su gráfica.
++ b) Consideremos la función $F(x)=e^{-e^{-x}}$ para $x\geq 0$ y que vale  cero en el resto de casos. Comprobar que es la función de distribución $P(X\leq x)$ de una v.a. Gumbel estándar.
++ c) Buscad un paquete de R que implemente la distribución Gumbel. Aseguraros  de que es  la (Gumbel Tipo I). Dejando fijo el parámetro $\beta=1$ dibujar la densidad Gumbel para varios valores de $\mu$ y explicad en que afecta a la gráfica el cambio de $\mu$.
++ d) Dejando fijo el parámetro $\mu$ dibujad la densidad Gumbel para varios valores de $\beta>0$ y explicar  en qué afecta a la gráfica el cambio  de este parámetro.
++ e) Buscad cuales son las fórmulas de la esperanza y varianza de una distribución Gumbel en función de $\alpha$ y $\beta$.
++ f) Repetid los apartados c) y  d) con python. Con python se puede pedir con la correspondiente función la esperanza y varianza de esta distribución, comprobar con esta función para algunos valores las fórmulas de la esperanza y la varianza del apartado e).
+
+### Solución 
+
+a) La Gumbel estándar tiene por distribución 
+
+
+$$
+F_X(x)=\left\{
+\begin{array}{ll}
+  e^{-e^{-x}} & \mbox{ si } x\geq 0\\
+ 0 & \mbox{ si } x< 0\\
+\end{array}
+\right.
+$$
+
+
+
+Entonces  si $x>0$
+
+$$f_X(X)=(F_X(x))'=\left(e^{-e^{-x}}\right)'=e^{-e^{-x}}\cdot e^{-x} $$
+
+Luego 
+
+$$f_X(x)=\left\{
+\begin{array}{ll}
+  e^{-e^{-x}}\cdot e^{-x} & \mbox{ si } x\geq 0\\
+ 0 & \mbox{ si } x< 0\\
+\end{array}
+\right.
+$$
+
+```{r plot_gumbel_standar}
+dgumbel_standar=function(x) {
+  sapply(x,
+         FUN=function(x) {
+           if(x>0) {return(exp(-exp(-x))*exp(-x))} else {return(0)}
+         }
+  )
+  }
+
+curve(dgumbel_standar(x),col="blue",main="Densidad  Gummbel estándar",xlim=c(0,10))
+```
+
+
+
+b) Consideremos la función $F(x)=e^{-e^{-x}}$ para $x\geq 0$ y que vale  cero en el resto de casos. Comprobar que es la función de distribución $P(X\leq x)$ de una v.a. Gumbel estándar.
+
+Efectivamente  Es sufciente sustituir en la fórmula original.
+
+c)  Buscad un paquete de R que implemente la distribución Gumbel. Aseguraros  de que es  la (Gumbel Tipo I). Dejando fijo el parámetro $\beta=1$ dibujar la densidad Gumbel para varios valores de $\mu$ y explicad en que afecta a la gráfica el cambio de $\mu$.
+
+Un paquete que implementa la gumbel es `extraDistr` el parámetro `mu` es $\mu$ mientras que $\beta$ es elparámetro `sigma`.
+
+```{r plot_gumbel_taller_e}
+# el parametro mu es mu y el parámetro beta es sigma
+curve(extraDistr::dgumbel(x,mu=1,sigma=1),xlim=c(0,10),
+      ylim=c(0,0.38),lty=1,main="Densidad  Gumbel\n mu=1, 2 y 4  y beta 1")
+curve(extraDistr::dgumbel(x,mu=2,sigma=1),
+      add=TRUE,col="red",lty=2)
+curve(extraDistr::dgumbel(x,mu=4,sigma=1),
+      add=TRUE,col="green",lty=3)
+legend("topright",pch=21,
+       legend=c("mu=1, beta=1","mu=2, beta=1","mu=4, beta=1"),
+       col=c("black","red","green"),lty=c(1,2,3),cex=0.5)
+```
+
+d) Dejando fijo el parámetro $\mu$ dibujad la densidad Gumbel para varios valores de $\beta>0$ y explicar  en que afecta a la gráfica el cambio  de este parámetro.
+
+```{r plot_gumbel_taller_d}
+# el parametro mu es mu y el parámetro beta es sigma
+curve(extraDistr::dgumbel(x,mu=1,sigma=1),xlim=c(0,15),
+      ylim=c(0,0.38),lty=1,main="Densidad  Gumbel\n mu=1 y beta variando 1,5, y 10")
+curve(extraDistr::dgumbel(x,mu=1,sigma=2),
+      add=TRUE,col="red",lty=2)
+curve(extraDistr::dgumbel(x,mu=1,sigma=4),
+      add=TRUE,col="green",lty=3)
+legend("topright",pch=21,
+       legend=c("mu=1, beta=1","mu=1, beta=2","mu=1, beta=4"),
+       col=c("black","red","green"),lty=c(1,2,3),cex=0.5)
+```
+
+
+
+
+e) Si $X$ sigue un ley Gumbel de parámetros $\mu$ y $\beta$  entonces $E(X)=\mu+\beta\cdot\gamma$ donde gamma es el número de euler $\gamma=0.577215664\ldots$,  y $Var(X)=\frac{\pi^2}{6}\cdot \beta^2$
+
+f) Repetid los apartados c) y  d) con python. Con python se puede pedir con la correspondiente función la esperanza y varianza de esta distribución, comprobar con esta función para algunos valores las fórmulas de la esperanza y la varianza del apartado e).
+
+```{python}
+import numpy as np 
+from scipy.stats import gumbel_r
+mu, beta = 0, 0.1 # location and scale
+x = np.linspace(0, 2 * np.pi, 30)
+import matplotlib.pyplot as plt
+#count, bins, ignored = plt.hist(s, 30, normed=True)
+plt.plot(x,gumbel_r.pdf(x, loc=1, scale=1),linewidth=2, color='black')
+plt.plot(x,gumbel_r.pdf(x, loc=2, scale=1),linewidth=2, color='green')
+plt.plot(x,gumbel_r.pdf(x, loc=4, scale=1),linewidth=2, color='red')
+plt.show()
+```
+
+
+
+```{python}
+import numpy as np 
+from scipy.stats import gumbel_r
+mu, beta = 0, 0.1 # location and scale
+x = np.linspace(0, 2 * np.pi, 30)
+import matplotlib.pyplot as plt
+#count, bins, ignored = plt.hist(s, 30, normed=True)
+plt.plot(x,gumbel_r.pdf(x, loc=1, scale=1),linewidth=2, color='black')
+plt.plot(x,gumbel_r.pdf(x, loc=1, scale=2),linewidth=2, color='green')
+plt.plot(x,gumbel_r.pdf(x, loc=1, scale=4),linewidth=2, color='red')
+plt.show()
+```
+Y los estadisticos
+
+
+
+```{python}
+from scipy.stats import gumbel_r
+gumbel_r.stats(loc=0, scale=1, moments='mv')
+```
+
+
+```{python}
+print("E(X) = {m}".format(m=gumbel_r.stats(loc=0, scale=1, moments='m')))
+print("Var(X) = {v}".format(v=gumbel_r.stats(loc=0, scale=1, moments='v')))
+```
+
+Se observa que en este caso la esperanza es la cosntante de uler $\gamma=0.577215664\ldots$.
+

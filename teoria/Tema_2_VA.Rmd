@@ -36,7 +36,7 @@ variables aleatorias.
 ## Definición de variable aleatoria
  Comenzaremos dando una definición poco rigurosa, pero suficiente, de  variable aleatoria.
 
-<div class="definition"> *Variable Aleatoria (definición práctica)* </div>
+<l class="definition"> Variable Aleatoria (definición práctica) </l>
 
 
 Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos determinados por el resultado de un experimento aleatorio
@@ -44,7 +44,7 @@ Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos det
 <div class="observ">
 **Notación**:
 </div>
-* Normalmente representaremos las v.a. por letras mayúsculas $X,Y,Z$\ldots
+* Normalmente representaremos las v.a. por letras mayúsculas $X,Y,Z\ldots$
 * Los valores que "*toman*" las v.a. los representaremos por letras minúsculas (las mismas en principio) $x,y,z\ldots$
 
 
@@ -55,7 +55,7 @@ Una variable aleatoria (v.a.) es una aplicación que toma valores numéricos det
 
 Lanzamos un dado convencional de parchís el espacio muestral del experimento es
 
-$$\Omega=\{1,2, 3, 4,  5, 6\}$$
+$$\Omega=\{1,2, 3, 4,  5, 6\}.$$
 
 
 </div>
@@ -64,12 +64,12 @@ $$\Omega=\{1,2, 3, 4,  5, 6\}$$
 Una v.a $X:\Omega\to\mathbb{R}$
 sobre este espacio queda definida por 
 
-$$\begin{equation*}
+\begin{equation*}
 \begin{split}
 X(1)&=1,X(2)=2,X(3)=3,\\
 X(4)&=4,X(5)=5,X(6)=6.
 \end{split}
-\end{equation*}$$
+\end{equation*}
 
 * Ahora el suceso $A=\{2, 4, 6\}$, es decir "salir
 número par", es equivalente a $\{X=2,X=4,X=6\}$.
@@ -85,8 +85,8 @@ inferior o igual a $3$" es  en términos de la v.a. $\{X=1,X=2,X=3\}$ o también
 **Ejemplo**
 
 Consideremos el experimento lanzar una anilla al cuello de una botella. Si acertamos a
-ensartar la anilla en la botella el resultado del experimento es *éxito* y
-*fracaso* en caso contrario. 
+ensartar la anilla en la botella el resultado del experimento es **éxito** y
+**fracaso** en caso contrario. 
 </div>
 
 <div class="example-sol">
@@ -103,11 +103,12 @@ $$X(\mbox{éxito})=1 \mbox{ y } X(\mbox{fracaso})=0.$$
 
 
 ## Tipos de variables aleatorias
+
 Hay dos tipos fundamentales de variables aleatorias, las discretas y las continuas.
 
 Damos a continuación una definición informal.
 
-<l class="definition">Variables Aleatórias Discretas y Continuas </l>
+<l class="definition">Variables Aleatorias Discretas y Continuas </l>
 
 * Una variable aleatoria es **discreta** si sólo puede tomar una cantidad numerable de valores con probabilidad positiva.
 * Las variables aleatorias **continuas**  toman  valores en intervalos.
@@ -130,7 +131,7 @@ Son variables *aleatorias discretas*:
 Son variables *aleatorias continuas*:
       
 * Renta anual de una familia.
-* Cantidad de petróleo importado por un país
+* Cantidad de petróleo importado por un país.
 * Variación del precio de las acciones de una compañía de telecomunicaciones.
 * Porcentaje de impurezas en un lote de productos químicos.
       
@@ -141,8 +142,7 @@ Son variables *aleatorias continuas*:
 ## Distribuciones de probabilidad para v.a. discretas.
 
 * Pasamos ahora a describir el comportamiento  de la v.a. 
-Para ello utilizaremos distintas
-funciones que nos darán algunas probabilidades de la variable aleatoria.
+Para ello utilizaremos distintas funciones que nos darán algunas probabilidades de la variable aleatoria.
 * En el caso discreto estas funciones son la de probabilidad, y  la función de distribución o de probabilidad acumulada.
 * En el caso discreto la función de probabilidad es la que nos da las probabilidades de los
 sucesos elementales de la v.a. que definimos a continuación.
@@ -153,12 +153,11 @@ sucesos elementales de la v.a. que definimos a continuación.
 
 
 <l class="definition"> **Función de Probabilidad**</l>
-La *función de probabilidad* (*probability mass function* o incluso abusando de notación *probability density function*)
 
-de una variable aleatoria discreta $X$ a la que denotaremos por $P_{X}(x)$
-está definida por
+La **función de probabilidad** (*probability mass function* o incluso abusando de notación *probability density function*)
+de una variable aleatoria discreta $X$ a la que denotaremos por $P_{X}(x)$ está definida por
 
-$$P_{X}(x)=P(X=x)$$
+$$P_{X}(x)=P(X=x),$$
 
 es decir la probabilidad de que $X$ tome el valor $x$.
 
@@ -166,12 +165,12 @@ Si $X$ no asume ese valor $x$, entonces
 $P_{X}(x)=0$.
 </div>
 
-## Funcion probabilidad discretas
+## Función  de probabilidad discreta
 
 <l class="definition"> **Dominio de una variable aleatoria discreta** </l> 
 
 El conjunto $$D_X=\{ x\in\mathbb{R} \mid P_X(x)>0\}$$ recibe el nombre de
-*dominio* de la v.a. y son los valores posibles de esta variable. 
+**dominio** de la v.a. y son los valores posibles de esta variable. 
 
 En el caso discreto lo más habitual es que $X(\Omega)=D_X$.
 
@@ -180,12 +179,12 @@ En el caso discreto lo más habitual es que $X(\Omega)=D_X$.
 ## Ejemplo
 
 <div class="example">
-**Ejemplo parchís**
+**Ejemplo: parchís**
 
 Lanzamos un dado de parchís una vez, en esta ocasión representaremos los
 sucesos elementales por el número de puntos de la cara obtenida, tenemos que
 $$\Omega=\{\mbox{1-puntos,2-puntos,3-puntos,4-puntos,5-puntos,6-puntos}\}$$ 
-y la variables aleatoria $X:\Omega\to \mathbb{R}$ viene definida por
+y la variable aleatoria $X:\Omega\to \mathbb{R}$ viene definida por
 
 $$X(\mbox{i-puntos})=i\mbox{ para } i=1,2,3,4,5,6.$$
 </div>
@@ -193,14 +192,14 @@ $$X(\mbox{i-puntos})=i\mbox{ para } i=1,2,3,4,5,6.$$
 <div class="example-sol ">
 
 Supongamos que el dado está bien balanceado. Entonces
-$$P_{X}(1)=P_{X}(2)=P_{X}(3)=P_{X}(4)=P_{X}(5)=P_{X}(6)=\frac16$$
+$$P_{X}(1)=P_{X}(2)=P_{X}(3)=P_{X}(4)=P_{X}(5)=P_{X}(6)=\frac16.$$
 Concretamente:
 $$
 P_{X}(x)=
   \left\{
   \begin{array}{ll}
-   \frac16 & \mbox{si } x=1,2,3,4,5,6\\
-  0 & \mbox{en otro caso }
+   \frac16 ,& \mbox{si } x=1,2,3,4,5,6.\\
+  0 & \mbox{en otro caso.}
   \end{array}
   \right.
 $$
@@ -210,7 +209,7 @@ Su dominio es $$D_X=\{1,2,3,4,5,6\}.$$
 
 ## Ejemplo
 <div class="example">
-**Ejemplo lanzamiento moneda**
+**Ejemplo: lanzamiento moneda**
 
 
 Sea $X$ la v.a. asociada al lanzamiento de una moneda. Su espacio muestral es  $\Omega=\{c,+\}$, la v.a. queda definida por:
@@ -224,8 +223,8 @@ $$X(\omega)=\left\{\begin{array}{ll} 1 & \mbox{si } \omega=c \\
 
 Su función de probabilidad es:
 
-$$P_{X}(x)=P(X=x)=\left\{\begin{array}{ll} \frac12 & \mbox{si } x=0,1\\
-0 & \mbox{en otro caso}\end{array}\right.$$
+$$P_{X}(x)=P(X=x)=\left\{\begin{array}{ll} \frac12, & \mbox{si } x=0,1,\\
+0, & \mbox{en otro caso}.\end{array}\right.$$
 
 
 Finalmente su dominio es $D_X=\{0,1\}.$
@@ -242,17 +241,17 @@ $$\Omega=\{roja, blanca, negra\}.$$
 
 Una variable aleatoria asociada al experimento es:
 
-$$X(\omega)=\left\{\begin{array}{ll} 1 & \mbox{si } \omega=roja  \\
-2 & \mbox{si }\omega=negra \\ 3 & \mbox{si } \omega=blanca \end{array}\right.$$
+$$X(\omega)=\left\{\begin{array}{ll} 1, & \mbox{si } \omega=roja,  \\
+2, & \mbox{si }\omega=negra ,\\ 3, & \mbox{si } \omega=blanca.\end{array}\right.$$
 
 ## Ejemplo
 
 <div class="example-sol">
 La función de probabilidad es 
 
-$$P_{X}(x)=\left\{\begin{array}{ll} \frac36 & \mbox{si } x=1\\
-\frac16 & \mbox{si } x=2\\ \frac26 & \mbox{si } x=3\\ 0 & \mbox{en otro
-caso}\end{array}\right.$$
+$$P_{X}(x)=\left\{\begin{array}{ll} \frac36, & \mbox{si } x=1,\\[0.5ex]
+\frac16, & \mbox{si } x=2,\\ \frac26, & \mbox{si } x=3,\\ 0 & \mbox{en otro
+caso.}\end{array}\right.$$
 
 El dominio de la v.a.  $X$ es $D_X=\{1,2,3\}.$
 
@@ -261,12 +260,12 @@ El dominio de la v.a.  $X$ es $D_X=\{1,2,3\}.$
 ## Propiedades de la función de probabilidad.
 
 
-<l class="prop"> Propiedades básicas de la función de porbabilidad </l>
+<l class="prop">Propiedades básicas de la función de probabilidad </l>
 
 Sea $X$ una v.a. discreta $X:\Omega:\to\mathbb{R}$ con dominio $D_X$. Su función de probabilidad $P_{X}$ verifica las siguientes propiedades:
 
-* $0\leq P_{X}(x)\leq 1$ para todo $x\in\mathbb{R}$
-* $\sum\limits_{x\in D_X} P_{X}(x)=1$
+* $0\leq P_{X}(x)\leq 1$ para todo $x\in\mathbb{R},$
+* $\sum\limits_{x\in D_X} P_{X}(x)=1.$
 
 
 ## Ejemplo
@@ -292,23 +291,24 @@ Su función de probabilidad es:
 
 $$
 \begin{array}{l}
-P(X=0)=P(\{+++\})=\frac18\\ P(X=1)=P(\{c++,+c+,++c\})=\frac38\\
-    P(X=2)=P(\{cc+,c+c,+cc\})=\frac38\\
-    P(X=3)=P(\{ccc\})=\frac18
+P(X=0)=P(\{+++\})=\frac18,\\ P(X=1)=P(\{c++,+c+,++c\})=\frac38,\\
+    P(X=2)=P(\{cc+,c+c,+cc\})=\frac38,\\
+    P(X=3)=P(\{ccc\})=\frac18.
 \end{array}
 $$
 </div>    
+
 ## Ejemplo
 <div class="example-sol">
 
 Podemos reescribir la función de probabilidad de $X$ de forma simplificada:
     
-$$P_{X}(x)=\left\{\begin{array}{ll} \frac18 & \mbox{si } x=0, 3\\
-\frac38 & \mbox{si } x=1,2\\ 0 & \mbox{en otro caso}\end{array}\right.$$
+$$P_{X}(x)=\left\{\begin{array}{ll} \frac18, & \mbox{si } x=0, 3,\\[0.5ex]
+\frac38, & \mbox{si } x=1,2,\\ 0, & \mbox{en otro caso}.\end{array}\right.$$
 
 
 
-Efectivamente los valores de la función de distribución suman 1
+Efectivamente los valores de la función de distribución suman 1:
 
 $$\sum_{x=0}^3 P_X(x)= \frac18+\frac38+\frac38+\frac18=1.$$
 
@@ -317,15 +317,15 @@ $$\sum_{x=0}^3 P_X(x)= \frac18+\frac38+\frac38+\frac18=1.$$
 
 ## Función de distribución de variables aleatorias
 
-<l class="definition"> **Distribución de Probabilidad**</l>
+<l class="definition">Distribución de Probabilidad</l>
 
 La función de *distribución de probabilidad* (acumulada) de la v.a. $X$ (de cualquier tipo;
-discreta o continua) $F_{X}(x)$ representa la probabilidad de que $X$  tome un menor o igual que  $x$ es decir
+discreta o continua) $F_{X}(x)$ representa la probabilidad de que $X$  tome un menor o igual que  $x$, es decir,
 
-$$F_{X}(x)=P(X\leq x)$$
+$$F_{X}(x)=P(X\leq x).$$
 
-Esta función también se denomina función de *distribución de
-probabilidad o simplemente función de distribución* de una v.a., y en inglés
+Esta función también se denomina función de **distribución de
+probabilidad o simplemente función de distribución** de una v.a., y en inglés
 *cumulative distribution function* por lo que se abrevia con el acrónimo `cdf`.
 
 
@@ -333,13 +333,13 @@ probabilidad o simplemente función de distribución* de una v.a., y en inglés
 ## Propiedades
 
 
-<l class="definition"> **Propiedades de la Función de Distribución**</l>
+<l class="definition">Propiedades de la Función de Distribución</l>
 
 Sea $X$ una v.a. y $F_{X}$ su función
 de distribución:
 
-1. $P(X>x)=1-P(X\leq x)=1-F_{X}(x)$
-2.  Sea a y b tales que $a<b$, $P(a<X\leq b)=P(X\leq b)-P(X\leq a)=F_{X}(b)-F_{X}(a)$
+1. $P(X>x)=1-P(X\leq x)=1-F_{X}(x).$
+2.  Sea a y b tales que $a<b$, $P(a<X\leq b)=P(X\leq b)-P(X\leq a)=F_{X}(b)-F_{X}(a).$
 
 
 
@@ -349,15 +349,13 @@ de distribución:
 
 **Demostración**:
 
-Tenemos que el complementario de $X$ mayor que $x$ es:  $\overline{\left\{X>x\right\}}=\left\{X>x\right\}^c=\left\{X\leq x\right\}$. Además
+Tenemos que el complementario de $X$ mayor que $x$ es:  $\overline{\left\{X>x\right\}}=\left\{X>x\right\}^c=\left\{X\leq x\right\}$. Además,
 
-$$P(X>x)=1-P(\overline{\left\{X>x\right\}})=1-P(X\leq x)=1-F_{X}(x)$$
+$$P(X>x)=1-P(\overline{\left\{X>x\right\}})=1-P(X\leq x)=1-F_{X}(x),$$
     
-lo que demuestra la primera propiedad
+lo que demuestra la primera propiedad.
 
-Por otro lado, que $X$ se encuentre entre dos valores $a$ y $b$ es $\left\{a< X \leq b\right\}= \left\{X\leq b\right\}-\left\{X\leq  a\right\}$
-
-ahora podemos hacer 
+Por otro lado, si $X$ se encuentra entre dos valores $a$ y $b$ $\left\{a< X \leq b\right\}= \left\{X\leq b\right\}-\left\{X\leq  a\right\}$. Ahora podemos hacer 
     
 $$
 \begin{eqnarray*}
@@ -366,7 +364,6 @@ P(a<X\leq b)&=&P(\left\{X\leq b\right\}-\left\{X\leq a\right\})\\
 &=& F_{X}(b)-F_{X}(a).
 \end{eqnarray*}
 $$
-
 </div>
 
 ## Propiedades
@@ -386,8 +383,8 @@ entonces se cumple que $P(X< x_0)=F_X(x_0^{-})$ y que $P(X=x_0)=F_X(x_0)-F_X(x_0
 <l class="definition"> **Propiedades de la Función de Distribución**</l>
 
 * Se cumple que $\displaystyle \lim_{x\to\infty} F_{X}(x)=1$; $\displaystyle \lim_{x\to-\infty}F_{X}(x)=0$.
-*  Toda función $F$ verificando las propiedades anteriores es función de distribución de alguna v.a. $X$.
-* $P(X>x)=1-F_{X}(x)$
+* Toda función $F$ verificando las propiedades anteriores es función de distribución de alguna v.a. $X$.
+* $P(X>x)=1-F_{X}(x)$.
 * Dados $a,b\in \mathbb{R}$ con $a<b$ $$P(a<X\leq b)=F_{X}(b)-F_{X}(a).$$
 
 ## Advertencia desigualdades estrictas
@@ -407,12 +404,12 @@ entonces  se cumplen las siguientes igualdades...
 
 <l class="prop">Propiedades </l>
 
-* $P(X=x)=F_{X}(x)-F_{X}(x^{-})$
-* $P(a< X< b)=F_{X}(b^{-})-F_{X}(a)$
-* $P(a\leq X< b)=F_{X}(b^{-})-F_{X}(a^{-})$
-* $P(X<a)=F_{X}(a^{-})$
-* $P(a\leq X\leq b)=F_{X}(b)-F_{X}(a^{-})$
-* $P(X\geq a)=1-F_{X}(a^{-})$
+* $P(X=x)=F_{X}(x)-F_{X}(x^{-})$.
+* $P(a< X< b)=F_{X}(b^{-})-F_{X}(a)$.
+* $P(a\leq X< b)=F_{X}(b^{-})-F_{X}(a^{-})$.
+* $P(X<a)=F_{X}(a^{-})$,
+* $P(a\leq X\leq b)=F_{X}(b)-F_{X}(a^{-})$.
+* $P(X\geq a)=1-F_{X}(a^{-})$.
           
 ## Propiedades
 
@@ -423,10 +420,9 @@ Así que si la v.a. es continua $P(X\leq a)=P(X< a)+P(X=a)=P(X<a)$ y propiedades
 *  Sea $X$ una variable aleatoria discreta que con dominio $D_X$ y
 que tiene por función de probabilidad $P_{X}(x)$ entonces su función de distribución
 $F_{X}(x_0)$ es
-$$F_{X}(x_0)=\sum_{x\leq x_0} P_{X}(x)$$
-
-donde $\sum_{x\leq x_0}$ indica que sumamos todos los $x \in D_X$ tales que $x\leq
-x_0$
+$$F_{X}(x_0)=\sum_{x\leq x_0} P_{X}(x),$$
+donde $\sum\limits_{x\leq x_0}$ indica que sumamos todos los $x \in D_X$ tales que $x\leq
+x_0.$
   
 
 
@@ -437,10 +433,10 @@ x_0$
 **Demostración**:
 
 
-Si $X$ es continua $$P(X=a)=F(a)-F(a^{-})=F(a)-F(a)=0$$
+Si $X$ es continua, $$P(X=a)=F(a)-F(a^{-})=F(a)-F(a)=0$$ 
 por lo tanto 
 
-$$P(X\leq a)=P(X<a)+P(X=a)= P(X<a)+0= P(X<a).$$
+$$P(X\leq a)=P(X<a)+P(X=a)= P(X<a)+0= P(X<a),$$
 
 
 lo que demuestra la primera propiedad.
@@ -459,22 +455,22 @@ $$
 ## Ejemplo
 
 <div class="example">
-**Ejemplo**
+**Ejemplo: dado (continuación)**
 
 En el experimento del dado se tiene que:
 
-$$P_{X}(x)=\left\{\begin{array}{ll} \frac16 & \mbox{si } x=1,2,3,4,5,6\\ 0 & \mbox{en el resto de casos}\end{array}\right.,$$
+$$P_{X}(x)=\left\{\begin{array}{ll} \frac16, & \mbox{si } x=1,2,3,4,5,6\\ 0, & \mbox{en el resto de casos.}\end{array}\right.$$
 
 por lo tanto
 
    $$F_{X}(x)=P(X\leq x)=\left\{\begin{array}{ll}
-   0 & \mbox{si } x<1\\
-   \frac16 &\mbox{si } 1\leq x<2\\
-   \frac26 &\mbox{si } 2\leq x<3\\
-   \frac36 &\mbox{si } 3\leq x<4\\
-   \frac46 &\mbox{si } 4\leq x<5\\
-   \frac56 &\mbox{si } 5\leq x<6\\
-   1 &\mbox{si } 6\leq x\end{array}\right.$$
+   0, & \mbox{si } x<1,\\
+   \frac16, &\mbox{si } 1\leq x<2,\\[1ex]
+   \frac26, &\mbox{si } 2\leq x<3,\\
+   \frac36, &\mbox{si } 3\leq x<4,\\
+   \frac46, &\mbox{si } 4\leq x<5,\\
+   \frac56, &\mbox{si } 5\leq x<6,\\
+   1, &\mbox{si } 6\leq x.\end{array}\right.$$
 
 </div>
 
@@ -505,21 +501,18 @@ $$
 
 ## Propiedades de la función de distribución
 
-<l class="prop"> Propiedad</l>
+<l class="prop">Propiedad</l>
 
 Sea $X$ una variable con función de distribución $F_{X}$ entonces:
  
-* $0\leq F_{X}(x)\leq 1$ para todo $x$
-* Si $x<x'$ entonces $$F_{X}(x)\leq F_{X}(x').$$
-Es una función creciente, no necesariamente estrictamente creciente.
-* $\displaystyle \lim_{x\to -\infty}F_{X}(x)=0$ y $\displaystyle \lim_{x\to +\infty}F_{X}(x)=1$
+* $0\leq F_{X}(x)\leq 1$ para todo $x$,
+* Si $x<x'$, entonces $$F_{X}(x)\leq F_{X}(x').$$
+Es una función creciente,es decir, no necesariamente estrictamente creciente.
+* $\displaystyle \lim_{x\to -\infty}F_{X}(x)=0$ y $\displaystyle \lim_{x\to +\infty}F_{X}(x)=1.$
 * Es continua por la derecha $\displaystyle \lim_{x\to x_0^{+}}F_{X}(x)=F_{X}(x_0)$.
   
 
-
-
 # Valores esperados  o esperanza
-
 
 ## Momentos de variables aleatorias discretas
 
@@ -527,10 +520,10 @@ Es una función creciente, no necesariamente estrictamente creciente.
 resumir los valores centrales y para medir la dispersión de una muestra, podemos definir
 las correspondiente medidas para variables aleatorias.
 
-* A estas medidas se les suele añadir el adjetivo *poblacionales* mientras que a las que provienen de la muestra se las adjetiva como *muestrales*.
+* A estas medidas se les suele añadir el adjetivo **poblacionales** mientras que a las que provienen de la muestra se las adjetiva como **muestrales**.
 
 
-Por ejemplo  podemos buscar un valor que resuma toda la variable. Este valor es el que "*esperamos*" que se resuma la v.a. o esperamos que las realizaciones de la v.a. queden cerca de él. Veamos su definición formal.
+Por ejemplo  podemos buscar un valor que resuma toda la variable. Este valor es el que "*esperamos*" que se resuma la v.a. o esperamos que las realizaciones de la v.a. queden cerca de él. Demos su definición formal.
 
 
 
@@ -539,20 +532,21 @@ Por ejemplo  podemos buscar un valor que resuma toda la variable. Este valor es 
 
 <l class="definition">Esperanza de una variable aleatoria discreta </l>
 
-El valor *esperado o esperanza* (*expected value* en inglés) $E(X)$ de una v.a. discreta $X$, se define como
+El valor **esperado o esperanza** (*expected value* en inglés) $E(X)$ de una v.a. discreta $X$, se define como
 
 $$
-E(X)=\sum_{x\in X(\Omega)} x P_{X}(x)
+E(X)=\sum_{x\in X(\Omega)} x\cdot P_{X}(x).
 $$
 
 
-En ocasiones se le domina *media* (*mean* en inglés *mitjana* en catalán) poblacional o simplemente media y muy frecuentemente se la denota $\mu_{X}=E(X)$ o simplemente $\mu=E(X)$.
+En ocasiones se denomina **media** (*mean* en inglés, *mitjana* en catalán) poblacional o simplemente media y muy frecuentemente se la denota $\mu_{X}=E(X)$ o simplemente $\mu=E(X)$.
 
 
 ## Interpretación de la media aritmética para v.a. discretas
 
 <div class="example">
-**Ejemplo**
+
+**Ejemplo: lanzamiento de un dado $n$  veces**
 
 Supongamos que lanzamos un dado $n$ veces y obtenemos unas frecuencias absolutas $n_{i}$
 para el resultado $i$ con $i=1,\ldots,6$. Sea $X$ la v.a. que nos representa el valor de
@@ -562,16 +556,15 @@ Calculemos la media aritmética (o media muestral) de los datos
 
 $$
 \overline{x}=\frac{1\cdot n_1+2\cdot  n_2+3\cdot  n_3+4\cdot  n_4+5\cdot  n_5+6 \cdot 
-n_6}{n}=\sum_{x=1}^6 x \frac{n_{x}}{n}.
+n_6}{n}=\sum_{x=1}^6 x \cdot \frac{n_{x}}{n}.
 $$
 
 Si $n\to \infty$ se tiene que $\displaystyle\lim_{n\to \infty} \frac{n_{x}}{n}=P_{X}(x).$
 
-Por lo tanto $E(X)=\displaystyle \lim_{n\to\infty}\sum_{x=1}^6x \frac{n_{x}}{n}.$
+Por lo tanto $E(X)=\displaystyle \lim_{n\to\infty}\sum_{x=1}^6x \cdot \frac{n_{x}}{n}.$
 
 Entonces el valor esperado en una v.a. discreta puede entenderse como el valor promedio que
 tomaría una v.a. en un número grande de repeticiones.
-
 </div>
 
 
@@ -587,7 +580,7 @@ Sea $X$= número  de erratas en una página de un texto con dominio $D_X=\{0,1,2
 Resulta que
 
 $$
-P(X=0)=0.42, P(X=1)=0.4, P(X=2)=0.18.
+P(X=0)=0.42,\ P(X=1)=0.4,\ P(X=2)=0.18.
 $$
     
 entonces
@@ -598,9 +591,9 @@ $$
 
 Elegida una página del texto al azar esperamos encontrar $0.76$ errores por página.
 
-Supongamos que en  el editor nos paga $2$ euros por cada página que
+Supongamos que el editor nos paga $2$ euros por cada página que
 encontremos con $1$ error y $3$ euros por cada página con  dos errores (y nada por las
-páginas correctas) ¿Cuánto esperamos cobrar si analizamos una página?
+páginas correctas) ¿Cuánto *esperamos* cobrar si analizamos una página?
 
 $$0\cdot 0.42 + 2\cdot 0.4 + 3\cdot 0.18=1.34$$
 </div>
@@ -608,12 +601,12 @@ $$0\cdot 0.42 + 2\cdot 0.4 + 3\cdot 0.18=1.34$$
 
 ## Esperanzas de funciones de variables aleatorias discretas
 
-<l class="definition"> **Esperanzas de funciones de variables aleatorias discretas** </l>
+<l class="definition"> Esperanzas de funciones de variables aleatorias discretas</l>
 
 Sea $X$ una v.a. discreta con función de probabilidad $P_{X}$ y de distribución
-$F_{X}$. Entonces el *valor esperado de una función* $g(x)$ es :
+$F_{X}$. Entonces el *valor esperado de una función* $g(x)$ es:
 
-$$E(g(X))=\sum_{x}g(x) P_{X}(x).$$
+$$E(g(X))=\sum_{x}g(x) \cdot  P_{X}(x).$$
 
 
 ## Propiedades de los valores esperados
@@ -641,10 +634,10 @@ Supongamos que estamos sentados delante de nuestro ordenador con un amigo y
 le decimos que en dos minutos podemos programar una paleta  para poner colores a unos
 gráficos. 
 
-Queremos la que paleta tenga dos botones con las opciones color rojo y color azul.
+Queremos que  la paleta tenga dos botones con las opciones color rojo y color azul.
 Como hemos programado a gran velocidad resulta que el programa tiene un error; cada vez que
 se abre la paleta los colores se colocan al azar (con igual probabilidad) en cada botón,
-así que no sabemos en que color hemos de pinchar. 
+así que no sabemos en què color hemos de pinchar. 
 
 Además, como nos sobraron $15$ segundos
 para hacer el programa y pensando en la  comodidad del usuario, la paleta se cierra después de haber seleccionado  un
@@ -665,17 +658,17 @@ obtener el primer azul. La variable $X$ toma valores en los enteros no negativos
 función de probabilidad queda determinada por
 
 $$
-P_X(x)=P(X=x)=P(\stackrel{x \mbox{veces}}{\overbrace{rojo, rojo,\ldots,rojo},azul})
+P_X(x)=P(X=x)=P(\stackrel{x \mbox{ veces}}{\overbrace{rojo, rojo,\ldots,rojo},azul})
 =\left(\frac12\right)^{x+1}.
 $$
 
 </div>
 
-## Propiedades de las series geométricas
+## Series geométricas
 
 <l class="prop">Series geométricas</l>
 
-* Una *progresión geométrica* de razón $r$ es una sucesión de la  forma  
+* Una **progresión geométrica** de razón $r$ es una sucesión de la  forma  
 $$
 r^0, r^1,\ldots,r^n,\ldots.
 $$
@@ -715,16 +708,16 @@ $$
 
 <div class="example">
 
-**Ejemplo (cont)**
+**Ejemplo: paleta  de colores (continuación)**
 
 Si seguimos con el ejemplo de la paleta de colores, su esperanza es:
 
 $$
 \begin{eqnarray*}
-E(X)&=&\sum_{x=0}^{+\infty} x P(X=x)=\sum_{x=0}^{+\infty} x
+E(X)&=&\sum_{x=0}^{+\infty} x\cdot  P(X=x)=\sum_{x=0}^{+\infty} x\cdot
 \left(\frac12\right)^{x+1}\\
-&= & \left(\frac12\right)^2\sum_{x=1}^{+\infty} x
-\left(\frac12\right)^{x-1}=\left(\frac12\right)^2
+&= & \left(\frac12\right)^2\sum_{x=1}^{+\infty} x\cdot
+\left(\frac12\right)^{x-1}=\left(\frac12\right)^2\cdot
 \frac1{\left(1-\frac12\right)^2}=1.
 \end{eqnarray*}
 $$
@@ -735,7 +728,7 @@ $$
 \begin{eqnarray*}
 F_X(x)&=& P(X\leq x)=\sum_{k=0}^x P(X=k)=\sum_{k=0}^x
 \left(\frac12\right)^{k+1}\\
-&=& \frac{\frac12-\frac12^{x+1}
+&=& \frac{\frac12-\frac12^{x+1}\cdot
 \frac12}{1-\frac12}=1-\left(\frac12\right)^{x+1}
 \end{eqnarray*}.
 $$
@@ -750,7 +743,7 @@ $$
 Como la variable toma valores enteros positivos, podemos calcular su valor esperado
 de esta otra manera
 
-$$E(X)=\sum_{x=0}^{+\infty} (1-F_X(x))=\sum_{x=0}^{+\infty}(\frac12)^{x+1}=\frac12
+$$E(X)=\sum_{x=0}^{+\infty} (1-F_X(x))=\sum_{x=0}^{+\infty}\left(\frac12\right)^{x+1}=\frac12\cdot 
 \frac1{1-\frac12}=1.$$
 
 </div>
@@ -771,16 +764,16 @@ $$
 
 ## Momentos de una variable aleatoria
 
-<div class="definition"> Momentos de orden $m$</div>
+<l class="definition"> Momentos de orden $m$ </l>
 
-Llamaremos  *momento de orden $m$* respecto al punto $C$ a 
-$$E\left((X-C)^m\right)$$
+Llamaremos  **momento de orden $m$** respecto al punto $C$ a 
+$$E\left((X-C)^m\right).$$
 
-* Cuando $C=0$ los momentos reciben el nombre de *momentos respecto al origen*.
-* Cuando $C=E(X)$ reciben el nombre de *momentos centrales o respecto de la media*. Luego la esperanza es el momento de orden $1$ respecto al origen. Estos momentos son la versión poblacional de los momentos que vimos en el curso de estadística descriptiva, recibiendo estos último el nombre de momentos muestrales.
+* Cuando $C=0$ los momentos reciben el nombre de **momentos respecto al origen**.
+* Cuando $C=E(X)$ reciben el nombre de **momentos centrales o respecto de la media**. Luego la esperanza es el momento de orden $1$ respecto al origen. Estos momentos son la versión poblacional de los momentos que vimos en el curso de estadística descriptiva, recibiendo estos último el nombre de momentos muestrales.
 
 
-## Resumen conceptos
+## Resumen de conceptos
 
 * Hemos descrito el comportamiento aleatorio de una v.a. discreta mediante sus funciones  de probabilidad $P_{X}$ y de distribución $F_{X}$.
 * También tenemos un valor central; el valor esperado $E(X)$. 
@@ -789,21 +782,21 @@ $$E\left((X-C)^m\right)$$
 # Medidas de la variabilidad
 
 
-## Medidas de la variabilidad: la varianza
+## Medidas de la variabilidad
 
 
-<div class="definition"> Varianza </div>
+<lclass="definition"> Varianza </l>
 
-Sea $X$ una v.a. Llamaremos *varianza* de $X$ a
+Sea $X$ una v.a. Llamaremos **varianza** de $X$ a
 
-$$Var(X)=E((X-E(X))^2)$$
+$$Var(X)=E((X-E(X))^2).$$
 
-Por lo tanto la varianza es el momento central de orden $2$.
+Por lo tanto, la varianza es el momento central de orden $2$.
 
 De forma frecuente se utiliza la notación $$\sigma_{X}^2=Var(X).$$
     
 A la raíz cuadrada positiva de la varianza
-$$\sigma_{X}=\sqrt{Var(X)}$$
+$$\sigma_{X}=+\sqrt{Var(X)}.$$
    
 se la denomina desviación típica  o estándar de $X$.
 
@@ -812,12 +805,12 @@ se la denomina desviación típica  o estándar de $X$.
 
 ## Propiedades de la varianza
  
-<l class="prop"> Propiedad </l>
+<l class="prop">Propiedad </l>
 
 * Si $X$ es una v.a. discreta con función de probabilidad $P_X$ su varianza es 
- $$\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2 P_{X}(x).$$
+ $$\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2\¢dot  P_{X}(x).$$
 * Sea $X$ una v.a.
- $$Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2 P_{X}(X)-(E(X))^2$$
+ $$Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2\cdot  P_{X}(X)-(E(X))^2$$
   
 
 
@@ -828,9 +821,9 @@ se la denomina desviación típica  o estándar de $X$.
 **Demostración de b)**
 $$
 \begin{eqnarray*}
-Var(X)&= & \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2 x E(X)+(E(X)^2) P_{X}(x)\\
-&=& \sum_{x}x^2P_{X}(x) -  E(X)\sum_{x}2 x P_{X}(x) + (E(X)^2)\sum_{x} P_{X}(x)\\
-&=& E(X^2)- 2 E(X) E(X) + (E(X))^2=E(X^2)-(E(X))^2.
+Var(X)&= & \sum_{x}(x-E(X))^2 P_{X}(x) = \sum_{x}(x^2 -2\cdot x\cdot E(X)+(E(X)^2)\cdot P_{X}(x)\\
+&=& \sum_{x}x^2\cdot P_{X}(x) -  E(X)\sum_{x}2\cdot x \cdot P_{X}(x) + (E(X)^2)\cdot\sum_{x} P_{X}(x)\\
+&=& E(X^2)- 2 E(X)\cdot E(X) + (E(X))^2=E(X^2)-(E(X))^2.
 \end{eqnarray*}
 $$
 
@@ -841,7 +834,7 @@ $$
 
 
 <div class="example"> 
-**Ejemplo**
+**Ejemplo: múmero de errores (continuación)**
 
 Calculemos en  el ejemplo anterior la varianza del número de errores.
 </div>
@@ -851,13 +844,13 @@ Calculemos en  el ejemplo anterior la varianza del número de errores.
 Recordemos que:
    
 $$
-P(X=0)=0.42,\quad P(X=1)=0.4, \quad P(X=2)=0.18
+P(X=0)=0.42,\quad P(X=1)=0.4, \quad P(X=2)=0.18,
 $$
 
 y que
 
 $$
-E(X)=0.76
+E(X)=0.76.
 $$
 
 Entonces:
@@ -876,10 +869,11 @@ $$
   $$E(X^2)= 0^2 (0.41)+ 1^2 (0.4)+ 2^2 (0.18)=0.4+0.72=1.12$$
   y por lo tanto
   
-  $$Var(X)= E(X^2)-(0.76)^2=1.12-0.5776=0.542$$
-  y $$\sqrt{Var(X)}=\sqrt{0.542}$$
+$$Var(X)= E(X^2)-(0.76)^2=1.12-0.5776=0.542$$
+y 
+$$\sqrt{Var(X)}=\sqrt{0.542}$$
 
-  En resumen $\sigma_{X}^2=0.542$ y $\sigma_{X}=\sqrt{0.542}$
+En resumen $\sigma_{X}^2=0.542$ y $\sigma_{X}=\sqrt{0.542}$
      
 
 </div>
@@ -889,8 +883,8 @@ $$
  
 <l class="prop"> **Propiedades de la varianza**</l>
 
-* $Var(X)\geq 0$
-* $Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0$
+* $Var(X)\geq 0$.
+* $Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0$.
 * El mínimo de $E((X-C)^2)$ se alcanza cuando $C=E(X)$ y es $Var(X)$. Esta propiedad es una de las que hace útil a la varianza como medida de dispersión.
   
 
@@ -911,16 +905,16 @@ Se deja como ejercicio la demostración de estas propiedades.
 
 <l class="definition"> Transformación lineal </l>
 
-Un **cambio de variable lineal** o **transformación lineal** de una v.a. $X$ es otra v.a. $Y= a+ b X$  donde $a,b\in\mathbb{R}$.
+Un **cambio de variable lineal** o **transformación lineal** de una v.a. $X$ es otra v.a. $Y= a+ b\cdot  X$  donde $a,b\in\mathbb{R}$.
 
-<l class="prop"> Esperanza de una transformación lineal</l>
+<l class="prop">Esperanza de una transformación lineal</l>
 
 Sea $X$ una v.a. con $E(X)=\mu_{X}$ y $Var(X)=\sigma_{X}^2$ y $a,b\in\mathbb{R}$.
-Entonces si $Y=a+b X$:
+Entonces si $Y=a+b\cdot  X$:
  
-* $E(Y)=E(a + b X)=a+ b E(X)= a + b \mu_{X}$.
-* $Var(Y)=Var(a+bX)=b^2 Var(X)= b^2 \sigma_{X}^2$
-* $\sigma_{Y}=\sqrt{Var(Y)}=\sqrt{b^2 Var(X)}=|b| \sigma_{X}$
+* $E(Y)=E(a + b X)=a+ b E(X)= a + b \cdot \mu_{X}$.
+* $Var(Y)=Var(a+bX)=b^2 Var(X)= b^2\cdot  \sigma_{X}^2$-
+* $\sigma_{Y}=\sqrt{Var(Y)}=\sqrt{b^2 Var(X)}=|b| \cdot \sigma_{X}$-
   
     
 ## Demostración
@@ -932,7 +926,7 @@ $$
 \begin{eqnarray*}
 E(Y)&=& E(a+bX)=\sum_{x}(a+b\cdot X)\cdot P_{X}(x)\\
 &=& a \sum_{x} P_{X}(x) + b \sum_{x} x\cdot P_{X}(x)\\ 
-&=& a + b\cdot E(X)=a + b \mu_{X}
+&=& a + b\cdot E(X)=a + b\cdot\mu_{X}.
 \end{eqnarray*}
 $$
 </div>
@@ -974,12 +968,11 @@ posibles partida por la *medida* de los casos favorables.
 
 <div class="example"> 
 
-**Ejemplo: distancia el dardo centro** 
+**Ejemplo: distancia dardo centro de la diana** 
 
-Supongamos que lanzamos un dardo a una diana de radio $1$, de forma que sea *equiprobable* cualquier distancia al centro (¡Cuidado! esto no es equivalente
-a que cualquier punto de la diana  sea *equiprobable*).
+Supongamos que lanzamos un dardo a una diana de radio $1$, de forma que sea *equiprobable* cualquier distancia al centro (¡Cuidado! esto no es equivalentea que cualquier punto de la diana  sea *equiprobable*).
 
-Consideremos la v.a. continua $X=$ distancia al centro.
+Consideremos la v.a. continua $X=$ distancia al centro de la diana.
 </div>
 
 <div class="example-sol">
@@ -990,20 +983,21 @@ $$
 F_{X}(x)=
 \left\{
 \begin{array}{ll}
-0 & \mbox{si } x\leq 0\\
-x & \mbox{si } 0<x<1\\
-1 & \mbox{si } x\geq 1
+0, & \mbox{si } x\leq 0,\\
+x, & \mbox{si } 0<x<1,\\
+1, & \mbox{si } x\geq 1.
 \end{array}
 \right.
-.
 $$
 
-Ya que
+consideremos
 
-* C.F. *longitud favorable* es $x-0$.
-* C.P. *longitud posible* es $1-0$.
-* Luego 
-$$P(X\leq x)=\frac{C.F.}{C.P.}=\frac{x-0}{1-0}=x$$
+* C.F. *longitud favorable*  que es $x-0$,
+* C.P. *longitud posible* que es $1-0$,
+
+luego 
+
+$$P(X\leq x)=\frac{C.F.}{C.P.}=\frac{x-0}{1-0}=x.$$
 
 
 ## Gráfica de la función de distribución uniforme
@@ -1023,28 +1017,29 @@ propiedades se explicitan en la siguiente proposición.
 
 Dada una v.a. continua $X$ se tiene que:
  
-* $P(X\leq b)=P(X<b)$
-* $P(X<b)=P(X<a)+P(a<X<b)$
-* $P(a<X<b)=P(X<b)-P(X<a)$
+* $P(X\leq b)=P(X<b)$.
+* $P(X<b)=P(X<a)+P(a<X<b)$.
+* $P(a<X<b)=P(X<b)-P(X<a)$.
   
 ## Demostración  
   
 <div class="dem">
 **Demostración:**
 
-La primera es evidente  $P(X\leq b)=P(X<b)+P(X=b)=P(X<b)$
+La primera es evidente  $P(X\leq b)=P(X<b)+P(X=b)=P(X<b).$
 
 Para demostrar la segunda, tenemos
 
-$$\{X<a\}\cap \{a<X<b\}=\emptyset$$ 
-$$\{X<a\}\cup \{a<X<b\}=\{X<b\}$$ 
+$$\{X\leq a\}\cap \{a<X<b\}=\emptyset$$ 
+$$\{X\leq a\}\cup \{a<X<b\}=\{X<b\},$$ 
 
 entonces
 
 $$
 \begin{eqnarray*}
-P(X\leq b)= & P(\{X<a\}\cup \{a<X<b\})\\
-& = P(X<a)+P(a<X<b)
+P(X< b)&= & P(\{X\leq a\}\cup \{a<X<b\})\\
+& =& P(X\leq a)+P(a<X<b)\\
+& =& P(X< a)+P(a<X<b)
 \end{eqnarray*}
 $$
 
@@ -1054,7 +1049,7 @@ $$
 <div class="exercise">
 **Ejercicio**
 
-La demostración de la tercera propiedad es similar a la segunda pero aplicando la primera. Queda de ejercicio.
+La demostración de la tercera propiedad es similar a la segunda pero aplicando la primera. La dejamos como ejercicio.
 </div>
 
 
@@ -1068,9 +1063,9 @@ escribir utilizando la función de distribución de $X$:
 
 Dada una variable aleatoria continua se tiene que:
 
-* $F_{X}(b)=F_{X}(a)+P(a<X<b)$
-* $P(a<X<b)=F_{X}(b)-F_{X}(a)$
-* $P(a\leq X\leq b)=F_{X}(b)-F_{X}(a)$
+* $F_{X}(b)=F_{X}(a)+P(a<X<b)$.
+* $P(a<X<b)=F_{X}(b)-F_{X}(a)$.
+* $P(a\leq X\leq b)=F_{X}(b)-F_{X}(a)$.
 
 
 
@@ -1084,17 +1079,17 @@ Se deja la demostración como ejercicio
 
 ## Ejemplo 
 
-<div class="example"> **Ejemplo: lanzamiento de dardos**
+<div class="example"> **Ejemplo: diana (continuación)**
 
 
-En los dardos:
-$$P(0.25<X<0.3)=F_{X}(0.3)-F_{X}(0.25)=$$
-$$=0.3-0.25=0.05$$
+En el ejemplo de la diana:
+
+$$P(0.25<X<0.3)=F_{X}(0.3)-F_{X}(0.25)=0.3-0.25=0.05.$$
 </div>
 
 ## Función de densidad
 
-<l class="definition"> **Función de densidad** </l> 
+<l class="definition"> Función de densidad </l> 
 
 Una función $f:\mathbb{R}\to\mathbb{R}$ es una función de densidad sobre $\mathbb{R}$ si cumple que
 
@@ -1104,13 +1099,13 @@ Una función $f:\mathbb{R}\to\mathbb{R}$ es una función de densidad sobre $\mat
 cada intervalo acotado de $\mathbb{R}$.
 * $\displaystyle\int\limits_{-\infty}^{+\infty} f_{X}(x) dx=1.$
 
-## Función de densidad de una variable aleatoria.
+## Función de distribución de una variable aleatoria.
 
-<l class="definition"> **Función de densidad de una variable aleatoria** </l>
+<l class="definition"> **Función de distribución de una variable aleatoria** </l>
 
 Sea $X$ una v.a. con función de distribución $F_X$. Sea $f:\mathbb{R}\to\mathbb{R}$ una función de densidad tal que
 
-$$F_X(x)=\displaystyle\int_{-\infty}^{x} f_X(t) dt.\mbox{ para todo } x\in\mathbb{R}.$$
+$$F_X(x)=\displaystyle\int_{-\infty}^{x} f_X(t) dt.\mbox{ para todo } x\in\mathbb{R},$$
 
 Entonces $X$ es una variable aleatoria continua y $f_X$ es la densidad de la v.a.  $X$.
 
@@ -1118,20 +1113,20 @@ Entonces $X$ es una variable aleatoria continua y $f_X$ es la densidad de la v.a
 ##  Dominio de una variable aleatoria continua
 
 El conjunto $D_X=\{x\in\mathbb{R}| f_x(x)>0\}$ recibe el nombre de <l class="definition"> soporte o dominio de la
-variable aleatoria continua</l> y se interpreta su conjunto de resultados posibles.
+variable aleatoria continua</l> y se interpreta como su conjunto de resultados posibles.
 
 
 <div class="example">
-**Ejemplo**
+**Ejemplo: diana  (continuación)**
 
-En nuestra diana, la función $f$ es una densidad
+En nuestra  ejemplo de la diana, la función $f$ es una densidad
 
 $$
 f_{X}(x)=\left\{
 \begin{array}{ll}
-0 & \mbox{si } x\leq 0\\
-1 & \mbox{si } 0 < x < 1\\
-0 & \mbox{si } 1\leq x
+0, & \mbox{si } x\leq 0,\\
+1, & \mbox{si } 0 < x < 1,\\
+0, & \mbox{si } 1\leq x.
 \end{array}\right.
 $$
 
@@ -1146,20 +1141,20 @@ que es la densidad de $X$, en efecto:
 $$
 f_{X}(x)=\left\{
 \begin{array}{ll}
-0 & \mbox{si } x\leq 0\\
-1 & \mbox{si } 0 < x < 1\\
-0 & \mbox{si } 1\leq x
+0, & \mbox{si } x\leq 0,\\
+1, & \mbox{si } 0 < x < 1,\\
+0, & \mbox{si } 1\leq x.
 \end{array}\right.
 $$
 
-Si $x \leq 0$ entonces $\displaystyle\int_{-\infty}^x f_X(t) dt = 0.$
+* Si $x \leq 0$ entonces $\displaystyle\int_{-\infty}^x f_X(t) dt = 0.$
 
-Si $0\leq x\leq 1$ entonces $\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^x 1 dt = x.$
+* Si $0\leq x\leq 1$ entonces $\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^x 1 dt = x.$
 
-Si $x\geq 1$  entonces $\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^1 1 dt = 1.$
+* Si $x\geq 1$  entonces $\displaystyle\int_{-\infty}^x f_X(t) dt = \int_0^1 1 dt = 1.$
 
 
-Por lo tanto  $F_X(x)=\displaystyle\int_{-\infty}^x f_X(t) dt$ para todo $x\in\mathbb{R}.$
+Por lo tanto,  $F_X(x)=\displaystyle\int_{-\infty}^x f_X(t) dt$ para todo $x\in\mathbb{R}.$
 
 </div>
 
@@ -1181,15 +1176,14 @@ La función de densidad nos permite calcular diversas probabilidades.
 
 <l class="prop">Propiedades de la función de densidad </l> 
 
-Sea $X$ una v.a. continua con función de distribución $F_X$ y de
+* Sea $X$ una v.a. continua con función de distribución $F_X$ y de
 densidad $f_X$, entonces
- 
-* $$\begin{eqnarray*}
+$$\begin{eqnarray*}
 P(a< X< b) &=&  P(a<X\leq b)= P(a\leq X< b)=\\
  & & P(a\leq X\leq b)= \displaystyle\int_{a}^b f_X(x) dx.
 \end{eqnarray*}
 $$
-* Si $A$ es un conjunto  adecuado de $\mathbb{R}$ entonces 
+* Si $A$ es un subconjunto  adecuado de $\mathbb{R}$ entonces 
 $$P(X\in A)=\displaystyle\int_{A} f(x) dx=\displaystyle\int_{A\cap D_X} f(x) dx.
 $$
 
@@ -1217,7 +1211,7 @@ Comprobar estas propiedades en el ejemplo de la diana. </div>
 ## Ejemplo tiempo ejecución de un proceso
 
 <div  class="example">
-**Ejemplo: Tiempo ejecución de un proceso.**
+**Ejemplo: tiempo ejecución de un proceso.**
 
 Sea $X=$ tiempo de ejecución de un proceso. Se supone que $X$ sigue una distribución uniforme en dos unidades de tiempo, si tarda más el proceso se cancela.
 
@@ -1230,7 +1224,7 @@ Calculemos la función de densidad y de distribución de la v.a $X$.
 Entonces
 
 $$
-F_{X}(x)=P(X\leq x)=\frac{CF}{CP}=\frac{x}2
+F_{X}(x)=P(X\leq x)=\frac{CF}{CP}=\frac{x}2.
 $$
 
 
@@ -1238,9 +1232,9 @@ Luego su función de distribución es:
 
 $$
 F_{X}(x)=\left\{\begin{array}{ll}
-0 & \mbox{si } x\leq 0\\
-\frac{x}2 & \mbox{si } 0<x<2\\
-1 & \mbox{si } 2\leq x
+0, & \mbox{si } x\leq 0,\\
+\frac{x}2 & \mbox{si } 0<x<2,\\
+1, & \mbox{si } 2\leq x.
 \end{array}\right.
 $$
 
@@ -1258,11 +1252,11 @@ $$
 
 Efectivamente
 
-* $f_{X}(x)\geq 0,$ y tiene un conjunto finito de discontinuidades.
-* $F_X(x)=\int_{-\infty}^x f_X(t) dt.$ para todo $x\in \mathbb{R}$ <l class="exercise">(Ejercicio,
+* $f_{X}(x)\geq 0,$ y tiene un conjunto finito de discontinuidades: en $0$ y en $2$
+* $F_X(x)=\displaystyle\int_{-\infty}^x f_X(t) dt,$ para todo $x\in \mathbb{R}$ <l class="exercise">(Ejercicio: 
 resolverlo gráficamente.)</l>
-* $\int\limits_{-\infty}^{+\infty}f_{X}(x)dx=
-\int\limits_0^2\frac12dx=\frac{x}2\mid_0^2=
+* $\displaystyle\int_{-\infty}^{+\infty}f_{X}(x)dx=
+\int_0^2\frac12dx=\left[\frac{x}2\right]_0^2
 =\frac22-\frac02=1.$
 
 </div>
@@ -1292,10 +1286,10 @@ En lo que sigue, salvo que diagamos lo contrario,  $X$  es una v.a. continua con
 
 ## Esperanza y varianza para variables aleatorias continuas
 
-<l class="definition"> Esperanza v.a. continuas </l>
+<l class="definition">Esperanza v.a. continuas </l>
 
 * Su esperanza es:
-$$E(X)=\displaystyle\int\limits_{-\infty}^{+\infty} xf_{X}(x)dx.$$
+$$E(X)=\displaystyle\int\limits_{-\infty}^{+\infty} x\cdot f_{X}(x)dx.$$
 * Si $g(x)$ es una función de la variable $X$ entonces:
 $$E(g(X))=\displaystyle\int\limits_{-\infty}^{+\infty} g(x)\cdot f_{X}(x)dx.$$
 
@@ -1307,7 +1301,7 @@ $$E(g(X))=\displaystyle\int\limits_{-\infty}^{+\infty} g(x)\cdot f_{X}(x)dx.$$
 * Su varianza es:
 $$
 Var(X)=\sigma_{X}^2=E((X-\mu_{X})^2)=
-\displaystyle\int\limits_{-\infty}^{+\infty} (x-\mu_{X})^2 f_{X}(x)dx.
+\displaystyle\int\limits_{-\infty}^{+\infty} (x-\mu_{X})^2 \cdot f_{X}(x)dx.
 $$
 * Su desviación típica es:  $$\sigma_{X}=+\sqrt{\sigma_{X}^2}.$$
 
@@ -1316,9 +1310,9 @@ $$
 
 <l class="prop"> Propiedades </l>
 
-* $\sigma_{X}^2\geq 0$
-* $Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0$
-* $Var(x)=E(X^2)-\mu_{X}^2=\int\limits_{-\infty}^{+\infty}x^2 f_{X}(x)dx - \mu_{X}^2.$
+* $\sigma_{X}^2\geq 0$.
+* $Var(cte)=E(cte^2)-(E(cte))^2= cte^2 - cte^2=0$.
+* $\displaystyle Var(x)=E(X^2)-\mu_{X}^2=\int_{-\infty}^{+\infty}x^2\cdot  f_{X}(x)dx - \mu_{X}^2.$
 * El mínimo de $E((X-C)^2)$ se alcanza cuando $C=E(X)$ y es $Var(X)$.
 
 
@@ -1327,9 +1321,9 @@ $$
 
 <div  class="example">
 
-**Ejemplo: Dardo**
+**Ejemplo: diana (continuación)**
 
-Calcular $\mu_{X}$ y $\sigma_{X}^2$ en el dardo.
+Calcular $\mu_{X}$ y $\sigma_{X}^2$ en  el ejemplo de la diana
 </div>
 
 <div  class="example-sol">
@@ -1341,20 +1335,19 @@ $$Var(X)=\frac1{12}.$$
 </div>
 
 
-## Esperanza de trasformaciones lineales de v.a. continuas
+## Esperanza de trans. lineales de v.a. continuas
 
-<l class="prop"> Proposición</l>
+<l class="prop">Proposición</l>
 
 Sea $X$ una v.a. continua con $E(X)=\mu_{X}$ y $Var(X)=\sigma_{X}^2$ sea $Y=a+b X$, donde
 $a,b\in\mathbb{R}$, es una nueva v.a. continua obtenida mediante una transformación lineal de $X$.
 Se verifican las mismas propiedades que en el caso discreto:
 
-* $E(Y)=E(a+b X)=a+b E(X)$
-* $Var(Y)=Var(a+b X)=b^2 Var(X)$
-* $\sigma_{Y}=|b| \sigma_{X}$
+* $E(Y)=E(a+b\cdot  X)=a+b\cdot  E(X)$.
+* $Var(Y)=Var(a+b\cdot  X)=b^2 \cdot  Var(X)$.
+* $\sigma_{Y}=|b|\cdot  \sigma_{X}$.
 * $Z=\frac{X-\mu_{X}}{\sigma_{X}}$ es una transformación
-lineal de $X$ de forma que
-$$E(Z)=0 \mbox{ y } Var(Z)=1$$
+lineal de $X$ de forma que $$E(Z)=0 \mbox{ y } Var(Z)=1$$
 
 
 
@@ -1367,18 +1360,18 @@ $$E(Z)=0 \mbox{ y } Var(Z)=1$$
 
 En una empresa de venta de vinos por internet, sea
 $X=$ número de  litros de vino del país vendidos en un año.
-Supongamos que sabemos que $E(X)=10000$ y que $Var(X)=100$
+Supongamos que sabemos que $E(X)=10000$  y que $Var(X)=100.$
 Supongamos que los gastos fijos de distribución son
 50.000 &euro; y el beneficio por litro es de 10 &euro; por botella.
-Definimos $T=10 X-50000$ que será el beneficio después de gastos.
+Definimos $T=10\cdot X-50000,$ que será el beneficio después de gastos.
 </div>
 
 <div class="example-sol"> 
 
 Entonces la esperanza del beneficio es 
-$$E(T)=10 E(X)-50000 = 50000$$
+$$E(T)=10 E(X)-50000 = 50000,$$
 y
-$$Var(T)=10^2 Var(X)= 10000$$
+$$Var(T)=10^2 Var(X)= 10000.$$
 </div>
 
 # Transformaciones de variables aleatorias
@@ -1393,7 +1386,7 @@ partir de $F_{X}$.
 
 ## Propiedad
 
-<l class="prop">Tranformación de v.a. discretas </l>
+<l class="prop">Transformaciones de v.a. discretas </l>
 
 Sea $X$ una v.a. discreta con $X(\Omega)=\{x_1,x_2,\ldots,x_{n},..\}$ y sea $h:\mathbb{R}\to\mathbb{R}$ una aplicación.
 Entonces $Y=h(X)$ es también una v.a. discreta. Además si $P_X$
@@ -1406,13 +1399,13 @@ $X$ entonces
 
 ## Propiedades
 
-Desafortunadamente para variables no discetas el asunto  no es tan sencillo como el anterior, pues la transformación de, por ejemplo, una v.a. continua puede ser continua, discreta, mixta...
+Desafortunadamente para variables no discretas el resultado  no es tan sencillo como el anterior, pues la transformación de, por ejemplo, una v.a. continua puede ser continua, discreta, mixta,$\ldots$
 
 <l class="prop">Transformación de v.a. continuas en continuas</l>
 
 Sea $X$ una v.a. continua cuya función de densidad es $f_{X}$. Sea
-$h:\mathbb{R}\to\mathbb{R}$ una aplicación estrictamente monótona y derivable, tal
-que $h'(x)\not=0$ para todo $x\in\mathbb{R}$. Sea $Y=h(X)$ la
+$h:\mathbb{R}\to\mathbb{R}$, una aplicación estrictamente monótona y derivable, por lo tanto
+$h'(x)\not=0$ para todo $x\in\mathbb{R}$. Sea $Y=h(X)$ la
 transformación de $X$ por $h$. Entonces $Y$ es una v.a. continua con función
 de densidad
 
@@ -1424,7 +1417,7 @@ $$f_{Y}(y)=\left.\frac{f_{X}(x)}
 ## Propiedades
 
 
-<l class="prop"> Densidad de una transformación de una v.a. continua</l>
+<l class="prop">Densidad de una transformación de una v.a. continua</l>
 
 Sea $X$ una v.a. continua cuya función de densidad es $f_{X}$.  Sea 
 $$h:\mathbb{R}\to\mathbb{R}$$ 
@@ -1442,7 +1435,7 @@ $$
 $$
 
 
-## Método general del transformación de v.a.
+## Método general de transformación de v.a.
 
 Cuando no podamos aplicar las propiedades anteriores intentaremos
 calcular primero la función de distribución de la transformación
@@ -1458,13 +1451,13 @@ $$
 ## Método general del transformación de variables aleatorias
 
 
-Por ejemplo si $g$ es estrictamente creciente y cont.
+Por ejemplo, si $g$ es estrictamente creciente y continua,
 
 $$
-F_{Y}(y)=P(g(X)\leq y)=P(X\leq g^{-1}(y))=F_{X}(g^{-1}(y)).
+F_{Y}(y)=P(g(X)\leq y)=P(X\leq g^{-1}(y))=F_{X}(g^{-1}(y)),
 $$
 
-y si $g$ es estrictamente decreciente y cont.
+y si $g$ es estrictamente decreciente y continua,
 $$
 F_{Y}(y)=P(g(X)\leq y)=P(X\geq g^{-1}(y))=1-F_{X}(g^{-1}(y)).
 $$
@@ -1480,8 +1473,7 @@ $$
 * En esta sección distintas desigualdades que acotan determinadas probabilidades de
 una variable aleatoria.
 * Estas desigualdades sirven en algunos casos para acotar probabilidades de determinados sucesos.
-* También son útiles desde el punto de vista teórico, por ejemplo para justificar que la varianza es una mediada de la dispersión de
-los datos.
+* También son útiles desde el punto de vista teórico, por ejemplo para justificar que la varianza es una medida de la dispersión de los datos.
 
 
 
@@ -1501,11 +1493,11 @@ Si $X$ es continua  y solo toma valores positivos
 
 $$
 \begin{eqnarray*}
-E(X) &=& \int_{-\infty}^{+\infty} x f_{X}(x) dx=  \int_0^{+\infty} x f_{X}(x) dx=  \int_0^{a} x f_{X}(x) dx +\int_{a}^{+\infty} x f_{X}(x) dx \\
-& &\geq   \int_{a}^{+\infty} x
+E(X) &=& \int_{-\infty}^{+\infty} x\cdot f_{X}(x) dx=  \int_0^{+\infty} x\cdot f_{X}(x) dx=  \int_0^{a} x\cdot f_{X}(x) dx +\int_{a}^{+\infty} x\cdot f_{X}(x) dx \\
+& &\geq   \int_{a}^{+\infty} x\cdot
 f_{X}(x) dx \geq a \int_{a}^{+\infty}
-f_{X}(x) dx = a \cdot  P(X\geq a)
-\end{eqnarray*}.
+f_{X}(x) dx = a \cdot  P(X\geq a),
+\end{eqnarray*}
 $$
 
 de donde se sigue que 
@@ -1516,7 +1508,7 @@ $$P(X\geq a)\leq \frac{E(X)}{a}.$$
 
 ## Desigualdad  de Markov
 
-<l class="prop"> Corolario</l>
+<l class="prop">Corolario</l>
 
 Sea $X$ una v.a. con $E(X)$ finita entonces  para todo $a>0$
 
@@ -1530,13 +1522,13 @@ Demuestra el corolario anterior a partir de la desigualdad de Markov.
 ## Desigualdad de Chebychev
 
 
-La desigualdad de Chebychev también se denomina  de Chebyshov y en inglés Chebyshev.
+La **desigualdad de Chebychev** también se denomina de Chebyshov y en inglés *Chebyshev*.
 
 <l class="prop"> Desigualdad de Chebychev</l>
 
-Sea  $X$ una v.a.con $E(X)=\mu$ y $Var(X)=\sigma^2$  entonces para todo $a>0$
+Sea  $X$ una v.a.con $E(X)=\mu$ y $Var(X)=\sigma^2$  entonces para todo $a>0$,
 
-$$P(|X-\mu|\geq a)\leq \frac{\sigma^2}{a^2}$$ 
+$$P(|X-\mu|\geq a)\leq \frac{\sigma^2}{a^2}.$$ 
 
 ## Demostración desigualdad de Chebychev
 
@@ -1562,7 +1554,7 @@ $$
 Por otra parte
 
 $$
-P(Y^2\geq a^2)=P(|Y|\geq a)= P(|X-\mu|\geq a).
+P(Y^2\geq a^2)=P(|Y|\geq a)= P(|X-\mu|\geq a),
 $$
 
 hecho que, junto con la desigualdad anterior,
@@ -1575,31 +1567,24 @@ demuestra el resultado.
 
 <div class="observ"> **Utilidad básica de la desigualdad de Chebychev**</div>
 
-Supongamos que $X$ es una v.a. con $Var(X)=0$
-entonces.
+Supongamos que $X$ es una v.a. con $Var(X)=0$, entonces, aplicando la desigualdad anterior
 
+$$P(|X-E(X)|\geq a )=0\mbox{ para todo }a>0,$$ 
 
-Aplicando la desigualdad anterior
-
-$$P(|X-E(X)|\geq a )=0\mbox{ para todo }a>0$$ 
 lo que implica que
 
-$$P(X=E(X))=1.$$
+$$P(X=E(X))=1,$$
 
-Por lo que  probabilidad de que $X$ sea
-constantemente $E(X)$ es 1.
-
-Lo que nos confirma la utilidad de la varianza es una
-medida de la dispersión de los datos.
+Por lo que  la probabilidad de que $X$ sea constantemente $E(X)$ es 1,  hecho que nos  confirma la utilidad de la varianza como una medida de la dispersión de los datos.
 
 
 
 ## Ejemplo
 
 <div class="example">
-**Ejemplo**
+**Ejemplo:  tiempo de respuesta**
 
-Se sabe que el tiempo de respuesta medio y la desviación típica de un sistema multiusuario  son 15 y 3 u.t.respectivamente. Entonces:
+Se sabe que el tiempo de respuesta medio y la desviación típica de un sistema multiusuario  son 15 y 3 unidades de tiempo respectivamente. Entonces:
 
 $$
 P(|X-15|\geq 5)\leq \frac9{25}=0.36.
@@ -1611,11 +1596,11 @@ Si substituimos $a$ por $a\cdot \sigma$ en la
 desigualdad de Chebychev, nos queda:
 
 $$
-P(|X-\mu|\geq a \sigma)\leq
-\frac{\sigma^2}{(a\sigma)^2}=\frac1{a^2}.
+P(|X-\mu|\geq a\cdot \sigma)\leq
+\frac{\sigma^2}{(a\cdot \sigma)^2}=\frac1{a^2},
 $$
 
-Que es otra manera de expresar la desigualdad de Chebychev.
+que es otra manera de expresar la desigualdad de Chebychev.
 
 
 ## Más formas de la desgualdad de Chebychev
@@ -1623,37 +1608,36 @@ Que es otra manera de expresar la desigualdad de Chebychev.
 La desigualdad de Chebychev también se puede escribir de al menos dos maneras más:
 
 $$
-P(\mu-a\leq X\leq \mu+a)\geq 1-\frac{\sigma^2}{a^2}
+P(\mu-a\leq X\leq \mu+a)\geq 1-\frac{\sigma^2}{a^2},
 $$
 
 
-y tomado como $a=k\cdot \sigma$
+y tomado como $a=k\cdot \sigma$,
 
 $$
-P(\mu-k\cdot \sigma\leq X\leq \mu+ k \cdot \sigma)\geq 1-\frac1{k^2}
+P(\mu-k\cdot \sigma\leq X\leq \mu+ k \cdot \sigma)\geq 1-\frac1{k^2}.
 $$
 
 
 ## La varianza como medida de dispersión
 
 Tomando la segunda expresión que hemos visto para la desigualdad de
-Chebychev para distintos valores de $k>0$ tenemos la siguiente tabla.
+Chebychev para distintos valores de $k>0$ obtenemos la siguiente tabla:
 
-<center>
+
 | k | $P(|X-E(X)|\geq k  \cdot \sigma)$|
 |---|---|
 | 1 | $\leq 1$ |
 | 2 | $\leq 0.25$ |
 | 3 | $\leq 0.111$ |
 | 4 | $\leq 0.0025$ |
-</center>
 
 ## Interpretación de la desigualdad
 
-* Por ejemplo para $k=2$ esta desigualdad se puede interpretar como que dada una v.a. $X$ con cualquier distribución que tenga $E(X)$ y $Var(X)$ finitos *la  probabilidad de que un valor se aleje de la media $\mu$ más de $a=2$ desviaciones típicas es menor o igual que $0.25$*.
+* Por ejemplo para $k=2$, esta desigualdad se puede interpretar como que, dada una v.a. $X$ con cualquier distribución que tenga $E(X)$ y $Var(X)$ finitos, *la  probabilidad de que un valor se aleje de la media $\mu$ más de $a=2$ desviaciones típicas es menor o igual que $0.25$*.
 
 * Es decir sólo el 25\% de los valores estarán alejados de la media
-más de $2\sigma$
+más de $2\cdot \sigma$
 
 ¡*Sea cual sea la distribución de la v.a.*!
 

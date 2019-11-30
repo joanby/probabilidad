@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios Tema 3 - Distribuciones Notables"
+title: "Ejercicios Tema 3 - Distribuciones Notables 1: Distribuciones notables discretas"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output: pdf_document

@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 1 Probabilidad | Probabilidad y variables aleatorias para ML con R y Python</title>
+  <meta name="description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 1 Probabilidad | Probabilidad y variables aleatorias para ML con R y Python" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7" />
+  <meta property="og:image" content="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7Images/cover.jpg" />
+  <meta property="og:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
+  <meta name="github-repo" content="https://github.com/joanby/probabilidad" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 1 Probabilidad | Probabilidad y variables aleatorias para ML con R y Python" />
+  
+  <meta name="twitter:description" content="Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de estadística descriptiva del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos." />
+  <meta name="twitter:image" content="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7Images/cover.jpg" />
+
+<meta name="author" content="Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir" />
+
+
+<meta name="date" content="2019-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="Images/apple-icon-120x120.png" />
+  <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"/>
+<link rel="next" href="variables-aleatorias.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Curso completo de Probabilidad y Variables Aleatorias con R y Python</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><i class="fa fa-check"></i>Pre requisitos: Teoría de conjuntos y combinatoria</a><ul>
+<li class="chapter" data-level="0.1" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#teoría-de-conjuntos"><i class="fa fa-check"></i><b>0.1</b> Teoría de conjuntos</a><ul>
+<li class="chapter" data-level="0.1.1" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#conjuntos-básicos"><i class="fa fa-check"></i><b>0.1.1</b> Conjuntos básicos</a></li>
+<li class="chapter" data-level="0.1.2" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#características-y-propiedades-básicas-de-los-conjuntos"><i class="fa fa-check"></i><b>0.1.2</b> Características y propiedades básicas de los conjuntos</a></li>
+<li class="chapter" data-level="0.1.3" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#operaciones-con-conjuntos"><i class="fa fa-check"></i><b>0.1.3</b> Operaciones con conjuntos</a></li>
+<li class="chapter" data-level="0.1.4" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#más-propiedades-y-definiciones"><i class="fa fa-check"></i><b>0.1.4</b> Más propiedades y definiciones</a></li>
+<li class="chapter" data-level="0.1.5" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#con-r-ejemplos."><i class="fa fa-check"></i><b>0.1.5</b> Con R, ejemplos.</a></li>
+<li class="chapter" data-level="0.1.6" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#con-python"><i class="fa fa-check"></i><b>0.1.6</b> Con python</a></li>
+</ul></li>
+<li class="chapter" data-level="0.2" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#combinatoria"><i class="fa fa-check"></i><b>0.2</b> Combinatoria</a><ul>
+<li class="chapter" data-level="0.2.1" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#número-binomial."><i class="fa fa-check"></i><b>0.2.1</b> Número binomial.</a></li>
+<li class="chapter" data-level="0.2.2" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#variaciones."><i class="fa fa-check"></i><b>0.2.2</b> Variaciones.</a></li>
+<li class="chapter" data-level="0.2.3" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#variaciones-con-repetición."><i class="fa fa-check"></i><b>0.2.3</b> Variaciones con repetición.</a></li>
+<li class="chapter" data-level="0.2.4" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#permutaciones"><i class="fa fa-check"></i><b>0.2.4</b> Permutaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="0.3" data-path="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html"><a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html#para-acabar"><i class="fa fa-check"></i><b>0.3</b> Para acabar</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>1</b> Probabilidad</a><ul>
+<li class="chapter" data-level="1.1" data-path="probabilidad.html"><a href="probabilidad.html#probabilidades-básicas"><i class="fa fa-check"></i><b>1.1</b> Probabilidades Básicas</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="probabilidad.html"><a href="probabilidad.html#definiciones-básicas"><i class="fa fa-check"></i><b>1.1.1</b> Definiciones básicas</a></li>
+<li class="chapter" data-level="1.1.2" data-path="probabilidad.html"><a href="probabilidad.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>1.1.2</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="1.1.3" data-path="probabilidad.html"><a href="probabilidad.html#propiedades"><i class="fa fa-check"></i><b>1.1.3</b> Propiedades</a></li>
+<li class="chapter" data-level="1.1.4" data-path="probabilidad.html"><a href="probabilidad.html#definición-de-probabilidad"><i class="fa fa-check"></i><b>1.1.4</b> Definición de probabilidad</a></li>
+<li class="chapter" data-level="1.1.5" data-path="probabilidad.html"><a href="probabilidad.html#propiedades-1"><i class="fa fa-check"></i><b>1.1.5</b> Propiedades</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="probabilidad.html"><a href="probabilidad.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>1.2</b> Probabilidad condicionada</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="probabilidad.html"><a href="probabilidad.html#ejemplos-1"><i class="fa fa-check"></i><b>1.2.1</b> Ejemplos</a></li>
+<li class="chapter" data-level="1.2.2" data-path="probabilidad.html"><a href="probabilidad.html#atención"><i class="fa fa-check"></i><b>1.2.2</b> ¡Atención!</a></li>
+<li class="chapter" data-level="1.2.3" data-path="probabilidad.html"><a href="probabilidad.html#propiedades-2"><i class="fa fa-check"></i><b>1.2.3</b> Propiedades</a></li>
+<li class="chapter" data-level="1.2.4" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>1.2.4</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="1.2.5" data-path="probabilidad.html"><a href="probabilidad.html#clasificación-o-diagnósticos"><i class="fa fa-check"></i><b>1.2.5</b> Clasificación o Diagnósticos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="probabilidad.html"><a href="probabilidad.html#bayes"><i class="fa fa-check"></i><b>1.3</b> Bayes</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="probabilidad.html"><a href="probabilidad.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>1.3.1</b> Fórmula de Bayes</a></li>
+<li class="chapter" data-level="1.3.2" data-path="probabilidad.html"><a href="probabilidad.html#ejemplo-vih"><i class="fa fa-check"></i><b>1.3.2</b> Ejemplo VIH</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="probabilidad.html"><a href="probabilidad.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>1.4</b> Independencia de sucesos</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="probabilidad.html"><a href="probabilidad.html#sucesos-independientes"><i class="fa fa-check"></i><b>1.4.1</b> Sucesos independientes</a></li>
+<li class="chapter" data-level="1.4.2" data-path="probabilidad.html"><a href="probabilidad.html#sucesos-independientes-vs-disjuntos"><i class="fa fa-check"></i><b>1.4.2</b> Sucesos independientes vs disjuntos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>2</b> Variables Aleatorias</a><ul>
+<li class="chapter" data-level="2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#introducción-a-las-variables-aleatorias"><i class="fa fa-check"></i><b>2.1</b> Introducción a las variables aleatorias</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#definición-de-variable-aleatoria"><i class="fa fa-check"></i><b>2.1.1</b> Definición de variable aleatoria</a></li>
+<li class="chapter" data-level="2.1.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#tipos-de-variables-aleatorias"><i class="fa fa-check"></i><b>2.1.2</b> Tipos de variables aleatorias</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>2.2</b> Variables aleatorias discretas</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#distribuciones-de-probabilidad-para-v.a.-discretas."><i class="fa fa-check"></i><b>2.2.1</b> Distribuciones de probabilidad para v.a. discretas.</a></li>
+<li class="chapter" data-level="2.2.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-probabilidad-para-variables-discretas"><i class="fa fa-check"></i><b>2.2.2</b> Función de probabilidad para variables discretas</a></li>
+<li class="chapter" data-level="2.2.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#funcion-probabilidad-discretas"><i class="fa fa-check"></i><b>2.2.3</b> Funcion probabilidad discretas</a></li>
+<li class="chapter" data-level="2.2.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-función-de-probabilidad."><i class="fa fa-check"></i><b>2.2.4</b> Propiedades de la función de probabilidad.</a></li>
+<li class="chapter" data-level="2.2.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-distribución-de-variables-aleatorias"><i class="fa fa-check"></i><b>2.2.5</b> Función de distribución de variables aleatorias</a></li>
+<li class="chapter" data-level="2.2.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-3"><i class="fa fa-check"></i><b>2.2.6</b> Propiedades</a></li>
+<li class="chapter" data-level="2.2.7" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#advertencia-desigualdades-estrictas"><i class="fa fa-check"></i><b>2.2.7</b> Advertencia desigualdades estrictas</a></li>
+<li class="chapter" data-level="2.2.8" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-4"><i class="fa fa-check"></i><b>2.2.8</b> Propiedades</a></li>
+<li class="chapter" data-level="2.2.9" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#ejemplos-8"><i class="fa fa-check"></i><b>2.2.9</b> Ejemplos</a></li>
+<li class="chapter" data-level="2.2.10" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-función-de-distribución"><i class="fa fa-check"></i><b>2.2.10</b> Propiedades de la función de distribución</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#valores-esperados-o-esperanza"><i class="fa fa-check"></i><b>2.3</b> Valores esperados o esperanza</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-de-variables-aleatorias-discretas"><i class="fa fa-check"></i><b>2.3.1</b> Momentos de variables aleatorias discretas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-de-un-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.3.2</b> Esperanza de un variable aleatoria discreta</a></li>
+<li class="chapter" data-level="2.3.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#interpretación-de-la-media-aritmética-para-v.a.-discretas"><i class="fa fa-check"></i><b>2.3.3</b> Interpretación de la media aritmética para v.a. discretas</a></li>
+<li class="chapter" data-level="2.3.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanzas-de-funciones-de-variables-aleatorias-discretas"><i class="fa fa-check"></i><b>2.3.4</b> Esperanzas de funciones de variables aleatorias discretas</a></li>
+<li class="chapter" data-level="2.3.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-los-valores-esperados"><i class="fa fa-check"></i><b>2.3.5</b> Propiedades de los valores esperados</a></li>
+<li class="chapter" data-level="2.3.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-las-series-geométricas"><i class="fa fa-check"></i><b>2.3.6</b> Propiedades de las series geométricas</a></li>
+<li class="chapter" data-level="2.3.7" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-de-una-variable-aleatoria"><i class="fa fa-check"></i><b>2.3.7</b> Momentos de una variable aleatoria</a></li>
+<li class="chapter" data-level="2.3.8" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#resumen-conceptos"><i class="fa fa-check"></i><b>2.3.8</b> Resumen conceptos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#medidas-de-la-variabilidad"><i class="fa fa-check"></i><b>2.4</b> Medidas de la variabilidad</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#medidas-de-la-variabilidad-la-varianza"><i class="fa fa-check"></i><b>2.4.1</b> Medidas de la variabilidad: la varianza</a></li>
+<li class="chapter" data-level="2.4.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-varianza"><i class="fa fa-check"></i><b>2.4.2</b> Propiedades de la varianza</a></li>
+<li class="chapter" data-level="2.4.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#ejemplo-1"><i class="fa fa-check"></i><b>2.4.3</b> Ejemplo</a></li>
+<li class="chapter" data-level="2.4.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-varianza-1"><i class="fa fa-check"></i><b>2.4.4</b> Propiedades de la varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-y-varianza-de-transformaciones-lineales."><i class="fa fa-check"></i><b>2.5</b> Esperanza y varianza de transformaciones lineales.</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#transformaciones-lineales."><i class="fa fa-check"></i><b>2.5.1</b> Transformaciones lineales.</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>2.6</b> Variables aleatorias continuas</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-5"><i class="fa fa-check"></i><b>2.6.1</b> Propiedades</a></li>
+<li class="chapter" data-level="2.6.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-función-de-distribución-1"><i class="fa fa-check"></i><b>2.6.2</b> Propiedades de la función de distribución</a></li>
+<li class="chapter" data-level="2.6.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-densidad"><i class="fa fa-check"></i><b>2.6.3</b> Función de densidad</a></li>
+<li class="chapter" data-level="2.6.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#utilidad-de-la-función-de-densidad"><i class="fa fa-check"></i><b>2.6.4</b> Utilidad de la función de densidad</a></li>
+<li class="chapter" data-level="2.6.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-y-varianza-para-variables-aleatorias-continuas"><i class="fa fa-check"></i><b>2.6.5</b> Esperanza y varianza para variables aleatorias continuas</a></li>
+<li class="chapter" data-level="2.6.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-y-varianza-para-variables-aleatorias-continuas-1"><i class="fa fa-check"></i><b>2.6.6</b> Esperanza y varianza para variables aleatorias continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#transformaciones-de-variables-aleatorias"><i class="fa fa-check"></i><b>2.7</b> Transformaciones de variables aleatorias</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedad"><i class="fa fa-check"></i><b>2.7.1</b> Propiedad</a></li>
+<li class="chapter" data-level="2.7.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#método-general-del-transformación-de-v.a."><i class="fa fa-check"></i><b>2.7.2</b> Método general del transformación de v.a.</a></li>
+<li class="chapter" data-level="2.7.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#desigualdades-de-markov-y-de-chebychev"><i class="fa fa-check"></i><b>2.7.3</b> Desigualdades de Markov y de Chebychev</a></li>
+<li class="chapter" data-level="2.7.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#desigualdad-de-markov"><i class="fa fa-check"></i><b>2.7.4</b> Desigualdad de Markov</a></li>
+<li class="chapter" data-level="2.7.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#desigualdad-de-chebychev"><i class="fa fa-check"></i><b>2.7.5</b> Desigualdad de Chebychev</a></li>
+<li class="chapter" data-level="2.7.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#uso-de-la-desigualdad-de-chebychev"><i class="fa fa-check"></i><b>2.7.6</b> Uso de la desigualdad de Chebychev</a></li>
+<li class="chapter" data-level="2.7.7" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#más-formas-de-la-desgualdad-de-chebychev"><i class="fa fa-check"></i><b>2.7.7</b> Más formas de la desgualdad de Chebychev</a></li>
+<li class="chapter" data-level="2.7.8" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#la-varianza-como-medida-de-dispersión"><i class="fa fa-check"></i><b>2.7.8</b> La varianza como medida de dispersión</a></li>
+<li class="chapter" data-level="2.7.9" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#interpretación-de-la-desigualdad"><i class="fa fa-check"></i><b>2.7.9</b> Interpretación de la desigualdad</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html"><i class="fa fa-check"></i><b>3</b> Distribuciones Notables</a><ul>
+<li class="chapter" data-level="3.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-bernoulli"><i class="fa fa-check"></i><b>3.1</b> Distribución Bernoulli</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#esperanza-de-una-v.a.-x-berp"><i class="fa fa-check"></i><b>3.1.1</b> Esperanza de una v.a. <span class="math inline">\(X\)</span> <span class="math inline">\(Ber(p)\)</span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#varianza-de-una-v.a.-x-berp"><i class="fa fa-check"></i><b>3.1.2</b> Varianza de una v.a. <span class="math inline">\(X\)</span> <span class="math inline">\(Ber(p)\)</span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-v.a-con-distribución-bernoulli"><i class="fa fa-check"></i><b>3.1.3</b> Resumen v.a con distribución Bernoulli</a></li>
+<li class="chapter" data-level="3.1.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-bernoulli.-ejemplo"><i class="fa fa-check"></i><b>3.1.4</b> Distribución Bernoulli. Ejemplo</a></li>
+<li class="chapter" data-level="3.1.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-bernoulli.-ejemplo-1"><i class="fa fa-check"></i><b>3.1.5</b> Distribución Bernoulli. Ejemplo</a></li>
+<li class="chapter" data-level="3.1.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-bernoulli.-ejemplo-2"><i class="fa fa-check"></i><b>3.1.6</b> Distribución Bernoulli. Ejemplo</a></li>
+<li class="chapter" data-level="3.1.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-interactivas-berp"><i class="fa fa-check"></i><b>3.1.7</b> Gráficas interactivas <span class="math inline">\(Ber(p)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial"><i class="fa fa-check"></i><b>3.2</b> Distribución binomial</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-probabilidad-de-una-binomial"><i class="fa fa-check"></i><b>3.2.1</b> Función de probabilidad de una binomial</a></li>
+<li class="chapter" data-level="3.2.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-de-binomial"><i class="fa fa-check"></i><b>3.2.2</b> Función de distribución de binomial</a></li>
+<li class="chapter" data-level="3.2.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#números-binomiales-con-r"><i class="fa fa-check"></i><b>3.2.3</b> Números binomiales con R</a></li>
+<li class="chapter" data-level="3.2.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial-1"><i class="fa fa-check"></i><b>3.2.4</b> Distribución Binomial</a></li>
+<li class="chapter" data-level="3.2.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#observaciones-sobre-la-distribución-binomial"><i class="fa fa-check"></i><b>3.2.5</b> Observaciones sobre la distribución binomial</a></li>
+<li class="chapter" data-level="3.2.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#esperanza-de-una-x-bnp"><i class="fa fa-check"></i><b>3.2.6</b> Esperanza de una <span class="math inline">\(X\)</span> <span class="math inline">\(B(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.2.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#varianza-de-una-x-bnp"><i class="fa fa-check"></i><b>3.2.7</b> Varianza de una <span class="math inline">\(X\)</span> <span class="math inline">\(B(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.2.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-v.a-con-distribución-binomial-bnp"><i class="fa fa-check"></i><b>3.2.8</b> Resumen v.a con distribución binomial <span class="math inline">\(B(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.2.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-binomial-con-r"><i class="fa fa-check"></i><b>3.2.9</b> Cálculos binomial con R</a></li>
+<li class="chapter" data-level="3.2.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-binomial-con-r-1"><i class="fa fa-check"></i><b>3.2.10</b> Cálculos binomial con R</a></li>
+<li class="chapter" data-level="3.2.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#generación-de-muestras-aleatorias-con-r"><i class="fa fa-check"></i><b>3.2.11</b> Generación de muestras aleatorias con R</a></li>
+<li class="chapter" data-level="3.2.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-distribución-binomial-con-python"><i class="fa fa-check"></i><b>3.2.12</b> Cálculos distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-distribución-binomial-con-python-1"><i class="fa fa-check"></i><b>3.2.13</b> Cálculos distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-distribución-binomial-con-python-2"><i class="fa fa-check"></i><b>3.2.14</b> Cálculos distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.15" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-distribución-binomial-con-python-3"><i class="fa fa-check"></i><b>3.2.15</b> Cálculos distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.16" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-distribución-binomial-con-python-4"><i class="fa fa-check"></i><b>3.2.16</b> Cálculos distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.17" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-binomial-con-python"><i class="fa fa-check"></i><b>3.2.17</b> Cálculos binomial con python</a></li>
+<li class="chapter" data-level="3.2.18" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-de-la-distribución-binomial-con-r"><i class="fa fa-check"></i><b>3.2.18</b> Gráficas de la distribución binomial con R</a></li>
+<li class="chapter" data-level="3.2.19" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-de-la-distribución-binomial-con-r-1"><i class="fa fa-check"></i><b>3.2.19</b> Gráficas de la distribución binomial con R</a></li>
+<li class="chapter" data-level="3.2.20" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-interactivas-binomial"><i class="fa fa-check"></i><b>3.2.20</b> Gráficas interactivas binomial</a></li>
+<li class="chapter" data-level="3.2.21" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-distribución-binomial-con-python"><i class="fa fa-check"></i><b>3.2.21</b> Gráficos de la distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.22" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-distribución-binomial-con-python-1"><i class="fa fa-check"></i><b>3.2.22</b> Gráficos de la distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.23" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-distribución-binomial-con-python-2"><i class="fa fa-check"></i><b>3.2.23</b> Gráficos de la distribución binomial con python</a></li>
+<li class="chapter" data-level="3.2.24" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-distribución-binomial"><i class="fa fa-check"></i><b>3.2.24</b> Ejemplo distribución binomial</a></li>
+<li class="chapter" data-level="3.2.25" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4."><i class="fa fa-check"></i><b>3.2.25</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+<li class="chapter" data-level="3.2.26" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4.-1"><i class="fa fa-check"></i><b>3.2.26</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+<li class="chapter" data-level="3.2.27" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4.-2"><i class="fa fa-check"></i><b>3.2.27</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+<li class="chapter" data-level="3.2.28" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4.-3"><i class="fa fa-check"></i><b>3.2.28</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+<li class="chapter" data-level="3.2.29" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4.-4"><i class="fa fa-check"></i><b>3.2.29</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+<li class="chapter" data-level="3.2.30" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4.-5"><i class="fa fa-check"></i><b>3.2.30</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+<li class="chapter" data-level="3.2.31" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4.-6"><i class="fa fa-check"></i><b>3.2.31</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+<li class="chapter" data-level="3.2.32" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bn10p0.4.-7"><i class="fa fa-check"></i><b>3.2.32</b> Ejemplo <span class="math inline">\(B(n=10,p=0.4).\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-geométrica"><i class="fa fa-check"></i><b>3.3</b> Distribución geométrica</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-geométrica-1"><i class="fa fa-check"></i><b>3.3.1</b> Distribución geométrica</a></li>
+<li class="chapter" data-level="3.3.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-geométrica-2"><i class="fa fa-check"></i><b>3.3.2</b> Distribución geométrica</a></li>
+<li class="chapter" data-level="3.3.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-geométrica-3"><i class="fa fa-check"></i><b>3.3.3</b> Distribución geométrica</a></li>
+<li class="chapter" data-level="3.3.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-geométrica"><i class="fa fa-check"></i><b>3.3.4</b> Función de distribución geométrica</a></li>
+<li class="chapter" data-level="3.3.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-geométrica-1"><i class="fa fa-check"></i><b>3.3.5</b> Función de distribución geométrica</a></li>
+<li class="chapter" data-level="3.3.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-geométrica-2"><i class="fa fa-check"></i><b>3.3.6</b> Función de distribución geométrica</a></li>
+<li class="chapter" data-level="3.3.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-geométrica-3"><i class="fa fa-check"></i><b>3.3.7</b> Función de distribución geométrica</a></li>
+<li class="chapter" data-level="3.3.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#sumas-derivadas-series-geométricas"><i class="fa fa-check"></i><b>3.3.8</b> Sumas derivadas series geométricas</a></li>
+<li class="chapter" data-level="3.3.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#esperanza-de-una-v.a.-gep"><i class="fa fa-check"></i><b>3.3.9</b> Esperanza de una v.a. <span class="math inline">\(Ge(p)\)</span></a></li>
+<li class="chapter" data-level="3.3.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#valor-ex2-de-una-v.a.-gep"><i class="fa fa-check"></i><b>3.3.10</b> Valor <span class="math inline">\(E(X^2)\)</span> de una v.a. <span class="math inline">\(Ge(p)\)</span></a></li>
+<li class="chapter" data-level="3.3.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#valor-ex2-de-una-v.a.-gep-1"><i class="fa fa-check"></i><b>3.3.11</b> Valor <span class="math inline">\(E(X^2)\)</span> de una v.a. <span class="math inline">\(Ge(p)\)</span></a></li>
+<li class="chapter" data-level="3.3.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#varianza-de-una-v.a.-gep"><i class="fa fa-check"></i><b>3.3.12</b> Varianza de una v.a. <span class="math inline">\(Ge(p)\)</span></a></li>
+<li class="chapter" data-level="3.3.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-gep-empezando-en-0"><i class="fa fa-check"></i><b>3.3.13</b> Resumen <span class="math inline">\(Ge(p)\)</span> empezando en 0</a></li>
+<li class="chapter" data-level="3.3.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-variable-geométrica-que-cuenta-los-intentos-para-obtener-el-primer-éxito."><i class="fa fa-check"></i><b>3.3.14</b> La variable geométrica que cuenta los intentos para obtener el primer éxito.</a></li>
+<li class="chapter" data-level="3.3.15" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-gep-comenzando-en-1."><i class="fa fa-check"></i><b>3.3.15</b> Resumen <span class="math inline">\(Ge(p)\)</span> comenzando en <span class="math inline">\(1\)</span>.</a></li>
+<li class="chapter" data-level="3.3.16" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedad-de-la-falta-de-memoria"><i class="fa fa-check"></i><b>3.3.16</b> Propiedad de la falta de memoria</a></li>
+<li class="chapter" data-level="3.3.17" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedad-de-la-falta-de-memoria-1"><i class="fa fa-check"></i><b>3.3.17</b> Propiedad de la falta de memoria</a></li>
+<li class="chapter" data-level="3.3.18" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#falta-de-memoria"><i class="fa fa-check"></i><b>3.3.18</b> Falta de memoria</a></li>
+<li class="chapter" data-level="3.3.19" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-falta-de-memoria"><i class="fa fa-check"></i><b>3.3.19</b> Ejemplo falta de memoria</a></li>
+<li class="chapter" data-level="3.3.20" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-falta-de-memoria-1"><i class="fa fa-check"></i><b>3.3.20</b> Ejemplo falta de memoria</a></li>
+<li class="chapter" data-level="3.3.21" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-el-clásico-del-fútbol"><i class="fa fa-check"></i><b>3.3.21</b> Ejemplo: El clásico del fútbol</a></li>
+<li class="chapter" data-level="3.3.22" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#variable-geométrica-el-clásico"><i class="fa fa-check"></i><b>3.3.22</b> Variable geométrica: El clásico</a></li>
+<li class="chapter" data-level="3.3.23" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#variable-geométrica-el-clásico-1"><i class="fa fa-check"></i><b>3.3.23</b> Variable geométrica: El clásico</a></li>
+<li class="chapter" data-level="3.3.24" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r"><i class="fa fa-check"></i><b>3.3.24</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.3.25" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-1"><i class="fa fa-check"></i><b>3.3.25</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.3.26" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-con-r-el-código"><i class="fa fa-check"></i><b>3.3.26</b> Gráficos con R el código</a></li>
+<li class="chapter" data-level="3.3.27" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#los-gráficos-con-r"><i class="fa fa-check"></i><b>3.3.27</b> Los gráficos con R</a></li>
+<li class="chapter" data-level="3.3.28" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-interactivas-geométrica"><i class="fa fa-check"></i><b>3.3.28</b> Gráficas interactivas geométrica</a></li>
+<li class="chapter" data-level="3.3.29" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python"><i class="fa fa-check"></i><b>3.3.29</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.3.30" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-1"><i class="fa fa-check"></i><b>3.3.30</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.3.31" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-2"><i class="fa fa-check"></i><b>3.3.31</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.3.32" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-3"><i class="fa fa-check"></i><b>3.3.32</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.3.33" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-4"><i class="fa fa-check"></i><b>3.3.33</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.3.34" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-esperanza-y-varianza"><i class="fa fa-check"></i><b>3.3.34</b> Cálculos con python esperanza y varianza</a></li>
+<li class="chapter" data-level="3.3.35" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-esperanza-y-varianza-1"><i class="fa fa-check"></i><b>3.3.35</b> Cálculos con python esperanza y varianza</a></li>
+<li class="chapter" data-level="3.3.36" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-con-python"><i class="fa fa-check"></i><b>3.3.36</b> Gráficos con python</a></li>
+<li class="chapter" data-level="3.3.37" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-con-python-1"><i class="fa fa-check"></i><b>3.3.37</b> Gráficos con python</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial-negativa"><i class="fa fa-check"></i><b>3.4</b> Distribución binomial negativa</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#el-problema-de-la-puerta-con-dos-cerraduras"><i class="fa fa-check"></i><b>3.4.1</b> El problema de la puerta con dos cerraduras</a></li>
+<li class="chapter" data-level="3.4.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial-negativa-1"><i class="fa fa-check"></i><b>3.4.2</b> Distribución binomial negativa</a></li>
+<li class="chapter" data-level="3.4.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial-negativa-2"><i class="fa fa-check"></i><b>3.4.3</b> Distribución binomial negativa</a></li>
+<li class="chapter" data-level="3.4.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial-negativa-3"><i class="fa fa-check"></i><b>3.4.4</b> Distribución binomial negativa</a></li>
+<li class="chapter" data-level="3.4.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial-negativa-4"><i class="fa fa-check"></i><b>3.4.5</b> Distribución binomial negativa</a></li>
+<li class="chapter" data-level="3.4.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-binomial-negativa-5"><i class="fa fa-check"></i><b>3.4.6</b> Distribución binomial negativa</a></li>
+<li class="chapter" data-level="3.4.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#números-binomiales-negativos"><i class="fa fa-check"></i><b>3.4.7</b> Números binomiales negativos</a></li>
+<li class="chapter" data-level="3.4.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#números-binomiales-negativos-1"><i class="fa fa-check"></i><b>3.4.8</b> Números binomiales negativos</a></li>
+<li class="chapter" data-level="3.4.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#esperanza-de-una-bnnp"><i class="fa fa-check"></i><b>3.4.9</b> Esperanza de una <span class="math inline">\(BN(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#varianza-de-una-bnnp"><i class="fa fa-check"></i><b>3.4.10</b> Varianza de una <span class="math inline">\(BN(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-binomial-negativa-bnnp"><i class="fa fa-check"></i><b>3.4.11</b> Resumen Binomial Negativa <span class="math inline">\(BN(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-puerta-dos-cerraduras-bnn2p0.1."><i class="fa fa-check"></i><b>3.4.12</b> Ejemplo puerta dos cerraduras <span class="math inline">\(BN(n=2,p=0.1)\)</span>.</a></li>
+<li class="chapter" data-level="3.4.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnnp"><i class="fa fa-check"></i><b>3.4.13</b> Ejemplo <span class="math inline">\(BN(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-dos-cerraduras-bnn2p0.1."><i class="fa fa-check"></i><b>3.4.14</b> Ejemplo dos cerraduras <span class="math inline">\(BN(n=2,p=0.1)\)</span>.</a></li>
+<li class="chapter" data-level="3.4.15" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1"><i class="fa fa-check"></i><b>3.4.15</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.16" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1-1"><i class="fa fa-check"></i><b>3.4.16</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.17" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1-2"><i class="fa fa-check"></i><b>3.4.17</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.18" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1-3"><i class="fa fa-check"></i><b>3.4.18</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.19" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1-4"><i class="fa fa-check"></i><b>3.4.19</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.20" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1-5"><i class="fa fa-check"></i><b>3.4.20</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.21" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1-6"><i class="fa fa-check"></i><b>3.4.21</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.22" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnn2p0.1-7"><i class="fa fa-check"></i><b>3.4.22</b> Ejemplo <span class="math inline">\(BN(n=2,p=0.1)\)</span></a></li>
+<li class="chapter" data-level="3.4.23" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-2"><i class="fa fa-check"></i><b>3.4.23</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.4.24" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-3"><i class="fa fa-check"></i><b>3.4.24</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.4.25" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-5"><i class="fa fa-check"></i><b>3.4.25</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.4.26" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-bnnp-con-python"><i class="fa fa-check"></i><b>3.4.26</b> Cálculos <span class="math inline">\(BN(n,p)\)</span> con python</a></li>
+<li class="chapter" data-level="3.4.27" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-bnnp-con-python-1"><i class="fa fa-check"></i><b>3.4.27</b> Cálculos <span class="math inline">\(BN(n,p)\)</span> con python</a></li>
+<li class="chapter" data-level="3.4.28" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-bnnp-con-python-2"><i class="fa fa-check"></i><b>3.4.28</b> Cálculos <span class="math inline">\(BN(n,p)\)</span> con python</a></li>
+<li class="chapter" data-level="3.4.29" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-de-la-binomial-negativa-con-r"><i class="fa fa-check"></i><b>3.4.29</b> Gráficas de la binomial negativa con R</a></li>
+<li class="chapter" data-level="3.4.30" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-de-la-binomial-negativa-con-r-1"><i class="fa fa-check"></i><b>3.4.30</b> Gráficas de la binomial negativa con R</a></li>
+<li class="chapter" data-level="3.4.31" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-interactivas-binomial-negativa"><i class="fa fa-check"></i><b>3.4.31</b> Gráficas interactivas binomial negativa</a></li>
+<li class="chapter" data-level="3.4.32" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-binomial-negativa-con-python"><i class="fa fa-check"></i><b>3.4.32</b> Gráficos de la binomial negativa con python</a></li>
+<li class="chapter" data-level="3.4.33" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-binomial-negativa-con-python-1"><i class="fa fa-check"></i><b>3.4.33</b> Gráficos de la binomial negativa con python</a></li>
+<li class="chapter" data-level="3.4.34" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-binomial-negativa-con-python-2"><i class="fa fa-check"></i><b>3.4.34</b> Gráficos de la binomial negativa con python</a></li>
+<li class="chapter" data-level="3.4.35" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejercicio-acceso-aleatorio-a-un-sistema-con-triple-clave."><i class="fa fa-check"></i><b>3.4.35</b> Ejercicio: Acceso aleatorio a un sistema con triple clave.</a></li>
+<li class="chapter" data-level="3.4.36" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejercicio-acceso-aleatorio-a-un-sistema-con-triple-clave.-1"><i class="fa fa-check"></i><b>3.4.36</b> Ejercicio acceso aleatorio a un sistema con triple clave.</a></li>
+<li class="chapter" data-level="3.4.37" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnrp"><i class="fa fa-check"></i><b>3.4.37</b> Ejemplo <span class="math inline">\(BN(r,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.38" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-bnrp-1"><i class="fa fa-check"></i><b>3.4.38</b> Ejemplo <span class="math inline">\(BN(r,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.39" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#solución-ejemplo-bnn3p0.001"><i class="fa fa-check"></i><b>3.4.39</b> Solución ejemplo <span class="math inline">\(BN(n=3,p=0.001)\)</span></a></li>
+<li class="chapter" data-level="3.4.40" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#solución-ejemplo-bnn3p0.001-1"><i class="fa fa-check"></i><b>3.4.40</b> Solución ejemplo <span class="math inline">\(BN(n=3,p=0.001)\)</span></a></li>
+<li class="chapter" data-level="3.4.41" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#solución-ejemplo-bnnp"><i class="fa fa-check"></i><b>3.4.41</b> Solución ejemplo <span class="math inline">\(BN(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.42" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#solución-ejemplo-bnnp-1"><i class="fa fa-check"></i><b>3.4.42</b> Solución ejemplo <span class="math inline">\(BN(n,p)\)</span></a></li>
+<li class="chapter" data-level="3.4.43" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#tres-claves-de-tres-dígitos-o-una-de-9-dígitos"><i class="fa fa-check"></i><b>3.4.43</b> ¿Tres claves de tres dígitos o una de 9 dígitos?</a></li>
+<li class="chapter" data-level="3.4.44" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#qué-da-más-seguridad-tres-claves-de-tres-dígitos-o-una-de-9-dígitos"><i class="fa fa-check"></i><b>3.4.44</b> Qué da más seguridad ¿tres claves de tres dígitos o una de 9 dígitos?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-poisson"><i class="fa fa-check"></i><b>3.5</b> Distribución Poisson</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-poisson-1"><i class="fa fa-check"></i><b>3.5.1</b> Distribución Poisson</a></li>
+<li class="chapter" data-level="3.5.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-poisson-como-límite-de-una-binomial."><i class="fa fa-check"></i><b>3.5.2</b> La distribución Poisson como “límite” de una binomial.</a></li>
+<li class="chapter" data-level="3.5.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-poisson-como-límite-de-una-binomial.-1"><i class="fa fa-check"></i><b>3.5.3</b> La distribución Poisson como “límite” de una binomial.</a></li>
+<li class="chapter" data-level="3.5.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-poisson-como-límite-de-una-binomial.-2"><i class="fa fa-check"></i><b>3.5.4</b> La distribución Poisson como “límite” de una binomial.</a></li>
+<li class="chapter" data-level="3.5.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-poisson-como-límite-de-una-binomial.-3"><i class="fa fa-check"></i><b>3.5.5</b> La distribución Poisson como “límite” de una binomial.</a></li>
+<li class="chapter" data-level="3.5.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-poisson-como-límite-de-una-binomial.-4"><i class="fa fa-check"></i><b>3.5.6</b> La distribución Poisson como “límite” de una binomial.</a></li>
+<li class="chapter" data-level="3.5.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-poisson-como-límite-de-una-binomial.-5"><i class="fa fa-check"></i><b>3.5.7</b> La distribución Poisson como “límite” de una binomial.</a></li>
+<li class="chapter" data-level="3.5.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-poisson-como-límite-de-una-binomial.-6"><i class="fa fa-check"></i><b>3.5.8</b> La distribución Poisson como “límite” de una binomial.</a></li>
+<li class="chapter" data-level="3.5.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#procesos-de-poisson"><i class="fa fa-check"></i><b>3.5.9</b> Procesos de Poisson</a></li>
+<li class="chapter" data-level="3.5.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#procesos-de-poisson-1"><i class="fa fa-check"></i><b>3.5.10</b> Procesos de Poisson</a></li>
+<li class="chapter" data-level="3.5.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-distribución-poisson-xequiv-polambda"><i class="fa fa-check"></i><b>3.5.11</b> Resumen distribución Poisson <span class="math inline">\(X\equiv Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-proceso-poisson-x_tequiv-polambdacdot-t"><i class="fa fa-check"></i><b>3.5.12</b> Resumen proceso Poisson <span class="math inline">\(X_t\equiv Po(\lambda\cdot t)\)</span></a></li>
+<li class="chapter" data-level="3.5.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#aproximación-de-la-distribución-binomial-por-la-poisson"><i class="fa fa-check"></i><b>3.5.13</b> Aproximación de la distribución binomial por la Poisson</a></li>
+<li class="chapter" data-level="3.5.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-aproximación-binomial-poisson"><i class="fa fa-check"></i><b>3.5.14</b> Gráficos aproximación binomial Poisson</a></li>
+<li class="chapter" data-level="3.5.15" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-polambda"><i class="fa fa-check"></i><b>3.5.15</b> Ejemplo <span class="math inline">\(Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.16" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-polambda-1"><i class="fa fa-check"></i><b>3.5.16</b> Ejemplo <span class="math inline">\(Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.17" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-polambda-2"><i class="fa fa-check"></i><b>3.5.17</b> Ejemplo <span class="math inline">\(Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.18" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-polambda-3"><i class="fa fa-check"></i><b>3.5.18</b> Ejemplo <span class="math inline">\(Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.19" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-polambda-4"><i class="fa fa-check"></i><b>3.5.19</b> Ejemplo <span class="math inline">\(Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.20" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-polambda-5"><i class="fa fa-check"></i><b>3.5.20</b> Ejemplo <span class="math inline">\(Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.21" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-polambda-6"><i class="fa fa-check"></i><b>3.5.21</b> Ejemplo <span class="math inline">\(Po(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.5.22" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-4"><i class="fa fa-check"></i><b>3.5.22</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.5.23" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-5"><i class="fa fa-check"></i><b>3.5.23</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.5.24" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-6"><i class="fa fa-check"></i><b>3.5.24</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.5.25" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-distribución-poisson-con-r"><i class="fa fa-check"></i><b>3.5.25</b> Cálculos distribución Poisson con R</a></li>
+<li class="chapter" data-level="3.5.26" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-7"><i class="fa fa-check"></i><b>3.5.26</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.5.27" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-8"><i class="fa fa-check"></i><b>3.5.27</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.5.28" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-distribución-poisson-con-r"><i class="fa fa-check"></i><b>3.5.28</b> Gráficos de la distribución Poisson con R</a></li>
+<li class="chapter" data-level="3.5.29" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-de-la-distribución-poisson-con-r-1"><i class="fa fa-check"></i><b>3.5.29</b> Gráficos de la distribución Poisson con R</a></li>
+<li class="chapter" data-level="3.5.30" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-interactivos-con-r"><i class="fa fa-check"></i><b>3.5.30</b> Gráficos interactivos con R</a></li>
+<li class="chapter" data-level="3.5.31" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-6"><i class="fa fa-check"></i><b>3.5.31</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.5.32" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-7"><i class="fa fa-check"></i><b>3.5.32</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.5.33" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-8"><i class="fa fa-check"></i><b>3.5.33</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.5.34" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-9"><i class="fa fa-check"></i><b>3.5.34</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.5.35" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-9"><i class="fa fa-check"></i><b>3.5.35</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.5.36" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-10"><i class="fa fa-check"></i><b>3.5.36</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.5.37" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-con-python-2"><i class="fa fa-check"></i><b>3.5.37</b> Gráficos con python</a></li>
+<li class="chapter" data-level="3.5.38" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-con-python-3"><i class="fa fa-check"></i><b>3.5.38</b> Gráficos con python</a></li>
+<li class="chapter" data-level="3.5.39" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-interactivos-proceso-polambdacdot-t"><i class="fa fa-check"></i><b>3.5.39</b> Gráficos interactivos proceso <span class="math inline">\(Po(\lambda\cdot t\)</span>)</a></li>
+<li class="chapter" data-level="3.5.40" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-proceso-poisson"><i class="fa fa-check"></i><b>3.5.40</b> Ejemplo proceso Poisson</a></li>
+<li class="chapter" data-level="3.5.41" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-proceso-poisson-1"><i class="fa fa-check"></i><b>3.5.41</b> Ejemplo proceso Poisson</a></li>
+<li class="chapter" data-level="3.5.42" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-proceso-poisson-2"><i class="fa fa-check"></i><b>3.5.42</b> Ejemplo proceso Poisson</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-hipergeométrica"><i class="fa fa-check"></i><b>3.6</b> Distribución hipergeométrica</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-hipergeométrica-1"><i class="fa fa-check"></i><b>3.6.1</b> Distribución hipergeométrica</a></li>
+<li class="chapter" data-level="3.6.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-hipergeométrica-hmnk."><i class="fa fa-check"></i><b>3.6.2</b> Resumen hipergeométrica <span class="math inline">\(H(m,n,k)\)</span>.</a></li>
+<li class="chapter" data-level="3.6.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-clásico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposición."><i class="fa fa-check"></i><b>3.6.3</b> Ejemplo clásico urna <span class="math inline">\(m=15\)</span> blancas, <span class="math inline">\(n=10\)</span> rojas y <span class="math inline">\(k=3\)</span> extracciones sin reposición.</a></li>
+<li class="chapter" data-level="3.6.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-clásico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposición.-1"><i class="fa fa-check"></i><b>3.6.4</b> Ejemplo clásico urna <span class="math inline">\(m=15\)</span> blancas, <span class="math inline">\(n=10\)</span> rojas y <span class="math inline">\(k=3\)</span> extracciones sin reposición.</a></li>
+<li class="chapter" data-level="3.6.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-clásico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposición.-2"><i class="fa fa-check"></i><b>3.6.5</b> Ejemplo clásico urna <span class="math inline">\(m=15\)</span> blancas, <span class="math inline">\(n=10\)</span> rojas y <span class="math inline">\(k=3\)</span> extracciones sin reposición.</a></li>
+<li class="chapter" data-level="3.6.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-clásico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposición.-3"><i class="fa fa-check"></i><b>3.6.6</b> Ejemplo clásico urna <span class="math inline">\(m=15\)</span> blancas, <span class="math inline">\(n=10\)</span> rojas y <span class="math inline">\(k=3\)</span> extracciones sin reposición.</a></li>
+<li class="chapter" data-level="3.6.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-10"><i class="fa fa-check"></i><b>3.6.7</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.6.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-11"><i class="fa fa-check"></i><b>3.6.8</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.6.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-12"><i class="fa fa-check"></i><b>3.6.9</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.6.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-con-r"><i class="fa fa-check"></i><b>3.6.10</b> Gráficas con R</a></li>
+<li class="chapter" data-level="3.6.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-interactivos-hmnk"><i class="fa fa-check"></i><b>3.6.11</b> Gráficos interactivos <span class="math inline">\(H(m,n,k)\)</span></a></li>
+<li class="chapter" data-level="3.6.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#comparación-hmnk-y-bleftkfracmnmright."><i class="fa fa-check"></i><b>3.6.12</b> Comparación <span class="math inline">\(H(m,n,k)\)</span> y <span class="math inline">\(B\left(k,\frac{m}{n+m}\right)\)</span>.</a></li>
+<li class="chapter" data-level="3.6.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-11"><i class="fa fa-check"></i><b>3.6.13</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.6.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-12"><i class="fa fa-check"></i><b>3.6.14</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.6.15" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-13"><i class="fa fa-check"></i><b>3.6.15</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.6.16" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-con-python-4"><i class="fa fa-check"></i><b>3.6.16</b> Gráficos con python</a></li>
+<li class="chapter" data-level="3.6.17" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficos-con-python-5"><i class="fa fa-check"></i><b>3.6.17</b> Gráficos con python</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-uniforme"><i class="fa fa-check"></i><b>3.7</b> Distribución uniforme</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-uniforme-1"><i class="fa fa-check"></i><b>3.7.1</b> Distribución uniforme</a></li>
+<li class="chapter" data-level="3.7.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-uniforme-2"><i class="fa fa-check"></i><b>3.7.2</b> Distribución uniforme</a></li>
+<li class="chapter" data-level="3.7.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-uniforme."><i class="fa fa-check"></i><b>3.7.3</b> Función de distribución uniforme.</a></li>
+<li class="chapter" data-level="3.7.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-uniforme-cálculo."><i class="fa fa-check"></i><b>3.7.4</b> Función de distribución uniforme: cálculo.</a></li>
+<li class="chapter" data-level="3.7.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-uniforme-cálculo.-1"><i class="fa fa-check"></i><b>3.7.5</b> Función de distribución uniforme: cálculo.</a></li>
+<li class="chapter" data-level="3.7.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#esperanza-y-varianza-para-una-v.a.-x-uab"><i class="fa fa-check"></i><b>3.7.6</b> Esperanza y varianza para una v.a. <span class="math inline">\(X\)</span> <span class="math inline">\(U(a,b)\)</span></a></li>
+<li class="chapter" data-level="3.7.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#esperanza-y-varianza-para-una-v.a.-x-uab-1"><i class="fa fa-check"></i><b>3.7.7</b> Esperanza y varianza para una v.a. <span class="math inline">\(X\)</span> <span class="math inline">\(U(a,b)\)</span></a></li>
+<li class="chapter" data-level="3.7.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#esperanza-y-varianza-para-una-v.a.-x-uab."><i class="fa fa-check"></i><b>3.7.8</b> Esperanza y varianza para una v.a. <span class="math inline">\(X\)</span> <span class="math inline">\(U(a,b)\)</span>.</a></li>
+<li class="chapter" data-level="3.7.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-u01"><i class="fa fa-check"></i><b>3.7.9</b> Gráficas <span class="math inline">\(U(0,1)\)</span></a></li>
+<li class="chapter" data-level="3.7.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-u01-1"><i class="fa fa-check"></i><b>3.7.10</b> Gráficas <span class="math inline">\(U(0,1)\)</span></a></li>
+<li class="chapter" data-level="3.7.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-interactivas-uab"><i class="fa fa-check"></i><b>3.7.11</b> Gráficas interactivas <span class="math inline">\(U(a,b)\)</span></a></li>
+<li class="chapter" data-level="3.7.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cambio-lineal-v.a.-uniforme."><i class="fa fa-check"></i><b>3.7.12</b> Cambio lineal v.a. uniforme.</a></li>
+<li class="chapter" data-level="3.7.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cambio-lineal-v.a.-uniforme.-1"><i class="fa fa-check"></i><b>3.7.13</b> Cambio lineal v.a. uniforme.</a></li>
+<li class="chapter" data-level="3.7.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cambio-lineal-v.a.-uniforme.-2"><i class="fa fa-check"></i><b>3.7.14</b> Cambio lineal v.a. uniforme.</a></li>
+<li class="chapter" data-level="3.7.15" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cambio-lineal-v.a.-uniforme.-3"><i class="fa fa-check"></i><b>3.7.15</b> Cambio lineal v.a. uniforme.</a></li>
+<li class="chapter" data-level="3.7.16" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-v.a-con-distribución-uniforme-uab"><i class="fa fa-check"></i><b>3.7.16</b> Resumen v.a con distribución uniforme, <span class="math inline">\(U(a,b)\)</span></a></li>
+<li class="chapter" data-level="3.7.17" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-13"><i class="fa fa-check"></i><b>3.7.17</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.7.18" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-14"><i class="fa fa-check"></i><b>3.7.18</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.7.19" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-14"><i class="fa fa-check"></i><b>3.7.19</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.7.20" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-15"><i class="fa fa-check"></i><b>3.7.20</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.7.21" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-16"><i class="fa fa-check"></i><b>3.7.21</b> Cálculos con python</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-de-variables-aleatorias"><i class="fa fa-check"></i><b>3.8</b> Cuantiles de variables aleatorias</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles"><i class="fa fa-check"></i><b>3.8.1</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-1"><i class="fa fa-check"></i><b>3.8.2</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-2"><i class="fa fa-check"></i><b>3.8.3</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-3"><i class="fa fa-check"></i><b>3.8.4</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-4"><i class="fa fa-check"></i><b>3.8.5</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-5"><i class="fa fa-check"></i><b>3.8.6</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-6"><i class="fa fa-check"></i><b>3.8.7</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-7"><i class="fa fa-check"></i><b>3.8.8</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-8"><i class="fa fa-check"></i><b>3.8.9</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-9"><i class="fa fa-check"></i><b>3.8.10</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cuantiles-10"><i class="fa fa-check"></i><b>3.8.11</b> Cuantiles</a></li>
+<li class="chapter" data-level="3.8.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#un-ejemplo-gráficas-cuantiles-bnp-y-polambda."><i class="fa fa-check"></i><b>3.8.12</b> Un ejemplo gráficas cuantiles <span class="math inline">\(B(n,p)\)</span> y <span class="math inline">\(Po(\lambda)\)</span>.</a></li>
+<li class="chapter" data-level="3.8.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#generador-de-números-aleatorios-método-de-la-transformada-inversa"><i class="fa fa-check"></i><b>3.8.13</b> Generador de números aleatorios método de la transformada inversa</a></li>
+<li class="chapter" data-level="3.8.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#generador-de-números-aleatorios-método-de-la-transformada-inversa-1"><i class="fa fa-check"></i><b>3.8.14</b> Generador de números aleatorios método de la transformada inversa</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-exponencial"><i class="fa fa-check"></i><b>3.9</b> Distribución exponencial</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-del-tiempo-entre-dos-eventos-poisson"><i class="fa fa-check"></i><b>3.9.1</b> Distribución del tiempo entre dos eventos Poisson</a></li>
+<li class="chapter" data-level="3.9.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-del-tiempo-entre-dos-eventos-poisson-1"><i class="fa fa-check"></i><b>3.9.2</b> Distribución del tiempo entre dos eventos Poisson</a></li>
+<li class="chapter" data-level="3.9.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedad-de-la-falta-de-memoria-2"><i class="fa fa-check"></i><b>3.9.3</b> Propiedad de la falta de memoria</a></li>
+<li class="chapter" data-level="3.9.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-distribución-exponencial"><i class="fa fa-check"></i><b>3.9.4</b> Ejemplo distribución exponencial</a></li>
+<li class="chapter" data-level="3.9.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-distribución-exponencial-1"><i class="fa fa-check"></i><b>3.9.5</b> Ejemplo distribución exponencial</a></li>
+<li class="chapter" data-level="3.9.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-distribución-exponencial-2"><i class="fa fa-check"></i><b>3.9.6</b> Ejemplo distribución exponencial</a></li>
+<li class="chapter" data-level="3.9.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-15"><i class="fa fa-check"></i><b>3.9.7</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.9.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-17"><i class="fa fa-check"></i><b>3.9.8</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.9.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-v.a-con-distribución-exponencial-explambda"><i class="fa fa-check"></i><b>3.9.9</b> Resumen v.a con distribución exponencial, <span class="math inline">\(Exp(\lambda)\)</span></a></li>
+<li class="chapter" data-level="3.9.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-densidad-y-distribución-explambda10"><i class="fa fa-check"></i><b>3.9.10</b> Gráficas densidad y distribución <span class="math inline">\(Exp(\lambda=10)\)</span></a></li>
+<li class="chapter" data-level="3.9.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-densidad-y-distribución-explambda10-1"><i class="fa fa-check"></i><b>3.9.11</b> Gráficas densidad y distribución <span class="math inline">\(Exp(\lambda=10)\)</span></a></li>
+<li class="chapter" data-level="3.9.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-densidad-y-distribución-explambda10-2"><i class="fa fa-check"></i><b>3.9.12</b> Gráficas densidad y distribución <span class="math inline">\(Exp(\lambda=10)\)</span></a></li>
+<li class="chapter" data-level="3.9.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-interactivas-de-una-x-explambda."><i class="fa fa-check"></i><b>3.9.13</b> Gráficas interactivas de una <span class="math inline">\(X\)</span> <span class="math inline">\(Exp(\lambda)\)</span>.</a></li>
+<li class="chapter" data-level="3.9.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejercicio-las-bombillas-que-no-envejecen."><i class="fa fa-check"></i><b>3.9.14</b> Ejercicio: las bombillas que no envejecen.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-normal-o-gaussiana"><i class="fa fa-check"></i><b>3.10</b> Distribución normal o Gaussiana</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-normal-o-gaussiana-1"><i class="fa fa-check"></i><b>3.10.1</b> Distribución normal o Gaussiana</a></li>
+<li class="chapter" data-level="3.10.2" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-normal-o-gaussiana-2"><i class="fa fa-check"></i><b>3.10.2</b> Distribución normal o Gaussiana</a></li>
+<li class="chapter" data-level="3.10.3" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#distribución-normal-o-gaussiana-3"><i class="fa fa-check"></i><b>3.10.3</b> Distribución normal o Gaussiana</a></li>
+<li class="chapter" data-level="3.10.4" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedades-de-la-densidad-normal"><i class="fa fa-check"></i><b>3.10.4</b> Propiedades de la densidad normal</a></li>
+<li class="chapter" data-level="3.10.5" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#función-de-distribución-n01"><i class="fa fa-check"></i><b>3.10.5</b> Función de distribución N(0,1)</a></li>
+<li class="chapter" data-level="3.10.6" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#resumen-v.a-con-distribución-normal-nmusigma"><i class="fa fa-check"></i><b>3.10.6</b> Resumen v.a con distribución normal, <span class="math inline">\(N(\mu,\sigma)\)</span></a></li>
+<li class="chapter" data-level="3.10.7" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-16"><i class="fa fa-check"></i><b>3.10.7</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.10.8" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-r-17"><i class="fa fa-check"></i><b>3.10.8</b> Cálculos con R</a></li>
+<li class="chapter" data-level="3.10.9" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-18"><i class="fa fa-check"></i><b>3.10.9</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.10.10" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-python-19"><i class="fa fa-check"></i><b>3.10.10</b> Cálculos con python</a></li>
+<li class="chapter" data-level="3.10.11" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-python"><i class="fa fa-check"></i><b>3.10.11</b> Cálculos python</a></li>
+<li class="chapter" data-level="3.10.12" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedades-de-la-distribución-normal."><i class="fa fa-check"></i><b>3.10.12</b> Propiedades de la distribución normal.</a></li>
+<li class="chapter" data-level="3.10.13" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedades-de-la-distribución-normal.-1"><i class="fa fa-check"></i><b>3.10.13</b> Propiedades de la distribución normal.</a></li>
+<li class="chapter" data-level="3.10.14" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedades-de-la-distribución-normal"><i class="fa fa-check"></i><b>3.10.14</b> Propiedades de la distribución normal</a></li>
+<li class="chapter" data-level="3.10.15" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedades-de-la-distribución-normal.-2"><i class="fa fa-check"></i><b>3.10.15</b> Propiedades de la distribución normal.</a></li>
+<li class="chapter" data-level="3.10.16" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#gráficas-interactivas-parámetros-normal"><i class="fa fa-check"></i><b>3.10.16</b> Gráficas interactivas parámetros normal</a></li>
+<li class="chapter" data-level="3.10.17" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#transformaciones-lineales-de-variables-aleatorias-normales"><i class="fa fa-check"></i><b>3.10.17</b> Transformaciones lineales de variables aleatorias normales</a></li>
+<li class="chapter" data-level="3.10.18" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#transformaciones-lineales-de-variables-aleatorias-normales-1"><i class="fa fa-check"></i><b>3.10.18</b> Transformaciones lineales de variables aleatorias normales</a></li>
+<li class="chapter" data-level="3.10.19" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#propiedades-de-la-distribución-normal-estándar"><i class="fa fa-check"></i><b>3.10.19</b> Propiedades de la distribución normal estándar</a></li>
+<li class="chapter" data-level="3.10.20" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-la-distribución-normal"><i class="fa fa-check"></i><b>3.10.20</b> Cálculos con la distribución normal</a></li>
+<li class="chapter" data-level="3.10.21" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#cálculos-con-la-distribución-normal-1"><i class="fa fa-check"></i><b>3.10.21</b> Cálculos con la distribución normal</a></li>
+<li class="chapter" data-level="3.10.22" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#relación-entre-una-normal-y-la-normal-estándar."><i class="fa fa-check"></i><b>3.10.22</b> Relación entre una normal y la normal estándar.</a></li>
+<li class="chapter" data-level="3.10.23" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#relación-entre-una-distribución-normal-y-la-normal-estándar."><i class="fa fa-check"></i><b>3.10.23</b> Relación entre una distribución normal y la normal estándar.</a></li>
+<li class="chapter" data-level="3.10.24" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-cálculo-probabilidades-normal"><i class="fa fa-check"></i><b>3.10.24</b> Ejemplo cálculo probabilidades normal</a></li>
+<li class="chapter" data-level="3.10.25" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-cálculo-probabilidades-normal-1"><i class="fa fa-check"></i><b>3.10.25</b> Ejemplo cálculo probabilidades normal</a></li>
+<li class="chapter" data-level="3.10.26" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-normal-con-r-y-python"><i class="fa fa-check"></i><b>3.10.26</b> Ejemplo normal con R y python</a></li>
+<li class="chapter" data-level="3.10.27" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#ejemplo-normal-con-r-y-python-1"><i class="fa fa-check"></i><b>3.10.27</b> Ejemplo normal con R y python</a></li>
+<li class="chapter" data-level="3.10.28" data-path="distribuciones-notables.html"><a href="distribuciones-notables.html#la-distribución-normal-aproxima-otras-distribuciones"><i class="fa fa-check"></i><b>3.10.28</b> La distribución normal aproxima otras distribuciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html"><i class="fa fa-check"></i><b>4</b> Variables Aleatorias. Complementos</a><ul>
+<li class="chapter" data-level="4.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#momentos-de-variables-aleatorias"><i class="fa fa-check"></i><b>4.1</b> Momentos de variables aleatorias</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#momento-de-orden-n"><i class="fa fa-check"></i><b>4.1.1</b> Momento de orden <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#momento-central-de-orden-n"><i class="fa fa-check"></i><b>4.1.2</b> Momento central de orden <span class="math inline">\(n\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#asimetría-de-una-variable-aleatoria"><i class="fa fa-check"></i><b>4.2</b> Asimetría de una variable aleatoria</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#definición"><i class="fa fa-check"></i><b>4.2.1</b> Definición</a></li>
+<li class="chapter" data-level="4.2.2" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#cómo-calcular-la-asimetría-de-una-variable-aleatoria"><i class="fa fa-check"></i><b>4.2.2</b> ¿Cómo calcular la asimetría de una variable aleatoria?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#curtosis-o-apuntamiento-de-una-variable-aleatoria"><i class="fa fa-check"></i><b>4.3</b> Curtosis o apuntamiento de una variable aleatoria</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#definición-1"><i class="fa fa-check"></i><b>4.3.1</b> Definición</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#métodos-de-transformación"><i class="fa fa-check"></i><b>4.4</b> Métodos de transformación</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#función-generatriz-de-momentos"><i class="fa fa-check"></i><b>4.4.1</b> Función generatriz de momentos</a></li>
+<li class="chapter" data-level="4.4.2" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#función-característica"><i class="fa fa-check"></i><b>4.4.2</b> Función característica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#fiabilidad"><i class="fa fa-check"></i><b>4.5</b> Fiabilidad</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#tiempo-medio-de-vida"><i class="fa fa-check"></i><b>4.5.1</b> Tiempo medio de vida</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#generación-de-muestras-de-variables-aleatorias-por-ordenador"><i class="fa fa-check"></i><b>4.6</b> Generación de muestras de variables aleatorias por ordenador</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#método-de-transformación"><i class="fa fa-check"></i><b>4.6.1</b> Método de transformación</a></li>
+<li class="chapter" data-level="4.6.2" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#ejemplos-10"><i class="fa fa-check"></i><b>4.6.2</b> Ejemplos</a></li>
+<li class="chapter" data-level="4.6.3" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#método-de-rechazo"><i class="fa fa-check"></i><b>4.6.3</b> Método de rechazo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#entropía"><i class="fa fa-check"></i><b>4.7</b> Entropía</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="variables-aleatorias-complementos.html"><a href="variables-aleatorias-complementos.html#entropía-de-una-variable-aleatoria"><i class="fa fa-check"></i><b>4.7.1</b> Entropía de una variable aleatoria</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html"><i class="fa fa-check"></i><b>5</b> Vectores aleatorios bidimensionales</a><ul>
+<li class="chapter" data-level="5.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#dos-variables-aleatorias"><i class="fa fa-check"></i><b>5.1</b> Dos variables aleatorias</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#definición-2"><i class="fa fa-check"></i><b>5.1.1</b> Definición</a></li>
+<li class="chapter" data-level="5.1.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#representar-el-dominio-de-una-variable-aleatoria-bidimensional"><i class="fa fa-check"></i><b>5.1.2</b> Representar el dominio de una variable aleatoria bidimensional</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#función-de-distribución-conjunta"><i class="fa fa-check"></i><b>5.2</b> Función de distribución conjunta</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#definición-3"><i class="fa fa-check"></i><b>5.2.1</b> Definición</a></li>
+<li class="chapter" data-level="5.2.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#propiedades-6"><i class="fa fa-check"></i><b>5.2.2</b> Propiedades</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variables-aleatorias-bidimensionales-discretas"><i class="fa fa-check"></i><b>5.3</b> Variables aleatorias bidimensionales discretas</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#función-de-probabilidad-conjunta"><i class="fa fa-check"></i><b>5.3.1</b> Función de probabilidad conjunta</a></li>
+<li class="chapter" data-level="5.3.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variables-aleatorias-marginales"><i class="fa fa-check"></i><b>5.3.2</b> Variables aleatorias marginales</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variables-aleatorias-bidimensionales-continuas"><i class="fa fa-check"></i><b>5.4</b> Variables aleatorias bidimensionales continuas</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#definición-4"><i class="fa fa-check"></i><b>5.4.1</b> Definición</a></li>
+<li class="chapter" data-level="5.4.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#propiedades-de-la-función-de-densidad"><i class="fa fa-check"></i><b>5.4.2</b> Propiedades de la función de densidad</a></li>
+<li class="chapter" data-level="5.4.3" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#la-distribución-gaussiana-bidimensional"><i class="fa fa-check"></i><b>5.4.3</b> La distribución gaussiana bidimensional</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#independencia-de-variables-aleatorias"><i class="fa fa-check"></i><b>5.5</b> Independencia de variables aleatorias</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#independencia-de-variables-aleatorias-discretas"><i class="fa fa-check"></i><b>5.5.1</b> Independencia de variables aleatorias discretas</a></li>
+<li class="chapter" data-level="5.5.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#independencia-de-variables-aleatorias-continuas"><i class="fa fa-check"></i><b>5.5.2</b> Independencia de variables aleatorias continuas</a></li>
+<li class="chapter" data-level="5.5.3" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#relación-de-la-independencia-y-la-función-de-distribución"><i class="fa fa-check"></i><b>5.5.3</b> Relación de la independencia y la función de distribución</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#momentos-conjuntos-y-valores-esperados-conjuntos"><i class="fa fa-check"></i><b>5.6</b> Momentos conjuntos y valores esperados conjuntos</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#valor-esperado-de-una-función-de-dos-variables-aleatorias"><i class="fa fa-check"></i><b>5.6.1</b> Valor esperado de una función de dos variables aleatorias</a></li>
+<li class="chapter" data-level="5.6.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#valor-esperado-de-una-función-de-dos-variables-aleatorias-independientes"><i class="fa fa-check"></i><b>5.6.2</b> Valor esperado de una función de dos variables aleatorias independientes</a></li>
+<li class="chapter" data-level="5.6.3" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#momentos-conjuntos"><i class="fa fa-check"></i><b>5.6.3</b> Momentos conjuntos</a></li>
+<li class="chapter" data-level="5.6.4" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#momentos-conjuntos-centrados-en-las-medias"><i class="fa fa-check"></i><b>5.6.4</b> Momentos conjuntos centrados en las medias</a></li>
+<li class="chapter" data-level="5.6.5" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#covariancia-entre-las-variables"><i class="fa fa-check"></i><b>5.6.5</b> Covariancia entre las variables</a></li>
+<li class="chapter" data-level="5.6.6" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#coeficiente-de-correlación-entre-las-variables"><i class="fa fa-check"></i><b>5.6.6</b> Coeficiente de correlación entre las variables</a></li>
+<li class="chapter" data-level="5.6.7" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#incorrelación-e-independencia"><i class="fa fa-check"></i><b>5.6.7</b> Incorrelación e independencia</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variables-aleatorias-condicionales-y-valor-esperado-condicional"><i class="fa fa-check"></i><b>5.7</b> Variables aleatorias condicionales y valor esperado condicional</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variables-aleatorias-condicionales-discretas"><i class="fa fa-check"></i><b>5.7.1</b> Variables aleatorias condicionales discretas</a></li>
+<li class="chapter" data-level="5.7.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variables-aleatorias-condicionales-continuas"><i class="fa fa-check"></i><b>5.7.2</b> Variables aleatorias condicionales continuas</a></li>
+<li class="chapter" data-level="5.7.3" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#valores-esperados-condicionales"><i class="fa fa-check"></i><b>5.7.3</b> Valores esperados condicionales</a></li>
+<li class="chapter" data-level="5.7.4" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#relación-con-el-problema-de-la-regresión-general"><i class="fa fa-check"></i><b>5.7.4</b> Relación con el problema de la regresión general</a></li>
+<li class="chapter" data-level="5.7.5" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#valores-esperados-condicionales.-caso-general"><i class="fa fa-check"></i><b>5.7.5</b> Valores esperados condicionales. Caso general</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variables-aleatorias-definidas-como-función-de-dos-variables-aleatorias-conjuntas"><i class="fa fa-check"></i><b>5.8</b> Variables aleatorias definidas como función de dos variables aleatorias conjuntas</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#variable-aleatoria-función-de-la-variable-aleatoria-bidimensional"><i class="fa fa-check"></i><b>5.8.1</b> Variable aleatoria función de la variable aleatoria bidimensional</a></li>
+<li class="chapter" data-level="5.8.2" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#transformaciones-lineales-de-variables-aleatorias"><i class="fa fa-check"></i><b>5.8.2</b> Transformaciones lineales de variables aleatorias</a></li>
+<li class="chapter" data-level="5.8.3" data-path="vectores-aleatorios-bidimensionales.html"><a href="vectores-aleatorios-bidimensionales.html#transformaciones-generales-de-variables-aleatorias"><i class="fa fa-check"></i><b>5.8.3</b> Transformaciones generales de variables aleatorias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html"><i class="fa fa-check"></i><b>6</b> Vectores aleatorios</a><ul>
+<li class="chapter" data-level="6.1" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#varias-variables-aleatorias"><i class="fa fa-check"></i><b>6.1</b> Varias variables aleatorias</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#definición-5"><i class="fa fa-check"></i><b>6.1.1</b> Definición</a></li>
+<li class="chapter" data-level="6.1.2" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#representar-el-dominio-de-una-variable-aleatoria-n-dimensional"><i class="fa fa-check"></i><b>6.1.2</b> Representar el dominio de una variable aleatoria <span class="math inline">\(n\)</span>-dimensional</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#función-de-distribución-conjunta-1"><i class="fa fa-check"></i><b>6.2</b> Función de distribución conjunta</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#definición-6"><i class="fa fa-check"></i><b>6.2.1</b> Definición</a></li>
+<li class="chapter" data-level="6.2.2" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#propiedades-7"><i class="fa fa-check"></i><b>6.2.2</b> Propiedades</a></li>
+<li class="chapter" data-level="6.2.3" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#ejemplos-25"><i class="fa fa-check"></i><b>6.2.3</b> Ejemplos</a></li>
+<li class="chapter" data-level="6.2.4" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#ejemplo-con-r"><i class="fa fa-check"></i><b>6.2.4</b> Ejemplo con <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#variables-aleatorias-n-dimensionales-discretas"><i class="fa fa-check"></i><b>6.3</b> Variables aleatorias <span class="math inline">\(n\)</span>-dimensionales discretas</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#función-de-probabilidad-conjunta-1"><i class="fa fa-check"></i><b>6.3.1</b> Función de probabilidad conjunta</a></li>
+<li class="chapter" data-level="6.3.2" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#propiedades-de-la-función-de-probabilidad-conjunta-1"><i class="fa fa-check"></i><b>6.3.2</b> Propiedades de la función de probabilidad conjunta</a></li>
+<li class="chapter" data-level="6.3.3" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#variables-aleatorias-marginales-1"><i class="fa fa-check"></i><b>6.3.3</b> Variables aleatorias marginales</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#variables-aleatorias-n-dimensionales-continuas"><i class="fa fa-check"></i><b>6.4</b> Variables aleatorias <span class="math inline">\(n\)</span>-dimensionales continuas</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#definición-7"><i class="fa fa-check"></i><b>6.4.1</b> Definición</a></li>
+<li class="chapter" data-level="6.4.2" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#propiedades-de-la-función-de-densidad-1"><i class="fa fa-check"></i><b>6.4.2</b> Propiedades de la función de densidad</a></li>
+<li class="chapter" data-level="6.4.3" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#la-distribución-gaussiana-n-dimensional"><i class="fa fa-check"></i><b>6.4.3</b> La distribución gaussiana <span class="math inline">\(n\)</span>-dimensional</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#independencia-de-variables-aleatorias-1"><i class="fa fa-check"></i><b>6.5</b> Independencia de variables aleatorias</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#independencia-de-variables-aleatorias-discretas-1"><i class="fa fa-check"></i><b>6.5.1</b> Independencia de variables aleatorias discretas</a></li>
+<li class="chapter" data-level="6.5.2" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#independencia-de-variables-aleatorias-continuas-1"><i class="fa fa-check"></i><b>6.5.2</b> Independencia de variables aleatorias continuas</a></li>
+<li class="chapter" data-level="6.5.3" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#relación-de-la-independencia-y-la-función-de-distribución-1"><i class="fa fa-check"></i><b>6.5.3</b> Relación de la independencia y la función de distribución</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#momentos-conjuntos-y-valores-esperados-conjuntos-1"><i class="fa fa-check"></i><b>6.6</b> Momentos conjuntos y valores esperados conjuntos</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#valor-esperado-de-una-función-de-n-variables-aleatorias"><i class="fa fa-check"></i><b>6.6.1</b> Valor esperado de una función de <span class="math inline">\(n\)</span> variables aleatorias</a></li>
+<li class="chapter" data-level="6.6.2" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#ejemplos-31"><i class="fa fa-check"></i><b>6.6.2</b> Ejemplos</a></li>
+<li class="chapter" data-level="6.6.3" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#propiedad-del-valor-esperado-de-la-suma-de-variables"><i class="fa fa-check"></i><b>6.6.3</b> Propiedad del valor esperado de la suma de variables</a></li>
+<li class="chapter" data-level="6.6.4" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#valor-esperado-de-una-función-de-n-variables-aleatorias-independientes"><i class="fa fa-check"></i><b>6.6.4</b> Valor esperado de una función de <span class="math inline">\(n\)</span> variables aleatorias independientes</a></li>
+<li class="chapter" data-level="6.6.5" data-path="vectores-aleatorios.html"><a href="vectores-aleatorios.html#propiedades-de-la-covarianza-1"><i class="fa fa-check"></i><b>6.6.5</b> Propiedades de la covarianza</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><i class="fa fa-check"></i><b>7</b> Ley de los grandes números y Teorema Central del Límite</a><ul>
+<li class="chapter" data-level="7.1" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#muestras-aleatorias-simples"><i class="fa fa-check"></i><b>7.1</b> Muestras aleatorias simples</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#la-distribución-de-la-media-muestral"><i class="fa fa-check"></i><b>7.1.1</b> La distribución de la media muestral</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#convergencia-de-sucesiones-de-variables-aleatorias"><i class="fa fa-check"></i><b>7.2</b> Convergencia de sucesiones de variables aleatorias</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#convergencia-casi-segura"><i class="fa fa-check"></i><b>7.2.1</b> Convergencia casi segura</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#convergencia-en-probabilidad"><i class="fa fa-check"></i><b>7.2.2</b> Convergencia en probabilidad</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#convergencia-en-ley-o-en-distribución"><i class="fa fa-check"></i><b>7.2.3</b> Convergencia en ley o en distribución</a></li>
+<li class="chapter" data-level="7.2.4" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#relaciones-entre-las-distintas-convergencias"><i class="fa fa-check"></i><b>7.2.4</b> Relaciones entre las distintas convergencias</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#leyes-de-los-grandes-números"><i class="fa fa-check"></i><b>7.3</b> Leyes de los grandes números</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#leyes-débiles-de-los-grandes-números"><i class="fa fa-check"></i><b>7.3.1</b> Leyes débiles de los grandes números</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#convergencia-de-los-momentos-muestrales"><i class="fa fa-check"></i><b>7.3.2</b> Convergencia de los momentos muestrales</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#leyes-fuertes-de-los-grandes-números"><i class="fa fa-check"></i><b>7.3.3</b> Leyes fuertes de los grandes números</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#teorema-central-del-límite"><i class="fa fa-check"></i><b>7.4</b> Teorema Central del Límite</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#teorema-central-del-límite-1"><i class="fa fa-check"></i><b>7.4.1</b> Teorema Central del Límite</a></li>
+<li class="chapter" data-level="7.4.2" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#teorema-central-del-límite-en-la-práctica"><i class="fa fa-check"></i><b>7.4.2</b> Teorema Central del Límite en la práctica</a></li>
+<li class="chapter" data-level="7.4.3" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#teorema-de-moivre-laplace"><i class="fa fa-check"></i><b>7.4.3</b> Teorema de Moivre-Laplace</a></li>
+<li class="chapter" data-level="7.4.4" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#aproximación-de-una-suma-de-variables-poisson"><i class="fa fa-check"></i><b>7.4.4</b> Aproximación de una suma de variables Poisson</a></li>
+<li class="chapter" data-level="7.4.5" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#corrección-de-continuidad-de-fisher"><i class="fa fa-check"></i><b>7.4.5</b> Corrección de continuidad de Fisher</a></li>
+<li class="chapter" data-level="7.4.6" data-path="ley-de-los-grandes-números-y-teorema-central-del-límite.html"><a href="ley-de-los-grandes-números-y-teorema-central-del-límite.html#simulación-del-teorema-central-del-límite"><i class="fa fa-check"></i><b>7.4.6</b> Simulación del Teorema Central del Límite</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://www.udemy.com/course/probabilidad-y-variables-aleatorias-para-ml-con-r-y-python/?couponCode=B85F8D52148DF5AAD8F7" target="blank">Curso en Udemy</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Probabilidad y variables aleatorias para ML con R y Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probabilidad" class="section level1">
+<h1><span class="header-section-number">Tema 1</span> Probabilidad</h1>
+<div id="probabilidades-básicas" class="section level2">
+<h2><span class="header-section-number">1.1</span> Probabilidades Básicas</h2>
+<p><l class="definition"> Experimento aleatorio</l>: experimento que repetido en las mismas condiciones puede dar resultados diferentes, pero que a largo plazo son predecibles</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Tirar un dado de 6 caras y anotar el número de puntos de la cara superior.</p>
+</div>
+<p><l class="definition" >Suceso elemental</l>: cada uno de los posibles resultados del experimento aleatorio</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Los sucesos elementales del ejemplo anterior serían:</p>
+<div class="center">
+<p><img src="Images/proba1dibujos/dice/1.png" /><!-- --><img src="Images/proba1dibujos/dice/2.png" /><!-- --><img src="Images/proba1dibujos/dice/3.png" /><!-- --><img src="Images/proba1dibujos/dice/4.png" /><!-- --><img src="Images/proba1dibujos/dice/5.png" /><!-- --><img src="Images/proba1dibujos/dice/6.png" /><!-- --></p>
+</div>
+</div>
+<div id="definiciones-básicas" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Definiciones básicas</h3>
+<p><l class="definition"> Espacio muestral</l>: el conjunto <span class="math inline">\(\Omega\)</span> formado por todos los sucesos elementales del experimento aleatorio</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+El espacio muestral del ejemplo anterior del dado es
+<div class="center">
+<p><span class="math inline">\(\Omega=\Big\{\)</span><img src="Images/proba1dibujos/dice/1.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/2.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/3.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/4.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/5.png" /><!-- -->,
+<img src="Images/proba1dibujos/dice/6.png" /><!-- --><span class="math inline">\(\Big\}\)</span></p>
+</div>
+<p>pero por comodidad, a partir de ahora pondremos
+<span class="math display">\[\Omega = \{1,2,3,4,5,6\}\]</span></p>
+</div>
+<p><l class="definition"> Suceso </l> : Cualquier subconjunto del espacio muestral.</p>
+<p>Alguno sucesos notables que merece la pena nombrar son:</p>
+<ul>
+<li><l class="definition">Suceso seguro o cierto</l>: <span class="math inline">\(\Omega\)</span></li>
+<li><l class="definition">Suceso imposible o vacio</l>: <span class="math inline">\(\emptyset\)</span></li>
+<li><l class="definition">Partes de un conjunto</l>: <span class="math inline">\(\mathcal{P}(\Omega)\)</span>: conjunto de todos los sucesos del experimento aleatorio (es decir, el conjunto de todos los subconjuntos de <span class="math inline">\(\Omega\)</span>)</li>
+</ul>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>¿Cuantos elementos contiene el conjunto de partes de <span class="math inline">\(\Omega\)</span> del experimento anterior?</p>
+</div>
+<div id="ejemplo-n-grama" class="section level4">
+<h4><span class="header-section-number">1.1.1.1</span> Ejemplo <span class="math inline">\(n\)</span>-grama</h4>
+<p>Se define un <span class="math inline">\(n\)</span>-grama de una palabra como el conjunto de <span class="math inline">\(n\)</span> letras consecutivas de la misma (contando los blancos de inicio y final de palabra que marcamos como “_”).</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Consideremos el experimento aleatorio que consiste en escoger al azar un 3-grama de la palabra “_Baleares_”. Vamos a escribir el espacio muestral y algunos sucesos elementales del mismo.</p>
+</div>
+<div class="example-sol">
+<p>En este caso, si consideramos la palabra “_Baleares_”, el espacio muestral del experimento sería:</p>
+<p><span class="math display">\[\Omega=\{\_Ba, Bal, ale, lea, ear, are, res, es\_\}\]</span></p>
+<p>Algunos sucesos serían:</p>
+<ul>
+<li>3-gramas que empiezan por <span class="math inline">\(a\)</span>: <span class="math inline">\(\{ale,are\}\)</span></li>
+<li>3-gramas de inicio y final de palabra: <span class="math inline">\(\{\_Ba,es\_\}\)</span></li>
+<li>3-gramas que contengan una <span class="math inline">\(l\)</span>: <span class="math inline">\(\{Bal,ale,lea\}\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="operaciones-con-sucesos" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Operaciones con sucesos</h3>
+<p>Si tenemos dos sucesos <span class="math inline">\(A,B\subseteq \Omega\)</span>, podemos definir:</p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span>: <em>suceso</em> total o <em>seguro</em></li>
+<li><span class="math inline">\(\emptyset\)</span>:suceso <em>vacío</em> o <em>imposible</em></li>
+<li><span class="math inline">\(A\cup B\)</span>: suceso <em>unión</em>; el que ocurre si sucede <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(A\cap B\)</span>: suceso <em>intersección</em>; el que ocurre si sucede <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(A^c\)</span>: suceso <em>complementario</em> el que sucede si NO sucede <span class="math inline">\(A\)</span>.</li>
+<li><span class="math inline">\(A- B=A\cap B^c\)</span>: suceso <em>diferencia</em>, que acontece si sucede <span class="math inline">\(A\)</span> y NO sucede <span class="math inline">\(B\)</span>.</li>
+</ul>
+<p><l class="definition"> Sucesos incompatibles</l>: <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <em>incompatibles</em> (o <em>disjuntos</em>) cuando <span class="math inline">\(A\cap B=\emptyset\)</span>.</p>
+<div id="ejemplo-género" class="section level4">
+<h4><span class="header-section-number">1.1.2.1</span> Ejemplo género</h4>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Supongamos que el sexo se divide entre Mujeres y Hombres. Vamos a definir el espacio muestral, los sucesos elementales y a realizar algunas operaciones entre ellos.</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>Estudiantes de esta clase: <span class="math inline">\(\Omega\)</span></li>
+<li>Mujeres de esta clase: <span class="math inline">\(A\)</span></li>
+<li>Estudiantes que son zurdos <span class="math inline">\(B\)</span></li>
+</ul>
+<p>Algunas operaciones entre los conjuntos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: Est. que son mujeres o que son zurdos.</li>
+<li><span class="math inline">\(A\cap B\)</span>: Mujeres de esta clase que son zurdas.</li>
+<li><span class="math inline">\(A^c\)</span>: Hombres de esta clase.</li>
+<li><span class="math inline">\(A-B\)</span>: Mujeres de la clases que NO son zurdas.</li>
+<li><span class="math inline">\(B-A\)</span>: Hombres de la clase que son zurdos</li>
+<li>¡Cuidado! No son incompatibles</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="propiedades" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Propiedades</h3>
+<p><l class="definition">Conmutativas</l>:</p>
+<p><span class="math display">\[A\cup B=B\cup A, \quad A\cap B=B\cap A\]</span></p>
+<p><l class="definition">Asociativas</l>:</p>
+<p><span class="math display">\[A\cup(B\cup C)=(A\cup B)\cup C, \quad A\cap(B\cap C)=(A\cap B)\cap C\]</span></p>
+<p><l class="definition">Distributivas</l>:</p>
+<p><span class="math display">\[A\cap(B\cup C)=(A\cap B)\cup (A\cap C), \quad A\cup(B\cap C)=(A\cup B)\cap (A\cup C)\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\)</span></th>
+<th align="center"><span class="math inline">\(B\cap C\)</span></th>
+<th align="center"><span class="math inline">\(A\cup (B\cap C)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/distr11.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr12.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr13.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\cup B\)</span></th>
+<th align="center"><span class="math inline">\(A\cup C\)</span></th>
+<th align="center"><span class="math inline">\((A\cup B)\cap (A\cup C)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/distr21.jpg" class="image-caption" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr22.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/distr23.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+<p><l class="definition"> Complementario del complementario </l>
+<span class="math display">\[(A^c)^c=A\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\)</span></th>
+<th align="center"><span class="math inline">\(A^c\)</span></th>
+<th align="center"><span class="math inline">\((A^c)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/dd2.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/dd1.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/dd3.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cup B)^c=A^c\cap B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\cup B\)</span></th>
+<th align="center"><span class="math inline">\((A\cup B)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan6.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan7.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cup B)^c=A^c\cap B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A^c\)</span></th>
+<th align="center"><span class="math inline">\(B^c\)</span></th>
+<th align="center"><span class="math inline">\(A^c\cap B^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan8.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan9.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan10.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cap B)^c=A^c\cup B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A\cap B\)</span></th>
+<th align="center"><span class="math inline">\((A\cap B)^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan1.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan2.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+<p><l class="definition">Leyes de De Morgan</l></p>
+<p><span class="math display">\[(A\cap B)^c=A^c\cup B^c\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(A^c\)</span></th>
+<th align="center"><span class="math inline">\(B^c\)</span></th>
+<th align="center"><span class="math inline">\(A^c\cup B^c\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="Images/proba1dibujos/demorgan3.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan5.jpg" height="200" /></td>
+<td align="center"><img src="Images/proba1dibujos/demorgan4.jpg" height="200" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="definición-de-probabilidad" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Definición de probabilidad</h3>
+<p>La probabilidad de un suceso es una puntuación (<em>score</em>) numérico entre 0 y 1 que mide la verosimilitud de que este evento se produzca.</p>
+<p>Esta verosimilitud puede estar justificada por</p>
+<ul>
+<li><p>Estimación personal</p></li>
+<li><p>Estimación de expertos</p></li>
+<li><p>La frecuencia con la que se da</p></li>
+<li><p>Cálculo formal</p></li>
+</ul>
+<p>Sea <span class="math inline">\(\Omega\)</span> el espacio muestral de un experimento aleatorio.
+Supongamos que el número de posibles resultados, por el momento, es finito.</p>
+<p>Una probabilidad sobre <span class="math inline">\(\Omega\)</span> es una aplicación <span class="math inline">\(P:\mathcal{P}(\Omega)\to [0,1]\)</span> con las siguientes propiedades:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(0\leq P(A)\leq 1\)</span>, para todo suceso <span class="math inline">\(A\)</span></li>
+<li><span class="math inline">\(P(\Omega)=1\)</span></li>
+<li>Si <span class="math inline">\(\{A_1,A_2,\ldots,A_n\}\)</span> son sucesos disjuntos dos a dos, entonces</li>
+</ol>
+<p><span class="math display">\[
+P(A_1\cup A_2\cup \cdots \cup A_n)=P(A_1)+P(A_2)+\cdots +P(A_n)
+\]</span></p>
+<p>Si <span class="math inline">\(a\in \Omega\)</span> es un suceso elemental cometeremos el abuso de notación de poner <span class="math inline">\(P(a)\)</span> en lugar de <span class="math inline">\(P(\{a\})\)</span></p>
+<div id="ejemplo-grupos-sangíneos" class="section level4">
+<h4><span class="header-section-number">1.1.4.1</span> Ejemplo: grupos sangíneos</h4>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En la página de la <a href="http://www.donasang.org/que-es-la-sang/es_frequencies-dels-diferents-grups.html">Fundación Banco de Sangre y Tejidos de las Islas Baleares</a> podemos encontrar información sobre los porcentajes de tipos de sangre de los donantes de las Islas Baleares:</p>
+<p><span class="math display">\[A: 46\%; B: 7.5\%; AB: 3.5\%; O: 43\%\]</span></p>
+<p>¿Cuál es la probabilidad de que un balear donante de sangre no sea del tipo 0?</p>
+</div>
+<div class="example-sol">
+<p><strong>Experimento aleatorio:</strong> tipo de sangre de un paciente humano</p>
+<p><span class="math display">\[\Omega=\{\mbox{A,B,AB,O}\}\]</span></p>
+<p><strong>Probabilidad</strong> de un suceso: se asimila al porcentaje observado de individuos</p>
+<p><strong>Suceso:</strong> <span class="math inline">\(\{\mbox{O}\}^c=\{\mbox{A,B,AB}\}\)</span></p>
+<p><span class="math display">\[P(\{\mbox{O}\}^c)\!=\!P(\{\mbox{A,B,AB}\})\!=\!
+P(\mbox{A})+P (\mbox{B})+P(\mbox{AB})\!=\!0.57\]</span></p>
+</div>
+</div>
+</div>
+<div id="propiedades-1" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> Propiedades</h3>
+<div class="prop">
+Propiedades básicas de la probabilidad
+</div>
+<ul>
+<li><p><span class="math inline">\(P(\emptyset)=0\)</span></p></li>
+<li><p><span class="math inline">\(P(A-B)=P(A)-P(A\cap B)\)</span> porque <span class="math inline">\(P(A)=P(A-B)+P(A\cap B)\)</span></p></li>
+</ul>
+<div class="center">
+<p><img src="Images/proba1dibujos/A-B.jpg" height="200" /></p>
+</div>
+<ul>
+<li><p>Si <span class="math inline">\(B\subseteq A\)</span>, entonces <span class="math inline">\(0\leq P(B)\leq P(A)\)</span></p></li>
+<li><p><span class="math inline">\(P(A^c)=1-P(A)\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</span> porque</p></li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A)+P(B)-P(A\cap B) &amp;=&amp; P(A-B)+P(A\cap B)+\\
+ &amp; &amp; P(B-A)+ P(A\cap  B)-P(A\cap  B)\\
+&amp;=&amp; P(A-B)+P(A\cap B)+ P(B-A) \\
+&amp;=&amp; P(A\cup B)
+\end{eqnarray*}\]</span></p>
+<div class="center">
+<p><img src="Images/proba1dibujos/A-B.jpg" height="200" /></p>
+</div>
+<ul>
+<li><span class="math display">\[\begin{eqnarray*}
+P(A\cup B\cup C)&amp;=&amp;P(A)+P(B)+P(C)  \\ &amp;&amp;-P(A\cap B)-P(A\cap C)-P(B\cap C)  +P(A\cap B\cap C)
+\end{eqnarray*}\]</span></li>
+</ul>
+<div class="center">
+<p><img src="Images/proba1dibujos/tresconjunts.jpg" height="200" /></p>
+</div>
+<p><span class="math display">\[P(A\cup B\cup C)=P(1)+P(2)+P(3)+P(4)+P(5)+P(6)+P(7)\]</span></p>
+<ul>
+<li><p>Si <span class="math inline">\(A=\{a_1,a_2,\ldots,a_k\}\)</span>, entonces
+<span class="math display">\[
+P(A)=P(a_1)+P(a_2)+\cdots+P(a_k)
+\]</span></p></li>
+<li><p>Si todos los sucesos elementales tienen la misma probabilidad,
+<span class="math display">\[
+P(A)=\frac{|A|}{|\Omega|}\Big(=\frac{\mbox{casos favorables}}{\mbox{casos posibles}}\Big)
+\]</span></p></li>
+</ul>
+<div id="ejemplos" class="section level4">
+<h4><span class="header-section-number">1.1.5.1</span> Ejemplos</h4>
+<div class="example">
+<p><strong>Ejemplo: : Frecuencia de vocales</strong></p>
+<p>Los porcentajes de vocales de un determinado idioma (de alfabeto latino) según la <a href="https://es.wikipedia.org/wiki/Frecuencia_de_aparici%C3%B3n_de_letras">Wikipedia</a> son:</p>
+<p><span class="math display">\[A: 18.7\%; E: 26.1\%; I: 25.7\%; O: 24.4\% U: 5.1\%\]</span></p>
+<p>¿Cuál es la probabilidad que una vocal escogida al azar de este idioma sea una E o una O?</p>
+</div>
+<div class="example-sol">
+<p>El espacio muestral del experimento es <span class="math inline">\(\Omega=\{A,E,I,O,U\}\)</span>.</p>
+<p>El suceso que deseamos analizar es <span class="math inline">\(\{E,0\}\)</span>.</p>
+<p>Y su probabilidad es</p>
+<p><span class="math display">\[P(\{E,O\})=P(E)+P(O)=0.261+0.244=0.505.\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejemplo: Consumo de drogas</strong></p>
+<p>Segun un árticulo de <a href="https://elpais.com/politica/2019/01/02/actualidad/1546426491_623324.html">El País</a>, en un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
+<p>¿Cuál es la probabilidad que un individuo analizado en el control de drogas escogido al azar no de positivo en ninguno de lo dos test?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos elementales del enunciado del problema son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: dar positivo en alguno de los dos test; <span class="math inline">\(P(A\cup B)=0.0105\)</span></li>
+<li><span class="math inline">\((A\cup B)^c\)</span>: no dar positivo en ninguno de los test</li>
+</ul>
+<p>de donde, por tanto:
+<span class="math display">\[P((A\cup B)^c)=1-P(A\cup B)=1-0.0105=0.9895.\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>En un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
+<p>¿Cuál es la probabilidad que un analizado al azar de positivo en los dos test en cocaína y cannabis?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos elementales son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cup B\)</span>: dar positivo en algún de los dos test; <span class="math inline">\(P(A\cup B)=0.0105\)</span></li>
+<li><span class="math inline">\(A\cap B\)</span>: dar positivo en los dos test</li>
+</ul>
+<p>de donde, por tanto:</p>
+<p><span class="math display">\[\begin{array}{rl}
+{P(A\cap B)} &amp;{=P(A)+P(B)-P(A\cup B)}\\ &amp;{=0.001+0.01-0.0105=0.0005}
+\end{array}\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejemplo: Control de drogas</strong></p>
+<p>En un control especial de la policía el <span class="math inline">\(0.1\%\)</span> de todos los conductores analizados en un control de tráfico dan positivo en un el test en cocaína, y el <span class="math inline">\(1\%\)</span> da positivo en cannabis. Un <span class="math inline">\(1.05\%\)</span> da positivo en alguno de los dos test.</p>
+<p>¿Cuál es la probabilidad de que un conductor analizado de positivo en cocaína pero no en cannabis?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos elementales son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: dar positivo en cocaína; <span class="math inline">\(P(A)=0.001\)</span></li>
+<li><span class="math inline">\(B\)</span>: dar positivo en cannabis; <span class="math inline">\(P(B)=0.01\)</span></li>
+</ul>
+<p>En este caso nos interesa estudiar los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\cap B\)</span>: dar positivo en los dos test; <span class="math inline">\(P(A\cap B)=0.0005\)</span></li>
+<li><span class="math inline">\(B-A\)</span>: dar positivo en cocaína pero no en cannabis</li>
+</ul>
+<p>de donde, por tanto:</p>
+<p><span class="math display">\[P(B-A) =P(B)-P(A\cap B) =0.01-0.0005=0.0095\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="probabilidad-condicionada" class="section level2">
+<h2><span class="header-section-number">1.2</span> Probabilidad condicionada</h2>
+<p><l class="definition"> Probabilidad condicionada</l>: Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, con <span class="math inline">\(P(A)&gt;0\)</span>, la probabilidad <span class="math inline">\(P(B|A)\)</span> de <span class="math inline">\(B\)</span> condicionado a <span class="math inline">\(A\)</span> es la probabilidad</p>
+<ul>
+<li>de que suceda <span class="math inline">\(B\)</span> suponiendo que pasa <span class="math inline">\(A\)</span></li>
+<li>de que si pasa <span class="math inline">\(A\)</span>, entonces suceda <span class="math inline">\(B\)</span></li>
+<li>de que un resultado de <span class="math inline">\(A\)</span> también pertenezca a <span class="math inline">\(B\)</span></li>
+</ul>
+<p>Se calcula a través de la definición:</p>
+<p><span class="math display">\[
+P(B|A)=\frac{P(A\cap B)}{P(A)}
+\]</span></p>
+<div id="ejemplos-1" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Ejemplos</h3>
+<div class="example">
+<p><strong>Ejemplo: frecuencia género y gafas</strong></p>
+<p>En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>¿Cuál es la probabilidad de que un alumno lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{33}{50}
+\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad de que un alumno sea mujer y lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{50}
+\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejemplo: sexo y gafas</strong></p>
+<p>En una clase de 20 hombres y 30 mujeres, 15 hombres y 18 mujeres llevan gafas. Contestemos las siguientes preguntas:</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>¿Cuál es la probabilidad de que un chica lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{30}=\frac{18/50}{30/50}=\frac{P(\mbox{mujer  y gafas})}{P(\mbox{mujer})}
+\]</span></p>
+<ul>
+<li>Si escogemos un estudiante al azar ¿Cuál es la probabilidad que si es mujer, entonces lleve gafas?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{30}
+\]</span></p>
+</div>
+<div class="example-sol">
+<ul>
+<li>¿Cuál es la probabilidad de que un alumno que lleve gafas sea mujer?</li>
+</ul>
+<p><span class="math display">\[
+\frac{18}{33}=\frac{18/50}{33/50}=\frac{P(\mbox{mujer y gafas})}{P(\mbox{gafas})}
+\]</span></p>
+<ul>
+<li>Si escogemos un estudiante al azar ¿Cuál es la probabilidad de que si lleva gafas, entonces sea mujer?
+<span class="math display">\[
+\frac{18}{33}
+\]</span></li>
+</ul>
+</div>
+</div>
+<div id="atención" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> ¡Atención!</h3>
+<p>Hay que distinguir bien entre</p>
+<ul>
+<li><span class="math inline">\(P(A\cap B)\)</span>: probabilidad de <span class="math inline">\(A\)</span> <span class="math inline">\(\color{red}{\text{y}}\)</span> <span class="math inline">\(B\)</span></li>
+</ul>
+<p><em>Probabilidad de que sea mujer y lleve gafas</em></p>
+<ul>
+<li><span class="math inline">\(P(A|B)\)</span>: probabilidad de que <span class="math inline">\(\color{red}{\text{si}}\)</span> pasa <span class="math inline">\(B\)</span>, <span class="math inline">\(\color{red}{\text{entonces}}\)</span> pase <span class="math inline">\(A\)</span>.</li>
+</ul>
+<p><em>Probabilidad de que, si es mujer, lleve gafas</em></p>
+<p>Cuando utilizamos probabilidad condicional <span class="math inline">\(P(A|B)\)</span> estamos restringiendo el espacio muestral a <span class="math inline">\(B\)</span></p>
+</div>
+<div id="propiedades-2" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Propiedades</h3>
+<p>La probabilidad condicionada es una probabilidad</p>
+<div class="prop">
+Proposición
+</div>
+<p>Sea <span class="math inline">\(A\subseteq \Omega\)</span> un suceso tal que <span class="math inline">\(P(A)&gt;0\)</span>. entonces</p>
+<p><span class="math display">\[
+\begin{array}{rccl}
+P(-|A):&amp; \mathcal{P}(\Omega) &amp; \to &amp; [0,1]\\
+&amp;B &amp; \mapsto &amp; P(B|A)
+\end{array}
+\]</span>
+satisface las propiedades de las probabilidades, como por ejemplo:</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(B^c|A)=1-P(B|A)\\
+P(B_1\cup B_2|A)=P(B_1|A)+P(B_2|A)-P(B_1\cap B_2|A)
+\end{array}
+\]</span></p>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<p>Escribid el resto de propiedades que cumpliría una probabilidad condicionada al evento <span class="math inline">\(A\)</span>.</p>
+</div>
+<div id="ejemplos-2" class="section level4">
+<h4><span class="header-section-number">1.2.3.1</span> Ejemplos</h4>
+<div class="example">
+<p><strong>Ejemplo: Hipertensos</strong></p>
+<p>Un 15% de los adultos son hipertensos, un 25% de los adultos creen que son hipertensos, y un 9% de los adultos son hipertensos y creen que lo son.</p>
+<ul>
+<li>¿Si un adulto cree que es hipertenso, ¿cuál es la probabilidad que lo sea?</li>
+<li>¿Si un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?</li>
+</ul>
+</div>
+<div class="example-sol">
+<p>Sean los sucesos</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: ser hipertenso; <span class="math inline">\(P(A)=0.15\)</span></li>
+<li><span class="math inline">\(B\)</span>: creer ser hipertenso; <span class="math inline">\(P(B)=0.25\)</span></li>
+</ul>
+<p>entonces podemos definir el suceso:</p>
+<ul>
+<li><span class="math inline">\(A\cap B\)</span>: ser hipertenso y creerlo; <span class="math inline">\(P(A\cap B)=0.09\)</span></li>
+</ul>
+<p>de donde, la probabilidad condicionada de ser hipertenso creyéndonos que lo somos es:</p>
+<p><span class="math display">\[P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0.09}{0.25}=0.36\]</span></p>
+<p>¿Si un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?</p>
+<p>¿Si un adulto es hipertenso, ¿cuál es la probabilidad que crea que lo es?</p>
+<p>Si tenemos los sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: ser hipertenso;</li>
+<li><span class="math inline">\(B\)</span>: creer ser hipertenso</li>
+</ul>
+<p>entonces buscamos la probabilidad <span class="math inline">\(P(B|A)\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B|A) &amp; =\dfrac{P(A\cap B)}{P(A)}=\dfrac{0.09}{0.15}=
+0.6
+\end{array}
+\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejemplo: dígitos de control</strong></p>
+<p>Un dígito de control de error toma el valor 0 en el 99% de los casos en que hay un error. Si la probabilidad de error en un mensaje es del <span class="math inline">\(0.5\%\)</span>. \blue{¿cuál es la probabilidad de que el mensaje sea erróneo y el código de error tenga valor 0?</p>
+</div>
+<div class="example-sol">
+<ul>
+<li><span class="math inline">\(B\)</span>: mensaje con error; <span class="math inline">\(P(B)=0.005\)</span></li>
+<li><span class="math inline">\(A\)</span>: código de error vale 0;</li>
+<li><span class="math inline">\(P(A|B)=0.99\)</span></li>
+</ul>
+<p>entonces:
+<span class="math display">\[P(A\cap B)=P(B)\cdot P(A|B)=0.005\cdot 0.99=0.00495\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejemplo: SPAM</strong></p>
+<p>Un 50% de correos recibidos en un servidor llevan adjuntos y un 65% son publicidad no deseada (SPAM). Sólo un 15% de estos correos no llevan adjuntos y no son SPAM.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</li>
+<li>¿Cuál es la probabilidad que un correo <strong>no</strong> tenga adjuntos si <strong>no</strong> es SPAM?</li>
+<li>¿Cuál es la probabilidad de que un correo no lleve adjuntos si no es SPAM?</li>
+</ul>
+</div>
+<div class="example-sol">
+<p>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: llevar adjuntos; <span class="math inline">\(P(A)=0.5\)</span></li>
+<li><span class="math inline">\(S\)</span>: SPAM; <span class="math inline">\(P(S)=0.65\)</span></li>
+<li><span class="math inline">\(A^c\cap S^c=(A\cup S)^c\)</span>: no llevar adjunto y no ser SPAM; <span class="math inline">\(P((A\cup S)^c)=0.15\)</span></li>
+</ul>
+<p><span class="math display">\[P(A|S)=\dfrac{P(A\cap S)}{P(S)}=?\]</span></p>
+<p>¿Cuál es la probabilidad que un correo lleve adjunto si es SPAM?</p>
+<ul>
+<li><p><span class="math inline">\(P(A)=0.5, P(S)=0.65, P(A^c\cap S^c)=P((A\cup S)^c)=0.15\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cup S)=1-P((A\cup S)^c)=0.85\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cap S)=P(A)+P(S)-P(A\cup S)=0.3\)</span></p></li>
+</ul>
+<p><span class="math display">\[P(A|S)=\dfrac{P(A\cap S)}{P(S)}=\dfrac{0.3}{0.65}\approx 0.46\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad de que un correo no lleve adjuntos si no es SPAM?</li>
+</ul>
+<p><span class="math inline">\(P(A)=0.5, P(S)=0.65, P(A^c\cap S^c)=P((A\cup S)^c)=0.15\)</span></p>
+<p><span class="math display">\[P(A^c|S^c)=\dfrac{P(A^c\cap S^c)}{P(S^c)}=\dfrac{P(A^c\cap S^c)}{1-P(S)}=\dfrac{0.15}{0.35}\approx 0.43\]</span></p>
+</div>
+</div>
+</div>
+<div id="teorema-de-la-probabilidad-total" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Teorema de la probabilidad total</h3>
+<div class="prop">
+Teorema de la probabilidad total
+</div>
+<p>Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se tiene que</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B)&amp;= P(B\cap A) +P(B\cap A^c)\\
+&amp; =P(A)\cdot P(B|A)+ P(A^c)\cdot P(B|A^c)
+\end{array}
+\]</span></p>
+<div class="prop">
+Partición del espacio espacio muestral
+</div>
+<p>Los sucesos <span class="math inline">\(A_1,A_2,\ldots, A_n\)</span> son una <strong>partición</strong> del espacio muestral <span class="math inline">\(\Omega\)</span> de un determinado experimento aleatorio, si cumplen las condiciones siguientes:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A_1\cup A_2\cup\ldots\cup A_n=\Omega\)</span></li>
+<li><span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> son incompatibles dos a dos (<span class="math inline">\(A_i\cap A_j=\emptyset\)</span>)</li>
+</ol>
+<div class="prop">
+Teorema de la probabilidad total
+</div>
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición de <span class="math inline">\(\Omega\)</span>. Sea <span class="math inline">\(B\)</span> un suceso cualquiera. Entonces</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(B)&amp;= P(B\cap A_1)+\cdots +P(B\cap A_n)\\
+&amp; =P(A_1)\cdot P(B|A_1)+\ldots+P(A_n)\cdot P(B|A_n)
+\end{array}
+\]</span></p>
+<div id="ejemplos-3" class="section level4">
+<h4><span class="header-section-number">1.2.4.1</span> Ejemplos</h4>
+<div class="example">
+<p><strong>Ejemplo: Dígito de control de error</strong></p>
+<p>Un dígito de control de error toma el valor 0 en un <span class="math inline">\(99\%\)</span> de los casos en que hay un error y en un <span class="math inline">\(5\%\)</span> de los mensajes sin error.
+La probabilidad de error en un mensaje es del <span class="math inline">\(0.5\%\)</span></p>
+<p>¿Cuál es la probabilidad de que un mensaje escogido al azar tenga el dígito de control a 0?</p>
+</div>
+<div class="example-sol">
+<p>Sean los sucesos del enunciado:</p>
+<ul>
+<li><span class="math inline">\(B\)</span>: mensaje con error; <span class="math inline">\(P(B)=0.005\)</span></li>
+<li><span class="math inline">\(A\)</span>: código de error vale 0;</li>
+</ul>
+<p>entonces obtenemos las probabilidades a partir del enunciado:</p>
+<ul>
+<li><span class="math inline">\(P(A|B)=0.99\)</span></li>
+<li><span class="math inline">\(P(A|B^c)= 0.05\)</span></li>
+</ul>
+<p>y por tanto,</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+P(A) &amp; =P(B)\cdot P(A|B)+P(B^c)\cdot P(A|B^c)\\ &amp;
+=0.005\cdot 0.99+0.995\cdot 0.05=0.0547\end{array}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="clasificación-o-diagnósticos" class="section level3">
+<h3><span class="header-section-number">1.2.5</span> Clasificación o Diagnósticos</h3>
+<p>Consideremos alguna de las siguientes situaciones:</p>
+<ul>
+<li>Un algoritmo detecta si una transacción con tarjeta de crédito es fraude o no.</li>
+<li>Un algoritmo detecta si tiene o no que mostrar un anuncio en una web.</li>
+<li>Un prueba de embarazo.</li>
+<li>Una prueba médica para una enfermedad concreta.</li>
+</ul>
+<p>Nos ceñiremos a la casuística más elemental el algoritmo de clasificación o la diagnosis solo da dos resultado <strong>Positivo</strong> (sí tienes la enfermedad, sí es un fraude) o <strong>Negativo</strong> (en caso contrario).</p>
+<p>En todas estas situaciones podemos calcular lo que se llama <strong>matriz de confusión</strong> que representa todas las situaciones posibles. En el caso de estudiar una condición de tipo binario,</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">El Test da Positivo</th>
+<th align="center">El Test da Negativo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Condición Positiva</td>
+<td align="center">Correcto</td>
+<td align="center">Error</td>
+</tr>
+<tr class="even">
+<td align="center">Condición Negativa</td>
+<td align="center">Error</td>
+<td align="center">Correcto</td>
+</tr>
+</tbody>
+</table>
+<p>En general los modelos y algoritmos de clasificación suelen aportar puntuaciones (<em>scores</em>) que determinan el grado de pertenencia a una clase, o que miden si dos objetos están en la misma clase.</p>
+<p>Así el resultado del clasificador o del diagnóstico puede ser:</p>
+<ul>
+<li><strong>un número real</strong>, en cuyo caso debe clasificador entre cada clase debe determinarse por un valor umbral (<em>threshold</em>) por ejemplo para determinar si una persona está estresado podemos dar un <em>scores</em> entre 0 y 1 (1 máximo estrés 0 estrés nulo):</li>
+<li><strong>un resultado discreto</strong> que indica directamente una de las clases (esto es necesario si es un algoritmo que debe decidir qué hacer con el objeto.</li>
+</ul>
+<!--<div class="center">
+[![SiliconValley]](https://www.youtube.com/watch?v=pqTntG1RXSY "SiliconValley")
+</div>-->
+<div class="definition">
+Positivos y Negativos en Clasificación
+</div>
+<p>Consideremos un problema de predicción de clases binario, en la que los resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles resultados a partir de un clasificador binario como el propuesto.</p>
+<ul>
+<li>Si el resultado de una exploración es P y el valor dado es también P, entonces se conoce como un Verdadero Positivo (VP).</li>
+<li>Sin embargo si el valor real es N entonces se conoce como un Falso Positivo (FP).</li>
+<li>De igual modo, tenemos un Verdadero Negativo (VN) cuando tanto la exploración como el valor dado son N.</li>
+<li>Un Falso Negativo (FN) cuando el resultado de la predicción es N pero el valor real es P.</li>
+</ul>
+<p>Un ejemplo aproximado de un problema real es el siguiente: consideremos una prueba diagnóstica que persiga determinar si una persona tiene una cierta enfermedad.</p>
+<ul>
+<li>Un falso positivo en este caso ocurre cuando la prueba predice que el resultado es positivo, cuando la persona no tiene realmente la enfermedad.</li>
+<li>Un falso negativo, por el contrario, ocurre cuando el resultado de la prueba es negativo, sugiriendo que no tiene la enfermedad cuando realmente sí la tiene.</li>
+</ul>
+<p>En un diagnósticos de una cierta condición (por ejemplo, test embarazo, test de enfermedad), tenemos dos tipos de sucesos:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: el test da positivo</li>
+<li><span class="math inline">\(M\)</span>: el sujeto satisface la condición</li>
+</ul>
+<p><l class="definition"> Falsos Positivos y Falsos Negativos</l></p>
+<ul>
+<li><strong>Falsos positivos</strong> <span class="math inline">\(T\cap M^c\)</span>: El test da positivo, pero la condición no es da</li>
+<li><strong>Coeficiente de falsos positivos</strong> <span class="math inline">\(P(T|M^c)\)</span></li>
+<li><strong>Falsos negativos</strong> <span class="math inline">\(T^c\cap M\)</span>: El test da negativo, pero la condición sí que se da</li>
+<li><strong>Coeficiente de falsos negativos</strong>: <span class="math inline">\(P(T^c|M)\)</span></li>
+</ul>
+<div id="ejemplos-4" class="section level4">
+<h4><span class="header-section-number">1.2.5.1</span> Ejemplos</h4>
+<div class="example">
+<p><strong>Ejemplo: Prueba médica</strong></p>
+<p>Un test diseñado para diagnosticar una determinada enfermedad tiene un coeficiente de falsos negativos de 0.06, y un coeficiente de falsos positivos de 0.04. En un estudio masivo se observa que un 15% de la población da positivo al test.</p>
+<p>¿Cuál es la probabilidad que una persona escogida aleatoriamente tenga esta enfermedad?</p>
+</div>
+<div class="example-sol">
+<p>Los datos del problema son:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: dar positivo al test; <span class="math inline">\(P(T)=0.15\)</span></li>
+<li><span class="math inline">\(M\)</span>: tener la enfermedad</li>
+<li><span class="math inline">\(P(T)=0.15\)</span>, <span class="math inline">\(P(T^c|M)=0.06\)</span>, <span class="math inline">\(P(T|M^c)=0.04\)</span></li>
+<li>¿<span class="math inline">\(P(M)\)</span>?</li>
+</ul>
+</div>
+<div class="example-sol">
+<ul>
+<li><span class="math inline">\(P(T)=0.15\)</span>, <span class="math inline">\(P(T^c|M)=0.06\)</span>, <span class="math inline">\(P(T|M^c)=0.04\)</span></li>
+</ul>
+<p><span class="math display">\[
+P(T) =P(M)\cdot P(T|M)+P(M^c)\cdot P(T|M^c)
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+\begin{array}{l}
+P(T|M)=1-P(T^c|M)=0.94 \\[1ex]
+P(M^c)=1-P(M)
+\end{array}
+\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+0.15 &amp; = P(M)\cdot 0.94+(1-P(M))\cdot 0.04\\
+ &amp; =0.04+0.9P(M)\\[1ex]
+P(M) &amp; =\dfrac{0.11}{0.9}\approx 0.1222.
+\end{array}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="bayes" class="section level2">
+<h2><span class="header-section-number">1.3</span> Bayes</h2>
+<div id="fórmula-de-bayes" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Fórmula de Bayes</h3>
+<div class="definition">
+Teorema de Bayes
+</div>
+<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos sucesos. Si <span class="math inline">\(P(B)&gt;0\)</span>, entonces</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A|B) &amp; = &amp; \frac{P(A)\cdot P(B\big|A)}{P(B)}\\
+&amp;=&amp; \frac{P(A)\cdot P(B\big|A)}{P(A)\cdot P(B\big|A)+P(A^c)\cdot P(B\big|A^c)}
+\end{eqnarray*}\]</span></p>
+<div class="example">
+<p><strong>Ejercicio</strong></p>
+<p>Demostrar el teorema de Bayes utilizando que</p>
+<p><span class="math display">\[P(A|B) =\frac{P(A\cap B)}{P(B)}=\cdots\]</span></p>
+</div>
+<div class="definition">
+Teorema de Bayes
+</div>
+<p>Sea <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición de <span class="math inline">\(\Omega\)</span>. Sea <span class="math inline">\(B\)</span> un suceso tal que <span class="math inline">\(P(B)&gt;0\)</span>. entonces(para cualquier <span class="math inline">\(i=1,2,\ldots,n\)</span>):</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A_i|B) &amp; =&amp; \dfrac{P(A_i)\cdot P(B|A_i)}{P(B)}\\
+&amp; =&amp; \dfrac{P(A_i)\cdot P(B|A_i)}{P(A_1)\cdot P(B|A_1)+\cdots+P(A_n)\cdot P(B|A_n)}
+\end{eqnarray*}\]</span></p>
+</div>
+<div class="example">
+<p><strong>Ejercicio</strong></p>
+<p>Demostrar el teorema de Bayes utilizando que</p>
+<p><span class="math display">\[P(A_i|B) =\dfrac{P(A_i\cap B)}{P(B)}=\cdots\]</span></p>
+</div>
+</div>
+<div id="ejemplo-vih" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Ejemplo VIH</h3>
+<div class="example">
+<p><strong>Ejemplo: Test VIH</strong></p>
+<p>Un test para detección de VIH da positivo un 99% de los casos en los que está presente y en un 5% de los casos en los que el virus está ausente. En una población con un <span class="math inline">\(0.5\%\)</span> de infectados por VIH:</p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo que haya dado positivo en el test esté infectado?</li>
+<li>¿Cuál es la probabilidad de que un individuo que haya dado <strong>negativo</strong> en el test <strong>no</strong> esté infectado?</li>
+</ul>
+</div>
+<div class="example-sol">
+<p>Los sucesos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: individuo infectado</li>
+<li><span class="math inline">\(B\)</span>: el test da positivo</li>
+</ul>
+<p>Ahora podemos calcular la probabilidad que un individuo que haya dado positivo en el test esté infectado</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A|B) &amp; =&amp; \dfrac{P(B|A)\cdot P(A)}{P(B|A)\cdot P(A)+P(B|A^c)\cdot P(A^c)}\\
+&amp;=&amp;\dfrac{0.99\cdot 0.005}{0.005\cdot 0.99+0.995\cdot 0.05}=0.09
+\end{eqnarray*}\]</span></p>
+<p>Para calcular la probabilidad de que un individuo que haya dado <strong>negativo</strong> en el test <strong>no</strong> esté infectado hacemos;</p>
+<p><span class="math display">\[
+\begin{array}{rl} P(A^c|B^c)&amp; =\dfrac{P(B^c|A^c)\cdot P(A^c)}{P(B^c|A)\cdot P(A)+P(B^c|A^c)\cdot P(A^c)}\\ &amp; =\dfrac{0.95\cdot 0.995}{0.01\cdot 0.005+0.95\cdot 0.995}=0.999947\end{array}
+\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio: Ventas por internet</strong></p>
+<p>Se ha observado que los cientes de una empresa de ventas por internet son de tres tipos, A, B y C, disjuntos dos a dos. La probabilidad que ser de cualquiera de cada uno de los tipos es <span class="math inline">\(1/3\)</span>, pero la probabilidad de compra de cada tipo es diferente: si es de tipo A compra un 50% de las veces, si de tipo B, un 75% de las veces, y de tipo C, un 60%.</p>
+<p>Supongamos que llega un cliente ¿cuál es la probabilidad de que si ha comprado sea del tipo B?</p>
+</div>
+<div class="example-sol">
+<ul>
+<li>Los sucesos del ejercicio son <span class="math inline">\(A\)</span>: el cliente es de tipo A; <span class="math inline">\(B\)</span>: el cliente es de tipo B; <span class="math inline">\(C\)</span>: el cliente es de tipo C;</li>
+</ul>
+<p><span class="math display">\[P(A)=P(B)=P(C)=1/3\]</span></p>
+<p>Buscamos estrudiar el suceso <span class="math inline">\(E\)</span>: el cliente compra</p>
+<p><span class="math display">\[P(E|A)=0.5, P(E|B)=0.75, P(E|C)=0.6\]</span></p>
+<p><span class="math display">\[P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P(B)\!+\!P(E|C)\!\cdot\! P(C)}\!=\!\ldots\]</span></p>
+</div>
+<div class="exercise">
+<p><strong>Ejercicio: Detección precoz de abandono de clientes</strong></p>
+<p>Un test de detección precoz de abandono de clientes de una empresa de telefonía da positivo el 97.5% de las ocasiones en las que, posteriormente, el cliente se da de baja, y un 12% de las veces en que no se dio de baja. La probabilidad que un cliente escogido al azar se dé de baja es de un 2%.</p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?</li>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?</li>
+<li>¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?</li>
+</ul>
+</div>
+<div class="example-sol">
+<p>Definimos los sucesos y datos del ejercicio:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: Dar positivo al test</li>
+<li><span class="math inline">\(B\)</span>: darse de baja; <span class="math inline">\(P(B)=0.02\)</span></li>
+<li><span class="math inline">\(P(T|B)=0.975, P(T|B^c)=0.12\)</span></li>
+</ul>
+</div>
+<div class="exercise-sol">
+<p><span class="math display">\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar de positivo en el test?</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+P(T) &amp;= &amp; P(B)\cdot P(T|B)+P(B^c)\cdot P(T|B^c)\\
+&amp; = &amp;0.02\cdot 0.975+0.98\cdot 0.12=0.1371
+\end{eqnarray*}\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo escogido al azar se de de baja y dé positivo en el test?</li>
+</ul>
+<p><span class="math display">\[P(B\cap T)= P(B)\cdot P(T|B)=0.02\cdot 0.975=0.0195\]</span></p>
+</div>
+<div class="exercise-sol">
+<p><span class="math display">\[P(B)=0.02, P(T|B)=0.975, P(T|B^c)=0.12\]</span></p>
+<ul>
+<li>¿Cuál es la probabilidad que un individuo que dé negativo en el test se dé de baja?</li>
+</ul>
+<p><span class="math display">\[\begin{eqnarray*}
+P(B|T^c) &amp; = &amp;\displaystyle \frac{P(B\cap T^c)}{P(T^c)}=
+\frac{P(B)-P(B\cap T)}{1-P(T)}\\
+&amp; = &amp; \displaystyle
+\frac{0.02-0.0195}{1-0.1371}\approx 0.00058
+\end{eqnarray*}\]</span></p>
+<ul>
+<li>O también se obtiene así
+<span class="math display">\[
+P(B|T^c)=\frac{P(T^c|B)\cdot P(B)}{P(T^c|B)\cdot P(B)+P(T^c|B^c)\cdot P(B^c)}
+\]</span></li>
+</ul>
+<p>donde</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(T^c|B)&amp;=&amp;1-P(T|B)=0.025,\\ P(T^c|B^c)&amp;=&amp;1-P(T|B^c)=0.88
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+</div>
+<div id="independencia-de-sucesos" class="section level2">
+<h2><span class="header-section-number">1.4</span> Independencia de sucesos</h2>
+<div id="sucesos-independientes" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Sucesos independientes</h3>
+<p><l class="definition"> Sucesos Independientes </l></p>
+<p>Diremos que los sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>independientes</strong> si <span class="math inline">\(P(A\cap B)=P(A)\cdot P(B)\)</span></p>
+<p><span class="math inline">\(A_1,\ldots, A_n\)</span> son sucesos <strong>independientes</strong> cuando, para toda
+subfamilia <span class="math inline">\(A_{i_1},\ldots,A_{i_k}\)</span>,
+<span class="math display">\[
+P(A_{i_1}\cap \cdots\cap A_{i_k})=P(A_{i_1})\cdots P(A_{i_k})
+\]</span></p>
+<p><l class="prop"> Proposición </l>
+Dados dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> con <span class="math inline">\(P(A),P(B)&gt;0\)</span>, las siguientes afirmaciones son equivalentes:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes</li>
+<li><span class="math inline">\(P(A|B)=P(A)\)</span></li>
+<li><span class="math inline">\(P(B|A)=P(B)\)</span>
+</l></li>
+</ol>
+<p><l class="prop"> Proposición </l></p>
+<p>Las siguientes afirmaciones son equivalentes:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes.</li>
+<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span> son independientes.</li>
+<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
+<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
+</ol>
+<div id="ejemplo" class="section level4">
+<h4><span class="header-section-number">1.4.1.1</span> Ejemplo</h4>
+<div class="example">
+<p><strong>Ejemplo: Compra billete avión</strong></p>
+<p>En la web de viajes WEBTravel, el 55% de los clientes compra billete de avión, el <span class="math inline">\(20\%\)</span> alojamiento en hotel, y el <span class="math inline">\(60\%\)</span> billete de avión o alojamiento en hotel. ¿Son los sucesos comprar billete de avión y comprar alojamiento en hotel independientes?</p>
+</div>
+<div class="example-sol">
+<p>Los sucesos y datos del ejemplo son:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: comprar billete de avión; <span class="math inline">\(P(A)=0.55\)</span></li>
+<li><span class="math inline">\(B\)</span>: comprar alojamiento; <span class="math inline">\(P(B)=0.2\)</span></li>
+</ul>
+<p>por tanto, podemos calcular las probabilidades siguientes</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(A\cap B) &amp; = &amp;P(A)+P(B)-P(A\cup B)\\ 
+&amp; = &amp;0.55+0.2-0.6=0.15\\ 
+P(A)\cdot P(B) &amp; = &amp; 0.55\cdot 0.2=0.11
+\end{eqnarray*}\]</span></p>
+<p>Por tanto, concluimos que son dependientes, ya que <span class="math inline">\(P(A\cap B)\neq P(A)\cdot P(B)\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="sucesos-independientes-vs-disjuntos" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Sucesos independientes vs disjuntos</h3>
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+<ol style="list-style-type: decimal">
+<li>Dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> disjuntos, ¿son necesariamente independientes?</li>
+<li>Dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> independientes, ¿son necesariamente disjuntos?</li>
+<li><span class="math inline">\(\emptyset\)</span> y un suceso cualquiera <span class="math inline">\(A\)</span>, ¿son necesariamente independientes?</li>
+<li><span class="math inline">\(\Omega\)</span> y un suceso cualquiera <span class="math inline">\(A\)</span>, ¿son necesariamente independientes?</li>
+<li>¿Qué condiciones se tienen que dar para que un suceso <span class="math inline">\(A\)</span> sea independiente de si mismo?</li>
+</ol>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pre-requisitos-teoría-de-conjuntos-y-combinatoria.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables-aleatorias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/joanby/probabilidad/edit/master/1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["curso-probabilidad-udemy.pdf", "curso-probabilidad-udemy.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
