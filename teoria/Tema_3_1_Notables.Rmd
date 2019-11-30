@@ -243,7 +243,7 @@ F_{X}(x)=P(X\leq x) & = & \sum_{i=0}^x P_X(i)\\
 \right.\\
 1 & \mbox{ si } n\leq x
 \end{array}
-\right..
+\right.
 \end{eqnarray*}
 $$
 
@@ -608,32 +608,31 @@ plt.show()
 ## Ejemplo distribución binomial
 
 <div class="example">
-**Ejemplo: Número de bolas rojas extraídas  de urna con reposición.**
+**Ejemplo: número de bolas rojas extraídas de una urna con reposición**
 
+Tenemos una urna con $100$ bolas de las cuales 40 son rojas y 60 son blancas. Extraemos al azar una bola, anotamos su color y la devolvemos a (reponemos en) la urna.
 
-Tenemos una urna con $100$ bolas de las cuales 40 son rojas  y 60  blancas. Extraemos al azar una bola, anotamos su color y  la devolvemos a (reponemos en ) la urna.
+Supongamos que repetimos este proceso $n=10$ reponiendo en cada ocasión la bola extraída. 
 
-Supongamos que repetimos este proceso $n=10$; reponiendo en cada ocasión la bola extraída. 
+Consideremos la variable aleatoria $X$ como el número de bolas rojas extraídas (con reposición) en $n=10$ repeticiones del mismo experimento de Bernoulli.
 
-Consideremos la variable aleatoria $X=$ número de bolas rojas extraídas (con reposición)  en $n=10$ repeticiones del mismo experimento Bernoulli.
-
-
-Bajo estas condiciones tenemos que  repetimos $n=10$ veces el mismo experimento Bernouilli con probabilidad de éxito (sacar bola roja) es 
-
+Bajo estas condiciones repetimos $n=10$ veces el mismo experimento de Bernouilli con probabilidad de éxito (sacar bola roja)
 $$P(Roja)=P(Éxito)=p=\frac{40}{100}=0.4.$$
 
-Así que la variable $X=$"número de bolas rojas extraídas de la urna (con reposición) en $n=10$ ocasiones sigue una ley binomial  $B(n=10,p=0.4).$
+Así que la variable $X$ que es el número de bolas rojas extraídas de la urna (con reposición) en $n=10$ ocasiones sigue una ley binomial  $B(n=10,p=0.4).$
 </div>
+
 
 ## Ejemplo $B(n=10,p=0.4).$
 <div class="example">
 Nos preguntamos:
 
-1. ¿Cuál es la probabilidad de que saquemos exactamente $4$ rojas?
-2. ¿Cuál es la probabilidad de que saquemos al menos  $4$ rojas?
-3. ¿Cuál es la probabilidad de que saquemos  menos de $3$ rojas?
+1. ¿Cuál es la probabilidad de que saquemos exactamente $4$ bolas rojas?
+2. ¿Cuál es la probabilidad de que saquemos al menos  $4$ bolas rojas?
+3. ¿Cuál es la probabilidad de que saquemos  menos de $3$ bolas rojas?
 4. ¿Cuál es el valor esperado del número de bolas rojas?
 5. ¿Cuál es la desviación típica  del número de bolas rojas?
+
 
 </div>
 
@@ -643,16 +642,12 @@ Nos preguntamos:
  
 **Solución 1**. ¿Cuál es la probabilidad de que saquemos exactamente $4$ rojas?
 
-Utilizando al función de probabilidad  tenemos que 
-
-$$
+Utilizando la función de probabilidad, tenemos que:
 \begin{eqnarray*}
-P_x(X=4)&=&{10\choose 4}\cdot 0.4^4\cdot (1-0.4)^{10-4}
+P(X=4)&=&{10\choose 4}\cdot 0.4^4\cdot (1-0.4)^{10-4}
 = \frac{10!}{(10-4)!\cdot 4!}\cdot 0.4^4\cdot 0.6^6\\
-&=& \frac{7\cdot 8\cdot 9\cdot 10}{1\cdot 2\cdot 3\cdot 4}\cdot 0.4^4\cdot 0.6^6=`r round(choose(10,4)* 0.4^4*0.6^6,7)`
+&=& \frac{7\cdot 8\cdot 9\cdot 10}{1\cdot 2\cdot 3\cdot 4}\cdot 0.4^4\cdot 0.6^6=`r round(choose(10,4)* 0.4^4*0.6^6,7)`.
 \end{eqnarray*}
-.
-$$
 
 
 Con R
@@ -667,11 +662,9 @@ dbinom(4,size=10,prob = 0.4)
 ## Ejemplo $B(n=10,p=0.4).$
 
 <div class="example-sol">
-**Solución 2**.  ¿Cuál es la probabilidad de que saquemos al menos  $4$ rojas?
+**Solución 2**.  ¿Cuál es la probabilidad de que saquemos al menos  $4$ bolas rojas?
 
-Al menos 4 rojas es $P(X \geq  4)=1-P(X<4)=1-P(x\leq 3).$
-
-Así que calculemos $P(X\leq 3)$
+La probabilidad de sacar al menos 4 rojas se expresa como $P(X \geq  4)=1-P(X<4)=1-P(X\leq 3):$
 
 $$
 \begin{eqnarray*}
@@ -679,9 +672,8 @@ P(x\leq 3)&=& P(X=0)+P(X=1)+P(X=2)+P(X=3)\\
 &=& 
  {10\choose 0}\cdot 0.4^0\cdot (1-0.4)^{10-0}+ {10\choose 1}\cdot 0.4^1\cdot (1-0.4)^{10-1}\\
 &+&{10\choose 2}\cdot 0.4^2\cdot (1-0.4)^{10-2}+ {10\choose 3}\cdot 0.4^3\cdot (1-0.4)^{10-3}\\
-&=&`r round(pbinom(3,10,0.4),7)`
+&=&`r round(pbinom(3,10,0.4),7)`.
 \end{eqnarray*}
-.
 $$
 
 </div>
@@ -689,7 +681,7 @@ $$
 
 ## Ejemplo $B(n=10,p=0.4).$
 <div class="example-sol">
-Con R
+Con `R`
 
 ```{r}
 pbinom(3,10,0.4)
@@ -698,14 +690,14 @@ pbinom(3,10,0.4)
 
 Así que
 
-$$P(X \geq 4 )=1-P(x< 4)=P(X\leq 3)=1-`r round(pbinom(3,10,0.4),7)`=`r round(1-pbinom(3,10,0.4),7)`.$$
+$$P(X \geq 4 )=1-P(X< 4)=P(X\leq 3)=1-`r round(pbinom(3,10,0.4),7)`=`r round(1-pbinom(3,10,0.4),7)`.$$
 
 </div>
 
 ## Ejemplo $B(n=10,p=0.4).$
 
 <div class="example-sol">
-O con R también
+Otra manera usando `R` sería:
 
 ```{r}
 1-pbinom(3,10,0.4)
@@ -722,21 +714,18 @@ pbinom(3,10,0.4,lower.tail = FALSE)
 ## Ejemplo $B(n=10,p=0.4).$
 <div class="example-sol">
 
-**Solución 3**.  ¿Cuál es la probabilidad de que saquemos  menos  de $3$ rojas?
+**Solución 3**.  ¿Cuál es la probabilidad de que saquemos  menos  de $3$ bolas rojas?
 
-$$
 \begin{eqnarray*}
-P(x< 3)&=& P(X\leq 2)=  P(X=0)+P(X=1)+P(X=2)\\
+P(X< 3)&=& P(X\leq 2)=  P(X=0)+P(X=1)+P(X=2)\\
 &=& 
 {10\choose 0}\cdot 0.4^0\cdot (1-0.4)^{10-0}+ {10\choose 1}\cdot 0.4^1\cdot (1-0.4)^{10-1}\\
-&+&
+&&+
 {10\choose 2}\cdot 0.4^2\cdot (1-0.4)^{10-2}\\
-&=&`r round(pbinom(2,10,0.4),7)`
+&=&`r round(pbinom(2,10,0.4),7)`.
 \end{eqnarray*}
-.
-$$
 
-
+En `R`:
 ```{r}
 dbinom(0,10,0.4)+dbinom(1,10,0.4)+dbinom(2,10,0.4)
 pbinom(2,10,0.4)
@@ -754,7 +743,7 @@ Como  $X$ es una $B(n=10,p=0.4)$ sabemos que
 
 $$E(X)=n\cdot p = 10\cdot 0.4=`r 10*0.4`.$$
 
-Aunque en python tenemos la función stats que nos lo calcula directamente:
+Aunque en python tenemos la función `stats` que nos lo calcula directamente:
 
 ```{python}
 print("E(X) = {m}".format(m=binom.stats(n = 10, p = 0.4, moments='m')))
@@ -768,8 +757,7 @@ print("E(X) = {m}".format(m=binom.stats(n = 10, p = 0.4, moments='m')))
 **Solución 5**. ¿Cuál es la desviación típica  del número de bolas rojas?
 
 
-La varianza es 
-
+La varianza es:
 $$
 Var(X)=n\cdot p \cdot(1-p)=10\cdot 0.4\cdot 0.6=`r 10*0.4*0.6`.
 $$
@@ -779,7 +767,7 @@ Por lo  tanto la desviación típica es
 
 $$\sqrt{Var(X)}=\sqrt{`r 10*0.4*0.6`}= `r sqrt(10*0.4*0.6)`.$$
 
-Aunque en python tenemos la función stats que nos lo calcula directamente:
+Aunque en python tenemos la función `stats` que nos lo calcula directamente:
 
 ```{python}
 print("Var(X) = {v}".format(v=binom.stats(n = 10, p = 0.4, moments='v')))
@@ -795,7 +783,7 @@ print("Var(X) = {v}".format(v=binom.stats(n = 10, p = 0.4, moments='v')))
 
 * Todos hemos jugado a, por ejemplo, tirar una moneda hasta que obtengamos la primera cara.
 
-* O también tirar una pelota a una canasta de baloncesto hasta obtener la primer la canasta.
+* O también tirar una pelota a una canasta de baloncesto hasta obtener la primera canasta.
 
 * Desde otro punto de vista también podemos intentar modelar el número de veces que accionamos una interruptor  y la bombilla se ilumina  hasta que falla. 
 
@@ -809,7 +797,7 @@ La **modelización de este tipo de problemas se consigue con la  llamada distrib
 
 <l class="definition"> Distribución geométrica </l>
 
-* Repitamos un experimento Bernoulli, de parámetro p, de forma independiente hasta obtener el primer éxito.
+* Repitamos un experimento Bernoulli, de parámetro $p$, de forma independiente hasta obtener el primer éxito.
 * Sea $X$ la v.a. que cuenta el número de fracasos antes del primer éxito. Por ejemplo  que  hayamos tenido  $x$ fracasos  será una cadena de $x$ fracasos culminada con un éxito. Más concretamente 
 
 $$P(\overbrace{FFF\ldots F}^{x}E)=P(F)^{x}\cdot P(E)=(1-p)^{x}\cdot p=q^{x}\cdot p.$$
@@ -829,8 +817,7 @@ $$
 
 
 
-* De una v.a. como esta diremos que sigue una
-distribución geométrica de parámetro $p$.
+* La v.a. definida anteriormente diremos que sigue una distribución geométrica de parámetro $p$.
 * La  denotaremos por $Ge(p)$. 
 * Su dominio es  $D_X=\{0,1,2,\ldots\}$.
 
@@ -845,16 +832,14 @@ $$
 P(X\leq 3 )=1-P(X> 3)=1-P(X\geq 4)
 $$
 
- Efectivamente, el  evento  tenemos que $X\leq 3$  es que hemos fracasado más de tres veces hasta conseguir el primer éxito; es decir **hemos fracasado 4 o más veces**, por lo tanto 
-
-
+Efectivamente, el complementario del evento $X\leq 3$ nos dice que hemos fracasado más de tres veces hasta conseguir el primer éxito, es decir, **hemos fracasado 4 o más veces**. Podemos simbolizar dicho evento de la forma siguiente:
 $$
 \{X>3\}=\{X\geq 4\}= \{FFFF\}
 $$
 
 ## Función de distribución geométrica
 
-Ahora, al  ser los intentos sucesos independientes, tenemos que:
+Ahora, al  ser los intentos independientes, tenemos que:
 
 $$
 \begin{eqnarray*}
@@ -865,28 +850,23 @@ P(X>3) & = & P(\{FFFF\})= P(F)\cdot P(F)\cdot P(F)\cdot P(F)\\
 $$
 
 
-Calculamos 
-
+El valor de la función de distribución de $X$ en $x=3$ será, pues:
 $$F_X(3)=P(X\leq 3)=1-P(X>3)=1-(1-p)^{3+1}.$$
-
-Por lo que podemos generalizar a cualquier entero positivo $k=0,1,2,\ldots$  
-
-$$F_X(k)=P(X\leq k)=1-(1-p)^{k+1}\mbox{ si } k=0,1,2,\ldots$$
+Generalizando el resultado anterior a cualquier entero positivo $k=0,1,2,\ldots$, tenemos:
+$$F_X(k)=P(X\leq k)=1-(1-p)^{k+1},\mbox{ si } k=0,1,2,\ldots$$
 
 ## Función de distribución geométrica
 
 
-En general  tendremos que 
-
-
+En general, tendremos que:
 $$
 F_X(x)=P(X\leq x)=
 \left\{\begin{array}{ll} 
-0 & \mbox{ si } x<0\\
-1- (1-p)  & \mbox{ si } k=0\leq x <1\\
-1- (1-p)^2 & \mbox{ si } k=1\leq x <2\\
-1- (1-p)^3 & \mbox{ si } k=2\leq x <3\\
-1- (1-p)^{k+1} & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1\\\mbox{para } k=0,1,2,\ldots\end{array}
+0, & \mbox{ si } x<0,\\
+1- (1-p),  & \mbox{ si } k=0\leq x <1,\\
+1- (1-p)^2, & \mbox{ si } k=1\leq x <2,\\
+1- (1-p)^3, & \mbox{ si } k=2\leq x <3,\\
+1- (1-p)^{k+1}, & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1,\\\mbox{para } k=0,1,2,\ldots\end{array}
     \right.\end{array}\right.
 $$
 
@@ -894,26 +874,21 @@ $$
 
 ## Función de distribución geométrica
 
-De forma más compacta tendremos que 
-
-
-
+De forma más compacta, tendremos que 
 $$
 F_X(x)=P(X\leq x)=
 \left\{\begin{array}{ll} 
-0 & \mbox{ si } x<0\\
-1- (1-p)^{k+1} & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1\\\mbox{para } k=0,1,2,\ldots\end{array}
+0, & \mbox{ si } x<0,\\
+1- (1-p)^{k+1}, & \mbox{ si } \left\{ \begin{array}{l}k\leq x< k+1,\\\mbox{para } k=0,1,2,\ldots\end{array}
     \right.\end{array}
     \right.
 $$
 
-Notemos que si $k=0,1,2,\ldots$ el límite de la función de distribución es 
-
+Notemos que el límite de la función de distribución es:
 $$
 \displaystyle\lim_{k\to +\infty } F_X(k)=\lim_{k\to +\infty } 1-(1-p)^{k+1}=
-1
+1,
 $$
-
 ya que $0<1-p<1$.
 
 
@@ -930,7 +905,7 @@ $$
 r^{k-1} &=& \left(\frac1{1-r}\right)'=\frac1{(1-r)^2}\\
 \left(\sum_{k=0}^{+\infty} r^k\right)^{''}&=& \sum_{k=2}^{+\infty}k \cdot(k-1)\cdot
 r^{k-2}&=&\left(\frac1{1-r}\right)^{''}=\frac2{(1-r)^3}
-\end{eqnarray*}.
+\end{eqnarray*}
 $$
 
 
@@ -943,7 +918,7 @@ $$
 E(X)&=&\sum_{x=0}^{+\infty} x\cdot P_x(x)=\sum_{x=0}^{+\infty} x\cdot (1-p)^x\cdot p=
 p\cdot (1-p) \cdot \sum_{x=1}^{+\infty} x\cdot (1-p)^{x-1}\\
 &=& p\cdot (1-p)\cdot \frac{1}{(1-(1-p))^2}=p\cdot (1-p)\cdot \frac{1}{p^2}=\frac{1-p}{p}
-\end{eqnarray*}.
+\end{eqnarray*}
 $$
 
 ## Valor $E(X^2)$ de una v.a. $Ge(p)$
@@ -973,8 +948,8 @@ E(X^2)&=&\ldots\\
 p\cdot (1-p)^2 \frac{2}{(1-(1-p))^3}+  (1-p)\cdot p \frac{1}{(1-(1-p))^2}\\
 &=&
 p\cdot (1-p)^2 \frac{2}{p^3}+  (1-p)\cdot p \frac{1}{p^2}\\
-&=&\frac{2\cdot (1-p)^2}{p^2}+\frac{1-p}{p}
-\end{eqnarray*}.
+&=&\frac{2\cdot (1-p)^2}{p^2}+\frac{1-p}{p}.
+\end{eqnarray*}
 $$
 
 
@@ -1012,8 +987,8 @@ $E(X)=\frac{1-p}{p}$ | $Var(X)=\frac{1-p}{p^2}$
 
 * Supongamos que sólo estamos interesados en el **número de intentos** para obtener el primer éxito. 
 * Si definimos $Y$= número de  intentos para obtener el  primer éxito. Entonces $Y=X+1$  donde $X\equiv Ge(p)$.
-* Su dominio es valores es $D_Y=\{1,2,\ldots\}$ 
-* la media se incrementa en un intento debido al  éxito  $E(Y)=E(X+1)=E(X)+1=\frac{1-p}{p}+1=\frac1{p}$.
+* Su dominio es $D_Y=\{1,2,\ldots\}$ 
+* La media se incrementa en un intento debido al  éxito  $E(Y)=E(X+1)=E(X)+1=\frac{1-p}{p}+1=\frac1{p}$.
 * La varianza es la misma $Var(Y)=Var(X+1)=Var(X)=\frac{1-p}{p^2}$.
 
 
@@ -1035,8 +1010,7 @@ $E(X)=\frac1{p}$ |$Var(X)=\frac{1-p}{p^2}$
 
 Sea $X$ una v.a. discreta con dominio $D_X=\{0,1,2,\ldots\}$, con $P(X=0)=p$.
 
-Entonces $X$ sigue una ley $Ge(p)$ sí y sólo si
-
+Entonces $X$ sigue una ley $Ge(p)$ si, y sólo si,
 $$
 P\left(X> k+j\big| X\geq j\right)=P(X> k)
 $$
@@ -1047,40 +1021,32 @@ para todo $k,j=0,1,2,3\ldots$.
 <div class="dem">
 **Demostración**
 
-Si es geométrica entonces el lado derecho de la igualdad es 
+Si $X$ es geométrica entonces el lado derecho de la igualdad es 
 
 $$
-P(X>k)=1-P(X\leq k)=1-\left(1-(1-p)^{k+1}\right)=(1-p)^{k+1}
+P(X>k)=1-P(X\leq k)=1-\left(1-(1-p)^{k+1}\right)=(1-p)^{k+1},
 $$
-
-El lado de izquierdo es
-
-
-
+y el lado de izquierdo es
 $$
 \begin{eqnarray*} 
 P\left(X> k+j\big| X\geq j\right)&=&\frac{P\left(\{X> k+j\}\cap \{X\geq j\} \right)}{P\left(X\geq j\right)}=
 \frac{P\left(X>k+j \right)}{P\left(X\geq j \right)} = \frac{1-P(X\leq k+j)}{1-P(X\leq j-1)}\\
-&=&  \frac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{j-1+1})} =\frac{(1-p)^{k+j+1}}{(1-p)^{j}} = (1-p)^{k+1}
+&=&  \frac{1-(1-(1-p)^{k+j+1})}{1-(1-(1-p)^{j-1+1})} =\frac{(1-p)^{k+j+1}}{(1-p)^{j}} = (1-p)^{k+1},
 \end{eqnarray*}
 $$
-
-
-Lo que demuestra  la igualdad.
+lo que demuestra  la igualdad.
 </div>
 
 ## Propiedad de la falta de memoria
 
 <div class="dem">
-Para demostrar el recíproco tomemos $j=1$  y $k\geq 0$ entonces  por la propiedad de la pérdida de memoria
-
+Para demostrar el recíproco, tomemos $j=1$  y $k\geq 0$. Entonces, por la propiedad de la pérdida de memoria:
 $$
 P\left(X> k+1\big| X\geq 1\right)=P(X> k)
 $$
+Como $P(X=0)=p$, tenemos que $P(X \geq 1 )=1-P(X<1)=1-P(X=0)=1-p$.
 
-Como sabemos  $P(X=0)=p$ tenemos $P(X \geq 1 )=1-P(X<1)=1-P(X=0)=1-p$
-
-Luego  combinado las igualdades tenemos que
+Combinado las igualdades, tenemos que:
 
 $$
 P\left(X> k+1\big| X\geq 1\right)=\frac{P(X>k+1, X\geq 1)}{P(X\geq 1)}=\frac{P(X>k+1)}{P(X\geq 1)}=P(X>k).
@@ -1122,9 +1088,6 @@ $$
 $$
 
 Ahora operando 
-
-
-
 $$
 P(X\leq k+2)-P(X\leq k+1)=(1-p)\cdot[1-P(X\leq k)-\left(1-P(X\leq k+1)\right)]
 $$
@@ -1148,18 +1111,18 @@ De forma similar obtenemos
 $$
 P(X=k+1)=(1-p)\cdot P(X=k)
 $$
-Utilicemos la recurrencia anterior  para calcular todas las probabilidades a partir de la $P(X=0)=p$; que vienen dadas por: 
+Utilizando la recurrencia anterior, podemos calcular todas las probabilidades $P(X=k)$ a partir de la $P(X=0)=p$: 
 
 $$
-\begin{eqnarray*}
-P(X=0)&=& p\\
-P(X=1)&=&P(X=0+1)= (1-p)\cdot P(X=0) =(1-p)\cdot  p\\
-P(X=2)&=&P(X=1+1)= (1-p)\cdot P(X=1)=(1-p)\cdot (1-p)\cdot p=(1-p)^2\cdot p\\
-\ldots \ldots\ldots && \ldots  \ldots \ldots \ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\\
-P(X=k)&=&P(X=(k-1)+1)= (1-p)\cdot P(X=k-1)=(1-p)\cdot (1-p)^{k-1}\cdot p=(1-p)^{k}\cdot p
-\end{eqnarray*}.
+\begin{array}{rl}
+P(X=0)&= p,\\
+P(X=1)&=P(X=0+1)= (1-p)\cdot P(X=0) =(1-p)\cdot  p,\\
+P(X=2)&=P(X=1+1)= (1-p)\cdot P(X=1)=(1-p)\cdot (1-p)\cdot p=(1-p)^2\cdot p,\\
+ \vdots& \vdots \\
+P(X=k)&=P(X=(k-1)+1)= (1-p)\cdot P(X=k-1)=(1-p)\cdot (1-p)^{k-1}\cdot p=(1-p)^{k}\cdot p,
+\end{array}
 $$
-Lo que demuestra  el recíproco, es decir que $X$ es $Geom(p)$.
+lo que demuestra  el recíproco, es decir, que $X$ es $Geom(p)$.
 </div>
 
 
@@ -1168,13 +1131,11 @@ Lo que demuestra  el recíproco, es decir que $X$ es $Geom(p)$.
 
 <l class="observ"> Observación: Interpretación  de la propiedad</l>
 
-La propiedad  de la falta de memoria
-
+La propiedad de la falta de memoria
 $$
-P(X> k+j\big|X \geq j)=P(X > k)
+P(X> k+j\big|X \geq j)=P(X > k),
 $$   
-
-la igualdad anterior significa  que aunque **ya llevemos al menos  $j$ fracasos** la probabilidad de **que fracasemos $k$ veces más** no disminuye; es la misma  que si empezáramos de nuevo el experimento. 
+significa que, aunque **ya llevemos al menos  $j$ fracasos**, la probabilidad de **que fracasemos $k$ veces más** no disminuye, es la misma  que era cuando empezamos el experimento.  
 
 A este efecto se le suele etiquetar con la frase  **el experimento carece de memoria** o es un **experimento sin memoria** (*Memoryless Property*).
 
@@ -1195,15 +1156,15 @@ $$
 P(X> 4+5/X \geq 5)=P(X > 4)
 $$
 
-Después de 5 fracasos no estamos *más cerca* de abrir la puerta.
-La propiedad de la  falta de  memoria  nos dice que en **después de cada intento es como si empezásemos  de nuevo a abrir la puerta**. Tras 5 fracasos la probabilidad de que fallemos más de  4 veces  más es la misma.
+Después de 5 fracasos no estamos "más cerca" de abrir la puerta.
+La propiedad de la falta de  memoria  nos dice que en **después de cada intento es como si empezásemos  de nuevo a abrir la puerta**. Tras 5 fracasos la probabilidad de que fallemos más de  4 veces  más es la misma que cuando lo intentamos la primera vez.
 </div>
 
 ## Ejemplo falta de memoria 
 
 <div class="example-sol">
 
-¿Cuál es el número esperado de fracasos hasta abrir la puerta
+¿Cuál es el número esperado de fracasos hasta abrir la puerta?
 
 $$
 E(X)=\frac{1-p}{p}=\frac{1-\frac{1}{10}}{\frac{1}{10}}=\frac{\frac{9}{10}}{\frac{1}{10}}=9.
@@ -1474,7 +1435,7 @@ geom.stats(p=0.25, loc=-1, moments='mv')
 <div class="exercise">
 **Ejercicio**
 
-Comprobad que las medias y las varianzas calculadas en el código anterior, corresponden a una $Ge(p=0.3)$ empezando en $1$ y a a un $Ge(p=0.3)$
+Comprobad que las medias y las varianzas calculadas en el código anterior, corresponden a una $Ge(p=0.3)$ empezando en $1$ y a una $Ge(p=0.3)$
 empezando en $0$.
 
 ¿Son las varianzas siempre iguales?
@@ -1540,7 +1501,7 @@ _=plt.show()
 
 Supongamos que disponemos de 10 llaves distintas y tenemos que abrir una puerta con **dos cerraduras**.
 
-Comenzamos por la primera cerradura, de tal forma que cada vez olvidamos que llave que hemos probado.
+Comenzamos por la primera cerradura, de tal forma que cada vez olvidamos qué llave hemos probado.
 
 Una vez abierta la primera cerradura probamos de igual forma con la segunda hasta que también la abrimos.
 
@@ -1551,26 +1512,25 @@ Acertar una llave de la puerta es un experimento Bernoulli con probabilidad de �
 ## Distribución binomial negativa
 
 
-En general tendremos un experimento  Bernoulli con probabilidad de éxito $0<p<1$ y  tal que:
+En general tendremos un experimento de Bernoulli con probabilidad de éxito $0<p<1$ tal que:
 
 * Repetimos el experimento hasta obtener el $n$-ésimo éxito ¡¡abrir la maldita puerta!!.
-* Sea $X$ la v.a que cuenta el número fallos hasta abrir la puerta, es decir, hasta  conseguir el n-ésimo éxito. Notemos que no contamos los éxitos, solo  contamos los fracasos
+* Sea $X$ la v.a. que cuenta el número fallos hasta abrir la puerta, es decir, hasta  conseguir el n-ésimo éxito. Notemos que no contamos los éxitos, solo  contamos los fracasos
 
 ## Distribución binomial negativa
 
- Si representamos como es habitual un suceso son una cadena de F's y E's. 
+Si representamos como es habitual un suceso como una cadena de F's y E's, para $n=2$, algunos sucesos elementales serán:
+ $$\{EE,FEE,EFE, FFEE,FEFE,EFFE,FFFEE,FFEFE,FEFFE,EFFFE\}.$$
  
- Si  $n=2$  estos son algunos sucesos elementales 
- $$\{EE,FEE,EFE, FFEE,FEFE,EFFE,FFFEE,FFEFE,FEFFE,EFFFE\}$$
- 
- 
- 
-$$P(X=0)=P(\{EE\})=p^2$$
-
-$$P(X=1)=P(\{FEE,EFE\})=2\cdot (1-p)\cdot p^2$$
-$$P(X=2)=P(\{FFEE,FEFE,EFFE\})=3\cdot (1-p) 2\cdot p^2$$
-
-$$P(X=3)=P(\{FFFEE,FFEFE,FEFFE,EFFFE\})=4\cdot (1-p)^3\cdot p^2$$
+Calculemos algunas probabilidades para $n=2$:
+$$
+\begin{array}{rl}
+P(X=0) & =P(\{EE\})=p^2, \\
+P(X=1) & =P(\{FEE,EFE\})=2\cdot (1-p)\cdot p^2, \\
+P(X=2) & =P(\{FFEE,FEFE,EFFE\})=3\cdot (1-p) 2\cdot p^2, \\
+P(X=3) & =P(\{FFFEE,FFEFE,FEFFE,EFFFE\})=4\cdot (1-p)^3\cdot p^2.
+\end{array}
+$$
 
 ## Distribución binomial negativa
  
@@ -1585,7 +1545,7 @@ $$
 
 ## Distribución binomial negativa
 
-Una v.a. con este tipo de distribución recibe el nombre de *binomial negativa* y la denotaremos por $BN(n,p)$. 
+Una v.a. con este tipo de distribución recibe el nombre de **binomial negativa** y la denotaremos por $BN(n,p)$. 
 
 Notemos que $BN(1,p)=Ge(p)$.
 
@@ -1605,9 +1565,7 @@ $$
 
 
 
-De estas cadenas hay  tantas como maneras de elegir de entre las $k+n-1$ primeras posiciones $n-1$ para colocar los éxitos, esta cantidad es el número binomial
-
-$${k+n-1\choose n-1}$$
+De estas cadenas hay  tantas como maneras de elegir de entre las $k+n-1$ primeras posiciones $n-1$ para colocar los éxitos. Esta cantidad es el número binomial $${k+n-1\choose n-1}.$$
 
 </div>
 
@@ -1616,34 +1574,30 @@ $${k+n-1\choose n-1}$$
 
 <l class="definition"> Números binomiales negativos</l>
 
-Dados dos enteros positivos $n$ y $k$ se  define en numero binomial negativo como 
+Dados dos enteros positivos $n$ y $k$ se  define el número binomial negativo como 
 
 $$\binom{-n}{k}=\frac{(-n)(-n-1)\cdots (-n-k+1)}{k!}.$$
 
 
-Se cumple que  
-
+Los números binomiales negativos generalizan la fórmula de Newton para exponentes negativos:
 $$
 (t+1)^{-n}=\sum_{k=0}^{+\infty}\left(\begin{array}{c} -n
 \\ k\end{array}\right) t^{k}
 $$
 
-
 ## Números binomiales negativos
 
-Con R es la misma función que para los números binomiales
+`R` usa la función `choose` para calcular números binomiales, sean negativos o no. Veámoslo con un ejemplo:
 
 $$
-\begin{eqnarray*}
-{-6\choose 4}&=&\frac{-6\cdot (-6-1)\cdot \cdot (-6-2)\cdot (-6-3) }{4!}\\
-&=&  \frac{-6\cdot(-7)\cdot (-8)\cdot (-9)}{24}\\
-&=& \frac{3024}{24}=126.
-\end{eqnarray*}
+\begin{array}{rl}
+{-6\choose 4}&=\frac{-6\cdot (-6-1)\cdot \cdot (-6-2)\cdot (-6-3) }{4!}\\
+&=  \frac{-6\cdot(-7)\cdot (-8)\cdot (-9)}{24}\\
+&= \frac{3024}{24}=126.
+\end{array}
 $$
 
-
-Efectivamente obtenemos el mismo resultado
-
+Si realizamos el cálculo con `R` obtenemos el mismo resultado:
 ```{r}
 choose(-6,4)
 ```
@@ -1652,12 +1606,12 @@ choose(-6,4)
 
 Su **esperanza es**
 
-$$E(X)=\displaystyle\sum_{k=0}^{+\infty} k\cdot {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n=n\cdot\frac{1-p}{p}.$$
+$$E(X)=\sum_{k=0}^{+\infty} k\cdot {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n=n\cdot\frac{1-p}{p}.$$
 
 
-La **esperanza del cuadrado $X^2$ es**  
+La **esperanza de $X^2$ es**  
 
-$$E(X^2)=\displaystyle\sum_{k=0}^{+\infty} k^2\cdot {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n=n\cdot\frac{1-p}{p^2}+\left(n\cdot \frac{1-p}{p}\right)^2.$$
+$$E(X^2)=\sum_{k=0}^{+\infty} k^2\cdot {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n=n\cdot\frac{1-p}{p^2}+\left(n\cdot \frac{1-p}{p}\right)^2.$$
 
 ## Varianza de una $BN(n,p)$
 
@@ -1680,9 +1634,9 @@ $$\sqrt{Var(X)} = \frac{\sqrt{n(1-p)}}{p}$$
  $X$, $BN(n,p)$ | Número de fracasos antes de  conseguir el $n$-ésimo éxito. Probabilidad de éxito $p$
 --------------:|:------------
 $D_X=$ | $\{0,1,2,3\ldots\}$  
-$P_X(k)=P(X=k)=$ | $\left\{\begin{array}{ll} {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si }  k=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.$
-$F_X(x)=P(X\leq X)=$ | $\begin{array}{l}\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i) & \mbox{si  }\left\{\begin{array}{l}k\leq x< k+1\\k=0,1,2,\ldots\end{array}\right.\end{array}\right.
-\\\mbox{Calcular la suma o utilizar funciones de R o python.}
+$P_X(k)=P(X=k)=$ | $\left\{\begin{array}{ll} {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n, & \mbox{si }  k=0,1,\ldots \\ 0, & \mbox{en otro caso.}\end{array}\right.$
+$F_X(x)=P(X\leq x)=$ | $\begin{array}{l}\left\{\begin{array}{ll} 0, & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i) & \mbox{si  }\left\{\begin{array}{l}k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right.\end{array}\right.
+\\\mbox{Calcular la suma o utilizar funciones de `R` o python.}
 \end{array}$
 $E(X)=n\cdot\frac{1-p}{p}$ | $Var(X)=n\cdot \frac{1-p}{p^2}$ 
 
@@ -1691,7 +1645,7 @@ $E(X)=n\cdot\frac{1-p}{p}$ | $Var(X)=n\cdot \frac{1-p}{p^2}$
 <div class="exercise">
 **Ejercicio: Puerta  con dos cerraduras**
 
-Recordemos nuestra puerta con dos cerraduras que se abren secuencialmente. Tenemos un manojo de 10 llaves casi idénticas. De manera que cada vez que probamos una llave olvidamos qué llave hemos usado.
+Recordemos nuestra puerta con dos cerraduras que se abren secuencialmente. Tenemos un manojo de 10 llaves casi idénticas de manera que cada vez que probamos una llave olvidamos qué llave hemos usado.
 
 
 Sea $X$ la v.a que nos da el número de  intentos fallidos hasta abrir  abrir la puerta. 
@@ -1720,7 +1674,7 @@ Estamos interesado en modelar  este problema.  La preguntas son:
 
 **Solución 1.**  ¿Cuál es la distribución de probabilidad de $X$ la v.a que nos da el número fallos  hasta abrir la puerta? 
 
-Bajo estados condiciones tenemos que la probabilidad de "éxito" de cada intento es $p=\frac{1}{10}=.01$. Como cada vez *olvidamos* qué llave hemos probado  cada intento será independiente del anterior.
+Bajo estados condiciones tenemos que la probabilidad de "éxito" de cada intento es $p=\frac{1}{10}=0.1$. Como cada vez *olvidamos* qué llave hemos probado, cada intento será independiente del anterior.
 
 Así que  la variable $X$ que queremos modelar  cuenta el número  fallos  de repeticiones sucesivas e independientes de  un experimento $Ber(p=0.1)$ hasta conseguir 2 éxitos en un experimento.
 
@@ -1740,16 +1694,15 @@ En general la función de probabilidad  de una $BN(n,p)$ es
 
 
 $$
-P_X(X=k)=P(X=k)=
+P_X(X=k)=
 \left\{
 \begin{array}{cc} 
 {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si }  k=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 $$
-En particular la   función de probabilidad  de una $BN(n=2,p=0.1)$ es
 
-
+Si aplicamos la expresión anterior para $n=2$ y $p=0.1$, obtenemos:
 $$
-P_X(X=k)=P(X=k)=
+P_X(X=k)=
 \left\{
 \begin{array}{cc} 
 {k+2-1\choose 2-1} \cdot 0.9^{k}\cdot 0.1^2 & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
@@ -1768,7 +1721,7 @@ $$
 P_X(X=k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
-{k+1\choose 1} \cdot 0.9^{k}\cdot 0.1^2 & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
+0.01\cdot (k+1)\cdot 0.9^{k}, & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
 $$
 </div>
 
@@ -1780,7 +1733,7 @@ $$
 La función de distribución  en general es 
 
 $$
-F_x(x)=P(X\leq x)=
+F_X(x)=P(X\leq x)=
 \left\{
 \begin{array}{ll}
 0 & \mbox{si } x<0 \\
@@ -1801,12 +1754,12 @@ $$
 Simplificando para $n=2$, $p=0.1$.
 
 $$
-F_x(x)=P(X\leq x)=
+F_X(x)=P(X\leq x)=
 \left\{
 \begin{array}{ll}
-0 & \mbox{si } x<0 \\
-\displaystyle\sum_{i=0}^{k }{i+1\choose 1} \cdot 0.9^{i+1}\cdot 0.1^2
-& \mbox{si }\left\{\begin{array}{l} k\leq x< k+1\\k=0,1,2,\ldots\end{array}\right. 
+0, & \mbox{si } x<0, \\
+\displaystyle\sum_{i=0}^{k }0.01\cdot (i+1) \cdot 0.9^{i+1},
+& \mbox{si }\left\{\begin{array}{l} k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right. 
 \end{array}
 \right.
 $$
@@ -1825,10 +1778,7 @@ $$
 **Solución 3.**  ¿Cuál es la probabilidad de fallar  exactamente  5 veces antes de abrir la puerta?
 
 $$
-\begin{eqnarray*}
-P(X=5)&=&{5+2-1\choose 1} \cdot 0.9^{5}\cdot 0.1^2= {6\choose 1} \cdot 0.9^{5}\cdot 0.1^2\\
-&=& 6\cdot 0.9^5\cdot 0.1^2= `r 6*0.9^5*0.1^2`.
-\end{eqnarray*}
+P(X=5)= 0.01\cdot (5+1) \cdot 0.9^{5}= 0.06 \cdot 0.9^{5}= `r 6*0.9^5*0.1^2`.
 $$
 
 </div>
@@ -1839,7 +1789,7 @@ $$
 
 <div class="example-sol">
 
-**Solución 4.** ¿Cuál es la probabilidad de fallar más de  4
+**Solución 4.** ¿Cuál es la probabilidad de fallar más de 4?
 
 
 
@@ -1851,16 +1801,12 @@ $$
 Calculemos primero $P(X\leq 4):$
 
 $$
-\begin{eqnarray*}
-P(X\leq 4) &= & \displaystyle\sum_{x=0}^{4} P(X=x)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)\\
-&=& {0+2-1\choose 1} \cdot 0.9^{0}\cdot 0.1^2+
-    {1+2-1\choose 1} \cdot 0.9^{1}\cdot 0.1^2\\
-  &+&
-    {2+2-1\choose 1} \cdot 0.9^{2}\cdot 0.1^2+
-    {3+2-1\choose 1} \cdot 0.9^{3}\cdot 0.1^2 \\ 
-  &+&
-    {4+2-1\choose 1} \cdot 0.9^{4}\cdot 0.1^2=\ldots
-\end{eqnarray*}
+\begin{array}{rl}
+P(X\leq 4) &=  \displaystyle\sum_{x=0}^{4} P(X=x)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)\\
+&= 0.01\cdot (0+1) \cdot 0.9^{0}+0.01\cdot (1+1) \cdot 0.9^{1}+0.01\cdot (2+1) \cdot 0.9^{2} \\ &\ \ 
++0.01\cdot (3+1) \cdot 0.9^{3} + 0.01\cdot (4+1) \cdot 0.9^{4} \\ & =
+0.01 +`r 0.01*2*0.9`+`r 0.01*3*0.9^2`+`r 0.01*4*0.9^3`+`r 0.01*5*0.9^4` = `r 0.01+ 0.01*2*0.9+ 0.01*3*0.9^2+ 0.01*4*0.9^3+ 0.01*5*0.9^4`.
+\end{array}
 $$
 </div>
     
@@ -1869,27 +1815,7 @@ $$
 
 <div class="example-sol">
 
-$$
-\begin{eqnarray*}
-P(X\leq 4)=\ldots   &=& 
-{1\choose 1} \cdot 0.9^{0}\cdot 0.1^2+
-{2\choose 1} \cdot 0.9^{1}\cdot 0.1^2+  
-{3\choose 1} \cdot 0.9^{2}\cdot 0.1^2+
-{4\choose 1} \cdot 0.9^{3}\cdot 0.1^2\\ 
-  &+&
-{5\choose 1} \cdot 0.9^{4}\cdot 0.1^2=
-0.1^2+
-2\cdot 0.9 \cdot 0.1^2+
-3\cdot 0.9^2\cdot 0.1^2+
-4\cdot 0.9^3\cdot 0.1^2+
-5\cdot 0.9^4\cdot 0.1^2\\
-=
-`r 0.1^2+ 2* 0.9 * 0.1^2+ 3*0.9^2* 0.1^2 +4*0.9^3* 0.1^2+5*0.9^4* 0.1^2`
-\end{eqnarray*}.
-$$
-
 Por lo tanto 
-
 
 $$
 P(X>4)=1-P(X\leq 4)=1-`r 0.1^2+ 2* 0.9 * 0.1^2+ 3*0.9^2* 0.1^2 +4*0.9^3* 0.1^2+5*0.9^4* 0.1^2`=
@@ -1906,29 +1832,22 @@ dnbinom(1,2,0.1)
 dnbinom(2,2,0.1)
 3*0.9^2* 0.1^2
 ```
-</div>
-
-## Ejemplo $BN(n=2,p=0.1)$ 
-
-
-<div class="example-sol">
 
 **Solución 5.**  ¿Cuál es  el número esperado de fallos? ¿Y su desviación típica?
 
 
 Como $X$ sigue una ley $BN(n=2,p=0.1)$
 
-$$E(X)=n\cdot \frac{1-p}{p}=2\cdot \frac{1-0.1}{0.1}=18.$$
+$$E(X)=n\cdot \frac{1-p}{p}=2\cdot \frac{1-0.1}{0.1}=`r 2*(1-0.1)/0.1`.$$
 
-El número de fallos esperado es 18.
+El número de fallos esperado es `r 2*(1-0.1)/0.1`.
 
-
-
+La varianza será:
 $$
-Var(X)=n\cdot\frac{1-p}{p^2}=2 \cdot \frac{1-0.1}{0.1^2}=180.
+Var(X)=n\cdot\frac{1-p}{p^2}=2 \cdot \frac{1-0.1}{0.1^2}=`r 2*(1-0.1)/0.1^2`.
 $$
 
-La varianza de $X$ es 180 y su desviación típica $\sqrt{180}=`r round(sqrt(180),5)`.$
+La varianza de $X$ es `r 2*(1-0.1)/0.1^2` y su desviación típica $\sqrt{180}=`r round(sqrt(2*(1-0.1)/0.1^2),5)`.$
 
 </div>
 
@@ -1936,15 +1855,14 @@ La varianza de $X$ es 180 y su desviación típica $\sqrt{180}=`r round(sqrt(180
 
 ## Cálculos con R
 
-La función de  R para la función de probabilidad de   la  binomial negativa  y sus parámetros básicos son 
+La función de `R` que calcula la función de probabilidad de la  binomial negativa con sus parámetros básicos es: 
 
 ```
 dnbinom(x, size, prob,...)`
 ```
+donde `size` ($n$) es el número de éxitos y  `prob` ($p$), la probabilidad de éxito.
 
-Donde `size` ($n$) es el número de éxitos y  `prob` ($p$) la probabilidad de éxito.
-
-Así en el ejemplo de la puerta $X$ es una $BN(n=size=2,p=prob=0.1)$. Por ejemplo $P(X=5)$ que hemos calculado en el ejemplo anterior es
+Así en el ejemplo de la puerta con dos cerraduras, $X$ es una $BN(n=size=2,p=prob=0.1)$. Por ejemplo, $P(X=5)$ que hemos calculado en el ejemplo anterior, vale:
 
 
 ```{r}
@@ -1988,7 +1906,7 @@ nbinom.cdf(k=4,n=2,p=0.1)
 
 ## Cálculos $BN(n,p)$ con python
 
-Generemos 100 observaciones aleatorias de una $BN(n=2,0.1)$. Es decir serán las veces que hemos fallado hasta abrir la prueba 100 veces.
+Generemos 100 observaciones aleatorias de una $BN(n=2,0.1)$. Es decir serán las veces que hemos fallado hasta abrir la puerta 100 veces.
 
 ```{python}
 nbinom.rvs(n=2, p=0.1, size=100)
@@ -1996,7 +1914,7 @@ nbinom.rvs(n=2, p=0.1, size=100)
 
 ## Cálculos $BN(n,p)$ con python
 
-La **esperanza** y la **varianza**de una $BN(n=2,0.1)$ es 
+La **esperanza** y la **varianza**de una $BN(n=2,0.1)$ valen: 
 
 ```{python}
 n, p=2,0.1
@@ -2162,13 +2080,13 @@ _=plt.show()
 
 Supongamos que tenemos un sistema informático tiene un programa de seguridad que genera accesos con   claves  de  3 dígitos  $000,001,\ldots 999$. En total 1000 posibilidades.
 
-Como una clave de tres dígitos es fácil de romper proponemos poner  tres claves consecutivas de acceso al sistema cada una de 3 dígitos.
+Como una clave de tres dígitos es fácil de romper proponemos considerar  tres claves consecutivas de acceso al sistema, cada una de 3 dígitos.
 
 Para acceder al sistema hay que dar  las tres claves de forma consecutiva y por orden.
 
 Es decir hasta que no averiguamos la primera clave no pasamos a la segunda clave.
 
-Supongamos que cada vez que ponemos los dos dígitos olvidamos el resultado y seguimos poniendo dígitos al azar hasta adivinar la contraseña.
+Supongamos que cada vez que ponemos las dos claves olvidamos el resultado y seguimos poniendo claves al azar hasta adivinar la contraseña.
 
 Así hasta conseguir entrar en el sistema.
 
@@ -2183,11 +2101,11 @@ Sea $X$ la v.a que nos da el número de fallos antes de  entrar en el sistema.
 
 Estamos interesados en modelar  este problema.  La preguntas son:
 
-1. ¿Cuál es la distribución de probabilidad de $X$ la v.a que nos da el número de fallos antes de acceder al  sistema.
-2. ¿Cuál es la función de probabilidad y de distribución del $X$
+1. ¿Cuál es la distribución de probabilidad de $X$, la v.a que nos da el número de fallos antes de acceder al  sistema.
+2. ¿Cuál es la función de probabilidad y de distribución del $X$?
 3. ¿Cuál es la probabilidad de fallar  150 veces antes de acceder en el sistema?
 4. ¿Cuál es la probabilidad de fallar  más de  150  veces antes de entrar en el sistema?
-5. ¿Cuál es  el número esperado de fallos antes de acceder al sistema? ¿Y su desviación típica?
+5. ¿Cuál es  el número esperado de fallos antes de acceder al sistema? ¿Y su varianza?
 
 </div>
 
@@ -2197,7 +2115,7 @@ Estamos interesados en modelar  este problema.  La preguntas son:
 
 <div class="exercise-sol">
 
-**Solución 1.**  ¿Cuál es la distribución de probabilidad de $X$ la v.a que nos da el número de fallos antes de acceder al  sistema.
+**Solución 1.**  ¿Cuál es la distribución de probabilidad de $X$, la v.a que nos da el número de fallos antes de acceder al  sistema?
 
 Bajo estados condiciones tenemos que la probabilidad de "éxito" de cada intento es $p=\frac{1}{1000}=0.001$. Y como cada vez *olvidamos* en los dígitos cada intento será independiente del anterior.
 
@@ -2322,6 +2240,16 @@ nbinom.cdf(150,n=3,p=0.001)
 ```
 </div>
 
+## Solución  ejemplo  $BN(n,p)$ 
+
+<div class="example-sol">
+El valor pedido será pues:
+$$
+P(X>150)=1-P(X\leq 150)=1-`r pnbinom(150,3,0.001)`=`r 1-pnbinom(150,3,0.001)`.
+$$
+Vemos que es muy probable que fallemos más de 150 veces antes de entrar en el sistema.
+</div>
+
 
 ## Solución  ejemplo  $BN(n,p)$ 
 
@@ -2354,14 +2282,14 @@ Supongamos que ponemos una sola clave de 9 dígitos. Estudiemos en este caso la 
 
 </div>
 
-<div class="exercice-sol">
+<div class="exercise-sol">
 Si seguimos suponiendo que cada vez ponemos la contraseña al azar pero esta vez con una  clave de  9 dígitos. La probabilidad de éxito será ahora $p=\frac{1}{10^{9}}$.
 
 Si llamamos $X_9$  a la variable aleatoria que nos da el número de fallos antes de entra en el sistema seguirá una distribución $Ge(p=\frac{1}{10^9}=0.000000001)$.
 </div>
 ##  Qué da más seguridad  ¿tres claves de tres dígitos o una de 9 dígitos?
 
-<div class="exercice">
+<div class="exercise-sol">
 
 Su valor esperado es
 
@@ -2375,7 +2303,7 @@ $$
  
  $$3\cdot \frac{1-0.001}{0.001}=`r 3*(1-0.001)/0.001`.$$
  
-Por lo tanto es mejor una clave larga de 9 dígitos  que tres cortas si  escribimos las contraseñas al azar.
+Por lo tanto, desde el punto de vista de la seguridad, es mejor una clave larga de 9 dígitos que tres cortas si escribimos las contraseñas al azar.
 </div>
 
 # Distribución Poisson
