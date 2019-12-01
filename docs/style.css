@@ -44,6 +44,7 @@ pre code {
 }
 
 .box{
+  padding: 30px;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -51,10 +52,11 @@ pre code {
 }
 
 .dem {
+  padding: 30px;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
-  background-color: #c9b2f8;
+  background-color: #e0e0e0;
   font-size: 0.99em;
   color: black;
 }
@@ -71,27 +73,41 @@ pre code {
 
 .example{
   color: black;
+  padding: 30px;
+  margin: 10px;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
-  background-color: #bfeeff;
+  background-color: #D0D0D0;
   font-size: 0.99em;
 }
 
 .example-sol{
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  background-color: #F0F0F0;
   font-size: 0.99em;
 }
 
 .exercise{
   color: black;
+  margin: 10px;
+  padding: 30px;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
-  background-color: #92e394;
+  background-color: #B0B0B0;
   font-size: 0.99em;
 }
 
 .exercise-sol{
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  background-color: #F0F0F0;
   font-size: 0.99em;
 }
 
