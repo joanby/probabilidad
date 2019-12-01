@@ -2306,7 +2306,7 @@ $$
 Por lo tanto, desde el punto de vista de la seguridad, es mejor una clave larga de 9 dígitos que tres cortas si escribimos las contraseñas al azar.
 </div>
 
-# Distribución Poisson
+# Distribución de Poisson
 
 ## Distribución Poisson
 
@@ -2323,13 +2323,11 @@ $$
 
 ## Distribución Poisson
 
-Recordemos que el desarrollo en serie  de Taylor de la exponencial es 
-
+Usando que el desarrollo en serie  de Taylor de la función exponencial es 
 $$
-e^{\lambda}=\sum_{x=0}^{+\infty} \frac{\lambda^x}{x!}.
+e^{\lambda}=\sum_{x=0}^{+\infty} \frac{\lambda^x}{x!},
 $$
-
-Teniendo en cuenta esto es  fácil comprobar que  todos los valores de la función de probabilidad suman 1.
+es  fácil comprobar que la suma de la función de probabilidad en todos los valores del dominio de $X$, o sea, los enteros positivos, vale 1.
 
 
 Además recordemos que   dado $x\in\mathbb{R}-\{0\}$   se tiene que  
@@ -2341,20 +2339,17 @@ $$
 
 ## Distribución Poisson
 
-Así, por ejemplo, se tiene que 
-
+Usando la expresión anterior para $x=-\lambda$, tenemos:
 
 $$
 \lim_{n\to\infty} \left(1-\frac{\lambda}{n}\right)^n=\lim_{n\to\infty} \left(1+\frac{-\lambda}{n}\right)^n=e^{-\lambda}.
 $$
 
-## La distribución Poisson como "límite" de una binomial.
+## La distribución de Poisson como "límite" de una binomial.
 
-La distribución Poisson ([Siméon Denis Poisson](https://es.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson)) aparece en el conteo de determinados  eventos que se producen en un intervalo de tiempo o en el espacio.
+La distribución de Poisson ([Siméon Denis Poisson](https://es.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson)) aparece en el conteo de determinados  eventos que se producen en un intervalo de tiempo o en el espacio.
 
-Supongamos que nuestra variable de interés es  $X$= número de eventos en el intervalo de tiempo $(0,t]$.
-
-Como por ejemplo el número de llamadas a un *call center* en una hora  y que sabemos que se cumplen las siguientes condiciones:
+Supongamos que nuestra variable de interés es  $X$, el número de eventos en el intervalo de tiempo $(0,t]$, como por ejemplo el número de llamadas a un *call center* en una hora donde suponemos que se cumplen las siguientes condiciones:
 
 ## La distribución Poisson como "límite" de una binomial.
 
@@ -2364,34 +2359,32 @@ $\lambda>0$.
 gran número de subintervalos (denotemos por $n$ al número de intervalos) de forma que:
     + La probabilidad de que se produzcan dos o más eventos en un subintervalo es despreciable.
     + El número de ocurrencias de eventos en un intervalo  es independiente del número de ocurrencias en otro intervalo.
-    + La probabilidad de que un evento ocurra en un subintervalo es $p_n\cdot n=\lambda$ o lo que es lo mismo $p_n=\frac{\lambda}{n}$·
+    + La probabilidad de que un evento ocurra en un subintervalo es $p_n=\frac{\lambda}{n}$·
 
 ## La distribución Poisson como "límite" de una binomial.
 
-Bajo estas condiciones podemos considerar que el número de eventos en el intervalo $(0,t]$ será el número de "éxitos" en $n$ repeticiones independientes de un proceso Bernoulli de parámetro $p_n$
+Bajo estas condiciones, podemos considerar que el número de eventos en el intervalo $(0,t]$ será el número de "éxitos" en $n$ repeticiones independientes de un proceso Bernoulli de parámetro $p_n$
 
-Entonces si $n\to\infty$ y $p_n\cdot n$ se mantiene igual a $\lambda$ resulta que la función de probabilidad de $X$ se puede poner como
+Entonces si $n\to\infty$ y $p_n\cdot n$ se mantiene igual a $\lambda$ resulta que la función de probabilidad de $X$ se puede escribir como
 
 ## La distribución Poisson como "límite" de una binomial.
 
 $$
-\begin{eqnarray*}
-P(X_n=k)&=&\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot  (1-p_n)^{n-k}
+\begin{array}{rl}
+P(X_n=k)&=\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot  (1-p_n)^{n-k}
 \\
-&=& {n\choose k}\cdot \left(\frac{\lambda}{n}\right)^{k}\cdot \left(1-\frac{\lambda}{n}\right)^{n-k}\\
-&=&
+&= {n\choose k}\cdot \left(\frac{\lambda}{n}\right)^{k}\cdot \left(1-\frac{\lambda}{n}\right)^{n-k}\\
+&=
 \frac{\lambda^k}{k!}\cdot\frac{n!}{(n-k)!\cdot n^k}\cdot
-\left(1-\frac{\lambda}{n}\right)^{n}\cdot \left(1-\frac{\lambda}{n}\right)^{-k}=\ldots
-\end{eqnarray*}
+\left(1-\frac{\lambda}{n}\right)^{n}\cdot \left(1-\frac{\lambda}{n}\right)^{-k}.
+\end{array}
 $$
 
 ## La distribución Poisson como "límite" de una binomial.
 
-
-Estamos interesados en calcular 
-
+Si hacemos tender $n$ hacia $\infty$, obtenemos:
 $$
-\displaystyle\lim_{n\to \infty} P(X_n=k) = \lim_{n\to \infty} \frac{\lambda^k}{k!}\cdot\frac{n!}{(n-k)!\cdot n^k} \cdot
+\lim_{n\to \infty} P(X_n=k) = \lim_{n\to \infty} \frac{\lambda^k}{k!}\cdot\frac{n!}{(n-k)!\cdot n^k} \cdot
 \left(1-\frac{\lambda}{n}\right)^{n}\cdot \left(1-\frac{\lambda}{n}\right)^{-k}.
 $$
 
@@ -2546,7 +2539,7 @@ renderPlot({
 
 La conocida [lámpara antiinsectos o insecticida eléctrico](https://es.wikipedia.org/wiki/Insecticida_el%C3%A9ctrico) atrae a  los insectos voladores con una luz ultravioleta  y los mata por electrocución. 
 
-Consideremos la v.a. $X$ que cuenta  número de insectos caídos en la trampa en una hora. Supongamos que el número promedio de insectos que captura la trampa en una hora es $E(X)=20$ y que podemos admitir que $X$ sigue una ley de probabilidad $Po(\lambda=20)$.
+Consideremos la v.a. $X$ que cuenta el número de insectos caídos en la trampa en una hora. Supongamos que el número promedio de insectos que captura la trampa en una hora es $E(X)=20$ y que podemos admitir que $X$ sigue una ley de probabilidad $Po(\lambda=20)$.
 
 
 Nos piden 
@@ -2575,7 +2568,7 @@ $\lambda=20>0$.
 gran número de subintervalos (denotemos por $n$ al número de intervalos) de forma que:
     + La probabilidad de que se produzcan dos o más  electrocuciones un subintervalo es despreciable. No es posible que dos mosquitos se electrocuten al mismo tiempo.
     + El número de ocurrencias, electrocuciones de insectos, en un intervalo  es independiente del número de electrocuciones en otro intervalo.
-    + La probabilidad de que un evento ocurra en un subintervalo es $p_n\cdot n=\lambda$ o lo que es lo mismo $p_n=\frac{\lambda}{n}$· Podemos dividir los 20  insectos promedio entre los $n$ intervalos (trozo de hora) de forma que $p_n=\frac{\lambda}{n}$. 
+    + La probabilidad de que un evento ocurra en un subintervalo es  $p_n=\frac{\lambda}{n}$· Podemos dividir los 20  insectos promedio entre los $n$ intervalos (trozo de hora) de forma que $p_n=\frac{\lambda}{n}$. 
     + Por ejemplo si $n=60$ tenemos que $p_n=\frac{20}{60}=\frac{1}{3}$. La probabilidad de que en un minuto la trampa chisporrotee es  $\frac{1}{3}$.
     
 </div>
@@ -2592,7 +2585,7 @@ $$
 P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
 $$
 
-Para un a $Po(\lambda=20)$
+En nuestro caso, $\lambda =20$:
 
 $$
 P_X(x)=P(X=x)=\left\{\begin{array}{ll}\frac{20^x}{x!}e^{-20} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
@@ -2644,16 +2637,12 @@ $$
 
 **Solución 3.** Calculad la probabilidad de  que en una hora caigan en la trampa  exactamente 21 insectos.
 
-Nos piden 
-
-
+Nos piden la probabilidad siguiente:
 $$
-P(X=21)=\frac{20^{21}}{21!}=`r 20^21/factorial(21)*exp(-20)`.
+P(X=21)=\frac{20^{21}}{21!} e^{-20}=`r 20^(21)/factorial(21)*exp(-20)`.
 $$
 
-
-Con R como calculadora y con la función de la distribución de  R
-
+Para realizar el cálculo anterior, podemos usar `R` como calculadora o usar la función `dpois` que nos calcula la función de distribución de la variable de Poisson:
 ```{r}
 20^21/factorial(21)*exp(-20)
 dpois(21,lambda = 20)
@@ -2668,18 +2657,18 @@ dpois(21,lambda = 20)
 **Solución 4.**  Calculad la probabilidad de  que en una hora caigan en la trampa  al menos 6 insectos.
 
 
-Nos piden
+Nos piden la probabilidad siguiente:
 $$
-\begin{eqnarray*}
- P(X\geq 6)&=&1- P(X<6)=1-P(X\leq 5)=1-F_X(5)=1-\displaystyle\sum_{x=0}^{5} \frac{20^{x}}{x!}\cdot e^{-20}\\
- &=&
+\begin{array}{rl}
+ P(X\geq 6)&=1- P(X<6)=1-P(X\leq 5)=1-F_X(5)=1-\displaystyle\sum_{x=0}^{5} \frac{20^{x}}{x!}\cdot e^{-20}\\
+ &=
  1-\left(\frac{20^{0}}{0!}\cdot e^{-20}+\frac{20^{1}}{1!}\cdot e^{-20}+\frac{20^{2}}{2!}\cdot e^{-20}+\frac{20^{3}}{3!}\cdot e^{-20}+\frac{20^{4}}{4!}\cdot e^{-20}+\frac{20^{5}}{5!}\cdot e^{-20}\right)\\
- &=&
+ &=
  1-e^{-20}\cdot \left(1+20+\frac{400}{4}+\frac{8000}{6}+\frac{160000}{24}+\frac{3200000}{120}\right)\\
- &=&
+ &=
  1-e^{-20} \cdot \left(\frac{1 \cdot 120+20\cdot 120+400\cdot 30+8000\cdot 20+160000\cdot 24+3200000\cdot 1}{120}\right)\\
- &=& 1-e^{-20}\cdot\left(\frac{4186520}{120}\right)=1-`r exp(-20)+20*exp(-20)+200*exp(-20)+8000/6*exp(-20)+160000/24*exp(-20)+3200000*exp(-20)`.
-\end{eqnarray*}
+ &= 1-e^{-20}\cdot\left(\frac{4186520}{120}\right)=1-`r exp(-20)+20*exp(-20)+200*exp(-20)+8000/6*exp(-20)+160000/24*exp(-20)+3200000*exp(-20)/120` =`r 1-( exp(-20)+20*exp(-20)+200*exp(-20)+8000/6*exp(-20)+160000/24*exp(-20)+3200000*exp(-20)/120)`.
+\end{array}
 $$
 
 </div>
@@ -2702,13 +2691,12 @@ Su varianza es
 $$Var(X)=\lambda=20$$
 
 y  su desviación típica vale
-$$\sqrt{Var(X)}=+\sqrt{\lambda}=+\sqrt{20}.$$
+$$\sqrt{Var(X)}=+\sqrt{\lambda}=+\sqrt{20}=`r round(sqrt(20),5)`.$$
 </div>
 
 ## Cálculos con R
 
-Sea $X$ un una v.a. $Po(\lambda=3)$. Entonces $P_X(0)=P(X=0), P_X(1)=P(X=1)$: 
-
+Consideremos por ejemplo una v.a. $X$ con distribución $Po(\lambda=3)$. Calculemos $P_X(0)=P(X=0), P_X(1)=P(X=1)$ con `R`:
 
 ```{r}
 dpois(0,lambda = 3)
@@ -2717,7 +2705,8 @@ dpois(1,lambda = 3)
 
 ## Cálculos con R
 
-$F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)$:
+Si quisiéramos hallar la función de distribución en los mismos valores anteriores, 
+$F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)$, haríamos lo siguiente:
 
 ```{r}
 ppois(0,lambda = 3)
@@ -2727,7 +2716,7 @@ dpois(0,lambda = 3)+dpois(1,lambda = 3) ## es igual a ppois(1,lambda=3)
 
 ## Cálculos con R
 
-Por ejemplo podemos comprobar que $F_X(10)=\sum_{x=0}^{10} P_X(x)$
+A continuación, comprobemos que $F_X(10)=\sum\limits_{x=0}^{10} P_X(x)$:
 
 ```{r}
 dpois(0:10,3)
@@ -2737,14 +2726,17 @@ ppois(10,3)
 
 ## Cálculos distribución Poisson con R
 
-Y también generar secuencias de observaciones aleatorias de una población $Po(3)$
+Si quisiéramos generar una secuencia de $100$ observaciones para una distribución de Poisson de parámetro $\lambda=3$, $Po(3)$, tendríamos que hacer:
 
 ```{r random_pois}
 rpois(n=100,lambda = 3)
 ```
+
 ## Cálculos con R
 
 <div class="exercise">
+**Ejercicio de la trampa para insectos (continuación)**
+
 En   el ejercicio de la trampa para insectos  teníamos que $X$ es una $Po(20)$. Responded con R  a la preguntas 3 y 4 de este ejercicio
 
 </div>
@@ -2752,7 +2744,7 @@ En   el ejercicio de la trampa para insectos  teníamos que $X$ es una $Po(20)$.
 <div class="example-sol">
 **Pregunta 3.**  Calculad la probabilidad de  que en una hora caigan en la trampa  exactamente 21 insectos.
 
- La  respuesta a la pregunta 3 es calcular  $P(X=21)$ 
+Recordemos que la probabilidad pedida es $P(X=21)$:
 
 ```{r}
 dpois(21,lambda=20)# P(X=21)
@@ -2764,7 +2756,7 @@ dpois(21,lambda=20)# P(X=21)
 <div class="example-sol">
 **Pregunta 4.**  Calculad la probabilidad de  que en una hora caigan en la trampa  al menos 6 insectos.
 
-La pregunta  4 nos pide calcular $P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)$
+Recordemos que la probabilidad pedida es $P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)$:
 
 ```{r}
 ppois(5,lambda=20)
@@ -2895,7 +2887,7 @@ poisson.pmf(21,mu=20)
 ```
 </div>
 
-## Cálculos con R
+## Cálculos con python
 
 <div class="example-sol">
 **Pregunta 4.**  Calculad la probabilidad de  que en una hora caigan en la trampa  al menos 6 insectos.
@@ -3034,15 +3026,15 @@ renderPlot({
 Un colega de trabajo, al que llamaremos  JG, es muy aficionado a los grandes premios de velocidad tanto en coches como en motos.
 
 Como es tan aficionado está obsesionado con  muchas de las más extravagantes estadísticas de estos deportes.
-En particular le propusimos que estudiara el número de insectos que chocan contra la visera de un casco de un  motorista GP  o de un  conductor o de fórmula 1 .
+En particular le propusimos que estudiara el número de insectos que chocan contra la visera de un casco de un  motorista GP  o de un  conductor de fórmula 1 .
 
-La idea es que el número de insectos  está igualmente repartido por todo el circuito y de de promedio impactan    $\lambda>0$ insectos por minuto. También es razonable suponer  que:
+La idea es que el número de insectos  está igualmente repartido por todo el circuito y de promedio impactan $\lambda>0$ insectos por minuto. También es razonable suponer que:
 
-* podemos dividir la superficie de la visera en cuadrados suficiente mente pequeños de forma que la probabilidad de que caigan dos insectos en la misma zona es prácticamente 0. 
-* un insecto impacte en  un cuadrado cualquier  de la visera es independiente de cualquier otro cuadrado.
-* si hemos dividido la visera en $n$ cuadrados la probabilidad $p_n$ de  impacto de un cuadrado  $p_n=\frac{\lambda}{n}$
+* podemos dividir la superficie de la visera en cuadrados suficientemente pequeños de forma que la probabilidad de que caigan dos insectos en la misma zona es prácticamente 0. 
+* la probabilidad de que un insecto impacte en  un cuadrado cualquiera  de la visera es independiente de cualquier otro cuadrado.
+* si hemos dividido la visera en $n$ cuadrados la probabilidad $p_n$ de impacto de un cuadrado vale $p_n=\frac{\lambda}{n}$.
 
-Así que bajo estas condiciones  si denotamos por $X_t=$ el número de insectos que ha impactado en la visera en  el intervalo $(0,t]$ (en $t$ minutos) podemos afirmar que $X_t$  es un proceso poisson $Po(\lambda\cdot t)$.
+Bajo estas condiciones,  si denotamos por $X_t$ como el número de insectos que ha impactado en la visera en  el intervalo $(0,t]$ (en $t$ minutos), podemos afirmar que $X_t$  es un proceso de  Poisson $Po(\lambda\cdot t)$.
 
 </div>
 
@@ -3097,19 +3089,19 @@ ppois(0,lambda=3*2)
 
 ## Modelo de la distribución hipergeométrica
 
-Supongamos que disponemos de una  urna de de sorteos que contiene $m$ bolas blancas y $n$ bolas de otro color, digamos que rojas.
+Supongamos que disponemos de una  urna de de sorteos que contiene $m$ bolas blancas y $n$ bolas rojas.
 
-En total en esta urna  hay $m+n$ bolas $m$ blancas y $n$ rojas. Si extraemos dos bolas de la urna lo podemos hacer de dos formas:
+En total en esta urna  hay $m+n$ bolas, $m$ blancas y $n$ rojas. Si extraemos dos bolas de la urna lo podemos hacer de dos formas:
 
 * Extraer una anotar su color y reponerla. Sacar otra y anotar su color. Hemos extraído  la bola con reposición.
 * Extraer simultáneamente dos bolas (sin reposición) y contar el número de bolas blancas.
 
 ## Modelo de la distribución hipergeométrica
 
-Si $X$ es la v.a. que cuenta el número de bolas blancas extraídas
+Sea $X$ es la v.a. que cuenta el número de bolas blancas extraídas.
 
-* en el primer caso $X$ es una $B(n=2,p=\frac{m}{m+n})$  ya que consiste en  repetir dos veces el mismo experimento bernoulli.
-* en el segundo caso $X$ sigue una distribución hipergeométrica que estudiaremos en esta sección.
+* En el primer caso, $X$ es una $B(n=2,p=\frac{m}{m+n})$  ya que consiste en  repetir dos veces el mismo experimento de Bernoulli.
+* En el segundo caso, $X$ sigue una distribución hipergeométrica que estudiaremos en esta sección.
 
 
 ## Modelo de la distribución hipergeométrica
@@ -3126,28 +3118,28 @@ El número total de bolas es $m+n$. Extraemos  de forma aleatoria $k$ bolas de l
 
 ## Modelo de la distribución hipergeométrica
 
-Si  $X$ la v.a. que cuenta el número de bolas blancas extraídas.
+Sea  $X$ la v.a. que cuenta el número de bolas blancas extraídas. Diremos que la distribución de $X$ es hipergeométrica de parámetros $m$, $n$ y $k$ y la denotaremos por $H(m,n,k)$.
 
 Su dominio es 
 
 $$D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$$
 
 
-Para explicarlo  veamos varios supuestos 
+Para explicarlo,  veamos varios ejemplos: 
 
-* $H(m=5,n=2,k=3)$. Tenemos  $m=5$ bolas blancas $n=2$ no blancas y saco $k=3$ bolas sin reposición.
-  + En este caso el mínimo de bolas blancas es $1=k-n=3-2$; ya que solo hay dos no blancas.
-  + Mientras que el máximo si es $k=3$; ya que tenemos más que suficientes bolas blancas. 
-
+* $H(m=5,n=2,k=3)$. Tenemos  $m=5$ bolas blancas, $n=2$ no blancas y sacamos $k=3$ bolas sin reposición.
+  + En este caso el mínimo de bolas blancas extraídas es $1=k-n=3-2$, ya que sólo hay dos no blancas.
+  + En cambio, el máximo si es $k=3$, ya que tenemos bolas blancas de "sobra". 
+  
 ## Modelo de la distribución hipergeométrica 
 
 $$D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$$
 
-* $H(m=2,n=5,k=3)$. Tenemos $m=2$ bolas blancas, $n=5$ no blancas y saco $k=3$ bolas sin reposición. 
-  + En este caso el mínimo de bolas blancas es $0$; puedo sacar 3 no blancas 
-  + Mientras que el máximo si es $m=2$; ya que aunque saquemos $k=3$ al llegar a 2 ya hemos  extraído todas las bolas blancas de la urna. 
+* $H(m=2,n=5,k=3)$. Tenemos $m=2$ bolas blancas, $n=5$ no blancas y sacamos $k=3$ bolas sin reposición. 
+  + En este caso el mínimo de bolas blancas es $0$ ya que puedo sacar 3 no blancas.
+  + En cambio, el máximo si es $m=2$, ya que aunque saquemos $k=3$ bolas, al llegar a 2 ya hemos  extraído todas las bolas blancas de la urna.  
 
-* $H(m=10,n=10,k=3)$. Tenemos $m=10$ bolas blancas, $n=10$ no blancas y saco $k=3$ bolas sin reposición. 
+* $H(m=10,n=10,k=3)$. Tenemos $m=10$ bolas blancas, $n=10$ no blancas y sacamos $k=3$ bolas sin reposición. 
   + En este caso podemos obtener desde $0$ blancas hasta $k=3$ blancas.
 
 
@@ -3155,26 +3147,23 @@ $$D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$$
 
 Su función de probabilidad es:
 
+Su función de probabilidad es:
 $$
 P_{X}(x)=\left\{
 \begin{array}{ll}
-\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}} & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.
+\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
+\max\{0,k-n\}\leq x \leq \min\{m,k\}, \mbox { para  } x\in \mathbf{N},\\
+0,  & \mbox{en otro caso.}\end{array}\right.
 $$
 
 
 ## Distribución hipergeométrica
 
-Una v.a. **hipergeométrica con los  parámetros anteriores** la
-denotaremos por 
-$$H(m,n,k).$$
-
 <l class="observ"> **Observación: otras parametrizaciones** </l>
 
 
-En ocasiones se parametriza una v.a. hipergeométrica mediante $N=m+n$ número total de bolas, 
-$k$=número de extracciones y $p=$ probabilidad de una bola blanca. 
+En ocasiones se parametriza una v.a. hipergeométrica mediante $N=m+n$, número total de bolas, 
+$k$, número de extracciones y $p$, probabilidad de extraer una bola blanca. 
 
 
 Así podemos **parametrizar alternativamente** la distribución hipergeométrica así 
@@ -3188,11 +3177,12 @@ $X=$número de bolas blancas  en $k$ extracciones  sin reposición de una urna c
 $D_X$= | $\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}$
 $P_X(x)=P(X=x)=$ | $\left\{
 \begin{array}{ll}
-\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}} & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.$
-$F_X(x)=P(X\leq x)$ | Hay que sumarla. Utilizad funciones de R o de python.
+\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
+\max\{0,k-n\}\leq x \leq \min\{m,k\}, \\
+0,  & \mbox{en otro caso.}\end{array}\right.$
+$F_X(x)=P(X\leq x)$ | Hay que sumarla. Utilizad funciones de `R` o de python.
 $E(X)=\frac{k\cdot m}{m+n}$   | $Var(X)=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m+n-1}$
+
 
 
 ## Ejemplo clásico urna $m=15$ blancas, $n=10$ rojas y $k=3$ extracciones sin reposición.
@@ -3200,7 +3190,7 @@ $E(X)=\frac{k\cdot m}{m+n}$   | $Var(X)=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}
 <div class="example">
 **Urna con bolas blancas y rojas**
 
-Tenemos una urna con 10 bolas rojas, 15 bolas blancas. Extraemos al azar tres bolas de la urna sin reposición. Sea  $X$=número de bolas **blancas** extraídas. Bajo esta condiciones la v.a. $X$ sigue una ley de distribución $H(m=15,n=10,k=3)$.
+Tenemos una urna con 15 bolas blancas y 10 bolas rojas. Extraemos al azar tres bolas de la urna sin reposición. Sea  $X$ el número de bolas **blancas** extraídas. Bajo esta condiciones, la v.a. $X$ sigue una ley de distribución $H(m=15,n=10,k=3)$.
 
 </div>
 
@@ -3263,16 +3253,16 @@ phyper(2,15,10,3)
 La probabilidad de que saquemos más de   1 bola blanca es
 
 $$
-\begin{eqnarray*}
-P(X> 1)&=& 1-P(X\leq 1)=1-(P(X=0)+P(X=1))\\
-&=&
+\begin{array}{rl}
+P(X> 1)&= 1-P(X\leq 1)=1-(P(X=0)+P(X=1))\\
+&=
 1-\left(\frac{\binom{15}{0}\cdot \binom{10}{3}}{\binom{25}{3}}+
 \frac{\binom{15}{1}\cdot \binom{10}{2}}{\binom{25}{3}}\right)\\
-&=&
+&=
 1-\left(
 \frac{`r choose(15,0)`\cdot`r choose(10,3)` }{`r choose(25,3)`}+\frac{`r choose(15,1)`\cdot`r choose(10,2)` }{`r choose(25,3)`}
-\right)=1-\frac{120+15\cdot 45}{2300}=`r 1-(120+15*45)/2300`
-\end{eqnarray*}
+\right)=1-\frac{120+15\cdot 45}{2300}=`r 1-(choose(15,0)*choose(10,3)+choose(15,1)*choose(10,2))/choose(25,3)`.
+\end{array}
 $$
 
 </div>
@@ -3289,16 +3279,17 @@ $$E(X)=\frac{k\cdot m}{m+n}=\frac{3\cdot 15}{15+10}=\frac{45}{35}=`r round(45/35
 
 
 
+La varianza vale:
 $$
-\begin{eqnarray*}
-Var(X)&=&k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m+n-1}\\
-&=&3\cdot\frac{15}{15+10}\cdot\left(1-\frac{15}{15+10}\right) \cdot\frac{15+10-3}{15+10-1}\\
-&=&
+\begin{array}{rl}
+Var(X)&=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m+n-1}\\
+&=3\cdot\frac{15}{15+10}\cdot\left(1-\frac{15}{15+10}\right) \cdot\frac{15+10-3}{15+10-1}\\
+&=
 3\cdot\frac{15}{25}\cdot\left(1-\frac{15}{25}\right) \cdot\frac{22}{24}= 
 3\cdot\frac{15}{25}\cdot\frac{25-15}{25} \cdot\frac{22}{24}\\
-&=&
+&=
 3\cdot\frac{15}{25}\cdot\frac{10}{25}\cdot\frac{22}{24}=`r 3*15/25*10/25*22/24`.
-\end{eqnarray*}
+\end{array}
 $$
 
 Y por lo tanto su desviación típica es 
@@ -3310,13 +3301,11 @@ $$
 
 ## Cálculos con R
 
-Sea $X$ una va.a $H(m,n,k)$ Las funciones de R son $P(X=x)=$`dhyper(x,m,n,k)` y $P(X\leq q)=$`phyper(q,m,n,k)`, la generación de aleatorios de una hipergeométrica es `rhyper(nn,m,n,k)` donde `nn` es el número de observaciones aleatorias deseado.
+Sea $X$ una v.a. $H(m,n,k)$. La función de `R` para calcular la función de probabilidad en un valor $x$, $P(X=x)$, es `dhyper(x,m,n,k)` y para calcular la función de distribución en un valor $q$, $P(X\leq q)$, es `phyper(q,m,n,k)`. Para generar una muestra de valores que siga la distribución $H(m,n,k)$, hay que usar la función `rhyper(nn,m,n,k)` donde `nn` es el número de observaciones aleatorias deseado de la muestra.
 
-Si $X$ es una $H(m=15,n=10,k=3)$, $P(X=2)$ y que $P(X>1)=1-P(X\leq 1)$ son... 
+Por ejemplo, si $X$ es una $H(m=15,n=10,k=3)$, los valores de $P(X=2)$ y que $P(X>1)=1-P(X\leq 1)$ son:
 
 ## Cálculos con R
-
-
 
 ```{r}
 dhyper(x=2,m=15,10,k=3)
@@ -3326,7 +3315,7 @@ phyper(q=1,m=15,n=10,k=3)# sí, le han puesto q ya veremos el porqué
 
 ## Cálculos con R
 
-Una muestra aleatoria de este experimento de tamaño 200 sería...
+Una muestra aleatoria de este experimento de tamaño 200 sería:
 
 ```{r}
 rhyper(nn=200,m=15,n=10,k=3)

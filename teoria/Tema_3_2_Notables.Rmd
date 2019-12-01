@@ -22,11 +22,11 @@ library(reticulate)
 
 ## Distribución uniforme
 
-Una v.a. continua $X$ diremos que tiene una distribución uniforme sobre el intervalo real $(a,b)$ ,con $a<b$, si su función de densidad es 
+Una v.a. continua $X$ tiene una distribución uniforme sobre el intervalo real $(a,b)$ ,con $a<b$, si su función de densidad es 
 
 $$
 f_X(x)=\left\{\begin{array}{ll}
-\frac1{b-a} & \mbox{si } a<x<b\\ 0  & \mbox{en cualquier otro caso}
+\frac1{b-a}, & \mbox{si } a<x<b,\\ 0,  & \mbox{en cualquier otro caso.}
 \end{array}
 \right. 
 $$ 
@@ -46,10 +46,8 @@ vale 1.
 <div class="exercise-sol">
 
 $$
-\begin{eqnarray*}
-\displaystyle\int_{-\infty}^{+\infty} f_x(x)\cdot dx=\int_{a}^{b} \frac{1}{b-a} \cdot dx=\left.\frac{x}{b-a}\right]_{x=a}^{x=b}=\frac{b}{b-a}-\frac{a}{b-a}=
+\int_{-\infty}^{+\infty} f_x(x)\cdot dx=\int_{a}^{b} \frac{1}{b-a} \cdot dx=\left.\frac{x}{b-a}\right]_{x=a}^{x=b}=\frac{b}{b-a}-\frac{a}{b-a}=
 \frac{b-a}{b-a}=1.
-\end{eqnarray*}
 $$
 </div>
 
@@ -59,8 +57,8 @@ $$
 Su función de distribución es
 
 $$
-F_X(x)=\left\{\begin{array}{ll} 0  & \mbox{si } x\leq a\\
-\frac{x-a}{b-a} & \mbox{si } a<x<b\\ 1  & \mbox{si } b\leq x
+F_X(x)=\left\{\begin{array}{ll} 0,  & \mbox{si } x\leq a,\\
+\frac{x-a}{b-a}, & \mbox{si } a<x<b,\\ 1,  & \mbox{si } b\leq x.
 \end{array}
 \right. 
 $$
@@ -72,61 +70,58 @@ $$
 
 Efectivamente:
 
-* Si $x\leq a$ entonces 
-$$F_X(x)=\displaystyle\int_{-\infty}^{x} f(t)\cdot dt= \displaystyle\int_{-\infty}^{x} 0\cdot dt.$$
-* Si $a<x<b$ entonces 
+* Si $x\leq a$, entonces 
+$$F_X(x)=\int_{-\infty}^{x} f(t)\cdot dt= \int_{-\infty}^{x} 0\cdot dt.$$
+* Si $a<x<b$ entonces ,
 
 $$
-\begin{eqnarray*}
-F_X(x)&=&\int_{-\infty}^{x} f(t)\cdot dt= \int_{-\infty}^{a} 0\cdot dt+\int_{-a}^{x} \frac1{b-a} \cdot dt\\
-&=& 0 +\left.\frac{t}{b-a}\right]_{t=a}^{t=x}= \frac{x}{b-a}-\frac{a}{b-a}=\frac{x-a}{b-a}.
-\end{eqnarray*}
+\begin{array}{rl}
+F_X(x)&=\displaystyle\int_{-\infty}^{x} f(t)\cdot dt= \int_{-\infty}^{a} 0\cdot dt+\int_{a}^{x} \frac1{b-a} \cdot dt\\
+&= \displaystyle 0 +\left.\frac{t}{b-a}\right]_{t=a}^{t=x}= \frac{x}{b-a}-\frac{a}{b-a}=\frac{x-a}{b-a}.
+\end{array}
 $$
 
 ## Función de distribución uniforme:  cálculo.
 
 
-* Por último si $x\geq b$ entonces 
+* Por último si $x\geq b$ entonces,
 
 $$
-\begin{eqnarray*}
-F_X(x)&=&\displaystyle\int_{-\infty}^{x} f(t) dt=\int_{a}^{b} \frac{1}{b-a} dt=
+\begin{array}{rl}
+F_X(x)&=\displaystyle\int_{-\infty}^{x} f(t) dt=\int_{a}^{b} \frac{1}{b-a} dt=
   \left.  \frac{t}{b-a} \right]_{t=a}^{t=b}
-\\&=& \frac{b}{b-a}-\frac{a}{b-a}=\frac{b-a}{b-a}=1.
-\end{eqnarray*}
+\\&=\displaystyle \frac{b}{b-a}-\frac{a}{b-a}=\frac{b-a}{b-a}=1.
+\end{array}
 $$
 
 
-Si $X$ es una v.a. uniforme en el intervalo $(a,b)$  lo denotaremos por  $U(a,b)$.
-
+Denotaremos a la v.a. $X$ uniforme en el intervalo $(a,b)$ por  $U(a,b)$.
 
 ## Esperanza y varianza  para una v.a. $X$ $U(a,b)$
 
 Calculemos  la esperanza de $X$
 
 $$
-\begin{eqnarray*}
-E(X)&=&\displaystyle\int_{-\infty}^{+\infty} x\cdot f_X(x) dx =\int_{a}^{b} x \cdot \frac{1}{b-a} dx =
+\begin{array}{rl}
+E(X)&=\displaystyle\int_{-\infty}^{+\infty} x\cdot f_X(x) dx =\int_{a}^{b} x \cdot \frac{1}{b-a} dx =
 \left.\frac{x^2}{2\cdot (b-a)}\right]_{x=a}^{x=b}\\
-&=&\frac{b^2}{2\cdot (b-a)}-\frac{a^2}{2\cdot (b-a)}\\
-&=&
-\frac{b^2-a^2}{2\cdot (b-a)}=\frac{(b+a)\cdot (b-a)}{2\cdot (b-a)}\\
-&=&
+&=\displaystyle \frac{b^2}{2\cdot (b-a)}-\frac{a^2}{2\cdot (b-a)} =
+\frac{b^2-a^2}{2\cdot (b-a)} \\ & =\displaystyle\frac{(b+a)\cdot (b-a)}{2\cdot (b-a)}=
 \frac{b+a}{2}.
-\end{eqnarray*}
+\end{array}
 $$
 
 
 ## Esperanza y varianza  para una v.a. $X$ $U(a,b)$
 
-Calculemos  la esperanza de $X^2$
+De cara a calcular su varianza, calculemos primero la esperanza de $X^2$:
 
 $$
-\begin{eqnarray*}
-E(X^2)&=&\displaystyle\int_{-\infty}^{+\infty} x^2 f_X(x) dx=\int_{a}^{b} x^2 \frac1{b-a}
+\begin{array}{rl}
+E(X^2)&=\displaystyle\int_{-\infty}^{+\infty} x^2 f_X(x) dx=\int_{a}^{b} x^2 \frac1{b-a}
 dx =\left.\frac{x^3}{3\cdot (b-a)}\right]_{x=a}^{x=b} \\
-&=&\frac{b^3-a^3}{3\cdot (b-a)}=\frac{b^2+ab+a^2}{3}.
-\end{eqnarray*}
+&=\displaystyle\frac{b^3-a^3}{3\cdot (b-a)}=\frac{b^2+ab+a^2}{3}.
+\end{array}
 $$
 
 <div class="exercise">
@@ -143,24 +138,23 @@ $$
 ## Esperanza y varianza  para una v.a. $X$ $U(a,b)$.
 
 Calculemos $Var(X)$.
-
 $$
-\begin{eqnarray*}
-Var(X)&=&\displaystyle E(X^2)-(E(X))^2=\frac{b^2+ab+a^2}3-\left(\frac{b+a}2\right)^2\\&=&
+\begin{array}{rl}
+Var(X)&=\displaystyle E(X^2)-(E(X))^2=\frac{b^2+ab+a^2}3-\left(\frac{b+a}2\right)^2\\&=\displaystyle
 \frac{b^2+ab+a^2}{3}-\frac{b^2+2ab+a^2}{4}\\
-&=&
+&=\displaystyle
 \frac{4\cdot (b^2+ab+a^2)-3\cdot (b^2+2ab+a^2)}{4\cdot 3}
 \\
-&=&
+&=\displaystyle
 \frac{b^2-2ab+a^2}{12}=
 \frac{(b-a)^2}{12}.
-\end{eqnarray*}
+\end{array}
 $$
 
 
 ## Gráficas $U(0,1)$
 
-El código  de la gráficas  de una $U(0,1)$
+El código en `R` para dibujar la función de densidad y la función de distribución de una distribución $U(0,1)$ es el siguiente:
 
 ```{r grafica_unif10, eval=FALSE}
 par(mfrow=c(1,2))
