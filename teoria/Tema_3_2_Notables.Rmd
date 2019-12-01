@@ -231,7 +231,7 @@ renderPlot({
 
 ```
 
-## Cambio lineal v.a. uniforme.
+## Transformación lineal de la v.a. uniforme
 
 
 Si $X$ sigue una distribución $U(a,b)$ entonces  $Z=\frac{X-a}{b-a}$ sigue una distribución $U(0,1)$.
@@ -239,25 +239,25 @@ Si $X$ sigue una distribución $U(a,b)$ entonces  $Z=\frac{X-a}{b-a}$ sigue una 
 
 <div class="prop">
 
-**Propiedad: Cambio lineal distribución uniforme**
+**Propiedad: Transformación lineal de la v.a. uniforme**
 </div>
 
 Sea $X$ una v.a  $U(a,b)$
 
-Si $scale\not=0$ y $loc$ son dos constantes reales   entonces 
+Si $scale\not=0$ y $loc$ son dos constantes reales entonces 
 
-* si $scale>0$ $T=scale\cdot X+loc$ sigue una ley $U(scale\cdot a +loc,scale\cdot b +loc)$  
-* si $scale<0$ $T=scale\cdot X+loc$ sigue una ley $U(scale\cdot b +loc,scale\cdot a +loc)$
+* si $scale>0$, $T=scale\cdot X+loc$ sigue una ley $U(scale\cdot a +loc,scale\cdot b +loc)$  
+* si $scale<0$, $T=scale\cdot X+loc$ sigue una ley $U(scale\cdot b +loc,scale\cdot a +loc)$
 
 
 ## Cambio lineal v.a. uniforme.
 
 <div class="dem">
+**Demostración**
 
-Supongamos  que $X$ sigue una ley $U(a,b)$, que $scale>0$ y que $T=\frac{X-loc}{scale}$
+Supongamos  que $X$ sigue una ley $U(a,b)$, que $scale>0$ y que $T=scale\cdot X+loc$. Dejamos el caso $scale<0$ como ejercicio.
 
-Así tenemos que 
-
+La función de distribución de $X$ es:
 $$
 F_X(x)=P(X\leq x)=\left\{\begin{array}{ll} 0 & \mbox{ si } x\leq a\\\frac{x-a}{b-a} & \mbox{ si } a\leq x\leq b \\1 & \mbox{ si } b\leq x\end{array}\right.
 $$
@@ -270,25 +270,24 @@ $$
 
 <div class="dem">
 
-Si $T$ es una $U(scale\cdot a +loc,scale\cdot b +loc)$   su función de distribución será 
 
 
+Si $T$ vale $T=scale\cdot X+loc$, su función de distribución será:
 $$
-\begin{eqnarray*}
-F_T(t)&=&P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{scale}\right)=F_X\left(\frac{t-loc}{scale}\right)\\
-&=&
-\left\{\begin{array}{ll} 0 & \mbox{ si } \frac{t-loc}{scale}\leq a\\\frac{\frac{t-loc}{scale}-a}{b-a} & \mbox{ si } a\leq \frac{t-loc}{scale}\leq b\\1 & \mbox{ si } b\leq \frac{t-loc}{scale}\end{array}\right.=
-\left\{\begin{array}{ll} 0 & \mbox{ si }  t\leq scale\cdot a +loc \\
-\frac{t-(scale\cdot a+loc)}{scale\cdot (b-a)} & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc \\
-1 & \mbox{ si } scale\cdot b+loc\leq t \end{array}\right.\\
-& = &
-\left\{\begin{array}{ll} 0 & \mbox{ si }  t\leq scale\cdot a +loc \\
-\frac{t-(scale\cdot a+loc)}{scale\cdot b+loc-(scale\cdot a+loc)} & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc \\
-1 & \mbox{ si } scale\cdot b+loc\leq t\end{array}\right.
-\end{eqnarray*}
+\begin{array}{rl}
+F_T(t)&=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{scale}\right)=F_X\left(\frac{t-loc}{scale}\right)\\
+&=
+\left\{\begin{array}{ll} 0, & \mbox{ si } \frac{t-loc}{scale}\leq a\\\frac{\frac{t-loc}{scale}-a}{b-a}, & \mbox{ si } a\leq \frac{t-loc}{scale}\leq b,\\1, & \mbox{ si } b\leq \frac{t-loc}{scale},\end{array}\right.=
+\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\frac{t-(scale\cdot a+loc)}{scale\cdot (b-a)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
+1, & \mbox{ si } scale\cdot b+loc\leq t, \end{array}\right.\\
+& = 
+\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\frac{t-(scale\cdot a+loc)}{scale\cdot b+loc-(scale\cdot a+loc)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
+1, & \mbox{ si } scale\cdot b+loc\leq t,\end{array}\right.
+\end{array}
 $$
-
-que es la función de distribución de una v.a. $U(scale\cdot a+loc,scale\cdot b+loc)$, como queríamos demostrar.
+función que corresponde a la función de distribución de una v.a. $U(scale\cdot a+loc,scale\cdot b+loc)$, como queríamos demostrar.
 </div>
 
 
@@ -303,9 +302,9 @@ Sea $X$ una variable $U(0,1)$ y sea $T=scale\cdot X+loc$:
 
 * Si $T$ es $U(-5,5)$  ¿qué  valores toman $scale$ y $loc$?
 
-* Si $T$  $loc=-10$ y $scale=10$ ¿qué distribución de probabilidad sigue  $T$ ?
+* Si $loc=-10$ y $scale=10$ ¿qué distribución de probabilidad sigue  $T$?
 
-* Si $T$  $loc=0$ y $scale=-1$ ¿qué distribución probabilidad sigue  $T$ ?
+* Si $loc=0$ y $scale=-1$ ¿qué distribución probabilidad sigue  $T$?
 
 </div>
 
@@ -314,24 +313,31 @@ Sea $X$ una variable $U(0,1)$ y sea $T=scale\cdot X+loc$:
 Distribución uniforme | $U(a,b)$
 ----:|:-----
 Dominio | $D_X=(a,b)$
-$f_{X}(x)$ |$\left\{\begin{array}{ll}\frac1{b-a} & \mbox{si } a<x<b\\ 0  & \mbox{en cualquier otro caso}\end{array} \right.$
-$F_X(x)=P(X\leq X)=$ |  $\left\{\begin{array}{ll} 0 & \mbox{ si } x\leq a\\\frac{x-a}{b-a} & \mbox{ si } a\leq x\leq b\\1 & \mbox{ si } b\leq x\end{array}\right.$
+$f_{X}(x)$ |$\left\{\begin{array}{ll}\frac1{b-a}, & \mbox{si } a<x<b,\\ 0,  & \mbox{en cualquier otro caso.}\end{array} \right.$
+$F_X(x)=P(X\leq X)=$ |  $\left\{\begin{array}{ll} 0, & \mbox{ si } x\leq a\\\frac{x-a}{b-a}, & \mbox{ si } a\leq x\leq b,\\1, & \mbox{ si } b\leq x.\end{array}\right.$
 $E(X)=$ |$\frac{a+b}2$
 $Var(X)=$| $\frac{(b-a)^2}{12}$
 
 ## Cálculos con  R
 
-Sea $X$ una $v.a.$ y $U(-1,1)$. Como es habitual , aunque ahora la variable es continua, las funciones de densidad  y de distribución son  
+Sea $X$ una $v.a.$ $U(a,b)$. Las funciones `dunif(x,a,b)` y `punif(x,a,b)` calculan la función de densidad y de distribución de $X$ en el valor $X$. Por ejemplo, para $a=-1$, $b=1$ y $x=0.5$, los valores $f_X(x)$ y $F_X(x)$ valen:
 
 ```{r}
 dunif(x=0.5, min=-1,max=1)
 punif(q=0.5,min=-1,max=1)
-runif(n=5,min=-1,max=1)# generación de números aleatorios uniforme U(min.max)
 ```
 
 ## Cálculos con  R
 
-Por defecto `dunif(x,min=0,max=1)`
+
+La función `runif(n,a,b)` calcula un muestra de observaciones de tamaño $n$ que sigan la distribución $U(a,b)$:
+```{r}
+runif(n=5,min=-1,max=1)
+```
+
+## Cálculos con  R
+
+Por defecto, el valor de los parámetros `a` y `b` son 0 y 1, respectivamente:
 
 ```{r}
 dunif(x=0.5)
@@ -341,8 +347,9 @@ runif(n=5)
 
 ## Cálculos con python
 
-Sea $X$ una $v.a.$ $U(-1,1)$ $a=-1$ y $b=1$ así que $loc=-1$ y $scale=b-a=1-(-1)=2.$
+Sea $X$ una $v.a.$ $U(-1,1)$. Tomando como "base" la v.a. $U(0,1)$, los parámetros $loc$ y $scale$ valen: $loc=-1$ y $scale=2,$ ya que como hemos visto $X=2*U(0,1)-1=U(-1,1)$.
 
+En python, hay que usar dichos parámetros para calcular la función de densidad y de distribución:
 ```{python}
 from scipy.stats import uniform
 uniform.pdf(0.5,loc=-1,scale=2)
@@ -351,7 +358,7 @@ uniform.ppf(0.5,loc=-1,scale=2)
 
 ## Cálculos con python
 
-Generación de aletorios uniforme
+Para generar una muestra de valores aleatorios, hay que usar la función `uniform.rvs`:
 
 ```{python}
 uniform.rvs(size=30,loc=-1,scale=2)
@@ -359,7 +366,7 @@ uniform.rvs(size=30,loc=-1,scale=2)
 
 ## Cálculos con python
 
-Los valores de los parámetros con por defecto  `loc=0, scale=1`
+Los valores de los parámetros por defecto son `loc=0, scale=1`:
 
 ```{python}
 uniform.pdf(0.5)
@@ -390,11 +397,11 @@ En `R`, cada distribución $X$ tiene la función `qX(p,...)` que devuelve precis
 
 <div class="example">
 
-Por ejemplo si $X$ es una B(5,0.5)
+Consideremos una v.a. $X$ de distribución $B(5,0.5)$. 
+
+Los cuantiles $x_{0.3}$, $x_{0.6}$ y $x_{0.8}$ son los siguientes:
 
 ```{r quantile1, sixe="small"}
-pbinom(0:5,5,0.5)
-qbinom(c(0.25,0.5,0.75),5,0.5)
 qbinom(c(0.3,0.6,0.8),5,0.5)
 ```
 </div>
@@ -402,20 +409,21 @@ qbinom(c(0.3,0.6,0.8),5,0.5)
 ## Cuantiles
 
 <div class="example">
-Como $X$ sigue una $B(5,0.5)$, recordemos que $D_X=\{0,1,2,\ldots,n=5\}.$ y que su función de distribución es  
+Calculemos a mano, el valor $x_{0.3}$ y verifiquemos que da el mismo resultado que nos ha dado `R`.
 
+La función de distribución de $X$ es:
 $$
 \small{
 F_x(x)=P(X\leq x)=
 \left\{
 \begin{array}{ll}
-0 & x< 0 \\
-0.03125 & \mbox{ si } 0 \leq x< 1 \\
-0.18750 & \mbox{ si } 1 \leq x< 2 \\
-0.50000 & \mbox{ si } 2 \leq x< 3 \\
-0.81250 & \mbox{ si } 3 \leq x< 4 \\
-0.96875 & \mbox{ si } 4 \leq x< 5 \\
-1.00000 & \mbox{ si }  5\leq x \\
+0, & x< 0, \\
+0.03125, & \mbox{ si } 0 \leq x< 1, \\
+0.18750, & \mbox{ si } 1 \leq x< 2, \\
+0.50000, & \mbox{ si } 2 \leq x< 3, \\
+0.81250, & \mbox{ si } 3 \leq x< 4, \\
+0.96875, & \mbox{ si } 4 \leq x< 5, \\
+1.00000, & \mbox{ si }  5\leq x. \\
 \end{array}
 \right.}
 $$
@@ -424,7 +432,7 @@ $$
 ## Cuantiles
 
 <div class="example">
-El cuantil $q=0.3$ es el  primer valor $x\in D_X$  tal que $F_X(x)=P(X\leq x_{0.3})\geq 0.3.$ así que el primer valor es $x_{0.3}=2$ ya que $F_X(2)=P(X\leq 2)=0.5 \geq 0.3$.
+El cuantil $q=0.3$ es el  primer valor $x\in D_X$  tal que $F_X(x)=P(X\leq x_{0.3})\geq 0.3.$. Mirando la expresión anterior, comprobamos que $x_{0.3}=2$ ya que $F_X(2)=P(X\leq 2)=0.5 \geq 0.3$.
 </div>
 
 
@@ -435,38 +443,37 @@ Calcular los cuantiles de  $0.6$ y $0.8$ de una $B(5,0.5).$
 </div>
 
 
-En general podemos considerar que $F^{-1}$ es la función que nos da los cuantiles (es decir si $F^{-1}(p)$ da más de una valor tomaremos como antiimagen el valor más pequeño que esté dentro del dominio $D_X$).
+En general, podemos considerar que $F^{-1}$ es la función que nos da los cuantiles (es decir si $F^{-1}(p)$ da más de una valor tomaremos como antiimagen el valor más pequeño que esté dentro del dominio $D_X$).
 
 
 ## Cuantiles
 
 <div class="example">
 
-**Dado  parchís**
+**Ejemplo: variable aleatoria que nos da el resultado del lanzamiento de un dado**
 
-$Sea$  $X$ la variable aleatoria uniforme discreta que nos da el número de puntos  obtenidos en el lanzamiento de una dado de parchís (seis caras y numeradas del 1 al 6).
+Sea  $X$ la variable aleatoria uniforme discreta que nos da el número de puntos obtenidos en el lanzamiento de un dado (seis caras numeradas del 1 al 6).
 
-Su dominio  es $D_X=\{1,2,3,4,5,6\}$ su función de probabilidad es 
-
+Su dominio  es $D_X=\{1,2,3,4,5,6\}$ y su función de probabilidad es 
 $$
 P_X(x)=P(X=x)=
 \left\{
 \begin{array}{ll}
- \frac{1}{6} & \mbox{ si } x=1,2,3,4,5,6. \\
-0 & \mbox{ en otro caso }.
+ \frac{1}{6}, & \mbox{ si } x=1,2,3,4,5,6, \\
+0, & \mbox{ en otro caso. }.
 \end{array}
 \right.
 $$
 
-Y su función de distribución
+Su función de distribución es:
 
 $$
 F_X(x)= P(X\leq x)=
 \left\{
 \begin{array}{ll}
-0 & \mbox{ si } x<1. \\
-\frac{k}{6} & \mbox{ si } k\leq x< l+1 \mbox{ para } x= 1,2,3,4,6. \\
- 1 & \mbox{si  } x \geq 6.
+0, & \mbox{ si } x<1, \\
+\frac{k}{6} & \mbox{ si } k\leq x< k+1 \mbox{ para } x= 1,2,3,4,6, \\
+ 1, & \mbox{si  } x \geq 6.
 \end{array}
 \right.
 $$
@@ -477,23 +484,32 @@ $$
 
 <div class="example">
 
-Si lo queremos simular en `R` tenemos la función
-
+La función siguiente llamada `ddado` nos define la función de probabilidad de $X$ para un dado de $n$ caras:
 ```{r}
 ddado=function(x,n=6) {
   sapply(x,FUN=function(x) {
     if( x %in% c(1:n)){return(1/n)} else {return(0)}})
   }
+```
+
+## Cuantiles
+
+Por ejemplo, el valor de $P_X(0.5)$ sería:
+```{r}
 ddado(1.5,n=6)
+```
+y los valores de $P_X(i)$ para $i=1,\ldots 10$ sería:
+```{r}
 ddado(1:10,n=6)
 ```
+
 </div>
 
 ## Cuantiles
 
 <div class="example">
 
-Ahora calculemos $F_X(X)=P(X\leq x)$ con una función de R
+La función `pdado` nos da la función de distribución de $X$:
 
 ```{r}
 pdado=function(x,n=6) 
@@ -501,6 +517,10 @@ pdado=function(x,n=6)
   sapply(x,FUN=function(y){ if (y<1){ return(0)}else{if(y>=n){return(1)} else
   {return(sum(ddado(c(1:(floor(y))),n=n)))}}})
   }
+```
+
+Los valores de $F_X(i)$ para $i=0,\ldots, 11$ serían:
+```{r}
 pdado(0:11,6)
 ```
 
@@ -511,7 +531,7 @@ pdado(0:11,6)
 <div class="example">
 
 
-Construyamos la función de cuantiles para esta variable:  dado $0\leq p \leq 1$, será  el mínimo de la antiimagen de $p$ mediante la función de distribución $F_X^{-1}(p)$
+A continuación, construímos la función `qdado` que nos calcula el cuantil $p$, para $0\leq p\leq 1$, de la variable $X$ como el mínimo de la antiimagen de $p$ mediante la función de distribución $F_X^{-1}(p)$
 
 ```{r}
 qdado=function(p,n=6){
@@ -629,36 +649,6 @@ renderPlot({
 ```
 
 
-## Generador de números aleatorios método de la transformada inversa
-
-
-Una de las utilidades de la distribución uniforme $U(0,1)$ es que si  sabemos generar números aletorios de una uniforme podemos generar números aleatorios de cualquier variable aleatoria
-
-<l class="prop"> Propiedad. La transformada inversa </l>
-Sea $Z$ una v.a. $U(0,1)$ y sea $X$ una v.a  con función de distribución $F_X$ y que  sea estrictamente creciente de forma que exista la función $F^{-1}$. Consideremos la v.a. $Y=F_X^{-1}(U)$ entonces $Y$ tiene la misma distribución que $X$. 
-
-Notemos que $F^{-1}(p)$, bajo estas condiciones, es la función que nos da los cuantiles de $X$ para cada $0\leq p\leq 1$.
-
-## Generador de números aleatorios método de la transformada inversa
-
-<div class="dem">
-
-**Demostración**
-
-Bajo esta condiciones  $F^{-1}(y)$   nos da un solo valor  y como además es creciente tenemos que
-
-$$
-P(Y\leq y )=P\left(F_X^{-1}(U)\leq y\right)=P(U\leq F_X(y))=F_Z(F_X(y))=F_X(y).
-$$
-
-Luego $X$ es $Y$ tienen la misma función de distribución. 
-
-</div>
-
-
-<l class="observ"> **Observación: generación de  observaciones  de una v.a.  discreta**: </l>
-
-Este método se pueden generar observaciones  de una v.a.  **discreta** a partir de observaciones aleatorias  de una v.a. $U(0,1)$.  El método es  similar a la propiedad anterior pero tomando como $F^{-1}$ la función que nos da los cuantiles de la v.a. discreta. 
 
 # Distribución exponencial
 
@@ -666,36 +656,34 @@ Este método se pueden generar observaciones  de una v.a.  **discreta** a partir
 
 Supongamos que tenemos un proceso Poisson con parámetro $\lambda$ en una unidad de tiempo.
 
-Sea $t$ una cantidad de tiempo en u.t. entonces $N_{t}=$ número de eventos en el intervalo de tiempo $(0,t]$ es una $Po(\lambda\cdot t)$. Consideremos la v.a. $T=$ tiempo transcurrido entre dos eventos Poisson consecutivos.
+Dado un tiempo $t$, definimos $N_{t}$ como el número de eventos en el intervalo de tiempo $(0,t]$. La distribución de $N(t)$ es una $Po(\lambda\cdot t)$. Consideremos la v.a. $T$ como el tiempo transcurrido entre dos eventos Poisson consecutivos.
 
 Sea $t>0$, entonces
 
 $$
-\begin{eqnarray*}
-P(T>t)&=&P(\mbox{Cero eventos en el intervalo}(0,t])\\
-&=&P(N_{t}=0)=
+\begin{array}{rl}
+P(T>t)&=P(\mbox{Cero eventos en el intervalo}(0,t])\\
+&=P(N_{t}=0)=
          \frac{(\lambda t)^0}{0!} e^{-\lambda
          t}=e^{-\lambda t}.
-\end{eqnarray*}
+\end{array}
 $$
 
 ##  Distribución del tiempo entre dos eventos Poisson
 
-Tomando complementarios, la función de distribución de $T$ será
-
+Tomando complementarios, la función de distribución de $T$ será:
 $$
-F_{T}(t)= P(T\leq t)=1-P(X>t)=\left\{\begin{array}{ll} 0 &\mbox{ si } t\leq 0\\
-  1-e^{-\lambda t}& \mbox{ si } t>0\end{array}\right.
-$$
-
-Entonces, derivando respecto de $t$ en la expresión anterior
-
-$$
-f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t} & \mbox{ si }  t>0\\
-0 & \mbox{ si } t\leq 0 \end{array}\right.
+F_{T}(t)= P(T\leq t)=1-P(T>t)=\left\{\begin{array}{ll} 0, &\mbox{ si } t\leq 0,\\
+  1-e^{-\lambda t},& \mbox{ si } t>0,\end{array}\right.
 $$
 
-La exponencial se denota por $Exp(\lambda)$
+Para hallar la función de densidad de $T$, basta derivar la expresión anterior:
+$$
+f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t}, & \mbox{ si }  t>0,\\
+0, & \mbox{ si } t\leq 0. \end{array}\right.
+$$
+
+Llamaremos a la variable $T$ exponencial de parámetro $\lambda$ y la denotaremos por $Exp(\lambda)$.
 
 
 
@@ -711,8 +699,13 @@ $$P(X>s+t\big|X>s)=P(X>t)\mbox{  para todo } s,t\in \mathbb{R}$$
 
 Si $X$ es una v.a. $Exp(\lambda)$ tenemos que $P(X>x)=1-P(X\leq x)=1-(1-e^{-\lambda\cdot x})=e^{-\lambda\cdot x}$ para todo $x>0$
 
-$P(X>s+t\big|X>s)=\frac{P(\{X>s+t\}\cap \{X>s\})}{P(X>s)}=\frac{P(X>s+t)}{P(X>s)}=\frac{e^{-\lambda\cdot (s+t)}}{e^{-\lambda\cdot s}}=
-\frac{e^{-\lambda\cdot s}\cdot e^{-\lambda\cdot t} }{e^{-\lambda\cdot s}}=e^{-\lambda\cdot t}=P(X>t).$
+Por tanto,
+$$
+\begin{array}{rl}
+P(X>s+t\big|X>s) & =\frac{P(\{X>s+t\}\cap \{X>s\})}{P(X>s)}=\frac{P(X>s+t)}{P(X>s)}=\frac{e^{-\lambda\cdot (s+t)}}{e^{-\lambda\cdot s}}=
+\frac{e^{-\lambda\cdot s}\cdot e^{-\lambda\cdot t} }{e^{-\lambda\cdot s}}\\ & =e^{-\lambda\cdot t}=P(X>t).
+\end{array}
+$$
 </div>
 
 ## Ejemplo distribución exponencial
