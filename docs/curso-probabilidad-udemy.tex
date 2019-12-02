@@ -128,7 +128,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-12-01}
+    \date{2019-12-02}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -3366,7 +3366,7 @@ Veamos los cálculos básicos usando la distribución \(Ber(p=0.25)\) en \texttt
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 1 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1
+##  [1] 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 1
 \end{verbatim}
 
 El siguiente código dibuja las función de probabilidad y la de distribución de una \(Ber(p=0.25)\)
@@ -3752,12 +3752,12 @@ Si queremos generar una muestras aleatorias que siga una distribución binomial,
 \end{Shaded}
 
 \begin{verbatim}
-## array([ 4,  4,  5,  7,  5,  6,  3, 10,  2,  4,  1,  9,  4,  6,  5,  6,  4,
-##         5,  6,  7,  5,  5,  8,  4,  6,  5,  5,  9,  6,  5,  4,  6,  6,  6,
-##         0,  5,  4,  6,  8,  5,  3,  5,  6,  2,  4,  4,  5,  2,  5,  6,  5,
-##         1,  6,  5,  6,  7,  5,  4,  5,  5,  5,  3,  4,  6,  4,  6,  3,  3,
-##         3,  4,  4,  7,  4,  3,  6,  5,  5,  5,  6,  3,  5,  7,  6,  5,  6,
-##         0,  4,  4, 11,  3,  5,  6,  4,  6,  8,  4,  4,  6,  4,  3])
+## array([ 9,  4,  4,  3,  6,  7,  4,  3,  2,  4,  6,  5,  6,  8,  6,  3,  5,
+##         0,  8,  6,  8,  6,  5,  5,  1,  7,  5,  3,  5,  6,  5,  4,  3,  9,
+##         3,  6,  8,  7,  2,  4,  6,  5,  4,  3,  8,  5,  4,  6,  5,  7,  9,
+##         5,  6,  3,  3,  6,  3,  5,  3,  4,  4,  4,  5,  5,  3,  5,  7,  5,
+##         6,  7,  3, 10,  3,  9,  5,  7,  5,  4,  6,  8,  8,  9,  6,  5,  7,
+##         4,  2,  3,  4,  9,  4,  7,  4,  5,  4,  3,  5,  7,  7,  2])
 \end{verbatim}
 
  \textbf{Observación}
@@ -3771,11 +3771,12 @@ Notemos que la secuencia aleatoria generada no es la misma que con \texttt{R}. D
 \end{Shaded}
 
 \begin{verbatim}
-## array([2, 7, 4, 6, 4, 5, 4, 7, 5, 5, 1, 5, 8, 2, 5, 3, 8, 3, 8, 6, 6, 4, 7,
-##        5, 1, 3, 6, 4, 2, 5, 6, 0, 6, 8, 6, 7, 4, 7, 8, 8, 4, 5, 3, 6, 3, 3,
-##        5, 4, 5, 6, 5, 7, 4, 5, 3, 8, 4, 7, 7, 1, 3, 3, 6, 8, 7, 5, 5, 5, 4,
-##        7, 3, 7, 7, 4, 5, 6, 6, 5, 4, 4, 3, 3, 5, 5, 8, 8, 4, 5, 5, 5, 5, 7,
-##        3, 2, 5, 6, 3, 5, 3, 6])
+## array([ 3,  0,  5,  6,  4,  5,  5,  6,  6,  4,  6,  5,  4,  2,  7,  5,  9,
+##         4,  5,  5,  8,  4,  9,  8,  4,  8,  3,  5,  6,  3,  4,  6,  3,  5,
+##         4,  4,  4,  4,  5,  3,  8,  4,  4,  4,  5,  6,  3,  5,  4,  7,  5,
+##         5,  6,  4,  8,  7,  6,  9,  0, 10,  5,  8,  4,  4,  2,  5,  4,  5,
+##         5,  1,  4,  6,  4,  8,  4,  5,  2,  4,  5,  4,  3,  5,  4,  4,  6,
+##         4,  4,  2,  4,  8,  6,  3,  6,  2,  1,  3,  7,  3,  6,  4])
 \end{verbatim}
 
 Veamos algunos cálculos básicos con funciones de python para la binomial \(B(n=10,p=0.25)\).
@@ -3807,7 +3808,7 @@ Veamos algunos cálculos básicos con funciones de python para la binomial \(B(n
 \end{Shaded}
 
 \begin{verbatim}
-## array([ 8, 10,  9,  3,  6,  7,  7,  6,  4,  8])
+## array([7, 7, 2, 4, 2, 4, 4, 4, 5, 3])
 \end{verbatim}
 
 \textbf{Gráficas de la distribución binomial con \texttt{R}}
@@ -4441,7 +4442,7 @@ La desviación típica es \(\sqrt{90}=9.486833.\)
 
 Los partidos Real Madrid vs FC Barcelona de \textbf{la liga} española se suelen denominar \textbf{El Clásico}, sean en el Bernabeu (estadio del Real Madrid) o en el Camp Nou (estadio del Barça)
 
-Sea \(X\) la variable que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Real Madrid gana al Barça sea en el Camp Nou o el Bernabeu.
+Sea \(X\) la variable que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Barça no gana al Madrid sea en el Camp Nou o el Bernabeu.
 
 Nuestra amiga Aina es muy culé (hincha del Barça) y quiere averiguar cuántos partidos consecutivos de \textbf{El Clásico} tiene que ver hasta ver ganar al Barça por primera vez.
 
@@ -4629,8 +4630,8 @@ Una muestra aleatoria de tamaño 25 de una \(Ge(0.25)\):
 \end{Shaded}
 
 \begin{verbatim}
-## array([ 1,  1,  0,  1,  4,  3,  2,  1,  9, 11,  7,  3,  3,  1,  2,  2,  5,
-##         5,  4,  0])
+## array([ 0,  2,  5,  1,  5,  0,  1,  1,  0,  1,  3,  1,  8,  3, 12,  1,  0,
+##         1,  6,  2])
 \end{verbatim}
 
 \textbf{Ejercicio}
@@ -5100,12 +5101,12 @@ Generemos 100 observaciones aleatorias de una \(BN(n=2,0.1)\). Es decir serán l
 \end{Shaded}
 
 \begin{verbatim}
-## array([35, 31,  9,  4, 24,  9,  9, 13,  5, 33,  5, 24, 26,  2,  3,  2, 25,
-##         4, 41,  6, 31, 21, 31, 15, 18, 22, 42, 21, 16, 10, 10, 29,  4,  9,
-##         4,  5, 10, 30, 47, 13, 22, 31,  7, 11,  6,  2, 42, 18, 16, 14, 11,
-##        12, 35, 15,  6, 19,  6, 15,  8, 12, 27,  2, 31, 17, 20,  7, 16, 32,
-##        14,  9,  4, 51, 10, 75,  7, 20, 15, 28, 58,  6, 30, 36, 13, 20,  1,
-##        35, 27,  7, 21, 36,  6, 23, 16,  0, 31,  7, 15, 13, 18, 29])
+## array([26,  7,  6,  2, 24, 22, 37, 33, 22, 10,  5,  5, 10,  1, 37,  5,  1,
+##        13, 18, 16, 12,  9,  8, 10, 33,  2, 22, 13,  3, 43, 27, 17, 21,  4,
+##        11,  1, 16, 40, 15, 25, 12, 19, 24, 25, 29, 46, 10, 32, 16,  8, 19,
+##        66, 40, 26, 34, 12, 13, 60, 26, 10,  4, 19, 18, 21,  6, 11, 13,  5,
+##        24, 22, 42, 23, 16, 29, 10,  5, 14, 58, 15, 10, 36, 11, 30, 21, 31,
+##        29, 33, 11,  3, 16, 11, 16, 29,  3,  3, 26, 30, 38, 44, 15])
 \end{verbatim}
 
 La \textbf{esperanza} y la \textbf{varianza}de una \(BN(n=2,0.1)\) valen:
@@ -5439,25 +5440,23 @@ Recordemos que con tres contraseñas de 3 dígitos el valor esperado de fallos e
 
 Por lo tanto, desde el punto de vista de la seguridad, es mejor una clave larga de 9 dígitos que tres cortas si escribimos las contraseñas al azar.
 
-\hypertarget{distribuciuxf3n-poisson}{%
-\section{Distribución Poisson}\label{distribuciuxf3n-poisson}}
+\hypertarget{distribuciuxf3n-de-poisson}{%
+\subsection{Distribución de Poisson}\label{distribuciuxf3n-de-poisson}}
 
 Diremos que una v.a. discreta \(X\) con \(X(\Omega)=\mathbf{N}\) tiene distribución de Poisson con parámetro \(\lambda>0\), y lo denotaremos por \(Po(\lambda)\) si su función de probabilidad es:
 
 \[
 P_{X}(x)=P(X=x)=
 \left\{\begin{array}{ll}
-\frac{\lambda^x}{x!} e^{-\lambda}& \mbox{ si } x=0,1,\ldots\\
-0 & \mbox{en otro caso}\end{array}\right..
+\frac{\lambda^x}{x!} e^{-\lambda},& \mbox{ si } x=0,1,\ldots\\
+0, & \mbox{en otro caso.}\end{array}\right.
 \]
 
-Recordemos que el desarrollo en serie de Taylor de la exponencial es
-
+Usando que el desarrollo en serie de Taylor de la función exponencial es
 \[
-e^{\lambda}=\sum_{x=0}^{+\infty} \frac{\lambda^x}{x!}.
+e^{\lambda}=\sum_{x=0}^{+\infty} \frac{\lambda^x}{x!},
 \]
-
-Teniendo en cuenta esto es fácil comprobar que todos los valores de la función de probabilidad suman 1.
+es fácil comprobar que la suma de la función de probabilidad en todos los valores del dominio de \(X\), o sea, los enteros positivos, vale 1.
 
 Además recordemos que dado \(x\in\mathbb{R}-\{0\}\) se tiene que
 
@@ -5465,30 +5464,22 @@ Además recordemos que dado \(x\in\mathbb{R}-\{0\}\) se tiene que
 \lim_{n\to\infty} \left(1+\frac{x}{n}\right)^n=e^x.
 \]
 
-\hypertarget{distribuciuxf3n-poisson-1}{%
-\subsection{Distribución Poisson}\label{distribuciuxf3n-poisson-1}}
-
-Así, por ejemplo, se tiene que
-
+Usando la expresión anterior para \(x=-\lambda\), tenemos:
 \[
 \lim_{n\to\infty} \left(1-\frac{\lambda}{n}\right)^n=\lim_{n\to\infty} \left(1+\frac{-\lambda}{n}\right)^n=e^{-\lambda}.
 \]
 
-\hypertarget{la-distribuciuxf3n-poisson-como-luxedmite-de-una-binomial.}{%
-\subsection{La distribución Poisson como ``límite'' de una binomial.}\label{la-distribuciuxf3n-poisson-como-luxedmite-de-una-binomial.}}
+\textbf{La distribución de Poisson como ``límite'' de una binomial}
 
-La distribución Poisson (\href{https://es.wikipedia.org/wiki/Sim\%C3\%A9on_Denis_Poisson}{Siméon Denis Poisson}) aparece en el conteo de determinados eventos que se producen en un intervalo de tiempo o en el espacio.
+La distribución de Poisson (\href{https://es.wikipedia.org/wiki/Sim\%C3\%A9on_Denis_Poisson}{Siméon Denis Poisson}) aparece en el conteo de determinados eventos que se producen en un intervalo de tiempo o en el espacio.
 
-Supongamos que nuestra variable de interés es \(X\)= número de eventos en el intervalo de tiempo \((0,t]\).
-
-Como por ejemplo el número de llamadas a un \emph{call center} en una hora y que sabemos que se cumplen las siguientes condiciones:
+Supongamos que nuestra variable de interés es \(X\), el número de eventos en el intervalo de tiempo \((0,t]\), como por ejemplo el número de llamadas a un \emph{call center} en una hora donde suponemos que se cumplen las siguientes condiciones:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  El número promedio de eventos en el intervalo \((0,t]\) es
-  \(\lambda>0\).
+  El número promedio de eventos en el intervalo \((0,t]\) es \(\lambda>0\).
 \item
   Es posible dividir el intervalo de tiempo en un
   gran número de subintervalos (denotemos por \(n\) al número de intervalos) de forma que:
@@ -5500,25 +5491,25 @@ Como por ejemplo el número de llamadas a un \emph{call center} en una hora y qu
   \item
     El número de ocurrencias de eventos en un intervalo es independiente del número de ocurrencias en otro intervalo.
   \item
-    La probabilidad de que un evento ocurra en un subintervalo es \(p_n\cdot n=\lambda\) o lo que es lo mismo \(p_n=\frac{\lambda}{n}\)·
+    La probabilidad de que un evento ocurra en un subintervalo es \(p_n=\frac{\lambda}{n}\)·
   \end{itemize}
 \end{enumerate}
 
-Bajo estas condiciones podemos considerar que el número de eventos en el intervalo \((0,t]\) será el número de ``éxitos'' en \(n\) repeticiones independientes de un proceso Bernoulli de parámetro \(p_n\)
+Bajo estas condiciones, podemos considerar que el número de eventos en el intervalo \((0,t]\) será el número de ``éxitos'' en \(n\) repeticiones independientes de un proceso Bernoulli de parámetro \(p_n\)
 
-Entonces si \(n\to\infty\) y \(p_n\cdot n\) se mantiene igual a \(\lambda\) resulta que la función de probabilidad de \(X\) se puede poner como
+Entonces si \(n\to\infty\) y \(p_n\cdot n\) se mantiene igual a \(\lambda\) resulta que la función de probabilidad de \(X_n\) se puede escribir como
 
-\begin{eqnarray*}
-P(X_n=k)&=&\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot  (1-p_n)^{n-k}
+\[
+\begin{array}{rl}
+P(X_n=k)&=\left(\begin{array}{c} n\\ k\end{array}\right) \cdot p_n^k\cdot  (1-p_n)^{n-k}
 \\
-&=& {n\choose k}\cdot \left(\frac{\lambda}{n}\right)^{k}\cdot \left(1-\frac{\lambda}{n}\right)^{n-k}\\
-&=&
+&= {n\choose k}\cdot \left(\frac{\lambda}{n}\right)^{k}\cdot \left(1-\frac{\lambda}{n}\right)^{n-k}\\
+&=
 \frac{\lambda^k}{k!}\cdot\frac{n!}{(n-k)!\cdot n^k}\cdot
-\left(1-\frac{\lambda}{n}\right)^{n}\cdot \left(1-\frac{\lambda}{n}\right)^{-k}=\ldots
-\end{eqnarray*}
-
-Estamos interesados en calcular
-
+\left(1-\frac{\lambda}{n}\right)^{n}\cdot \left(1-\frac{\lambda}{n}\right)^{-k}.
+\end{array}
+\]
+Si hacemos tender \(n\) hacia \(\infty\), obtenemos:
 \[
 \displaystyle\lim_{n\to \infty} P(X_n=k) = \lim_{n\to \infty} \frac{\lambda^k}{k!}\cdot\frac{n!}{(n-k)!\cdot n^k} \cdot
 \left(1-\frac{\lambda}{n}\right)^{n}\cdot \left(1-\frac{\lambda}{n}\right)^{-k}.
@@ -5527,53 +5518,42 @@ Estamos interesados en calcular
 Calculemos el límite de algunos de los factores de la expresión
 
 \[
-\displaystyle\lim_{n\to \infty}\frac{n!}{(n-k)!\cdot n^k}= \lim_{n\to \infty}\frac{n\cdot (n-1)\cdots (n-k-1)}{n^k}
-=\lim_{n\to \infty}\frac{n^{k}+\cdots}{n^k}=1.
+\begin{array}{rl}
+\lim\limits_{n\to \infty}\frac{n!}{(n-k)!\cdot n^k} & = \lim\limits_{n\to \infty}\frac{n\cdot (n-1)\cdots (n-k-1)}{n^k}
+=\lim\limits_{n\to \infty}\frac{n^{k}+\cdots}{n^k}=1, \\
+\lim\limits_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{n} & =e^{-\lambda},\\
+\lim\limits_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{-k} & =\lim\limits_{n\to \infty} 1^{-k}=\lim\limits_{n\to \infty}  1=1,
+\end{array}
 \]
+donde en el último límite, hemos tenido en cuenta que \(k\) es constante.
 
-\[
-\lim_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{n}=e^{-\lambda}
-\]
-
-Y también teniendo en cuanta que \(k\) es constante.
-
-\[
-\lim_{n\to \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=\lim_{n\to \infty} 1^{-k}=\lim_{n\to \infty}  1=1.
-\]
-
-Para acabar
+Usando las expresiones halladas anteriormente, tenemos que el límite de la función de probabilidad de la variable \(X_n\) tiende a la función de probabilidad de la variable de Poisson de parámetro \(\lambda\):
 
 \[
 \displaystyle\lim_{n\to\infty} P(X_n=k)=
 \lim_{n\to\infty} \left(\begin{array}{c} n\\ k\end{array}\right)
 \cdot p_n^k \cdot (1-p_n)^{n-k}= \frac{\lambda^k}{k!}\cdot 1 \cdot e^{-\lambda}\cdot 1=\frac{\lambda^k}{k!}\cdot e^{-\lambda}.
 \]
+Usando que las variables \(X_n\) tienen distribución \(B(n,p_n=\frac{\lambda}{n})\), tenemos que el límite de binomiales de parámetros \(n\) y \(p_n=\frac{\lambda}{n}\) es una distribución de Poisson de parámetro \(\lambda\), \(Po(\lambda)\).
 
-Lo que confirma que límite de una serie de variables
-\(B(n,p_n=\frac{\lambda}{n})\) sigue una ley \(Po(\lambda)\).
+\textbf{Procesos de Poisson}
 
-\hypertarget{procesos-de-poisson}{%
-\subsection{Procesos de Poisson}\label{procesos-de-poisson}}
+Lo interesante de las variables Poisson es que podemos modificar (si el modelo lo permite) el intervalo de tiempo \((0,t]\) en el que contamos los eventos siempre y cuando se cumplan las condiciones 1 y 2 enunciadas anteriormente en el nuevo intervalo de tiempo.
 
-Lo interesante de las variables Poisson es que podemos modificar (si el modelo lo permite) el intervalo de tiempo \((0,t]\) en el que contamos los eventos.
+En general, podemos afirmar si la variable es poisson en \((0,t]\), también lo será en cualquier subintervalo \((0,t']\) para todo \(t'\) tal que \(0<t'<t\).
 
-Claro que esto no tiene que poder ser así.
+De esta forma, podremos definir una serie de variables \(X_t\) de distribución \(Po(\lambda\cdot t)\).
 
-Pero en general si la variable es poisson en \((0,t]\) también lo será en cualquier subintervalo \((0,t']\) para todo \(t'\) tal que \(0<t'<t\).
-
-Así que podremos definir una serie de variables \(X_t\) de distribución \(Po(\lambda\cdot t)\).
-
- Definición procesos de Poisson
+ \textbf{Definición de procesos de Poisson}
 
 Consideremos un experimento \emph{Poisson} con \(\lambda\) igual
 al promedio de eventos en una unidad de tiempo (u.t.).
 
-Si \(t\) es una cantidad de tiempo en u.t., la v.a. \(X_{t}\)=numero de eventos en el intervalo \((0,t]\) es una \(Po(\lambda\cdot t)\).
+Si \(t\) es una cantidad de tiempo en u.t., la v.a. \(X_{t}\) definida como el número de eventos en el intervalo \((0,t]\) es una \(Po(\lambda\cdot t)\).
 
 El conjunto de variables \(\{X_t\}_{t>0}\) recibe el nombre de \textbf{proceso de Poisson}.
 
-\hypertarget{resumen-distribuciuxf3n-poisson-xequiv-polambda}{%
-\subsection{\texorpdfstring{Resumen distribución Poisson \(X\equiv Po(\lambda)\)}{Resumen distribución Poisson X\textbackslash{}equiv Po(\textbackslash{}lambda)}}\label{resumen-distribuciuxf3n-poisson-xequiv-polambda}}
+\textbf{Resumen de la distribución de Poisson \(X\equiv Po(\lambda)\)}
 
 \begin{longtable}[]{@{}rl@{}}
 \toprule
@@ -5592,12 +5572,12 @@ El conjunto de variables \(\{X_t\}_{t>0}\) recibe el nombre de \textbf{proceso d
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(P_X(x)=P(X=x)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\(\left\{\begin{array}{ll} \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0 & \mbox{ en otro caso.}\end{array}\right.\)\strut
+\(\left\{\begin{array}{ll} \frac{\lambda^x}{x!}e^{-\lambda}, & \mbox{ si } x=0,1,\ldots\\ 0, & \mbox{ en otro caso.}\end{array}\right.\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(F_X(x)=P(X\leq X)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\(\begin{array}{l}\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i)= \displaystyle\sum_{i=0}^{k} \frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si }\left\{\begin{array}{l}k\leq x< k+1\\k=0,1,2,\ldots\end{array}\right.\end{array}\right. \\\mbox{Calcular la suma o utilizar funciones de R o python.} \end{array}\)\strut
+\(\begin{array}{l}\left\{\begin{array}{ll} 0, & \mbox{si } x<0,\\\displaystyle\sum_{i=0}^{k} P(X=i)= \displaystyle\sum_{i=0}^{k} \frac{\lambda^i}{i!}\cdot e^{-\lambda}, & \mbox{si }\left\{\begin{array}{l}k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right.\end{array}\right. \\\mbox{Calcular la suma o utilizar funciones de `R` o python.} \end{array}\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(E(X)=\lambda\)\strut
@@ -5607,8 +5587,7 @@ El conjunto de variables \(\{X_t\}_{t>0}\) recibe el nombre de \textbf{proceso d
 \bottomrule
 \end{longtable}
 
-\hypertarget{resumen-proceso-poisson-x_tequiv-polambdacdot-t}{%
-\subsection{\texorpdfstring{Resumen proceso Poisson \(X_t\equiv Po(\lambda\cdot t)\)}{Resumen proceso Poisson X\_t\textbackslash{}equiv Po(\textbackslash{}lambda\textbackslash{}cdot t)}}\label{resumen-proceso-poisson-x_tequiv-polambdacdot-t}}
+\textbf{Resumen proceso Poisson \(X_t\equiv Po(\lambda\cdot t)\)}
 
 \begin{longtable}[]{@{}rl@{}}
 \toprule
@@ -5632,7 +5611,7 @@ El conjunto de variables \(\{X_t\}_{t>0}\) recibe el nombre de \textbf{proceso d
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(F_X(x)=P(X\leq X)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\(\begin{array}{l}\left\{\begin{array}{ll} 0 & \mbox{si } x<0\\\displaystyle\sum_{i=0}^{k} P(X=i)= \displaystyle\sum_{i=0}^{k} \frac{(\lambda\cdot t)^i}{i!}\cdot e^{-\lambda\cdot t} & \mbox{si }\left\{\begin{array}{l}k\leq x< k+1\\k=0,1,2,\ldots\end{array}\right.\end{array}\right. \\\mbox{Calcular la suma o utilizar funciones de R o python.} \end{array}\)\strut
+\(\begin{array}{l}\left\{\begin{array}{ll} 0, & \mbox{si } x<0,\\\displaystyle\sum_{i=0}^{k} P(X=i)= \displaystyle\sum_{i=0}^{k} \frac{(\lambda\cdot t)^i}{i!}\cdot e^{-\lambda\cdot t}, & \mbox{si }\left\{\begin{array}{l}k\leq x< k+1,\\k=0,1,2,\ldots\end{array}\right.\end{array}\right. \\\mbox{Calcular la suma o utilizar funciones de `R` o python.} \end{array}\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(E(X)=\lambda\cdot t\)\strut
@@ -5642,23 +5621,18 @@ El conjunto de variables \(\{X_t\}_{t>0}\) recibe el nombre de \textbf{proceso d
 \bottomrule
 \end{longtable}
 
-\hypertarget{aproximaciuxf3n-de-la-distribuciuxf3n-binomial-por-la-poisson}{%
-\subsection{Aproximación de la distribución binomial por la Poisson}\label{aproximaciuxf3n-de-la-distribuciuxf3n-binomial-por-la-poisson}}
+\textbf{Aproximación de la distribución binomial por la Poisson}
 
-Bajo el punto de vista anterior y si \(p\) es pequeño y \(n\) suficientemente grande la distribución \(B(n,p)\) se aproxima a una \(Po(\lambda=n\cdot p)\).
+Dada una variable aleatoria de distribución \(B(n,p)\) si \(n\) es grande y \(p\) es pequeño, podemos aproximar la distribución anterior por una distribución Poisson de parámetre \(\lambda=n\cdot p\), \(Po(\lambda = n\cdot p)\).
 
-Existen distintos criterios (ninguno perfecto) de cuando la aproximación es buena.
+Un criterio para decidir que la aproximación anterior es buena es que
+\(n\geq 20\), o mejor, \(n\geq 30\), \(n\cdot p < 10\) y \(p\leq 0.05.\)
 
-Por ejemplo si
+La aproximación de la función de probabilidad de una variable binomial a una variable de Poisson és óptima en los valores cercanos a \(E(X)=\lambda\).
 
-\[n\geq 20\mbox{ o mejor }n\geq 30, n\cdot p < 10 \mbox{ y } p\leq 0.05,\]
+\textbf{Gráficos de la aproximación binomial a la de Poisson}
 
-la aproximación de una \(B(n,p)\) por una \(Po(n\cdot p)\) es buena. Sobre todo para los valores cercanos a \(E(X)=\lambda\).
-
-\hypertarget{gruxe1ficos-aproximaciuxf3n-binomial-poisson}{%
-\subsection{Gráficos aproximación binomial Poisson}\label{gruxe1ficos-aproximaciuxf3n-binomial-poisson}}
-
-Condición deseable \(n\geq 20\), \(n\cdot p < 10\), \(p\leq 0.05\)
+Suponemos que estamos en las condiciones anteriores: \(n\geq 20\), \(n\cdot p < 10\), \(p\leq 0.05\).
 
 Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
 
@@ -5684,34 +5658,36 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \NormalTok{  aux[}\KeywordTok{seq}\NormalTok{(}\DecValTok{2}\NormalTok{,(n}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{*}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)]=}\KeywordTok{dbinom}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n),}\DataTypeTok{size=}\NormalTok{n,}\DataTypeTok{prob=}\NormalTok{pr)}
   \KeywordTok{plot}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n),}\DataTypeTok{y=}\KeywordTok{dbinom}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n),}\DataTypeTok{size=}\NormalTok{n,}\DataTypeTok{prob=}\NormalTok{pr),}
        \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.6}\NormalTok{),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,n}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{xlab=}\StringTok{"x"}\NormalTok{,}\DataTypeTok{ylab=}\StringTok{"Función de probabilidad"}\NormalTok{,}
-       \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"Funciones de probabilidad}\CharTok{\textbackslash{}n}\StringTok{ B(n="}\NormalTok{,n,}\StringTok{",p="}\NormalTok{,pr,}\StringTok{"), Po(lambda="}\NormalTok{,n}\OperatorTok{*}\NormalTok{pr,}\StringTok{")"}\NormalTok{),}\DataTypeTok{collapse =} \StringTok{""}\NormalTok{))}
+       \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"Funciones de probabilidad}\CharTok{\textbackslash{}n}\StringTok{ B(n="}\NormalTok{,n,}\StringTok{",p="}\NormalTok{,pr,}\StringTok{"), }
+\StringTok{                     Po(lambda="}\NormalTok{,n}\OperatorTok{*}\NormalTok{pr,}\StringTok{")"}\NormalTok{),}\DataTypeTok{collapse =} \StringTok{""}\NormalTok{))}
   \KeywordTok{lines}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n,}\DataTypeTok{each=}\DecValTok{2}\NormalTok{),}\DataTypeTok{y=}\NormalTok{aux,}\DataTypeTok{pch=}\DecValTok{21}\NormalTok{, }\DataTypeTok{type =} \StringTok{"h"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{)}
 \NormalTok{  aux=}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,(n}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{*}\DecValTok{2}\NormalTok{)}
 \NormalTok{  aux[}\KeywordTok{seq}\NormalTok{(}\DecValTok{2}\NormalTok{,(n}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{*}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)]=}\KeywordTok{dpois}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n),n}\OperatorTok{*}\NormalTok{pr)}
   \KeywordTok{points}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n),}\DataTypeTok{y=}\KeywordTok{dpois}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n),n}\OperatorTok{*}\NormalTok{pr),}
        \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.6}\NormalTok{),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,n}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{xlab=}\StringTok{"x"}\NormalTok{,}\DataTypeTok{pch=}\DecValTok{25}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
   \KeywordTok{lines}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n,}\DataTypeTok{each=}\DecValTok{2}\NormalTok{),}\DataTypeTok{y=}\NormalTok{aux, }\DataTypeTok{type =} \StringTok{"h"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{3}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
-  \KeywordTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{,}\DataTypeTok{legend=}\KeywordTok{c}\NormalTok{(}\StringTok{"Binomial"}\NormalTok{,}\StringTok{"Poisson"}\NormalTok{),}\DataTypeTok{col=}\KeywordTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{),}\DataTypeTok{pch=}\KeywordTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{,}\DecValTok{25}\NormalTok{),}\DataTypeTok{lty=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{),}\DataTypeTok{bty =} \StringTok{"n"}\NormalTok{)}
+  \KeywordTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{,}\DataTypeTok{legend=}\KeywordTok{c}\NormalTok{(}\StringTok{"Binomial"}\NormalTok{,}\StringTok{"Poisson"}\NormalTok{),}\DataTypeTok{col=}\KeywordTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{), }
+         \DataTypeTok{pch=}\KeywordTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{,}\DecValTok{25}\NormalTok{),}\DataTypeTok{lty=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{),}\DataTypeTok{bty =} \StringTok{"n"}\NormalTok{)}
   \KeywordTok{curve}\NormalTok{(}\KeywordTok{pbinom}\NormalTok{(x,}\DataTypeTok{size=}\NormalTok{n,}\DataTypeTok{p=}\NormalTok{pr),}
         \DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,n}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{ylab=}\StringTok{"Función de Distribución",}
-\StringTok{         main=paste0(c("}\NormalTok{Funciones de distribución \textbackslash{}n }\KeywordTok{B}\NormalTok{(}\DataTypeTok{n=}\StringTok{",n,"}\NormalTok{,}\DataTypeTok{p=}\StringTok{",pr,"}\NormalTok{), }\KeywordTok{Po}\NormalTok{(}\DataTypeTok{lambda=}\StringTok{",n*pr,"}\NormalTok{)}\StringTok{"),collapse = ""))}
+\StringTok{         main=paste0(c("}\NormalTok{Funciones de distribución \textbackslash{}n }\KeywordTok{B}\NormalTok{(}\DataTypeTok{n=}\StringTok{",n,"}\NormalTok{,}\DataTypeTok{p=}\StringTok{",pr,"}\NormalTok{),}
+                       \KeywordTok{Po}\NormalTok{(}\DataTypeTok{lambda=}\StringTok{",n*pr,"}\NormalTok{)}\StringTok{"),collapse = ""))}
 \StringTok{  curve(ppois(x,n*pr),}
 \StringTok{        xlim=c(-1,n+1),col="}\NormalTok{red}\StringTok{",add=TRUE)}
-\StringTok{  if(all(c(n>=20,n*pr<10,pr<= 0.05)))\{aux_l="}\NormalTok{Condición\textbackslash{}n TRUE}\StringTok{"\} else \{aux_l="}\NormalTok{Condición\textbackslash{}n FALSE}\StringTok{"\}}
-\StringTok{  legend("}\NormalTok{topleft}\StringTok{",legend=c(aux_l,paste0("}\DataTypeTok{n=}\StringTok{",n),paste0("}\NormalTok{n}\OperatorTok{*}\DataTypeTok{p=}\StringTok{",n*pr),paste0("}\DataTypeTok{p=}\StringTok{",pr)),bg="}\NormalTok{transparent}\StringTok{",cex=0.8,bty = "}\NormalTok{n}\StringTok{")}
+\StringTok{  if(all(c(n>=20,n*pr<10,pr<= 0.05)))\{aux_l="}\NormalTok{Condición\textbackslash{}n TRUE}\StringTok{"\} else }
+\StringTok{    \{aux_l="}\NormalTok{Condición\textbackslash{}n FALSE}\StringTok{"\}}
+\StringTok{  legend("}\NormalTok{topleft}\StringTok{",legend=c(aux_l,paste0("}\DataTypeTok{n=}\StringTok{",n),paste0("}\NormalTok{n}\OperatorTok{*}\DataTypeTok{p=}\StringTok{",n*pr),}
+\StringTok{                            paste0("}\DataTypeTok{p=}\StringTok{",pr)),bg="}\NormalTok{transparent}\StringTok{",cex=0.8,bty = "}\NormalTok{n}\StringTok{")}
 \StringTok{  par(mfrow=c(1,1))}
 \StringTok{\})}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ejemplo-polambda-trampa-insectos}{%
-\subsubsection{\texorpdfstring{Ejemplo \(Po(\lambda)\) Trampa insectos}{Ejemplo Po(\textbackslash{}lambda) Trampa insectos}}\label{ejemplo-polambda-trampa-insectos}}
-
-\textbf{Ejemplo}: Trampa insectos.
+\textbf{Ejemplo de una distribución de Poisson \(Po(\lambda)\): trampa para insectos}
 
 La conocida \href{https://es.wikipedia.org/wiki/Insecticida_el\%C3\%A9ctrico}{lámpara antiinsectos o insecticida eléctrico} atrae a los insectos voladores con una luz ultravioleta y los mata por electrocución.
 
-Consideremos la v.a. \(X\) que cuenta número de insectos caídos en la trampa en una hora. Supongamos que el número promedio de insectos que captura la trampa en una hora es \(E(X)=20\) y que podemos admitir que \(X\) sigue una ley de probabilidad \(Po(\lambda=20)\).
+Consideremos la v.a. \(X\) que cuenta el número de insectos caídos en la trampa en una hora. Supongamos que el número promedio de insectos que captura la trampa en una hora es \(E(X)=20\) y que podemos admitir que \(X\) sigue una ley de probabilidad \(Po(\lambda=20)\).
 
 Nos piden
 
@@ -5749,7 +5725,7 @@ Nos piden
   \item
     El número de ocurrencias, electrocuciones de insectos, en un intervalo es independiente del número de electrocuciones en otro intervalo.
   \item
-    La probabilidad de que un evento ocurra en un subintervalo es \(p_n\cdot n=\lambda\) o lo que es lo mismo \(p_n=\frac{\lambda}{n}\)· Podemos dividir los 20 insectos promedio entre los \(n\) intervalos (trozo de hora) de forma que \(p_n=\frac{\lambda}{n}\).
+    La probabilidad de que un evento ocurra en un subintervalo es \(p_n=\frac{\lambda}{n}\)· Podemos dividir los 20 insectos promedio entre los \(n\) intervalos (trozo de hora) de forma que \(p_n=\frac{\lambda}{n}\).
   \item
     Por ejemplo si \(n=60\) tenemos que \(p_n=\frac{20}{60}=\frac{1}{3}\). La probabilidad de que en un minuto la trampa chisporrotee es \(\frac{1}{3}\).
   \end{itemize}
@@ -5760,57 +5736,52 @@ Nos piden
 La distribución de probabilidad de un \(Po(\lambda)\) es
 
 \[
-P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{\lambda^x}{x!}e^{-\lambda} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
+P_X(x)=P(X=x)=\left\{\begin{array}{ll}  \frac{\lambda^x}{x!}e^{-\lambda}, & \mbox{ si } x=0,1,\ldots\\ 0,  & \mbox{ en otro caso.}\end{array}\right.
 \]
 
-Para un a \(Po(\lambda=20)\)
-
+En nuestro caso, \(\lambda =20\):
 \[
-P_X(x)=P(X=x)=\left\{\begin{array}{ll}\frac{20^x}{x!}e^{-20} & \mbox{ si } x=0,1,\ldots\\ 0  & \mbox{ en otro caso.}\end{array}\right.
+P_X(x)=P(X=x)=\left\{\begin{array}{ll}\frac{20^x}{x!}e^{-20}, & \mbox{ si } x=0,1,\ldots\\ 0,  & \mbox{ en otro caso.}\end{array}\right.
 \]
-
-La función de distribución es
+La función de distribución es:
 
 \[
 F_X(x)=P(X\leq X)=
 \left\{\begin{array}{ll} 
-0 & \mbox{si } x<0\\
-\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{\lambda^i}{i!}\cdot e^{-\lambda} & \mbox{si  }
+0, & \mbox{si } x<0,\\
+\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{\lambda^i}{i!}\cdot e^{-\lambda}, & \mbox{si  }
 \left\{\begin{array}{l}
-k\leq x< k+1\\k=0,1,2,\ldots
+k\leq x< k+1,\\k=0,1,2,\ldots
 \end{array}
 \right.
 \end{array}
 \right.
-\]
-
-En nuestro caso
+\]\\
+En nuestro caso:
 \[
 F_X(x)=P(X\leq X)=
 \left\{\begin{array}{ll} 
-0 & \mbox{si } x<0\\
-\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{20^i}{i!}\cdot e^{-20} & \mbox{si  }
+0, & \mbox{si } x<0,\\
+\displaystyle\sum_{i=0}^{k} P(X=i)=\sum_{i=0}^{k}\frac{20^i}{i!}\cdot e^{-20}, & \mbox{si  }
 \left\{\begin{array}{l}
-k\leq x< k+1\\k=0,1,2,\ldots
+k\leq x< k+1,\\k=0,1,2,\ldots
 \end{array}
 \right.
 \end{array}
 \right.
 \]
-
 \textbf{Solución 3.} Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 insectos.
 
-Nos piden
-
+Nos piden la probabilidad siguiente:
 \[
-P(X=21)=\frac{20^{21}}{21!}=0.0846051.
+P(X=21)=\frac{20^{21}}{21!} e^{-20}=0.0846051.
 \]
 
-Con R como calculadora y con la función de la distribución de R
+Para realizar el cálculo anterior, podemos usar \texttt{R} como calculadora o usar la función \texttt{dpois} que nos calcula la función de distribución de la variable de Poisson:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DecValTok{20}\OperatorTok{^}\DecValTok{21}\OperatorTok{/}\KeywordTok{factorial}\NormalTok{(}\DecValTok{21}\NormalTok{)}\OperatorTok{*}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\DecValTok{20}\NormalTok{)}
+\DecValTok{20}\OperatorTok{^}\NormalTok{(}\DecValTok{21}\NormalTok{)}\OperatorTok{/}\KeywordTok{factorial}\NormalTok{(}\DecValTok{21}\NormalTok{)}\OperatorTok{*}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\DecValTok{20}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5830,35 +5801,32 @@ Con R como calculadora y con la función de la distribución de R
 
 \textbf{Solución 4.} Calculad la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
 
-Nos piden
-
-\begin{eqnarray*}
- P(X\geq 6)&=&1- P(X<6)=1-P(X\leq 5)=1-F_X(5)=1-\displaystyle\sum_{x=0}^{5} \frac{20^{x}}{x!}\cdot e^{-20}\\
- &=&
+Nos piden la probabilidad siguiente:
+\[
+\begin{array}{rl}
+ P(X\geq 6)&=1- P(X<6)=1-P(X\leq 5)=1-F_X(5)=1-\displaystyle\sum_{x=0}^{5} \frac{20^{x}}{x!}\cdot e^{-20}\\
+ &=
  1-\left(\frac{20^{0}}{0!}\cdot e^{-20}+\frac{20^{1}}{1!}\cdot e^{-20}+\frac{20^{2}}{2!}\cdot e^{-20}+\frac{20^{3}}{3!}\cdot e^{-20}+\frac{20^{4}}{4!}\cdot e^{-20}+\frac{20^{5}}{5!}\cdot e^{-20}\right)\\
- &=&
+ &=
  1-e^{-20}\cdot \left(1+20+\frac{400}{4}+\frac{8000}{6}+\frac{160000}{24}+\frac{3200000}{120}\right)\\
- &=&
+ &=
  1-e^{-20} \cdot \left(\frac{1 \cdot 120+20\cdot 120+400\cdot 30+8000\cdot 20+160000\cdot 24+3200000\cdot 1}{120}\right)\\
- &=& 1-e^{-20}\cdot\left(\frac{4186520}{120}\right)=1-0.0066126.
-\end{eqnarray*}
+ &= 1-e^{-20}\cdot\left(\frac{4186520}{120}\right)=1-\ensuremath{7.1908841\times 10^{-5}} =0.9999281.
+\end{array}
+\]
 
 \textbf{Solución 5.} ¿Cuál es el valor esperado, la varianza y la desviación típica de \(X\)?
 
-El valor esperado del número de insectos caídos en la trampa en una hora es
-
-\[E(X)=\lambda=20\]
-
+El valor esperado del número de insectos caídos en la trampa en una hora es:
+\[E(X)=\lambda=20.\]
 Su varianza es
-\[Var(X)=\lambda=20\]
+\[Var(X)=\lambda=20,\]
+y su desviación típica vale:
+\[\sqrt{Var(X)}=+\sqrt{\lambda}=+\sqrt{20}=4.47214.\]
 
-y su desviación típica vale
-\[\sqrt{Var(X)}=+\sqrt{\lambda}=+\sqrt{20}.\]
+\textbf{Cálculos con \texttt{R}}
 
-\hypertarget{cuxe1lculos-con-r}{%
-\subsection{Cálculos con R}\label{cuxe1lculos-con-r}}
-
-Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces \(P_X(0)=P(X=0), P_X(1)=P(X=1)\):
+Consideremos por ejemplo una v.a. \(X\) con distribución \(Po(\lambda=3)\). Calculemos \(P_X(0)=P(X=0), P_X(1)=P(X=1)\) con \texttt{R}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5880,7 +5848,8 @@ Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces \(P_X(0)=P(X=0), P_X(1)=P(X=1)
 ## [1] 0.1493612
 \end{verbatim}
 
-\(F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)\):
+Si quisiéramos hallar la función de distribución en los mismos valores anteriores,
+\(F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)\), haríamos lo siguiente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5912,7 +5881,7 @@ Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces \(P_X(0)=P(X=0), P_X(1)=P(X=1)
 ## [1] 0.1991483
 \end{verbatim}
 
-Por ejemplo podemos comprobar que \(F_X(10)=\sum_{x=0}^{10} P_X(x)\)
+A continuación, comprobemos que \(F_X(10)=\sum\limits_{x=0}^{10} P_X(x)\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5946,7 +5915,7 @@ Por ejemplo podemos comprobar que \(F_X(10)=\sum_{x=0}^{10} P_X(x)\)
 ## [1] 0.9997077
 \end{verbatim}
 
-Y también generar secuencias de observaciones aleatorias de una población \(Po(3)\)
+Si quisiéramos generar una secuencia de \(100\) observaciones para una distribución de Poisson de parámetro \(\lambda=3\), \(Po(3)\), tendríamos que hacer:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5960,11 +5929,13 @@ Y también generar secuencias de observaciones aleatorias de una población \(Po
 ##  [75] 0 3 3 3 4 1 2 6 2 2 2 2 1 2 5 2 5 3 7 3 5 2 3 2 1 3
 \end{verbatim}
 
-En el ejercicio de la trampa para insectos teníamos que \(X\) es una \(Po(20)\). Responded con R a la preguntas 3 y 4 de este ejercicio
+\textbf{Ejercicio de la trampa para insectos (continuación)}
+
+En el ejercicio de la trampa para insectos teníamos que \(X\) es una \(Po(20)\). Responded con \texttt{R} a la preguntas 3 y 4 de este ejercicio
 
 \textbf{Pregunta 3.} Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 insectos.
 
-La respuesta a la pregunta 3 es calcular \(P(X=21)\)
+Recordemos que la probabilidad pedida es \(P(X=21)\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5978,7 +5949,7 @@ La respuesta a la pregunta 3 es calcular \(P(X=21)\)
 
 \textbf{Pregunta 4.} Calculad la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
 
-La pregunta 4 nos pide calcular \(P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)\)
+Recordemos que la probabilidad pedida es \(P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6010,8 +5981,7 @@ La pregunta 4 nos pide calcular \(P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)\)
 ## [1] 0.9999281
 \end{verbatim}
 
-\hypertarget{gruxe1ficos-de-la-distribuciuxf3n-poisson-con-r}{%
-\subsection{Gráficos de la distribución Poisson con R}\label{gruxe1ficos-de-la-distribuciuxf3n-poisson-con-r}}
+\textbf{Gráficos de la distribución Poisson con \texttt{R}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6032,13 +6002,9 @@ La pregunta 4 nos pide calcular \(P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)\)
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{gruxe1ficos-de-la-distribuciuxf3n-poisson-con-r-1}{%
-\subsection{Gráficos de la distribución Poisson con R}\label{gruxe1ficos-de-la-distribuciuxf3n-poisson-con-r-1}}
-
 \begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/graficosPOISON-1} \end{center}
 
-\hypertarget{gruxe1ficos-interactivos-con-r}{%
-\subsection{Gráficos interactivos con R}\label{gruxe1ficos-interactivos-con-r}}
+\textbf{Gráficos interactivos con \texttt{R}}
 
 Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
 
@@ -6066,12 +6032,9 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{cuxe1lculos-con-python}{%
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python}}
+\textbf{Cálculos con python}
 
-Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces
-
-\(P_X(0)=P(X=0), P_X(1)=P(X=1)\) en este orden son
+Realicemos los mismos cálculos realizados con \texttt{R} pero ahora usando pyhton. Recordemos que considerábamos una v.a. \(X\) con distribución \(Po(\lambda=3)\). Calculemos \(P_X(0)=P(X=0), P_X(1)=P(X=1)\) con python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6094,9 +6057,8 @@ Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces
 ## 0.14936120510359185
 \end{verbatim}
 
-Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces
-
-\(F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)\) en este orden son
+Si quisiéramos hallar las funciones de distribución en los mismos valores anteriores,
+\(F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)\), tendríamos que hacer:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6128,7 +6090,7 @@ Sea \(X\) un una v.a. \(Po(\lambda=3)\). Entonces
 ## 0.19914827347145581
 \end{verbatim}
 
-Por ejemplo podemos comprobar que \(F_X(10)=\displaystyle\sum_{0}^{10} P_X(x)\)
+La comprobación de que \(F_X(10)=\displaystyle\sum_{0}^{10} P_X(x)\) en python se realiza de la forma siguiente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6171,11 +6133,13 @@ Por ejemplo podemos comprobar que \(F_X(10)=\displaystyle\sum_{0}^{10} P_X(x)\)
 ## 0.99970766304935266
 \end{verbatim}
 
+\textbf{Ejercicio de la trampa para insectos (continuación)}
+
 En el ejercicio de la trampa para insectos teníamos que \(X\) es una \(Po(20)\). Responded con python a la preguntas 3 y 4 de este ejercicio
 
 \textbf{Pregunta 3.} Calculad la probabilidad de que en una hora caigan en la trampa exactamente 21 insectos.
 
-La respuesta a la pregunta 3 es calcular \(P(X=21)\)
+Recordemos que la probabilidad pedida es \(P(X=21)\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6188,12 +6152,9 @@ La respuesta a la pregunta 3 es calcular \(P(X=21)\)
 ## 0.084605064182937909
 \end{verbatim}
 
-\hypertarget{cuxe1lculos-con-r-1}{%
-\subsection{Cálculos con R}\label{cuxe1lculos-con-r-1}}
-
 \textbf{Pregunta 4.} Calculad la probabilidad de que en una hora caigan en la trampa al menos 6 insectos.
 
-La pregunta 4 nos pide calcular \(P(X\geq 6)=1-P(X\leq 5)\)
+La probabilidad pedida es \(P(X\geq 6)=1-P(X\leq 5)\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6206,10 +6167,7 @@ La pregunta 4 nos pide calcular \(P(X\geq 6)=1-P(X\leq 5)\)
 ## 0.99992809115947157
 \end{verbatim}
 
-\hypertarget{cuxe1lculos-con-python-1}{%
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-1}}
-
-Como ya hemos visto con \texttt{scipy.stats} podemos pedir los momentos de una variable aleatoria
+Como ya hemos visto con \texttt{scipy.stats}, podemos pedir los momentos de una variable aleatoria
 \(Po(3)\)
 
 \begin{Shaded}
@@ -6222,7 +6180,7 @@ Como ya hemos visto con \texttt{scipy.stats} podemos pedir los momentos de una v
 ## (array(3.0), array(3.0))
 \end{verbatim}
 
-Y también generar secuencias de observaciones aleatorias de una población \(Po(3)\)
+Y también generar secuencias de observaciones aleatorias de una población \(Po(3)\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6231,12 +6189,11 @@ Y también generar secuencias de observaciones aleatorias de una población \(Po
 \end{Shaded}
 
 \begin{verbatim}
-## array([4, 6, 5, 2, 2, 1, 5, 1, 1, 2, 3, 4, 2, 4, 1, 3, 2, 1, 2, 3, 5, 3, 1,
-##        3, 4, 2, 2, 9, 0, 0, 4, 2, 2, 1, 0, 2, 2, 1, 5, 2])
+## array([3, 6, 5, 3, 5, 6, 1, 6, 3, 3, 4, 4, 3, 3, 2, 2, 2, 1, 2, 4, 2, 2, 3,
+##        1, 3, 1, 6, 2, 5, 2, 4, 2, 5, 5, 2, 4, 4, 4, 4, 1])
 \end{verbatim}
 
-\hypertarget{gruxe1ficos-con-python}{%
-\subsection{Gráficos con python}\label{gruxe1ficos-con-python}}
+\textbf{Gráficos con python}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6265,8 +6222,7 @@ Y también generar secuencias de observaciones aleatorias de una población \(Po
 
 \includegraphics{curso-probabilidad-udemy_files/figure-latex/py_poiss2-1.pdf}
 
-\hypertarget{gruxe1ficos-interactivos-proceso-polambdacdot-t}{%
-\subsection{\texorpdfstring{Gráficos interactivos proceso \(Po(\lambda\cdot t\))}{Gráficos interactivos proceso Po(\textbackslash{}lambda\textbackslash{}cdot t)}}\label{gruxe1ficos-interactivos-proceso-polambdacdot-t}}
+\textbf{Gráficos interactivos para un proceso de Poisson \(Po(\lambda\cdot t\))}
 
 Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
 
@@ -6275,8 +6231,10 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \KeywordTok{fluidPage}\NormalTok{(}
   \KeywordTok{fluidRow}\NormalTok{(}
       \KeywordTok{column}\NormalTok{(}\DecValTok{6}\NormalTok{,}
-           \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"lambdapp"}\NormalTok{, }\DataTypeTok{label=}\StringTok{"Promedio eventos por unidad de tiempo"}\NormalTok{, }\DataTypeTok{min =} \FloatTok{0.1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{50}\NormalTok{, }\DataTypeTok{value =}\DecValTok{10}\NormalTok{ , }\DataTypeTok{step =} \FloatTok{0.01}\NormalTok{)),}
-    \KeywordTok{column}\NormalTok{(}\DecValTok{6}\NormalTok{,}\KeywordTok{sliderInput}\NormalTok{(}\StringTok{"t"}\NormalTok{, }\DataTypeTok{label =} \StringTok{"Intervalo de tiempo (0,t]"}\NormalTok{, }\DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{120}\NormalTok{, }\DataTypeTok{value =}\DecValTok{1}\NormalTok{ , }\DataTypeTok{step =} \FloatTok{0.5}\NormalTok{))}
+           \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"lambdapp"}\NormalTok{, }\DataTypeTok{label=}\StringTok{"Promedio eventos por unidad de tiempo"}\NormalTok{, }
+                       \DataTypeTok{min =} \FloatTok{0.1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{50}\NormalTok{, }\DataTypeTok{value =}\DecValTok{10}\NormalTok{ , }\DataTypeTok{step =} \FloatTok{0.01}\NormalTok{)),}
+    \KeywordTok{column}\NormalTok{(}\DecValTok{6}\NormalTok{,}\KeywordTok{sliderInput}\NormalTok{(}\StringTok{"t"}\NormalTok{, }\DataTypeTok{label =} \StringTok{"Intervalo de tiempo (0,t]"}\NormalTok{, }
+                         \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{120}\NormalTok{, }\DataTypeTok{value =}\DecValTok{1}\NormalTok{ , }\DataTypeTok{step =} \FloatTok{0.5}\NormalTok{))}
 \NormalTok{   )}
 \NormalTok{)}
 
@@ -6303,41 +6261,45 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ejemplo-proceso-poisson}{%
-\subsection{Ejemplo proceso Poisson}\label{ejemplo-proceso-poisson}}
-
 \textbf{Ejemplo: Número de impactos de insectos en la visera de un casco}
 
 Un colega de trabajo, al que llamaremos JG, es muy aficionado a los grandes premios de velocidad tanto en coches como en motos.
 
-Como es tan aficionado está obsesionado con muchas de las más extravagantes estadísticas de estos deportes.
-En particular le propusimos que estudiara el número de insectos que chocan contra la visera de un casco de un motorista GP o de un conductor o de fórmula 1 .
+Como es tan aficionado, está obsesionado con muchas de las más extravagantes estadísticas de estos deportes.
+En particular le propusimos que estudiara el número de insectos que chocan contra la visera de un casco de un motorista GP o de un conductor de fórmula 1 .
 
-La idea es que el número de insectos está igualmente repartido por todo el circuito y de de promedio impactan \(\lambda>0\) insectos por minuto. También es razonable suponer que:
+La idea es que el número de insectos está igualmente repartido por todo el circuito y de promedio impactan \(\lambda>0\) insectos por minuto. También es razonable suponer que:
 
 \begin{itemize}
 \tightlist
 \item
-  podemos dividir la superficie de la visera en cuadrados suficiente mente pequeños de forma que la probabilidad de que caigan dos insectos en la misma zona es prácticamente 0.
+  podemos dividir la superficie de la visera en cuadrados suficientemente pequeños de forma que la probabilidad de que caigan dos insectos en la misma zona es prácticamente 0.
 \item
-  un insecto impacte en un cuadrado cualquier de la visera es independiente de cualquier otro cuadrado.
+  la probabilidad de que un insecto impacte en un cuadrado cualquiera de la visera es independiente de cualquier otro cuadrado.
 \item
-  si hemos dividido la visera en \(n\) cuadrados la probabilidad \(p_n\) de impacto de un cuadrado \(p_n=\frac{\lambda}{n}\)
+  si hemos dividido la visera en \(n\) cuadrados la probabilidad \(p_n\) de impacto de un cuadrado vale \(p_n=\frac{\lambda}{n}\).
 \end{itemize}
 
-Así que bajo estas condiciones si denotamos por \(X_t=\) el número de insectos que ha impactado en la visera en el intervalo \((0,t]\) (en \(t\) minutos) podemos afirmar que \(X_t\) es un proceso poisson \(Po(\lambda\cdot t)\).
+Bajo estas condiciones, si denotamos por \(X_t\) como el número de insectos que ha impactado en la visera en el intervalo \((0,t]\) (en \(t\) minutos), podemos afirmar que \(X_t\) es un proceso de Poisson \(Po(\lambda\cdot t)\).
 
-Supongamos que nos dicen que \(\lambda=3\) insectos por minuto. Entonces el proceso de poisson \(X_t\) seguirá un ley \(Po(3\cdot t).\)
+Supongamos que nos dicen que \(\lambda=3\) insectos por minuto. Entonces el proceso de Poisson \(X_t\) seguirá un ley \(Po(3\cdot t).\)
 
-Ahora estamos en condiciones de preguntar al proceso de Poisson.
+Nos piden las probabilidades siguientes:
 
-¿Cuál es la probabilidad de que en 10 minutos impacten más de 25 insectos?
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ¿Cuál es la probabilidad de que en 10 minutos impacten más de 25 insectos?
+\item
+  ¿Cuál es la probabilidad de que tengamos que esperar más de 2 minutos para observar el primer impacto?
+\end{enumerate}
 
-En este caso \(t=10\) \(X_{10}\)= número de insectos que impactan en 10 minutos, el intervalo \([0,10)\) que sigue una \(P(3\cdot 10=30)\). Por lo tanto
+\textbf{Solución de 1. ¿Cuál es la probabilidad de que en 10 minutos impacten más de 25 insectos?}
 
-\[P(X>25)=1-P(X\leq 25)\]
+En este caso \(t=10\) y \(X_{10}\) es la variable aleatoria que nos da el número de insectos que impactan en 10 minutos o durante el intervalo \([0,10)\). La distribución de \(X_{10}\) será de Poisson de parámetro \(\lambda=3\cdot 10=30)\), \(Po(30)\).
 
-lo resolvemos con R
+Nos piden la probabilidad siguiente: \(P(X>25)=1-P(X\leq 25)\), que calculamos con ayuda de \texttt{R}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6349,11 +6311,11 @@ lo resolvemos con R
 ## [1] 1
 \end{verbatim}
 
-Otra pregunta interesante es que tengamos que esperar más de 2 minutos para observar el primer impacto
+\textbf{Solución de 2. ¿Cuál es la probabilidad de que tengamos que esperar más de 2 minutos para observar el primer impacto?}
 
-\[P(X_2=0)=\frac{(3\cdot 2)^0}{0!}\cdot e^{-3\cdot 2}= e^{-6}=0.002479.\]
-
-Con R
+Nos piden la probabilidad siguiente \(P(X_2=0)\) ya que la variable \(X_2\) nos dice el número de impactos en dos minutos. La distribución de \(X_2\) será de Poisson de parámetro \(\lambda =2\cdot 3=6\), \(Po(6)\). Si hemos de esperar más de dos minutos para el primer impacto, significa que \(X_2=0\):
+\[P(X_2=0)=\frac{(6)^0}{0!}\cdot e^{-6}= e^{-6}=0.002479.\]
+Si usamos \texttt{R}, obtenemos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6376,11 +6338,11 @@ Con R
 \end{verbatim}
 
 \hypertarget{distribuciuxf3n-hipergeomuxe9trica}{%
-\section{Distribución hipergeométrica}\label{distribuciuxf3n-hipergeomuxe9trica}}
+\subsection{Distribución hipergeométrica}\label{distribuciuxf3n-hipergeomuxe9trica}}
 
-Supongamos que disponemos de una urna de de sorteos que contiene \(m\) bolas blancas y \(n\) bolas de otro color, digamos que rojas.
+Supongamos que disponemos de una urna de de sorteos que contiene \(m\) bolas blancas y \(n\) bolas rojas.
 
-En total en esta urna hay \(m+n\) bolas \(m\) blancas y \(n\) rojas. Si extraemos dos bolas de la urna lo podemos hacer de dos formas:
+En total en esta urna hay \(m+n\) bolas, \(m\) blancas y \(n\) rojas. Si extraemos dos bolas de la urna lo podemos hacer de dos formas:
 
 \begin{itemize}
 \tightlist
@@ -6390,17 +6352,19 @@ En total en esta urna hay \(m+n\) bolas \(m\) blancas y \(n\) rojas. Si extraemo
   Extraer simultáneamente dos bolas (sin reposición) y contar el número de bolas blancas.
 \end{itemize}
 
-Si \(X\) es la v.a. que cuenta el número de bolas blancas extraídas
+Sea \(X\) la v.a. que cuenta el número de bolas blancas extraídas.
+
+Sea \(X\) es la v.a. que cuenta el número de bolas blancas extraídas.
 
 \begin{itemize}
 \tightlist
 \item
-  en el primer caso \(X\) es una \(B(n=2,p=\frac{m}{m+n})\) ya que consiste en repetir dos veces el mismo experimento bernoulli.
+  En el primer caso, \(X\) es una \(B(n=2,p=\frac{m}{m+n})\) ya que consiste en repetir dos veces el mismo experimento de Bernoulli.
 \item
-  en el segundo caso \(X\) sigue una distribución hipergeométrica que estudiaremos en esta sección.
+  En el segundo caso, \(X\) sigue una distribución hipergeométrica que estudiaremos en esta sección.
 \end{itemize}
 
- Distribución hipergeométrica
+ \textbf{Distribución hipergeométrica}
 
 Sean \(n\), \(m\) y \(k\) tres número enteros positivos y tales que \(k<m+n\).
 
@@ -6408,44 +6372,38 @@ Consideremos una urna que contiene \(m+n\) bolas de las que \(m\) son blancas y 
 
 El número total de bolas es \(m+n\). Extraemos de forma aleatoria \(k\) bolas de la urna sin reemplazarlas.
 
-Si \(X\) la v.a. que cuenta el número de bolas blancas extraídas.
+Sea \(X\) la v.a. que cuenta el número de bolas blancas extraídas. Diremos que la distribución de \(X\) es hipergeométrica de parámetros \(m\), \(n\) y \(k\) y la denotaremos por \(H(m,n,k)\).
 
 Su dominio es
 
 \[D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}\]
 
-Para explicarlo veamos varios supuestos
+Para explicarlo, veamos varios ejemplos:
 
 \begin{itemize}
 \tightlist
 \item
-  \(H(m=5,n=2,k=3)\). Tenemos \(m=5\) bolas blancas \(n=2\) no blancas y saco \(k=3\) bolas sin reposición.
+  \(H(m=5,n=2,k=3)\). Tenemos \(m=5\) bolas blancas, \(n=2\) no blancas y sacamos \(k=3\) bolas sin reposición.
 
   \begin{itemize}
   \tightlist
   \item
-    En este caso el mínimo de bolas blancas es \(1=k-n=3-2\); ya que solo hay dos no blancas.
+    En este caso el mínimo de bolas blancas extraídas es \(1=k-n=3-2\), ya que sólo hay dos no blancas.
   \item
-    Mientras que el máximo si es \(k=3\); ya que tenemos más que suficientes bolas blancas.
+    En cambio, el máximo si es \(k=3\), ya que tenemos bolas blancas de ``sobra''.
   \end{itemize}
-\end{itemize}
-
-\[D_X=\left\{x\in\mathbf{N}\mid \max\{0,k-n\}\leq  x \leq \min\{m,k\}\right\}\]
-
-\begin{itemize}
-\tightlist
 \item
-  \(H(m=2,n=5,k=3)\). Tenemos \(m=2\) bolas blancas, \(n=5\) no blancas y saco \(k=3\) bolas sin reposición.
+  \(H(m=2,n=5,k=3)\). Tenemos \(m=2\) bolas blancas, \(n=5\) no blancas y sacamos \(k=3\) bolas sin reposición.
 
   \begin{itemize}
   \tightlist
   \item
-    En este caso el mínimo de bolas blancas es \(0\); puedo sacar 3 no blancas
+    En este caso el mínimo de bolas blancas es \(0\) ya que puedo sacar 3 no blancas.
   \item
-    Mientras que el máximo si es \(m=2\); ya que aunque saquemos \(k=3\) al llegar a 2 ya hemos extraído todas las bolas blancas de la urna.
+    En cambio, el máximo si es \(m=2\), ya que aunque saquemos \(k=3\) bolas, al llegar a 2 ya hemos extraído todas las bolas blancas de la urna.
   \end{itemize}
 \item
-  \(H(m=10,n=10,k=3)\). Tenemos \(m=10\) bolas blancas, \(n=10\) no blancas y saco \(k=3\) bolas sin reposición.
+  \(H(m=10,n=10,k=3)\). Tenemos \(m=10\) bolas blancas, \(n=10\) no blancas y sacamos \(k=3\) bolas sin reposición.
 
   \begin{itemize}
   \tightlist
@@ -6455,30 +6413,23 @@ Para explicarlo veamos varios supuestos
 \end{itemize}
 
 Su función de probabilidad es:
-
 \[
 P_{X}(x)=\left\{
 \begin{array}{ll}
-\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}} & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.
+\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
+\max\{0,k-n\}\leq x \leq \min\{m,k\}, \mbox { para  } x\in \mathbf{N},\\
+0,  & \mbox{en otro caso.}\end{array}\right.
 \]
-
-Una v.a. \textbf{hipergeométrica con los parámetros anteriores} la
-denotaremos por
-\[H(m,n,k).\]
 
  \textbf{Observación: otras parametrizaciones}
 
-En ocasiones se parametriza una v.a. hipergeométrica mediante \(N=m+n\) número total de bolas,
-\(k\)=número de extracciones y \(p=\) probabilidad de una bola blanca.
+En ocasiones se parametriza una v.a. hipergeométrica mediante \(N=m+n\), número total de bolas,
+\(k\), número de extracciones y \(p\), probabilidad de extraer una bola blanca.
 
-Así podemos \textbf{parametrizar alternativamente} la distribución hipergeométrica así
+Así, podemos \textbf{parametrizar alternativamente} la distribución hipergeométrica como
+\(H(N,k,p)\) donde \(p=\frac{m}{N}.\)
 
-\[H(N,k,p)\mbox{ donde } p=\frac{m}{N}.\]
-
-\hypertarget{resumen-hipergeomuxe9trica-hmnk.}{%
-\subsection{\texorpdfstring{Resumen hipergeométrica \(H(m,n,k)\).}{Resumen hipergeométrica H(m,n,k).}}\label{resumen-hipergeomuxe9trica-hmnk.}}
+\textbf{Resumen hipergeométrica \(H(m,n,k)\)}
 
 \begin{longtable}[]{@{}rl@{}}
 \toprule
@@ -6497,12 +6448,12 @@ Así podemos \textbf{parametrizar alternativamente} la distribución hipergeomé
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(P_X(x)=P(X=x)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\(\left\{ \begin{array}{ll} \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}} & \mbox{ si } \max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para } x\in \mathbf{N}\\ 0 & \mbox{en otro caso}\end{array}\right.\)\strut
+\(\left\{ \begin{array}{ll} \frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si } \max\{0,k-n\}\leq x \leq \min\{m,k\}, \\ 0, & \mbox{en otro caso.}\end{array}\right.\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(F_X(x)=P(X\leq x)\)\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-Hay que sumarla. Utilizad funciones de R o de python.\strut
+Hay que sumarla. Utilizad funciones de \texttt{R} o de python.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(E(X)=\frac{k\cdot m}{m+n}\)\strut
@@ -6512,41 +6463,54 @@ Hay que sumarla. Utilizad funciones de R o de python.\strut
 \bottomrule
 \end{longtable}
 
-\hypertarget{ejemplo-cluxe1sico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposiciuxf3n.}{%
-\subsubsection{\texorpdfstring{Ejemplo clásico urna \(m=15\) blancas, \(n=10\) rojas y \(k=3\) extracciones sin reposición.}{Ejemplo clásico urna m=15 blancas, n=10 rojas y k=3 extracciones sin reposición.}}\label{ejemplo-cluxe1sico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposiciuxf3n.}}
+\textbf{Ejemplo: urna con \(m=15\) blancas, \(n=10\) rojas y \(k=3\) extracciones sin reposición}
 
-\textbf{Ejemplo: Urna con bolas blancas y rojas}
+Tenemos una urna con 15 bolas blancas y 10 bolas rojas. Extraemos al azar tres bolas de la urna sin reposición. Sea \(X\) el número de bolas \textbf{blancas} extraídas. Bajo esta condiciones, la v.a. \(X\) sigue una ley de distribución \(H(m=15,n=10,k=3)\).
 
-Tenemos una urna con 10 bolas rojas, 15 bolas blancas. Extraemos al azar tres bolas de la urna sin reposición. Sea \(X\)=número de bolas \textbf{blancas} extraídas. Bajo esta condiciones la v.a. \(X\) sigue una ley de distribución \(H(m=15,n=10,k=3)\).
+Nos piden:
 
-La función de probabilidad es
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Hallar la función de probabilidad de \(X\).
+\item
+  Probabilidad de sacar dos bolas blancas.
+\item
+  Probabilidad de sacar más de una bola blanca.
+\item
+  Esperanza, varianza y desviación típica de \(X\).
+\end{enumerate}
+
+\textbf{Solución de 1. Hallar la función de probabilidad de \(X\)}
+
+La función de probabilidad de \(X\) es:
+\[
+P_X(x)=P(X=x)=\left\{
+\begin{array}{ll}
+\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}}, & \mbox{ si }
+\max\{0,k-n\}\leq x \leq \min\{m,k\}, \mbox { para  } x\in \mathbf{N},\\
+0,  & \mbox{en otro caso.}\end{array}\right.
+\]
+
+Sustituyendo los parámetros \(m,n\) y \(k\) por \(m=15\), \(n=10\) y \(k=3\), obtenemos:
 
 \[
 P_X(x)=P(X=x)=\left\{
 \begin{array}{ll}
-\frac{\binom{m}{x}\cdot \binom{n}{k-x}}{\binom{m+n}{k}} & \mbox{ si }
-\max\{0,k-n\}\leq x \leq \min\{m,k\} \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.
+\frac{\binom{15}{x}\cdot \binom{10}{3-x}}{\binom{25}{3}}= \frac{\binom{15}{x}\cdot \binom{10}{3-x}}{2300}, & \mbox{ si }
+0\leq x \leq 3, \mbox { para  } x\in \mathbf{N},\\
+0,  & \mbox{en otro caso.}\end{array}\right.
 \]
 
-Sustituyendo los parámetros obtenemos
+\textbf{Solución de 2. Probabilidad de sacar dos bolas blancas}
 
-\[
-P_X(x)=P(X=x)=\left\{
-\begin{array}{ll}
-\frac{\binom{15}{x}\cdot \binom{10}{3-x}}{\binom{25}{3}} & \mbox{ si }
-0\leq x \leq 3 \mbox { para  } x\in \mathbf{N}\\
-0  & \mbox{en otro caso}\end{array}\right.
-\]
-
-\hypertarget{ejemplo-cluxe1sico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposiciuxf3n.-1}{%
-\subsection{\texorpdfstring{Ejemplo clásico urna \(m=15\) blancas, \(n=10\) rojas y \(k=3\) extracciones sin reposición.}{Ejemplo clásico urna m=15 blancas, n=10 rojas y k=3 extracciones sin reposición.}}\label{ejemplo-cluxe1sico-urna-m15-blancas-n10-rojas-y-k3-extracciones-sin-reposiciuxf3n.-1}}
-
-La probabilidad de sacar 2 blancas será
-
+La probabilidad de sacar 2 blancas será:
 \[
 P(X=2)=\frac{\binom{15}{2}\cdot \binom{10}{3-2}}{\binom{25}{3}}
 \]
+
+Si calculamos con ayuda de \texttt{R} los números binomiales involucrados en la expresión anterior, obtenemos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6558,47 +6522,54 @@ P(X=2)=\frac{\binom{15}{2}\cdot \binom{10}{3-2}}{\binom{25}{3}}
 ## [1]  105   10 2300
 \end{verbatim}
 
+La probabilidad pedida, serà, pues:
 \(P(X=2)=\frac{105\cdot10 }{2300}=0.4565217.\)
 
-La probabilidad de que saquemos más de 1 bola blanca es
+\textbf{Solución de 3. Probabilidad de sacar más de una bola blanca}
 
-\begin{eqnarray*}
-P(X> 1)&=& 1-P(X\leq 1)=1-(P(X=0)+P(X=1))\\
-&=&
+La probabilidad de que saquemos más de 1 bola blanca es:
+\[
+\begin{array}{rl}
+P(X> 1)&= 1-P(X\leq 1)=1-(P(X=0)+P(X=1))\\
+&=
 1-\left(\frac{\binom{15}{0}\cdot \binom{10}{3}}{\binom{25}{3}}+
 \frac{\binom{15}{1}\cdot \binom{10}{2}}{\binom{25}{3}}\right)\\
-&=&
+&=
 1-\left(
 \frac{1\cdot120 }{2300}+\frac{15\cdot45 }{2300}
-\right)=1-\frac{120+15\cdot 45}{2300}=0.6543478
-\end{eqnarray*}
+\right)=1-\frac{120+15\cdot 45}{2300}=0.6543478.
+\end{array}
+\]
 
-El número esperado de bolas blancas extraídas para una v.a. \(X\) \(H(m=15,n=10,k=3)\) es
+\textbf{Solución de 4. Esperanza, varianza y desviación típica de \(X\)}
+
+El número esperado de bolas blancas extraídas para una v.a. \(X\) de distribución \(H(m=15,n=10,k=3)\) es:
 
 \[E(X)=\frac{k\cdot m}{m+n}=\frac{3\cdot 15}{15+10}=\frac{45}{35}=1.285714.\]
-
-\begin{eqnarray*}
-Var(X)&=&k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m+n-1}\\
-&=&3\cdot\frac{15}{15+10}\cdot\left(1-\frac{15}{15+10}\right) \cdot\frac{15+10-3}{15+10-1}\\
-&=&
+La varianza vale:
+\[
+\begin{array}{rl}
+Var(X)&=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m+n-1}\\
+&=3\cdot\frac{15}{15+10}\cdot\left(1-\frac{15}{15+10}\right) \cdot\frac{15+10-3}{15+10-1}\\
+&=
 3\cdot\frac{15}{25}\cdot\left(1-\frac{15}{25}\right) \cdot\frac{22}{24}= 
 3\cdot\frac{15}{25}\cdot\frac{25-15}{25} \cdot\frac{22}{24}\\
-&=&
+&=
 3\cdot\frac{15}{25}\cdot\frac{10}{25}\cdot\frac{22}{24}=0.66.
-\end{eqnarray*}
+\end{array}
+\]
 
-Y por lo tanto su desviación típica es
+Y por lo tanto, su desviación típica es:
 
 \[
 +\sqrt{Var(X)}=+\sqrt{0.66}=0.812404.
 \]
 
-\hypertarget{cuxe1lculos-con-r-2}{%
-\subsection{Cálculos con R}\label{cuxe1lculos-con-r-2}}
+\textbf{Cálculos con R}
 
-Sea \(X\) una va.a \(H(m,n,k)\) Las funciones de R son \(P(X=x)=\)\texttt{dhyper(x,m,n,k)} y \(P(X\leq q)=\)\texttt{phyper(q,m,n,k)}, la generación de aleatorios de una hipergeométrica es \texttt{rhyper(nn,m,n,k)} donde \texttt{nn} es el número de observaciones aleatorias deseado.
+Sea \(X\) una v.a. \(H(m,n,k)\). La función de \texttt{R} para calcular la función de probabilidad en un valor \(x\), \(P(X=x)\), es \texttt{dhyper(x,m,n,k)} y para calcular la función de distribución en un valor \(q\), \(P(X\leq q)\), es \texttt{phyper(q,m,n,k)}. Para generar una muestra de valores que siga la distribución \(H(m,n,k)\), hay que usar la función \texttt{rhyper(nn,m,n,k)} donde \texttt{nn} es el número de observaciones aleatorias deseado de la muestra.
 
-Si \(X\) es una \(H(m=15,n=10,k=3)\), \(P(X=2)\) y que \(P(X>1)=1-P(X\leq 1)\) son\ldots{}
+Por ejemplo, si \(X\) es una \(H(m=15,n=10,k=3)\), los valores de \(P(X=2)\) y que \(P(X>1)=1-P(X\leq 1)\) son:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6630,7 +6601,7 @@ Si \(X\) es una \(H(m=15,n=10,k=3)\), \(P(X=2)\) y que \(P(X>1)=1-P(X\leq 1)\) s
 ## [1] 0.6543478
 \end{verbatim}
 
-Una muestra aleatoria de este experimento de tamaño 200 sería\ldots{}
+Una muestra aleatoria de este experimento de tamaño 200 sería:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6647,10 +6618,36 @@ Una muestra aleatoria de este experimento de tamaño 200 sería\ldots{}
 ## [186] 1 1 1 2 1 1 2 2 2 2 3 3 1 0 2
 \end{verbatim}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-70-1} \end{center}
+\textbf{Gráficas con R}
 
-\hypertarget{gruxe1ficos-interactivos-hmnk}{%
-\subsection{\texorpdfstring{Gráficos interactivos \(H(m,n,k)\)}{Gráficos interactivos H(m,n,k)}}\label{gruxe1ficos-interactivos-hmnk}}
+Los gráficos de la función de probabilidad y de la función de distribución en \texttt{R} se realizan de la forma siguiente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\NormalTok{m=}\DecValTok{15}
+\NormalTok{n=}\DecValTok{10}
+\NormalTok{k=}\DecValTok{3}
+\NormalTok{a=}\KeywordTok{max}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,k}\OperatorTok{-}\NormalTok{n))}
+\NormalTok{b=}\KeywordTok{min}\NormalTok{(}\KeywordTok{c}\NormalTok{(m,k))}
+\NormalTok{l=b}\OperatorTok{-}\NormalTok{a}\OperatorTok{+}\DecValTok{1}
+\NormalTok{aux=}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{2}\OperatorTok{*}\NormalTok{l)}
+\NormalTok{aux[}\KeywordTok{seq}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\OperatorTok{*}\NormalTok{l,}\DecValTok{2}\NormalTok{)]=}\KeywordTok{dhyper}\NormalTok{(}\KeywordTok{c}\NormalTok{(a}\OperatorTok{:}\NormalTok{b),}\DataTypeTok{m=}\NormalTok{m,}\DataTypeTok{n=}\NormalTok{n,}\DataTypeTok{k=}\NormalTok{k)}
+\NormalTok{x=a}\OperatorTok{:}\NormalTok{b}
+\KeywordTok{plot}\NormalTok{(x,}\DataTypeTok{y=}\KeywordTok{dhyper}\NormalTok{(x,}\DataTypeTok{m=}\NormalTok{m,}\DataTypeTok{n=}\NormalTok{n,}\DataTypeTok{k=}\NormalTok{k),}
+  \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.6}\NormalTok{),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(a}\DecValTok{-1}\NormalTok{,b}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{xlab=}\StringTok{"x"}\NormalTok{,}
+  \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función de probabilidad}\CharTok{\textbackslash{}n}\StringTok{ H(m="}\NormalTok{,m,}\StringTok{", n="}\NormalTok{,n,}\StringTok{", k="}\NormalTok{,k,}\StringTok{")"}\NormalTok{))}
+\KeywordTok{lines}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{rep}\NormalTok{(a}\OperatorTok{:}\NormalTok{b,}\DataTypeTok{each=}\DecValTok{2}\NormalTok{),}\DataTypeTok{y=}\NormalTok{aux, }\DataTypeTok{type =} \StringTok{"h"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\KeywordTok{curve}\NormalTok{(}\KeywordTok{phyper}\NormalTok{(x,}\DataTypeTok{m=}\NormalTok{m,}\DataTypeTok{n=}\NormalTok{n,}\DataTypeTok{k=}\NormalTok{k),}
+  \DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(a}\DecValTok{-1}\NormalTok{,b}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}
+  \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función de distribución\textbackslash{}n H(m="}\NormalTok{,m,}\StringTok{", n="}\NormalTok{,n,}\StringTok{", k="}\NormalTok{,k,}\StringTok{")"}\NormalTok{))}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-71-1} \end{center}
+
+\textbf{Gráficos interactivos \(H(m,n,k)\)}
 
 Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
 
@@ -6697,8 +6694,7 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{comparaciuxf3n-hmnk-y-bleftkfracmnmright.}{%
-\subsection{\texorpdfstring{Comparación \(H(m,n,k)\) y \(B\left(k,\frac{m}{n+m}\right)\).}{Comparación H(m,n,k) y B\textbackslash{}left(k,\textbackslash{}frac\{m\}\{n+m\}\textbackslash{}right).}}\label{comparaciuxf3n-hmnk-y-bleftkfracmnmright.}}
+\textbf{Comparación \(H(m,n,k)\) y \(B\left(k,\frac{m}{n+m}\right)\)}
 
 Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
 
@@ -6738,30 +6734,34 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
   \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
   \KeywordTok{plot}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{k),}\DataTypeTok{y=}\KeywordTok{dbinom}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{k),}\DataTypeTok{size=}\NormalTok{k,}\DataTypeTok{prob=}\NormalTok{pr),}
        \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.6}\NormalTok{),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,k}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{xlab=}\StringTok{"x"}\NormalTok{,}\DataTypeTok{ylab=}\StringTok{"Función de probabilidad"}\NormalTok{,}
-       \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Funciones de probabilidad}\CharTok{\textbackslash{}n}\StringTok{ B(n="}\NormalTok{,n,}\StringTok{"p="}\NormalTok{,pr,}\StringTok{")  H(m="}\NormalTok{,m,}\StringTok{"n="}\NormalTok{, n,}\StringTok{"k="}\NormalTok{,k,}\StringTok{")"}\NormalTok{))}
+       \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Funciones de probabilidad}\CharTok{\textbackslash{}n}\StringTok{ B(n="}\NormalTok{,n,}\StringTok{"p="}\NormalTok{,pr,}\StringTok{")  }
+\StringTok{                   H(m="}\NormalTok{,m,}\StringTok{"n="}\NormalTok{, n,}\StringTok{"k="}\NormalTok{,k,}\StringTok{")"}\NormalTok{))}
   \KeywordTok{lines}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{k,}\DataTypeTok{each=}\DecValTok{2}\NormalTok{),}\DataTypeTok{y=}\NormalTok{aux,}\DataTypeTok{pch=}\DecValTok{21}\NormalTok{, }\DataTypeTok{type =} \StringTok{"h"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{)}
   \CommentTok{#aux=rep(0,(n+1)*2)}
   \CommentTok{#aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),n*pr)}
   \KeywordTok{points}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(a}\OperatorTok{:}\NormalTok{b),}\DataTypeTok{y=}\KeywordTok{dhyper}\NormalTok{(}\KeywordTok{c}\NormalTok{(a}\OperatorTok{:}\NormalTok{b),}\DataTypeTok{m=}\NormalTok{m,}\DataTypeTok{n=}\NormalTok{n,}\DataTypeTok{k=}\NormalTok{k),}
          \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.6}\NormalTok{),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,k}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{xlab=}\StringTok{"x"}\NormalTok{,}\DataTypeTok{pch=}\DecValTok{25}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
   \KeywordTok{lines}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{(l}\DecValTok{-1}\NormalTok{),}\DataTypeTok{each=}\DecValTok{2}\NormalTok{),}\DataTypeTok{y=}\NormalTok{aux, }\DataTypeTok{type =} \StringTok{"h"}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{3}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
-  \KeywordTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{,}\DataTypeTok{legend=}\KeywordTok{c}\NormalTok{(}\StringTok{"Binomial"}\NormalTok{,}\StringTok{"Hipergeométrica"}\NormalTok{),}\DataTypeTok{col=}\KeywordTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{),}\DataTypeTok{pch=}\KeywordTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{,}\DecValTok{25}\NormalTok{),}\DataTypeTok{lty=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+  \KeywordTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{,}\DataTypeTok{legend=}\KeywordTok{c}\NormalTok{(}\StringTok{"Binomial"}\NormalTok{,}\StringTok{"Hipergeométrica"}\NormalTok{),}\DataTypeTok{col=}\KeywordTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\StringTok{"red"}\NormalTok{),}
+         \DataTypeTok{pch=}\KeywordTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{,}\DecValTok{25}\NormalTok{),}\DataTypeTok{lty=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
   \KeywordTok{curve}\NormalTok{(}\KeywordTok{pbinom}\NormalTok{(x,}\DataTypeTok{size=}\NormalTok{k,}\DataTypeTok{p=}\NormalTok{pr),}
         \DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{,k}\OperatorTok{+}\DecValTok{1}\NormalTok{), }\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Función de Distribución",}
-\StringTok{         main=paste0("}\NormalTok{Funciones de distribución\textbackslash{}n }\KeywordTok{B}\NormalTok{(}\StringTok{",k,"}\NormalTok{,}\StringTok{",pr,"}\NormalTok{) }\KeywordTok{H}\NormalTok{(}\DataTypeTok{m=}\StringTok{",m,"}\DataTypeTok{n=}\StringTok{", n,"}\DataTypeTok{k=}\StringTok{",k,"}\NormalTok{)}\StringTok{"))}
+\StringTok{         main=paste0("}\NormalTok{Funciones de distribución\textbackslash{}n }\KeywordTok{B}\NormalTok{(}\StringTok{",k,"}\NormalTok{,}\StringTok{",pr,"}\NormalTok{) }
+                     \KeywordTok{H}\NormalTok{(}\DataTypeTok{m=}\StringTok{",m,"}\DataTypeTok{n=}\StringTok{", n,"}\DataTypeTok{k=}\StringTok{",k,"}\NormalTok{)}\StringTok{"))}
 \StringTok{  curve(phyper(x,m=m,n=n,k=k),}
 \StringTok{        xlim=c(-1,k+1),col="}\NormalTok{red}\StringTok{",add=TRUE)}
-\StringTok{  #if(all(c(n>=20,n*pr<10,pr<= 0.05)))\{aux_l="}\NormalTok{Condición VERDADERA}\StringTok{"\} else \{aux_l="}\NormalTok{Condición FALSA}\StringTok{"\}}
-\StringTok{  #legend("}\NormalTok{topleft}\StringTok{",legend=c(aux_l,paste0("}\DataTypeTok{n=}\StringTok{",n),paste0("}\NormalTok{n}\OperatorTok{*}\DataTypeTok{p=}\StringTok{",n*pr),paste0("}\DataTypeTok{p=}\StringTok{",pr)),bg="}\NormalTok{transparent}\StringTok{",cex=0.5)}
+\StringTok{  #if(all(c(n>=20,n*pr<10,pr<= 0.05)))\{aux_l="}\NormalTok{Condición VERDADERA}\StringTok{"\} }
+\StringTok{  else \{aux_l="}\NormalTok{Condición FALSA}\StringTok{"\}}
+\StringTok{  #legend("}\NormalTok{topleft}\StringTok{",legend=c(aux_l,paste0("}\DataTypeTok{n=}\StringTok{",n),paste0("}\NormalTok{n}\OperatorTok{*}\DataTypeTok{p=}\StringTok{",n*pr),}
+\StringTok{  paste0("}\DataTypeTok{p=}\StringTok{",pr)),bg="}\NormalTok{transparent}\StringTok{",cex=0.5)}
 \StringTok{  par(mfrow=c(1,1))}
 \StringTok{\})}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{cuxe1lculos-con-python-2}{%
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-2}}
+\textbf{Cálculos con python}
 
-Sea \(X\) una \(H(m,n,k)\), las funciones de \texttt{scipy.stats} cambian los parámetros
+Sea \(X\) una \(H(m,n,k)\). Las funciones de \texttt{scipy.stats} cambian los parámetros de la forma siguiente:
 
 \begin{itemize}
 \tightlist
@@ -6778,6 +6778,8 @@ Sea \(X\) una \(H(m,n,k)\), las funciones de \texttt{scipy.stats} cambian los pa
 \ImportTok{from}\NormalTok{ scipy.stats }\ImportTok{import}\NormalTok{ hypergeom}
 \end{Highlighting}
 \end{Shaded}
+
+Los cálculos realizados anteriormente en \texttt{R} serían:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6809,7 +6811,7 @@ Sea \(X\) una \(H(m,n,k)\), las funciones de \texttt{scipy.stats} cambian los pa
 ## 0.65434782608695519
 \end{verbatim}
 
-Una muestra aleatoria de este experimento sería\ldots{}
+Una muestra aleatoria de este experimento sería:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6818,12 +6820,14 @@ Una muestra aleatoria de este experimento sería\ldots{}
 \end{Shaded}
 
 \begin{verbatim}
-## array([2, 3, 1, 1, 1, 2, 2, 1, 0, 2, 1, 2, 2, 2, 2, 2, 1, 2, 3, 2, 1, 1, 2,
-##        2, 2, 1, 2, 2, 2, 1, 2, 3, 0, 3, 2, 2, 2, 2, 2, 0, 3, 1, 3, 0, 2, 1,
-##        3, 0, 1, 3, 1, 1, 0, 3, 0, 2, 2, 2, 0, 2, 3, 2, 2, 3, 0, 3, 2, 1, 1,
-##        2, 1, 2, 2, 0, 2, 2, 2, 3, 3, 2, 2, 2, 3, 3, 3, 2, 3, 3, 2, 2, 2, 3,
-##        2, 1, 1, 2, 2, 3, 1, 2])
+## array([3, 1, 3, 3, 1, 2, 1, 2, 1, 2, 3, 0, 1, 2, 1, 3, 2, 1, 2, 2, 2, 1, 2,
+##        1, 0, 1, 2, 1, 3, 2, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 2, 3, 3, 2, 2, 2,
+##        2, 1, 1, 1, 2, 2, 2, 2, 3, 3, 1, 0, 1, 1, 2, 2, 1, 1, 1, 2, 2, 3, 2,
+##        3, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 3, 3, 2, 1, 1, 2, 3, 3, 1, 0, 3, 1,
+##        3, 0, 2, 2, 2, 2, 2, 2])
 \end{verbatim}
+
+Los gráficos de la función de probabilidad y de la función de distribución en python se realizan de la forma siguiente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6853,101 +6857,91 @@ Una muestra aleatoria de este experimento sería\ldots{}
 
 \includegraphics{curso-probabilidad-udemy_files/figure-latex/py_hyper2-1.pdf}
 
-\hypertarget{distribuciuxf3n-uniforme}{%
-\section{Distribución uniforme}\label{distribuciuxf3n-uniforme}}
+\hypertarget{distribuciones-continuas}{%
+\section{Distribuciones continuas}\label{distribuciones-continuas}}
 
-Una v.a. continua \(X\) diremos que tiene una distribución uniforme sobre el intervalo real \((a,b)\) ,con \(a<b\), si su función de densidad es
+\hypertarget{distribuciuxf3n-uniforme}{%
+\subsection{Distribución uniforme}\label{distribuciuxf3n-uniforme}}
+
+Una v.a. continua \(X\) tiene una distribución uniforme sobre el intervalo real \((a,b)\) ,con \(a<b\), si su función de densidad es
 
 \[
 f_X(x)=\left\{\begin{array}{ll}
-\frac1{b-a} & \mbox{si } a<x<b\\ 0  & \mbox{en cualquier otro caso}
+\frac1{b-a}, & \mbox{si } a<x<b,\\ 0,  & \mbox{en cualquier otro caso.}
 \end{array}
 \right. 
 \]
-
-\hypertarget{distribuciuxf3n-uniforme-1}{%
-\subsection{Distribución uniforme}\label{distribuciuxf3n-uniforme-1}}
 
 \textbf{Ejercicio}
 
 Comprobar que el área comprendida entre \(f_X\) y la horizontal
 vale 1.
 
-\begin{eqnarray*}
-\displaystyle\int_{-\infty}^{+\infty} f_x(x)\cdot dx=\int_{a}^{b} \frac{1}{b-a} \cdot dx=\left.\frac{x}{b-a}\right]_{x=a}^{x=b}=\frac{b}{b-a}-\frac{a}{b-a}=
-\frac{b-a}{b-a}=1.
-\end{eqnarray*}
-
-\hypertarget{funciuxf3n-de-distribuciuxf3n-uniforme.}{%
-\subsection{Función de distribución uniforme.}\label{funciuxf3n-de-distribuciuxf3n-uniforme.}}
-
-Su función de distribución es
-
+El área pedida vale:
 \[
-F_X(x)=\left\{\begin{array}{ll} 0  & \mbox{si } x\leq a\\
-\frac{x-a}{b-a} & \mbox{si } a<x<b\\ 1  & \mbox{si } b\leq x
+\int_{-\infty}^{+\infty} f_x(x)\cdot dx=\int_{a}^{b} \frac{1}{b-a} \cdot dx=\left.\frac{x}{b-a}\right]_{x=a}^{x=b}=\frac{b}{b-a}-\frac{a}{b-a}=
+\frac{b-a}{b-a}=1.
+\]
+
+Su función de distribución es:
+\[
+F_X(x)=\left\{\begin{array}{ll} 0,  & \mbox{si } x\leq a,\\
+\frac{x-a}{b-a}, & \mbox{si } a<x<b,\\ 1,  & \mbox{si } b\leq x.
 \end{array}
 \right. 
 \]
-
-\hypertarget{funciuxf3n-de-distribuciuxf3n-uniforme-cuxe1lculo.}{%
-\subsection{Función de distribución uniforme: cálculo.}\label{funciuxf3n-de-distribuciuxf3n-uniforme-cuxe1lculo.}}
-
 Efectivamente:
 
 \begin{itemize}
 \tightlist
 \item
-  Si \(x\leq a\) entonces
-  \[F_X(x)=\displaystyle\int_{-\infty}^{x} f(t)\cdot dt= \displaystyle\int_{-\infty}^{x} 0\cdot dt.\]
+  Si \(x\leq a\), entonces
+  \[F_X(x)=\int_{-\infty}^{x} f(t)\cdot dt= \int_{-\infty}^{x} 0\cdot dt.\]
 \item
-  Si \(a<x<b\) entonces
+  Si \(a<x<b\) entonces ,
 \end{itemize}
 
-\begin{eqnarray*}
-F_X(x)&=&\int_{-\infty}^{x} f(t)\cdot dt= \int_{-\infty}^{a} 0\cdot dt+\int_{-a}^{x} \frac1{b-a} \cdot dt\\
-&=& 0 +\left.\frac{t}{b-a}\right]_{t=a}^{t=x}= \frac{x}{b-a}-\frac{a}{b-a}=\frac{x-a}{b-a}.
-\end{eqnarray*}
+\[
+\begin{array}{rl}
+F_X(x)&=\displaystyle\int_{-\infty}^{x} f(t)\cdot dt= \int_{-\infty}^{a} 0\cdot dt+\int_{a}^{x} \frac1{b-a} \cdot dt\\
+&= \displaystyle 0 +\left.\frac{t}{b-a}\right]_{t=a}^{t=x}= \frac{x}{b-a}-\frac{a}{b-a}=\frac{x-a}{b-a}.
+\end{array}
+\]
+* Por último si \(x\geq b\) entonces,
 
-\hypertarget{funciuxf3n-de-distribuciuxf3n-uniforme-cuxe1lculo.-1}{%
-\subsection{Función de distribución uniforme: cálculo.}\label{funciuxf3n-de-distribuciuxf3n-uniforme-cuxe1lculo.-1}}
-
-\begin{itemize}
-\tightlist
-\item
-  Por último si \(x\geq b\) entonces
-\end{itemize}
-
-\begin{eqnarray*}
-F_X(x)&=&\displaystyle\int_{-\infty}^{x} f(t) dt=\int_{a}^{b} \frac{1}{b-a} dt=
+\[
+\begin{array}{rl}
+F_X(x)&=\displaystyle\int_{-\infty}^{x} f(t) dt=\int_{a}^{b} \frac{1}{b-a} dt=
   \left.  \frac{t}{b-a} \right]_{t=a}^{t=b}
-\\&=& \frac{b}{b-a}-\frac{a}{b-a}=\frac{b-a}{b-a}=1.
-\end{eqnarray*}
+\\&=\displaystyle \frac{b}{b-a}-\frac{a}{b-a}=\frac{b-a}{b-a}=1.
+\end{array}
+\]
 
-Si \(X\) es una v.a. uniforme en el intervalo \((a,b)\) lo denotaremos por \(U(a,b)\).
+Denotaremos a la v.a. \(X\) uniforme en el intervalo \((a,b)\) por \(U(a,b)\).
 
-\hypertarget{esperanza-y-varianza-para-una-v.a.-x-uab}{%
-\subsection{\texorpdfstring{Esperanza y varianza para una v.a. \(X\) \(U(a,b)\)}{Esperanza y varianza para una v.a. X U(a,b)}}\label{esperanza-y-varianza-para-una-v.a.-x-uab}}
+\textbf{Esperanza y varianza para una v.a. \(X\) \(U(a,b)\)}
 
-Calculemos la esperanza de \(X\)
+Calculemos la esperanza de \(X\):
 
-\begin{eqnarray*}
-E(X)&=&\displaystyle\int_{-\infty}^{+\infty} x\cdot f_X(x) dx =\int_{a}^{b} x \cdot \frac{1}{b-a} dx =
+\[
+\begin{array}{rl}
+E(X)&=\displaystyle\int_{-\infty}^{+\infty} x\cdot f_X(x) dx =\int_{a}^{b} x \cdot \frac{1}{b-a} dx =
 \left.\frac{x^2}{2\cdot (b-a)}\right]_{x=a}^{x=b}\\
-&=&\frac{b^2}{2\cdot (b-a)}-\frac{a^2}{2\cdot (b-a)}\\
-&=&
-\frac{b^2-a^2}{2\cdot (b-a)}=\frac{(b+a)\cdot (b-a)}{2\cdot (b-a)}\\
-&=&
+&=\displaystyle \frac{b^2}{2\cdot (b-a)}-\frac{a^2}{2\cdot (b-a)}=
+\frac{b^2-a^2}{2\cdot (b-a)}=\frac{(b+a)\cdot (b-a)}{2\cdot (b-a)}=
 \frac{b+a}{2}.
-\end{eqnarray*}
+\end{array}
+\]
 
-Calculemos la esperanza de \(X^2\)
+De cara a calcular su varianza, calculemos primero la esperanza de \(X^2\):
 
-\begin{eqnarray*}
-E(X^2)&=&\displaystyle\int_{-\infty}^{+\infty} x^2 f_X(x) dx=\int_{a}^{b} x^2 \frac1{b-a}
+\[
+\begin{array}{rl}
+E(X^2)&=\displaystyle\int_{-\infty}^{+\infty} x^2 f_X(x) dx=\int_{a}^{b} x^2 \frac1{b-a}
 dx =\left.\frac{x^3}{3\cdot (b-a)}\right]_{x=a}^{x=b} \\
-&=&\frac{b^3-a^3}{3\cdot (b-a)}=\frac{b^2+ab+a^2}{3}.
-\end{eqnarray*}
+&=\displaystyle\frac{b^3-a^3}{3\cdot (b-a)}=\frac{b^2+ab+a^2}{3}.
+\end{array}
+\]
 
 \textbf{Ejercicio}
 
@@ -6959,22 +6953,22 @@ dx =\left.\frac{x^3}{3\cdot (b-a)}\right]_{x=a}^{x=b} \\
 \end{itemize}
 
 Calculemos \(Var(X)\).
-
-\begin{eqnarray*}
-Var(X)&=&\displaystyle E(X^2)-(E(X))^2=\frac{b^2+ab+a^2}3-\left(\frac{b+a}2\right)^2\\&=&
+\[
+\begin{array}{rl}
+Var(X)&=\displaystyle E(X^2)-(E(X))^2=\frac{b^2+ab+a^2}3-\left(\frac{b+a}2\right)^2\\&=\displaystyle
 \frac{b^2+ab+a^2}{3}-\frac{b^2+2ab+a^2}{4}\\
-&=&
+&=\displaystyle
 \frac{4\cdot (b^2+ab+a^2)-3\cdot (b^2+2ab+a^2)}{4\cdot 3}
 \\
-&=&
+&=\displaystyle
 \frac{b^2-2ab+a^2}{12}=
 \frac{(b-a)^2}{12}.
-\end{eqnarray*}
+\end{array}
+\]
 
-\hypertarget{gruxe1ficas-u01}{%
-\subsection{\texorpdfstring{Gráficas \(U(0,1)\)}{Gráficas U(0,1)}}\label{gruxe1ficas-u01}}
+\textbf{Gráficas \(U(0,1)\)}
 
-El código de la gráficas de una \(U(0,1)\)
+El código en \texttt{R} para dibujar la función de densidad y la función de distribución de una distribución \(U(0,1)\) es el siguiente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6994,8 +6988,7 @@ El código de la gráficas de una \(U(0,1)\)
 
 \begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/grafica_unif10_vista-1} \end{center}
 
-\hypertarget{gruxe1ficas-interactivas-uab}{%
-\subsection{\texorpdfstring{Gráficas interactivas \(U(a,b)\)}{Gráficas interactivas U(a,b)}}\label{gruxe1ficas-interactivas-uab}}
+\textbf{Gráficas interactivas \(U(a,b)\)}
 
 Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
 
@@ -7025,12 +7018,14 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
   \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
   \CommentTok{#a=0;b=1;x=0.25}
 \NormalTok{  xx=}\KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\KeywordTok{min}\NormalTok{(a,x),}\KeywordTok{min}\NormalTok{(b,x),}\DataTypeTok{by=}\FloatTok{0.001}\NormalTok{))}
-  \KeywordTok{curve}\NormalTok{(}\KeywordTok{dunif}\NormalTok{(x,a,b),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(a}\FloatTok{-0.25}\NormalTok{,b}\FloatTok{+0.25}\NormalTok{),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{max}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{(b}\OperatorTok{-}\NormalTok{a)}\OperatorTok{+}\FloatTok{0.05}\NormalTok{,}\FloatTok{0.1}\NormalTok{)),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función densidad U("}\NormalTok{,a,}\StringTok{","}\NormalTok{,b,}\StringTok{")"}\NormalTok{),}
+  \KeywordTok{curve}\NormalTok{(}\KeywordTok{dunif}\NormalTok{(x,a,b),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(a}\FloatTok{-0.25}\NormalTok{,b}\FloatTok{+0.25}\NormalTok{),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{max}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{(b}\OperatorTok{-}\NormalTok{a)}\OperatorTok{+}\FloatTok{0.05}\NormalTok{,}\FloatTok{0.1}\NormalTok{)),}
+        \DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función densidad U("}\NormalTok{,a,}\StringTok{","}\NormalTok{,b,}\StringTok{")"}\NormalTok{),}
   \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"dunif(x,"}\NormalTok{,a,}\StringTok{", "}\NormalTok{,b,}\StringTok{")"}\NormalTok{),}\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{)}
   \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{c}\NormalTok{(a,x,b), }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
   \KeywordTok{polygon}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(a,xx,}\KeywordTok{min}\NormalTok{(x,b)),}\DataTypeTok{y=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{dunif}\NormalTok{(xx,a,b),}\DecValTok{0}\NormalTok{),}
           \DataTypeTok{density=}\DecValTok{20}\NormalTok{,}\DataTypeTok{col=}\StringTok{"skyblue"}\NormalTok{)}
-  \KeywordTok{curve}\NormalTok{(}\KeywordTok{punif}\NormalTok{(x,a,b),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(a}\DecValTok{-1}\NormalTok{,b}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{1.1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función de distribución U("}\NormalTok{,a,}\StringTok{","}\NormalTok{,b,}\StringTok{")"}\NormalTok{),}
+  \KeywordTok{curve}\NormalTok{(}\KeywordTok{punif}\NormalTok{(x,a,b),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(a}\DecValTok{-1}\NormalTok{,b}\OperatorTok{+}\DecValTok{1}\NormalTok{),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{1.1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}
+        \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función de distribución U("}\NormalTok{,a,}\StringTok{","}\NormalTok{,b,}\StringTok{")"}\NormalTok{),}
   \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"punif(x,"}\NormalTok{,a,}\StringTok{", "}\NormalTok{,b,}\StringTok{")"}\NormalTok{),}\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{,}\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{)}
   \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0=}\NormalTok{x,}\DataTypeTok{y0=}\DecValTok{0}\NormalTok{,}\DataTypeTok{x1=}\NormalTok{x,}\DataTypeTok{y1=}\KeywordTok{punif}\NormalTok{(x,a,b),}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{)}
   \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0=}\NormalTok{a}\FloatTok{-1.01}\NormalTok{,}\DataTypeTok{y0=}\KeywordTok{punif}\NormalTok{(x,a,b),}\DataTypeTok{x1=}\NormalTok{x,}\DataTypeTok{y1=}\KeywordTok{punif}\NormalTok{(x,a,b),}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{)}
@@ -7041,49 +7036,49 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{cambio-lineal-v.a.-uniforme.}{%
-\subsection{Cambio lineal v.a. uniforme.}\label{cambio-lineal-v.a.-uniforme.}}
+\textbf{Transformación lineal de la v.a. uniforme}
 
 Si \(X\) sigue una distribución \(U(a,b)\) entonces \(Z=\frac{X-a}{b-a}\) sigue una distribución \(U(0,1)\).
 
-\textbf{Propiedad: Cambio lineal distribución uniforme}
+\textbf{Propiedad: Transformación lineal de la v.a. uniforme}
 
-Sea \(X\) una v.a \(U(a,b)\)
+Sea \(X\) una v.a \(U(a,b)\).
 
 Si \(scale\not=0\) y \(loc\) son dos constantes reales entonces
 
 \begin{itemize}
 \tightlist
 \item
-  si \(scale>0\) \(T=scale\cdot X+loc\) sigue una ley \(U(scale\cdot a +loc,scale\cdot b +loc)\)\\
+  si \(scale>0\), \(T=scale\cdot X+loc\) sigue una ley \(U(scale\cdot a +loc,scale\cdot b +loc)\)\\
 \item
-  si \(scale<0\) \(T=scale\cdot X+loc\) sigue una ley \(U(scale\cdot b +loc,scale\cdot a +loc)\)
+  si \(scale<0\), \(T=scale\cdot X+loc\) sigue una ley \(U(scale\cdot b +loc,scale\cdot a +loc)\)
 \end{itemize}
 
-Supongamos que \(X\) sigue una ley \(U(a,b)\), que \(scale>0\) y que \(T=\frac{X-loc}{scale}\)
+\textbf{Demostración}
 
-Así tenemos que
+Supongamos que \(X\) sigue una ley \(U(a,b)\), que \(scale>0\) y que \(T=scale\cdot X+loc\). Dejamos el caso \(scale<0\) como ejercicio.
 
+La función de distribución de \(X\) es:
 \[
-F_X(x)=P(X\leq x)=\left\{\begin{array}{ll} 0 & \mbox{ si } x\leq a\\\frac{x-a}{b-a} & \mbox{ si } a\leq x\leq b \\1 & \mbox{ si } b\leq x\end{array}\right.
+F_X(x)=P(X\leq x)=\left\{\begin{array}{ll} 0, & \mbox{ si } x\leq a,\\\frac{x-a}{b-a}, & \mbox{ si } a\leq x\leq b, \\1, & \mbox{ si } b\leq x.\end{array}\right.
 \]
 
-Si \(T\) es una \(U(scale\cdot a +loc,scale\cdot b +loc)\) su función de distribución será
-
-\begin{eqnarray*}
-F_T(t)&=&P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{scale}\right)=F_X\left(\frac{t-loc}{scale}\right)\\
-&=&
-\left\{\begin{array}{ll} 0 & \mbox{ si } \frac{t-loc}{scale}\leq a\\\frac{\frac{t-loc}{scale}-a}{b-a} & \mbox{ si } a\leq \frac{t-loc}{scale}\leq b\\1 & \mbox{ si } b\leq \frac{t-loc}{scale}\end{array}\right.=
-\left\{\begin{array}{ll} 0 & \mbox{ si }  t\leq scale\cdot a +loc \\
-\frac{t-(scale\cdot a+loc)}{scale\cdot (b-a)} & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc \\
-1 & \mbox{ si } scale\cdot b+loc\leq t \end{array}\right.\\
-& = &
-\left\{\begin{array}{ll} 0 & \mbox{ si }  t\leq scale\cdot a +loc \\
-\frac{t-(scale\cdot a+loc)}{scale\cdot b+loc-(scale\cdot a+loc)} & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc \\
-1 & \mbox{ si } scale\cdot b+loc\leq t\end{array}\right.
-\end{eqnarray*}
-
-que es la función de distribución de una v.a. \(U(scale\cdot a+loc,scale\cdot b+loc)\), como queríamos demostrar.
+Si \(T\) vale \(T=scale\cdot X+loc\), su función de distribución será:
+\[
+\begin{array}{rl}
+F_T(t)&=P(T\leq t)= P(scale\cdot X+ loc\leq t)= P\left(X\leq \frac{t-loc}{scale}\right)=F_X\left(\frac{t-loc}{scale}\right)\\
+&=
+\left\{\begin{array}{ll} 0, & \mbox{ si } \frac{t-loc}{scale}\leq a\\\frac{\frac{t-loc}{scale}-a}{b-a}, & \mbox{ si } a\leq \frac{t-loc}{scale}\leq b,\\1, & \mbox{ si } b\leq \frac{t-loc}{scale},\end{array}\right. \\ & =
+\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\frac{t-(scale\cdot a+loc)}{scale\cdot (b-a)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
+1, & \mbox{ si } scale\cdot b+loc\leq t, \end{array}\right.\\
+& = 
+\left\{\begin{array}{ll} 0, & \mbox{ si }  t\leq scale\cdot a +loc, \\
+\frac{t-(scale\cdot a+loc)}{scale\cdot b+loc-(scale\cdot a+loc)}, & \mbox{ si } scale\cdot a+loc \leq t\leq scale\cdot b+loc, \\
+1, & \mbox{ si } scale\cdot b+loc\leq t,\end{array}\right.
+\end{array}
+\]
+función que corresponde a la función de distribución de una v.a. \(U(scale\cdot a+loc,scale\cdot b+loc)\), como queríamos demostrar.
 
 \textbf{Ejercicio}
 
@@ -7093,13 +7088,12 @@ Sea \(X\) una variable \(U(0,1)\) y sea \(T=scale\cdot X+loc\):
 \item
   Si \(T\) es \(U(-5,5)\) ¿qué valores toman \(scale\) y \(loc\)?
 \item
-  Si \(T\) \(loc=-10\) y \(scale=10\) ¿qué distribución de probabilidad sigue \(T\) ?
+  Si \(loc=-10\) y \(scale=10\) ¿qué distribución de probabilidad sigue \(T\)?
 \item
-  Si \(T\) \(loc=0\) y \(scale=-1\) ¿qué distribución probabilidad sigue \(T\) ?
+  Si \(loc=0\) y \(scale=-1\) ¿qué distribución probabilidad sigue \(T\)?
 \end{itemize}
 
-\hypertarget{resumen-v.a-con-distribuciuxf3n-uniforme-uab}{%
-\subsection{\texorpdfstring{Resumen v.a con distribución uniforme, \(U(a,b)\)}{Resumen v.a con distribución uniforme, U(a,b)}}\label{resumen-v.a-con-distribuciuxf3n-uniforme-uab}}
+\textbf{Resumen v.a con distribución uniforme, \(U(a,b)\)}
 
 \begin{longtable}[]{@{}rl@{}}
 \toprule
@@ -7118,12 +7112,12 @@ Dominio\strut
 \begin{minipage}[t]{0.43\columnwidth}\raggedleft
 \(f_{X}(x)\)\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
-\(\left\{\begin{array}{ll}\frac1{b-a} & \mbox{si } a<x<b\\ 0 & \mbox{en cualquier otro caso}\end{array} \right.\)\strut
+\(\left\{\begin{array}{ll}\frac1{b-a}, & \mbox{si } a<x<b,\\ 0, & \mbox{en cualquier otro caso.}\end{array} \right.\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.43\columnwidth}\raggedleft
 \(F_X(x)=P(X\leq X)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright
-\(\left\{\begin{array}{ll} 0 & \mbox{ si } x\leq a\\\frac{x-a}{b-a} & \mbox{ si } a\leq x\leq b\\1 & \mbox{ si } b\leq x\end{array}\right.\)\strut
+\(\left\{\begin{array}{ll} 0, & \mbox{ si } x\leq a\\\frac{x-a}{b-a}, & \mbox{ si } a\leq x\leq b,\\1, & \mbox{ si } b\leq x.\end{array}\right.\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.43\columnwidth}\raggedleft
 \(E(X)=\)\strut
@@ -7138,10 +7132,9 @@ Dominio\strut
 \bottomrule
 \end{longtable}
 
-\hypertarget{cuxe1lculos-con-r-3}{%
-\subsection{Cálculos con R}\label{cuxe1lculos-con-r-3}}
+\textbf{Cálculos con \texttt{R}}
 
-Sea \(X\) una \(v.a.\) y \(U(-1,1)\). Como es habitual , aunque ahora la variable es continua, las funciones de densidad y de distribución son
+Sea \(X\) una \(v.a.\) \(U(a,b)\). Las funciones \texttt{dunif(x,a,b)} y \texttt{punif(x,a,b)} calculan la función de densidad y de distribución de \(X\) en el valor \(X\). Por ejemplo, para \(a=-1\), \(b=1\) y \(x=0.5\), los valores \(f_X(x)\) y \(F_X(x)\) valen:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7163,9 +7156,11 @@ Sea \(X\) una \(v.a.\) y \(U(-1,1)\). Como es habitual , aunque ahora la variabl
 ## [1] 0.75
 \end{verbatim}
 
+La función \texttt{runif(n,a,b)} calcula un muestra de observaciones de tamaño \(n\) que sigan la distribución \(U(a,b)\):
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{runif}\NormalTok{(}\DataTypeTok{n=}\DecValTok{5}\NormalTok{,}\DataTypeTok{min=}\OperatorTok{-}\DecValTok{1}\NormalTok{,}\DataTypeTok{max=}\DecValTok{1}\NormalTok{)}\CommentTok{## generación de números aleatorios uniforme U(min.max)}
+\KeywordTok{runif}\NormalTok{(}\DataTypeTok{n=}\DecValTok{5}\NormalTok{,}\DataTypeTok{min=}\OperatorTok{-}\DecValTok{1}\NormalTok{,}\DataTypeTok{max=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -7173,7 +7168,7 @@ Sea \(X\) una \(v.a.\) y \(U(-1,1)\). Como es habitual , aunque ahora la variabl
 ## [1] -0.5502232 -0.4271506 -0.0515360  0.8052209  0.8983523
 \end{verbatim}
 
-Por defecto \texttt{dunif(x,min=0,max=1)}
+Por defecto, el valor de los parámetros \texttt{a} y \texttt{b} son 0 y 1, respectivamente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7205,7 +7200,11 @@ Por defecto \texttt{dunif(x,min=0,max=1)}
 ## [1] 0.382302539 0.009313886 0.351767001 0.294007361 0.071581515
 \end{verbatim}
 
-Sea \(X\) una \(v.a.\) \(U(-1,1)\) \(a=-1\) y \(b=1\) así que \(loc=-1\) y \(scale=b-a=1-(-1)=2.\)
+\textbf{Cálculos con python}
+
+Sea \(X\) una \(v.a.\) \(U(-1,1)\). Tomando como ``base'' la v.a. \(U(0,1)\), los parámetros \(loc\) y \(scale\) valen: \(loc=-1\) y \(scale=2,\) ya que como hemos visto \(X=2*U(0,1)-1=U(-1,1)\).
+
+En python, hay que usar dichos parámetros para calcular la función de densidad y de distribución:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7228,7 +7227,7 @@ Sea \(X\) una \(v.a.\) \(U(-1,1)\) \(a=-1\) y \(b=1\) así que \(loc=-1\) y \(sc
 ## 0.0
 \end{verbatim}
 
-Generación de aletorios uniforme
+Para generar una muestra de valores aleatorios, hay que usar la función \texttt{uniform.rvs}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7237,15 +7236,15 @@ Generación de aletorios uniforme
 \end{Shaded}
 
 \begin{verbatim}
-## array([-0.3634741 , -0.13374305, -0.01815502,  0.34434435, -0.49830229,
-##         0.47016208,  0.35133997, -0.39770776, -0.6669277 ,  0.64396308,
-##         0.88289885, -0.20662259, -0.74149304,  0.4063274 , -0.43691445,
-##         0.83567723,  0.33367342,  0.39599567, -0.0170506 , -0.91820682,
-##         0.09918402,  0.33034335, -0.75988187,  0.97144196,  0.12705929,
-##         0.73107161, -0.36833695,  0.32187865,  0.83287316, -0.70435656])
+## array([-0.40140106, -0.09734816, -0.16486733, -0.45746316, -0.04459591,
+##         0.52495826, -0.45574357, -0.34162452, -0.25423429,  0.32778412,
+##        -0.59687488, -0.61263252, -0.92883608,  0.25574847,  0.95059278,
+##         0.98134683, -0.09983985,  0.00383089,  0.984744  ,  0.03222203,
+##         0.11025203,  0.0527834 ,  0.05843706,  0.85591255, -0.17900583,
+##         0.23478949, -0.76624039, -0.73463167,  0.64378502,  0.87406517])
 \end{verbatim}
 
-Los valores de los parámetros con por defecto \texttt{loc=0,\ scale=1}
+Los valores de los parámetros por defecto son \texttt{loc=0,\ scale=1}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7274,460 +7273,103 @@ Los valores de los parámetros con por defecto \texttt{loc=0,\ scale=1}
 \end{Shaded}
 
 \begin{verbatim}
-## array([ 0.90741184,  0.08926738,  0.83848251,  0.46267286,  0.77778618])
+## array([ 0.11527821,  0.31854048,  0.6474202 ,  0.48721529,  0.7093205 ])
 \end{verbatim}
-
-\hypertarget{cuantiles-de-variables-aleatorias}{%
-\section{Cuantiles de variables aleatorias}\label{cuantiles-de-variables-aleatorias}}
-
-\textbf{Cuantiles}
-
-Si \(X\) es una v.a. con dominio \(D_X\) y \(0<q<1\) llamaremos cuantil de orden \(q\) al menor valor perteneciente al dominio \(x_q\in D_X\) tal que
-
-\[P(X\leq x_q)\geq q.\]
-
-En \texttt{R}, cada distribución \(X\) tiene la función \texttt{qX(p,...)} que devuelve precisamente el cuantil \(x_p\) tal que \(P(X\leq x_p)\geq p.\)
-
-Por ejemplo si \(X\) es una B(5,0.5)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{pbinom}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 0.03125 0.18750 0.50000 0.81250 0.96875 1.00000
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{qbinom}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.75}\NormalTok{),}\DecValTok{5}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2 2 3
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{qbinom}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{,}\FloatTok{0.6}\NormalTok{,}\FloatTok{0.8}\NormalTok{),}\DecValTok{5}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2 3 3
-\end{verbatim}
-
-Como \(X\) sigue una \(B(5,0.5)\), recordemos que \(D_X=\{0,1,2,\ldots,n=5\}.\) y que su función de distribución es
-
-\[
-\small{
-F_x(x)=P(X\leq x)=
-\left\{
-\begin{array}{ll}
-0 & x< 0 \\
-0.03125 & \mbox{ si } 0 \leq x< 1 \\
-0.18750 & \mbox{ si } 1 \leq x< 2 \\
-0.50000 & \mbox{ si } 2 \leq x< 3 \\
-0.81250 & \mbox{ si } 3 \leq x< 4 \\
-0.96875 & \mbox{ si } 4 \leq x< 5 \\
-1.00000 & \mbox{ si }  5\leq x \\
-\end{array}
-\right.}
-\]
-
-El cuantil \(q=0.3\) es el primer valor \(x\in D_X\) tal que \(F_X(x)=P(X\leq x_{0.3})\geq 0.3.\) así que el primer valor es \(x_{0.3}=2\) ya que \(F_X(2)=P(X\leq 2)=0.5 \geq 0.3\).
-
-\textbf{Ejercicio}
-
-Calcular los cuantiles de \(0.6\) y \(0.8\) de una \(B(5,0.5).\)
-
-En general podemos considerar que \(F^{-1}\) es la función que nos da los cuantiles (es decir si \(F^{-1}(p)\) da más de una valor tomaremos como antiimagen el valor más pequeño que esté dentro del dominio \(D_X\)).
-
-\textbf{Dado parchís}
-
-\(Sea\) \(X\) la variable aleatoria uniforme discreta que nos da el número de puntos obtenidos en el lanzamiento de una dado de parchís (seis caras y numeradas del 1 al 6).
-
-Su dominio es \(D_X=\{1,2,3,4,5,6\}\) su función de probabilidad es
-
-\[
-P_X(x)=P(X=x)=
-\left\{
-\begin{array}{ll}
- \frac{1}{6} & \mbox{ si } x=1,2,3,4,5,6. \\
-0 & \mbox{ en otro caso }.
-\end{array}
-\right.
-\]
-
-Y su función de distribución
-
-\[
-F_X(x)= P(X\leq x)=
-\left\{
-\begin{array}{ll}
-0 & \mbox{ si } x<1. \\
-\frac{k}{6} & \mbox{ si } k\leq x< l+1 \mbox{ para } x= 1,2,3,4,6. \\
- 1 & \mbox{si  } x \geq 6.
-\end{array}
-\right.
-\]
-
-Si lo queremos simular en \texttt{R} tenemos la función
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ddado=}\ControlFlowTok{function}\NormalTok{(x,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{) \{}
-  \KeywordTok{sapply}\NormalTok{(x,}\DataTypeTok{FUN=}\ControlFlowTok{function}\NormalTok{(x) \{}
-    \ControlFlowTok{if}\NormalTok{( x }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n))\{}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{n)\} }\ControlFlowTok{else}\NormalTok{ \{}\KeywordTok{return}\NormalTok{(}\DecValTok{0}\NormalTok{)\}\})}
-\NormalTok{  \}}
-\KeywordTok{ddado}\NormalTok{(}\FloatTok{1.5}\NormalTok{,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 0
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{ddado}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.0000000
-##  [8] 0.0000000 0.0000000 0.0000000
-\end{verbatim}
-
-\hypertarget{cuantiles}{%
-\subsection{Cuantiles}\label{cuantiles}}
-
-Ahora calculemos \(F_X(X)=P(X\leq x)\) con una función de R
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{pdado=}\ControlFlowTok{function}\NormalTok{(x,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{) }
-\NormalTok{  \{}
-  \KeywordTok{sapply}\NormalTok{(x,}\DataTypeTok{FUN=}\ControlFlowTok{function}\NormalTok{(y)\{ }\ControlFlowTok{if}\NormalTok{ (y}\OperatorTok{<}\DecValTok{1}\NormalTok{)\{ }\KeywordTok{return}\NormalTok{(}\DecValTok{0}\NormalTok{)\}}\ControlFlowTok{else}\NormalTok{\{}\ControlFlowTok{if}\NormalTok{(y}\OperatorTok{>=}\NormalTok{n)\{}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\NormalTok{)\} }\ControlFlowTok{else}
-\NormalTok{  \{}\KeywordTok{return}\NormalTok{(}\KeywordTok{sum}\NormalTok{(}\KeywordTok{ddado}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{floor}\NormalTok{(y))),}\DataTypeTok{n=}\NormalTok{n)))\}\}\})}
-\NormalTok{  \}}
-\KeywordTok{pdado}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{11}\NormalTok{,}\DecValTok{6}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 0.0000000 0.1666667 0.3333333 0.5000000 0.6666667 0.8333333 1.0000000
-##  [8] 1.0000000 1.0000000 1.0000000 1.0000000 1.0000000
-\end{verbatim}
-
-\hypertarget{cuantiles-1}{%
-\subsection{Cuantiles}\label{cuantiles-1}}
-
-Construyamos la función de cuantiles para esta variable: dado \(0\leq p \leq 1\), será el mínimo de la antiimagen de \(p\) mediante la función de distribución \(F_X^{-1}(p)\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{qdado=}\ControlFlowTok{function}\NormalTok{(p,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{)\{}
-\KeywordTok{sapply}\NormalTok{(p,}\DataTypeTok{FUN=}\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{pp=}\NormalTok{p,}\DataTypeTok{nn=}\NormalTok{n) }
-\NormalTok{  \{}
-  \ControlFlowTok{if}\NormalTok{(pp}\OperatorTok{<}\DecValTok{0} \OperatorTok{|}\StringTok{ }\NormalTok{pp}\OperatorTok{>}\DecValTok{1}\NormalTok{) \{}\KeywordTok{return}\NormalTok{(}\OtherTok{NA}\NormalTok{)\}}
-  \ControlFlowTok{else}\NormalTok{ \{}
-\NormalTok{  aux=pp}\OperatorTok{>=}\KeywordTok{pdado}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n,nn)}
-\NormalTok{  aux}
-  \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{all}\NormalTok{(}\OperatorTok{!}\NormalTok{aux),}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\NormalTok{),}\KeywordTok{return}\NormalTok{(}\KeywordTok{max}\NormalTok{(}\KeywordTok{which}\NormalTok{(pp}\OperatorTok{>=}\KeywordTok{pdado}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n,nn)))))\}\}}
-\NormalTok{)}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{cuantiles-2}{%
-\subsection{Cuantiles}\label{cuantiles-2}}
-
-Efectivamente los cuantiles del dado \(X\) son
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{qdado}\NormalTok{(}\FloatTok{1.5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] NA
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{qdado}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] NA
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{qdado}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.6}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{1.01}\NormalTok{,}\DecValTok{2}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1]  1  3  3  6 NA NA
-\end{verbatim}
-
-\hypertarget{cuantiles-3}{%
-\subsection{Cuantiles}\label{cuantiles-3}}
-
-Por ejemplo si \(X\) es una \(B(n=10,p=0.3)\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{2222}\NormalTok{)}
-\NormalTok{(}\DataTypeTok{q=}\KeywordTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 0.36765818 0.18187591 0.82617679 0.58497444 0.95886983 0.10179894
-##  [7] 0.75688767 0.24369144 0.67806543 0.06275295
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{qbinom}\NormalTok{(q,}\DecValTok{10}\NormalTok{,}\FloatTok{0.3}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 2 2 4 3 6 1 4 2 4 1
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{2222}\NormalTok{)}
-\KeywordTok{rbinom}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\FloatTok{0.3}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 2 2 4 3 6 1 4 2 4 1
-\end{verbatim}
-
-\hypertarget{cuantiles-4}{%
-\subsection{Cuantiles}\label{cuantiles-4}}
-
-Por ejemplo si \(X\) es una \(BN(n=3,p=0.1)\)
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{2222}\NormalTok{)}
-\NormalTok{(}\DataTypeTok{q=}\KeywordTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 0.36765818 0.18187591 0.82617679 0.58497444 0.95886983 0.10179894
-##  [7] 0.75688767 0.24369144 0.67806543 0.06275295
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{qnbinom}\NormalTok{(q,}\DecValTok{3}\NormalTok{,}\FloatTok{0.1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 19 12 41 27 61  9 36 15 32  7
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{2222}\NormalTok{)}
-\KeywordTok{rnbinom}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{3}\NormalTok{,}\FloatTok{0.1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 18  9  6 46 66 49 24 44 19 26
-\end{verbatim}
-
-\hypertarget{un-ejemplo-gruxe1ficas-cuantiles-bnp-y-polambda.}{%
-\subsection{\texorpdfstring{Un ejemplo gráficas cuantiles \(B(n,p)\) y \(Po(\lambda)\).}{Un ejemplo gráficas cuantiles B(n,p) y Po(\textbackslash{}lambda).}}\label{un-ejemplo-gruxe1ficas-cuantiles-bnp-y-polambda.}}
-
-Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{fluidPage}\NormalTok{(}
-\KeywordTok{fluidRow}\NormalTok{(}
-  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
-         \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"nq"}\NormalTok{, }\DataTypeTok{label =} \StringTok{"Par. n B(n,p)"}\NormalTok{,}
-              \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{20}\NormalTok{, }\DataTypeTok{value =}\DecValTok{10}\NormalTok{ , }\DataTypeTok{step =} \DecValTok{1}\NormalTok{)}
-\NormalTok{         ),}
-  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
-          \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"pq"}\NormalTok{, }\DataTypeTok{label =} \StringTok{"Par. p B(n,p)"}\NormalTok{,}
-                     \DataTypeTok{min =} \FloatTok{0.01}\NormalTok{, }\DataTypeTok{max =} \FloatTok{0.99}\NormalTok{, }\DataTypeTok{value =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.1}\NormalTok{)}
-\NormalTok{         ),}
-  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
-         \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"qq"}\NormalTok{, }\DataTypeTok{label=}\StringTok{" Cuantil q"}\NormalTok{, }\DataTypeTok{value=}\FloatTok{0.75}\NormalTok{, }\DataTypeTok{min =} \FloatTok{0.01}\NormalTok{, }\DataTypeTok{max =} \FloatTok{0.99}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.01}\NormalTok{)}
-\NormalTok{         ),}
-  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
-         \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"lq"}\NormalTok{, }\DataTypeTok{label=}\StringTok{"Par. lambda Po(lambda)"}\NormalTok{, }\DataTypeTok{value=}\DecValTok{5}\NormalTok{, }\DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{20}\NormalTok{, }\DataTypeTok{step =} \DecValTok{1}\NormalTok{)}
-\NormalTok{         )}
-\NormalTok{  )}
-\NormalTok{)}
-
-  
-\KeywordTok{renderPlot}\NormalTok{(\{}
-\NormalTok{  n=input}\OperatorTok{$}\NormalTok{nq}
-\NormalTok{  p=input}\OperatorTok{$}\NormalTok{pq}
-\NormalTok{  q=input}\OperatorTok{$}\NormalTok{qq}
-\NormalTok{  lambda=input}\OperatorTok{$}\NormalTok{lq}
-  \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
-  \CommentTok{#n=10;p=0.5;q=0.75;lambda=5}
-  \CommentTok{#xx=c(seq(min(a,x),min(b,x),by=0.001))}
-\NormalTok{  probsB=}\KeywordTok{pbinom}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n,n,p)}
-  \KeywordTok{curve}\NormalTok{(}\KeywordTok{pbinom}\NormalTok{(x,n,p),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\FloatTok{-0.25}\NormalTok{,n}\FloatTok{+0.25}\NormalTok{),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{max}\NormalTok{(probsB}\FloatTok{+0.05}\NormalTok{,}\FloatTok{0.1}\NormalTok{)),}
-        \DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función distribución\textbackslash{}n B(n="}\NormalTok{,n,}\StringTok{", p="}\NormalTok{,p,}\StringTok{")"}\NormalTok{),}
-        \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"dbinom(x,"}\NormalTok{,n,}\StringTok{", "}\NormalTok{,p,}\StringTok{")"}\NormalTok{),}\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{)}
-  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qbinom}\NormalTok{(q,n,p),}\DataTypeTok{y0 =} \DecValTok{0}\NormalTok{,}\DataTypeTok{x1 =} \KeywordTok{qbinom}\NormalTok{(q,n,p),}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
-  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qbinom}\NormalTok{(q,n,p),}\DataTypeTok{y0 =}\NormalTok{ q,}\DataTypeTok{x1 =} \FloatTok{-0.25}\NormalTok{,}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
-\NormalTok{  ytick=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.0}\NormalTok{,q,}\DecValTok{1}\NormalTok{)}
-  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{2}\NormalTok{, }\DataTypeTok{at=}\NormalTok{ytick, }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
-  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{qbinom}\NormalTok{(q,n,p), }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
-  \KeywordTok{curve}\NormalTok{(}\KeywordTok{ppois}\NormalTok{(x,lambda),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\FloatTok{-0.25}\NormalTok{,}\FloatTok{2.5}\OperatorTok{*}\NormalTok{lambda),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\FloatTok{+0.1}\NormalTok{),}
-        \DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función distribución }\CharTok{\textbackslash{}n}\StringTok{ Po(lambda="}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}
-        \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"dpois(x, lambda"}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{)}
-  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qpois}\NormalTok{(q,lambda),}\DataTypeTok{y0 =} \DecValTok{0}\NormalTok{,}\DataTypeTok{x1 =} \KeywordTok{qpois}\NormalTok{(q,lambda),}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
-  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qpois}\NormalTok{(q,lambda),}\DataTypeTok{y0 =}\NormalTok{ q,}\DataTypeTok{x1 =} \FloatTok{-0.25}\NormalTok{,}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
-\NormalTok{  ytick=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.0}\NormalTok{,q,}\DecValTok{1}\NormalTok{)}
-  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{2}\NormalTok{, }\DataTypeTok{at=}\NormalTok{ytick, }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
-  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{qpois}\NormalTok{(q,lambda), }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
-  \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\NormalTok{\})}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{generador-de-nuxfameros-aleatorios-muxe9todo-de-la-transformada-inversa}{%
-\subsection{Generador de números aleatorios método de la transformada inversa}\label{generador-de-nuxfameros-aleatorios-muxe9todo-de-la-transformada-inversa}}
-
-Una de las utilidades de la distribución uniforme \(U(0,1)\) es que si sabemos generar números aletorios de una uniforme podemos generar números aleatorios de cualquier variable aleatoria
-
- Propiedad. La transformada inversa
-Sea \(Z\) una v.a. \(U(0,1)\) y sea \(X\) una v.a con función de distribución \(F_X\) y que sea estrictamente creciente de forma que exista la función \(F^{-1}\). Consideremos la v.a. \(Y=F_X^{-1}(U)\) entonces \(Y\) tiene la misma distribución que \(X\).
-
-Notemos que \(F^{-1}(p)\), bajo estas condiciones, es la función que nos da los cuantiles de \(X\) para cada \(0\leq p\leq 1\).
-
-\hypertarget{generador-de-nuxfameros-aleatorios-muxe9todo-de-la-transformada-inversa-1}{%
-\subsection{Generador de números aleatorios método de la transformada inversa}\label{generador-de-nuxfameros-aleatorios-muxe9todo-de-la-transformada-inversa-1}}
-
-\textbf{Demostración}
-
-Bajo esta condiciones \(F^{-1}(y)\) nos da un solo valor y como además es creciente tenemos que
-
-\[
-P(Y\leq y )=P\left(F_X^{-1}(U)\leq y\right)=P(U\leq F_X(y))=F_Z(F_X(y))=F_X(y).
-\]
-
-Luego \(X\) es \(Y\) tienen la misma función de distribución.
-
- \textbf{Observación: generación de observaciones de una v.a. discreta}:
-
-Este método se pueden generar observaciones de una v.a. \textbf{discreta} a partir de observaciones aleatorias de una v.a. \(U(0,1)\). El método es similar a la propiedad anterior pero tomando como \(F^{-1}\) la función que nos da los cuantiles de la v.a. discreta.
 
 \hypertarget{distribuciuxf3n-exponencial}{%
-\section{Distribución exponencial}\label{distribuciuxf3n-exponencial}}
+\subsection{Distribución exponencial}\label{distribuciuxf3n-exponencial}}
 
-\hypertarget{distribuciuxf3n-del-tiempo-entre-dos-eventos-poisson}{%
-\subsection{Distribución del tiempo entre dos eventos Poisson}\label{distribuciuxf3n-del-tiempo-entre-dos-eventos-poisson}}
+\textbf{Distribución del tiempo entre dos eventos Poisson}
 
 Supongamos que tenemos un proceso Poisson con parámetro \(\lambda\) en una unidad de tiempo.
 
-Sea \(t\) una cantidad de tiempo en u.t. entonces \(N_{t}=\) número de eventos en el intervalo de tiempo \((0,t]\) es una \(Po(\lambda\cdot t)\). Consideremos la v.a. \(T=\) tiempo transcurrido entre dos eventos Poisson consecutivos.
+Dado un tiempo \(t\), definimos \(N_{t}\) como el número de eventos en el intervalo de tiempo \((0,t]\). La distribución de \(N(t)\) es una \(Po(\lambda\cdot t)\). Consideremos la v.a. \(T\) como el tiempo transcurrido entre dos eventos Poisson consecutivos.
 
 Sea \(t>0\), entonces
 
-\begin{eqnarray*}
-P(T>t)&=&P(\mbox{Cero eventos en el intervalo}(0,t])\\
-&=&P(N_{t}=0)=
+\[
+\begin{array}{rl}
+P(T>t)&=P(\mbox{Cero eventos en el intervalo}(0,t])\\
+&=P(N_{t}=0)=
          \frac{(\lambda t)^0}{0!} e^{-\lambda
          t}=e^{-\lambda t}.
-\end{eqnarray*}
-
-\hypertarget{distribuciuxf3n-del-tiempo-entre-dos-eventos-poisson-1}{%
-\subsection{Distribución del tiempo entre dos eventos Poisson}\label{distribuciuxf3n-del-tiempo-entre-dos-eventos-poisson-1}}
-
-Tomando complementarios, la función de distribución de \(T\) será
-
-\[
-F_{T}(t)= P(T\leq t)=1-P(X>t)=\left\{\begin{array}{ll} 0 &\mbox{ si } t\leq 0\\
-  1-e^{-\lambda t}& \mbox{ si } t>0\end{array}\right.
+\end{array}
 \]
 
-Entonces, derivando respecto de \(t\) en la expresión anterior
-
+Tomando complementarios, la función de distribución de \(T\) será:
 \[
-f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t} & \mbox{ si }  t>0\\
-0 & \mbox{ si } t\leq 0 \end{array}\right.
+F_{T}(t)= P(T\leq t)=1-P(T>t)=\left\{\begin{array}{ll} 0, &\mbox{ si } t\leq 0,\\
+  1-e^{-\lambda t},& \mbox{ si } t>0,\end{array}\right.
 \]
 
-La exponencial se denota por \(Exp(\lambda)\)
+Para hallar la función de densidad de \(T\), basta derivar la expresión anterior:
 
-\hypertarget{propiedad-de-la-falta-de-memoria}{%
-\subsection{Propiedad de la falta de memoria}\label{propiedad-de-la-falta-de-memoria}}
+\[
+f_{T}(t)=\left\{\begin{array}{ll}\lambda \cdot e^{-\lambda t}, & \mbox{ si }  t>0,\\
+0, & \mbox{ si } t\leq 0. \end{array}\right.
+\]
 
-Sea \(X\) una v.a. \(Exp(\lambda)\) entonces
+Llamaremos a la variable \(T\) exponencial de parámetro \(\lambda\) y la denotaremos por \(Exp(\lambda)\).
+
+\textbf{Propiedad de la falta de memoria}
+
+Sea \(X\) una v.a. \(Exp(\lambda)\), entonces
 
 \[P(X>s+t\big|X>s)=P(X>t)\mbox{  para todo } s,t\in \mathbb{R}\]
 
 \textbf{Demostración}
 
-Si \(X\) es una v.a. \(Exp(\lambda)\) tenemos que \(P(X>x)=1-P(X\leq x)=1-(1-e^{-\lambda\cdot x})=e^{-\lambda\cdot x}\) para todo \(x>0\)
+Si \(X\) es una v.a. \(Exp(\lambda)\) tenemos que \(P(X>x)=1-P(X\leq x)=1-(1-e^{-\lambda\cdot x})=e^{-\lambda\cdot x}\) para todo \(x>0\).
 
-\(P(X>s+t\big|X>s)=\frac{P(\{X>s+t\}\cap \{X>s\})}{P(X>s)}=\frac{P(X>s+t)}{P(X>s)}=\frac{e^{-\lambda\cdot (s+t)}}{e^{-\lambda\cdot s}}= \frac{e^{-\lambda\cdot s}\cdot e^{-\lambda\cdot t} }{e^{-\lambda\cdot s}}=e^{-\lambda\cdot t}=P(X>t).\)
+Por tanto,
+\[
+\begin{array}{rl}
+P(X>s+t\big|X>s) & =\frac{P(\{X>s+t\}\cap \{X>s\})}{P(X>s)}=\frac{P(X>s+t)}{P(X>s)}=\frac{e^{-\lambda\cdot (s+t)}}{e^{-\lambda\cdot s}}=
+\frac{e^{-\lambda\cdot s}\cdot e^{-\lambda\cdot t} }{e^{-\lambda\cdot s}}\\ & =e^{-\lambda\cdot t}=P(X>t).
+\end{array}
+\]
 
-\hypertarget{ejemplo-distribuciuxf3n-exponencial}{%
-\subsection{Ejemplo distribución exponencial}\label{ejemplo-distribuciuxf3n-exponencial}}
-
-\textbf{El clásico problema del peluquero.}
+\textbf{Ejemplo: el clásico problema del peluquero.}
 
 Una pequeña peluquería es regentada por un único peluquero. El peluquero está esperando al próximo cliente mientras lee el periódico.
 
-Supongamos que \(N_T=\) número de clientes que llegan en el intervalo \([0,t)\) es una \(Po(\lambda\cdot t)\) entonces la variable \(T=\) tiempo entre dos clientes consecutivos sigue una ley \(Exp(\lambda)\).
+Supongamos que la v.a. \(N_T\), que representa el número de clientes que llegan en el intervalo \([0,t)\), es una \(Po(\lambda\cdot t)\) entonces la variable \(T\), tiempo entre dos clientes consecutivos, sigue una ley \(Exp(\lambda)\).
 
 Supongamos que \(t\) se mide en horas y que \(\lambda=4\) es el promedio de clientes por hora.
 
-En este ejemplo la propiedad de la pérdida de memoria significa que
-si el peluquero lleva ya esperando más de \(s>0.25\) un cuarto de hora la probabilidad de que espere \(t=1/6\) de hora más (10 minutos) no cambia sigue siendo \(P(T>0.25+1/6|T>0.25)=P(T>1/6).\)
+Se pide:
 
-\hypertarget{ejemplo-distribuciuxf3n-exponencial-1}{%
-\subsection{Ejemplo distribución exponencial}\label{ejemplo-distribuciuxf3n-exponencial-1}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  El tiempo esperado (en horas) y la varianza hasta el siguiente cliente.
+\item
+  ¿Cuál es la probabilidad de que nuestro peluquero esté sin clientes (leyendo el periódico) más de 30 minutos (0.5 horas)?
+\end{enumerate}
+
+En este ejemplo la propiedad de la pérdida de memoria significa que
+por ejemplo, si el peluquero lleva ya esperando más de \(s>0.25\) (un cuarto de hora), la probabilidad de que espere \(t=1/6\) de hora más (10 minutos) no cambia sigue siendo \(P(T>0.25+1/6|T>0.25)=P(T>1/6).\)
+
+\textbf{Solución de 1. El tiempo esperado (en horas) y la varianza hasta el siguiente cliente.}
 
 El tiempo esperado (en horas) hasta el siguiente cliente es
 
 \[
-E(X)=\frac{1}{\lambda}=\frac{1}{4}=0.25.
+E(X)=\frac{1}{\lambda}=\frac{1}{4}=0.25,
 \]
-
 y la varianza es
-
 \[
 Var(X)=\frac{1}{\lambda^2}=\frac{1}{4^2}=0.0625.
 \]
+\textbf{Solución de 2. ¿Cuál es la probabilidad de que nuestro peluquero esté sin clientes (leyendo el periódico) más de 30 minutos (0.5 horas)?}
 
-Por último ¿Cuál es la probabilidad de que nuestro peluquero esté sin clientes (leyendo el periódico) más de 30 minutos (0.5 horas)?
-
+La probabilidad pedida vale:
 \[
-P(X>0.5)=1-P(X\leq 0.5)=1-(1-e^{-4\cdot 0.5 })=e^{-2})=0.1353353.
+P(X>0.5)=1-P(X\leq 0.5)=1-(1-e^{-4\cdot 0.5 })=e^{-2}=0.1353353.
 \]
 
-\hypertarget{ejemplo-distribuciuxf3n-exponencial-2}{%
-\subsection{Ejemplo distribución exponencial}\label{ejemplo-distribuciuxf3n-exponencial-2}}
-
-Si queremos hacer los cálculos con R,
+Usando \texttt{R}, la probabilidad anterior puede ser calculada de la forma siguiente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7759,14 +7401,13 @@ Si queremos hacer los cálculos con R,
 ## [1] 0.2231302
 \end{verbatim}
 
-\hypertarget{cuxe1lculos-con-r-4}{%
-\subsection{Cálculos con R}\label{cuxe1lculos-con-r-4}}
+\textbf{Cálculos con R}
 
-La función de densidad, de distribución y la generación aleatoria de valores de una exponencial, se pueden obtener en R con:
+Las funciones de densidad y de distribución de una variable exponencial de parámetro \(\lambda\) en un valor \texttt{x} se pueden obtener en \texttt{R} usando las funciones \texttt{dexp(x,lambda)} y \texttt{pexp(x,lambda)}, respectivamente. Para generar \texttt{n} valores aleatorios de una variable exponencial de parámetro \(\lambda\), hay que usar la función \texttt{rexp(n,lambda)}. Veamos un ejemplo de aplicación de las tres funciones anteriores:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{dexp}\NormalTok{(}\FloatTok{0.001}\NormalTok{,}\DataTypeTok{rate=}\DecValTok{3}\NormalTok{)}\CommentTok{### alerta no es una probailidad es una densidad y puede ser >1}
+\KeywordTok{dexp}\NormalTok{(}\FloatTok{0.001}\NormalTok{,}\DataTypeTok{rate=}\DecValTok{3}\NormalTok{)}\CommentTok{### alerta no es una probabilidad, es una densidad y puede ser >1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -7791,14 +7432,13 @@ La función de densidad, de distribución y la generación aleatoria de valores 
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 0.5069426 0.4497573 0.2876943 0.5514840 1.0552252 0.3168070 0.2488148
-##  [8] 0.2377065 0.2974863 0.2121646
+##  [1] 0.32072389 0.57998323 0.26019628 0.48896233 0.31041354 0.11871455
+##  [7] 0.10798351 0.18699902 0.10023100 0.03619832
 \end{verbatim}
 
-\hypertarget{cuxe1lculos-con-python-3}{%
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-3}}
+\textbf{Cálculos con python}
 
-Y en python con:
+Las funciones de densidad y de distribución de una variable exponencial de parámetro \(\lambda\) en un valor \texttt{x} se pueden obtener en python usando las funciones \texttt{expon.pdf(x,scale=1/lambda)} y \texttt{expon.cdf(x,scale=1/lambda)}, respectivamente. Para generar \texttt{n} valores aleatorios de una variable exponencial de parámetro \(\lambda\), hay que usar la función \texttt{expon.rvs(scale=1/lambda,size=n)}. Veamos un ejemplo de aplicación de las tres funciones anteriores:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7828,12 +7468,11 @@ Y en python con:
 \end{Shaded}
 
 \begin{verbatim}
-## array([ 0.57204449,  0.95776126,  0.52000901,  0.01696455,  0.46901485,
-##         0.19114381,  0.17500467,  0.79203126,  0.15224719,  0.04659301])
+## array([ 0.13691777,  0.29452264,  0.28944846,  0.76002689,  0.26549339,
+##         0.46814843,  0.31947617,  0.66543919,  0.13655727,  0.4046741 ])
 \end{verbatim}
 
-\hypertarget{resumen-v.a-con-distribuciuxf3n-exponencial-explambda}{%
-\subsection{\texorpdfstring{Resumen v.a con distribución exponencial, \(Exp(\lambda)\)}{Resumen v.a con distribución exponencial, Exp(\textbackslash{}lambda)}}\label{resumen-v.a-con-distribuciuxf3n-exponencial-explambda}}
+\textbf{Resumen v.a con distribución exponencial, \(Exp(\lambda)\)}
 
 \begin{longtable}[]{@{}rl@{}}
 \toprule
@@ -7852,12 +7491,12 @@ Y en python con:
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(f_{X}(x)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\(\left\{\begin{array}{ll} \lambda e^{-\lambda x} & \mbox{ si } x>0\\ 0 & \mbox{ si } x\leq 0 \end{array}\right.\)\strut
+\(\left\{\begin{array}{ll} \lambda e^{-\lambda x}, & \mbox{ si } x>0,\\ 0, & \mbox{ si } x\leq 0. \end{array}\right.\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(F_X(x)=P(X\leq X)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\(\left\{\begin{array}{ll} 0 &\mbox{si } x\leq 0\\ 1-e^{-\lambda x}& \mbox{si } x>0\end{array}\right.\)\strut
+\(\left\{\begin{array}{ll} 0, &\mbox{si } x\leq 0,\\ 1-e^{-\lambda x},& \mbox{si } x>0.\end{array}\right.\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.47\columnwidth}\raggedleft
 \(E(X)=\frac{1}{\lambda}\)\strut
@@ -7867,8 +7506,7 @@ Y en python con:
 \bottomrule
 \end{longtable}
 
-\hypertarget{gruxe1ficas-densidad-y-distribuciuxf3n-explambda10}{%
-\subsection{\texorpdfstring{Gráficas densidad y distribución \(Exp(\lambda=10)\)}{Gráficas densidad y distribución Exp(\textbackslash{}lambda=10)}}\label{gruxe1ficas-densidad-y-distribuciuxf3n-explambda10}}
+\textbf{Gráficas de las funciones de denside densidad y de distribución de la variable aleatoria \(Exp(\lambda=10)\)}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7885,19 +7523,15 @@ Y en python con:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{gruxe1ficas-densidad-y-distribuciuxf3n-explambda10-1}{%
-\subsection{\texorpdfstring{Gráficas densidad y distribución \(Exp(\lambda=10)\)}{Gráficas densidad y distribución Exp(\textbackslash{}lambda=10)}}\label{gruxe1ficas-densidad-y-distribuciuxf3n-explambda10-1}}
-
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-89-1} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-85-1} \end{center}
 
 \textbf{Ejercicio}
 
 Consultad en el manual de python \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.expon.html}{scipy.stats}.
 
-Dibujad la función de densidad y de distribución de una \(Exp(10).\)
+Dibujad la función de densidad y de distribución de una \(Exp(\lambda=10).\)
 
-\hypertarget{gruxe1ficas-interactivas-de-una-explambda.}{%
-\subsection{\texorpdfstring{Gráficas interactivas de una \(Exp(\lambda)\).}{Gráficas interactivas de una Exp(\textbackslash{}lambda).}}\label{gruxe1ficas-interactivas-de-una-explambda.}}
+\textbf{Gráficas interactivas de una variable \(Exp(\lambda)\)}
 
 Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
 
@@ -7928,12 +7562,14 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \NormalTok{  xx=}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,x,}\DataTypeTok{by=}\FloatTok{0.001}\NormalTok{)}
   \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
   \KeywordTok{curve}\NormalTok{(}\KeywordTok{dexp}\NormalTok{(x,}\DataTypeTok{rate=}\NormalTok{lambda),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{0.05}\NormalTok{,}\KeywordTok{round}\NormalTok{(}\KeywordTok{qexp}\NormalTok{(}\FloatTok{0.999}\NormalTok{,}\DataTypeTok{rate=}\NormalTok{lambda),}\DecValTok{2}\NormalTok{)),}
-        \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{dexp}\NormalTok{(}\DecValTok{0}\NormalTok{,lambda)}\OperatorTok{+}\FloatTok{0.1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función densidad Exp("}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}
+        \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{dexp}\NormalTok{(}\DecValTok{0}\NormalTok{,lambda)}\OperatorTok{+}\FloatTok{0.1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}
+        \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función densidad Exp("}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}
   \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"dexp(x,"}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{)}
   \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,x,}\KeywordTok{round}\NormalTok{(}\KeywordTok{qexp}\NormalTok{(}\FloatTok{0.999}\NormalTok{,}\DataTypeTok{rate=}\NormalTok{lambda),}\DecValTok{2}\NormalTok{)),}\DataTypeTok{cex.axis=}\FloatTok{0.8}\NormalTok{)}
   \KeywordTok{polygon}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,xx,}\KeywordTok{max}\NormalTok{(x,xx)),}\DataTypeTok{y=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{dexp}\NormalTok{(xx, }\DataTypeTok{rate=}\NormalTok{lambda),}\DecValTok{0}\NormalTok{),}
           \DataTypeTok{density=}\DecValTok{20}\NormalTok{,}\DataTypeTok{col=}\StringTok{"skyblue"}\NormalTok{)}
-  \KeywordTok{curve}\NormalTok{(}\KeywordTok{pexp}\NormalTok{(x,}\DataTypeTok{rate=}\NormalTok{lambda),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.01}\NormalTok{,}\KeywordTok{qexp}\NormalTok{(}\FloatTok{0.999}\NormalTok{,}\DataTypeTok{rate=}\NormalTok{lambda)}\OperatorTok{+}\FloatTok{0.1}\NormalTok{),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{1.1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}
+  \KeywordTok{curve}\NormalTok{(}\KeywordTok{pexp}\NormalTok{(x,}\DataTypeTok{rate=}\NormalTok{lambda),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.01}\NormalTok{,}\KeywordTok{qexp}\NormalTok{(}\FloatTok{0.999}\NormalTok{,}\DataTypeTok{rate=}\NormalTok{lambda)}\OperatorTok{+}\FloatTok{0.1}\NormalTok{),}
+        \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{1.1}\NormalTok{),}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}
         \DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función de distribución Exp("}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}
         \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"pexp(x,"}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}\DataTypeTok{xaxt=}\StringTok{"n"}\NormalTok{,}\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{)}
   \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0=}\KeywordTok{qexp}\NormalTok{(p,lambda),}\DataTypeTok{x1=}\KeywordTok{qexp}\NormalTok{(p,lambda),}\DataTypeTok{y0=}\DecValTok{0}\NormalTok{,}\DataTypeTok{y1=}\NormalTok{p,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{)}
@@ -7945,12 +7581,9 @@ Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ejercicio-las-bombillas-que-no-envejecen.}{%
-\subsection{Ejercicio: las bombillas que no envejecen.}\label{ejercicio-las-bombillas-que-no-envejecen.}}
+\textbf{Ejercicio: las bombillas que no envejecen.}
 
-\textbf{Ejercicio}
-
-Supongamos que compramos una bombilla led que promete un \textbf{valor esperado} de duración de 10000 (1.14 años) horas de funcionamiento continuo. Además nos aseguran que si \(X\) es el número de horas de funcionamiento continuo de una bombilla led sigue una ley exponencial
+Supongamos que compramos una bombilla led que promete un \textbf{valor esperado} de duración de 10000 (1.14 años) horas de funcionamiento continuo. Además, nos aseguran que la distribución de \(X\), el número de horas de funcionamiento continuo de una bombilla led, sigue una ley exponencial.
 
 \begin{itemize}
 \tightlist
@@ -7965,23 +7598,22 @@ Supongamos que compramos una bombilla led que promete un \textbf{valor esperado}
 \end{itemize}
 
 \hypertarget{distribuciuxf3n-normal-o-gaussiana}{%
-\section{Distribución normal o Gaussiana}\label{distribuciuxf3n-normal-o-gaussiana}}
+\subsection{Distribución normal o Gaussiana}\label{distribuciuxf3n-normal-o-gaussiana}}
 
-Una de las más variables aleatorias continua más populares son las llamadas distribuciones normales o de \href{https://es.wikipedia.org/wiki/Distribuci\%C3\%B3n_normal}{Gaussiana} .
+Una de las variables aleatorias continua más populares es la llamada distribución normal o \href{https://es.wikipedia.org/wiki/Distribuci\%C3\%B3n_normal}{Gaussiana} .
 
- Distribución normal o de Gauss
+ \textbf{Distribución normal o de Gauss}
 Diremos que una v.a. \(X\) sigue una ley normal de parámetros
-\(\mu\) y \(\sigma^2\) y lo denotaremos por \(N(\mu,\sigma)\)
-si tiene por función de densidad
+\(\mu\) y \(\sigma\) y la denotaremos por \(N(\mu,\sigma)\)
+si tiene por función de densidad:
 
 \[
 f_{X}(x)=\frac1{\sqrt{2\cdot\pi\cdot\sigma^2}}
-e^{-\frac{1}{2}\cdot\left(\frac{x-\mu}{\sigma}\right)^2}
+e^{-\frac{1}{2}\cdot\left(\frac{x-\mu}{\sigma}\right)^2},
 \]
-
 para todo \(x\in \mathbb{R}.\)
 
-La gráfica de esta función es la conocida campana de Gauss.
+La gráfica de esta función de densidad es conocida como \textbf{campana de Gauss.}
 
 La v.a. normal con \(\mu=0\) y \(\sigma=1\) recibe el nombre de
 normal estándar y se suele denotar por la letra \(Z\) normal \(N(0,1)\).
@@ -7994,10 +7626,7 @@ normal estándar y se suele denotar por la letra \(Z\) normal \(N(0,1)\).
 
 \begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/normaldensidad1-1} \end{center}
 
-\hypertarget{propiedades-de-la-densidad-normal}{%
-\subsection{Propiedades de la densidad normal}\label{propiedades-de-la-densidad-normal}}
-
- Propiedades de la densidad normal
+ \textbf{Propiedades de la función de densidad de la distribución normal}
 
 Sea \(X\) una v.a. \(N(\mu,\sigma)\) y sea \(f_{X}\) su función de densidad. Entonces:
 
@@ -8005,35 +7634,31 @@ Sea \(X\) una v.a. \(N(\mu,\sigma)\) y sea \(f_{X}\) su función de densidad. En
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Evidentemente \(f_{X}\) verifica todas las propiedades de las funciones de densidad.
+  La función \(f_{X}\) verifica todas las propiedades de las funciones de densidad: \(f_X(x)>0\), para todo \(x\in\mathbb{R}\) y \(\displaystyle\int_{-\infty}^\infty f_X(x)\,dx=1\).
 \item
-  \(f_{X}(\mu-x)=f_{X}(\mu+x)\) es simétrica respecto de la recta \(x=\mu\)
+  La función \(f_X(x)\) es simétrica respecto de la recta \(x=\mu\): \(f_{X}(\mu-x)=f_{X}(\mu+x)\), para todo \(x\in\mathbb{R}\).
 \item
-  \(f_{X}\) alcanza el máximo en \(x=\mu\)
+  \(f_{X}\) tiene un único máximo absoluto en \(x=\mu\) que vale \(f_X(\mu)=\frac1{\sqrt{2\pi\sigma^2}}\).
 \item
-  Si \(F_{X}\) la función de distribución de \(X\) entonces \(F_{X}(\mu+x)=1-F_{X}(\mu-x)\).
+  Si \(F_{X}\) es la función de distribución de \(X\), entonces \(F_{X}(\mu+x)=1-F_{X}(\mu-x)\), para todo \(x\in\mathbb{R}\).
 \item
-  En particular si \(Z\) es una \(N(0,1)\) entonces \(F_{Z}(-x)=1-F_{Z}(x)\)
+  En particular si \(Z\) es una \(N(0,1)\) entonces \(F_{Z}(-x)=1-F_{Z}(x)\), para todo \(x\in\mathbb{R}\).
 \item
   \(Z=\frac{X-\mu}{\sigma}\) es una v.a. \(N(0,1)\) y \(X=\sigma\cdot Z+\mu\) es una \(N(\mu,\sigma)\) donde \(Z\) es la normal estándar.
 \end{enumerate}
 
-\hypertarget{funciuxf3n-de-distribuciuxf3n-n01}{%
-\subsection{Función de distribución N(0,1)}\label{funciuxf3n-de-distribuciuxf3n-n01}}
+\textbf{Función de distribución N(0,1)}
 
-Su función de distribución es, como sabemos :
+Su función de distribución es, como sabemos:
 
 \[
 F(x)=\displaystyle\int_{-\infty}^{x} {1\over{\sqrt{2\cdot \pi\cdot\sigma^2}}}
 e^{-{1\over 2}{\left({t-\mu}\over{\sigma}\right)}^2} dt.
 \]
 
-Que no tiene ninguna expresión algebraica ``decente''. Es por esta razón, y por comodidad, que esta función está tabulada o hay que calcular con un programa.
+La función \(F(x)\) no tiene ninguna expresión algebraica ``decente''. Es por esta razón, y por comodidad, que esta función está tabulada o hay que calcularla usando un software estadístico.
 
-Cuando una variable tiene distribución normal con parámetros \(\mu\) y \(\sigma\) la denotamos con \(X\) sigue un ley de distribución \(N(\mu,\sigma).\)
-
-\hypertarget{resumen-v.a-con-distribuciuxf3n-normal-nmusigma}{%
-\subsection{\texorpdfstring{Resumen v.a con distribución normal, \(N(\mu,\sigma)\)}{Resumen v.a con distribución normal, N(\textbackslash{}mu,\textbackslash{}sigma)}}\label{resumen-v.a-con-distribuciuxf3n-normal-nmusigma}}
+\textbf{Resumen v.a con distribución normal, \(N(\mu,\sigma)\)}
 
 \begin{longtable}[]{@{}rl@{}}
 \toprule
@@ -8057,7 +7682,7 @@ Cuando una variable tiene distribución normal con parámetros \(\mu\) y \(\sigm
 \begin{minipage}[t]{0.38\columnwidth}\raggedleft
 \(F_X(x)=P(X\leq X)=\)\strut
 \end{minipage} & \begin{minipage}[t]{0.56\columnwidth}\raggedright
-\texttt{pnorm(x,mean=mu,sd=sigma)}. Utilizad funciones de R o python\strut
+Utilizad la función de \texttt{R} \texttt{pnorm(x,mean=mu,sd=sigma)} o la función correspondiente en python\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.38\columnwidth}\raggedleft
 \(E(X)=\mu.\)\strut
@@ -8067,10 +7692,9 @@ Cuando una variable tiene distribución normal con parámetros \(\mu\) y \(\sigm
 \bottomrule
 \end{longtable}
 
-\hypertarget{cuxe1lculos-con-r-5}{%
-\subsection{Cálculos con R}\label{cuxe1lculos-con-r-5}}
+\textbf{Cálculos con R}
 
-De forma la forma habitual los parámetros son \texttt{mean} y \texttt{sd} la media \(\mu\) y la desviación estándar \(\sigma\). Por ejemplo para una \(X\sim N(\mu=1,\sigma=2)\) la función de densidad \(f_X(2)\) se puede calcular como
+Las funciones que calculan la función de densidad y de distribución de una variable \(N(\mu,\sigma)\) en un valor \texttt{x} son \texttt{dnorm(x,mean=mu,sd=sigma)} y \texttt{pnorm(x,mean=mu,sd=sigma)}, respectivamente. Por ejemplo, para una variable \(X\sim N(\mu=1,\sigma=2)\) la función de densidad \(f_X(2)\) se puede calcular de la forma siguiente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8082,7 +7706,7 @@ De forma la forma habitual los parámetros son \texttt{mean} y \texttt{sd} la me
 ## [1] 0.1760327
 \end{verbatim}
 
-y la función de distribución \(F_X(2) = P(X\leq 2)\) como
+y la función de distribución \(F_X(2) = P(X\leq 2)\) de la forma siguiente:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8115,11 +7739,11 @@ Y la generación aleatoria de valores según \(X\) como
 \end{Shaded}
 
 \begin{verbatim}
-## [1]  2.19858942  0.03274072 -0.59125322 -0.88202614  1.95160505
+## [1] -1.7813382  0.7320555  2.7209162  2.9098518  2.5098235
 \end{verbatim}
 
-\hypertarget{cuxe1lculos-con-python-4}{%
-\subsection{Cálculos con python}\label{cuxe1lculos-con-python-4}}
+\hypertarget{cuxe1lculos-con-python}{%
+\subsection{Cálculos con python}\label{cuxe1lculos-con-python}}
 
 De forma la forma habitual importaremos \texttt{norm} de \texttt{scipy.stas} los parámetros son \texttt{loc} y \texttt{scale} la media \(\mu\) y la desviación estándar \(\sigma\).
 
@@ -8174,7 +7798,7 @@ Y la generación aleatoria de valores según \(X\) como
 \end{Shaded}
 
 \begin{verbatim}
-## array([ 1.93233138,  0.95496871,  0.60857855,  2.72873958,  0.40257149])
+## array([ 5.45354918,  0.14333779,  0.57687927,  2.37784658,  2.79635359])
 \end{verbatim}
 
 \textbf{Ejercicio}
@@ -8199,7 +7823,7 @@ distribución normal tiene las siguientes propiedades:
   \(F(\mu-x)=1-F(\mu+x)\).
 \end{itemize}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-95-1} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-91-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -8213,7 +7837,7 @@ distribución normal tiene las siguientes propiedades:
   Tiene dos puntos de inflexión en \(x=\mu+\sigma\) y en \(x=\mu-\sigma\).
 \end{itemize}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-96-1} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-92-1} \end{center}
 
 \hypertarget{gruxe1ficas-interactivas-paruxe1metros-normal}{%
 \subsection{Gráficas interactivas parámetros normal}\label{gruxe1ficas-interactivas-paruxe1metros-normal}}
@@ -8512,6 +8136,259 @@ En los temas que siguen veremos como, bajo determinadas condiciones:
   La distribución normal es la distribución límite de la media aritmética.
 \end{itemize}
 
+\hypertarget{cuantiles-de-variables-aleatorias}{%
+\section{Cuantiles de variables aleatorias}\label{cuantiles-de-variables-aleatorias}}
+
+Si \(X\) es una v.a. con dominio \(D_X\) y \(0<q<1\), llamaremos cuantil de orden \(q\) al menor valor perteneciente al dominio \(x_q\in D_X\) tal que:
+\[P(X\leq x_q)\geq q.\]
+
+En \texttt{R}, cada distribución \(X\) tiene la función \texttt{qX(p,...)} que devuelve precisamente el cuantil \(x_p\) tal que \(P(X\leq x_p)\geq p.\)
+
+\textbf{Ejemplo}
+
+Consideremos una v.a. \(X\) de distribución \(B(5,0.5)\).
+
+Los cuantiles \(x_{0.3}\), \(x_{0.6}\) y \(x_{0.8}\) son los siguientes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qbinom}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{,}\FloatTok{0.6}\NormalTok{,}\FloatTok{0.8}\NormalTok{),}\DecValTok{5}\NormalTok{,}\FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3 3
+\end{verbatim}
+
+Calculemos a mano, el valor \(x_{0.3}\) y verifiquemos que da el mismo resultado que nos ha dado \texttt{R}.
+
+La función de distribución de \(X\) es:
+\[
+\small{
+F_x(x)=P(X\leq x)=
+\left\{
+\begin{array}{ll}
+0, & x< 0, \\
+0.03125, & \mbox{ si } 0 \leq x< 1, \\
+0.18750, & \mbox{ si } 1 \leq x< 2, \\
+0.50000, & \mbox{ si } 2 \leq x< 3, \\
+0.81250, & \mbox{ si } 3 \leq x< 4, \\
+0.96875, & \mbox{ si } 4 \leq x< 5, \\
+1.00000, & \mbox{ si }  5\leq x. \\
+\end{array}
+\right.}
+\]
+
+El cuantil \(q=0.3\) es el primer valor \(x\in D_X\) tal que \(F_X(x)=P(X\leq x_{0.3})\geq 0.3.\). Mirando la expresión anterior, comprobamos que \(x_{0.3}=2\) ya que \(F_X(2)=P(X\leq 2)=0.5 \geq 0.3\).
+
+\textbf{Ejercicio}
+
+Calcular los cuantiles de \(0.6\) y \(0.8\) de una \(B(5,0.5).\)
+
+Dada una variable aleatoria \(X\), si existe la inversa de la función de distribución de \(X\), \(F_X^{-1}\), el cuantil \(q\) sería el valor que tiene la función \(F_X^{-1}\) en \(q\): \(x_q=F^{-1}(q)\).
+
+En caso de no existir la inversa, dado \(q\), definimos el conjunto \(F_X^{-1}(q)\) como:
+\[
+F_X^{-1}(q) =\{x\in\mathbb{R},\ |\ F_X(x)=q\}.
+\]
+Entonces el cuantil \(q\) sería el mínimo del conjunto anterior considerando sólo valores del dominio de la variable: \(x_q =\min_{x\in D_X}(F_X^{-1}(q))\).
+
+\textbf{Ejemplo: variable aleatoria que nos da el resultado del lanzamiento de un dado}
+
+Sea \(X\) la variable aleatoria uniforme discreta que nos da el número de puntos obtenidos en el lanzamiento de un dado (seis caras numeradas del 1 al 6).
+
+Su dominio es \(D_X=\{1,2,3,4,5,6\}\) y su función de probabilidad es
+\[
+P_X(x)=P(X=x)=
+\left\{
+\begin{array}{ll}
+ \frac{1}{6}, & \mbox{ si } x=1,2,3,4,5,6, \\
+0, & \mbox{ en otro caso. }.
+\end{array}
+\right.
+\]
+Su función de distribución es:
+\[
+F_X(x)= P(X\leq x)=
+\left\{
+\begin{array}{ll}
+0, & \mbox{ si } x<1, \\
+\frac{k}{6} & \mbox{ si } k\leq x< k+1 \mbox{ para } x= 1,2,3,4,6, \\
+ 1, & \mbox{si  } x \geq 6.
+\end{array}
+\right.
+\]
+
+La función siguiente llamada \texttt{ddado} nos define la función de probabilidad de \(X\) para un dado de \(n\) caras:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ddado=}\ControlFlowTok{function}\NormalTok{(x,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{) \{}
+  \KeywordTok{sapply}\NormalTok{(x,}\DataTypeTok{FUN=}\ControlFlowTok{function}\NormalTok{(x) \{}
+    \ControlFlowTok{if}\NormalTok{( x }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n))\{}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{n)\} }\ControlFlowTok{else}\NormalTok{ \{}\KeywordTok{return}\NormalTok{(}\DecValTok{0}\NormalTok{)\}\})}
+\NormalTok{  \}}
+\end{Highlighting}
+\end{Shaded}
+
+Por ejemplo, el valor de \(P_X(0.5)\) sería:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ddado}\NormalTok{(}\FloatTok{1.5}\NormalTok{,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+y los valores de \(P_X(i)\) para \(i=1,\ldots 10\) sería:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ddado}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.0000000
+##  [8] 0.0000000 0.0000000 0.0000000
+\end{verbatim}
+
+La función \texttt{pdado} nos da la función de distribución de \(X\):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pdado=}\ControlFlowTok{function}\NormalTok{(x,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{) }
+\NormalTok{  \{}
+  \KeywordTok{sapply}\NormalTok{(x,}\DataTypeTok{FUN=}\ControlFlowTok{function}\NormalTok{(y)\{ }\ControlFlowTok{if}\NormalTok{ (y}\OperatorTok{<}\DecValTok{1}\NormalTok{)\{ }\KeywordTok{return}\NormalTok{(}\DecValTok{0}\NormalTok{)\}}\ControlFlowTok{else}\NormalTok{\{}\ControlFlowTok{if}\NormalTok{(y}\OperatorTok{>=}\NormalTok{n)\{}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\NormalTok{)\} }\ControlFlowTok{else}
+\NormalTok{  \{}\KeywordTok{return}\NormalTok{(}\KeywordTok{sum}\NormalTok{(}\KeywordTok{ddado}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{floor}\NormalTok{(y))),}\DataTypeTok{n=}\NormalTok{n)))\}\}\})}
+\NormalTok{  \}}
+\end{Highlighting}
+\end{Shaded}
+
+Los valores de \(F_X(i)\) para \(i=0,\ldots, 11\) serían:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{pdado}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{11}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0.0000000 0.1666667 0.3333333 0.5000000 0.6666667 0.8333333 1.0000000
+##  [8] 1.0000000 1.0000000 1.0000000 1.0000000 1.0000000
+\end{verbatim}
+
+A continuación, construímos la función \texttt{qdado} que nos calcula el cuantil \(p\), para \(0\leq p\leq 1\), de la variable \(X\) como el mínimo de la antiimagen de \(p\) mediante la función de distribución \(F_X^{-1}(p)\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{qdado=}\ControlFlowTok{function}\NormalTok{(p,}\DataTypeTok{n=}\DecValTok{6}\NormalTok{)\{}
+\KeywordTok{sapply}\NormalTok{(p,}\DataTypeTok{FUN=}\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{pp=}\NormalTok{p,}\DataTypeTok{nn=}\NormalTok{n) }
+\NormalTok{  \{}
+  \ControlFlowTok{if}\NormalTok{(pp}\OperatorTok{<}\DecValTok{0} \OperatorTok{|}\StringTok{ }\NormalTok{pp}\OperatorTok{>}\DecValTok{1}\NormalTok{) \{}\KeywordTok{return}\NormalTok{(}\OtherTok{NA}\NormalTok{)\}}
+  \ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{  aux=pp}\OperatorTok{>=}\KeywordTok{pdado}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n,nn)}
+\NormalTok{  aux}
+  \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{all}\NormalTok{(}\OperatorTok{!}\NormalTok{aux),}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\NormalTok{),}\KeywordTok{return}\NormalTok{(}\KeywordTok{max}\NormalTok{(}\KeywordTok{which}\NormalTok{(pp}\OperatorTok{>=}\KeywordTok{pdado}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{n,nn)))))\}\}}
+\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Si \(p=1.5\) o \(p=-1\), la función anterior nos devuelve \texttt{NA} ya que ni 1.5 ni -1 están entre 0 y 1:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qdado}\NormalTok{(}\FloatTok{1.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qdado}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+Los cuantiles \(x_{0.1}\), \(x_{0.5}\) \(x_{0.6}\) y \(x_1\) son:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qdado}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.6}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 3 3 6
+\end{verbatim}
+
+\textbf{Gráfico interactivo que muestra los cuantiles de las distribuciones \(B(n,p)\) y \(Po(\lambda)\)}
+
+Para ejecutar el siguiente gráfico interactivo, solamente tienes que cargar el paquete \texttt{shiny} en tu ordenador y luego copiar/pegar las siguientes instrucciones. De este modo podrás observar los cambios en las distribuciones variando los parámetros.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{fluidPage}\NormalTok{(}
+\KeywordTok{fluidRow}\NormalTok{(}
+  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
+         \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"nq"}\NormalTok{, }\DataTypeTok{label =} \StringTok{"Par. n B(n,p)"}\NormalTok{,}
+              \DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{20}\NormalTok{, }\DataTypeTok{value =}\DecValTok{10}\NormalTok{ , }\DataTypeTok{step =} \DecValTok{1}\NormalTok{)}
+\NormalTok{         ),}
+  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
+          \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"pq"}\NormalTok{, }\DataTypeTok{label =} \StringTok{"Par. p B(n,p)"}\NormalTok{,}
+                     \DataTypeTok{min =} \FloatTok{0.01}\NormalTok{, }\DataTypeTok{max =} \FloatTok{0.99}\NormalTok{, }\DataTypeTok{value =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.1}\NormalTok{)}
+\NormalTok{         ),}
+  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
+         \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"qq"}\NormalTok{, }\DataTypeTok{label=}\StringTok{" Cuantil q"}\NormalTok{, }\DataTypeTok{value=}\FloatTok{0.75}\NormalTok{, }\DataTypeTok{min =} \FloatTok{0.01}\NormalTok{, }\DataTypeTok{max =} \FloatTok{0.99}\NormalTok{, }
+                     \DataTypeTok{step =} \FloatTok{0.01}\NormalTok{)}
+\NormalTok{         ),}
+  \KeywordTok{column}\NormalTok{(}\DecValTok{3}\NormalTok{,}
+         \KeywordTok{sliderInput}\NormalTok{(}\StringTok{"lq"}\NormalTok{, }\DataTypeTok{label=}\StringTok{"Par. lambda Po(lambda)"}\NormalTok{, }\DataTypeTok{value=}\DecValTok{5}\NormalTok{, }\DataTypeTok{min =} \DecValTok{1}\NormalTok{, }\DataTypeTok{max =} \DecValTok{20}\NormalTok{, }
+                     \DataTypeTok{step =} \DecValTok{1}\NormalTok{)}
+\NormalTok{         )}
+\NormalTok{  )}
+\NormalTok{)}
+
+  
+\KeywordTok{renderPlot}\NormalTok{(\{}
+\NormalTok{  n=input}\OperatorTok{$}\NormalTok{nq}
+\NormalTok{  p=input}\OperatorTok{$}\NormalTok{pq}
+\NormalTok{  q=input}\OperatorTok{$}\NormalTok{qq}
+\NormalTok{  lambda=input}\OperatorTok{$}\NormalTok{lq}
+  \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+  \CommentTok{#n=10;p=0.5;q=0.75;lambda=5}
+  \CommentTok{#xx=c(seq(min(a,x),min(b,x),by=0.001))}
+\NormalTok{  probsB=}\KeywordTok{pbinom}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\NormalTok{n,n,p)}
+  \KeywordTok{curve}\NormalTok{(}\KeywordTok{pbinom}\NormalTok{(x,n,p),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\FloatTok{-0.25}\NormalTok{,n}\FloatTok{+0.25}\NormalTok{),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{max}\NormalTok{(probsB}\FloatTok{+0.05}\NormalTok{,}\FloatTok{0.1}\NormalTok{)),}
+        \DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función distribución\textbackslash{}n B(n="}\NormalTok{,n,}\StringTok{", p="}\NormalTok{,p,}\StringTok{")"}\NormalTok{),}
+        \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"dbinom(x,"}\NormalTok{,n,}\StringTok{", "}\NormalTok{,p,}\StringTok{")"}\NormalTok{),}\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{)}
+  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qbinom}\NormalTok{(q,n,p),}\DataTypeTok{y0 =} \DecValTok{0}\NormalTok{,}\DataTypeTok{x1 =} \KeywordTok{qbinom}\NormalTok{(q,n,p),}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qbinom}\NormalTok{(q,n,p),}\DataTypeTok{y0 =}\NormalTok{ q,}\DataTypeTok{x1 =} \FloatTok{-0.25}\NormalTok{,}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\NormalTok{  ytick=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.0}\NormalTok{,q,}\DecValTok{1}\NormalTok{)}
+  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{2}\NormalTok{, }\DataTypeTok{at=}\NormalTok{ytick, }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{qbinom}\NormalTok{(q,n,p), }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{curve}\NormalTok{(}\KeywordTok{ppois}\NormalTok{(x,lambda),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\FloatTok{-0.25}\NormalTok{,}\FloatTok{2.5}\OperatorTok{*}\NormalTok{lambda),}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\FloatTok{+0.1}\NormalTok{),}
+        \DataTypeTok{col=}\StringTok{"blue"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Función distribución }\CharTok{\textbackslash{}n}\StringTok{ Po(lambda="}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}
+        \DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"dpois(x, lambda"}\NormalTok{,lambda,}\StringTok{")"}\NormalTok{),}\DataTypeTok{yaxt=}\StringTok{"n"}\NormalTok{)}
+  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qpois}\NormalTok{(q,lambda),}\DataTypeTok{y0 =} \DecValTok{0}\NormalTok{,}\DataTypeTok{x1 =} \KeywordTok{qpois}\NormalTok{(q,lambda),}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \KeywordTok{qpois}\NormalTok{(q,lambda),}\DataTypeTok{y0 =}\NormalTok{ q,}\DataTypeTok{x1 =} \FloatTok{-0.25}\NormalTok{,}\DataTypeTok{y1 =}\NormalTok{ q,}\DataTypeTok{lty=}\DecValTok{2}\NormalTok{,}\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}
+\NormalTok{  ytick=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.0}\NormalTok{,q,}\DecValTok{1}\NormalTok{)}
+  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{2}\NormalTok{, }\DataTypeTok{at=}\NormalTok{ytick, }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{qpois}\NormalTok{(q,lambda), }\DataTypeTok{labels =} \OtherTok{TRUE}\NormalTok{)}
+  \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{variables-aleatorias.-complementos}{%
 \chapter{Variables Aleatorias. Complementos}\label{variables-aleatorias.-complementos}}
 
@@ -8680,7 +8557,7 @@ Una variable aleatoria tiene \textbf{asimetría positiva} si su función de dens
 
 Por ejemplo, en la figura siguiente, vemos la gráfica de la función de probabilidad de una variable aleatoria que presenta \textbf{asimetría negativa} a la izquierda y una función de densidad de una variable aleatoria que presenta \textbf{asimetría positiva} a la derecha:
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-99-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-103-1.pdf}
 
 \hypertarget{cuxf3mo-calcular-la-asimetruxeda-de-una-variable-aleatoria}{%
 \subsection{¿Cómo calcular la asimetría de una variable aleatoria?}\label{cuxf3mo-calcular-la-asimetruxeda-de-una-variable-aleatoria}}
@@ -8712,7 +8589,7 @@ Sea \(X\) una variable de Bernoulli de parámetro \(p\). Usando que \(m_n =p\), 
 \]
 Por tanto, la variable de Bernoulli de parámetro \(p\) tendrá simetria negativa si \(p>\frac{1}{2}\) y positiva, si \(p<\frac{1}{2}\):
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-100-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-104-1.pdf}
 
 \textbf{Ejemplo: cálculo del coeficiente de asimetría para una variable exponencial de parámetro \(\lambda\)}
 
@@ -8722,7 +8599,7 @@ Usando que \(\sigma^2=\frac{1}{\lambda^2}\) y \(\mu_3 =\frac{a_3}{\lambda^3}=\fr
 
 Entonces presenta asimetría positiva o a la derecha tal como se observa en su función de densidad:
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-101-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-105-1.pdf}
 
 \textbf{Ejemplo: cálculo del coeficiente de asimetría para una variable normal de parámetros \(\mu\) y \(\sigma\)}
 
@@ -8736,7 +8613,7 @@ Deducimos que la distribución normal es totalmente simétrica.
 
 De hecho, usando que su función de densidad es \(f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}},\) para \(x\in \mathbb{R}\), se puede comprobar que \(f_X(\mu-x)=f_X(\mu +x)\), o sea, tiene el eje de simetría \(x=\mu\):
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-102-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-106-1.pdf}
 
 \hypertarget{curtosis-o-apuntamiento-de-una-variable-aleatoria}{%
 \section{Curtosis o apuntamiento de una variable aleatoria}\label{curtosis-o-apuntamiento-de-una-variable-aleatoria}}
@@ -9092,7 +8969,7 @@ Sea \(T\) una variable aleatoria exponencial de parámetro \(\lambda\).
 
 La fiabilidad de \(T\) sería: \(R(t)=P(T>t)=1-F_T(t)=\mathrm{e}^{-\lambda t}\):
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-103-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-107-1.pdf}
 
 \hypertarget{generaciuxf3n-de-muestras-de-variables-aleatorias-por-ordenador}{%
 \section{Generación de muestras de variables aleatorias por ordenador}\label{generaciuxf3n-de-muestras-de-variables-aleatorias-por-ordenador}}
@@ -9152,11 +9029,11 @@ Generemos una muestra con \texttt{R} de 25 valores de una variable exponencial d
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 0.062256517 0.387562735 0.027692186 0.291087771 0.403917952 0.778602890
-##  [7] 0.131150860 0.280350342 0.003796249 0.219507956 0.945829891 0.775659317
-## [13] 0.682033958 0.067873161 1.216091515 1.232550124 0.689270257 0.158571891
-## [19] 0.336484163 0.267092819 0.183228046 0.027120529 0.326765414 0.129877407
-## [25] 0.369723840
+##  [1] 0.35877893 0.25280668 0.11355513 0.71885498 1.19013394 0.49444154
+##  [7] 0.23443983 0.07049329 1.48215515 0.09206527 0.14783308 2.35604428
+## [13] 0.41728297 0.43470135 0.02910931 0.36337987 0.08532398 0.27981457
+## [19] 0.40904272 0.02482599 0.25061234 1.67562739 0.07212948 0.27227039
+## [25] 0.23932819
 \end{verbatim}
 
 Vamos a testear si nuestro método funciona.
@@ -9177,7 +9054,7 @@ Seguidamente dibujaremos la \textbf{función de densidad de la variable exponenc
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-106-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-110-1.pdf}
 
 \hypertarget{muxe9todo-de-rechazo}{%
 \subsection{Método de rechazo}\label{muxe9todo-de-rechazo}}
@@ -9196,7 +9073,7 @@ En resumen, los puntos \((x,f(x))\) pertenecen al rectángulo \([a,b]\times [c,d
 
 En el gráfico siguiente, \(a=0\), \(b=2\), \(c=0\) y \(d=1\).
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-107-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-111-1.pdf}
 
 Para generar una \textbf{muestra aleatoria} de la variable \(X\), hacemos lo siguiente:
 
@@ -9265,7 +9142,7 @@ Como hicimos con el ejemplo del \textbf{método de transformación}, vamos a gen
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-110-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-114-1.pdf}
 
 \hypertarget{entropuxeda}{%
 \section{Entropía}\label{entropuxeda}}
@@ -9309,7 +9186,7 @@ H_X = E\left(-\ln(P_X)\right) = -(1-p)\cdot \ln(1-p)-p\cdot \ln p.
 \]
 El gráfico de la entropía se puede observar en el gráfico siguiente donde \(X\) tiene entropía máxima cuando \(p=\frac{1}{2}\) que sería cuando \(X\) tiene incertidumbre máxima al tratar de adivinar el resultado de \(X\) y \(X\) tiene entropía mínima cuando \(p=0\) o \(p=1\) ya que en estos casos el resultado de \(X\) sería siempre \(0\) o \(1\), respectivamente.
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-111-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-115-1.pdf}
 
 \textbf{Ejemplo: Entropía de una variable aleatoria exponencial de parámetro \(\lambda\)}
 
@@ -9325,7 +9202,7 @@ H_X & = E\left(-\ln(f_X)\right)=-\int_0^\infty \ln\left(\lambda\mathrm{e}^{-\lam
 \]
 El gráfico de la entropía se puede observar en el gráfico siguiente donde \(X\) tiene entropía máxima cuando \(\lambda=0\) que sería cuando \(X\) tiene incertidumbre máxima al tratar de adivinar el resultado de \(X\) al tener media \(E(X)=\frac{1}{\lambda}=\infty\) y \(X\) tiene entropía mínima cuando \(\lambda\) tiende a \(\infty\) ya que su media \(E(X)=\frac{1}{\lambda}\) tendería a 0.
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-112-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-116-1.pdf}
 
 \hypertarget{vectores-aleatorios-bidimensionales}{%
 \chapter{Vectores aleatorios bidimensionales}\label{vectores-aleatorios-bidimensionales}}
@@ -9381,19 +9258,15 @@ Consideremos el experimento aleatorio de elegir al azar un estudiante de primer 
 
 Estamos interesado en sucesos del tipo \(A=\{H\leq 176,\ W\leq 85\}\), o sea, el conjunto de estudiantes que miden menos de 1.76 m. y que pesan menos de 85 kg.
 
-\hypertarget{representaciux144-del-dominio-de-una-variable-aleatoria-bidimensional}{%
-\subsection{Representaciń del dominio de una variable aleatoria bidimensional}\label{representaciux144-del-dominio-de-una-variable-aleatoria-bidimensional}}
+\hypertarget{representaciuxf3n-del-dominio-de-una-variable-aleatoria-bidimensional}{%
+\subsection{Representación del dominio de una variable aleatoria bidimensional}\label{representaciuxf3n-del-dominio-de-una-variable-aleatoria-bidimensional}}
 
 Los sucesos que se derivan de una \textbf{variable aleatoria bidimensional} estan especificados por regiones del plano.
 Veamos algunos ejemplos:
 
 Suceso: \(\{X+Y\leq 1\}\). Sería la zona sombreada del gráfico siguiente:
 
-\begin{figure}
-\centering
 \includegraphics{Images/Bidim1.png}
-\caption{(\#fig:bid1\_1)Dominio bidimensional}
-\end{figure}
 
 Suceso: \(\{X^2+Y^2\leq 4\}\). Sería la zona sombreada del gráfico siguiente:
 
@@ -9448,7 +9321,8 @@ Entonces la \textbf{función de distribución conjunta} en el valor \((x,y)\) es
 
 \[
 \begin{array}{rl}
-F_{XY}(x,y) & =P\{w\in\Omega,\ |\ (X(w),Y(w))\in (-\infty,x]\times (-\infty,y]\} \\ & = P\{w\in\Omega,\ |\ X(w)\leq x,\ Y(w)\leq y\}.
+F_{XY}(x,y) &= P\{w\in\Omega,\ |\ (X(w),Y(w))\in (-\infty,x]\times (-\infty,y]\} \\ 
+&= P\{w\in\Omega,\ |\ X(w)\leq x,\ Y(w)\leq y\}.
 \end{array}
 \]
 
@@ -9501,7 +9375,7 @@ Sea \((X,Y)\) una variable bidimensional. y sea \(F_{XY}\) su \textbf{función d
 
 \includegraphics{Images/Fxy3.png}
 
-\textbf{Ejemplo}
+\textbf{Ejemplo: Función de distribución uniforme}
 
 Consideremos una variable aleatoria bidimensional \((X,Y)\) con \textbf{función de distribución conjunta}:
 \[
@@ -9549,13 +9423,17 @@ Dejamos como ejercicio hallar la distribución marginal para la variable \(Y\).
 \begin{itemize}
 \tightlist
 \item
-  Comprobemos que \(F_{XY}\) es continua por el ``norte'' y el ``este'' en el punto \((1,1)\) que sería un punto problemático:
+  Comprobemos que \(F_{XY}\) es continua por el ``norte'' y el ``este'' en el punto \((1,1)\) que es un punto problemático:
   \[
-  \lim_{x\to 1,x> 1} F_{XY}(x,1)=\lim_{x\to 1,x> 1} 1  = F_{XY}(1,1),\ \lim_{y\to 1,y> 1} F_{XY}(1,y)=\lim_{y\to 1,y> 1} 1  = F_{XY}(1,1).
+  \lim_{x\to 1,x> 1} F_{XY}(x,1)=\lim_{x\to 1,x> 1} 1  = F_{XY}(1,1),
   \]
 \end{itemize}
 
-Hagamos un gráfico 3D de la \textbf{función de distribución conjunta} usando la función \texttt{persp} de \texttt{R} para \(x\) e \(y\) entre -2 y 2.
+\[
+\lim_{y\to 1,y> 1} F_{XY}(1,y)=\lim_{y\to 1,y> 1} 1  = F_{XY}(1,1).
+\]
+
+Representemos en un gráfico tridimensional la \textbf{función de distribución conjunta} usando la función \texttt{persp} de \texttt{R} para \(x\) e \(y\) entre -2 y 2.
 
 Primero definimos la \textbf{función} y luego la dibujamos:
 
@@ -9571,7 +9449,7 @@ Primero definimos la \textbf{función} y luego la dibujamos:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-113-1} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-117-1} \end{center}
 
 \textbf{Ejemplo: dos lanzamientos de un dado no trucado}
 
@@ -10420,7 +10298,7 @@ A continuación las dibujamos para \(x\) e \(y\) entre \(-1\) y \(4\):
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-126-1} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-130-1} \end{center}
 
 \hypertarget{la-distribuciuxf3n-gaussiana-bidimensional}{%
 \subsection{La distribución gaussiana bidimensional}\label{la-distribuciuxf3n-gaussiana-bidimensional}}
@@ -10478,7 +10356,7 @@ Vamos a hacer un gráfico de la \textbf{distribución normal bidimensional} para
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-127-1} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-131-1} \end{center}
 
 \hypertarget{independencia-de-variables-aleatorias}{%
 \section{Independencia de variables aleatorias}\label{independencia-de-variables-aleatorias}}
@@ -12495,7 +12373,7 @@ Primero definimos la \textbf{función} y luego la dibujamos para \(x_1\) y \(x_2
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-138-1} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-142-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -12503,7 +12381,7 @@ Primero definimos la \textbf{función} y luego la dibujamos para \(x_1\) y \(x_2
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-138-2} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-142-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -12511,7 +12389,7 @@ Primero definimos la \textbf{función} y luego la dibujamos para \(x_1\) y \(x_2
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-138-3} \end{center}
+\begin{center}\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-142-3} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -14429,7 +14307,7 @@ La columna \(j\)-ésima de la matriz \texttt{matriz.medias.muestrales} contiene 
 
 Para ver los resultados, dibujamos el gráfico \(n\) vs. \(p_n\):
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-157-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-161-1.pdf}
 
 Observamos que las probabilidades tienden a cero tal como nos dice el \textbf{Teorema de la ley débil de los grandes números}.
 
@@ -14604,7 +14482,7 @@ El gráfico de las sumas parciales se muestra a continuación:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-160-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-164-1.pdf}
 
 Como se puede observar, la serie parece que converge.
 
@@ -14923,7 +14801,7 @@ Para ver si la aproximación funciona, dibujaremos en una misma gráfica el hist
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-163-1.pdf}
+\includegraphics{curso-probabilidad-udemy_files/figure-latex/unnamed-chunk-167-1.pdf}
 
 Observamos que la aproximación es bastante buena.
 
