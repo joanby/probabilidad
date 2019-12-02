@@ -748,7 +748,7 @@ Por último ¿Cuál es la probabilidad de que nuestro peluquero esté sin  clien
 
 
 $$
-P(X>0.5)=1-P(X\leq 0.5)=1-(1-e^{-4\cdot 0.5 })=e^{-2})=`r exp(-2)`.
+P(X>0.5)=1-P(X\leq 0.5)=1-(1-e^{-4\cdot 0.5 })=e^{-2}=`r exp(-2)`.
 $$
 </div>
 
@@ -897,7 +897,7 @@ renderPlot({
 <div class="exercise">
 **Ejercicio**
 
-Supongamos que compramos una bombilla led que promete un **valor esperado** de duración de 10000 (1.14 años) horas de funcionamiento continuo. Además nos aseguran que  si $X$ es el número de horas de funcionamiento continuo de una bombilla led sigue una ley  exponencial 
+Supongamos que compramos una bombilla led que promete un **valor esperado** de duración de 10000 (1.14 años) horas de funcionamiento continuo. Además, nos aseguran que la distribución de $X$, el número de horas de funcionamiento continuo de una bombilla led, sigue una ley  exponencial.
 
 * Si $X$ es $Exp(\lambda)$ ¿cuál es el valor del parámetro  $\lambda$?.
 * ¿Cuál es la probabilidad de que una bombilla led ilumine más de 2 años?
@@ -913,24 +913,22 @@ Supongamos que compramos una bombilla led que promete un **valor esperado** de d
 
 ## Distribución normal o Gaussiana
 
-Una de las más variables  aleatorias  continua más populares  son las  llamadas    distribuciones normales o de [Gaussiana](https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal) .
+Una de las variables  aleatorias  continua más populares  es la llamada    distribución normal o [Gaussiana](https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal) .
 
 <l class="def"> Distribución normal o de Gauss</l>
 Diremos que una v.a. $X$ sigue una ley normal de parámetros
-$\mu$ y $\sigma^2$ y lo denotaremos por $N(\mu,\sigma)$
-si tiene por función de densidad
+$\mu$ y $\sigma$ y la denotaremos por $N(\mu,\sigma)$
+si tiene por función de densidad:
 
 $$
 f_{X}(x)=\frac1{\sqrt{2\cdot\pi\cdot\sigma^2}}
-e^{-\frac{1}{2}\cdot\left(\frac{x-\mu}{\sigma}\right)^2}
+e^{-\frac{1}{2}\cdot\left(\frac{x-\mu}{\sigma}\right)^2},
 $$
-
-
 para todo $x\in \mathbb{R}.$
 
 ## Distribución normal o Gaussiana
 
-La gráfica de esta función es la conocida campana de Gauss.
+La gráfica de esta función de densidad es conocida como **campana de Gauss.**
 
 La v.a. normal con $\mu=0$ y $\sigma=1$ recibe el nombre de
 normal estándar y se suele denotar por la letra $Z$ normal $N(0,1)$.
@@ -943,18 +941,23 @@ curve(dnorm(x),main="Función de densidad de una normal estándar",xlim=c(-3.9,3
 ```
 
 
-## Propiedades de la densidad normal
+## Propiedades de la función de densidad de la distribución normal
 
-<l class="prop"> Propiedades de la densidad normal</l>
+<l class="prop"> Propiedades de la función de densidad de la distribución normal</l>
 
 Sea $X$ una v.a. $N(\mu,\sigma)$ y sea $f_{X}$ su función de densidad. Entonces:
 
-1. Evidentemente $f_{X}$ verifica todas las propiedades de las funciones de densidad.
-2. $f_{X}(\mu-x)=f_{X}(\mu+x)$ es simétrica respecto de la recta $x=\mu$
-3. $f_{X}$ alcanza el máximo en $x=\mu$
-4. Si $F_{X}$ la función de distribución de $X$ entonces $F_{X}(\mu+x)=1-F_{X}(\mu-x)$.
-5. En particular si $Z$ es una $N(0,1)$ entonces $F_{Z}(-x)=1-F_{Z}(x)$
-6. $Z=\frac{X-\mu}{\sigma}$ es una v.a. $N(0,1)$ y $X=\sigma\cdot Z+\mu$ es una $N(\mu,\sigma)$ donde $Z$ es la normal estándar.
+* La función $f_{X}$ verifica todas las propiedades de las funciones de densidad: $f_X(x)>0$, para todo $x\in\mathbb{R}$ y $\displaystyle\int_{-\infty}^\infty f_X(x)\,dx=1$.
+* La función $f_X(x)$ es simétrica respecto de la recta $x=\mu$: $f_{X}(\mu-x)=f_{X}(\mu+x)$, para todo $x\in\mathbb{R}$.
+* $f_{X}$ tiene un único máximo absoluto en $x=\mu$ que vale $f_X(\mu)=\frac{1}{\sqrt{2\pi\sigma^2}}$.
+
+
+
+## Propiedades de la función de densidad de la distribución normal
+
+* Si $F_{X}$ es la función de distribución de $X$, entonces $F_{X}(\mu+x)=1-F_{X}(\mu-x)$, para todo $x\in\mathbb{R}$. 
+* En particular si $Z$ es una $N(0,1)$ entonces $F_{Z}(-x)=1-F_{Z}(x)$, para todo $x\in\mathbb{R}$.
+* $Z=\frac{X-\mu}{\sigma}$ es una v.a. $N(0,1)$ y $X=\sigma\cdot Z+\mu$ es una $N(\mu,\sigma)$ donde $Z$ es la normal estándar.
 
 ## Función de distribución  N(0,1)
 
@@ -965,11 +968,8 @@ F(x)=\displaystyle\int_{-\infty}^{x} {1\over{\sqrt{2\cdot \pi\cdot\sigma^2}}}
 e^{-{1\over 2}{\left({t-\mu}\over{\sigma}\right)}^2} dt.
 $$
 
-Que no tiene ninguna expresión algebraica "decente". Es por esta razón, y  por comodidad, que esta función está tabulada o hay que calcular con un programa.
+La función $F(x)$ no tiene ninguna expresión algebraica "decente". Es por esta razón, y  por comodidad, que esta función está tabulada o hay que calcularla usando un software estadístico.
 
-
-
-Cuando una variable tiene distribución normal con parámetros $\mu$ y $\sigma$ la denotamos con $X$ sigue un ley de distribución $N(\mu,\sigma).$
 
 
 
@@ -980,19 +980,17 @@ $X$  | $N(\mu,\sigma)$
 -----:|:--------
 $D_X=$ | $\mathbb{R}=(-\infty,+\infty)$
 $f_{X}(x)$ |$=\frac{1}{\sqrt{2\pi\cdot\sigma^2}}\cdot e^{\frac{-(x-\mu)^2}{2\cdot \sigma^2}}\mbox{ para todo }x\in \mathbb{R}.$
-$F_X(x)=P(X\leq X)=$ | `pnorm(x,mean=mu,sd=sigma)`. Utilizad funciones de R o python 
+$F_X(x)=P(X\leq X)=$ | Utilizad la función de `R` `pnorm(x,mean=mu,sd=sigma)` o la función correspondiente en python 
 $E(X)=\mu.$ | $Var(X)=\sigma^2.$
-
 
 ##  Cálculos con R
  
- De forma la forma habitual los parámetros son `mean` y `sd` la media $\mu$ y la desviación estándar $\sigma$. Por ejemplo para una $X\sim N(\mu=1,\sigma=2)$ la función de densidad $f_X(2)$ se puede calcular como
+Las funciones que calculan la función de densidad y de distribución de una variable $N(\mu,\sigma)$ en un valor `x` son `dnorm(x,mean=mu,sd=sigma)` y `pnorm(x,mean=mu,sd=sigma)`, respectivamente. Por ejemplo, para una variable $X\sim N(\mu=1,\sigma=2)$ la función de densidad $f_X(2)$ se puede calcular de la forma siguiente:
  
 ```{r codigoNormalR1}
 dnorm(2,mean=1,sd=2)
 ```
-
-y la función de distribución $F_X(2) = P(X\leq 2)$ como
+y la función de distribución $F_X(2) = P(X\leq 2)$ de la forma siguiente:
 
 ```{r codigoNormalR1_1}
 pnorm(2,mean=1,sd=2) 
