@@ -1169,7 +1169,7 @@ curve(dnorm(x,m2,s2),add=TRUE,col="blue",lty=2)
 <l class="prop"> Propiedad: transformación lineal la distribución  normal </l>
 
 Sea $X$ una variable  $N(\mu,\sigma)$  entonces la variable $Y=a X+b$ con
-$a\not=0,b\in\cal{R}$ tiene distribución $N(a\mu+b, |a| \sigma)$
+$a\not=0,b\in\mathbb{R}$ tiene distribución $N(a\mu+b, |a| \sigma)$
 
 
 
@@ -1197,16 +1197,16 @@ $$
 ## Propiedades de la distribución normal estándar
 Sea $Z$ una $N(0,1)$.
 
-Como en este caso $\mu=0$ y $\sigma=1$ tenemos que algunas de las propiedades anteriores se simplifican incluso más:
+En este caso, $\mu=0$ y $\sigma=1$. Podemos escribir algunas de las propiedades vistas para una distribución normal cualquiera de la forma siguiente:
 
-
-* De $f_X(\mu-x)=f_X(\mu+x)$ obtenemos $f_Z(-x)=f_Z(x)$
-* De $F_X(\mu-x)=1-F_X(\mu+x)$ obtenemos $F_Z(-x)=1-F(x).$
+* La propiedad $f_X(\mu-x)=f_X(\mu+x)$ se traduce a $f_Z(-x)=f_Z(x)$
+* La propiedad $F_X(\mu-x)=1-F_X(\mu+x)$ se traduce a $F_Z(-x)=1-F(x).$
 * Dado $\delta>0$, 
 $$
 P(-\delta\leq Z \leq \delta)=F_{Z}(\delta)-F_{Z}(-\delta)=F_Z(\delta)-(1-F_Z(\delta))=
 2\cdot F_Z(\delta)-1.
 $$
+
 
 ## Cálculos con la distribución normal
 
@@ -1231,48 +1231,34 @@ Sea  $Z$  una distribución $N(0,1)$, calcular las siguientes probabilidades en 
 
 <div class="example-sol">
 
-Resolvamos el ejercicio
+Resolución:
 
-* $P(-4\leq Z \leq 4)=F_{Z}(4)-F_{Z}(-4)=2\cdot F_Z(4)-1$
-* $P(-2\leq Z \leq 2)=F_{Z}(2)-F_{Z}(-2)=2\cdot F_Z(2)-1$
-* $P(Z\leq -2)=F_Z(-2)=1-F_Z(2)$
-* $P( Z \leq 2)=F_{Z}(2)$
-* $P( Z \geq 2)=1-P(Z<2)=1-F_{Z}(2)$
-* $P( Z > 2)=1-P(Z\leq 2)=1-F_{Z}(2)$
+* $P(-4\leq Z \leq 4)=F_{Z}(4)-F_{Z}(-4)=2\cdot F_Z(4)-1$.
+* $P(-2\leq Z \leq 2)=F_{Z}(2)-F_{Z}(-2)=2\cdot F_Z(2)-1$.
+* $P(Z\leq -2)=F_Z(-2)=1-F_Z(2)$.
+* $P( Z \leq 2)=F_{Z}(2)$.
+* $P( Z \geq 2)=1-P(Z<2)=1-F_{Z}(2)$.
+* $P( Z > 2)=1-P(Z\leq 2)=1-F_{Z}(2)$.
 * $P( Z = 2)=0$ ya que es una distribución continua.
 * $P( Z \geq -2)=1-P(Z< -2)=1-F_{Z}(-2)=1-(1-F_Z(2))=F_Z(2).$
 </div>
 
 
-## Relación entre una normal y la normal estándar.
-
-<l class="prop">**Propiedad**</l>
-
-Si $X$ es una normal $N(\mu,\sigma)$ y $Z$ es su variable tipificada, es decir, $Z=\frac{X-\mu}{\sigma}$ es una $N(0,1)$ entonces:
-
-$$
-P(X\leq x)=P\left(\frac{X-\mu}{\sigma}\leq \frac{x-\mu}{\sigma}\right)=F_{Z}\left(\frac{x-\mu}{\sigma}\right).
-$$
-
-
 ## Relación entre una  distribución normal y la normal estándar.
 
-</div class="prop">
-
-**Propiedad**
-
-* Cuando tengamos un intervalo
-
+Para hallar la probabilidad de que $X$ esté en un intervalo $(a,b)$ cualquiera, podemos usar la función de distribución de $Z$ de la siguiente manera:
 $$
-\begin{eqnarray*}
-P(a<X<b)&=&P\left(\frac{a-\mu}{\sigma}<\frac{X-\mu}{\sigma}<\frac{b-\mu}{\sigma}\right)= \\
-&=& P\left(\frac{a-\mu}{\sigma}<Z<\frac{b-\mu}{\sigma}\right)\\
-&=&F_{Z}\left(\frac{b-\mu}{\sigma}\right)-
-F_{Z}\left(\frac{a-\mu}{\sigma}\right)
-\end{eqnarray*}
+\begin{array}{ll}
+P(a<X<b)&=P\left(\frac{a-\mu}{\sigma}<\frac{X-\mu}{\sigma}<\frac{b-\mu}{\sigma}\right)= \\
+&=P\left(\frac{a-\mu}{\sigma}<Z<\frac{b-\mu}{\sigma}\right)=F_{Z}\left(\frac{b-\mu}{\sigma}\right)-
+F_{Z}\left(\frac{a-\mu}{\sigma}\right).
+\end{array}
 $$
 
-* Si $\delta>0$ $P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot  F_Z\left(\frac{\delta}{\sigma}\right)-1$
+Para el caso particular en que el intervalo esté centrado en la media $\mu$, o sea existe un valor $\delta>0$ tal que $(a,b)=(\mu-\delta,\mu+\delta)$, obtenemos:
+$$
+P\left(\mu-\delta\leq X \leq\mu+\delta\right)=2\cdot  F_Z\left(\frac{\delta}{\sigma}\right)-1.
+$$
 
 </div>
 
@@ -1294,20 +1280,19 @@ Sea $X$ una normal com media $2$ y varianza $4$. Calcular
 <div class="example-sol">
 **Solución**
 
-El cálculo de la primera pregunta es
- 
+La primera probabilidad se calcula de la forma siguiente:
 $$
-\begin{eqnarray*}
-P(1< X< 2)&=& P\left(\frac{1-2}{2}<\frac{X-2}{2}<\frac{2-2}{2}\right)= P\left(\frac{-1}{2}<Z<0\right)\\
-&=& F_{Z}(0)-F_{Z}(-0.5)=\frac12-1+F_{Z}(0.5)=-\frac12+F_Z(0.5).
-\end{eqnarray*}
+\begin{array}{ll}
+P(1< X< 2)&= P\left(\frac{1-2}{2}<\frac{X-2}{2}<\frac{2-2}{2}\right)= P\left(\frac{-1}{2}<Z<0\right)\\
+&= F_{Z}(0)-F_{Z}(-0.5)=\frac12-1+F_{Z}(0.5)=-\frac12+F_Z(0.5).
+\end{array}
 $$
 
-La segunda cuestión se resuelve así
-
+La segunda probabilidad se calcular de la forma siguiente:
 $$
 P(X>3)=P\left(\frac{X-2}2>\frac{3-2}{2}\right)=P(Z>0.5)=1-F_{Z}(0.5).
 $$
+
 
 </div>
 
@@ -1330,9 +1315,9 @@ Sea $X$ una normal com media $2$ y varianza $4$. Calcular  con R y con python la
 **Solución con R**
 
 ```{r}
-pnorm(2,mean=2,sd=4)-pnorm(1,mean=2,sd=4)#P(1< X< 2)
-pnorm(3,mean=2,sd=4,lower.tail =FALSE)#P(X>3)
-1-pnorm(3,mean=2,sd=4,lower.tail=TRUE)#P(X>3) = 1-P(X<=3)
+pnorm(2,mean=2,sd=4)-pnorm(1,mean=2,sd=4) #P(1< X< 2)
+pnorm(3,mean=2,sd=4,lower.tail =FALSE) #P(X>3)
+1-pnorm(3,mean=2,sd=4,lower.tail=TRUE) #P(X>3) = 1-P(X<=3)
 ```
 
 </div>
@@ -1345,15 +1330,16 @@ pnorm(3,mean=2,sd=4,lower.tail =FALSE)#P(X>3)
 
 
 ```{python}
-norm.cdf(2,loc=2,scale=4)-norm.cdf(1,loc=2,scale=4)#P(1< X< 2)
-1-norm.cdf(3,loc=2,scale=4)#P(X>3) = 1-P(X<=3)
-norm.stats(loc=2,scale=4,moments="mv")#E(X), Var(X)
+norm.cdf(2,loc=2,scale=4)-norm.cdf(1,loc=2,scale=4) #P(1< X< 2)
+1-norm.cdf(3,loc=2,scale=4) #P(X>3) = 1-P(X<=3)
 ```
 </div>
 
 ## La distribución normal aproxima otras distribuciones
-En los temas que siguen veremos como, bajo determinadas condiciones:
 
-* La distribución normal puede aproximar la distribución binomial
-* La distribución normal puede aproximar la distribución Poisson
-* La distribución normal  es la distribución límite de la media aritmética.
+En los temas que siguen veremos como, bajo determinadas condiciones,
+
+* la distribución normal puede aproximar la distribución binomial,
+* la distribución normal puede aproximar la distribución Poisson
+* la distribución normal es la distribución límite de la media aritmética de una muestra de variables aleatorias.
+
