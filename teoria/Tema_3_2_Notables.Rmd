@@ -385,9 +385,9 @@ uniform.rvs(size=5)
 **Cuantiles** 
 </div>
 
-Si  $X$ es una v.a. con dominio $D_X$ y  $0<q<1$ llamaremos cuantil de orden $q$ al menor valor  perteneciente al dominio $x_q\in D_X$ tal que 
+Si  $X$ es una v.a. con dominio $D_X$ y  $0<p<1$ llamaremos cuantil de orden $p$ al menor valor  perteneciente al dominio $x_p\in D_X$ tal que 
 
-$$P(X\leq x_q)\geq q.$$
+$$P(X\leq x_p)\geq p.$$
 
 En `R`, cada distribución $X$ tiene la función `qX(p,...)` que devuelve precisamente el cuantil $x_p$ tal que $P(X\leq x_p)\geq p.$
 
@@ -432,7 +432,7 @@ $$
 ## Cuantiles
 
 <div class="example">
-El cuantil $q=0.3$ es el  primer valor $x\in D_X$  tal que $F_X(x)=P(X\leq x_{0.3})\geq 0.3.$. Mirando la expresión anterior, comprobamos que $x_{0.3}=2$ ya que $F_X(2)=P(X\leq 2)=0.5 \geq 0.3$.
+El cuantil $p=0.3$ es el  primer valor $x\in D_X$  tal que $F_X(x)=P(X\leq x_{0.3})\geq 0.3$. Mirando la expresión anterior, comprobamos que $x_{0.3}=2$ ya que $F_X(2)=P(X\leq 2)=0.5 \geq 0.3$.
 </div>
 
 
@@ -442,9 +442,17 @@ El cuantil $q=0.3$ es el  primer valor $x\in D_X$  tal que $F_X(x)=P(X\leq x_{0.
 Calcular los cuantiles de  $0.6$ y $0.8$ de una $B(5,0.5).$
 </div>
 
+## Cuantiles
 
-En general, podemos considerar que $F^{-1}$ es la función que nos da los cuantiles (es decir si $F^{-1}(p)$ da más de una valor tomaremos como antiimagen el valor más pequeño que esté dentro del dominio $D_X$).
+Dada una variable aleatoria $X$, si existe la inversa de la función de distribución de $X$, $F_X^{-1}$, el cuantil de orden $p$ sería el valor que tiene la función $F_X^{-1}$ en $p$: $x_p=F^{-1}(p)$.
 
+En caso de no existir la inversa, dado $p$, definimos el conjunto $A_p$ como:
+
+$$
+A_p =\{x\in\mathbb{R},\ |\ F_X(x)\geq p\}.
+$$
+
+Entonces el cuantil $p$ es el mínimo del conjunto $A_p$ considerando sólo valores del dominio de la variable: $x_p =\displaystyle\min_{x\in D_X}(A_p)$. Este mínimo siempre existirá y nos da una fórmula explícita para calcular los cuantiles de cualquier variable aleatoria.
 
 ## Cuantiles
 

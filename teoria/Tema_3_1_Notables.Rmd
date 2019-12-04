@@ -1184,52 +1184,53 @@ La desviación típica es $\sqrt{90}=`r sqrt(90)`.$
 
 <div class="exercise">
 
+
 **Ejemplo: partidos hasta que el Barça gana al Madrid**
 
-Los partidos Real Madrid FC Barcelona de **la liga** española se suelen denominar  **El Clásico**, sean en el Bernabeu (estadio del Real Madrid) o en el Camp Nou (estadio del Barça)
+Los partidos Real Madrid vs FC Barcelona de **la liga** española se suelen denominar  **El Clásico**, sean en el Bernabeu (estadio del Real Madrid) o en el Camp Nou (estadio del Barça)
 
-Sea $Y$ la variable que cuenta el número de veces que  en un partido de fútbol de la liga el Real Madrid  pierde contra el Barça sea en el Camp Nou  o el Calderón.
+Sea $X$ la variable que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Barça no gana al Madrid sea en el Camp Nou o el Bernabeu.
 
-Nuestra amiga Aina es muy culé (hincha del Barça) quiere averiguar cuántos partidos consecutivos de **El Clásico** tiene que ver hasta ver ganar al Barça por primera vez. 
+Nuestra amiga Aina es muy culé (hincha del Barça) y quiere averiguar cuántos partidos consecutivos de **El Clásico** tiene que ver hasta ver ganar al Barça por primera vez. 
 
 Le interesa estimar cuánto le va a costar este capricho. Tendrá que comprar las entradas y pagar los viajes de Barcelona a Madrid.
 
-Para ello  consulta [datos historicos de **El clásico**  en la wikipedia](https://es.wikipedia.org/wiki/El_Cl%C3%A1sico)  y  averigua que hasta el 3 de marzo de 2019  el Real Madrid ganó en 72 ocasiones el Barça en 72  y empataron 34 veces, en total se  han jugado 178 **Clásicos**.
+En [datos historicos de **El clásico**  en la wikipedia](https://es.wikipedia.org/wiki/El_Cl%C3%A1sico) están los datos hasta el 3 de marzo de 2019: se han jugado en total 178 **Clásicos** donde el Real Madrid ganó en 72 ocasiones, el Barça, en 72 y empataron 34 veces.
 
-La pregunta es: ¿Cuál es la probabilidad de no ver ganar al Barça en al menos tres partidos consecutivos?
+Nos hacemos las siguientes preguntas:
+
+*  Si Aina solo tiene dinero para ir a ver 3 partidos, ¿cuál es la probabilidad de no ver ganar al Barça en al menos tres partidos consecutivos?
+* ¿Cuántos partidos se tienen que jugar de media para ver ganar al Barça por primera vez?
 
 </div>
 
 ## Variable geométrica: El clásico
 
+
 <div class="example-sol"> 
 
-Como nuestro aficionada tiene un tía que juega mucho al fútbol en su consola  y con los datos que le damos  estima que  la probabilidad de que el Barça gane un clásico cualquiera es
+Con los datos anteriores, podemos estimar que la probabilidad de que el Barça gane un clásico cualquiera es:
 
-$$P(Barça)=\frac{72}{178}=`r round(72/178,4)`.$$
+$$P(\mbox{Barça})=\frac{72}{178}=`r round(72/178,4)`.$$
 
-Supongamos  pues que nuestro  *experimento de fútbol*  sigue una ley  geométrica con probabilidad de éxito $p=P(Barça)=\frac{72}{178}.$
+Por tanto, podemos modelar la variable $X$, que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Barça no gana al Madrid, con una ley  geométrica empezando en cero con probabilidad de éxito $p=P(\mbox{Barça})=\frac{72}{178}$,
 
-Entonces si $X$ es el número de partidos que pierde el Barça antes de que gane el primero  seguirá  una ley $Ge(p=\frac{72}{178})$.
+$$X=Ge\left(p=\frac{72}{178}=`r round(72/178,4)`\right)$$
 
 Así que  lo que nos pregunta Aina es la siguiente probabilidad
 
-$$P(X>3)=1-P(X\leq 3)=1-\left(1-\frac{72}{178}\right)^4=`r round(1-(1-72/178)^4,4)`.$$
+$$P(X\geq 3)=1-P(X\leq 2)=1-\left(1-\frac{72}{178}\right)^{2+1}=`r round(1-(1-72/178)^3,4)`.$$
 
+Así que  Aina tiene una probabilidad del $`r round(1-(1-72/178)^3,4)*100.0`\%$ de no ver ganar al Barça en al menos 3 partidos antes de ver uno en el sí que gane.
 
-Así que  Aina tiene una probabilidad del $87.42\%$ de que  necesite ver al menos no ganar al Barça 3 partidos antes de ver uno en el que gane.
 </div>
+
 
 ## Variable geométrica: El clásico
 
-<div class="exercise"> 
-**Ejercicio**
-
-Bajo las condiciones del problema Barça-Madrid de nuestra amiga Aina ¿cuál es el valor esperado de $X$? ¿y su varianza? 
- 
-</div>
-
 <div class="example-sol"> 
+
+Para responder a la segunda pregunta, usando que la distribución de $X$ es:
 
 $$X=Ge\left(p=\frac{72}{178}=`r round(72/178,4)`\right)$$
 
