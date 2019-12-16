@@ -11,7 +11,7 @@ Asienta las bases para convertirte en el Data Scientist del futuro con todo el c
 2. Variables aleatorias
 3. Distribuciones notables
 4. Complementos avanzados
-5. Variables bidimnsionales
+5. Variables bidimensionales
 6. Variables multidimensionales
 7. Convergencia y Teorema Central del límite
 
