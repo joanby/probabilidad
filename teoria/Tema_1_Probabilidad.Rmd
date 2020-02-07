@@ -260,7 +260,7 @@ $$
 
 Si $a\in \Omega$ es un suceso elemental cometeremos el abuso de notación de poner $P(a)$ en lugar de $P(\{a\})$
 
-## Ejemplo: grupos sangíneos
+## Ejemplo: grupos sanguíneos
 
 <div class="example">
 **Ejemplo**
