@@ -6,7 +6,7 @@ output:
   ioslides_presentation:
     widescreen: true
     css: Mery_style.css
-    keep_md: yes
+    keep_md: no
     logo: Images/matriz_mov.gif
 ---
 
