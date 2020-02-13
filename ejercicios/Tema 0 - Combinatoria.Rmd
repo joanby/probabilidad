@@ -9,15 +9,42 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Ejercicios de Combinatoria 1
 
-# Ejercicios de Combinatoria
+1. En una carrera en la que participan diez caballos ¿de cuántas maneras diferentes se pueden dar los cuatro primeros lugares?
+
+2. Una empresa de reciente creación encarga a un diseñador gráfico la elaboración del su logotipo, indicando que ha de seleccionar exactamente tres colores de una lista de seis. ¿Cuántos grupos tienen para elegir el diseñador?
+
+3. ¿Cuántas palabras diferentes, de cuatro letras, se pueden formar con la palabra byte?
+
+4. ¿De cuantas maneras diferentes se pueden elegir el director y el subdirector de un departamento formado por 50 miembros?
+
+5. Con once empleados ¿cuántos comités de empresa de cinco personas se pueden formar?
+
+6. ¿Cuántas maneras distintas hay de colocar quince libros diferentes en una estantería si queremos que el de Probabilidades esté el primero y el de Estadística en el tercero?
+
+7. ¿Cuántos caracteres diferentes podemos formar utilizando a lo sumo a tres símbolos de los utilizados en el alfabeto Morse?
+
+8. Un supermercado organiza una rifa con un premio de una botella de cava para todas las papeletas que tengan las dos últimas cifras iguales a las correspondientes dos últimas cifras del número premiado en el sorteo de Navidad. Supongamos que todos los décimos tienen cuatro cifras y que existe un único décimo de cada numeración ¿Cuántas botellas repartirá el supermercado?
+
+9. ¿Cuántas palabras diferentes podemos formar con todas las letras de la palabra estadística?
+
+10. En una tienda de regalos hay relojes de arena con cubetas de colores, y no hay diferencia alguna entre las dos cubetas que forman cada reloj. Si hay cuatro colores posibles y el color de los dos recipientes puede coincidir ¿cuántos modelos de reloj de arena puede ofrecer el establecimiento?
+
+11. En una partida de parchís gana aquel jugador que consigue alcanzar antes con sus cuatro fichas la llegada. Si hay cuatro jugadores y la partida continua hasta que todos han completado el recorrido ¿cuántos órdenes de llegadas hay para la dieciséis fichas?
+
+12. Se han de repartir cinco becas entre diez españoles y seis extranjeros, de manera que se den tres a españoles y dos a extranjeros ¿De cuántas maneras se puede hacer el reparto?
+
+\newpage
+
+# Ejercicios de Combinatoria 2
 
 
 1. ¿De cuantos modos diferentes se pueden colocar tres libros diferentes en una estantería?
 
 1. Seis personas entran en el cine. ¿De cuantos modos diferentes se pueden sentar en una fila?
 
-1. Tres ciudadanos destacados tienen que recibir premios. Si hay 4 candidatos a dichos premios, de cuantos modos se pueden distribuir los premios:
+1. Tenemos tres premios diferentes para repartir entre una serie de ciudadanos destacados. Si hay 4 candidatos a dichos premios, de cuantos modos se pueden distribuir los premios:
     - Si un ciudadano puede recibir como máximo un premio
     - Si un ciudadano puede recibir más de un premio.
 
@@ -35,3 +62,6 @@ knitr::opts_chunk$set(echo = TRUE)
 1. En un almacen hay cajas rojas y verdes. 
     - ¿De cuantas formas se pueden colocar en fila 20 cajas si 15 son rojas y 5 son verdes? 
     - ¿Y si hay 10 de cada color?
+    
+    
+  
