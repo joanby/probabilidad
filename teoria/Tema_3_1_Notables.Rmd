@@ -1219,9 +1219,9 @@ $$X=Ge\left(p=\frac{72}{178}=`r round(72/178,4)`\right)$$
 
 Así que  lo que nos pregunta Aina es la siguiente probabilidad
 
-$$P(X\geq 3)=1-P(X\leq 2)=1-\left(1-\left(1-\frac{72}{178}\right)^{2+1}\right)=`r round((1-72/178)^3,4)`.$$
+$$P(X\geq 3)=1-P(X\leq 2)=1-\left(1-\frac{72}{178}\right)^{2+1}=`r round(1-(1-72/178)^3,4)`.$$
 
-Así que  Aina tiene una probabilidad del $`r round((1-72/178)^3,4)*100.0`\%$ de no ver ganar al Barça en al menos 3 partidos antes de ver uno en el sí que gane.
+Así que  Aina tiene una probabilidad del $`r round(1-(1-72/178)^3,4)*100.0`\%$ de no ver ganar al Barça en al menos 3 partidos antes de ver uno en el sí que gane.
 
 </div>
 
