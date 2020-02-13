@@ -8,6 +8,7 @@ También tienes todas las distribuciones de probabilidad en nuestro [Shiny inter
 
 Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de probabilidad del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos. 
 
++  Prerrequisitos
 1. Probabilidad
 2. Variables aleatorias
 3. Distribuciones notables

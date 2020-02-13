@@ -8,7 +8,7 @@ También tienes todas las distribuciones de probabilidad en nuestro [Shiny inter
 
 Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de probabilidad del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos. 
 
-[Prerequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1)
++ [Prerrequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1)
 
 1. [Probabilidad](https://joanby.github.io/probabilidad/Tema_1_Probabilidad#1)
 2. [Variables aleatorias](https://joanby.github.io/probabilidad/Tema_2_VA#1)
