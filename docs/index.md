@@ -8,11 +8,13 @@ También tienes todas las distribuciones de probabilidad en nuestro [Shiny inter
 
 Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de probabilidad del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos. 
 
-0. [Prerequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1)
+[Prerequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1)
+
 1. [Probabilidad](https://joanby.github.io/probabilidad/Tema_1_Probabilidad#1)
 2. [Variables aleatorias](https://joanby.github.io/probabilidad/Tema_2_VA#1)
-3.1. [Distribuciones notables discretas](https://joanby.github.io/probabilidad/Tema_3_1_Notables#1)
-3.2. [Distribuciones notables continuas](https://joanby.github.io/probabilidad/Tema_3_2_Notables#1)
+3. Distribuciones Notables
+    + [Distribuciones notables discretas](https://joanby.github.io/probabilidad/Tema_3_1_Notables#1)
+    + [Distribuciones notables continuas](https://joanby.github.io/probabilidad/Tema_3_2_Notables#1)
 4. [Complementos avanzados](https://joanby.github.io/probabilidad/Tema_4_Momentos#1)
 5. [Variables bidimensionales](https://joanby.github.io/probabilidad/Tema_5_Varias_Variables#1)
 6. [Variables multidimensionales](https://joanby.github.io/probabilidad/Tema_6_Varias_Variables#1)
