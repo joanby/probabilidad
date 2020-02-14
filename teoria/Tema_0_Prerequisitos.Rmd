@@ -287,9 +287,37 @@ Omega-C # complementario.
 ```
 
 
+## Principios básicos para contar cardinales de conjuntos
+
+**El principio de la suma**
+
+Sean $A_1, A_2,\ldots, A_n$ conjuntos disjuntos dos a dos, es decir $A_i\cap A_j=\emptyset$ para todo $i\not= j$, $i,j=1,2,\ldots n$. Entonces
+
+$$\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).$$
+
+## Principios básicos para contar cardinales de conjuntos
+
+**Principio de unión exclusión**
+
+Consideremos dos conjuntos cualesquiera $A_1, A_2$  entonces el cardina ede su unión es
+
+$$\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).$$
+
+## Principios básicos para contar cardinales de conjuntos
+
+El principio del producto
+
+Sean $A_1,A_2,\ldots A_n$
+
+$$\begin{array}{ll}
+\#(A_1\times A_2\times \cdots A_n)=&\#\left(\{(a_1,a_2,\ldots a_n)| a_i\in A_i, i=1,2,\ldots n\}\right)\\
+&=\prod_{i=1}^n \#(A_i).
+\end{array}
+$$
+
+
 
 # Combinatoria
-
 
 ## Combinatoria. Introducción.
 
@@ -329,6 +357,10 @@ Puedo formar 21 equipos distintos.
 
 Carga el paquete `gtools` de R y investiga la función `combinations(n, r, v, set, repeats.allowed)` para calcular todas las combinaciones anteriores.
 </div>
+
+## Combinatoria. Combinaciones con repetición
+
+  combinaciones n+k-1 sobre k
 
 ## Combinatoria. Variaciones.
 
@@ -430,6 +462,16 @@ Investiga el paquete `itertools` y la función `comb` de `scipy.misc` de Python 
 
 La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función `gamma(x+1)` da el mismo valor que la función `factorial(x)` en `R` para todo $x = \{1,2,3\cdots,10\}$.
 </div>
+
+## Números multinomiales. Permutaciones con repetición. 
+
+Consideremos un conjunto  $\{\a_1,\ldots,a_k\}
+
+$${{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!}.$$
+
+
+
+
 
 # Para acabar
 
