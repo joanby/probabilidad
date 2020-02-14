@@ -1539,7 +1539,7 @@ En general su función de probabilidad es
 
 $$
 P_{X}(k)=P(X=k)=\left\{\begin{array}{ll}
-     {{k+n-1}\choose{n-1}} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots\\
+     {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si } k=0,1,\ldots\\
      0 & \mbox{en otro caso}\end{array}\right.
 $$
      
