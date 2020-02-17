@@ -346,10 +346,9 @@ $$CR^k_n = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.$$
 **Ejemplo**
 
 Vamos a imaginar que vamos a repartir 12 caramelos entre Antonio, Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D).
-Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como 'AAAABBBCCDDD'. 
+Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como AAAABBBCCDDD. 
 
-Otra forma posible de repartir los caramelos podría ser: dar 1 caramelo a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a Dionisio. Esta repartición la representamos como
-ADDDDDDDDDDD
+Otra forma posible de repartir los caramelos podría ser: dar 1 caramelo a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a Dionisio. Esta repartición la representamos como ADDDDDDDDDDD
 
 Recíprocamente, cualquier serie de 12 letras A, B, C, D se corresponde a una forma de repartir los caramelos. Por ejemplo, la serie AAAABBBBBDDD corresponde a:
 Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno a Carlos y 3 a Dionisio.
@@ -375,7 +374,7 @@ Luego hay seis casos
 
 ## Combinatoria. Variaciones (sin repetición).
 
-Denotaremos las variaciones (sin repetición) de $k$ elementos (de orden $k$) de un conjunto de $n$ elementos por $V^n_k$ su valor es 
+Denotaremos las variaciones (sin repetición) de $k$ elementos (de orden $k$) de un conjunto de $n$ elementos por $V_n^k$ su valor es 
 
 $$
 V_n^k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
@@ -506,7 +505,7 @@ $$\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).$$
 
 ## Principios básicos para contar cardinales de conjuntos
 
-El principio del producto
+**El principio del producto**
 
 Sean $A_1,A_2,\ldots A_n$
 
@@ -518,12 +517,10 @@ $$
 $$
 
 
-## Otros asuntos básicos
+## Otros aspectos a tener en cuenta
 
 Evidentemente nos hemos dejado muchas otras propiedades básicas de teoría de conjuntos y de combinatoria como: 
 
-* Números multinomiales.
-* Combinaciones con repetición
 * Propiedades de los números combinatorios.
 * Binomio de Newton.
 * Multinomio de Newton.
@@ -533,5 +530,8 @@ Si nos son necesarias las volveremos a repetir a lo largo del curso o  bien dare
 <div class="exercise"> 
 **Nota**
 
-Puedes repasar todos esos conceptos con ejercicios y más en el [Curso de estadística descriptiva con `R` y `Python`](https://www.udemy.com/course/estadistica-descriptiva?couponCode=JB_PROMO_OFF) con M. Santos y J.G. Gomila.<div>
+Puedes repasar todos esos conceptos con ejercicios y más en el [Curso de estadística descriptiva con `R` y `Python`](https://www.udemy.com/course/estadistica-descriptiva?couponCode=JB_PROMO_OFF) con M. Santos y J.G. Gomila.
+</div>
+
+
 
