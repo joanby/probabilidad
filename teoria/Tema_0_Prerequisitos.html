@@ -3525,34 +3525,6 @@ Omega</pre>
 
 <pre >## {1, 2, 3, 5, 9, 10}</pre>
 
-</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos">
-
-<p><strong>El principio de la suma</strong></p>
-
-<p>Sean \(A_1, A_2,\ldots, A_n\) conjuntos disjuntos dos a dos, es decir \(A_i\cap A_j=\emptyset\) para todo \(i\not= j\), \(i,j=1,2,\ldots n\). Entonces</p>
-
-<p>\[\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).\]</p>
-
-</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos-1">
-
-<p><strong>Principio de unión exclusión</strong></p>
-
-<p>Consideremos dos conjuntos cualesquiera \(A_1, A_2\) entonces el cardina ede su unión es</p>
-
-<p>\[\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).\]</p>
-
-</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos-2">
-
-<p>El principio del producto</p>
-
-<p>Sean \(A_1,A_2,\ldots A_n\)</p>
-
-<p>\[\begin{array}{ll}
-\#(A_1\times A_2\times \cdots A_n)=&amp;\#\left(\{(a_1,a_2,\ldots a_n)| a_i\in A_i, i=1,2,\ldots n\}\right)\\
-&amp;=\prod_{i=1}^n \#(A_i).
-\end{array}
-\]</p>
-
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Combinatoria</h2></hgroup><article  id="combinatoria">
 
 </article></slide><slide class=""><hgroup><h2>Combinatoria. Introducción.</h2></hgroup><article  id="combinatoria.-introducción.">
@@ -3568,7 +3540,7 @@ Omega</pre>
 <p>Nos da el número de subconjuntos de tamaño \(k\) de un conjunto de tamaño \(n\). Este número es</p>
 
 <p>\[
-{n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
+C_n^k={n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
 \]</p>
 
 <p>Recordemos que \[
@@ -3580,8 +3552,10 @@ n!=1\cdot 2\cdot 3\cdots n.
 <p>En nuestro caso con 7 jugadores \(n=7\) el número de equipos distintos de \(k=5\) es</p>
 
 <p>\[
-{7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!}=
-\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
+\begin{array}{rl}
+C_7^5&amp;={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
+&amp;=\frac{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 6\cdot 7}{1\cdot 2\cdot 3 \cdot 4\cdot 5\cdot 1\cdot 2}=\frac{6\cdot 7}{2}=\frac{42}{2}=21.
+\end{array}
 \]</p>
 
 <p>Puedo formar 21 equipos distintos.</p>
@@ -3593,7 +3567,31 @@ n!=1\cdot 2\cdot 3\cdots n.
 
 </article></slide><slide class=""><hgroup><h2>Combinatoria. Combinaciones con repetición</h2></hgroup><article  id="combinatoria.-combinaciones-con-repetición">
 
-<p>combinaciones n+k-1 sobre k</p>
+<p>En combinatoria, las combinaciones con repetición de un conjunto son las distintas formas en que se puede hacer una selección de elementos de un conjunto dado, permitiendo que las selecciones puedan repetirse.</p>
+
+<p>El número \(CR_n^k\) de multiconjuntos con \(k\) elementos escogidos de un conjunto con \(n\) elementos satisface:</p>
+
+<ul>
+<li>Es igual al número de combinaciones con repetición de \(k\) elementos escogidos de un conjunto con \(n\) elementos.</li>
+<li>Es igual al número de formas de repartir \(k\) objetos en \(n\) grupos.</li>
+</ul>
+
+<p>\[CR^k_n = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Combinaciones con repetición</h2></hgroup><article  id="combinatoria.-combinaciones-con-repetición-1">
+
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+
+<p>Vamos a imaginar que vamos a repartir 12 caramelos entre Antonio, Beatriz, Carlos y Dionisio (que representaremos como A, B, C, D). Una posible forma de repartir los caramelos sería: dar 4 caramelos a Antonio, 3 a Beatriz, 2 a Carlos y 3 a Dionisio. Dado que no importa el orden en que se reparten, podemos representar esta selección como &lsquo;AAAABBBCCDDD&rsquo;.</p>
+
+<p>Otra forma posible de repartir los caramelos podría ser: dar 1 caramelo a Antonio, ninguno a Beatriz y Carlos, los 11 restantes se los damos a Dionisio. Esta repartición la representamos como ADDDDDDDDDDD</p>
+
+<p>Recíprocamente, cualquier serie de 12 letras A, B, C, D se corresponde a una forma de repartir los caramelos. Por ejemplo, la serie AAAABBBBBDDD corresponde a: Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno a Carlos y 3 a Dionisio.</p>
+
+<p>De esta forma, el número de formas de repartir los caramelos es:</p>
+
+<p>\[CR_{12}^4 = \binom{12+4-1}{4}\]</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones.</h2></hgroup><article  id="combinatoria.-variaciones.">
 
@@ -3612,7 +3610,7 @@ n!=1\cdot 2\cdot 3\cdots n.
 <p>Denotaremos las variaciones (sin repetición) de \(k\) elementos (de orden \(k\)) de un conjunto de \(n\) elementos por \(V^n_k\) su valor es</p>
 
 <p>\[
-V^n_k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
+V_n^k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
 \]</p>
 
 </article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones.</h2></hgroup><article  id="combinatoria.-variaciones.-1">
@@ -3620,7 +3618,7 @@ V^n_k=\frac{n!}{(n-k)!}=(n-k+1)\cdot (n-k+2)\cdots n.
 <p>En nuestro ejemplo con \(n=3\) dígitos podemos escribir las siguientes variaciones de orden \(k=2\)</p>
 
 <p>\[
-V_{k=2}^{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
+V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 \]</p>
 
 <div class="exercise">
@@ -3634,14 +3632,14 @@ V_{k=2}^{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 
 <p>¿Y repitiendo algún dígito?</p>
 
-<p>\[VR^n_k=n^k\]</p>
+<p>\[VR_n^k=n^k\]</p>
 
 <p>Efectivamente en nuestro caso</p>
 
 <p>\[11,12,13,21,22,23,31,32,33\]</p>
 
 <p>\[
-VR_{k=2}^{n=3}=n^k.
+VR^{k=2}_{n=3}=n^k.
 \]</p>
 
 </article></slide><slide class=""><hgroup><h2>Permutaciones</h2></hgroup><article  id="permutaciones">
@@ -3689,11 +3687,55 @@ P_3=3!=1\cdot  2\cdot 3.
 
 </article></slide><slide class=""><hgroup><h2>Números multinomiales. Permutaciones con repetición.</h2></hgroup><article  id="números-multinomiales.-permutaciones-con-repetición.">
 
-<p>Consideremos un conjunto ${_1,,a_k}</p>
+<p>Consideremos un conjunto de elementos \(\{a_1, a_2, \ldots, a_k\}\).</p>
 
-<p>\[{{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!}.\]</p>
+<p>Entoces, si cada uno de los objetos \(a_i\) de un conjunto, aparece repetido \(n_i\) veces para cada \(i\) desde 1 hasta \(k\), entonces el número de permutaciones con elementos repetidos es:</p>
+
+<p>\[PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!},\] donde \(n=n_1+n_2+\cdots+n_k\).</p>
+
+</article></slide><slide class=""><hgroup><h2>Números multinomiales. Permutaciones con repetición.</h2></hgroup><article  id="números-multinomiales.-permutaciones-con-repetición.-1">
+
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+
+<p>¿Cuantas palabras diferentes se pueden formar con las letras de la palabra <code>PROBABILIDAD</code>?</p>
+
+<p>El conjunto de letras de la palabra considerada es el siguiente: \(\{A, B, D, I, L, O, P, R\}\) con las repeticiones siguientes: las letras A, B, D, e I, aparecen 2 veces cada una; y las letras L, O, P, R una vez cada una de ellas.</p>
+
+<p>Por tanto, utilizando la fórmula anterior, tenemos que el número de palabras (permutaciones con elementos repetidos) que podemos formar es</p>
+
+<p>\[PR^{2,2,2,2,1,1,1,1}_{12} = \frac{12!}{(2!)^4(1!)^4} = 29937600.\]</p></div>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Para acabar</h2></hgroup><article  id="para-acabar">
+
+</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos">
+
+<p><strong>El principio de la suma</strong></p>
+
+<p>Sean \(A_1, A_2,\ldots, A_n\) conjuntos disjuntos dos a dos, es decir \(A_i\cap A_j=\emptyset\) para todo \(i\not= j\), \(i,j=1,2,\ldots n\). Entonces</p>
+
+<p>\[\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos-1">
+
+<p><strong>Principio de unión exclusión</strong></p>
+
+<p>Consideremos dos conjuntos cualesquiera \(A_1, A_2\) entonces el cardinal de su unión es</p>
+
+<p>\[\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos-2">
+
+<p>El principio del producto</p>
+
+<p>Sean \(A_1,A_2,\ldots A_n\)</p>
+
+<p>\[
+\begin{array}{ll}
+\#(A_1\times A_2\times \cdots A_n)=&amp;\#\left(\{(a_1,a_2,\ldots a_n)| a_i\in A_i, i=1,2,\ldots n\}\right)\\
+&amp;=\prod_{i=1}^n \#(A_i).
+\end{array}
+\]</p>
 
 </article></slide><slide class=""><hgroup><h2>Otros asuntos básicos</h2></hgroup><article  id="otros-asuntos-básicos">
 
