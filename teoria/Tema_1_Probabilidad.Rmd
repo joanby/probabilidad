@@ -437,11 +437,11 @@ Los sucesos elementales son:
 En este caso nos interesa estudiar los sucesos: 
 
 * $A\cap B$: dar positivo en los dos test; $P(A\cap B)=0.0005.$
-* $B-A$: dar positivo en  cocaína pero no en cannabis,
+* $A-B$: dar positivo en  cocaína pero no en cannabis,
 
 de donde, por tanto:
 
-$$P(B-A) =P(B)-P(A\cap B) =0.01-0.0005=0.0095.$$
+$$P(A-B) =P(A)-P(A\cap B) =0.001-0.0005=0.0005.$$
 </div>
 
 # Probabilidad condicionada
