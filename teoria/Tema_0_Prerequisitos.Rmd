@@ -68,7 +68,7 @@ Los  conjuntos suelen tener un conjunto madre como por ejemplo
 * Alfabeto = $\{a,b,c,\ldots, A,B,C,\ldots\}.$
 * Palabras = $\{paz, guerra, amor, probabilidad,\ldots\}.$
 
-Recordemos que $i$ es la unidad imaginaria que cumple que $\sqrt{i}=-1$.
+Recordemos que $i$ es la unidad imaginaria que cumple que $i=\sqrt{-1}$.
 
 
 ## Características y propiedades básicas de los conjuntos
