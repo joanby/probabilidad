@@ -829,7 +829,7 @@ Así  el resultado del clasificador o del diagnóstico  puede ser:
 
 ## Clasificación o Diagnósticos
 
-<l class="definition"> ositivos y Negativos en Clasificación</l>
+<l class="definition"> Positivos y Negativos en Clasificación</l>
 Consideremos un problema de predicción de clases binario, en la que los resultados se etiquetan positivos (P) o negativos (N). Hay cuatro posibles resultados a partir de un clasificador binario como el propuesto. 
 
 * Si el resultado de una exploración es P y el valor dado es también P, entonces se conoce como un Verdadero Positivo (VP). 
