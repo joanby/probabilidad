@@ -8,7 +8,8 @@ También tienes todas las distribuciones de probabilidad en nuestro [Shiny inter
 
 Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de probabilidad del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos. 
 
-+ [Prerrequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1)
++ [Prerrequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1). Problemas rpouestos [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema%200%20-%20Combinatoria.Rmd), [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria.pdf). Soluciones problemas poopuestos˚ [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0%20-%20Combinatoria_SOLUCIONES.Rmd),  [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0%20-%20Combinatoria_SOLUCIONES.pdf),  [html](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0%20-%20Combinatoria_SOLUCIONES.html)
+
 
 1. [Probabilidad](https://joanby.github.io/probabilidad/Tema_1_Probabilidad#1)
 2. [Variables aleatorias](https://joanby.github.io/probabilidad/Tema_2_VA#1)
