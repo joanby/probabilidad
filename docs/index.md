@@ -15,6 +15,8 @@ Asienta las bases para convertirte en el Data Scientist del futuro con todo el c
 
 
 1. [Probabilidad](https://joanby.github.io/probabilidad/Tema_1_Probabilidad#1)
+
+  + Problemas propuestos Tema Probabilidad [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema%201%20-%20Probabilidad.Rmd), [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-1---Probabilidad.pdf).
 2. [Variables aleatorias](https://joanby.github.io/probabilidad/Tema_2_VA#1)
 3. Distribuciones Notables
     + [Distribuciones notables discretas](https://joanby.github.io/probabilidad/Tema_3_1_Notables#1)
