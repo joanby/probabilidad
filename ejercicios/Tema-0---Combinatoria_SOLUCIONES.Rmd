@@ -16,6 +16,8 @@ toccolor: 'blue'
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,cache=TRUE)
+options(scipen=999)
+```
 ```
 
 # Ejercicios de Combinatoria 1 con soluciones
@@ -291,7 +293,7 @@ En todas las resoluciones se deja como ejercicio cómo generar todos los objetos
 ¿De cuantos modos diferentes se pueden colocar tres libros diferentes en una estantería?
 
 ### Solución
-$3!=6$
+$3!=6.$
 
 ## Problema  2
 
@@ -300,14 +302,15 @@ Seis personas entran en el cine. ¿De cuantos modos diferentes se pueden sentar 
 
 ### Solución
 
-Supondremos que se sientan de forma consecutiva $6!=`r factorial(6)$
+Supondremos que se sientan de forma consecutiva $6!=`r factorial(6)`.$
 
 
 ## Problema 3
 
-Tenemos tres premios diferentes para repartir entre una serie de ciudadanos destacados. Si hay 4 candidatos a dichos premios, de cuantos modos se pueden distribuir los premios:
-    - Si un ciudadano puede recibir como máximo un premio
-    - Si un ciudadano puede recibir más de un premio.
+Tenemos tres premios diferentes para repartir entre una serie de ciudadanos destacados. Si hay 4 candidatos a dichos premios, de cuantos modos se pueden distribuir los premios en dos casos:
+
+>    1. Si un ciudadano puede recibir como máximo un premio
+>    2. Si un ciudadano puede recibir más de un premio.
 
 ### Solución
 
@@ -352,11 +355,26 @@ Dada una caja con los siguientes focos; 2 de 25 vatios, 4 de 40 vatios y 4 de 10
 
 ### Solución
 
-Lo haremos de dos maneras.
+Lo haremos de tres maneras.
 
-PRIMERA: Si contamos sólo las  cómo sacamos las 10 bombillas son ${10 \choose 3}= \frac{10!}{3!\cdot (10-3)!}=`r choose(10,3)`.$
+PRIMERA: Solo consideramos la tripleta de "vatios" que podemos conseguir (sin repetir los focos). Así los casos son:
 
-SEGUNDA: Contamos  las distintas maneras de  obtener las distintas  configuraciones de 25, 40 y 100 vatios.
+* caso 1: "2 de 25 vatios y 1 de 40",
+* caso 2: "2 de 25 vatios y 1 de 100",*
+* caso 3: "1 25 vatios y 2 de 40 vatios",
+* caso 4: "1 25 vatios y 2 de 100 vatios",
+* caso 5: "1 de 25 vatios 1 de 40 y 1 de 100",
+* caso 6: "1 de 40 vatios y dos de 100",
+* caso 7: "2 de 40 vatios y 1 de 100",
+* caso 8: "3 de 40 vatios",
+* caso 9: "3 de 100 vatios".
+
+En total 9 casos.
+
+
+SEGUNDA: Si contamos sólo las  cómo sacamos las 10 bombillas son ${10 \choose 3}= \frac{10!}{3!\cdot (10-3)!}=`r choose(10,3)`.$
+
+TERCERA: Contamos  las distintas maneras de  obtener las distintas  configuraciones de 25, 40 y 100 vatios.
 
 * 1 de 25, 1 de 40 y 1 de 100 vatios: ${2\choose 1}\cdot{4 \choose 1}\cdot{4\choose 1}=32.$
 * 1 de 25, 2 de 40 vatios: ${2\choose 1}\cdot{4 \choose 2}=12.$
@@ -386,7 +404,8 @@ Supongamos que las placas de matrícula de coches se componen de tres letras seg
 
 ### Solución
 
-Pues son $VR_{n=9}^{k=3}\cdot VR_{n=24}^{k=3}=9^3\cdot 24^3=`r 9^3*24^3`.$ 
+
+Consideraremos 10 dígitos y 26 letras. Así son $VR_{n=10}^{k=3}\cdot VR_{n=24}^{k=3}=10^3\cdot 26^3=17576000.$ 
 
 
 ## Problema 7
@@ -395,7 +414,7 @@ Pues son $VR_{n=9}^{k=3}\cdot VR_{n=24}^{k=3}=9^3\cdot 24^3=`r 9^3*24^3`.$
 
 ### Solución
 
-Pues de 1 manera..... si lo que queremos es todos los posibles encuentros ${8\choose 2}=`r choose(8,2)`$.
+Si lo que queremos es todos los posibles encuentros ${8\choose 2}=`r choose(8,2)`$.
 
 ## Problema 8
 
@@ -405,6 +424,8 @@ En un almacén hay cajas rojas y verdes.
     
     
 ### Solución  
+
+
 
 
 En el primer caso  son $PR_{20}^{15,  5}={20 \choose {15 5}}=\frac{20!}{ 15!\cdot 5!}=`r factorial(20)/(factorial(15)*factorial(5))`.$ 
