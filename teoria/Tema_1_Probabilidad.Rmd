@@ -1026,7 +1026,7 @@ Supongamos que llega un cliente ¿cuál es la  probabilidad de  que si ha compra
 
 Buscamos estudiar el suceso $E$: el cliente compra, se tiene que:
 
-$$P(E|A)=0.5, P(E|B)=0.75, P(E|C)=0.6$.$
+$$P(E|A)=0.5, P(E|B)=0.75, P(E|C)=0.6.$$
 
 $$P(B|E)\!=\!\dfrac{P(E|B)\cdot P(B)}{P(E|A)\!\cdot\! P(A)\!+\!P(E|B)\!\cdot\! P(B)\!+\!P(E|C)\!\cdot\! P(C)}\!=\!\ldots$$
 </div>
