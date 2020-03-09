@@ -1354,11 +1354,6 @@ opacity: 0;
 }
 @media print {
 
-@page {
-size: landscape;
-margin: 0;
-}
-
 slides slide {
 display: block !important;
 position: relative;
@@ -3206,7 +3201,7 @@ font-size: 0.5em
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
-      
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
           </hgroup>
   </slide>
@@ -3229,7 +3224,7 @@ font-size: 0.5em
 
 <p>Pero muchos tienen una falta de conocimientos en teoría básica de conjuntos y combinatoria (matemática discreta).</p>
 
-</article></slide><slide class=""><hgroup><h2>Teoría de conjuntos</h2></hgroup><article  id="teoría-de-conjuntos">
+</article></slide><slide class=""><hgroup><h2>Teoría de conjuntos</h2></hgroup><article  id="teoria-de-conjuntos">
 
 <p><l class="definition"><strong>Definición de conjunto</strong> </l></p>
 
@@ -3239,7 +3234,7 @@ font-size: 0.5em
 
 <p>La teoría de conjuntos matemática es más complejas y presenta varias paradojas como la <a href='https://es.wikipedia.org/wiki/Paradoja_de_Russell' title=''>paradoja de Russell</a>.</p>
 
-</article></slide><slide class=""><hgroup><h2>Teoría de conjuntos</h2></hgroup><article  id="teoría-de-conjuntos-1">
+</article></slide><slide class=""><hgroup><h2>Teoría de conjuntos</h2></hgroup><article  id="teoria-de-conjuntos-1">
 
 <p>La idea o noción práctica de conjunto es la de una colección de objetos de un cierto tipo.</p>
 
@@ -3250,7 +3245,7 @@ font-size: 0.5em
 <li>Extensión: dando una lista exhaustiva de los miembros del conjunto</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Conjuntos básicos</h2></hgroup><article  id="conjuntos-básicos">
+</article></slide><slide class=""><hgroup><h2>Conjuntos básicos</h2></hgroup><article  id="conjuntos-basicos">
 
 <p>Los conjuntos suelen tener un conjunto madre como por ejemplo</p>
 
@@ -3261,7 +3256,7 @@ font-size: 0.5em
 <li>\(\mathbb{R}=\{\mbox{Todos los puntos de una recta.}\}\)</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Conjuntos básicos</h2></hgroup><article  id="conjuntos-básicos-1">
+</article></slide><slide class=""><hgroup><h2>Conjuntos básicos</h2></hgroup><article  id="conjuntos-basicos-1">
 
 <ul>
 <li>\(\mathbb{C}= \left\{a+b\cdot i\quad \big|\quad a,b\in \mathbb{R}\right\}\mbox{ los números complejos}\quad a+b\cdot i.\)</li>
@@ -3271,7 +3266,7 @@ font-size: 0.5em
 
 <p>Recordemos que \(i\) es la unidad imaginaria que cumple que \(i=\sqrt{-1}\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="características-y-propiedades-básicas-de-los-conjuntos">
+</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="caracteristicas-y-propiedades-basicas-de-los-conjuntos">
 
 <ul>
 <li>Si a cada objeto \(x\) de \(\Omega\) le llamaremos <strong>elemento del conjunto</strong> \(\Omega\) y diremos que \(x\) pertenece a \(\Omega\). Lo denotaremos por \(x\in \Omega\).</li>
@@ -3279,7 +3274,7 @@ font-size: 0.5em
 <li>Sea \(A\) otro conjunto diremos que \(A\) <strong>es igual a</strong> \(B\) si todos los elementos \(A\) están en \(B\) y todos los elementos de \(B\) están en \(A\). Por ejemplo \(A=\{1,2,3\}\) es igual a \(B=\{3,1,2\}\).</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="características-y-propiedades-básicas-de-los-conjuntos-1">
+</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="caracteristicas-y-propiedades-basicas-de-los-conjuntos-1">
 
 <ul>
 <li>Si \(A\) es otro conjunto tal que si \(x\in A\) entonces \(x\in B\) diremos que \(A\) es un subconjunto de o que está contenido en \(B\). Lo denotaremos por \(A\subseteq B.\)</li>
@@ -3287,7 +3282,7 @@ font-size: 0.5em
 <li>Dado \(A\) un conjunto cualquiera obviamente \(\emptyset\subseteq A.\)</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="características-y-propiedades-básicas-de-los-conjuntos-2">
+</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="caracteristicas-y-propiedades-basicas-de-los-conjuntos-2">
 
 <p>Tomemos como conjunto base \(\Omega=\{1,2,3\}\)</p>
 
@@ -3302,7 +3297,7 @@ font-size: 0.5em
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="características-y-propiedades-básicas-de-los-conjuntos-3">
+</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="caracteristicas-y-propiedades-basicas-de-los-conjuntos-3">
 
 <p>Dado un conjunto \(\Omega\) podemos construir el <strong>conjunto de todas sus partes</strong> (todos sus subconjuntos) al que denotamos por \(\mathcal{P}(\Omega)\). También se denomina de forma directa partes de \(\Omega\).</p>
 
@@ -3310,7 +3305,7 @@ font-size: 0.5em
 
 <p>El <strong>cardinal de la partes de un conjunto</strong> es \(\#(\mathcal{P}(\Omega))=2^{\#(\Omega)}.\)</p>
 
-</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="características-y-propiedades-básicas-de-los-conjuntos-4">
+</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="caracteristicas-y-propiedades-basicas-de-los-conjuntos-4">
 
 <p>Por ejemplo \(\#\left(\mathcal{P}(\{1,2,3\})\right)=2^{\#(\{1,2,3\})}=2^3=8.\)</p>
 
@@ -3318,7 +3313,7 @@ font-size: 0.5em
 
 <p>\[\mathcal{P}(\{1,2,3\})=\{\emptyset,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}.\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="características-y-propiedades-básicas-de-los-conjuntos-5">
+</article></slide><slide class=""><hgroup><h2>Características y propiedades básicas de los conjuntos</h2></hgroup><article  id="caracteristicas-y-propiedades-basicas-de-los-conjuntos-5">
 
 <p>Dado un subconjunto \(A\) de \(\Omega\) podemos construir la función característica de \(A\) \[\chi_A:\Omega \to \{0,1\}\]</p>
 
@@ -3334,7 +3329,7 @@ font-size: 0.5em
 \right.
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Operaciones conjuntos: Intersección.</h2></hgroup><article  id="operaciones-conjuntos-intersección.">
+</article></slide><slide class=""><hgroup><h2>Operaciones conjuntos: Intersección.</h2></hgroup><article  id="operaciones-conjuntos-interseccion.">
 
 <p>Sea \(\Omega\) un conjunto y \(A\) y \(B\) dos subconjuntos de \(\Omega\).</p>
 
@@ -3346,7 +3341,7 @@ font-size: 0.5em
 A\cap B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\in B\right\}.
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Operaciones conjuntos: Unión.</h2></hgroup><article  id="operaciones-conjuntos-unión.">
+</article></slide><slide class=""><hgroup><h2>Operaciones conjuntos: Unión.</h2></hgroup><article  id="operaciones-conjuntos-union.">
 
 <p>El conjunto <strong>unión</strong> de \(A\) y \(B\) es el formado por todos los elementos que perteneces a \(A\) <strong>O</strong> pertenecen a \(B\), se denota por \(A\cup B\).</p>
 
@@ -3376,7 +3371,7 @@ A- B=\left\{x\in\Omega \big| x\in A \mbox{ y } x\notin B\right\}.
 A^c=\left\{x\in\Omega \big| x\not\in A\right\}.
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Más propiedades y definiciones</h2></hgroup><article  id="más-propiedades-y-definiciones">
+</article></slide><slide class=""><hgroup><h2>Más propiedades y definiciones</h2></hgroup><article  id="mas-propiedades-y-definiciones">
 
 <p>Sea \(\Omega\) un conjunto y \(A\), \(B\), \(C\) tres subconjuntos de \(\Omega\)</p>
 
@@ -3489,51 +3484,51 @@ B=set([1,4,5])
 C=set([4,6,7,8])
 Omega</pre>
 
-<pre >## {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}</pre>
+<pre >## set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</pre>
 
 </article></slide><slide class=""><hgroup><h2>Con python</h2></hgroup><article  id="con-python-1">
 
 <pre class = 'prettyprint lang-python'>A</pre>
 
-<pre >## {1, 2, 3, 4, 5}</pre>
+<pre >## set([1, 2, 3, 4, 5])</pre>
 
 <pre class = 'prettyprint lang-python'>B</pre>
 
-<pre >## {1, 4, 5}</pre>
+<pre >## set([1, 4, 5])</pre>
 
 <pre class = 'prettyprint lang-python'>C</pre>
 
-<pre >## {8, 4, 6, 7}</pre>
+<pre >## set([8, 4, 6, 7])</pre>
 
 </article></slide><slide class=""><hgroup><h2>Con python</h2></hgroup><article  id="con-python-2">
 
 <pre class = 'prettyprint lang-python'>A &amp; B   # intersección (&amp;: and/y)</pre>
 
-<pre >## {1, 4, 5}</pre>
+<pre >## set([1, 4, 5])</pre>
 
 <pre class = 'prettyprint lang-python'>A | B   # unión (|: or/o)</pre>
 
-<pre >## {1, 2, 3, 4, 5}</pre>
+<pre >## set([1, 2, 3, 4, 5])</pre>
 
 </article></slide><slide class=""><hgroup><h2>Con python</h2></hgroup><article  id="con-python-3">
 
 <pre class = 'prettyprint lang-python'>A - C   # diferencia </pre>
 
-<pre >## {1, 2, 3, 5}</pre>
+<pre >## set([1, 2, 3, 5])</pre>
 
 <pre class = 'prettyprint lang-python'>Omega-C # complementario.</pre>
 
-<pre >## {1, 2, 3, 5, 9, 10}</pre>
+<pre >## set([1, 2, 3, 5, 9, 10])</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Combinatoria</h2></hgroup><article  id="combinatoria">
 
-</article></slide><slide class=""><hgroup><h2>Combinatoria. Introducción.</h2></hgroup><article  id="combinatoria.-introducción.">
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Introducción.</h2></hgroup><article  id="combinatoria.-introduccion.">
 
 <p>La combinatoria es una rama de la matemática discreta que entre otras cosas cuenta distintas configuraciones de objetos de un conjunto.</p>
 
 <p>Por ejemplo si tenemos un equipo de baloncesto con 7 jugadores ¿cuántos equipos de 5 jugadores distintos podemos formar?</p>
 
-</article></slide><slide class=""><hgroup><h2>Combinatoria. Número binomial.</h2></hgroup><article  id="combinatoria.-número-binomial.">
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Número binomial.</h2></hgroup><article  id="combinatoria.-numero-binomial.">
 
 <p><strong>Número combinatorio o número binomial</strong></p>
 
@@ -3547,7 +3542,7 @@ C_n^k={n\choose k} = \frac{n!}{k!\cdot (n-k)!}.
 n!=1\cdot 2\cdot 3\cdots n.
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Combinatoria. Número binomial.</h2></hgroup><article  id="combinatoria.-número-binomial.-1">
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Número binomial.</h2></hgroup><article  id="combinatoria.-numero-binomial.-1">
 
 <p>En nuestro caso con 7 jugadores \(n=7\) el número de equipos distintos de \(k=5\) es</p>
 
@@ -3565,7 +3560,7 @@ C_7^5&amp;={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
 
 <p>Carga el paquete <code>gtools</code> de R y investiga la función <code>combinations(n, r, v, set, repeats.allowed)</code> para calcular todas las combinaciones anteriores.</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Combinatoria. Combinaciones con repetición</h2></hgroup><article  id="combinatoria.-combinaciones-con-repetición">
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Combinaciones con repetición</h2></hgroup><article  id="combinatoria.-combinaciones-con-repeticion">
 
 <p>En combinatoria, las combinaciones con repetición de un conjunto son las distintas formas en que se puede hacer una selección de elementos de un conjunto dado, permitiendo que las selecciones puedan repetirse.</p>
 
@@ -3578,7 +3573,7 @@ C_7^5&amp;={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
 
 <p>\[CR^k_n = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Combinatoria. Combinaciones con repetición</h2></hgroup><article  id="combinatoria.-combinaciones-con-repetición-1">
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Combinaciones con repetición</h2></hgroup><article  id="combinatoria.-combinaciones-con-repeticion-1">
 
 <div class="example">
 <p><strong>Ejemplo</strong></p>
@@ -3605,7 +3600,7 @@ C_7^5&amp;={7\choose 5} = \frac{7!}{5!\cdot (7-5)!}=\frac{7!}{5!\cdot 2!} \\
 
 <p>Luego hay seis casos</p>
 
-</article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones (sin repetición).</h2></hgroup><article  id="combinatoria.-variaciones-sin-repetición.">
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones (sin repetición).</h2></hgroup><article  id="combinatoria.-variaciones-sin-repeticion.">
 
 <p>Denotaremos las variaciones (sin repetición) de \(k\) elementos (de orden \(k\)) de un conjunto de \(n\) elementos por \(V_n^k\) su valor es</p>
 
@@ -3626,7 +3621,7 @@ V^{k=2}_{n=3}=\frac{3!}{(3-2)!}=\frac{1\cdot 2\cdot 3}{1}=6.
 
 <p>Carga el paquete <code>gtools</code> de R y investiga la función <code>permutations(n, r, v, set, repeats.allowed)</code> para calcular todas las variaciones anteriores.</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones con repetición.</h2></hgroup><article  id="combinatoria.-variaciones-con-repetición.">
+</article></slide><slide class=""><hgroup><h2>Combinatoria. Variaciones con repetición.</h2></hgroup><article  id="combinatoria.-variaciones-con-repeticion.">
 
 <p><strong>Variaciones con repetición</strong></p>
 
@@ -3685,7 +3680,7 @@ P_3=3!=1\cdot  2\cdot 3.
 
 <p>La función gamma de Euler, cobrará mucha importancia en el curso de estadística. Comprueba que la función <code>gamma(x+1)</code> da el mismo valor que la función <code>factorial(x)</code> en <code>R</code> para todo \(x = \{1,2,3\cdots,10\}\).</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Números multinomiales. Permutaciones con repetición.</h2></hgroup><article  id="números-multinomiales.-permutaciones-con-repetición.">
+</article></slide><slide class=""><hgroup><h2>Números multinomiales. Permutaciones con repetición.</h2></hgroup><article  id="numeros-multinomiales.-permutaciones-con-repeticion.">
 
 <p>Consideremos un conjunto de elementos \(\{a_1, a_2, \ldots, a_k\}\).</p>
 
@@ -3693,7 +3688,7 @@ P_3=3!=1\cdot  2\cdot 3.
 
 <p>\[PR_n^{n_1,n_2,\ldots,n_k} = {{n}\choose {n_1\quad n_2 \quad\ldots \quad n_k}}=\frac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!},\] donde \(n=n_1+n_2+\cdots+n_k\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Números multinomiales. Permutaciones con repetición.</h2></hgroup><article  id="números-multinomiales.-permutaciones-con-repetición.-1">
+</article></slide><slide class=""><hgroup><h2>Números multinomiales. Permutaciones con repetición.</h2></hgroup><article  id="numeros-multinomiales.-permutaciones-con-repeticion.-1">
 
 <div class="example">
 <p><strong>Ejemplo</strong></p>
@@ -3708,7 +3703,7 @@ P_3=3!=1\cdot  2\cdot 3.
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Para acabar</h2></hgroup><article  id="para-acabar">
 
-</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos">
+</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-basicos-para-contar-cardinales-de-conjuntos">
 
 <p><strong>El principio de la suma</strong></p>
 
@@ -3716,7 +3711,7 @@ P_3=3!=1\cdot  2\cdot 3.
 
 <p>\[\#(\cup_{i=1}^n A_i)=\sum_{i=1}^n \#(A_i).\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos-1">
+</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-basicos-para-contar-cardinales-de-conjuntos-1">
 
 <p><strong>Principio de unión exclusión</strong></p>
 
@@ -3724,7 +3719,7 @@ P_3=3!=1\cdot  2\cdot 3.
 
 <p>\[\#(A_1\cup A_2)=\#(A_1)+\#(A_2)-\#(A_1\cap A_2).\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-básicos-para-contar-cardinales-de-conjuntos-2">
+</article></slide><slide class=""><hgroup><h2>Principios básicos para contar cardinales de conjuntos</h2></hgroup><article  id="principios-basicos-para-contar-cardinales-de-conjuntos-2">
 
 <p><strong>El principio del producto</strong></p>
 

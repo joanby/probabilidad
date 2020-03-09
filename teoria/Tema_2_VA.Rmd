@@ -786,7 +786,7 @@ $$E\left((X-C)^m\right).$$
 ## Medidas de la variabilidad
 
 
-<lclass="definition"> Varianza </l>
+<l class="definition"> Varianza </l>
 
 Sea $X$ una v.a. Llamaremos **varianza** de $X$ a
 
