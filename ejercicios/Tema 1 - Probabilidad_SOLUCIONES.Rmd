@@ -21,6 +21,11 @@ Se seleccionan al azar tres cartas sin reposición de una baraja que contiene 3 
 
 ### Solución
 
+$\Omega=\{R1, R2, R3, V1, V2, V3, N1, N2, N3 \}$ codificamos el espacio muestral  por la inicial  del color y el número de carta de 1 a 3 por color.
+
+
+Los sucesos que nos piden son: $A=\{R1, R2, R3\}$, $
+
 #  Ejercicios de Probabilidad
 
 ## Problema 1
