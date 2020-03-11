@@ -306,7 +306,7 @@ La esperanza de $X^2$ es
 $$
 \begin{eqnarray*}
 E(X^2)&=& \displaystyle\sum_{k=0}^n k^2 \cdot  {n \choose k }\cdot p^k\cdot q^{n-k}\\
-&=& n\cdot p\cdot q-(n\cdot p)^2.
+&=& n\cdot p\cdot q+(n\cdot p)^2.
 \end{eqnarray*}
 $$
 
@@ -664,7 +664,9 @@ dbinom(4,size=10,prob = 0.4)
 <div class="example-sol">
 **Solución 2**.  ¿Cuál es la probabilidad de que saquemos al menos  $4$ bolas rojas?
 
-La probabilidad de sacar al menos 4 rojas se expresa como $P(X \geq  4)=1-P(X<4)=1-P(X\leq 3):$
+La probabilidad de sacar al menos 4 rojas se expresa como 
+
+$P(X \geq  4)=1-P(X<4)=1-P(X\leq 3):$
 
 $$
 \begin{eqnarray*}
@@ -690,7 +692,7 @@ pbinom(3,10,0.4)
 
 Así que
 
-$$P(X \geq 4 )=1-P(X< 4)=P(X\leq 3)=1-`r round(pbinom(3,10,0.4),7)`=`r round(1-pbinom(3,10,0.4),7)`.$$
+$$P(X \geq 4 )=1-P(X< 4)=1-P(X\leq 3)=1-`r round(pbinom(3,10,0.4),7)`=`r round(1-pbinom(3,10,0.4),7)`.$$
 
 </div>
 
@@ -915,8 +917,8 @@ Recordemos que $P(X=x)=(1-p)^x\cdot p$ si $x=0,1,2,\ldots$ y aplicado la fórmul
 
 $$
 \begin{eqnarray*}
-E(X)&=&\sum_{x=0}^{+\infty} x\cdot P_x(x)=\sum_{x=0}^{+\infty} x\cdot (1-p)^x\cdot p=
-p\cdot (1-p) \cdot \sum_{x=1}^{+\infty} x\cdot (1-p)^{x-1}\\
+E(X)&=&\sum_{x=0}^{+\infty} x\cdot P_x(x)=\sum_{x=0}^{+\infty} x\cdot (1-p)^x\cdot p\\
+&=& p\cdot (1-p) \cdot \sum_{x=1}^{+\infty} x\cdot (1-p)^{x-1}\\
 &=& p\cdot (1-p)\cdot \frac{1}{(1-(1-p))^2}=p\cdot (1-p)\cdot \frac{1}{p^2}=\frac{1-p}{p}
 \end{eqnarray*}
 $$
