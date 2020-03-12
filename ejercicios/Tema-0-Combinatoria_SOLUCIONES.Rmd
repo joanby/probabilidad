@@ -2,7 +2,9 @@
 title: "Ejercicios Tema 0 - Repaso de combinatoria y conjuntos"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -70,10 +72,19 @@ head(palabras_byte)
 nrow(palabras_byte)
 ```
 
+O tambien con las letras
+
+```{r}
+palabras_byte=gtools::permutations(n=4,r=4,v=c("b","y","t","e"))
+palabras_byte
+apply(palabras_byte,1,F=function(x) paste(x,collapse=""))
+```
+
+
 
 4. ¿De cuantas maneras diferentes se pueden elegir el director y el subdirector de un departamento formado por 50 miembros?
 
-**Solución*+
+**Solución**
 
 Con variaciones sin repetición de 50 miembros para dos puestos: director y subdirector
 
@@ -102,7 +113,8 @@ nrow(lista_comites)
 
 **Solución**
 
-Fijamos el primer sitio para  el libro de Probabilidad y el tercero para el de Estadística  y los $15-2=13$ restantes los permutamos $P_{n=13}=13!=`r factorial(13)`.$
+Fijamos el primer sitio para  el libro de Probabilidad y el tercero para el de Estadística  y los $15-2=13$ restantes los permutamos 
+$P_{n=13}=13!=`r factorial(13)`.$
 
 Con R
 
@@ -130,14 +142,14 @@ No tenemso más remedio que enumerarlos: con un símbolo son 2, con 2 simbolos $
 
 **Solución**
 
-$$10*9$=90.$$
+$$10*9=90.$$
 
 
 9. ¿Cuántas palabras diferentes podemos formar con todas las letras de la palabra estadística?
 
 
 
-$${{11}\choose{2 \quad 2 \quad 2\quad  2\quad  1\quad  1\quad  1\quad 1}}=\frac{11!}{2!\cdot 2!\cdot  2!\cdot 2!\cdot 1!\cdot 1!\cdot 1!\cdot 1!}=`r factorial{11}/(factorial(2)^4)`.$$
+$${{11}\choose{2 \quad 2 \quad 2\quad  2\quad  1\quad  1\quad  1\quad 1}}=\frac{11!}{2!\cdot 2!\cdot  2!\cdot 2!\cdot 1!\cdot 1!\cdot 1!\cdot 1!}=`r factorial(11)/(factorial(2)^4)`.$$
 
 
 
