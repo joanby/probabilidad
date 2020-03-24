@@ -3,11 +3,11 @@ title: "SOLUCIONES: Ejercicios Tema 0 - Repaso de combinatoria y conjuntos"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  html_document: 
+  pdf_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2
-  pdf_document: 
+  html_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2
@@ -17,7 +17,6 @@ toccolor: 'blue'
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,cache=TRUE)
 options(scipen=999)
-```
 ```
 
 # Ejercicios de Combinatoria 1 con soluciones
@@ -351,16 +350,16 @@ Pues son ${15 \choose 2}= \frac{15!}{2!\cdot (15-2)!}=`r choose(15,2)`$. Notemos
 
 ## Problema 5
 
-Dada una caja con los siguientes focos; 2 de 25 vatios, 4 de 40 vatios y 4 de 100 vatios, ¿de cuantos modos se pueden elegir 3 de ellos?
+Dada una caja con los siguientes focos; 2 de 25 vatios, 4 de 40 vatios y 4 de 100 vatios, ¿de cuántos modos se pueden elegir 3 de ellos?
 
 ### Solución
 
 Lo haremos de tres maneras.
 
-PRIMERA: Solo consideramos la tripleta de "vatios" que podemos conseguir (sin repetir los focos). Así los casos son:
+**PRIMERA**: Solo consideramos la tripleta de "vatios" que podemos conseguir (sin repetir los focos). Así los casos son:
 
 * caso 1: "2 de 25 vatios y 1 de 40",
-* caso 2: "2 de 25 vatios y 1 de 100",*
+* caso 2: "2 de 25 vatios y 1 de 100",
 * caso 3: "1 25 vatios y 2 de 40 vatios",
 * caso 4: "1 25 vatios y 2 de 100 vatios",
 * caso 5: "1 de 25 vatios 1 de 40 y 1 de 100",
@@ -372,9 +371,9 @@ PRIMERA: Solo consideramos la tripleta de "vatios" que podemos conseguir (sin re
 En total 9 casos.
 
 
-SEGUNDA: Si contamos sólo las  cómo sacamos las 10 bombillas son ${10 \choose 3}= \frac{10!}{3!\cdot (10-3)!}=`r choose(10,3)`.$
+**SEGUNDA**: Si contamos sólo las  cómo sacamos las 10 bombillas son ${10 \choose 3}= \frac{10!}{3!\cdot (10-3)!}=`r choose(10,3)`.$
 
-TERCERA: Contamos  las distintas maneras de  obtener las distintas  configuraciones de 25, 40 y 100 vatios.
+**TERCERA**: Contamos  las distintas maneras de  obtener las distintas  configuraciones de 25, 40 y 100 vatios.
 
 * 1 de 25, 1 de 40 y 1 de 100 vatios: ${2\choose 1}\cdot{4 \choose 1}\cdot{4\choose 1}=32.$
 * 1 de 25, 2 de 40 vatios: ${2\choose 1}\cdot{4 \choose 2}=12.$
@@ -387,7 +386,7 @@ TERCERA: Contamos  las distintas maneras de  obtener las distintas  configuracio
 * 4 de 100 vatios: ${4\choose 3}=4.$
 
 
-En total $32+12+12+4+4+24+24+4+4=`r 32+12+12+4+4+24+24+4+4`
+En total $32+12+12+4+4+24+24+4+4=`r 32+12+12+4+4+24+24+4+4`.$
 
 ```{r}
 multiset=rep(paste0(c(25,40,100),"_vatios"),c(2,4,4))
@@ -405,7 +404,7 @@ Supongamos que las placas de matrícula de coches se componen de tres letras seg
 ### Solución
 
 
-Consideraremos 10 dígitos y 26 letras. Así son $VR_{n=10}^{k=3}\cdot VR_{n=24}^{k=3}=10^3\cdot 26^3=17576000.$ 
+Consideraremos 10 dígitos y 26 letras. Así son $VR_{n=10}^{k=3}\cdot VR_{n=26}^{k=3}=10^3\cdot 26^3=17576000.$ 
 
 
 ## Problema 7
@@ -419,13 +418,12 @@ Si lo que queremos es todos los posibles encuentros ${8\choose 2}=`r choose(8,2)
 ## Problema 8
 
 En un almacén hay cajas rojas y verdes. 
-    - ¿De cuantas formas se pueden colocar en fila 20 cajas si 15 son rojas y 5 son verdes? 
-    - ¿Y si hay 10 de cada color?
+
+* a) ¿De cuántas formas se pueden colocar en fila 20 cajas si 15 son rojas y 5 son verdes? 
+* b) ¿Y si hay 10 de cada color?
     
     
 ### Solución  
-
-
 
 
 En el primer caso  son $PR_{20}^{15,  5}={20 \choose {15 5}}=\frac{20!}{ 15!\cdot 5!}=`r factorial(20)/(factorial(15)*factorial(5))`.$ 
