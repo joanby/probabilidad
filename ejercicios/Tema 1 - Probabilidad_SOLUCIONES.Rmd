@@ -1,8 +1,10 @@
 ---
-title: "SOLUCIONES:  Ejercicios Tema 1 - Probabilidad"
+title: 'SOLUCIONES:  Ejercicios Tema 1 - Probabilidad.'
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -15,16 +17,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Problema 1
 
 Se seleccionan al azar tres cartas sin reposición de una baraja que contiene 3 cartas rojas, 3 azules, 3 verdes y 3 negras. Especifica un espacio muestral para este experimento y halla todos los sucesos siguientes:
-    - $A$ = "Todas las cartas seleccionadas son rojas"
-    - $B$ = "Una carta es roja, 1 es verde y otra es azul"
-    - $C$ = "Salen tres cartas de colores diferentes"
+* $A$ = "Todas las cartas seleccionadas son rojas"
+* $B$ = "Una carta es roja, 1 es verde y otra es azul"
+* $C$ = "Salen tres cartas de colores diferentes"
 
 ### Solución
 
 $\Omega=\{R1, R2, R3, V1, V2, V3, N1, N2, N3 \}$ codificamos el espacio muestral  por la inicial  del color y el número de carta de 1 a 3 por color.
 
 
-Los sucesos que nos piden son: $A=\{R1, R2, R3\}$, $
+Los sucesos que nos piden son:
+
+* $A=\{(R1, R2, R3),(R1, R3, R2),(R2, R1, R3),(R2, R3, R1),(R3, R1, R2), (R3, R2, R1)\}$, 
+* $B=\{\}
 
 #  Ejercicios de Probabilidad
 
@@ -36,8 +41,8 @@ Se lanzan al aire dos monedas iguales. Hallar la probabilidad de que salgan dos 
 
 Suponer que se ha trucado un dado de modo que la probabilidad de que salga un número es proporcional al mismo.
 
-    - Hallar la probabilidad de los sucesos elementales, de que salga un número par y también de que salga un número impar.
-    - Repetir el problema pero suponiendo que la probabilidad de que salga un determinado número es inversamente proporcional al mismo.
+* Hallar la probabilidad de los sucesos elementales, de que salga un número par y también de que salga un número impar.
+* Repetir el problema pero suponiendo que la probabilidad de que salga un determinado número es inversamente proporcional al mismo.
 
 
 ### Solución
@@ -46,8 +51,8 @@ Suponer que se ha trucado un dado de modo que la probabilidad de que salga un n�
 
 En una prisión de 100 presos se seleccionan al azar dos personas para ponerlas en libertad. 
 
-- ¿Cual es la probabilidad de que el más viejo de los presos sea uno de los elegidos?
-- ¿Y que salga elegida la pareja formada por el más viejo y el más joven?
+* ¿Cual es la probabilidad de que el más viejo de los presos sea uno de los elegidos?
+* ¿Y que salga elegida la pareja formada por el más viejo y el más joven?
 
 ## Solución
 
@@ -55,8 +60,8 @@ En una prisión de 100 presos se seleccionan al azar dos personas para ponerlas 
 
 Se apuntan A, B i C a una carrera.
 
-    - ¿Cuál es la probabilidad de que A acabe antes que C si todos son igual de hábiles corriendo y no puede haber empates?
-    - ¿Cuál es la probabilidad de que A acabe antes que B y C?
+* ¿Cuál es la probabilidad de que A acabe antes que C si todos son igual de hábiles corriendo y no puede haber empates?
+* ¿Cuál es la probabilidad de que A acabe antes que B y C?
 
 ### Solución
 
@@ -77,8 +82,8 @@ Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivament
 
 Se lanza al aire una moneda no trucada.
 
-    - ¿Cuál es la probabilidad que la cuarta vez salga cara, si sale cara en las tres primeras tiradas?
-    - ¿Y si salen 2 caras en las 4 tiradas?
+*  ¿Cuál es la probabilidad que la cuarta vez salga cara, si sale cara en las tres primeras tiradas?
+* ¿Y si salen 2 caras en las 4 tiradas?
 
 ### Solución
 
@@ -86,8 +91,8 @@ Se lanza al aire una moneda no trucada.
 
 La urna 1 contiene 2 bolas rojas y 4 de azules. La urna 2 contiene 10 bolas rojas y 2 de azules. Si escogemos al azar una urna y sacamos una bola, 
 
-    - ¿Cuál es la probabilidad que la bola seleccionada sea azul? 
-    - ¿Y que sea roja?
+* ¿Cuál es la probabilidad que la bola seleccionada sea azul? 
+* ¿Y que sea roja?
 
 ### Solución
 
@@ -99,44 +104,99 @@ Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstic
 
 ## Problema 10
 
+```{r contador, include=FALSE}
+contador=10
+```
+
 Se lanzan una sola vez dos dados. Si la suma de los dos dados es como mínimo 7, ¿cuál es la probabilidad que la suma sea igual a $i$, para $i=7,8,9,10,11,12$?
 
-1. Se sabe que ${2 \over 3}$ de los internos de una cierta prisión son menores de 25 años. También se sabe que ${3\over 5}$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
+### Solución
 
-1. Consideremos una hucha con $2n$ bolas numeradas del $1$ al $2n$. Sacamos $2$ bolas de la urna sin reposición. Sabiendo que la segunda bola es par, ¿cuál es la probabilidad de que la primera bola sea impar?
+## Problema `r contador=contador+1;contador`.
 
-1. Consideramos el siguiente experimento aleatorio: sacamos $5$ números al azar sin reposición a partir de los números naturales $1,2,\dots,20$. Encontrad la probabilidad $p$ de que haya exactamente dos números tales que sean múltiplos de $3$
+Se sabe que ${2 \over 3}$ de los internos de una cierta prisión son menores de 25 años. También se sabe que ${3\over 5}$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
 
-1. En una hucha hay $10$ bolas, numeradas del $1$ al $10$. Las $4$ primeras bolas, o sea, las bolas $1,2,3,4$ son blancas. Las bolas $5,6$ son negras y las bolas restantes son rojas. Sacamos dos bolas sin reposición. Sabiendo que la segunda bola es de color negro, encuentra la probabilidad $p$ de que la primera bola sea blanca.
+### Solución
 
-1. Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad $p$ de que la suma de las 3 caras sea $10$.
+## Problema `r contador=contador+1;contador`.
+
+Consideremos una hucha con $2n$ bolas numeradas del $1$ al $2n$. Sacamos $2$ bolas de la urna sin reposición. Sabiendo que la segunda bola es par, ¿cuál es la probabilidad de que la primera bola sea impar?
+
+### Solución
+
+## Problema `r contador=contador+1;contador`.
+
+Consideramos el siguiente experimento aleatorio: sacamos $5$ números al azar sin reposición a partir de los números naturales $1,2,\dots,20$. Encontrad la probabilidad $p$ de que haya exactamente dos números tales que sean múltiplos de $3$
+
+### Solución  
+
+## Problema `r contador=contador+1;contador`.
+
+En una hucha hay $10$ bolas, numeradas del $1$ al $10$. Las $4$ primeras bolas, o sea, las bolas $1,2,3,4$ son blancas. Las bolas $5,6$ son negras y las bolas restantes son rojas. Sacamos dos bolas sin reposición. Sabiendo que la segunda bola es de color negro, encuentra la probabilidad $p$ de que la primera bola sea blanca.
+
+### Solución 
+
+## Problema `r contador=contador+1;contador`.
+
+Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad $p$ de que la suma de las 3 caras sea $10$.
 
 
-1. 4 cartas numeradas del 1 al 4 están giradas boca abajo sobre una mesa. Una persona, supuestamente adivina, irá adivinando los valores de las 4 cartas una a una. Suponiendo que es un farsante y que lo que hace es decir los 4 números al azar, ¿cuál es la probabilidad de que acierte como mínimo 1? (Obviamente, no repite ningún número)
+### Solución 
 
-1. Una forma de aumentar la fiabilidad de un sistema es meediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cúantos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.
+## Problema `r contador=contador+1;contador`.
+
+Tenemos 4 cartas numeradas del 1 al 4 que están giradas boca abajo sobre una mesa. Una persona, supuestamente adivina, irá adivinando los valores de las 4 cartas una a una. Suponiendo que es un farsante y que lo que hace es decir los 4 números al azar, ¿cuál es la probabilidad de que acierte como mínimo 1? (Obviamente, no repite ningún número)
+
+### Solución
+
+## Problema `r contador=contador+1;contador`.
+
+Una forma de aumentar la fiabilidad de un sistema es meediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cúantos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.
 
 
 ##  Ejercicios de Independencia de sucesos
 
-1. Una moneda no trucada se lanza al aire 2 veces Consideremos los siguientes sucesos:
+```{r contador2, include=FALSE}
+contador=0
+```
 
-    - A: Sale una cara en la primera tirada.
-    - B: Sale una cara en la segunda tirada.
+
+## Problema `r contador=contador+1;contador`.
+
+Una moneda no trucada se lanza al aire 2 veces Consideremos los siguientes sucesos:
+
+* A: Sale una cara en la primera tirada.
+* B: Sale una cara en la segunda tirada.
 
     ¿Son los sucesos A y B independientes?
 
-1. Una urna contiene 4 bolas numerades con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraida tenga un 1 marcado y sea B el suceso que la segunda bola extraida tenga un 1 marcado. 
+### Solución  
 
-    - ¿Se puede decir que A y B son independientes?
-    - ¿Y si el experimento fuera sin reposición?
+## Problema `r contador=contador+1;contador`.
 
-1. Sea $\Omega$ un espacio muestral y $A,B,C$ tres sucesos. Probad que
+Una urna contiene 4 bolas numerades con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraida tenga un 1 marcado y sea B el suceso que la segunda bola extraida tenga un 1 marcado. 
 
-    - Si $A$ y $B$ son independientes, también lo son $A$ y $B^c$
-    - Si $A,B,C$ son independientes, también lo son $A,B$ y $C^c$
-    - ¿Es cierto que si $A,B,C$ son independientes, también lo son $A,B^c$ y $C^c$? ¿Y $A^c, B^c$ y $C^c$? En caso de que la respuesta sea negativa, dad contraejemplos donde la propiedad falle.
+* ¿Se puede decir que A y B son independientes?
+* ¿Y si el experimento fuera sin reposición?
 
-1. Dos empresas $A$ y $B$ fabrican el mismo producto. La empresa $A$ tiene un $2\%$ de productos defectuosos mientras que la empresa $B$ tiene un $1\%$. Un cliente recibe un pedido de una de las empresas (no sabe cuál) y comprueba que la primera pieza funciona. Si suponemos que el estado de las piezas de cada empresa es independiente, ¿cuál es la probabilidad de que la segunda pieza que pruebe sea buena? Comprobad que el estado de las dos piezas no es independiente, pero en cambio es condicionalmente independiente dada la empresa que las fabrica.
+### Solución  
 
-1. Encuentra un ejemplo de tres sucesos $A,B,C$ tales que $A$ y $B$ sean independientes, pero en cambio no sean condicionalmente independientes dado $C$.
+## Problema `r contador=contador+1;contador`.
+
+Sea $\Omega$ un espacio muestral y $A,B,C$ tres sucesos. Probad que
+
+* Si $A$ y $B$ son independientes, también lo son $A$ y $B^c$
+* Si $A,B,C$ son independientes, también lo son $A,B$ y $C^c$
+* ¿Es cierto que si $A,B,C$ son independientes, también lo son $A,B^c$ y $C^c$? ¿Y $A^c, B^c$ y $C^c$? En caso de que la respuesta sea negativa, dad contraejemplos donde la propiedad falle.
+
+### Solución  
+
+## Problema `r contador=contador+1;contador`.
+
+Dos empresas $A$ y $B$ fabrican el mismo producto. La empresa $A$ tiene un $2\%$ de productos defectuosos mientras que la empresa $B$ tiene un $1\%$. Un cliente recibe un pedido de una de las empresas (no sabe cuál) y comprueba que la primera pieza funciona. Si suponemos que el estado de las piezas de cada empresa es independiente, ¿cuál es la probabilidad de que la segunda pieza que pruebe sea buena? Comprobad que el estado de las dos piezas no es independiente, pero en cambio es condicionalmente independiente dada la empresa que las fabrica.
+
+### Solución 
+
+## Problema `r contador=contador+1;contador`. 
+
+Encuentra un ejemplo de tres sucesos $A,B,C$ tales que $A$ y $B$ sean independientes, pero en cambio no sean condicionalmente independientes dado $C$.
