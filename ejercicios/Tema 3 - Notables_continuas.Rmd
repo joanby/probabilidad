@@ -51,7 +51,7 @@ aleatoria de Poisson.
 segundo.
 
 8. Tenemos que elegir entre  dos tarjetas gráficas (TG1 y TG2) para entrenar su red neuronal. El tiempo  de vida del la  TG1 se ha modelado según una 
-$N(\mu=120000, \sigma=14000)$ (la probabilidad de un tiempo de vida negativo es despreciable) y en TG2 según una $N(\mu_22=22000, \sigma_2=1000)$. 
+$N(\mu_1=120000, \sigma_1=140000)$ (la probabilidad de un tiempo de vida negativo es despreciable) y en TG2 según una $N(\mu_2=22000, \sigma_2=1000)$. 
 
 + a) ¿Qué tarjeta elegimos si el tiempo de duración objetivo del sistemas es de  20000 horas? 
 + b) ¿Y si es   de 24000 horas?
