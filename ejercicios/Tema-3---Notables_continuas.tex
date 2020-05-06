@@ -1,0 +1,248 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Ejercicios Tema 3 - Distribuciones Notables: continuas},
+  pdfauthor={Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Ejercicios Tema 3 - Distribuciones Notables: continuas}
+\author{Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir}
+\date{Curso de Probabilidad y Variables Aleatorias con R y Python}
+
+\begin{document}
+\maketitle
+
+\hypertarget{ejercicios-distribuciones-notables-continuas}{%
+\section{Ejercicios distribuciones notables
+continuas}\label{ejercicios-distribuciones-notables-continuas}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Si \(X\) está distribuida uniformemente en \((0,2)\) e \(Y\) es una
+  variable exponencial con parámetro \(\lambda\). Calcular el valor de
+  \(\lambda\) tal que \(P(X<1)=P(Y<1)\).
+\item
+  El tiempo \(X\) que necesita un corredor de fondo para recorrer un
+  kilómetro es una variable normal con parámetros \(\mu =3\) minutos 45
+  segundos y \(\sigma = 10\) segundos.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \tightlist
+  \item
+    ¿Cuál es la probabilidad de que este atleta recorra la milla en
+    menos de 4 minutos?\\
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    ¿Y en más de 3.5 minutos?
+  \end{enumerate}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Las marcas de un atleta de salto de altura siguen, aproximadamente,
+  una ley normal con \(\mu=2\) Y \(\sigma=0.8\)
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \tightlist
+  \item
+    ¿Cuál es la altura máxima que puede saltar con una probabilidad del
+    \(0.95\)
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    ¿Cuál es la altura que salta en el 40\% de los peores intentos?
+  \end{enumerate}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Un centro de atención telefónica por voz (\emph{call center}) recibe
+  por termino medio 100 llamadas por hora. Suponed que el número de
+  llamadas sigue un proceso Poisson
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \tightlist
+  \item
+    Sea X el tiempo entre dos llamadas consecutivas ¿cuál es la
+    distribución de X?
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    Calcular la probabilidad que pasen al menos 25 minutos hasta recibir
+    la primera llamada.
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{2}
+  \tightlist
+  \item
+    Calcular la probabilidad que pasen al menos 30 minutos hasta recibir
+    la segunda llamada.
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{3}
+  \tightlist
+  \item
+    Si denotamos por \(p_k\) la probabilidad de que pasen al menos 30
+    minutos hasta recibir la \(k-\)ésima llamada, encontrar la relación
+    que hay entre \(p_k\) y \(p_{k-1}\).
+  \end{enumerate}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  Sea \(X\) una variable aleatoria normal con parámetros \(\mu=1\) y
+  \(\sigma=1\). Calculad el valor de \(b\) tal que
+  \(P\left((X-1)^2\leq b\right)=0.1\).
+\item
+  Sea \(Z\) una variable aleatoria \(N(0,1)\). Calcular
+  \(P\left(\left(Z-\frac{1}{4}\right)^2 >\frac{1}{16}\right)\).
+\item
+  Las peticiones a un servidor informático llegan a un ritmo de medio de
+  15 peticiones por segundo. Sabemos que el nombre de peticiones que
+  llegan en un segundo es una variable aleatoria de Poisson.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \tightlist
+  \item
+    Calcular la probabilidad que no lleguen peticiones en un segundo.
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    Calcular la probabilidad que lleguen más de 10 peticiones en un
+    segundo.
+  \end{enumerate}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Tenemos que elegir entre dos tarjetas gráficas (TG1 y TG2) para
+  entrenar su red neuronal. El tiempo de vida del la TG1 se ha modelado
+  según una \(N(\mu_1=120000, \sigma_1=140000)\) (la probabilidad de un
+  tiempo de vida negativo es despreciable) y en TG2 según una
+  \(N(\mu_2=22000, \sigma_2=1000)\).
+\end{enumerate}
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \tightlist
+  \item
+    ¿Qué tarjeta elegimos si el tiempo de duración objetivo del sistemas
+    es de 20000 horas?
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    ¿Y si es de 24000 horas?
+  \end{enumerate}
+\end{itemize}
+
+\end{document}
