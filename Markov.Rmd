@@ -1,0 +1,211 @@
+---
+title: "Introducción a las cadenas de Markov"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+
+                 
+              
+---
+
+
+
+## Introducción a los procesos estocásticos
+
+* El mundo que nos rodea es dinámico, va cambiando con el tiempo:
+   * la temperatura,
+   * los precios de las acciones,
+   * popularidad de los políticos,
+   * el uso de la CPU de un ordenador,
+   * la velocidad de una determinada conexión a internet,
+   * etc.
+
+* De cara a modelar una determinada situación, necesitamos que las \red{variables aleatorias} cambien con el \red{tiempo.}
+
+* Por dicho motivo, vamos a introducir los \red{procesos estocásticos}, que son \blue{variables aleatorias} que además de depender de los elementos del \blue{espacio muestral}, dependen del \red{tiempo.}
+
+## Procesos estocásticos
+\begin{block}{Procesos estocásticos}
+Un \red{proceso estocástico} es una \red{variable aleatoria} $X(w,t)$ que depende de dos argumentos: 
+\begin{itemize}
+\item un elemento del \blue{espacio muestral} $w\in\Omega$, 
+\item el \red{tiempo} $t\in {\cal T}$, donde el conjunto ${\cal T}$ puede ser 
+\begin{itemize}
+\item discreto: ${\cal T}=\{0,1,2,\ldots\}$, o  ${\cal T}=\{\ldots,-2,-1,0,1,2,\ldots\}$,
+\item continuo: ${\cal T}=[0,\infty)$ o ${\cal T}=[-\infty,\infty)$.
+\end{itemize}
+\end{itemize}
+\end{block}
+
+* Si fijamos el \red{tiempo} $t$, la \blue{variable aleatoria} $X(w,t)=X_t(w)$ sería una \blue{variable aleatoria} que modelizaría lo que pasa en el sistema en el \red{instante} $t$.
+
+* Si fijamos el elemento $w$ del espacio muestral $\Omega$, tenemos la función dependiendo del \red{tiempo} $X(w,t)=X_w(t)$. Dicha función se denomina trayectoria del \blue{proceso estocástico.}
+
+## Procesos estocásticos
+\begin{block}{Ejemplo: lanzamiento de una moneda}
+Un \blue{proceso estocástico} sencillo es considerar lanzar una moneda cada cierto espacio de tiempo, por ejemplo cada minuto, y observar el resultado. 
+
+En este caso $\Omega =\{c,+\}$ y ${\cal T}=\{0,1,2,\ldots\}$.
+
+$X(w,t)$ sería la variable aleatoria que nos dice el comportamiento de la moneda en el lanzamiento $t$-ésimo. 
+
+La distribución de dicha variable será de Bernoulli de parámetro $p$ para cualquier instante $t$ donde $p$ es la probabilidad de sacar cara.
+\end{block}
+
+## Procesos estocásticos
+```{r,echo=FALSE}
+set.seed=2020
+resultats=rbinom(20,1,0.7)
+plot(1:length(resultats),resultats, xaxt="n",yaxt="n",type="p",pch=20,cex=0.5,xlab="t",ylab="Resultados",ylim = c(0,1),col="red")
+xtick=1:length(resultats)
+axis(side=1, at=xtick, labels=TRUE)
+ytick=c(0,1)
+axis(side=2, at=ytick, labels = TRUE)
+```
+
+
+## Procesos estocásticos
+\begin{block}{Tipos de procesos estocásticos}
+Diremos que el \blue{proceso estocástico} es \red{de estado discreto} si la variable aleatoria $X_t(w)$ es discreta y es \red{de estado continuo} si la variable aleatoria $X_t(w)$ es continua para todo valor del tiempo $t$.
+
+Diremos que el \blue{proceso estocástico} es \red{de tiempo discreto} si el conjunto ${\cal T}$ de valores del tiempo es discreto y es \red{de tiempo continuo} si ${\cal T}
+$ es continuo.
+\end{block}
+
+## Procesos estocásticos. Ejemplos
+
+* Ejemplo anterior del lanzamiento de una moneda de parámetro $p$: estado discreto y tiempo discreto.
+* Número de infectados diarios por una pandemia: estado discreto y tiempo discreto.
+* Temperatura en un lugar determinado: estado continuo y tiempo continuo.
+* Tiempo de espera del $n$-ésimo cliente de una cola en el supermercado modelado como $X(n,w)$. Este ejemplo es "lioso" ya que el tiempo sería el número del cliente y el espacio muestral sería precisamente el tiempo. Pensar que la variable aleatoria "tiempo" dependerá del número de cliente $n$: estado continuo y tiempo discreto. 
+
+## Procesos de Markov
+
+\begin{block}{Cadena de Markov}
+Un proceso estocástico $X(t)$ es un \red{proceso de Markov} si para cualquier secuencia de valores $t_1<\cdots < t_n <t$ y para cualquier secuencia de sucesos $A,A_1,\ldots,A_n$,
+\begin{align*}
+& P(X(t)\in A| X(t_1)\in A_1,\ldots,X(t_n)\in A_n)\\ & =P(X(t)\in A|X(t_n)\in A_n).
+\end{align*}
+\end{block}
+
+* Es decir, que la \red{distribución condicionada} de la variable $X(t)$ condicionada a los valores del proceso estocástico en $n$ \blue{instantes cualesquiera del pasado} sólo depende de la \red{distribución condicionada} de la variable $X(t)$ condicionada al proceso correspondiente al \red{último instante de la secuencia.}
+
+## Procesos de Markov
+* Esquemáticamente, podemos escribir:
+\begin{align*}
+& P(\mathrm{FUTURO}|\mathrm{PASADO,\ PRESENTE})\\ & =P(\mathrm{FUTURO}|\mathrm{PRESENTE}).
+\end{align*}
+
+* Ejemplos:
+  * Temperatura en un día determinado: no es un \red{proceso de Markov}.
+  * Número de conexiones registradas en un router de internet en un instante determinado: sí es un \red{proceso de Markov} ya que la gente se conecta aleatoriamente.
+  * Precio de un stock en la bolsa en un día determinado: no es un \red{proceso de Markov}.
+  * Ejemplo del lanzamiento de la moneda: sí es un \red{proceso de Markov}.
+  
+## Cadenas de Markov
+* Dentro de los \red{procesos de Markov} están las denominadas \red{cadenas de Markov}:
+
+\begin{block}{Cadenas de Markov}
+Una \red{cadena de Markov} es un \blue{proceso de Markov} de \blue{estado discreto} y de \blue{tiempo discreto.}
+\end{block}
+
+* Las cadenas de Markov se aplican a:
+  * Meteorología: modelización de modelos metereológicos básicos.
+  * Modelos epidemiológicos: modelización de una epidemia.
+  * Internet: el pagerank usado por Google para dar un peso a las páginas web.
+  * Economía y finanzas: modelización del colapso de una bolsa de valores.
+  * Genética: teoría genética de poblaciones.
+  * Redes neuronales: se utilizan en las máquinas de Boltzmann.
+  
+  
+## Cadenas de Markov
+
+* Vamos a introducir algunas simplificaciones:
+  * Definiremos ${\cal T}=\{0,1,2\ldots\}$. Entonces la \red{cadena de Markov} sería una \blue{secuencia aleatoria} de variables aleatorias $X(0),X(1),X(2),\ldots$.
+  * Llamaremos al conjunto $\Omega$ \red{conjunto de estados.} Como es discreto, lo enumeraremos de la forma siguiente $\Omega =\{1,2,\ldots,n\}$.
+  
+## Cadenas de Markov
+* Por ser una \red{cadena de Markov}, un \blue{proceso de Markov}, tenemos la denominada \red{propiedad de Markov} que nos dice que la variable aleatoria en un instante $t+1$ sólo depende de los valores que toma la variable aleatoria $X(t)$ o el proceso en el instante $t$.
+
+* Es decir, $p_{ij}(t)=P(X(t+1)=j|X(t)=i)$ vale:
+\begin{align*}
+p_{ij}(t)= & P(X(t+1)=j|X(t)=i)\\ = & P(X(t+1)=j|X(t)=i,X(t-1)=h,X(t-2)=g,\ldots)
+\end{align*}
+
+## Cadenas de Markov
+\begin{block}{Probabilidades de transición}
+Las probabilidades $p_{ij}(t)$ se llaman \red{probabilidades de transición}.
+
+La probabilidad
+$$
+p_{ij}^{(h)}(t)=P(X(t+h)=j|X(t)=i),
+$$
+es la probabilidad de ir desde el \blue{estado} $i$ hasta el \blue{estado} $j$ usando $h$ \blue{transiciones}. Dicha probabilidad se llama \red{probabilidad de transición de $h$ pasos.}
+\end{block}
+
+## Cadenas de Markov
+\begin{block}{Cadenas de Markov homogéneas}
+Una \blue{cadena de Markov} es \red{homogénea} cuando las \red{probabilidades de transición} no dependen del tiempo $t$. 
+
+Es decir:
+$$
+p_{ij}(t)=p_{ij},\quad p_{ij}^{(h)}=p_{ij}^{(h)}.
+$$
+\end{block}
+
+* Notación:
+  * $p_{ij}=P(X(t+1)=j|X(t)=i)$: probabilidad de transición.
+  * $p_{ij}^{(h)}=P(X(t+h)=j|X(t)=i)$: probabilidad de transición en $h$ pasos.
+  * $P_t(x)=P(X(t)=x)$: distribución de la variable aleatoria $X(t)$.
+  * $P_0(t)=P(X(0)=x)$: distribución inicial o en el tiempo $0$.
+  
+  
+## Cadenas de Markov
+\begin{block}{Ejemplo}
+Un ordenador es compartido por dos usuarios. Estudiamos \blue{cuantos usuarios hay conectados cada minuto.} Nos dicen que un usuario puede \red{desconectarse con probabilidad $0.3$} y se puede \red{conectar con probabilidad $0.4$.}
+
+Modelizamos la situación anterior con una \blue{cadena de Markov $X(t)$} que nos da el \blue{número de usuarios conectados al cabo de $t$ minutos.}
+
+Los valores de $X(t)$ pueden ser $0,1$ y $2$. Por tanto, el conjunto de estados será: $\Omega =\{0,1,2\}$.
+
+A continuación, calculemos las \red{probabilidad de transición:}
+\end{block}
+
+## Cadenas de Markov
+\begin{block}{Ejemplo}
+Si $X(0)=0$, o no hay ningún usuario conectado, el número de usuarios que habrá en el siguiente minuto es una variable aleatoria \red{binomial} de parámetros $n=2$ y $p=0.4$:
+\begin{align*}
+p_{00}= & \binom{2}{0}\cdot 0.4^0\cdot 0.6^2 =`r 0.6^2`,\\
+p_{01}= & \binom{2}{1}\cdot 0.4^1\cdot 0.6^1 =`r 2*0.6*0.4`,\\
+p_{02}=& \binom{2}{2}\cdot 0.4^2\cdot 0.6^0 =`r 0.4^2`.
+\end{align*}
+\end{block}
+
+## Cadenas de Markov
+\begin{block}{Ejemplo}
+Si $X(0)=1$, o hay un usuario conectado, el número de usuarios nuevos que habrá en el siguiente minuto es una variable aleatoria \red{binomial} de parámetros $n=1$ y $p=0.4$ y el número de desconexiones en el minuto siguiente será una variable aleatoria \red{binomial} de parámetros $n=1$ y $p=0.3$:
+\begin{align*}
+p_{10}= & 0.6\cdot 0.3  =`r 0.6*0.3`,\\
+p_{11}= & 0.3\cdot 0.4 + 0.7\cdot 0.6 =`r 0.3*0.4+0.7*0.6`,\\
+p_{12}=& 0.7\cdot 0.4 =`r 0.7*0.4`.
+\end{align*}
+\end{block}
+
+## Cadenas de Markov
+\begin{block}{Ejemplo}
+Si $X(0)=2$, o hay los dos usuarios conectados, el número de usuarios desconectados que habrá en el siguiente minuto es una variable aleatoria \red{binomial} de parámetros $n=2$ y $p=0.3$. 
+\begin{align*}
+p_{20}= & \binom{2}{0}\cdot 0.7^0\cdot 0.3^2 =`r 0.3^2`,\\
+p_{21}= & \binom{2}{1}\cdot 0.7^1\cdot 0.3^1=`r 2*0.7*0.3`,\\
+p_{22}=& \binom{2}{2}\cdot 0.7^2\cdot 0.3^0 =`r 0.7^2`.
+\end{align*}
+\end{block}
