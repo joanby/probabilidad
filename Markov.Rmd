@@ -111,7 +111,7 @@ Un proceso estocástico $X(t)$ es un \red{proceso de Markov} si para cualquier s
   * Precio de un stock en la bolsa en un día determinado: no es un \red{proceso de Markov}.
   * Ejemplo del lanzamiento de la moneda: sí es un \red{proceso de Markov}.
   
-## Cadenas de Markov
+## Cadenas de Markov. Introducción
 * Dentro de los \red{procesos de Markov} están las denominadas \red{cadenas de Markov}:
 
 \begin{block}{Cadenas de Markov}
@@ -119,7 +119,7 @@ Una \red{cadena de Markov} es un \blue{proceso de Markov} de \blue{estado discre
 \end{block}
 
 * Las cadenas de Markov se aplican a:
-  * Meteorología: modelización de modelos metereológicos básicos.
+  * Meteorología: modelización de modelos meteorológicos básicos.
   * Modelos epidemiológicos: modelización de una epidemia.
   * Internet: el pagerank usado por Google para dar un peso a las páginas web.
   * Economía y finanzas: modelización del colapso de una bolsa de valores.
@@ -127,13 +127,13 @@ Una \red{cadena de Markov} es un \blue{proceso de Markov} de \blue{estado discre
   * Redes neuronales: se utilizan en las máquinas de Boltzmann.
   
   
-## Cadenas de Markov
+## Cadenas de Markov. Introducción
 
 * Vamos a introducir algunas simplificaciones:
   * Definiremos ${\cal T}=\{0,1,2\ldots\}$. Entonces la \red{cadena de Markov} sería una \blue{secuencia aleatoria} de variables aleatorias $X(0),X(1),X(2),\ldots$.
   * Llamaremos al conjunto $\Omega$ \red{conjunto de estados.} Como es discreto, lo enumeraremos de la forma siguiente $\Omega =\{1,2,\ldots,n\}$.
   
-## Cadenas de Markov
+## Cadenas de Markov. Introducción
 * Por ser una \red{cadena de Markov}, un \blue{proceso de Markov}, tenemos la denominada \red{propiedad de Markov} que nos dice que la variable aleatoria en un instante $t+1$ sólo depende de los valores que toma la variable aleatoria $X(t)$ o el proceso en el instante $t$.
 
 * Es decir, $p_{ij}(t)=P(X(t+1)=j|X(t)=i)$ vale:
@@ -141,7 +141,7 @@ Una \red{cadena de Markov} es un \blue{proceso de Markov} de \blue{estado discre
 p_{ij}(t)= & P(X(t+1)=j|X(t)=i)\\ = & P(X(t+1)=j|X(t)=i,X(t-1)=h,X(t-2)=g,\ldots)
 \end{align*}
 
-## Cadenas de Markov
+## Cadenas de Markov. Probabilidades de transición
 \begin{block}{Probabilidades de transición}
 Las probabilidades $p_{ij}(t)$ se llaman \red{probabilidades de transición}.
 
@@ -152,7 +152,7 @@ $$
 es la probabilidad de ir desde el \blue{estado} $i$ hasta el \blue{estado} $j$ usando $h$ \blue{transiciones}. Dicha probabilidad se llama \red{probabilidad de transición de $h$ pasos.}
 \end{block}
 
-## Cadenas de Markov
+## Cadenas de Markov. Cadenas de Markov homogéneas
 \begin{block}{Cadenas de Markov homogéneas}
 Una \blue{cadena de Markov} es \red{homogénea} cuando las \red{probabilidades de transición} no dependen del tiempo $t$. 
 
@@ -169,7 +169,7 @@ $$
   * $P_0(t)=P(X(0)=x)$: distribución inicial o en el tiempo $0$.
   
   
-## Cadenas de Markov
+## Cadenas de Markov. Ejemplo
 \begin{block}{Ejemplo}
 Un ordenador es compartido por dos usuarios. Estudiamos \blue{cuantos usuarios hay conectados cada minuto.} Nos dicen que un usuario puede \red{desconectarse con probabilidad $0.3$} y se puede \red{conectar con probabilidad $0.4$.}
 
@@ -180,7 +180,7 @@ Los valores de $X(t)$ pueden ser $0,1$ y $2$. Por tanto, el conjunto de estados 
 A continuación, calculemos las \red{probabilidad de transición:}
 \end{block}
 
-## Cadenas de Markov
+## Cadenas de Markov. Ejemplo
 \begin{block}{Ejemplo}
 Si $X(0)=0$, o no hay ningún usuario conectado, el número de usuarios que habrá en el siguiente minuto es una variable aleatoria \red{binomial} de parámetros $n=2$ y $p=0.4$:
 \begin{align*}
@@ -190,7 +190,7 @@ p_{02}=& \binom{2}{2}\cdot 0.4^2\cdot 0.6^0 =`r 0.4^2`.
 \end{align*}
 \end{block}
 
-## Cadenas de Markov
+## Cadenas de Markov. Ejemplo
 \begin{block}{Ejemplo}
 Si $X(0)=1$, o hay un usuario conectado, el número de usuarios nuevos que habrá en el siguiente minuto es una variable aleatoria \red{binomial} de parámetros $n=1$ y $p=0.4$ y el número de desconexiones en el minuto siguiente será una variable aleatoria \red{binomial} de parámetros $n=1$ y $p=0.3$:
 \begin{align*}
@@ -200,7 +200,7 @@ p_{12}=& 0.7\cdot 0.4 =`r 0.7*0.4`.
 \end{align*}
 \end{block}
 
-## Cadenas de Markov
+## Cadenas de Markov. Ejemplo
 \begin{block}{Ejemplo}
 Si $X(0)=2$, o hay los dos usuarios conectados, el número de usuarios desconectados que habrá en el siguiente minuto es una variable aleatoria \red{binomial} de parámetros $n=2$ y $p=0.3$. 
 \begin{align*}
@@ -210,8 +210,131 @@ p_{22}=& \binom{2}{2}\cdot 0.7^2\cdot 0.3^0 =`r 0.7^2`.
 \end{align*}
 \end{block}
 
-## Cadenas de Markov
+## Cadenas de Markov. Diagrama de transición
 Diagrama de transición del ejemplo.
 \begin{center}
 \includegraphics{markov.png}
 \end{center}
+
+
+## Cadenas de Markov. Matriz de transición
+* Las \red{probabilidades de transición} se pueden escribir en forma de matriz de la forma siguiente:
+$$
+\mathbf{P}=\begin{pmatrix}
+p_{11}&p_{12}&\cdots &p_{1n}\\
+p_{21}&p_{22}&\cdots &p_{2n}\\
+\vdots &\vdots &\vdots &\vdots\\
+p_{n1}&p_{n2}&\cdots &p_{nn}
+\end{pmatrix},
+$$
+donde $\mathbf{P}$ se llama \red{matriz de probabilidades de transición.}
+
+* El valor $p_{ij}$ es la \red{probabilidad de transición} desde el \blue{estado} $i$ al \blue{estado} $j$.
+
+## Cadenas de Markov. Matriz de transición
+* La \red{matriz de probabilidades de transición} es una matriz \red{estocástica}, es decir la suma de las filas vale $1$:
+$$
+p_{i1}+p_{i2}+\cdots + p_{in}=1.
+$$
+
+* Recordemos que $p_{ij}=P(X(1)=j|X(0)=i)$. Por tanto el vector $(p_{i1},\ldots, p_{in})$ representaría la \red{función de masa de probabilidad} de la variable aleatoria discreta $X(1)|X(0)=i$.
+
+## Cadenas de Markov. Ejemplo
+\begin{block}{Ejemplo anterior}
+La \red{matriz de probabilidades de transición} sería la siguiente:
+```{r,echo=FALSE}
+library(xtable)
+P=matrix(c(0.36,0.48,0.16,0.18,0.54,0.28,0.09,0.42,0.49),3,3,byrow=T)
+P2=P%*%P
+P3=P2%*%P
+#print(xtable(P),type="latex",floating=F,include.rownames=F,
+#include.colnames=F,hline.after=NULL)
+```
+
+$$
+\mathbf{P}=\begin{pmatrix}
+  0.36 & 0.48 & 0.16 \\ 
+  0.18 & 0.54 & 0.28 \\ 
+  0.09 & 0.42 & 0.49 
+  \end{pmatrix}.
+$$
+\end{block}
+
+## Cadenas de Markov. Matriz de transición de $h$ pasos
+* La \red{matriz de probabilidades de transición de $h$ pasos} para la transición de $h$ pasos sería la siguiente:
+$$
+\mathbf{P}^{(h)}=\begin{pmatrix}
+p_{11}^{(h)}&p_{12}^{(h)}&\cdots &p_{1n}^{(h)}\\
+p_{21}^{(h)}&p_{22}^{(h)}&\cdots &p_{2n}^{(h)}\\
+\vdots &\vdots &\vdots &\vdots\\
+p_{n1}^{(h)}&p_{n2}^{(h)}&\cdots &p_{nn}^{(h)}
+\end{pmatrix},
+$$
+donde recordemos que $p_{ij}^{(h)}=P(X(h)=j|X(0)=i)$.
+
+## Cadenas de Markov. Matriz de transición de $h$ pasos
+
+* La \red{matriz de probabilidades de transición de $h$ pasos} es también una matriz \red{estocástica}:
+$$
+p_{i1}^{(h)}+p_{i2}^{(h)}+\cdots + p_{in}^{(h)}=1.
+$$
+
+* Por tanto el vector $(p_{i1}^{(h)},\ldots, p_{in}^{(h)})$ representaría la \red{función de masa de probabilidad} de la variable aleatoria discreta $X(h)|X(0)=i$.
+
+## Cadenas de Markov. Cálculo de $\mathbf{P}^{(h)}$
+* Empezemos con el cálculo de $\mathbf{P}^{(2)}$, es decir $p_{ij}^{(2)}$, las probabilidades de transición de $2$ pasos:
+\begin{align*}
+p_{ij}^{(2)}= & P(X(2)=j|X(0)=i)\\ = & \sum_{k=1}^n P(X(1)=k|X(0)=i)\cdot P(X(2)=j|X(1)=k) \\ = & \sum_{k=1}^n p_{ik}\cdot p_{kj} =(p_{i1},\ldots,p_{in})\cdot \begin{pmatrix}p_{1j}\\\vdots\\ p_{nj}\end{pmatrix}.
+\end{align*}
+
+## Cadenas de Markov. Cálculo de $\mathbf{P}^{(h)}$
+
+* La probabilidad $p_{ij}^{(2)}$ se calcula como la \red{suma de probabilidades} de ir del \blue{estado} $i$ a $j$ pasando por el \blue{estado} $k$, para $k$ desde $1$ hasta $n$:
+$$
+i\longrightarrow k\longrightarrow j.
+$$
+
+* En resumen $\mathbf{P}^{(2)}=\mathbf{P}\cdot\mathbf{P}=\mathbf{P}^2.$
+
+## Cadenas de Markov. Cálculo de $\mathbf{P}^{(h)}$
+
+* En general, las \red{probabilidades de transición de $h$ pasos} se pueden calcular en función de las \red{probabilidades de transición de $h-1$ pasos} razonando de forma similar:
+\begin{align*}
+p_{ij}^{(h)}= & P(X(h)=j|X(0)=i)\\ = & \sum_{k=1}^n P(X(h-1)=k|X(0)=i)\cdot P(X(h)=j|X(1)=k) \\ = & \sum_{k=1}^n p_{ik}^{(h-1)}\cdot p_{kj} =(p_{i1}^{(h-1)},\ldots,p_{in}^{(h-1)})\cdot \begin{pmatrix}p_{1j}\\\vdots\\ p_{nj}\end{pmatrix}.
+\end{align*}
+
+* En conclusión, 
+$$\mathbf{P}^{(h)}=\mathbf{P}^{(h-1)}\cdot\mathbf{P}=\mathbf{P}^{h-1}\cdot\mathbf{P}=\mathbf{P}^h.$$
+
+## Cadenas de Markov. Ejemplo
+\begin{block}{Ejemplo}
+Calculemos las \red{probabilidades de transición de $2$ y $3$ pasos}:
+\begin{align*}
+\mathbf{P}^{(2)} = & \mathbf{P}\cdot \mathbf{P}=\begin{pmatrix}
+  0.36 & 0.48 & 0.16 \\ 
+  0.18 & 0.54 & 0.28 \\ 
+  0.09 & 0.42 & 0.49 
+  \end{pmatrix}\cdot \begin{pmatrix}
+  0.36 & 0.48 & 0.16 \\ 
+  0.18 & 0.54 & 0.28 \\ 
+  0.09 & 0.42 & 0.49 
+  \end{pmatrix} \\ = &  \begin{pmatrix}
+  0.2304 & 0.4992 & 0.2704 \\ 
+  0.1872 & 0.4956 & 0.3172 \\ 
+  0.1521 & 0.4758 & 0.3721
+  \end{pmatrix},\\
+\mathbf{P}^{(3)} = & \mathbf{P}^{(2)}\cdot \mathbf{P}=\begin{pmatrix}
+  0.2304 & 0.4992 & 0.2704 \\ 
+  0.1872 & 0.4956 & 0.3172 \\ 
+  0.1521 & 0.4758 & 0.3721
+  \end{pmatrix}\cdot \begin{pmatrix}
+  0.36 & 0.48 & 0.16 \\ 
+  0.18 & 0.54 & 0.28 \\ 
+  0.09 & 0.42 & 0.49 
+  \end{pmatrix} \\ = &  \begin{pmatrix}
+  0.197136 & 0.493728 &  0.309136 \\ 
+  0.185148 & 0.490704 & 0.324148 \\ 
+  0.173889 & 0.486222 & 0.339889
+  \end{pmatrix}
+\end{align*}
+\end{block}
