@@ -216,6 +216,20 @@ Diagrama de transición del ejemplo.
 \includegraphics{markov.png}
 \end{center}
 
+## Cadenas de Markov. Diagrama de transición
+\begin{block}{Ejemplo}
+
+Las probabilidades anteriores se almacenarían en R de la forma siguiente.
+
+Vemos que la suma de las filas vale 1:
+\end{block}
+```{r}
+P=matrix(c(0.36,0.48,0.16,0.18,0.54,0.28,0.09,0.42,0.49),
+         3,3,byrow=T)
+P
+apply(P,1,sum)
+```
+
 
 ## Cadenas de Markov. Matriz de transición
 * Las \red{probabilidades de transición} se pueden escribir en forma de matriz de la forma siguiente:
@@ -243,12 +257,18 @@ $$
 \begin{block}{Ejemplo anterior}
 La \red{matriz de probabilidades de transición} sería la siguiente:
 ```{r,echo=FALSE}
-library(xtable)
+#library(xtable)
 P=matrix(c(0.36,0.48,0.16,0.18,0.54,0.28,0.09,0.42,0.49),3,3,byrow=T)
 P2=P%*%P
 P3=P2%*%P
 #print(xtable(P),type="latex",floating=F,include.rownames=F,
 #include.colnames=F,hline.after=NULL)
+X01=c(0,1,0)
+dist.X21 = t(X01)%*%P2
+dist.X31 = t(X01)%*%P3
+X02=c(1/3,1/3,1/3)
+dist.X22 = t(X02)%*%P2
+dist.X32 = t(X02)%*%P3
 ```
 
 $$
@@ -338,3 +358,196 @@ Calculemos las \red{probabilidades de transición de $2$ y $3$ pasos}:
   \end{pmatrix}
 \end{align*}
 \end{block}
+
+## Cadenas de Markov. Ejemplo
+\begin{block}{Ejemplo}
+En R haríamos lo siguiente:
+\end{block}
+
+```{r}
+P2=P%*%P
+P2
+P3=P2%*%P
+P3
+```
+
+
+## Distribución de $X(h)$
+* Dar la \red{distribución de la variable aleatoria} $X(h)$, es decir, la distribución de la transición al cabo de $h$ \blue{pasos} sería equivalente a dar la \red{función de probabilidad} que sería una tabla del tipo:
+\begin{center}
+\begin{tabular}{c|c|c|c|c|}
+$X(h)$&$1$&$2$&$\cdots$&$n$\\\hline
+&$P_h(1)$&$P_h(2)$&$\cdots$&$P_h(n)$\\\hline
+\end{tabular}
+\end{center}
+
+*
+\begin{align*}
+P_h(j)= & P(X(h)=j)=\sum_{k=1}^n P(X(0)=k)\cdot P(X(j)=j|X(0)=k)\\ = & \sum_{k=1}^n P_0(k)\cdot p_{kj}^{(h)}=(P_0(1),\ldots,P_0(n))\cdot\begin{pmatrix}p_{1j}^{(h)}\\\vdots\\ p_{nj}^{(h)}\end{pmatrix}
+\end{align*}
+
+## Distribución de $X(h)$
+
+* La expresión nos da la \red{función de probabilidad} de $X(h)$ en función de la \red{función de probabilidad} de $X(0)$ y de las \red{probabilidades de transición} $\mathbf{P}^{(h)}$.
+
+* Matricialmente $\mathbf{P}_h=\mathbf{P}_0\cdot \mathbf{P}^h.$
+
+
+## Distribución de $X(h)$
+\begin{block}{Ejemplo anterior}
+Vamos a calcular la distribución de los usuarios conectados al cabo de $2$ y $3$ minutos en dos casos:
+\begin{itemize}
+\item Suponiendo que inicialmente hay un usuario conectado.
+\item Suponiendo que el número de usuarios conectados inicialmente es equiprobable.
+\end{itemize}
+
+
+\end{block}
+
+## Distribución de $X(h)$
+\begin{block}{Ejemplo anterior}
+En el primer caso, la \red{función de probabilidad} de $X(0)$ será $X(0)=(0,1,0)$.
+
+La \red{función de probabilidad} de los usuarios conectados al cabo de $2$ y $3$ minutos será:
+\begin{align*}
+\mathbf{P}_2 = &(0,1,0)\cdot\mathbf{P}^{(2)}=(0,1,0)\cdot\begin{pmatrix}
+  0.2304 & 0.4992 & 0.2704 \\ 
+  0.1872 & 0.4956 & 0.3172 \\ 
+  0.1521 & 0.4758 & 0.3721
+  \end{pmatrix}\\ = & \begin{pmatrix}`r dist.X21[1]`\\ `r dist.X21[2]`\\ `r dist.X21[3]`\end{pmatrix},
+\end{align*}
+\end{block}
+
+## Distribución de $X(h)$
+
+\begin{block}{Ejemplo anterior}
+\begin{align*}
+  \mathbf{P}_3 = &(0,1,0)\cdot\mathbf{P}^{(3)}=(0,1,0)\cdot\begin{pmatrix}
+  0.197136 & 0.493728 &  0.309136 \\ 
+  0.185148 & 0.490704 & 0.324148 \\ 
+  0.173889 & 0.486222 & 0.339889
+  \end{pmatrix}\\ = & \begin{pmatrix}`r dist.X31[1]`\\ `r dist.X31[2]`\\ `r dist.X31[3]`\end{pmatrix}.
+\end{align*}
+\end{block}
+
+
+
+## Distribución de $X(h)$
+\begin{block}{Ejemplo anterior}
+En el segundo caso, la \red{función de probabilidad} de $X(0)$ será $X(0)=\left(\frac{1}{3},\frac{1}{3},\frac{1}{3}\right)$.
+
+La \red{función de probabilidad} de los usuarios conectados al cabo de $2$ y $3$ minutos será:
+\begin{align*}
+\mathbf{P}_2 = &\left(\frac{1}{3},\frac{1}{3},\frac{1}{3}\right)\cdot\mathbf{P}^{(2)}=\left(\frac{1}{3},\frac{1}{3},\frac{1}{3}\right)\cdot\begin{pmatrix}
+  0.2304 & 0.4992 & 0.2704 \\ 
+  0.1872 & 0.4956 & 0.3172 \\ 
+  0.1521 & 0.4758 & 0.3721
+  \end{pmatrix}\\ = & \begin{pmatrix}`r dist.X22[1]`\\ `r dist.X22[2]`\\ `r dist.X22[3]`\end{pmatrix},
+\end{align*}
+\end{block}
+
+
+## Distribución de $X(h)$
+\begin{block}{Ejemplo anterior}
+\begin{align*}
+  \mathbf{P}_3 = &\left(\frac{1}{3},\frac{1}{3},\frac{1}{3}\right)\cdot\mathbf{P}^{(3)}\\ = & \left(\frac{1}{3},\frac{1}{3},\frac{1}{3}\right)\cdot\begin{pmatrix}
+  0.197136 & 0.493728 &  0.309136 \\ 
+  0.185148 & 0.490704 & 0.324148 \\ 
+  0.173889 & 0.486222 & 0.339889
+  \end{pmatrix}\\ = & \begin{pmatrix}`r dist.X32[1]`\\ `r dist.X32[2]`\\ `r dist.X32[3]`\end{pmatrix}.
+\end{align*}
+\end{block}
+
+## Cadenas de Markov. Ejemplo
+\begin{block}{Ejemplo}
+En R haríamos lo siguiente:
+\end{block}
+
+```{r}
+X01=c(0,1,0)
+(dist.X21 = t(X01)%*%P2)
+(dist.X31 = t(X01)%*%P3)
+```
+
+## Cadenas de Markov. Ejemplo
+
+```{r}
+X02=c(1/3,1/3,1/3)
+(dist.X22 = t(X02)%*%P2)
+(dist.X32 = t(X02)%*%P3)
+```
+
+
+
+
+
+## Distribución en el equilibrio
+* La \red{distribución de la cadena de Markov en el equilibrio} nos dice cuál es la distribución de $X(h)$, $\mathbf{P}_h$, al cabo de un número muy grande de \blue{transiciones} $h$.
+
+* Es decir, definimos la \red{distribución de la cadena de Markov en el equilibrio} $\pi(x)$ de la forma siguiente:
+$$
+\pi(x)=\lim_{h\to\infty}\mathbf{P}_h(x),\ x=1,\ldots, n.
+$$
+
+* La \red{distribución de la cadena de Markov en el equilibrio} puede interpretarse como el porcentaje de "tiempo" que una persona pasa en cada estado $x$ suponiendo que realiza un camino aleatorio por la cadena según la \red{matriz de transición de probabilidades.}
+
+## Distribución en el equilibrio
+* Vamos a dar una forma de calcular $\pi(x)$ la \red{distribución de la cadena de Markov en el equilibrio.}
+
+* Podemos escribir que \red{la función de probabilidad} de $X(h+1)$, $\mathbf{P}_{h+1}$ puede escribirse como:
+$$
+\mathbf{P}_h=\mathbf{P}_h\cdot \mathbf{P}.
+$$
+
+* Si hacemos $h\to \infty$ en la expresión anterior, obtenemos:
+$$
+\pi=\pi\cdot \mathbf{P}.
+$$
+
+* Entonces se dice que la \red{distribución de la cadena de Markov en el equilibrio} $\pi(x)$ es un \red{vector propio} de \red{valor propio} $1$ \blue{por la izquierda} de la \red{matriz de transición de probabilidades} $\mathbf{P}$.
+
+## Distribución en el equilibrio
+* En resumen, para calcular la \red{distribución de la cadena de Markov en el equilibrio} $\pi(x)$, hay que resolver:
+\begin{align*}
+\pi \mathbf{P} = & \pi,\\
+\sum_{k=1}^n \pi = & 1.
+\end{align*}
+
+* Hallar un \red{vector propio} \blue{por la izquierda} de la matriz $\mathbf{P}$ es equivalente a hallar un \red{vector propio} \blue{por la derecha} de la matriz $\mathbf{P}^\top$ ya que si:
+$$
+\pi \mathbf{P} =  \pi,\ \Rightarrow \mathbf{P}^\top\cdot\pi^\top = \pi^\top.
+$$
+
+## Distribución en el equilibrio
+```{r,echo=FALSE}
+equilibrio=eigen(t(P))$vectors[,1]/sum(eigen(t(P))$vectors[,1])
+```
+
+\begin{block}{Ejemplo}
+El vector propio de valor propio $1$ de la matriz $\mathbf{P}^\top$ cuyas componentes suman $1$ y son positivas vale:
+$$
+(`r equilibrio[1]`, `r equilibrio[2]`, `r equilibrio[3]`).
+$$
+El vector anterior sería la \red{distribución de probabilidad en el equilibrio} de la cadena de Markov considerada.
+\end{block}
+
+
+## Distribución en el equilibrio
+
+\begin{block}{Ejemplo}
+Para hallar \red{distribución de probabilidad en el equilibrio} en R haríamos lo siguiente:
+\end{block}
+
+```{r}
+(vectores.propios = eigen(t(P))$vectors)
+```
+
+
+## Distribución en el equilibrio
+
+```{r}
+(vector.propio.vap.1=vectores.propios[,1])
+(equilibrio = 
+    vector.propio.vap.1/sum(vector.propio.vap.1))
+```
+
