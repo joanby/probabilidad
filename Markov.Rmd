@@ -217,7 +217,7 @@ Diagrama de transición del ejemplo.
 \end{center}
 
 ## Cadenas de Markov. Diagrama de transición
-\begin{block}{Ejemplo}
+\begin{block}{Ejemplo en R}
 
 Las probabilidades anteriores se almacenarían en R de la forma siguiente.
 
