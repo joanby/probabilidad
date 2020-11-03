@@ -313,7 +313,7 @@ $$
 * Por tanto el vector $(p_{i1}^{(h)},\ldots, p_{in}^{(h)})$ representaría la \red{función de masa de probabilidad} de la variable aleatoria discreta $X(h)|X(0)=i$.
 
 ## Cadenas de Markov. Cálculo de $\mathbf{P}^{(h)}$
-* Empecemos con el cálculo de $\mathbf{P}^{(2)}$, es decir $p_{ij}^{(2)}$, las probabilidades de transición de $2$ pasos:
+* Empezemos con el cálculo de $\mathbf{P}^{(2)}$, es decir $p_{ij}^{(2)}$, las probabilidades de transición de $2$ pasos:
 \begin{align*}
 p_{ij}^{(2)}= & P(X(2)=j|X(0)=i)\\ = & \sum_{k=1}^n P(X(1)=k|X(0)=i)\cdot P(X(2)=j|X(1)=k) \\ = & \sum_{k=1}^n p_{ik}\cdot p_{kj} =(p_{i1},\ldots,p_{in})\cdot \begin{pmatrix}p_{1j}\\\vdots\\ p_{nj}\end{pmatrix}.
 \end{align*}
