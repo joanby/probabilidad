@@ -216,7 +216,7 @@ Diagrama de transición del ejemplo.
 \includegraphics{markov.png}
 \end{center}
 
-## Cadenas de Markov. Diagrama de transición
+## Cadenas de Markov. Ejemplo en R
 \begin{block}{Ejemplo en R}
 
 Las probabilidades anteriores se almacenarían en R de la forma siguiente.
@@ -230,7 +230,7 @@ P
 apply(P,1,sum)
 ```
 
-## Cadenas de Markov. Diagrama de transición
+## Cadenas de Markov. Ejemplo en python
 \begin{block}{Ejemplo en python}
 
 \end{block}
