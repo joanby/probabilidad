@@ -331,7 +331,7 @@ $$
 
 * En general, las \red{probabilidades de transición de $h$ pasos} se pueden calcular en función de las \red{probabilidades de transición de $h-1$ pasos} razonando de forma similar:
 \begin{align*}
-p_{ij}^{(h)}= & P(X(h)=j|X(0)=i)\\ = & \sum_{k=1}^n P(X(h-1)=k|X(0)=i)\cdot P(X(h)=j|X(1)=k) \\ = & \sum_{k=1}^n p_{ik}^{(h-1)}\cdot p_{kj} =(p_{i1}^{(h-1)},\ldots,p_{in}^{(h-1)})\cdot \begin{pmatrix}p_{1j}\\\vdots\\ p_{nj}\end{pmatrix}.
+p_{ij}^{(h)}= & P(X(h)=j|X(0)=i)\\ = & \sum_{k=1}^n P(X(h-1)=k|X(0)=i)\cdot P(X(h)=j|X(h-1)=k) \\ = & \sum_{k=1}^n p_{ik}^{(h-1)}\cdot p_{kj} =(p_{i1}^{(h-1)},\ldots,p_{in}^{(h-1)})\cdot \begin{pmatrix}p_{1j}\\\vdots\\ p_{nj}\end{pmatrix}.
 \end{align*}
 
 * En conclusión, 
