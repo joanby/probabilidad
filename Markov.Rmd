@@ -235,7 +235,7 @@ apply(P,1,sum)
 
 \end{block}
 ```{python}
-import np
+import numpy as np
 P=np.matrix([[0.36,0.48,0.16],[0.18,0.54,0.28],
 [0.09,0.42,0.49]]) 
 P
