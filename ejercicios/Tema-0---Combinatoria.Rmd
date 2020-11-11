@@ -3,11 +3,11 @@ title: "Ejercicios Tema 0 - Repaso de combinatoria y conjuntos"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  pdf_document: 
+  html_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2
-  html_document: 
+  pdf_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2

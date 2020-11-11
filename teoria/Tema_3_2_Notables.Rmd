@@ -17,6 +17,11 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 library(reticulate)
 ```
 
+```{python}
+import os
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = 'C:/Users/t169/AppData/Local/r-miniconda/envs/r-reticulate/Library/plugins/platforms'
+```
+
 
 # Distribución uniforme 
 

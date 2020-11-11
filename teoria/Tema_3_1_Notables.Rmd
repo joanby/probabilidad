@@ -12,8 +12,8 @@ output:
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment = NA)
+```{r setup0, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = FALSE)
 library(reticulate)
 ```
 
