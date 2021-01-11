@@ -2095,6 +2095,7 @@ $$
 </div>
 
 ## Ejemplo normal bidimensional
+
 <div class="example">
 
 La correlación entre las variables $X$ e $Y$ es precisamente $\rho$.
