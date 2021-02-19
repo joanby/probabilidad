@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.11)  14 JAN 2021 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.11)  14 JAN 2021 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Tema-3---Notables_discretas.tex
-(./Tema-3---Notables_discretas.tex
+**Tema-2---Variables-Aleatorias.tex
+(./Tema-2---Variables-Aleatorias.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-01-09> xparse <2020-03-03> (c:/Users/t169/AppData/Ro
 aming/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -401,8 +401,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count279
 \l__pdf_internal_box=\box49
-) (./Tema-3---Notables_discretas.aux)
-\openout1 = `Tema-3---Notables_discretas.aux'.
+) (./Tema-2---Variables-Aleatorias.aux)
+\openout1 = `Tema-2---Variables-Aleatorias.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
@@ -469,9 +469,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 67.
 LaTeX Info: Redefining \pageref on input line 67.
 LaTeX Info: Redefining \nameref on input line 67.
-(./Tema-3---Notables_discretas.out) (./Tema-3---Notables_discretas.out)
+(./Tema-2---Variables-Aleatorias.out) (./Tema-2---Variables-Aleatorias.out)
 \@outlinefile=\write3
-\openout3 = `Tema-3---Notables_discretas.out'.
+\openout3 = `Tema-2---Variables-Aleatorias.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -552,62 +552,58 @@ g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 77.
+(Font)              <10> on input line 80.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 77.
+(Font)              <7> on input line 80.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 77.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-00.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
-
- []
-
+(Font)              <5> on input line 80.
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 138.
+(amsmath)                 on input line 87.
 
-[1
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+17.
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [1
 
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
-.map}] [2] (./Tema-3---Notables_discretas.aux)
-Package rerunfilecheck Info: File `Tema-3---Notables_discretas.out' has not cha
-nged.
-(rerunfilecheck)             Checksum: 9AF6106CF205435EF8A80A6EC1D3F9EF;273.
+.map}] [2] (./Tema-2---Variables-Aleatorias.aux)
+Package rerunfilecheck Info: File `Tema-2---Variables-Aleatorias.out' has not c
+hanged.
+(rerunfilecheck)             Checksum: 4B2D469E938782691F86ADC2A35F6DCF;646.
  ) 
 Here is how much of TeX's memory you used:
- 12399 strings out of 481211
- 185465 string characters out of 5912143
- 515963 words of memory out of 5000000
- 29062 multiletter control sequences out of 15000+600000
- 450436 words of font info for 101 fonts, out of 8000000 for 9000
+ 12388 strings out of 481211
+ 185435 string characters out of 5912143
+ 518989 words of memory out of 5000000
+ 29063 multiletter control sequences out of 15000+600000
+ 445498 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,6n,74p,532b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.en
-c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
-y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-t
-s1.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
-ec.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
-mathit.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public
-/lm/lmbx12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
-blic/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
-1/public/lm/lmmi7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
-ype1/public/lm/lmr10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/font
-s/type1/public/lm/lmr12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/f
-onts/type1/public/lm/lmr17.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dis
-t/fonts/type1/public/lm/lmr5.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-d
-ist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf
--dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/t
-exmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming/TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Tema-3---Notables_discretas.pdf (2 pages, 176407 bytes).
+ 71i,8n,74p,534b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathi
+t.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
+athsy.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
+lm-ts1.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
+/lm-rm.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
+/lm-mathex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvip
+s/lm/lm-ec.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
+blic/lm/lmbx12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
+1/public/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/
+type1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fo
+nts/type1/public/lm/lmmi5.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist
+/fonts/type1/public/lm/lmmi7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-d
+ist/fonts/type1/public/lm/lmr10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texm
+f-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/t
+exmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/t169/AppData/Roaming/TinyTe
+X/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roaming/Tiny
+TeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming/
+TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on Tema-2---Variables-Aleatorias.pdf (2 pages, 157675 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 26633 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 25 named destinations out of 1000 (max. 500000)
+ 24601 words of extra memory for PDF output out of 24883 (max. 10000000)
 
