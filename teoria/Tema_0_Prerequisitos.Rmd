@@ -79,7 +79,7 @@ Recordemos que $i$ es la unidad imaginaria que cumple que $i=\sqrt{-1}$.
 
 ## Características y propiedades básicas de los conjuntos
 
-* Si $A$ es otro conjunto tal que  si $x\in A$ entonces $x\in B$ diremos que $A$ es un subconjunto de o que está contenido en $B$. Lo denotaremos por $A\subseteq B.$
+* Si $B$ es otro conjunto, tal que  si $x\in A$ entonces $x\in B$ diremos que $A$ es un subconjunto de o que está contenido en $B$. Lo denotaremos por $A\subseteq B.$
 * El conjunto  que no tiene elementos se denomina conjunto vacío y se denota por el símbolo $\emptyset$.
 * Dado $A$ un conjunto cualquiera  obviamente $\emptyset\subseteq A.$
 
