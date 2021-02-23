@@ -40,10 +40,11 @@ La definición de conjunto es una [idea o noción primitiva](https://es.wikipedi
 
 La teoría de conjuntos básicas es simple y natural y es la que necesitamos para este curso.
 
-La teoría de conjuntos matemática es más complejas y presenta varias paradojas como la [paradoja de Russell](https://es.wikipedia.org/wiki/Paradoja_de_Russell).
+La teoría de conjuntos matemática es más compleja y presenta varias paradojas como la [paradoja de Russell](https://es.wikipedia.org/wiki/Paradoja_de_Russell).
 
 
 ##  Teoría de conjuntos
+
 La idea o noción práctica de conjunto es la de una  colección de objetos de un cierto tipo.
 
 Estas colecciones o  conjuntos se pueden definir por:
@@ -137,7 +138,7 @@ $$
 
 Sea $\Omega$ un conjunto y $A$ y $B$ dos subconjuntos de $\Omega$.
 
-El conjunto **intersección** de $A$y $B$ es el formado por todos los elementos que perteneces a $A$ **Y** $B$, se denota por $A\cap B$.
+El conjunto **intersección** de $A$ y $B$ es el formado por todos los elementos que perteneces a $A$ **Y** $B$, se denota por $A\cap B$.
 
 Más formalmente
 
