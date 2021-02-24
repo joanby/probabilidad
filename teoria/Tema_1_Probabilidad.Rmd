@@ -245,6 +245,8 @@ Esta verosimilitud puede estar justificada por:
 
 ## Definición de probabilidad
 
+<l class="definition">Definición formal de probabilidad</l>
+
 Sea $\Omega$ el espacio muestral de un experimento aleatorio. 
 Supongamos que el número de posibles resultados, por el momento, es finito.
 
