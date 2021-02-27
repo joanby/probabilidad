@@ -3,11 +3,11 @@ title: "SOLUCIONES: Ejercicios Tema 0 - Repaso de combinatoria y conjuntos"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  pdf_document: 
+  html_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2
-  html_document: 
+  pdf_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2
@@ -29,7 +29,7 @@ En una carrera en la que participan diez caballos ¿de cuántas maneras diferent
 
 ### Solución
 
-La forma de acabar la carera con variaciones con repetición $$VR_{n=10}^k=4=\frac{10!}{(10-4)!}=10\cdot 9\cdot 8\cdot 7=`r 10*9*8*7`.$$
+La forma de acabar la carera con variaciones con repetición $$V_{n=10}^{k=4}=\frac{10!}{(10-4)!}=10\cdot 9\cdot 8\cdot 7=`r 10*9*8*7`.$$
 
 
 Con `gttols` podemos  listar todas las maneras  en las que acaban los 4 primeros puestos y contarlas; obviamente obtenemos el mismo resultado.

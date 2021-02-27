@@ -295,6 +295,19 @@ Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstic
 
 ### Solución
 
+ Sea $C4 es l uceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
+ 
+ Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$.
+ 
+
+
+Nos piden 
+$$
+P(C|T)=\frac{P(T|C)\cdot P(C)}{P(T)}= 
+\frac{P(T|C)\cdot P(C)}{P(T^c|C^c)\cdot P(C^c)} =\frac{0.95\cdot 0.005}{0.95\cdot 0.005+0.95\cdot (1-0.005)}=
+`r 0.95* 0.005/(0.95* 0.005 + 0.95* (1-0.005))`. 
+$$
+
 ## Problema 10
 
 ```{r contador, include=FALSE}
