@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.26)  28 FEB 2021 21:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.26)  28 FEB 2021 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -156,7 +156,7 @@ tim
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .sty
-Package: microtype 2021/02/22 v2.8a Micro-typographical refinements (RS)
+Package: microtype 2021/02/25 v2.8b Micro-typographical refinements (RS)
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
@@ -171,7 +171,7 @@ LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 -pdftex.def
-File: microtype-pdftex.def 2021/02/22 v2.8a Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2021/02/25 v2.8b Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
@@ -181,7 +181,7 @@ Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .cfg
-File: microtype.cfg 2021/02/22 v2.8a microtype main configuration file (RS)
+File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
 ))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
@@ -696,11 +696,11 @@ Package amsmath Warning: Foreign command \over;
 l.608 luego tenemos que \$P(M\cap
                                   V\^{}c)= 
 Here is how much of TeX's memory you used:
- 12751 strings out of 480930
- 193006 string characters out of 5904274
+ 12749 strings out of 480930
+ 192986 string characters out of 5904274
  560582 words of memory out of 5000000
  29594 multiletter control sequences out of 15000+600000
- 463206 words of font info for 122 fonts, out of 8000000 for 9000
+ 463123 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,8n,74p,537b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 

@@ -129,8 +129,7 @@ P(\mbox{De los dos elegidos al azar sean  el más viejo y el más joven})&=&\\
 
 
 ## Problema 4
-
-Se apuntan A, B i C a una carrera.
+Se apuntan  tres corredores A, B y  C a una carrera.
 
 * ¿Cuál es la probabilidad de que A acabe antes que C si todos son igual de hábiles corriendo y no puede haber empates?
 * ¿Cuál es la probabilidad de que A acabe antes que B y C?
@@ -187,7 +186,7 @@ Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivament
 Sin contamos el "orden de extracción"  el espacio muestral  son los pares no ordenados 
 $$\Omega =\{(1,2),(2,1),(1,3),(3,1),(1,4),(4,1),(2,3),(3,2),(2,4),(4,2),(3,4),(4,3)\}.$$
 
-Todos los pares son equiprobables y tienen por prbabilidad $\frac{1}{6}.$
+Todos los pares son equiprobables y tienen por probabilidad $\frac{1}{6}.$
 
 
 
@@ -267,7 +266,7 @@ La urna 1 contiene 2 bolas rojas y 4 de azules. La urna 2 contiene 10 bolas roja
 
 ### Solución
 
-Sea $U_i$  el suceso hemos es cogido la urna $i$ para $i=1,2$, y $A$ el suceso  la bola estraíada es azul y $R$ roja. 
+Sea $U_i$  el suceso hemos es cogido la urna $i$ para $i=1,2$, y $A$ el suceso  la bola extraída es azul y $R$ roja. 
 
 Sabemos que $P(A/U_1)=\frac{4}{6}$, $P(A/U_2)=\frac{2}{12}$, $P(R/U_1)=\frac{2}{6}$ y $P(R/U_2)=\frac{10}{12}.$
 
@@ -295,7 +294,7 @@ Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstic
 
 ### Solución
 
- Sea $C4 es l uceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
+ Sea $C4 es el suceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
  
  Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$ por lo tanto $P(T|C^c)=1-P(T^c|C^2)=0.05$ y $P(C^c)=1-P(C)=0.005$.
  
@@ -320,7 +319,7 @@ Se lanzan una sola vez dos dados. Si la suma de los dos dados es como mínimo 7,
 ### Solución
 
 
-stos son los resultados de la suma sin la condición
+Estos son los resultados de la suma sin la condición
 
 ```{r}
 dado1=rep(1:6,times=6)# dado 1
@@ -333,21 +332,21 @@ table(resultados$suma)
 
 
 
-SI condifionamos a que la suma es mayor o igual a 7
+Si condicionamos a que la suma es mayor o igual a 7
 
 ```{r}
 table(resultados$suma[resultados$suma>=7])
 
 ```
 
-La sprobabilidades pedidas son 
+La probabilidades pedidas son 
 
 ```{r}
 prop.table(table(resultados$suma[resultados$suma>=7]))
 ```
 
 
-COmo ejercicio formalizar con teoría de la probabilidad básica alguno de los resultados y comprobad que es correcto.
+Como ejercicio formalizar con teoría de la probabilidad básica alguno de los resultados y comprobad que es correcto.
 
 
 ## Problema `r contador=contador+1;contador`.
@@ -401,7 +400,7 @@ Tenemos 4 cartas numeradas del 1 al 4 que están giradas boca abajo sobre una me
 
 ## Problema `r contador=contador+1;contador`.
 
-Una forma de aumentar la fiabilidad de un sistema es meediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cúantos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.
+Una forma de aumentar la fiabilidad de un sistema es mediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cuántos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.
 
 
 #  Ejercicios de Independencia de sucesos
@@ -424,7 +423,7 @@ Una moneda no trucada se lanza al aire 2 veces Consideremos los siguientes suces
 
 ## Problema `r contador=contador+1;contador`.
 
-Una urna contiene 4 bolas numerades con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraida tenga un 1 marcado y sea B el suceso que la segunda bola extraida tenga un 1 marcado. 
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraída tenga un 1 marcado y sea B el suceso que la segunda bola extraída tenga un 1 marcado. 
 
 * ¿Se puede decir que A y B son independientes?
 * ¿Y si el experimento fuera sin reposición?
@@ -437,7 +436,7 @@ Sea $\Omega$ un espacio muestral y $A,B,C$ tres sucesos. Probad que
 
 * Si $A$ y $B$ son independientes, también lo son $A$ y $B^c$
 * Si $A,B,C$ son independientes, también lo son $A,B$ y $C^c$
-* ¿Es cierto que si $A,B,C$ son independientes, también lo son $A,B^c$ y $C^c$? ¿Y $A^c, B^c$ y $C^c$? En caso de que la respuesta sea negativa, dad contraejemplos donde la propiedad falle.
+* ¿Es cierto que si $A,B,C$ son independientes, también lo son $A,B^c$ y $C^c$? ¿Y $A^c, B^c$ y $C^c$? En caso de que la respuesta sea negativa, dad contra ejemplos donde la propiedad falle.
 
 ### Solución  
 
