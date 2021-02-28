@@ -297,15 +297,16 @@ Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstic
 
  Sea $C4 es l uceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
  
- Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$.
+ Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$ por lo tanto $P(T|C^c)=1-P(T^c|C^2)=0.05$ y $P(C^c)=1-P(C)=0.005$.
  
 
 
 Nos piden 
 $$
 P(C|T)=\frac{P(T|C)\cdot P(C)}{P(T)}= 
-\frac{P(T|C)\cdot P(C)}{P(T^c|C^c)\cdot P(C^c)} =\frac{0.95\cdot 0.005}{0.95\cdot 0.005+0.95\cdot (1-0.005)}=
-`r 0.95* 0.005/(0.95* 0.005 + 0.95* (1-0.005))`. 
+\frac{P(T|C)\cdot P(C)}{P(T|C)\cdot P(C)+P(T|C^c)\cdot P(C^c)} =
+\frac{0.95\cdot 0.005}{0.95\cdot 0.005+(1-0.95)\cdot (1-0.005)}=
+`r 0.95* 0.005/(0.95* 0.005 + 0.05* 0.995)`. 
 $$
 
 ## Problema 10
@@ -318,11 +319,54 @@ Se lanzan una sola vez dos dados. Si la suma de los dos dados es como mínimo 7,
 
 ### Solución
 
+
+stos son los resultados de la suma sin la condición
+
+```{r}
+dado1=rep(1:6,times=6)# dado 1
+dado2=rep(1:6,each=6) #dado 2
+resultados=data.frame(dado1,dado2,suma=dado1+dado2)
+knitr::kable(resultados)
+table(resultados$suma)
+
+```
+
+
+
+SI condifionamos a que la suma es mayor o igual a 7
+
+```{r}
+table(resultados$suma[resultados$suma>=7])
+
+```
+
+La sprobabilidades pedidas son 
+
+```{r}
+prop.table(table(resultados$suma[resultados$suma>=7]))
+```
+
+
+COmo ejercicio formalizar con teoría de la probabilidad básica alguno de los resultados y comprobad que es correcto.
+
+
 ## Problema `r contador=contador+1;contador`.
 
 Se sabe que ${2 \over 3}$ de los internos de una cierta prisión son menores de 25 años. También se sabe que ${3\over 5}$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
 
 ### Solución
+
+Denotemos por $V=$ " ser menor de 25 años$ por $M=$ ser mujer y $M^c=H$ ser hombre . Los datos que nos dan son 
+$P(V)=\frac{2}{3}$, $P(H)= \frac{3}{5}$ y $P(M\cup V^c )=\frac{5}{8}.$
+
+
+
+
+Así que $\frac{5}{8}=P(M\cup V^c)=P(H^c\cup V^c)=P((H\cap V)^c)=1-P(H\cap V)$ y por lo tanto $P(H\cap V)=1- \frac{5}{8}=\frac{3}{8}.$ 
+
+Nos piden $P(M\cap V)=P(M)+P(V)-P(M\cup V)=1-P(H)+P(V)-P(M\cup V)=1-\frac{3}{5}+\frac{2}{3}-P(M\cup V).$
+
+Ahora $\frac{5}{8}=P(M\cup V^c)=P(M)-P(V)-P(M\cap V^c)=1-\frac{3}{5}+\frac{2}{3}-P(M\cap V^C).$ luego tenemos que $P(M\cap V^c)= \frac{5}{8}-1+\frac{3}{5}-\frac{2}{3}= 
 
 ## Problema `r contador=contador+1;contador`.
 
