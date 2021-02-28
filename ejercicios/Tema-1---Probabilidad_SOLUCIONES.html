@@ -472,11 +472,13 @@ summary {
 <p><span class="math inline">\(P(\mbox{salir impar})= 1- P(\mbox{salir par})=1-\frac{12}{21}=0.4285714.\)</span></p>
 <p><strong>PARTE II</strong></p>
 <p>Sea <span class="math inline">\(\Omega=\{1,2,3,4,5,6\}\)</span> y nos dicen que <span class="math inline">\(P(k)= \alpha\cdot \frac{1}{k}\)</span>.</p>
-<p>La suma de todas las probabilidades debe ser 1 así que <span class="math display">\[1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot \frac{1}{k}=
-\alpha \sum_{k=1}^6 k = \alpha \left(\frac{1}{1}+\frac{1}{2}+\frac{1}{3}\frac{1}{4}+\frac{1}{5}+\frac{1}{6}\right)=\alpha\cdot 2.45,$ luego $\alpha=\frac{1}{2.45}=0.4081633.\]</span></p>
+<p>La suma de todas las probabilidades debe ser 1 así que <span class="math display">\[
+1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot \frac{1}{k}=
+\alpha \sum_{k=1}^6 k = \alpha \left(\frac{1}{1}+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6}\right)=\alpha\cdot 2.45,
+\]</span> Luego el valor buscado es <span class="math inline">\(\alpha=\frac{1}{2.45}=0.4081633\)</span>.</p>
 <p><span class="math inline">\(P(\mbox{salir par})= P(2)+P(4)+P(6)=0.4081633\left(\frac{1}{2}+\frac{1}{4}+\frac{1}{6}\right)=0.3741497.\)</span></p>
 <p><span class="math inline">\(P(\mbox{salir impar})= 0.4081633\left(\frac{1}{1}+\frac{1}{3}+\frac{1}{5}\right)=0.6258504.\)</span></p>
-<p>Efectivamente <span class="math inline">\(P(\mbox{salir impar})=1-\)</span>P()=1- 0.4081633=0.5918367.$</p>
+<p>Efectivamente <span class="math inline">\(P(\mbox{salir impar})=1-P(\mbox{salir par})=1- 0.4081633=0.5918367.\)</span></p>
 </div>
 </div>
 <div id="problema-3" class="section level2" number="2.3">
@@ -489,32 +491,83 @@ summary {
 <div id="solución-3" class="section level3" number="2.3.1">
 <h3 number="2.3.1"><span class="header-section-number">2.3.1</span> Solución</h3>
 <p>Supongamos que solo hay un mas viejo y un más joven.</p>
-<p><span class="math inline">\(P(\mbox{De entre dos elegidos al azar esté el más viejo})=\frac{\mbox{Casos Favorables}{\mbox{Casos posibles})= \frac{{99 choose 1}}{{100 choose 2}}=\frac{99}{\frac{100\cdot 99}{2}}=\frac{2\cdot 99}{100\cdot 99} =\frac{2}{100}=\frac{1}{50}.\)</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(\mbox{De entre dos elegidos al azar esté el más viejo}) &amp;=&amp;\\
+\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}=
+\frac{{{99}\choose {1}}}{{{100}\choose {2}}}=\frac{99}{\frac{100\cdot 99}{2}}&amp;=&amp;\\
+\frac{2\cdot 99}{100\cdot 99}=
+\frac{2}{100}=\frac{1}{50}.
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(\mbox{De los dos elegidos al azar sean  el más viejo y el más joven})&amp;=&amp;\\
+\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}=
+\frac{1}{{{100} \choose {2}}}=\frac{1}{\frac{100\cdot 99}{2}}&amp;=&amp;\\
+\frac{2}{100\cdot 99}
+=\frac{1}{4950}.
+\end{eqnarray*}\]</span></p>
 </div>
 </div>
 <div id="problema-4" class="section level2" number="2.4">
 <h2 number="2.4"><span class="header-section-number">2.4</span> Problema 4</h2>
-<p>Se apuntan A, B i C a una carrera.</p>
+<p>Se apuntan tres corredores A, B y C a una carrera.</p>
 <ul>
 <li>¿Cuál es la probabilidad de que A acabe antes que C si todos son igual de hábiles corriendo y no puede haber empates?</li>
 <li>¿Cuál es la probabilidad de que A acabe antes que B y C?</li>
 </ul>
 <div id="solución-4" class="section level3" number="2.4.1">
 <h3 number="2.4.1"><span class="header-section-number">2.4.1</span> Solución</h3>
+<p>LoS casos posibles CP son <span class="math inline">\(3!=6\)</span></p>
+<p>El corredor A puede acabar antes de C siendo primero o segundo en cada caso <span class="math inline">\(2!\)</span> casos (hacer un algoritmo que los escriba).</p>
+<p><span class="math display">\[P(\mbox{A acabe antes de C})=\frac{CF}{CP}=\frac{2!+2!}{3!}=\frac{4}{6}=\frac{2}{3}.\]</span></p>
+<p><span class="math display">\[P(\mbox{A acabe antes de B y C})=\frac{CF}{CP}=\frac{2!}{3!}=\frac{1}{3}.\]</span></p>
 </div>
 </div>
 <div id="problema-5" class="section level2" number="2.5">
 <h2 number="2.5"><span class="header-section-number">2.5</span> Problema 5</h2>
-<p>En una sala se hallan <span class="math inline">\(n\)</span> personas. ¿Cual es la probabilidad de que haya almenos dos personas con el mismo mes de nacimiento? Dar el resultado para los valores de <span class="math inline">\(n=3,4,5,6\)</span>.</p>
+<p>En una sala se hallan <span class="math inline">\(n\)</span> personas. ¿Cual es la probabilidad de que haya al menos dos personas con el mismo mes de nacimiento? Dar el resultado para los valores de <span class="math inline">\(n=3,4,5,6\)</span>.</p>
 <div id="solución-5" class="section level3" number="2.5.1">
 <h3 number="2.5.1"><span class="header-section-number">2.5.1</span> Solución</h3>
+<p><span class="math display">\[P(\mbox{De n personas menos dos nazcan el mimo mes})=1-P(\mbox{De n personas tosdas nazca en distinto mes}).\]</span></p>
+<p>Casos Posibles (CP) todas las maneras de escoger <span class="math inline">\(n\)</span> meses de 12 esto son <span class="math inline">\(VR_{12}^n=12^n.\)</span>.</p>
+<p>Casos Favorables a que todas nazcan EN MESES DISTINTOS <span class="math inline">\(V_{12}^n=\frac{12!}{(12-n)!}\)</span></p>
+<p><span class="math display">\[
+P(\mbox{De n personas menos dos nazcan el mimo mes})=
+1-P(\mbox{De personas todas nazcan en distinto mes})=
+1-\frac{\frac{12!}{(12-n)!}}{12^n}.
+\]</span></p>
+<p>Hagamos los calculamos con R para n=3,4,5,6</p>
+<pre class="r"><code>n=3:6
+sapply(n,FUN=function(n) 1-((factorial(12)/factorial(12-n)))/(12^n))</code></pre>
+<pre><code>## [1] 0.2361111 0.4270833 0.6180556 0.7771991</code></pre>
 </div>
 </div>
 <div id="problema-6" class="section level2" number="2.6">
 <h2 number="2.6"><span class="header-section-number">2.6</span> Problema 6</h2>
-<p>Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se sacan dos bolas sin reposición. Sea <span class="math inline">\(A\)</span> el suceso que la suma sea 5 y sea <span class="math inline">\(B_i\)</span> el suceso que la primera bola extraida tenga un <span class="math inline">\(i\)</span>,con <span class="math inline">\(i=1,2,3,4\)</span>. Hallar <span class="math inline">\(P(A/B_i),\  i=1,2,3,4\)</span> y <span class="math inline">\(P(B_i/A), i=1,2,3,4\)</span>.</p>
+<p>Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se sacan dos bolas sin reposición. Sea <span class="math inline">\(A\)</span> el suceso que la suma sea 5 y sea <span class="math inline">\(B_i\)</span> el suceso que la primera bola extraída tenga un <span class="math inline">\(i\)</span>,con <span class="math inline">\(i=1,2,3,4\)</span>. Hallar <span class="math inline">\(P(A|B_i),\  i=1,2,3,4\)</span> y <span class="math inline">\(P(B_i|A), i=1,2,3,4\)</span>.</p>
 <div id="solución-6" class="section level3" number="2.6.1">
 <h3 number="2.6.1"><span class="header-section-number">2.6.1</span> Solución</h3>
+<p>Sin contamos el “orden de extracción” el espacio muestral son los pares no ordenados <span class="math display">\[\Omega =\{(1,2),(2,1),(1,3),(3,1),(1,4),(4,1),(2,3),(3,2),(2,4),(4,2),(3,4),(4,3)\}.\]</span></p>
+<p>Todos los pares son equiprobables y tienen por probabilidad <span class="math inline">\(\frac{1}{6}.\)</span></p>
+<p>El suceso de que la suma sea 5 es <span class="math inline">\(A=\{(1,4),(4,1),(3,2),(2,3)\}\)</span>. Los sucesos que empiezan por <span class="math inline">\(i\)</span> son <span class="math inline">\(B_i=\{(i,2),(i,3),(i,4)\}\)</span> para <span class="math inline">\(i=3,4,5,6.\)</span> Es evidente que <span class="math inline">\(P(B_i)=\frac{3}{12}=\frac{1}{4}\)</span></p>
+<p><span class="math display">\[
+P(A|B_1)=\frac{P(A\cap B_1)}{P(B_1)}=\frac{P((1,4))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+\]</span></p>
+<p><span class="math display">\[
+P(A|B_2)=\frac{P(A\cap B_2)}{P(B_2)}=\frac{P((2,3))}{\frac{4}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+\]</span></p>
+<p><span class="math display">\[
+P(A|B_3)=\frac{P(A\cap B_3)}{P(B_3)}=\frac{P((3,2))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+\]</span></p>
+<p><span class="math display">\[P(A|B_4)=\frac{P(A\cap B_4)}{P(B_4)}=\frac{P((4,1))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.\]</span></p>
+<p>Notemos que <span class="math inline">\(P(B_i)=\frac{3}{12}.\)</span></p>
+<p>Ahora para hacer fácil la segunda parte ara <span class="math inline">\(i=1,2,3,4\)</span> hacemos</p>
+<p><span class="math display">\[
+P(B_i/A)=\frac{P(A/B_i)\cdot P(B_i)}{P(A)}=\frac{\frac{1}{3}\cdot \frac{3}{12}}{\frac{4}{12}}=\frac{1}{4}.
+\]</span></p>
 </div>
 </div>
 <div id="problema-7" class="section level2" number="2.7">
@@ -526,6 +579,17 @@ summary {
 </ul>
 <div id="solución-7" class="section level3" number="2.7.1">
 <h3 number="2.7.1"><span class="header-section-number">2.7.1</span> Solución</h3>
+<p><span class="math display">\[
+P(\mbox{C en la cuarta}|CCC)=
+\frac{P(\mbox{C en la cuarta}\cap \{CCC\})}{P(CCC)}=
+\frac{P(CCCC)}{P(CCC)}=\frac{0.5^4}{0.5^3}=0.5
+.\]</span></p>
+<p>El suceso <span class="math inline">\(\mbox{2 caras en cuatro tiradas}=\{CC++,C+C+,C++C,+C+C,++CC\}.\)</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+P(\mbox{C en la cuarta}|\{CC++,C+C+,C++C,+C+C,++CC\})&amp;=&amp;\\
+\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC\})}{P(CCC)}&amp;=&amp;\\
+\frac{P(\{C++C,+C+C,++CC\})}{P(CCC)}=\frac{3\cdot 0.5^4}{4\cdot 0.5^4}=\frac{3}{4}=0.75.
+\end{eqnarray*}\]</span></p>
 </div>
 </div>
 <div id="problema-8" class="section level2" number="2.8">
@@ -537,6 +601,16 @@ summary {
 </ul>
 <div id="solución-8" class="section level3" number="2.8.1">
 <h3 number="2.8.1"><span class="header-section-number">2.8.1</span> Solución</h3>
+<p>Sea <span class="math inline">\(U_i\)</span> el suceso hemos es cogido la urna <span class="math inline">\(i\)</span> para <span class="math inline">\(i=1,2\)</span>, y <span class="math inline">\(A\)</span> el suceso la bola extraída es azul y <span class="math inline">\(R\)</span> roja.</p>
+<p>Sabemos que <span class="math inline">\(P(A/U_1)=\frac{4}{6}\)</span>, <span class="math inline">\(P(A/U_2)=\frac{2}{12}\)</span>, <span class="math inline">\(P(R/U_1)=\frac{2}{6}\)</span> y <span class="math inline">\(P(R/U_2)=\frac{10}{12}.\)</span></p>
+<p>Nos piden en primer lugar <span class="math inline">\(P(A)\)</span> sin saber de qué urna se ha extraído. Utilizaremos el teorema de la probabilidad total</p>
+<p><span class="math display">\[
+P(A)=P(A|U_1)\cdot P(U_1)+P(A|U_2)\cdot P(U_2)=
+\frac{4}{6}\cdot \frac{1}{2}+\frac{2}{12}\cdot \frac{1}{2}
+=\frac{4}{12}+\frac{1}{12}=\frac{5}{12}.
+\]</span></p>
+<p>Por otra parte</p>
+<p><span class="math inline">\(P(R)=1-P(A)=1-\frac{5}{12}=\frac{7}{12}.\)</span></p>
 </div>
 </div>
 <div id="problema-9" class="section level2" number="2.9">
@@ -544,6 +618,14 @@ summary {
 <p>Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstico de cáncer que tiene un 95% de exactitud, tanto en los que tienen cáncer como en los que no. Si el 5 por mil de la población realmente tiene cáncer, encontrar la probabilidad que un determinado individuo tenga cáncer, si la prueba ha dado positiva.</p>
 <div id="solución-9" class="section level3" number="2.9.1">
 <h3 number="2.9.1"><span class="header-section-number">2.9.1</span> Solución</h3>
+<p>Sea $C4 es el suceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer.</p>
+<p>Nos dicen que <span class="math inline">\(P(T|C)=P(T^c|C^c)=0.95\)</span> y que <span class="math inline">\(P(C)=0.005\)</span> por lo tanto <span class="math inline">\(P(T|C^c)=1-P(T^c|C^2)=0.05\)</span> y <span class="math inline">\(P(C^c)=1-P(C)=0.005\)</span>.</p>
+<p>Nos piden <span class="math display">\[
+P(C|T)=\frac{P(T|C)\cdot P(C)}{P(T)}= 
+\frac{P(T|C)\cdot P(C)}{P(T|C)\cdot P(C)+P(T|C^c)\cdot P(C^c)} =
+\frac{0.95\cdot 0.005}{0.95\cdot 0.005+(1-0.95)\cdot (1-0.005)}=
+0.087156. 
+\]</span></p>
 </div>
 </div>
 <div id="problema-10" class="section level2" number="2.10">
@@ -551,6 +633,217 @@ summary {
 <p>Se lanzan una sola vez dos dados. Si la suma de los dos dados es como mínimo 7, ¿cuál es la probabilidad que la suma sea igual a <span class="math inline">\(i\)</span>, para <span class="math inline">\(i=7,8,9,10,11,12\)</span>?</p>
 <div id="solución-10" class="section level3" number="2.10.1">
 <h3 number="2.10.1"><span class="header-section-number">2.10.1</span> Solución</h3>
+<p>Estos son los resultados de la suma sin la condición</p>
+<pre class="r"><code>dado1=rep(1:6,times=6)# dado 1
+dado2=rep(1:6,each=6) #dado 2
+resultados=data.frame(dado1,dado2,suma=dado1+dado2)
+knitr::kable(resultados)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">dado1</th>
+<th align="right">dado2</th>
+<th align="right">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">2</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">2</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">4</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">5</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">5</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">6</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">12</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>table(resultados$suma)</code></pre>
+<pre><code>## 
+##  2  3  4  5  6  7  8  9 10 11 12 
+##  1  2  3  4  5  6  5  4  3  2  1</code></pre>
+<p>Si condicionamos a que la suma es mayor o igual a 7</p>
+<pre class="r"><code>table(resultados$suma[resultados$suma&gt;=7])</code></pre>
+<pre><code>## 
+##  7  8  9 10 11 12 
+##  6  5  4  3  2  1</code></pre>
+<p>La probabilidades pedidas son</p>
+<pre class="r"><code>prop.table(table(resultados$suma[resultados$suma&gt;=7]))</code></pre>
+<pre><code>## 
+##          7          8          9         10         11         12 
+## 0.28571429 0.23809524 0.19047619 0.14285714 0.09523810 0.04761905</code></pre>
+<p>Como ejercicio formalizar con teoría de la probabilidad básica alguno de los resultados y comprobad que es correcto.</p>
 </div>
 </div>
 <div id="problema-11." class="section level2" number="2.11">
@@ -597,7 +890,7 @@ summary {
 </div>
 <div id="problema-17." class="section level2" number="2.17">
 <h2 number="2.17"><span class="header-section-number">2.17</span> Problema 17.</h2>
-<p>Una forma de aumentar la fiabilidad de un sistema es meediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cúantos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.</p>
+<p>Una forma de aumentar la fiabilidad de un sistema es mediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cuántos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.</p>
 </div>
 </div>
 <div id="ejercicios-de-independencia-de-sucesos" class="section level1" number="3">
@@ -616,7 +909,7 @@ summary {
 </div>
 <div id="problema-2." class="section level2" number="3.2">
 <h2 number="3.2"><span class="header-section-number">3.2</span> Problema 2.</h2>
-<p>Una urna contiene 4 bolas numerades con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraida tenga un 1 marcado y sea B el suceso que la segunda bola extraida tenga un 1 marcado.</p>
+<p>Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraída tenga un 1 marcado y sea B el suceso que la segunda bola extraída tenga un 1 marcado.</p>
 <ul>
 <li>¿Se puede decir que A y B son independientes?</li>
 <li>¿Y si el experimento fuera sin reposición?</li>
@@ -631,7 +924,7 @@ summary {
 <ul>
 <li>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, también lo son <span class="math inline">\(A\)</span> y <span class="math inline">\(B^c\)</span></li>
 <li>Si <span class="math inline">\(A,B,C\)</span> son independientes, también lo son <span class="math inline">\(A,B\)</span> y <span class="math inline">\(C^c\)</span></li>
-<li>¿Es cierto que si <span class="math inline">\(A,B,C\)</span> son independientes, también lo son <span class="math inline">\(A,B^c\)</span> y <span class="math inline">\(C^c\)</span>? ¿Y <span class="math inline">\(A^c, B^c\)</span> y <span class="math inline">\(C^c\)</span>? En caso de que la respuesta sea negativa, dad contraejemplos donde la propiedad falle.</li>
+<li>¿Es cierto que si <span class="math inline">\(A,B,C\)</span> son independientes, también lo son <span class="math inline">\(A,B^c\)</span> y <span class="math inline">\(C^c\)</span>? ¿Y <span class="math inline">\(A^c, B^c\)</span> y <span class="math inline">\(C^c\)</span>? En caso de que la respuesta sea negativa, dad contra ejemplos donde la propiedad falle.</li>
 </ul>
 <div id="solución-19" class="section level3" number="3.3.1">
 <h3 number="3.3.1"><span class="header-section-number">3.3.1</span> Solución</h3>

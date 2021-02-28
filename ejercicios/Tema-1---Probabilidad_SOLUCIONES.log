@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.26)  28 FEB 2021 21:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.26)  28 FEB 2021 21:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,8 +479,7 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count293
 \l__pdf_internal_box=\box55
-)
-No file Tema-1---Probabilidad_SOLUCIONES.aux.
+) (./Tema-1---Probabilidad_SOLUCIONES.aux)
 \openout1 = `Tema-1---Probabilidad_SOLUCIONES.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
@@ -548,6 +547,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 121.
 LaTeX Info: Redefining \pageref on input line 121.
 LaTeX Info: Redefining \nameref on input line 121.
+(./Tema-1---Probabilidad_SOLUCIONES.out) (./Tema-1---Probabilidad_SOLUCIONES.ou
+t)
 \@outlinefile=\write4
 \openout4 = `Tema-1---Probabilidad_SOLUCIONES.out'.
 
@@ -628,16 +629,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cf
 g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) (./Tema-1---Probabilidad_SOLUCIONES.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
 )
 \tf@toc=\write5
 \openout5 = `Tema-1---Probabilidad_SOLUCIONES.toc'.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 139.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 139.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 139.
+[1
+
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
+.map}]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 55.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
@@ -660,10 +666,7 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 160.
 
-[1
-
-{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
-.map}] [2]
+[2] [3]
 Overfull \hbox (34.23099pt too wide) detected at line 317
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
 0 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ []\OML/lmm/m/it/10 :
@@ -676,32 +679,63 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 323.
-[3] [4]
+[4] [5]
 Overfull \hbox (35.33687pt too wide) detected at line 473
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 C\OMS/lmsy/m/n/10 j\OML/lmm
 /m/it/10 T\OT1/lmr/m/n/10 ) = [] = [] = [] = 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10
  087156\OML/lmm/m/it/10 :
  []
 
-[5]
+[6]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 586.
 
-[6]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.608 luego tenemos que \$P(M\cap
-                                  V\^{}c)= 
+[7] [8] [9] (./Tema-1---Probabilidad_SOLUCIONES.aux)
+Package rerunfilecheck Info: File `Tema-1---Probabilidad_SOLUCIONES.out' has no
+t changed.
+(rerunfilecheck)             Checksum: A2CA5DE935D81503CA806B3D33A2718D;3352.
+ ) 
 Here is how much of TeX's memory you used:
- 12749 strings out of 480930
- 192986 string characters out of 5904274
- 560582 words of memory out of 5000000
- 29594 multiletter control sequences out of 15000+600000
- 463123 words of font info for 121 fonts, out of 8000000 for 9000
+ 12905 strings out of 480930
+ 195453 string characters out of 5904274
+ 559884 words of memory out of 5000000
+ 29668 multiletter control sequences out of 15000+600000
+ 464119 words of font info for 133 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,8n,74p,537b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,8n,74p,537b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
+c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
+y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-r
+m.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
+athit.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
+lm-mathex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
+/lm/lm-ts1.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
+blic/lm/lmbx10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
+1/public/lm/lmbx12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/
+type1/public/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fo
+nts/type1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dis
+t/fonts/type1/public/lm/lmmi6.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
+dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/tex
+mf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/
+texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/t169/AppData/Roaming/TinyT
+eX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/t169/AppData/Roaming/Ti
+nyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/t169/AppData/Roaming
+/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/t169/AppData/Roami
+ng/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roa
+ming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/t169/AppData/R
+oaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppDa
+ta/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/t169/Ap
+pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169
+/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/
+t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Us
+ers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Tema-1---Probabilidad_SOLUCIONES.pdf (9 pages, 321349 bytes).
 
-!  ==> Fatal error occurred, no output PDF file produced!
+PDF statistics:
+ 366 PDF objects out of 1000 (max. 8388607)
+ 332 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 35025 words of extra memory for PDF output out of 35830 (max. 10000000)
+

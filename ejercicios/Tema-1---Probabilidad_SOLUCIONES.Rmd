@@ -3,15 +3,18 @@ title: 'SOLUCIONES:  Ejercicios Tema 1 - Probabilidad.'
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  pdf_document: 
+  pdf_document:
     number_sections: yes
     toc: yes
     toc_depth: 2
-  html_document: 
+  html_document:
     number_sections: yes
     toc: yes
     toc_depth: 2
-toccolor: 'blue'
+  word_document:
+    toc: yes
+    toc_depth: '2'
+toccolor: blue
 ---
 
 ```{r setup, include=FALSE}
@@ -355,17 +358,6 @@ Se sabe que ${2 \over 3}$ de los internos de una cierta prisión son menores de 
 
 ### Solución
 
-Denotemos por $V=$ " ser menor de 25 años$ por $M=$ ser mujer y $M^c=H$ ser hombre . Los datos que nos dan son 
-$P(V)=\frac{2}{3}$, $P(H)= \frac{3}{5}$ y $P(M\cup V^c )=\frac{5}{8}.$
-
-
-
-
-Así que $\frac{5}{8}=P(M\cup V^c)=P(H^c\cup V^c)=P((H\cap V)^c)=1-P(H\cap V)$ y por lo tanto $P(H\cap V)=1- \frac{5}{8}=\frac{3}{8}.$ 
-
-Nos piden $P(M\cap V)=P(M)+P(V)-P(M\cup V)=1-P(H)+P(V)-P(M\cup V)=1-\frac{3}{5}+\frac{2}{3}-P(M\cup V).$
-
-Ahora $\frac{5}{8}=P(M\cup V^c)=P(M)-P(V)-P(M\cap V^c)=1-\frac{3}{5}+\frac{2}{3}-P(M\cap V^C).$ luego tenemos que $P(M\cap V^c)= \frac{5}{8}-1+\frac{3}{5}-\frac{2}{3}= 
 
 ## Problema `r contador=contador+1;contador`.
 
