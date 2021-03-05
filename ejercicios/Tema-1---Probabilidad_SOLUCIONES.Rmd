@@ -87,7 +87,6 @@ $P(\mbox{salir impar})= 1- P(\mbox{salir par})=1-\frac{12}{21}=`r 1-12/21`.$
 **PARTE II**
 
 Sea  $\Omega=\{1,2,3,4,5,6\}$ y nos dicen que  $P(k)= \alpha\cdot \frac{1}{k}$. 
-
 La suma de todas las probabilidades debe ser 1 así que 
 $$
 1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot \frac{1}{k}=
@@ -159,7 +158,7 @@ En una sala se hallan $n$ personas. ¿Cual es la probabilidad de que haya al men
 ### Solución
 
 
-$$P(\mbox{De n personas al menos dos nazcan el mimo mes})=1-P(\mbox{De n personas todas nazcan en distinto mes}).$$
+$$P(\mbox{Entre n personas al menos dos nazcan el mimo mes})=1-P(\mbox{Entre  n personas todas nazcan en distinto mes}).$$
 
 Casos Posibles (CP) todas las maneras de escoger $n$ meses de 12  esto son $VR_{12}^n=12^n.$.
 
@@ -195,7 +194,7 @@ Todos los pares son equiprobables y tienen por probabilidad $\frac{1}{6}.$
 
 
 
-El suceso de que la suma sea 5 es $A=\{(1,4),(4,1),(3,2),(2,3)\}$. Los sucesos  que empiezan por $i$  son $B_i=\{(i,2),(i,3),(i,4)\}$ para $i=3,4,5,6.$ Es evidente que $P(B_i)=\frac{3}{12}=\frac{1}{4}$
+El suceso de que la suma sea 5 es $A=\{(1,4),(4,1),(3,2),(2,3)\}$. Los sucesos  que empiezan por $i$  son $B_1=\{(1,2),(1,3),(i,14)\}$  y de forma similar se construyen el resto de $B_i$ $i=2,3,4$. Es evidente que $P(B_i)=\frac{3}{12}=\frac{1}{4}$
 
 
 
@@ -206,7 +205,7 @@ $$
 
 
 $$
-P(A|B_2)=\frac{P(A\cap B_2)}{P(B_2)}=\frac{P((2,3))}{\frac{4}{12}}=
+P(A|B_2)=\frac{P(A\cap B_2)}{P(B_2)}=\frac{P((2,3))}{\frac{3}{12}}=
 \frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
 $$
 
@@ -223,9 +222,8 @@ $$P(A|B_4)=\frac{P(A\cap B_4)}{P(B_4)}=\frac{P((4,1))}{\frac{3}{12}}=
 \frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.$$
 
 
-Notemos que $P(B_i)=\frac{3}{12}.$
 
-Ahora para  hacer fácil la segunda  parte  ara $i=1,2,3,4$ hacemos  
+Ahora para  hacer fácil la segunda  parte  para $i=1,2,3,4$ hacemos  
 
 $$
 P(B_i/A)=\frac{P(A/B_i)\cdot P(B_i)}{P(A)}=\frac{\frac{1}{3}\cdot \frac{3}{12}}{\frac{4}{12}}=\frac{1}{4}.
@@ -298,7 +296,7 @@ Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstic
 
 ### Solución
 
- Sea $C4 es el suceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
+ Sea $C$ es el suceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
  
  Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$ por lo tanto $P(T|C^c)=1-P(T^c|C^2)=0.05$ y $P(C^c)=1-P(C)=0.005$.
  
@@ -309,7 +307,7 @@ $$
 P(C|T)=\frac{P(T|C)\cdot P(C)}{P(T)}= 
 \frac{P(T|C)\cdot P(C)}{P(T|C)\cdot P(C)+P(T|C^c)\cdot P(C^c)} =
 \frac{0.95\cdot 0.005}{0.95\cdot 0.005+(1-0.95)\cdot (1-0.005)}=
-`r 0.95* 0.005/(0.95* 0.005 + 0.05* 0.995)`. 
+`r 0.95* 0.005/(0.95* 0.005 + (1-0.95)* (1-0.005))`. 
 $$
 
 ## Problema 10
