@@ -75,7 +75,7 @@ Suponer que se ha trucado un dado de modo que la probabilidad de que salga un n�
 Sea  $\Omega=\{1,2,3,4,5,6\}$ y nos dicen que  $P(k)= \alpha\cdot k$. 
 
 La suma de todas las probabilidades debe ser 1 así que \footnote{Utilizamos que
-$\sum_{i=1}^n k=\frac{n\cdot (n+1)}{2}$ } $1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot k=
+$\sum_{k=1}^n k=\frac{n\cdot (n+1)}{2}$ } $1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot k=
 \alpha \sum_{k=1}^6 k = \alpha \frac{6\cdot (6+1)}{2}=\alpha\cdot 21$. Así  tenemos que $\alpha=\frac{1}{21}.$
 
 
