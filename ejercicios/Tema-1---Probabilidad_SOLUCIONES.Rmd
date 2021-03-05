@@ -3,6 +3,9 @@ title: 'SOLUCIONES:  Ejercicios Tema 1 - Probabilidad.'
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
+  word_document:
+    toc: yes
+    toc_depth: '2'
   pdf_document:
     number_sections: yes
     toc: yes
@@ -11,9 +14,6 @@ output:
     number_sections: yes
     toc: yes
     toc_depth: 2
-  word_document:
-    toc: yes
-    toc_depth: '2'
 toccolor: blue
 ---
 
@@ -27,6 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Problema 1
 
 Se seleccionan al azar tres cartas sin reposición de una baraja que contiene 3 cartas rojas, 3 azules, 3 verdes y 3 negras. Especifica un espacio muestral para este experimento y halla todos los sucesos siguientes:
+
 * $A$ = "Todas las cartas seleccionadas son rojas"
 * $B$ = "Una carta es roja, 1 es verde y otra es azul"
 * $C$ = "Salen tres cartas de colores diferentes"
@@ -34,13 +35,13 @@ Se seleccionan al azar tres cartas sin reposición de una baraja que contiene 3 
 ### Solución
 
 Codificamos el espacio muestral  por la inicial  del color y el número de carta de 1 a 3 por color
-$$\Omega=\{R1, R2, R3, V1, V2, V3, A1, A2, A3  N1, N2, N3 \}.$$
+$$\Omega=\{R1, R2, R3, V1, V2, V3, A1, A2, A3, N1, N2, N3 \}.$$
 
 
 Los sucesos que nos piden son:
 
 * $A=\{(R1, R2, R3),(R1, R3, R2),(R2, R1, R3),(R2, R3, R1),(R3, R1, R2), (R3, R2, R1)\}$, 
-* $B=\{(Ri,Vj,Ak),(Ri,Aj,Vk),(Vi,Rj,Ak),(Vi,Aj,Rk),(Ai,Vj,Rk),(Ai,Rj,Vk) | \mbox{ con } i,j,k\in\{1,2,3\}\}$. El cardinal de $\left|B\right|=6\cdot 3\cdot 3\cdot 3\cdot 3= `r 6*3^3`$
+* $B=\{(Ri,Vj,Ak),(Ri,Aj,Vk),(Vi,Rj,Ak),(Vi,Aj,Rk),(Ai,Vj,Rk),(Ai,Rj,Vk) | \mbox{ con } i,j,k\in\{1,2,3\}\}$. El cardinal de $\left|B\right|=6\cdot 3\cdot 3\cdot 3= `r 6*3^3`$
 *  Se selecciona tres colores de entre los 4 ${{4}\choose {3}}=4$ casos. Cada trío de colores tiene el mismo cardinal que $B$ por lo tanto en total con   son $4\cdot 6\cdot 3^3=`r 4*6*3^3`$. 
 
 Ejercicio idead un algoritmo que escriba los objetos combinatorios en cada caso.

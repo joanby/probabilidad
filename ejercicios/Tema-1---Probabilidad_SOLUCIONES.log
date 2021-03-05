@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.26)  28 FEB 2021 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.5)  5 MAR 2021 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -184,7 +184,7 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
 ))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
+Package: parskip 2021-03-02 v2.0g non-zero parskip adjustments
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions
 .sty
@@ -236,7 +236,7 @@ File: x11nam.def 2016/05/11 v2.12 Predefined colors according to Unix/X11 (UK)
 ))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.s
 ty
-Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftex
 cmds.sty
@@ -274,13 +274,13 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 \Hy@pagecounter=\count269
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-l
 angpatches.def
-File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel la
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
 nguages
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.s
@@ -293,7 +293,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count270
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -348,7 +348,7 @@ Package hyperref Info: Driver (autodetected): hpdftex.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.de
 f
-File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.
 sty
@@ -476,7 +476,7 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend
 -pdftex.def
-File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count293
 \l__pdf_internal_box=\box55
 ) (./Tema-1---Probabilidad_SOLUCIONES.aux)
@@ -640,16 +640,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write5
 \openout5 = `Tema-1---Probabilidad_SOLUCIONES.toc'.
 
-[1
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+44.
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [1
 
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
 .map}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-55.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 1642) in paragraph at lines 157--160
+Underfull \hbox (badness 1642) in paragraph at lines 165--168
 []$\OML/lmm/m/it/10 B \OT1/lmr/m/n/10 (+20) = \OMS/lmsy/m/n/10 f\OT1/lmr/m/n/10
  (+20) (\OML/lmm/m/it/10 Ri; Vj; Ak\OT1/lmr/m/n/10 (+20) )\OML/lmm/m/it/10 ; \O
 T1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Ri; Aj; Vk\OT1/lmr/m/n/10 (+20) )\OML/lmm
@@ -664,23 +663,23 @@ mm/m/it/10 Ai; Rj; Vk\OT1/lmr/m/n/10 (+20) )\OMS/lmsy/m/n/10 j[]\OML/lmm/m/it/1
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 160.
+(amsmath)                 on input line 168.
 
 [2] [3]
-Overfull \hbox (34.23099pt too wide) detected at line 317
+Overfull \hbox (34.23099pt too wide) detected at line 325
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
 0 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ []\OML/lmm/m/it/10 :
  []
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-22.
+30.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 323.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 331.
 [4] [5]
-Overfull \hbox (35.33687pt too wide) detected at line 473
+Overfull \hbox (35.33687pt too wide) detected at line 481
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 C\OMS/lmsy/m/n/10 j\OML/lmm
 /m/it/10 T\OT1/lmr/m/n/10 ) = [] = [] = [] = 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10
  087156\OML/lmm/m/it/10 :
@@ -690,7 +689,7 @@ Overfull \hbox (35.33687pt too wide) detected at line 473
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 586.
+(amsmath)                 on input line 594.
 
 [7] [8] [9] (./Tema-1---Probabilidad_SOLUCIONES.aux)
 Package rerunfilecheck Info: File `Tema-1---Probabilidad_SOLUCIONES.out' has no
@@ -698,11 +697,11 @@ t changed.
 (rerunfilecheck)             Checksum: A2CA5DE935D81503CA806B3D33A2718D;3352.
  ) 
 Here is how much of TeX's memory you used:
- 12905 strings out of 480930
- 195453 string characters out of 5904274
- 559884 words of memory out of 5000000
+ 12903 strings out of 480930
+ 195431 string characters out of 5904275
+ 559894 words of memory out of 5000000
  29668 multiletter control sequences out of 15000+600000
- 464119 words of font info for 133 fonts, out of 8000000 for 9000
+ 464036 words of font info for 132 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,8n,74p,537b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -731,7 +730,7 @@ pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169
 /AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/
 t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Us
 ers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Tema-1---Probabilidad_SOLUCIONES.pdf (9 pages, 321349 bytes).
+Output written on Tema-1---Probabilidad_SOLUCIONES.pdf (9 pages, 321076 bytes).
 
 PDF statistics:
  366 PDF objects out of 1000 (max. 8388607)

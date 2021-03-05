@@ -64,12 +64,8 @@ $$\Omega=\{1,2, 3, 4,  5, 6\}.$$
 Una v.a $X:\Omega\to\mathbb{R}$
 sobre este espacio queda definida por 
 
-\begin{equation*}
-\begin{split}
-X(1)&=1,X(2)=2,X(3)=3,\\
-X(4)&=4,X(5)=5,X(6)=6.
-\end{split}
-\end{equation*}
+$$X(1)=1, X(2)=2, X(3)=3, (4)=4, X(5)=5, X(6)=6.$$
+
 
 * Ahora el suceso $A=\{2, 4, 6\}$, es decir "salir
 número par", es equivalente a $\{X=2,X=4,X=6\}$.
@@ -384,8 +380,6 @@ entonces se cumple que $P(X< x_0)=F_X(x_0^{-})$ y que $P(X=x_0)=F_X(x_0)-F_X(x_0
 
 * Se cumple que $\displaystyle \lim_{x\to\infty} F_{X}(x)=1$; $\displaystyle \lim_{x\to-\infty}F_{X}(x)=0$.
 * Toda función $F$ verificando las propiedades anteriores es función de distribución de alguna v.a. $X$.
-* $P(X>x)=1-F_{X}(x)$.
-* Dados $a,b\in \mathbb{R}$ con $a<b$ $$P(a<X\leq b)=F_{X}(b)-F_{X}(a).$$
 
 ## Advertencia desigualdades estrictas
 
@@ -637,7 +631,7 @@ gráficos.
 Queremos que  la paleta tenga dos botones con las opciones color rojo y color azul.
 Como hemos programado a gran velocidad resulta que el programa tiene un error; cada vez que
 se abre la paleta los colores se colocan al azar (con igual probabilidad) en cada botón,
-así que no sabemos en què color hemos de pinchar. 
+así que no sabemos en qué color hemos de pinchar. 
 
 Además, como nos sobraron $15$ segundos
 para hacer el programa y pensando en la  comodidad del usuario, la paleta se cierra después de haber seleccionado  un
@@ -809,7 +803,7 @@ se la denomina desviación típica  o estándar de $X$.
 <l class="prop">Propiedad </l>
 
 * Si $X$ es una v.a. discreta con función de probabilidad $P_X$ su varianza es 
- $$\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2\¢dot  P_{X}(x).$$
+ $$\sigma_{X}^2=Var(X)=E((X-E(X))^2)=\sum_{x}(x-E(X))^2\cdot  P_{X}(x).$$
 * Sea $X$ una v.a.
  $$Var(X)=E(X^2)-(E(X))^2=\sum_{x} x^2\cdot  P_{X}(X)-(E(X))^2$$
   
@@ -834,8 +828,8 @@ $$
 ## Ejemplo
 
 
-<div class="example"> 
-**Ejemplo: múmero de errores (continuación)**
+<div class=example"> 
+**Ejemplo: número de errores (continuación)**
 
 Calculemos en  el ejemplo anterior la varianza del número de errores.
 </div>
@@ -971,7 +965,7 @@ posibles partida por la *medida* de los casos favorables.
 
 **Ejemplo: distancia dardo centro de la diana** 
 
-Supongamos que lanzamos un dardo a una diana de radio $1$, de forma que sea *equiprobable* cualquier distancia al centro (¡Cuidado! esto no es equivalentea que cualquier punto de la diana  sea *equiprobable*).
+Supongamos que lanzamos un dardo a una diana de radio $1$, de forma que sea *equiprobable* cualquier distancia al centro (¡Cuidado! esto no es equivalente que cualquier punto de la diana  sea *equiprobable*).
 
 Consideremos la v.a. continua $X=$ distancia al centro de la diana.
 </div>
