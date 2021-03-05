@@ -3,13 +3,13 @@ title: 'SOLUCIONES:  Ejercicios Tema 1 - Probabilidad.'
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  word_document:
-    toc: yes
-    toc_depth: '2'
   pdf_document:
     number_sections: yes
     toc: yes
     toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     number_sections: yes
     toc: yes
@@ -159,7 +159,7 @@ En una sala se hallan $n$ personas. ¿Cual es la probabilidad de que haya al men
 ### Solución
 
 
-$$P(\mbox{De n personas menos dos nazcan el mimo mes})=1-P(\mbox{De n personas tosdas nazca en distinto mes}).$$
+$$P(\mbox{De n personas al menos dos nazcan el mimo mes})=1-P(\mbox{De n personas todas nazcan en distinto mes}).$$
 
 Casos Posibles (CP) todas las maneras de escoger $n$ meses de 12  esto son $VR_{12}^n=12^n.$.
 
