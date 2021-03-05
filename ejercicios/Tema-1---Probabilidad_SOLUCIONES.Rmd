@@ -139,12 +139,12 @@ Se apuntan  tres corredores A, B y  C a una carrera.
 * ¿Cuál es la probabilidad de que A acabe antes que B y C?
 
 ### Solución
-LoS casos posibles CP son $3!=6$
+Los casos posibles CP son $3!=6$
 
 El corredor A puede acabar antes de C siendo primero o segundo  en cada caso $2!$ casos (hacer un algoritmo que los escriba).
 
 
-$$P(\mbox{A acabe antes de C})=\frac{CF}{CP}=\frac{2!+2!}{3!}=\frac{4}{6}=\frac{2}{3}.$$
+$$P(\mbox{A acabe antes de C})=\frac{CF= \{ABC,ACB,BAC\}}{CP}=\frac{3}{3!}=\frac{3}{6}=\frac{1}{2}.$$
 
 
 
