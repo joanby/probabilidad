@@ -234,7 +234,7 @@ F_{X}(x)=P(X\leq x) & = & \sum_{i=0}^x P_X(i)\\
 & = & 
 \left\{
 \begin{array}{ll}
-0 & \mbox{ si } x\leq 0\\\displaystyle
+0 & \mbox{ si } x<0\\\displaystyle
 \sum_{i=0}^k {n\choose i}\cdot  p^i \cdot (1-p)^{n-i} & \mbox{ si } 
 \left\{
   \begin{array}{l} 
@@ -253,7 +253,7 @@ $$
 
 ## Números binomiales con R
 
-Los números binomiales alculan el número de equipos de baloncesto distintos que  ($k=5$ jugadores) se pueden hacer con 6 jugadores ($n=6$).
+Los números binomiales calculan el número de equipos de baloncesto distintos que  ($k=5$ jugadores) se pueden hacer con 6 jugadores ($n=6$).
 
 Es decir cuántas  maneras distintas hay para elegir (*choose*) 5 jugadores en un conjunto de 6 jugadores. Todo el mundo diría 
 ¡¡¡6!!!. Efectivamente con R es 
@@ -1524,16 +1524,18 @@ En general tendremos un experimento de Bernoulli con probabilidad de éxito $0<p
 ## Distribución binomial negativa
 
 Si representamos como es habitual un suceso como una cadena de F's y E's, para $n=2$, algunos sucesos elementales serán:
- $$\{EE,FEE,EFE, FFEE,FEFE,EFFE,FFFEE,FFEFE,FEFFE,EFFFE\}.$$
+ $$\small{\{EE,FEE,EFE, FFEE,FEFE,EFFE,FFFEE,FFEFE,FEFFE,EFFFE\}.}$$
  
 Calculemos algunas probabilidades para $n=2$:
 $$
+\small{
 \begin{array}{rl}
 P(X=0) & =P(\{EE\})=p^2, \\
 P(X=1) & =P(\{FEE,EFE\})=2\cdot (1-p)\cdot p^2, \\
 P(X=2) & =P(\{FFEE,FEFE,EFFE\})=3\cdot (1-p) 2\cdot p^2, \\
 P(X=3) & =P(\{FFFEE,FFEFE,FEFFE,EFFFE\})=4\cdot (1-p)^3\cdot p^2.
 \end{array}
+}
 $$
 
 ## Distribución binomial negativa

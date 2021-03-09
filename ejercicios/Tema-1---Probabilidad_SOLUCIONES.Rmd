@@ -370,6 +370,60 @@ Consideramos el siguiente experimento aleatorio: sacamos $5$ números al azar si
 
 ### Solución  
 
+Da igual que los contemos extrayendo de uno en uno o  de golpe lo importante es que son sin reposición; de 1 a 20  hay 6 mútiplos de 3 
+$\{3,6,9,12,15,18\}$:
+
+
+**Metemos la mano y sacamos 5**:
+
+
+Casos Posibles (CP): ${20 \choose 5}$
+
+Casos Favorables (CF):  Escogemos dos múltiplos de 3  entre 6 y por cada elección escogemos 3 no múltiplos entre 20-6=14 número  por lo tanto hay ${6 \choose 2}\cdot{{20-6} \choose 3}={6 \choose 2}\cdot{{14} \choose 3}$.
+
+Luego la probabilidad de exactamente dos múltiplos de 3 es  
+
+$$
+P(\mbox{\{2 múltiplos de 3\}} )=\frac{CF}{CP}=\frac{{6 \choose 2}\cdot{14 \choose 3}}{{20 \choose 5}}=`r round(choose(6,2)*choose(14,3)/choose(20,5),7) `
+$$
+```{r}
+choose(6,2)
+choose(14,3)
+choose(20,5)
+
+# la probabilidad es 
+choose(6,2)*choose(14,3)/choose(20,5)
+```
+
+**Sacamos 5 en orden sin reposición**:
+
+
+Casos Posibles (CP): $V_{5}^{20}=\frac{20!}{(20-5)!}.$
+
+Casos Favorables (CF):  Escogemos dos posiciones para colcar  múltiplos de 3  ahora en esas posiciones hacemos $V_2^6$ de los 6 múltiplo y luego en las tres restantes hacemos variaciones de los 14 no múltiplos $V_3^{14}$  por lo tanto hay 
+${5 \choose 2}\cdot V_2^6\cdot V_3^14$.
+
+Luego la probabilidad de exactamente dos múltiplos de 3 es  
+
+$$
+P(\mbox{\{2 múltiplos de 3\}} )=\frac{CF}{CP}=\frac{{5\choose 2}\cdot V_{2}^{6}\cdot V_3^{14}}{V_{5}^{20}}=
+`r round(choose(5,2)*factorial(6)/factorial(6-2)*factorial(14)/factorial(14-3)/(factorial(20)/factorial(20-5)),7)`
+$$
+
+```{r}
+choose(5,2)
+factorial(6)/factorial(6-2)
+factorial(14)/factorial(14-3)
+factorial(20)/factorial(20-5)
+# La probabilidad es 
+
+choose(5,2)*factorial(6)/factorial(6-2)*
+  factorial(14)/factorial(14-3)/(factorial(20)/factorial(20-5))
+
+```
+
+
+COmo se observa el rsultado de la probabilidad es ¡¡el mismo!!.
 ## Problema `r contador=contador+1;contador`.
 
 En una hucha hay $10$ bolas, numeradas del $1$ al $10$. Las $4$ primeras bolas, o sea, las bolas $1,2,3,4$ son blancas. Las bolas $5,6$ son negras y las bolas restantes son rojas. Sacamos dos bolas sin reposición. Sabiendo que la segunda bola es de color negro, encuentra la probabilidad $p$ de que la primera bola sea blanca.

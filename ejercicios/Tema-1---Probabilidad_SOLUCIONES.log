@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.5)  5 MAR 2021 15:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.8)  9 MAR 2021 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,43 +665,49 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 168.
 
-[2] [3]
-Overfull \hbox (34.23099pt too wide) detected at line 325
+[2]
+Overfull \hbox (20.14015pt too wide) detected at line 312
+\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
+0 P\OT1/lmr/m/n/10 ([])\OML/lmm/m/it/10 :
+ []
+
+[3]
+Overfull \hbox (34.23099pt too wide) detected at line 324
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
 0 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ []\OML/lmm/m/it/10 :
  []
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-30.
+29.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 331.
-[4] [5]
-Overfull \hbox (35.33687pt too wide) detected at line 481
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 330.
+[4]
+Overfull \hbox (35.33687pt too wide) detected at line 479
 \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 C\OMS/lmsy/m/n/10 j\OML/lmm
 /m/it/10 T\OT1/lmr/m/n/10 ) = [] = [] = [] = 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10
  087156\OML/lmm/m/it/10 :
  []
 
-[6]
+[5] [6]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 594.
+(amsmath)                 on input line 592.
 
-[7] [8] [9] (./Tema-1---Probabilidad_SOLUCIONES.aux)
+[7] [8] [9] [10] (./Tema-1---Probabilidad_SOLUCIONES.aux)
 Package rerunfilecheck Info: File `Tema-1---Probabilidad_SOLUCIONES.out' has no
 t changed.
-(rerunfilecheck)             Checksum: A2CA5DE935D81503CA806B3D33A2718D;3352.
+(rerunfilecheck)             Checksum: 6453D3941C464EEEAC6CF766D0AF82FF;3230.
  ) 
 Here is how much of TeX's memory you used:
- 12903 strings out of 480930
- 195431 string characters out of 5904275
- 559894 words of memory out of 5000000
- 29668 multiletter control sequences out of 15000+600000
- 464036 words of font info for 132 fonts, out of 8000000 for 9000
+ 12904 strings out of 480930
+ 195422 string characters out of 5904275
+ 559859 words of memory out of 5000000
+ 29666 multiletter control sequences out of 15000+600000
+ 464202 words of font info for 134 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,8n,74p,537b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -730,11 +736,11 @@ pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169
 /AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/
 t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Us
 ers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Tema-1---Probabilidad_SOLUCIONES.pdf (9 pages, 321474 bytes).
-
+Output written on Tema-1---Probabilidad_SOLUCIONES.pdf (10 pages, 326804 bytes)
+.
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
- 107 named destinations out of 1000 (max. 500000)
- 35025 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 35017 words of extra memory for PDF output out of 35830 (max. 10000000)
 
