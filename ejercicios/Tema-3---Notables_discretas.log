@@ -1,24 +1,24 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.11)  14 JAN 2021 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.8)  10 MAR 2021 19:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Tema-3---Notables_discretas.tex
 (./Tema-3---Notables_discretas.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-01-09> xparse <2020-03-03> (c:/Users/t169/AppData/Ro
-aming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2021-02-18> (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
+dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count177
-\c@section=\count178
-\c@subsection=\count179
-\c@subsubsection=\count180
-\c@paragraph=\count181
-\c@subparagraph=\count182
-\c@figure=\count183
-\c@table=\count184
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -90,13 +90,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 y
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count185
+\inf@bad=\count187
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count186
-\leftroot@=\count187
+\uproot@=\count188
+\leftroot@=\count189
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count188
-\DOTSCASE@=\count189
+\classnum@=\count190
+\DOTSCASE@=\count191
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -105,15 +105,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen141
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count190
-\c@MaxMatrixCols=\count191
+\macc@depth=\count192
+\c@MaxMatrixCols=\count193
 \dotsspace@=\muskip16
-\c@parentequation=\count192
-\dspbrk@lvl=\count193
+\c@parentequation=\count194
+\dspbrk@lvl=\count195
 \tag@help=\toks17
-\row@=\count194
-\column@=\count195
-\maxfields@=\count196
+\row@=\count196
+\column@=\count197
+\maxfields@=\count198
 \andhelp@=\toks18
 \eqnshift@=\dimen142
 \alignsep@=\dimen143
@@ -156,22 +156,23 @@ tim
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .sty
-Package: microtype 2020/12/07 v2.8 Micro-typographical refinements (RS)
+Package: microtype 2021/02/25 v2.8b Micro-typographical refinements (RS)
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
 )
 \MT@toks=\toks24
-\MT@count=\count197
+\MT@count=\count199
 LaTeX Info: Redefining \textls on input line 788.
 \MT@outer@kern=\dimen148
 LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
-\MT@listname@count=\count198
+\MT@listname@count=\count266
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 -pdftex.def
-File: microtype-pdftex.def 2020/12/07 v2.8 Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2021/02/25 v2.8b Definitions specific to pdftex (RS)
+
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
 \MT@outer@space=\skip52
@@ -180,10 +181,10 @@ Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .cfg
-File: microtype.cfg 2020/12/07 v2.8 microtype main configuration file (RS)
+File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
 ))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
+Package: parskip 2021-03-02 v2.0g non-zero parskip adjustments
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions
 .sty
@@ -200,7 +201,7 @@ Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.s
 ty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count199
+\etb@tempcnta=\count267
 )) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.st
 y
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -227,7 +228,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.s
 ty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftex
 cmds.sty
@@ -261,13 +262,18 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen149
-\Hy@linkcounter=\count266
-\Hy@pagecounter=\count267
+\Hy@linkcounter=\count268
+\Hy@pagecounter=\count269
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
+)
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-l
+angpatches.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+nguages
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.s
 ty
@@ -277,26 +283,26 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 .sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count268
-Package hyperref Info: Option `unicode' set `true' on input line 4338.
+\Hy@SavedSpaceFactor=\count270
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4464.
-Package hyperref Info: Link nesting OFF on input line 4469.
-Package hyperref Info: Hyper index ON on input line 4472.
-Package hyperref Info: Plain pages OFF on input line 4479.
-Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Option `unicode' set `true' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count269
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count271
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5076.
+LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen150
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
@@ -307,18 +313,18 @@ calc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count270
+\Fld@menulength=\count272
 \Field@Width=\dimen151
 \Fld@charsize=\dimen152
-Package hyperref Info: Hyper figures OFF on input line 6347.
-Package hyperref Info: Link nesting OFF on input line 6352.
-Package hyperref Info: Hyper index ON on input line 6355.
-Package hyperref Info: backreferencing OFF on input line 6362.
-Package hyperref Info: Link coloring OFF on input line 6367.
-Package hyperref Info: Link coloring with OCG OFF on input line 6372.
-Package hyperref Info: PDF/A mode OFF on input line 6377.
-LaTeX Info: Redefining \ref on input line 6417.
-LaTeX Info: Redefining \pageref on input line 6421.
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.s
 ty
@@ -326,15 +332,15 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count271
-\c@Item=\count272
-\c@Hfootnote=\count273
+\Hy@abspage=\count273
+\c@Item=\count274
+\c@Hfootnote=\count275
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.de
 f
-File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.
 sty
@@ -342,8 +348,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count274
-\c@bookmark@seq@number=\count275
+\Fld@listcount=\count276
+\c@bookmark@seq@number=\count277
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/reru
 nfilecheck.sty
@@ -364,9 +370,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count276
-\Gm@cntv=\count277
-\c@Gm@tempcnt=\count278
+\Gm@cnth=\count278
+\Gm@cntv=\count279
+\c@Gm@tempcnt=\count280
 \Gm@bindingoffset=\dimen153
 \Gm@wd@mp=\dimen154
 \Gm@odd@mp=\dimen155
@@ -398,8 +404,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend
 -pdftex.def
-File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count279
+File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count281
 \l__pdf_internal_box=\box49
 ) (./Tema-3---Notables_discretas.aux)
 \openout1 = `Tema-3---Notables_discretas.aux'.
@@ -454,7 +460,7 @@ Package hyperref Info: Link coloring OFF on input line 67.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.st
 y
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.s
 ty
@@ -464,7 +470,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count280
+\c@section@level=\count282
 )
 LaTeX Info: Redefining \ref on input line 67.
 LaTeX Info: Redefining \pageref on input line 67.
@@ -580,13 +586,13 @@ nged.
 (rerunfilecheck)             Checksum: 9AF6106CF205435EF8A80A6EC1D3F9EF;273.
  ) 
 Here is how much of TeX's memory you used:
- 12399 strings out of 481211
- 185465 string characters out of 5912143
- 515963 words of memory out of 5000000
- 29062 multiletter control sequences out of 15000+600000
+ 11879 strings out of 480930
+ 179681 string characters out of 5904275
+ 522988 words of memory out of 5000000
+ 28819 multiletter control sequences out of 15000+600000
  450436 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,6n,74p,532b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,6n,74p,532b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.en
 c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
 y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-t

@@ -1532,7 +1532,7 @@ $$
 \begin{array}{rl}
 P(X=0) & =P(\{EE\})=p^2, \\
 P(X=1) & =P(\{FEE,EFE\})=2\cdot (1-p)\cdot p^2, \\
-P(X=2) & =P(\{FFEE,FEFE,EFFE\})=3\cdot (1-p) 2\cdot p^2, \\
+P(X=2) & =P(\{FFEE,FEFE,EFFE\})=3\cdot (1-p)^2\cdot p^2, \\
 P(X=3) & =P(\{FFFEE,FFEFE,FEFFE,EFFFE\})=4\cdot (1-p)^3\cdot p^2.
 \end{array}
 }
@@ -1666,7 +1666,7 @@ Sea $X$ la v.a que nos da el número de  intentos fallidos hasta abrir  abrir la
 Estamos interesado en modelar  este problema.  La preguntas son:
 
 1. ¿Cuál es la distribución de probabilidad de $X$ la v.a que nos da el número fallos  hasta abrir la puerta? 
-2. ¿Cuál es la función de probabilidad y de distribución del $X$?
+2. ¿Cuál es la función de probabilidad y de distribución de $X$?
 3. ¿Cuál es la probabilidad de fallar  exactamente  5 veces antes de abrir la puerta?
 4. ¿Cuál es la probabilidad de fallar más de  4?
 5. ¿Cuál es  el número esperado de fallos? ¿Y su desviación típica?
@@ -1700,7 +1700,7 @@ En general la función de probabilidad  de una $BN(n,p)$ es
 
 
 $$
-P_X(X=k)=
+P_X(k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
 {k+n-1\choose n-1} \cdot (1-p)^{k}\cdot p^n & \mbox{si }  k=0,1,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.
@@ -1708,7 +1708,7 @@ $$
 
 Si aplicamos la expresión anterior para $n=2$ y $p=0.1$, obtenemos:
 $$
-P_X(X=k)=
+P_X(k)=P(X=k)=
 \left\{
 \begin{array}{cc} 
 {k+2-1\choose 2-1} \cdot 0.9^{k}\cdot 0.1^2 & \mbox{si }  k=0,1,2,\ldots \\ 0 & \mbox{en otro caso.}\end{array}\right.

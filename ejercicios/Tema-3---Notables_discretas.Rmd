@@ -1,0 +1,59 @@
+---
+title: "Ejercicios Tema 3 - Distribuciones Notables: discretas"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Ejercicios distribuciones notables discretas
+
+1. Se lanzan a la vez 5 dados (de parchís)  bien balanceados. Sea $X$ el número  
+de unos que  se observan en la  cara superior del dado.
+Calcular la esperanza de $X$, la varianza de  $X$,
+$P(1\leq X<4)$ y $P(X\geq 2).$ 
+
+3. El  10\% de los usb fabricados por una marca tienen algún defecto (pero son baratos). Si se seleccionan al azar 10 de los usb  fabricados por esta fábrica, ¿cuáles la probabilidad  de que ninguno sea defectuoso? ¿Cuántos usb defectuosos debemos esperar?
+
+4. Si $Y$ sigue una distribución  binomial con media
+$\mu_Y=6$ y varianza $\sigma_Y^2=4$. Calcular  la distribución de $Y$, es decir, encontrad los valores de  $n$ y $p$.
+
+5. Un fabricante de *bombillas inteligentes*  controladas por *Bluetooth* las vende a sus distribuidores  en lotes de 20. Supongamos que la probabilidad de que una bombillas inteligentes esté defectuosa es del  $0.05$. 
+  + a) ¿Cuál es el número de bombillas defectuosas por paquete.
+  + b) ¿Cuál  es la probabilidad de  que un determinado lote  no
+tenga ninguna bombilla  defectuosa?
+
+4. Una urna contiene 10 bolas, una de color negro negra y las demás blancas. Sea $Z$ el número de extracciones con reposición necesarias para extraer la bola negra. ¿Cuál es la  distribución  de la variable  $Z$? 
+
+5. Se lanza una moneda al aire hasta que sale  cara. Supongamos que cada  tirada es independiente  de las otras y que la probabilidad de que salga  cara cada vez es $p$.  
++ a) Demostrar que la probabilidad de que hagan falta un número impar de lanzamientos es ${p\over 1-q^2}$ donde $q=1-p$. 
++ b) Encontrar  el valor de $p$ tal que la probabilidad de que  necesitemos un número impar de intentos sea $0.6$.
++ c) ¿Existe un valor de $p$ tal que la probabilidad de que haga falta un nombre
+impar de intentos sea $0.5$?
+
+6. Se ha observado que el aforo  medio de  vehículos  en un determinado paso  de un camino rural es de 3 coches/hora.
+Suponer que los instantes en que pasan automóviles son independientes. Sea
+$X$ el número de coches  que pasas por este lugar  en un  intervalo de 20 minutos.
+Calcular $P(X=0)$ y $P(X\geq 2)$.
+
+7. La proporción de niños pelirrojos es 1  cada 10.000. En una gran ciudad  se produjeron 5.000
+nacimientos en 2020, aproximar por la distribución de Poisson la probabilidad
+que ninguno  de los nacidos ese año sea pelirrojo. Aproximar
+la probabilidad de que nazca  exactamente 1 niño pelirrojo y  la de que hayan
+nacido al menos 2 pelirrojos.
+
+8. Un  vendedor de vehículos usados utiliza la  web ComproMotos. Supongamos que el número de ventas  sigue un proceso de Poisson  de  parámetro $\lambda =1$ vehículo  por semana. 
++ a) ¿Cuál es la probabilidad que haya exactamente 3 ventas en un periodo de 2
+semanas? ¿Y  como mínimo  3 ventas? ¿Y cómo máximo 3 ventas?
++ b) ¿Cuál es la probabilidad de que pasen 3 periodos de   2
+semanas consecutivas sin ventas?
+
+9. Lanzamos un moneda hasta que obtenemos como mínimo  3 caras y 3 cruces. Encontrar la probabilidad de que el juego no se acabe en 10  lanzamientos.
+
