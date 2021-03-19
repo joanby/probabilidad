@@ -1,9 +1,10 @@
 ---
 title: "Soluciones ejercicos variables aleatorias discretas"
-author: " Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+author: ' Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir'
 date: ''
 output:
-  ioslides_presentation: 
+  beamer_presentation: default
+  ioslides_presentation:
     css: Mery_style.css
     keep_md: no
     logo: Images/matriz_mov.gif
@@ -115,7 +116,7 @@ $$Var(Y)=n\cdot p\cdot (1-p)=\sigma_Y^2=4.$$
 
 
 Ahora  $p=\frac{6}{n}$ y sustituyendo en la segunda igualdad  $n\cdot \frac{6}{n} \cdot (1-\frac{6}{n})=4$; de donde 
-$6  \cdot -36= 4  \cdot n $ y  $2 \cdot =36$ finalmente  $n=18$ y $p=\frac{6}{18}=\frac13.$
+$6  \left(1-\frac6n\right)= 4$ y  $2 \cdot =36$ finalmente  $n=18$ y $p=\frac{6}{18}=\frac13.$
 
 
 ## Ejercicio 4 
@@ -143,13 +144,13 @@ $P(X=0)=`dbinom(0,size=20,prob=0.05)`=`r dbinom(0,size=20,prob=0.05)`.$
 
 ## Ejercicio 5 Solución
 
-La sextracciones son con reposición, así en cada extracción la probabilidad de extraer negra es $p=\frac{1}{10}$.
+La extracciones son con reposición, así en cada extracción la probabilidad de extraer negra es $p=\frac{1}{10}$.
 
-La variables $X$  tendrá una distribución geométrica  $Ge(p=0.1)$  con dominio $D_X=\{1,2,3,\ldots}$ ya que se se cuanta la extracción en la que sale negra y se acaba el experimento.
+La variables $X$  tendrá una distribución geométrica  $Ge(p=0.1)$  con dominio $D_X=\{1,2,3,\ldots\}$ ya que se se cuanta la extracción en la que sale negra y se acaba el experimento.
 
 Su función de probabilidad es $P(X=x)=(1-p)^{x-1}\cdot p=0.9^x \cdot 0.1$ para $x=1,2,3\ldots.$ 
 
-Ejercicio dar su función de disyribución su vañlor esperado y su varianza.
+Ejercicio dar su función de distibución su vañlor esperado y su varianza.
 
 
 
@@ -190,7 +191,7 @@ $p=0.6\cdot (1-(1-p)^2$ entonces $p=0.6\left(1-1+2 p-p^2\right)$ operando
 $0.6 p^2-0.2 p=0$ luego  $p \cdot (0.6 p -0.2)=0$.
 
 
-Las soluciones son  $p=0$ que no es posible  y  p=\frac{1}{3}$ que es la única solución.
+Las soluciones son  $p=0$ que no es posible  y  $p=\frac{1}{3}$ que es la única solución.
 
 
 Repitiendo la ecuación anterior para que la probabilidad de impar sea $0.5$ obtenemos que  la único solución es $p=0$ así que no es posible.
@@ -206,15 +207,15 @@ Calcular $P(X=0)$ y $P(X\geq 2)$.
 
 ## Ejercicio 7 Solución 
 
-Bajo estas condiciones la variable aleatoria $X_t$ número  coches en t horas  sólo puede seguir la distribución notable con promedio de llegadas  por hora $\lambda=3/3$ y por lo tanto el proceso de Poisson asociado $X_t$ sigue una ley de probabilidad   $Po(\lambda \cdot t =1\cdot t=t)$
+Bajo estas condiciones la variable aleatoria $X_t$ número  coches en t horas  sólo puede seguir la distribución notable con promedio de llegadas  por hora $\lambda=3$ y por lo tanto el proceso de Poisson asociado $X_t$ sigue una ley de probabilidad   $Po(\lambda \cdot t =3\cdot t)$
 
 
 Nos pide  $P(X_{20}=0)$ y que $P(X_{20}\geq 2 )$
 
-Sabemos que $P(X_{20}=x)=\frac{1^x}{x!} e^{-1}$ para $x=0,1,2,\ldots.$
+Sabemos que $P(X_{20}=x)=\frac{3^x}{x!} e^{-3}$ para $x=0,1,2,\ldots.$
 
 
-Así que $P(X_{20}=0)=\frac{1^x}{x!} e^{-1}=e^{-1}=`r exp(-1)`.$
+Así que $P(X_{20}=0)=\frac{3^0}{0!} e^{-3}=e^{-3}=`r exp(-3)`.$
 
 
 ## Ejercicio 7 Solución 
@@ -223,12 +224,12 @@ $$
 \begin{array}{lll}
 P(X_{20}\geq 2 )&=&P(X_{20}\leq 1 )\sum_{x=0}^1 P(X_{20}=x)\\
 &=&
-\sum_{x=0}^2 \frac{1^x}{x!} e^{-1}
+\sum_{x=0}^2 \frac{3^x}{x!} e^{-3}
 \\
 &=&
-\frac{1^0}{0!} e^{-1}+\frac{1^1}{1!} e^{-1}\\
+\frac{3^0}{0!} e^{-3}+\frac{3^1}{1!} e^{-3}\\
 &=&
-e^{-1}\left(1+1\right)=2\cdot e^{-1}=`r 2*exp(-1)`.
+e^{-3}\left(1+3\right)=4\cdot e^{-3}=`r 4*exp(-3)`.
 \end{array}
 $$
 
@@ -241,15 +242,10 @@ Con R
 
 
 ```{r dd, size="small"}
-dpois(0,lambda=1)# P(X=1)
-ppois(1,lambda=1)# P(X<=1)
-1-ppois(1,lambda=1)# 1-P(X<=1)=P(X>=2)
-ppois(1,lambda=1,lower.tail = FALSE)# P(X>1)=P(X>=2)
+dpois(0,lambda=3)# P(X=1)
+ppois(1,lambda=3)# P(X<=1)
+1-ppois(1,lambda=3)# 1-P(X<=1)=P(X>=2)
+ppois(1,lambda=3,lower.tail = FALSE)# P(X>1)=P(X>=2)
 
 ```
-
-
-
-
-
 
