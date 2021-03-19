@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.8)  10 MAR 2021 19:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.17)  19 MAR 2021 08:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -156,7 +156,7 @@ tim
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .sty
-Package: microtype 2021/02/25 v2.8b Micro-typographical refinements (RS)
+Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
@@ -164,14 +164,14 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 )
 \MT@toks=\toks24
 \MT@count=\count199
-LaTeX Info: Redefining \textls on input line 788.
+LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen148
-LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
 \MT@listname@count=\count266
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 -pdftex.def
-File: microtype-pdftex.def 2021/02/25 v2.8b Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2021/03/14 v2.8c Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
@@ -181,10 +181,10 @@ Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .cfg
-File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
+File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
 ))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2021-03-02 v2.0g non-zero parskip adjustments
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions
 .sty
@@ -586,10 +586,10 @@ nged.
 (rerunfilecheck)             Checksum: 9AF6106CF205435EF8A80A6EC1D3F9EF;273.
  ) 
 Here is how much of TeX's memory you used:
- 11879 strings out of 480930
- 179681 string characters out of 5904275
- 522988 words of memory out of 5000000
- 28819 multiletter control sequences out of 15000+600000
+ 11887 strings out of 480921
+ 179935 string characters out of 5904010
+ 523192 words of memory out of 5000000
+ 28836 multiletter control sequences out of 15000+600000
  450436 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,6n,74p,532b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -610,7 +610,7 @@ ist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf
 -dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming/TinyT
 eX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Tema-3---Notables_discretas.pdf (2 pages, 176407 bytes).
+Output written on Tema-3---Notables_discretas.pdf (2 pages, 176411 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream

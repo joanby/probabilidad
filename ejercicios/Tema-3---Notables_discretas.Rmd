@@ -3,9 +3,9 @@ title: "Ejercicios Tema 3 - Distribuciones Notables: discretas"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -26,7 +26,7 @@ $P(1\leq X<4)$ y $P(X\geq 2).$
 $\mu_Y=6$ y varianza $\sigma_Y^2=4$. Calcular  la distribución de $Y$, es decir, encontrad los valores de  $n$ y $p$.
 
 5. Un fabricante de *bombillas inteligentes*  controladas por *Bluetooth* las vende a sus distribuidores  en lotes de 20. Supongamos que la probabilidad de que una bombillas inteligentes esté defectuosa es del  $0.05$. 
-  + a) ¿Cuál es el número de bombillas defectuosas por paquete.
+  + a) ¿Cuál es el número esperado de bombillas defectuosas por paquete.
   + b) ¿Cuál  es la probabilidad de  que un determinado lote  no
 tenga ninguna bombilla  defectuosa?
 
