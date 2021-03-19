@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.17)  19 MAR 2021 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.17)  19 MAR 2021 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -568,14 +568,14 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
 
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 138.
+(amsmath)                 on input line 137.
 
 [1
 
@@ -586,13 +586,13 @@ nged.
 (rerunfilecheck)             Checksum: 9AF6106CF205435EF8A80A6EC1D3F9EF;273.
  ) 
 Here is how much of TeX's memory you used:
- 11887 strings out of 480921
- 179935 string characters out of 5904010
+ 11889 strings out of 480921
+ 179955 string characters out of 5904010
  523192 words of memory out of 5000000
  28836 multiletter control sequences out of 15000+600000
- 450436 words of font info for 101 fonts, out of 8000000 for 9000
+ 450519 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,6n,74p,532b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,6n,74p,532b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.en
 c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
 y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-t
@@ -610,7 +610,7 @@ ist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf
 -dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming/TinyT
 eX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Tema-3---Notables_discretas.pdf (2 pages, 176411 bytes).
+Output written on Tema-3---Notables_discretas.pdf (2 pages, 176393 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
