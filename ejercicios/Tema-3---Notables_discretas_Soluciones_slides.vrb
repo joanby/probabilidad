@@ -1,0 +1,43 @@
+\frametitle{Ejercicio 7 solución}
+\protect\hypertarget{ejercicio-7-soluciuxf3n-2}{}
+Con R
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dpois}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{)}\CommentTok{\# P(X=1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3678794
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ppois}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{)}\CommentTok{\# P(X\textless{}=1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7357589
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\OperatorTok{{-}}\KeywordTok{ppois}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{)}\CommentTok{\# 1{-}P(X\textless{}=1)=P(X\textgreater{}=2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2642411
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ppois}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{,}\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{)}\CommentTok{\# P(X\textgreater{}1)=P(X\textgreater{}=2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2642411
+\end{verbatim}

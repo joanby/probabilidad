@@ -1,0 +1,454 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Soluciones ejercicos variables aleatorias discretas},
+  pdfauthor={Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Soluciones ejercicos variables aleatorias discretas}
+\author{Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\hypertarget{ejercicios-distribuciones-notables-discretas}{%
+\section{Ejercicios distribuciones notables
+discretas}\label{ejercicios-distribuciones-notables-discretas}}
+
+\begin{frame}{Ejercicio 1}
+\protect\hypertarget{ejercicio-1}{}
+Se lanzan a la vez 5 dados (de parchís) bien balanceados. Sea \(X\) el
+número\\
+de unos que se observan en la cara superior del dado. Calcular la
+esperanza de \(X\), la varianza de \(X\), \(P(1\leq X<4)\) y
+\(P(X\geq 2).\)
+\end{frame}
+
+\begin{frame}{Ejercicio 1 solución}
+\protect\hypertarget{ejercicio-1-soluciuxf3n}{}
+La variable \(X=\)número de unos en el lanzamiento de 5 dados, es una
+variable binomial \(B(n=5,p=1/6)\).
+
+Así que su valor esperado es
+\(E(X)=n\cdot p = 5\cdot \frac{1}{6}=\frac56\) y su varianza es
+\(Var(X)=n\cdot p\cdot (1-p)= 5\cdot \frac16\cdot \frac56=\frac{25}{36}.\)
+\end{frame}
+
+\begin{frame}{Ejercicio 1 solución}
+\protect\hypertarget{ejercicio-1-soluciuxf3n-1}{}
+\[
+\begin{array}{lll}
+P(1\leq X< 4)&=&P(X<4)-P(X<1)=P(X\leq 3)-P(X=0)\\
+&=&\sum_{x=0}^3 P(X=x)-P(X=0)\\
+&=&
+P(X=3)+P(X=2)+P(X=1)=
+\\
+&=& {5 \choose 3} \left(\frac16\right)^3 \left(\frac56\right)^2+
+{5 \choose 2} \left(\frac16\right)^2 \left(\frac56\right)^3+
+{5 \choose 1} \left(\frac16\right)^1 \left(\frac56\right)^4
+\\
+&=&
+\frac{5!}{3!\cdot (5-3)!} \frac{5^2}{6^5}+
+\frac{5!}{2!\cdot (5-2)!} \frac{5^3}{6^5}+
+\frac{5!}{1!\cdot (5-1)!} \frac{5^1}{6^5} \\
+&=&
+10 \frac{5^2}{6^5}+
+10 \frac{5^3}{6^5}+
+5 \frac{5^4}{6^5}=\frac{10\cdot 25 +10 \cdot 125 +5\cdot 625}{776}\\&=&
+\frac{4625}{7776}=0.5947788 
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}[fragile]{Ejercicio 1 solución}
+\protect\hypertarget{ejercicio-1-soluciuxf3n-2}{}
+Con R
+
+\[
+\begin{array}{lll}
+P(1\leq X< 4)&=& P(X<4)-P(X<1)=P(X\leq 3)-P(X=0)\\&=&0.5947788.
+\end{array}
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{pbinom}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DataTypeTok{size=}\DecValTok{5}\NormalTok{,}\DataTypeTok{prob=}\DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9966564
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dbinom}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DataTypeTok{size=}\DecValTok{5}\NormalTok{,}\DataTypeTok{prob=}\DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.4018776
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{pbinom}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DataTypeTok{size=}\DecValTok{5}\NormalTok{,}\DataTypeTok{prob=}\DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}\OperatorTok{{-}}\KeywordTok{dbinom}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DataTypeTok{size=}\DecValTok{5}\NormalTok{,}\DataTypeTok{prob=}\DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.5947788
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Ejercicio 2}
+\protect\hypertarget{ejercicio-2}{}
+El 10\% de los usb fabricados por una marca tienen algún defecto (pero
+son baratos). Si se seleccionan al azar 10 de los usb fabricados por
+esta fábrica, ¿cuáles la probabilidad de que ninguno sea defectuoso?
+¿Cuántos usb defectuosos debemos esperar?
+\end{frame}
+
+\begin{frame}{Ejercicio 2 solución}
+\protect\hypertarget{ejercicio-2-soluciuxf3n}{}
+Bajo estas condiciones y suponiendo independencia entre la probabilidad
+de defecto, la variable \(X\)= número de usb defectuosos sigue una ley
+\(B(n=10,p=0.1).\)
+
+Nos piden \[
+\small{
+\begin{array}{lll}
+P(\mbox{ningún defectuoso entre 10})&=& P(X=0)={10\choose 0} 0.1^0\cdot(1-0.1)^{10}=0.9^{10} \\&=&
+0.3486784.
+\end{array}
+}
+\]
+
+El valor esperado es \(E(X)=n\cdot p =10\cdot 0.1=1.\)
+\end{frame}
+
+\begin{frame}{Ejercicio 3}
+\protect\hypertarget{ejercicio-3}{}
+Si \(Y\) sigue una distribución binomial con media \(\mu_Y=6\) y
+varianza \(\sigma_Y^2=4\). Calcular la distribución de \(Y\), es decir,
+encontrad los valores de \(n\) y \(p\).
+\end{frame}
+
+\begin{frame}{Ejercicio 3 solución}
+\protect\hypertarget{ejercicio-3-soluciuxf3n}{}
+Tenemos que \(Y\) es una \(B(n,p)\) luego
+
+\[E(Y)=n\cdot p=\mu_Y=6\]
+
+y
+
+\[Var(Y)=n\cdot p\cdot (1-p)=\sigma_Y^2=4.\]
+
+Ahora \(p=\frac{6}{n}\) y sustituyendo en la segunda igualdad
+\(n\cdot \frac{6}{n} \cdot (1-\frac{6}{n})=4\); de donde
+\(6 \left(1-\frac6n\right)= 4\), \(2 \cdot n =36\) y finalmente
+\(n=18\). Sabiendo \(n\) podemos calcular ahora
+\(p=\frac{6}{18}=\frac13.\)
+\end{frame}
+
+\begin{frame}{Ejercicio 4}
+\protect\hypertarget{ejercicio-4}{}
+Un fabricante de \emph{bombillas inteligentes} controladas por
+\emph{Bluetooth} las vende a sus distribuidores en lotes de 20.
+Supongamos que la probabilidad de que una bombillas inteligentes esté
+defectuosa es del \(0.05\). + a) ¿Cuál es el número esperado de
+bombillas defectuosas por paquete. + b) ¿Cuál es la probabilidad de que
+un determinado lote no tenga ninguna bombilla defectuosa?
+\end{frame}
+
+\begin{frame}{Ejercicio 4 solución}
+\protect\hypertarget{ejercicio-4-soluciuxf3n}{}
+Suponiendo independencia entre la probabilidad de defecto del lote
+\(X=\) número de bombilla defectuosas en un o te de 20 sigue una ley
+\(B(n=20,p=0.05)\)
+
+El valor esperado es \(E(X)=n\cdot p= 20\cdot 0.05=1.\)
+
+\(P(X=0)=`dbinom(0,size=20,prob=0.05)`=0.3584859.\)
+\end{frame}
+
+\begin{frame}{Ejercicio 5}
+\protect\hypertarget{ejercicio-5}{}
+Una urna contiene 10 bolas, una de color negro y las demás blancas. Sea
+\(Z\) el número de extracciones con reposición necesarias para extraer
+la bola negra. ¿Cuál es la distribución de la variable \(Z\)?
+\end{frame}
+
+\begin{frame}{Ejercicio 5 solución}
+\protect\hypertarget{ejercicio-5-soluciuxf3n}{}
+La extracciones son con reposición, así en cada extracción la
+probabilidad de extraer negra es \(p=\frac{1}{10}\).
+
+La variables \(X\) tendrá una distribución geométrica \(Ge(p=0.1)\) con
+dominio \(D_X=\{1,2,3,\ldots\}\) ya que se se cuanta la extracción en la
+que sale negra y se acaba el experimento.
+
+Su función de probabilidad es
+\(P(X=x)=(1-p)^{x-1}\cdot p=0.9^x \cdot 0.1\) para \(x=1,2,3\ldots.\)
+
+Ejercicio dar su función de distribución su valor esperado y su
+varianza.
+\end{frame}
+
+\begin{frame}{Ejercicio 6}
+\protect\hypertarget{ejercicio-6}{}
+Se lanza una moneda al aire hasta que sale cara. Supongamos que cada
+tirada es independiente de las otras y que la probabilidad de que salga
+cara cada vez es \(p\).\\
++ a) Demostrar que la probabilidad de que hagan falta un número impar de
+lanzamientos es \({p\over 1-q^2}\) donde \(q=1-p\). + b) Encontrar el
+valor de \(p\) tal que la probabilidad de que necesitemos un número
+impar de intentos sea \(0.6\). + c) ¿Existe un valor de \(p\) tal que la
+probabilidad de que haga falta un número impar de intentos sea \(0.5\)?
+\end{frame}
+
+\begin{frame}{Ejercicio 6 solución}
+\protect\hypertarget{ejercicio-6-soluciuxf3n}{}
+Claramente \(X\) número de lanzamientos independientes hasta que salga
+cara (incluiremos la cara) es un \(Ge(p)\).
+
+Su función de probabilidad es \(P(X=x)=(1-p)^{x-1}\cdot p\) para
+\(x=1,2,3\ldots.\)
+
+La probabilidad de impar sera
+
+\[
+\small{
+\sum_{k=0}^{+\infty}P(2\cdot k +1)=\sum_{k=0}^{+\infty} (1-p)^{2k+1-1}\cdot p=
+p \cdot \sum_{k=0}^{+\infty} \left((1-p)^{2}\right)^k=p\cdot \frac{1}{1-(1-p)^2}= \frac{p}{1-q^2}.
+}
+\]
+\end{frame}
+
+\begin{frame}{Ejercicio 6 solución}
+\protect\hypertarget{ejercicio-6-soluciuxf3n-1}{}
+Nos piden \(p\) tal que \(p\cdot \frac{1}{1-(1-p)^2}=0.6\) operando
+obtenemos que
+
+\(p=0.6\cdot (1-(1-p)^2\) entonces \(p=0.6\left(1-1+2 p-p^2\right)\)
+operando
+
+\(0.6 p^2-0.2 p=0\) luego \(p \cdot (0.6 p -0.2)=0\).
+
+Las soluciones son \(p=0\) que no es posible y \(p=\frac{1}{3}\) que es
+la única solución.
+
+Repitiendo la ecuación anterior para que la probabilidad de impar sea
+\(0.5\) obtenemos que la único solución es \(p=0\) así que no es
+posible.
+\end{frame}
+
+\begin{frame}{Ejercicio 7}
+\protect\hypertarget{ejercicio-7}{}
+Se ha observado que el aforo medio de vehículos en un determinado paso
+de un camino rural es de 3 coches/hora. Suponer que los instantes en que
+pasan automóviles son independientes. Sea \(X\) el número de coches que
+pasas por este lugar en un intervalo de 20 minutos. Calcular \(P(X=0)\)
+y \(P(X\geq 2)\).
+\end{frame}
+
+\begin{frame}{Ejercicio 7 solución}
+\protect\hypertarget{ejercicio-7-soluciuxf3n}{}
+Bajo estas condiciones la variable aleatoria \(X_t\) número coches en
+\(t\) horas sólo puede seguir la distribución notable con promedio de
+llegadas por hora \(\lambda=3\) y por lo tanto el proceso de Poisson
+asociado \(X_t\) sigue una ley de probabilidad
+\(Po(\lambda \cdot t =3\cdot t)\)
+
+Como 20 minutos es un \(\frac13\) de hora luego \(X_{\frac13}\) es una
+\(Po(3\cdot \frac13=1)\). Nos piden \(P(X_{\frac13}=0)\) y que
+\(P\left(X_{\frac{1}{3}}\geq 2 \right)\). Sabemos que
+\(P(X_{\frac13}=x)=\frac{1^x}{x!} e^{-1}\) para \(x=0,1,2,\ldots.\)
+
+Así que \(P(X_{\frac13}=0)=\frac{(1)^0}{0!} e^{-1}=e^{-1}=0.3678794.\)
+\end{frame}
+
+\begin{frame}{Ejercicio 7 solución}
+\protect\hypertarget{ejercicio-7-soluciuxf3n-1}{}
+\[
+\begin{array}{lll}
+P\left(X_{\frac13}\geq 2 \right)&=&P\left(X_{\frac13}< 2 \right)=P\left(X_{\frac13}\leq 1\right)\\
+&=&
+\sum_{x=0}^1 \frac{1^x}{x!} e^{-1}
+\\
+&=&
+\frac{1^0}{0!} e^{-1}+\frac{1^1}{1!} e^{-1}\\
+&=&
+e^{-1}\left(1+1\right)=2\cdot e^{-3}=0.1991483.
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}[fragile]{Ejercicio 7 solución}
+\protect\hypertarget{ejercicio-7-soluciuxf3n-2}{}
+Con R
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dpois}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{)}\CommentTok{\# P(X=1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3678794
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ppois}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{)}\CommentTok{\# P(X\textless{}=1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7357589
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\OperatorTok{{-}}\KeywordTok{ppois}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{)}\CommentTok{\# 1{-}P(X\textless{}=1)=P(X\textgreater{}=2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2642411
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ppois}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DataTypeTok{lambda=}\DecValTok{1}\NormalTok{,}\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{)}\CommentTok{\# P(X\textgreater{}1)=P(X\textgreater{}=2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2642411
+\end{verbatim}
+\end{frame}
+
+\end{document}

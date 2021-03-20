@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.17)  19 MAR 2021 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.20)  20 MAR 2021 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,7 +7,7 @@ entering extended mode
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
 dist/tex/latex/beamer/beamer.cls
-Document Class: beamer 2021/02/09 v3.61 A class for typesetting presentations
+Document Class: beamer 2021/03/19 v3.62 A class for typesetting presentations
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbasemo
 des.sty
@@ -868,7 +868,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend
 -pdftex.def
-File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count336
 \l__pdf_internal_box=\box74
 ) (./Tema-3---Notables_discretas_Soluciones_slides.aux)
@@ -1055,7 +1055,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-151.
+147.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1064,27 +1064,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-51.
+47.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-151.
+147.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-151.
+147.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 151.
+(Font)              <10.95> on input line 147.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 151.
+(Font)              <8> on input line 147.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 151.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 151
+(Font)              <6> on input line 147.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 147
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1093,7 +1093,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 g
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 151
+LaTeX Font Info:    Trying to load font information for U+msb on input line 147
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1103,11 +1103,11 @@ g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 151.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 147.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 151.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 147.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 151.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 147.
 [3
 
 ] [4
@@ -1116,10 +1116,10 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 186.
+(amsmath)                 on input line 183.
 
 
-Overfull \hbox (69.50499pt too wide) detected at line 186
+Overfull \hbox (17.9255pt too wide) detected at line 183
 []
  []
 
@@ -1146,22 +1146,22 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 
 ]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 258.
+LaTeX Font Warning: Command \small invalid in math mode on input line 250.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 258.
+(Font)              <10> on input line 250.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 258.
+(Font)              <7> on input line 250.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 258.
+(Font)              <5> on input line 250.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 258.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 250.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 258.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 250.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 258.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 250.
 
-Overfull \hbox (33.8164pt too wide) detected at line 258
+Overfull \hbox (33.8164pt too wide) detected at line 250
 []
  []
 
@@ -1183,16 +1183,16 @@ Overfull \hbox (33.8164pt too wide) detected at line 258
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 398.
+(amsmath)                 on input line 330.
 
 [15
 
 ]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 416.
+LaTeX Font Warning: Command \small invalid in math mode on input line 348.
 
 
-Overfull \hbox (113.76474pt too wide) detected at line 416
+Overfull \hbox (113.76474pt too wide) detected at line 348
 []
  []
 
@@ -1227,13 +1227,13 @@ s.out' has not changed.
 (rerunfilecheck)             Checksum: 2DFCA44CC7BCBF3B5424F82F8308E982;272.
  ) 
 Here is how much of TeX's memory you used:
- 22781 strings out of 480921
- 424790 string characters out of 5904010
- 744977 words of memory out of 5000000
- 39345 multiletter control sequences out of 15000+600000
- 472874 words of font info for 130 fonts, out of 8000000 for 9000
+ 22722 strings out of 480921
+ 422892 string characters out of 5904010
+ 745954 words of memory out of 5000000
+ 39280 multiletter control sequences out of 15000+600000
+ 473209 words of font info for 133 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 112i,11n,116p,550b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 112i,11n,116p,550b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
 c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
 y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-r
@@ -1248,18 +1248,15 @@ ts/type1/public/lm/lmss12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist
 ist/fonts/type1/public/lm/lmsso10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/te
 xmf-dist/fonts/type1/public/lm/lmsso8.pfb><c:/Users/t169/AppData/Roaming/TinyTe
 X/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169/AppData/Roaming
-/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/t169/AppData/Roam
-ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/AppData/
-Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/t169/AppD
-ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb><c:/Users/t169
-/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
-pfb>
+nyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/t169/AppData/Roaming
+/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/AppData/Roa
+ming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/t169/AppData
+/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
 Output written on Tema-3---Notables_discretas_Soluciones_slides.pdf (21 pages, 
-207700 bytes).
+197378 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
+ 223 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
  63 named destinations out of 1000 (max. 500000)
  41011 words of extra memory for PDF output out of 42996 (max. 10000000)
 

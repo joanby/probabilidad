@@ -3,12 +3,14 @@ title: "Soluciones ejercicos variables aleatorias discretas"
 author: ' Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir'
 date: ''
 output:
-  beamer_presentation: default
+  beamer_presentation:
+    keep_tex: yes
   ioslides_presentation:
-    css: Mery_style.css
+    css: Ric_style.css
     keep_md: no
     logo: Images/matriz_mov.gif
     widescreen: yes
+  slidy_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -20,22 +22,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Ejercicio 1 
 
-1. Se lanzan a la vez 5 dados (de parchís)  bien balanceados. Sea $X$ el número  
+<div class="exercise"> 
+Se lanzan a la vez 5 dados (de parchís)  bien balanceados. Sea $X$ el número  
 de unos que  se observan en la  cara superior del dado.
 Calcular la esperanza de $X$, la varianza de  $X$,
 $P(1\leq X<4)$ y $P(X\geq 2).$ 
+</div>
 
 ## Ejercicio 1  solución
 
-
-La variable $X=número de unos en el lanzamiento de 5 dados  es una variable binomial $B(n=5,p=1/6)$.
+<div class="exercise-sol"> 
+La variable $X=$número de unos en el lanzamiento de 5 dados, es una variable binomial $B(n=5,p=1/6)$.
 
 Así que su valor esperado es $E(X)=n\cdot p = 5\cdot \frac{1}{6}=\frac56$ y su varianza es $Var(X)=n\cdot p\cdot (1-p)= 5\cdot \frac16\cdot \frac56=\frac{25}{36}.$
 
-
+</div>
 
 ## Ejercicio 1  solución
 
+<div class="exercise-sol"> 
 $$
 \begin{array}{lll}
 P(1\leq X< 4)&=&P(X<4)-P(X<1)=P(X\leq 3)-P(X=0)\\
@@ -54,12 +59,15 @@ P(X=3)+P(X=2)+P(X=1)=
 &=&
 10 \frac{5^2}{6^5}+
 10 \frac{5^3}{6^5}+
-5 \frac{5^4}{6^5}=\frac{10\cdot 25 +10 \cdot 125 +5\cdot 625}{776}=\frac{4625}{7776}=0.5947788 
+5 \frac{5^4}{6^5}=\frac{10\cdot 25 +10 \cdot 125 +5\cdot 625}{776}\\&=&
+\frac{4625}{7776}=0.5947788 
 \end{array}
 $$
+</div>
 
 ## Ejercicio 1  solución
 
+<div class="exercise-sol"> 
 Con R
 
 
@@ -74,15 +82,18 @@ pbinom(3,size=5,prob=1/6)
 dbinom(0,size=5,prob=1/6)
 pbinom(3,size=5,prob=1/6)-dbinom(0,size=5,prob=1/6)
 ```
-
+</div>
 
 ## Ejercicio 2
 
-2. El  10\% de los usb fabricados por una marca tienen algún defecto (pero son baratos). Si se seleccionan al azar 10 de los usb  fabricados por esta fábrica, ¿cuáles la probabilidad  de que ninguno sea defectuoso? ¿Cuántos usb defectuosos debemos esperar?
+<div class="exercise"> 
+El  10\% de los usb fabricados por una marca tienen algún defecto (pero son baratos). Si se seleccionan al azar 10 de los usb  fabricados por esta fábrica, ¿cuáles la probabilidad  de que ninguno sea defectuoso? ¿Cuántos usb defectuosos debemos esperar?
+</div>
 
-## Ejercicio 2 Solución
 
+## Ejercicio 2 solución
 
+<div class="exercise-sol"> 
 Bajo estas condiciones y suponiendo independencia entre la probabilidad de  defecto, la variable $X$= número de usb defectuosos   sigue una ley $B(n=10,p=0.1).$
 
 
@@ -97,14 +108,20 @@ P(\mbox{ningún defectuoso entre 10})&=& P(X=0)={10\choose 0} 0.1^0\cdot(1-0.1)^
 $$
 
 El valor esperado es $E(X)=n\cdot p =10\cdot 0.1=1.$
+</div>
 
 ## Ejercicio 3 
 
-3. Si $Y$ sigue una distribución  binomial con media
+<div class="exercise"> 
+
+Si $Y$ sigue una distribución  binomial con media
 $\mu_Y=6$ y varianza $\sigma_Y^2=4$. Calcular  la distribución de $Y$, es decir, encontrad los valores de  $n$ y $p$.
+</div>
 
-## Ejercicio 3 Solución
 
+## Ejercicio 3 solución
+
+<div class="exercise-sol"> 
 Tenemos que $Y$ es una $B(n,p)$ luego 
 
 $$E(Y)=n\cdot p=\mu_Y=6$$ 
@@ -116,20 +133,24 @@ $$Var(Y)=n\cdot p\cdot (1-p)=\sigma_Y^2=4.$$
 
 
 Ahora  $p=\frac{6}{n}$ y sustituyendo en la segunda igualdad  $n\cdot \frac{6}{n} \cdot (1-\frac{6}{n})=4$; de donde 
-$6  \left(1-\frac6n\right)= 4$ y  $2 \cdot =36$ finalmente  $n=18$ y $p=\frac{6}{18}=\frac13.$
-
+$6  \left(1-\frac6n\right)= 4$,  $2 \cdot n =36$ y  finalmente  $n=18$. Sabiendo $n$ podemos calcular ahora  $p=\frac{6}{18}=\frac13.$
+</div>
 
 ## Ejercicio 4 
 
-4. Un fabricante de *bombillas inteligentes*  controladas por *Bluetooth* las vende a sus distribuidores  en lotes de 20. Supongamos que la probabilidad de que una bombillas inteligentes esté defectuosa es del  $0.05$. 
+
+<div class="exercise-sol"> 
+
+Un fabricante de *bombillas inteligentes*  controladas por *Bluetooth* las vende a sus distribuidores  en lotes de 20. Supongamos que la probabilidad de que una bombillas inteligentes esté defectuosa es del  $0.05$. 
   + a) ¿Cuál es el número esperado de bombillas defectuosas por paquete.
   + b) ¿Cuál  es la probabilidad de  que un determinado lote  no
 tenga ninguna bombilla  defectuosa?
 
-## Ejercicio 4 Solución
+</div>
+## Ejercicio 4 solución
+<div class="exercise-sol"> 
 
-
-Suponiendo independencia entre la orobabilidad de defecto del lote $X=$ número de bombilla defectuosas en un o te de 20 
+Suponiendo independencia entre la probabilidad de defecto del lote $X=$ número de bombilla defectuosas en un o te de 20 
 sigue una ley $B(n=20,p=0.05)$
 
 
@@ -137,35 +158,41 @@ El valor esperado es  $E(X)=n\cdot p= 20\cdot 0.05=`r 20*0.05`.$
 
 
 $P(X=0)=`dbinom(0,size=20,prob=0.05)`=`r dbinom(0,size=20,prob=0.05)`.$
+</div>
 
 ## Ejercicio 5
+<div class="exercice">
 
-5. Una urna contiene 10 bolas, una de color negro  y las demás blancas. Sea $Z$ el número de extracciones con reposición necesarias para extraer la bola negra. ¿Cuál es la  distribución  de la variable  $Z$? 
+Una urna contiene 10 bolas, una de color negro  y las demás blancas. Sea $Z$ el número de extracciones con reposición necesarias para extraer la bola negra. ¿Cuál es la  distribución  de la variable  $Z$? 
+</div>
 
-## Ejercicio 5 Solución
+## Ejercicio 5 solución
 
+<div class="exercise-sol"> 
 La extracciones son con reposición, así en cada extracción la probabilidad de extraer negra es $p=\frac{1}{10}$.
 
 La variables $X$  tendrá una distribución geométrica  $Ge(p=0.1)$  con dominio $D_X=\{1,2,3,\ldots\}$ ya que se se cuanta la extracción en la que sale negra y se acaba el experimento.
 
 Su función de probabilidad es $P(X=x)=(1-p)^{x-1}\cdot p=0.9^x \cdot 0.1$ para $x=1,2,3\ldots.$ 
 
-Ejercicio dar su función de distibución su vañlor esperado y su varianza.
+Ejercicio dar su función de distribución su valor esperado y su varianza.
 
-
+</div>
 
 ## Ejercicio 6
 
 
-6. Se lanza una moneda al aire hasta que sale  cara. Supongamos que cada  tirada es independiente  de las otras y que la probabilidad de que salga  cara cada vez es $p$.  
+<div class="exercise"> 
+Se lanza una moneda al aire hasta que sale  cara. Supongamos que cada  tirada es independiente  de las otras y que la probabilidad de que salga  cara cada vez es $p$.  
 + a) Demostrar que la probabilidad de que hagan falta un número impar de lanzamientos es ${p\over 1-q^2}$ donde $q=1-p$. 
 + b) Encontrar  el valor de $p$ tal que la probabilidad de que  necesitemos un número impar de intentos sea $0.6$.
 + c) ¿Existe un valor de $p$ tal que la probabilidad de que haga falta un número
 impar de intentos sea $0.5$?
+</div>
 
 ## Ejercicio 6 solución 
 
-
+<div class="exercise-sol"> 
 Claramente $X$ número de lanzamientos independientes  hasta que salga cara  (incluiremos la cara) es un $Ge(p)$.
 
 Su función de probabilidad es $P(X=x)=(1-p)^{x-1}\cdot p$ para $x=1,2,3\ldots.$ 
@@ -180,8 +207,11 @@ p \cdot \sum_{k=0}^{+\infty} \left((1-p)^{2}\right)^k=p\cdot \frac{1}{1-(1-p)^2}
 }
 $$
 
-## Ejercicio 6 solución 
+</div>
 
+## Ejercicio 6 solución
+
+<div class="exercise-sol"> 
 
 
 Nos piden $p$ tal que $p\cdot \frac{1}{1-(1-p)^2}=0.6$ operando  obtenemos que 
@@ -197,55 +227,62 @@ Las soluciones son  $p=0$ que no es posible  y  $p=\frac{1}{3}$ que es la única
 Repitiendo la ecuación anterior para que la probabilidad de impar sea $0.5$ obtenemos que  la único solución es $p=0$ así que no es posible.
 
 
+</div>
 
 ## Ejercicio 7
 
-7. Se ha observado que el aforo  medio de  vehículos  en un determinado paso  de un camino rural es de 3 coches/hora.
+<div class="exercise"> 
+
+Se ha observado que el aforo  medio de  vehículos  en un determinado paso  de un camino rural es de 3 coches/hora.
 Suponer que los instantes en que pasan automóviles son independientes. Sea
 $X$ el número de coches  que pasas por este lugar  en un  intervalo de 20 minutos.
 Calcular $P(X=0)$ y $P(X\geq 2)$.
+</div>
 
-## Ejercicio 7 Solución 
+## Ejercicio 7 solución 
 
-Bajo estas condiciones la variable aleatoria $X_t$ número  coches en t horas  sólo puede seguir la distribución notable con promedio de llegadas  por hora $\lambda=3$ y por lo tanto el proceso de Poisson asociado $X_t$ sigue una ley de probabilidad   $Po(\lambda \cdot t =3\cdot t)$
-
-
-Nos pide  $P(X_{20}=0)$ y que $P(X_{20}\geq 2 )$
-
-Sabemos que $P(X_{20}=x)=\frac{3^x}{x!} e^{-3}$ para $x=0,1,2,\ldots.$
+<div class="exercise-sol"> 
+Bajo estas condiciones la variable aleatoria $X_t$ número  coches en $t$ horas  sólo puede seguir la distribución notable con promedio de llegadas  por hora $\lambda=3$ y por lo tanto el proceso de Poisson asociado $X_t$ sigue una ley de probabilidad   $Po(\lambda \cdot t =3\cdot t)$
 
 
-Así que $P(X_{20}=0)=\frac{3^0}{0!} e^{-3}=e^{-3}=`r exp(-3)`.$
+Como 20 minutos es un $\frac13$  de hora luego  $X_{\frac13}$ es una $Po(3\cdot \frac13=1)$. Nos piden  $P(X_{\frac13}=0)$ y que $P\left(X_{\frac{1}{3}}\geq 2 \right)$.
+Sabemos que $P(X_{\frac13}=x)=\frac{1^x}{x!} e^{-1}$ para $x=0,1,2,\ldots.$
 
 
-## Ejercicio 7 Solución 
+Así que $P(X_{\frac13}=0)=\frac{(1)^0}{0!} e^{-1}=e^{-1}=`r exp(-1)`.$
 
+</div>
+
+## Ejercicio 7 solución 
+
+<div class="exercise-sol"> 
 $$
 \begin{array}{lll}
-P(X_{20}\geq 2 )&=&P(X_{20}\leq 1 )\sum_{x=0}^1 P(X_{20}=x)\\
+P\left(X_{\frac13}\geq 2 \right)&=&P\left(X_{\frac13}< 2 \right)=P\left(X_{\frac13}\leq 1\right)\\
 &=&
-\sum_{x=0}^2 \frac{3^x}{x!} e^{-3}
+\sum_{x=0}^1 \frac{1^x}{x!} e^{-1}
 \\
 &=&
-\frac{3^0}{0!} e^{-3}+\frac{3^1}{1!} e^{-3}\\
+\frac{1^0}{0!} e^{-1}+\frac{1^1}{1!} e^{-1}\\
 &=&
-e^{-3}\left(1+3\right)=4\cdot e^{-3}=`r 4*exp(-3)`.
+e^{-1}\left(1+1\right)=2\cdot e^{-3}=`r 4*exp(-3)`.
 \end{array}
 $$
+</div>
+
+## Ejercicio 7 solución 
 
 
-## Ejercicio 7 Solución 
-
+<div class="exercise-sol"> 
 
 Con R
 
 
-
 ```{r dd, size="small"}
-dpois(0,lambda=3)# P(X=1)
-ppois(1,lambda=3)# P(X<=1)
-1-ppois(1,lambda=3)# 1-P(X<=1)=P(X>=2)
-ppois(1,lambda=3,lower.tail = FALSE)# P(X>1)=P(X>=2)
+dpois(0,lambda=1)# P(X=1)
+ppois(1,lambda=1)# P(X<=1)
+1-ppois(1,lambda=1)# 1-P(X<=1)=P(X>=2)
+ppois(1,lambda=1,lower.tail = FALSE)# P(X>1)=P(X>=2)
 
 ```
-
+</div>
