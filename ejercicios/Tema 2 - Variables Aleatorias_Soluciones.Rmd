@@ -1,0 +1,340 @@
+---
+title: "Ejercicios Tema 2 - Variables aleatorias"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+    toc_depth: 4
+  html_document: 
+    toc: yes
+    number_sections: yes
+  word_document:
+    toc: yes
+toccolor: 'blue'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Variables aleatorias discretas
+
+```{r contador, echo=FALSE}
+num=0
+
+```
+
+
+
+## Problema `r num=num+1;num`.
+
+Hay 10 estudiantes inscritos en una clase de Estadística, de entre los cuales 3
+tienen 19 años, 4 tienen 20 años, 1 tiene 21 años, 1 tiene 24 años y 1 tiene 26 años. De esta
+clase se seleccionan dos estudiantes sin reposición. Sea $X$ la edad media de los
+dos estudiantes seleccionados. Hallar la función de probabilidad para $X$.
+
+### Solución
+
+
+$$
+P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
+\left\{\begin{array}{ll}
+\frac{3}{10}, & \mbox{si } x=19,
+ \\[0.1cm]
+\frac{4}{10}, & \mbox{si } x=20,
+ \\[0.1cm]
+\frac{1}{10}, & \mbox{si } x=21,
+ \\[0.1cm]
+{1\over 10}, & \mbox{si } x=24,
+ \\[0.1cm] 
+{1\over 10}, & \mbox{si } x=26,
+ \\[0.1cm] 
+0, & \mbox{ en cualquier otro caso},
+\end{array}\right.
+$$
+
+
+
+## Problema `r num=num+1;num`.
+
+Verificar que:
+$$F_W (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<3$},
+ \\[0.1cm]
+{1\over 3}, & \mbox{si $3\leq t<4$},
+ \\[0.1cm]
+{1\over 2}, & \mbox{si $4\leq t<5$},
+ \\[0.1cm] 
+{2\over 3}, & \mbox{si $5\leq t<6$},
+ \\[0.1cm] 
+1, & \mbox{si $t\geq 6$},
+\end{array}\right.
+$$
+es una función de distribución y especificar
+la función de probabilidad para $W$. Hallar
+también $P(3<W\leq 5)$.
+
+### Solución
+
+```{r}
+FX=function(x){
+  aux=function(t){
+    if(t<3) {return(0)}
+    if(3<=t & t<4) {return(1/3)}
+    if(4<= t & t< 5) {return(1/2)}
+    if(5<= t & t< 6) {return(2/3)}
+    if(t>=6){return(1)}
+    }
+  sapply(x,FUN=aux)
+}
+
+curve(FX,0,7,col="blue")
+```
+La función $F_X$ cumple  todas las propiedades de una función de distribución discreta:
+
+*  $0\leq F_X(t)\leq 1$ para todo $t\in mathbb{R}.$
+*  Es solo continua por la derecha, luego es dicreta no es continua con dominio $D_X=\{3,4,5,6\}$ que son los valores dónde $P(X=x)=F_X(x)-F_X(x-)\not=0$.
+*  Tiende asintóticamente a 1  cuando $x\to+\infty$ y a 0  cuandor $x\to-\infty$.
+
+
+El Dominio es $D_X=\{3,4,5,6}$
+
+
+$P(X=3)=F_X(3)-F_X(3^{-})=F_X(3)-lim_{x-> 3^{-} F_X(x)=\frac{1}{3}=\frac{1}{3}-0=\frac{1}{3}.$
+
+$P(X=4)=F_X(4)-F_X(4^{-})=F_X(4)-lim_{x-> 4^{-} F_X(x)=\frac{1}{2}-\frac{1}{3}=\frac{1}{6}.$
+
+$P(X=5)=F_X(5)-F_X(5^{-})=F_X(5)-lim_{x-> 5^{-} F_X(x)=\frac{2}{3}-\frac{1}{2}=\frac{1}{6}.$
+
+$P(X=6)=F_X(6)-F_X(6^{-})=F_X(6)-lim_{x-> 5^{-} F_X(x)=1-\frac{2}{3}=\frac{1}{3}.$
+
+$P(X=x)=0$ si $x \not\in\{3,4,5,6\}.$
+
+
+
+
+## Problema `r num=num+1;num`.
+
+La variable aleatoria $Z$ tiene por función de probabilidad:
+$$f_Z (x)=
+\left\{\begin{array}{ll}
+{1\over 3}, & \mbox{si $x=0,1,2$},\\ 0, & \mbox{en los otros
+casos.}
+\end{array}\right.
+$$
+¿Cuál es la función de distribución para $Z$?
+
+### Solución
+
+Es discreta.
+
+
+
+
+## Problema `r num=num+1;num`.
+
+Sea $X_n$ una variable aleatoria dependiendo de un valor natural $n$ cuya función de probabilidad es:
+$$
+f(x)=\begin{cases}
+k\cdot i, & \mbox{si }i=1,2\ldots,n, \\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+    - Hallar el valor de $k$ y la función de distribución de $X$.
+    - Calcular la probabilidad de que $X$ tome un valor par.
+    
+    
+### Solución
+
+## Problema `r num=num+1;num`.
+
+Un examen tipo test consta de cinco preguntas con tres posibles opciones cada una. Un alumno contesta al azar las cinco cuestiones.
+Suponiendo que cada respuesta acertada vale dos puntos, hallar la distribución de número de puntos obtenidos por el alumno.
+
+### Solución
+
+## Problema `r num=num+1;num`.
+
+Continuamos con el ejercicio anterior pero ahora suponemos que restamos una cierta cantidad por respuesta incorrecta. Suponiendo que el examen tiene $n$ preguntas, cada pregunta tiene $k$ posibles respuestas, y que cada pregunta acertada vale 1 punto, ¿qué cantidad hay que restar a cada pregunta para que la esperanza de la nota de una pregunta contestada al azar sea 0? Repetir el ejercicio anterior pero ahora suponiendo que restamos a cada pregunta la cantidad obtenida en el caso en que éste se reponda de forma errónea.
+
+### Solución
+
+## Problema 6.
+
+Hallar la esperanza y la varianza de todas las variables que han aparecido en los ejercicios anteriores.
+
+# Variables aleatorias continuas
+
+## Problema 1.
+
+Verificar que:
+$$
+F_X (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+ \\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq
+t\leq 1$},
+ \\[0.1cm]
+1, & \mbox{si $t> 1$},
+\end{array}\right.
+$$
+es una función de distribución y hallar la función de densidad para $X$. Calcular también $P\left(-{1\over 2}\leq X\leq {1\over 2}\right)$.
+
+
+### Solución
+
+## Problema 2.
+ Sea $Y$ una variable continua con función de densidad:
+$$
+f_Y(y)=
+\left\{\begin{array}{ll}
+2(1-y), & \mbox{si $0<y<1$},\\ 0, & \mbox{en los otros casos}.
+\end{array}\right.
+$$
+Hallar la función de distribución $F_Y(t)$.
+
+### Solución
+
+## Problema 3.
+
+Verificar que:
+$$
+F_Y(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\
+\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
+\mbox{si $t>1$},
+\end{array}\right.
+$$
+es una función de distribución y especificar la función de densidad
+para $Y$. Usar este resultado para hallar $P\left(-{1\over 2}<Y<{3\over 4}\right)$.
+
+
+### Solución
+
+## Problema 4.
+
+Sea $X$ una variable aleatoria con función de densidad:
+$$
+f(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+1. Representar gráficamente dicha función.
+2. Hallar y dibujar la función de distribución.
+3.  Calcular las siguientes probabilidades: $P(X\geq 0)$ y $P\left(|X|<\frac{1}{2}\right).$
+    
+
+### Solución
+
+## Problema 5.
+
+Hallar la esperanza y la varianza de las variables de los ejercicios anteriores.
+
+
+### Solución
+
+
+# Transformación de variables aleatorias
+
+## Problema 1.
+
+A partir de 
+$$
+F_X(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+\\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq t\leq
+1$},
+ \\[0.1cm]
+1, & \mbox{si $t>1$},
+\end{array}\right.
+$$
+hallar la función de distribución para $Y=15+2X$ y la función de densidad para $Y$.
+
+
+### Solución
+
+
+Como $D_X=[-1,1]$ entonces$Y=15+2 X$ varía desde $Y=15+2\cdot (-1)=13$ hasta $Y=15+2\cdot 1=17$ y por lo tanto su dominio es $D_Y=[13,17].$
+
+
+\begin{eqnarray*}
+F_Y(y)&=& P(Y\leq y) =P(15+2\cdot X\leq y )=P(X\leq \frac{y-15}{2})
+\\&=& 
+F_X(y\frac{y-15}{2})=
+\left\{\begin{array}{ll}
+0, & \mbox{si } \frac{y-15}{2}<-1,
+\\[0.1cm]
+{\frac{y-15}{2}+1\over 2}, & \mbox{si } -1\leq y \leq
+1,
+ \\[0.1cm]
+1, & \mbox{si } \frac{y-15}{2}>1,
+\end{array}\right.
+\\&=& 
+\left\{\begin{array}{ll}
+0, & \mbox{si } y<-2-15=13
+,
+\\[0.1cm]
+\frac{y-13}{4}, & \mbox{si } 13\leq y \leq
+17,
+ \\[0.1cm]
+1, & \mbox{si } y>17,
+\end{array}\right.
+\end{eqnarray*}
+
+
+$$
+f_Y(y)=(F_Y(y))'=
+\left\{\begin{array}{ll}
+\frac{1}{4}, & \mbox{si } 13\leq y \leq
+17,
+ \\[0.1cm]
+0, & \mbox{ en cualquier otro caso}.
+\end{array}\right.
+$$
+
+## Problema 2. 
+
+
+Si
+$$
+F_X(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\ t, &
+\mbox{si $0\leq t\leq 1$},\\ 1, & \mbox{si
+$t>1$},
+\end{array}\right.
+$$
+hallar la función de distribución y la función de densidad de la forma
+estándar de $X$ ($Z={X-\mu_X\over \sigma_X}$), donde $\mu_X =E(X)$ y $\sigma_X=\sqrt{\mathrm{Var}(X)}$.
+
+### Solución
+
+
+## Problema 3. 
+
+ Para formar un jardín circular, un jardinero corta una cuerda, la ata a una
+estaca y  marca el perímetro. Suponer que la longitud de la
+cuerda tiene la misma verosimilitud de estar en el intervalo comprendido entre $r-0.1$
+y $r+0.1$. ¿Cuál es la distribución de $X$, el área de la superficie del jardín?
+¿Cuál es la probabilidad de que el área de la superficie sea mayor que $\pi r^2$?
+
+### Solución
+
+
+## Problema 4. 
+
+
+Sea $X$ una variable aleatoria continua con función de densidad
+$f_X(x)$.
+Consideramos la variable aleatoria $Y=\mathrm{e}^X$. Hallar la función de densidad
+de la variable aleatoria $Y$, $f_Y(y)$.
+
+### Solución

@@ -19,7 +19,7 @@ library(reticulate)
 
 ```{python}
 import os
-os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = 'C:/Users/t169/AppData/Local/r-miniconda/envs/r-reticulate/Library/plugins/platforms'
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = 'C:/Users/t169/AppData/Local/r-miniconda/envs/r-reticulate/Library/plugins/platforms/'
 ```
 
 
@@ -1328,9 +1328,9 @@ Sea $X$ una normal com media $2$ y varianza $4$. Calcular  con R y con python la
 **Solución con R**
 
 ```{r}
-pnorm(2,mean=2,sd=4)-pnorm(1,mean=2,sd=4) #P(1< X< 2)
-pnorm(3,mean=2,sd=4,lower.tail =FALSE) #P(X>3)
-1-pnorm(3,mean=2,sd=4,lower.tail=TRUE) #P(X>3) = 1-P(X<=3)
+pnorm(2,mean=2,sd=2)-pnorm(1,mean=2,sd=2) #P(1< X< 2)
+pnorm(3,mean=2,sd=2,lower.tail =FALSE) #P(X>3)
+1-pnorm(3,mean=2,sd=2,lower.tail=TRUE) #P(X>3) = 1-P(X<=3)
 ```
 
 </div>
@@ -1343,8 +1343,8 @@ pnorm(3,mean=2,sd=4,lower.tail =FALSE) #P(X>3)
 
 
 ```{python}
-norm.cdf(2,loc=2,scale=4)-norm.cdf(1,loc=2,scale=4) #P(1< X< 2)
-1-norm.cdf(3,loc=2,scale=4) #P(X>3) = 1-P(X<=3)
+norm.cdf(2,loc=2,scale=2)-norm.cdf(1,loc=2,scale=2) #P(1< X< 2)
+1-norm.cdf(3,loc=2,scale=2) #P(X>3) = 1-P(X<=3)
 ```
 </div>
 

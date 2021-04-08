@@ -1,0 +1,156 @@
+---
+title: "Ejercicios Tema 2 - Variables aleatorias"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Variables aleatorias discretas
+
+1. Hay 10 estudiantes inscritos en una clase de Estadística, de entre los cuales 3
+tienen 19 años, 4 tienen 20 años, 1 tiene 21 años, 1 tiene 24 años y 1 tiene 26 años. De esta
+clase se seleccionan dos estudiantes sin reposición. Sea $X$ la edad media de los
+dos estudiantes seleccionados. Hallar la función de probabilidad para $X$.
+
+1. Verificar que:
+$$F_W (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<3$},
+ \\[0.1cm]
+{1\over 3}, & \mbox{si $3\leq t<4$},
+ \\[0.1cm]
+{1\over 2}, & \mbox{si $4\leq t<5$},
+ \\[0.1cm] 
+{2\over 3}, & \mbox{si $5\leq t<6$},
+ \\[0.1cm] 
+1, & \mbox{si $t\geq 6$},
+\end{array}\right.
+$$
+es una función de distribución y especificar
+la función de probabilidad para $W$. Hallar
+también $P(3<W\leq 5)$.
+
+1. La variable aleatoria $Z$ tiene por función de probabilidad:
+$$f_Z (x)=
+\left\{\begin{array}{ll}
+{1\over 3}, & \mbox{si $x=0,1,2$},\\ 0, & \mbox{en los otros
+casos.}
+\end{array}\right.
+$$
+¿Cuál es la función de distribución para $Z$?
+
+1. Sea $X_n$ una variable aleatoria dependiendo de un valor natural $n$ cuya función de probabilidad es:
+$$
+f(x)=\begin{cases}
+k\cdot i, & \mbox{si }i=1,2\ldots,n, \\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+    - Hallar el valor de $k$ y la función de distribución de $X$.
+    - Calcular la probabilidad de que $X$ tome un valor par.
+    
+1. Un examen tipo test consta de cinco preguntas con tres posibles opciones cada una. Un alumno contesta al azar las cinco cuestiones.
+Suponiendo que cada respuesta acertada vale dos puntos, hallar la distribución de número de puntos obtenidos por el alumno.
+
+1. Continuamos con el ejercicio anterior pero ahora suponemos que restamos una cierta cantidad por respuesta incorrecta. Suponiendo que el examen tiene $n$ preguntas, cada pregunta tiene $k$ posibles respuestas, y que cada pregunta acertada vale 1 punto, ¿qué cantidad hay que restar a cada pregunta para que la esperanza de la nota de una pregunta contestada al azar sea 0? Repetir el ejercicio anterior pero ahora suponiendo que restamos a cada pregunta la cantidad obtenida en el caso en que éste se reponda de forma errónea.
+
+1. Hallar la esperanza y la varianza de todas las variables que han aparecido en los ejercicios anteriores.
+
+# Variables aleatorias continuas
+
+1. Verificar que:
+$$
+F_X (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+ \\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq
+t\leq 1$},
+ \\[0.1cm]
+1, & \mbox{si $t> 1$},
+\end{array}\right.
+$$
+es una función de distribución y hallar la función de densidad para $X$. Calcular también $P\left(-{1\over 2}\leq X\leq {1\over 2}\right)$.
+
+1. Sea $Y$ una variable continua con función de densidad:
+$$
+f_Y(y)=
+\left\{\begin{array}{ll}
+2(1-y), & \mbox{si $0<y<1$},\\ 0, & \mbox{en los otros casos}.
+\end{array}\right.
+$$
+Hallar la función de distribución $F_Y(t)$.
+
+
+1. Verificar que:
+$$
+F_Y(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\
+\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
+\mbox{si $t>1$},
+\end{array}\right.
+$$
+es una función de distribución y especificar la función de densidad
+para $Y$. Usar este resultado para hallar $P\left(-{1\over 2}<Y<{3\over 4}\right)$.
+
+1. Sea $X$ una variable aleatoria con función de densidad:
+$$
+f(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+    - Representar gráficamente dicha función.
+    - Hallar y dibujar la función de distribución.
+    - Calcular las siguientes probabilidades: $P(X\geq 0)$ y $P\left(|X|<\frac{1}{2}\right).$
+    
+1. Hallar la esperanza y la varianza de las variables de los ejercicios anteriores.
+
+
+# Transformación de variables aleatorias
+
+1. A partir de 
+$$
+F_X(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+\\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq t\leq
+1$},
+ \\[0.1cm]
+1, & \mbox{si $t>1$},
+\end{array}\right.
+$$
+hallar la función de distribución para $Y=15+2X$ y la función de densidad para $Y$.
+
+1. Si
+$$
+F_X(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\ t, &
+\mbox{si $0\leq t\leq 1$},\\ 1, & \mbox{si
+$t>1$},
+\end{array}\right.
+$$
+hallar la función de distribución y la función de densidad de la forma
+estándar de $X$ ($Z={X-\mu_X\over \sigma_X}$), donde $\mu_X =E(X)$ y $\sigma_X=\sqrt{\mathrm{Var}(X)}$.
+
+1. Para formar un jardín circular, un jardinero corta una cuerda, la ata a una
+estaca y  marca el perímetro. Suponer que la longitud de la
+cuerda tiene la misma verosimilitud de estar en el intervalo comprendido entre $r-0.1$
+y $r+0.1$. ¿Cuál es la distribución de $X$, el área de la superficie del jardín?
+¿Cuál es la probabilidad de que el área de la superficie sea mayor que $\pi r^2$?
+
+1. Sea $X$ una variable aleatoria continua con función de densidad
+$f_X(x)$.
+Consideramos la variable aleatoria $Y=\mathrm{e}^X$. Hallar la función de densidad
+de la variable aleatoria $Y$, $f_Y(y)$.
+
