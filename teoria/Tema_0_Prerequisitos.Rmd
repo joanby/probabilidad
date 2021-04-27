@@ -339,7 +339,7 @@ El número $CR_n^k$ de multiconjuntos con $k$ elementos escogidos de un conjunto
 * Es igual al número de combinaciones con repetición de $k$ elementos escogidos de un conjunto con $n$ elementos.
 * Es igual al número de formas de repartir $k$ objetos en $n$ grupos.
 
-$$CR^k_n = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.$$
+$$CR_n^k = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}.$$
 
 ## Combinatoria. Combinaciones con repetición
 
