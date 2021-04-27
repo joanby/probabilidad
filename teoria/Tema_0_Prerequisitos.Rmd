@@ -356,7 +356,7 @@ Dar 4 caramelos a Antonio, 5 caramelos a Beatriz, ninguno a Carlos y 3 a Dionisi
 
 De esta forma, el número de formas de repartir los caramelos es: 
 
-$$CR_{12}^4 = \binom{12+4-1}{4}$$
+$$CR_{4}^{12} = \binom{4+12-1}{12}$$
 </div>
 
 
