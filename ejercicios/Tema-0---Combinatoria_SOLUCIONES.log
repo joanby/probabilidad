@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.20)  7 APR 2021 10:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  30 APR 2021 10:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,7 +23,7 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
@@ -141,7 +141,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.st
 y
 Package: inputenc 2020/08/01 v1.3d Input encoding file
@@ -544,22 +544,22 @@ t)
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 15.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
 15.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
 115.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
 115.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 115.
@@ -598,7 +598,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 39.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
@@ -614,17 +614,17 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
 94.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [10] [11] (./Tema-0---Combinatoria_SOLUCIONES.aux)
 Package rerunfilecheck Info: File `Tema-0---Combinatoria_SOLUCIONES.out' has no
 t changed.
 (rerunfilecheck)             Checksum: B84A85A12B87F474825A5CDD85F67EF0;2711.
  ) 
 Here is how much of TeX's memory you used:
- 12668 strings out of 480921
- 192187 string characters out of 5904010
- 559036 words of memory out of 5000000
- 29485 multiletter control sequences out of 15000+600000
+ 12668 strings out of 480913
+ 192188 string characters out of 5903860
+ 551414 words of memory out of 5000000
+ 29488 multiletter control sequences out of 15000+600000
  454179 words of font info for 118 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,6n,74p,537b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -649,7 +649,7 @@ yTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming
 ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/AppData/
 Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/t169/AppD
 ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Tema-0---Combinatoria_SOLUCIONES.pdf (11 pages, 280632 bytes)
+Output written on Tema-0---Combinatoria_SOLUCIONES.pdf (11 pages, 280638 bytes)
 .
 PDF statistics:
  321 PDF objects out of 1000 (max. 8388607)
