@@ -1,0 +1,175 @@
+---
+title: 'Ejercicios Tema 1 - Probabilidad. Parte 1,2 y 3'
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
+toccolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#  Ejercicios de Espacios muestrales y sucesos
+
+## Problema 1
+
+Se seleccionan al azar tres cartas sin reposición de una baraja que contiene 3 cartas rojas, 3 azules, 3 verdes y 3 negras. Especifica un espacio muestral para este experimento y halla todos los sucesos siguientes:
+
+* $A$ = "Todas las cartas seleccionadas son rojas"
+* $B$ = "Una carta es roja, 1 es verde y otra es azul"
+* $C$ = "Salen tres cartas de colores diferentes"
+
+
+#  Ejercicios de Probabilidad
+
+## Problema 1
+
+Se lanzan al aire dos monedas iguales. Hallar la probabilidad de que salgan dos caras iguales.
+
+
+## Problema 2
+
+Suponer que se ha trucado un dado de modo que la probabilidad de que salga un número es proporcional al mismo.
+
+* Hallar la probabilidad de los sucesos elementales, de que salga un número par y también de que salga un número impar.
+* Repetir el problema pero suponiendo que la probabilidad de que salga un determinado número es inversamente proporcional al mismo.
+
+## Problema 3
+
+En una prisión de 100 presos se seleccionan al azar dos personas para ponerlas en libertad. 
+
+* ¿Cual es la probabilidad de que el más viejo de los presos sea uno de los elegidos?
+* ¿Y que salga elegida la pareja formada por el más viejo y el más joven?
+
+## Problema 4
+Se apuntan  tres corredores A, B y  C a una carrera.
+
+* ¿Cuál es la probabilidad de que A acabe antes que C si todos son igual de hábiles corriendo y no puede haber empates?
+* ¿Cuál es la probabilidad de que A acabe antes que B y C?
+
+
+## Problema 5
+
+En una sala se hallan $n$ personas. ¿Cual es la probabilidad de que haya al menos dos personas con el mismo mes de nacimiento? Dar el resultado para los valores de  $n=3,4,5,6$.
+
+## Problema 6
+
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se sacan dos bolas sin reposición. Sea  $A$ el suceso que la suma sea 5 y sea $B_i$ el suceso que la primera bola extraída tenga un $i$,con $i=1,2,3,4$. Hallar $P(A|B_i),\  i=1,2,3,4$ y $P(B_i|A), i=1,2,3,4$.
+
+
+## Problema 7
+
+Se lanza al aire una moneda no trucada.
+
+*  ¿Cuál es la probabilidad que la cuarta vez salga cara, si sale cara en las tres primeras tiradas?
+* ¿Y si salen 2 caras en las 4 tiradas?
+
+
+## Problema 8
+
+La urna 1 contiene 2 bolas rojas y 4 de azules. La urna 2 contiene 10 bolas rojas y 2 de azules. Si escogemos al azar una urna y sacamos una bola, 
+
+* ¿Cuál es la probabilidad que la bola seleccionada sea azul? 
+* ¿Y que sea roja?
+
+## Problema 9
+
+Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstico de cáncer que tiene un 95\% de exactitud, tanto en los que tienen cáncer como en los que no. Si el 5 por mil de la población realmente tiene cáncer, encontrar la probabilidad que un determinado individuo tenga cáncer, si la prueba ha dado positiva.
+
+## Problema 10
+
+```{r contador, include=FALSE}
+contador=10
+```
+
+Se lanzan una sola vez dos dados. Si la suma de los dos dados es como mínimo 7, ¿cuál es la probabilidad que la suma sea igual a $i$, para $i=7,8,9,10,11,12$?
+
+
+## Problema `r contador=contador+1;contador`.
+
+Se sabe que ${2 \over 3}$ de los internos de una cierta prisión son menores de 25 años. También se sabe que ${3\over 5}$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
+
+
+## Problema `r contador=contador+1;contador`.
+
+Consideremos una hucha con $2n$ bolas numeradas del $1$ al $2n$. Sacamos $2$ bolas de la urna sin reposición. Sabiendo que la segunda bola es par, ¿cuál es la probabilidad de que la primera bola sea impar?
+
+## Problema `r contador=contador+1;contador`.
+
+Consideramos el siguiente experimento aleatorio: sacamos $5$ números al azar sin reposición a partir de los números naturales $1,2,\dots,20$. Encontrad la probabilidad $p$ de que haya exactamente dos números tales que sean múltiplos de $3$
+
+
+## Problema `r contador=contador+1;contador`.
+
+En una hucha hay $10$ bolas, numeradas del $1$ al $10$. Las $4$ primeras bolas, o sea, las bolas $1,2,3,4$ son blancas. Las bolas $5,6$ son negras y las bolas restantes son rojas. Sacamos dos bolas sin reposición. Sabiendo que la segunda bola es de color negro, encuentra la probabilidad $p$ de que la primera bola sea blanca.
+
+## Problema `r contador=contador+1;contador`.
+
+Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad $p$ de que la suma de las 3 caras sea $10$.
+
+
+## Problema `r contador=contador+1;contador`.
+
+Tenemos 4 cartas numeradas del 1 al 4 que están giradas boca abajo sobre una mesa. Una persona, supuestamente adivina, irá adivinando los valores de las 4 cartas una a una. Suponiendo que es un farsante y que lo que hace es decir los 4 números al azar, ¿cuál es la probabilidad de que acierte como mínimo 1? (Obviamente, no repite ningún número)
+
+## Problema `r contador=contador+1;contador`.
+
+Una forma de aumentar la fiabilidad de un sistema es mediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cuántos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.
+
+
+#  Ejercicios de Independencia de sucesos
+
+```{r contador2, include=FALSE}
+contador=0
+```
+
+
+## Problema `r contador=contador+1;contador`.
+
+Una moneda no trucada se lanza al aire 2 veces Consideremos los siguientes sucesos:
+
+* A: Sale una cara en la primera tirada.
+* B: Sale una cara en la segunda tirada.
+
+    ¿Son los sucesos A y B independientes?
+
+
+## Problema `r contador=contador+1;contador`.
+
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraída tenga un 1 marcado y sea B el suceso que la segunda bola extraída tenga un 1 marcado. 
+
+* ¿Se puede decir que A y B son independientes?
+* ¿Y si el experimento fuera sin reposición?
+
+
+## Problema `r contador=contador+1;contador`.
+
+Sea $\Omega$ un espacio muestral y $A,B,C$ tres sucesos. Probad que
+
+* Si $A$ y $B$ son independientes, también lo son $A$ y $B^c$
+* Si $A,B,C$ son independientes, también lo son $A,B$ y $C^c$
+* ¿Es cierto que si $A,B,C$ son independientes, también lo son $A,B^c$ y $C^c$? ¿Y $A^c, B^c$ y $C^c$? En caso de que la respuesta sea negativa, dad contra ejemplos donde la propiedad falle.
+
+## Problema `r contador=contador+1;contador`.
+
+Dos empresas $A$ y $B$ fabrican el mismo producto. La empresa $A$ tiene un $2\%$ de productos defectuosos mientras que la empresa $B$ tiene un $1\%$. Un cliente recibe un pedido de una de las empresas (no sabe cuál) y comprueba que la primera pieza funciona. Si suponemos que el estado de las piezas de cada empresa es independiente, ¿cuál es la probabilidad de que la segunda pieza que pruebe sea buena? Comprobad que el estado de las dos piezas no es independiente, pero en cambio es condicionalmente independiente dada la empresa que las fabrica.
+
+
+## Problema `r contador=contador+1;contador`. 
+
+Encuentra un ejemplo de tres sucesos $A,B,C$ tales que $A$ y $B$ sean independientes, pero en cambio no sean condicionalmente independientes dado $C$.
+
+

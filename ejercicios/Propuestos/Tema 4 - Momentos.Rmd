@@ -1,0 +1,77 @@
+---
+title: "Ejercicios Tema 4 - Complementos de Variables aleatorias"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+# Momentos y momentos centrados. Asimetría y apuntamiento.
+
+1. Halla el momento de orden $n$ y el momento centrado de orden $n$ para la variable aleatoria $W$ con función de distribución:
+$$F_W (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<3$},
+ \\[0.1cm]
+{1\over 3}, & \mbox{si $3\leq t<4$},
+ \\[0.1cm]
+{1\over 2}, & \mbox{si $4\leq t<5$},
+ \\[0.1cm] 
+{2\over 3}, & \mbox{si $5\leq t<6$},
+ \\[0.1cm] 
+1, & \mbox{si $t\geq 6$},
+\end{array}\right.
+$$
+
+1. Halla el momento de orden $n$ y el momento central de orden $n$ para la variable aleatoria $Z$ con función de probabilidad:
+$$f_Z (x)=
+\left\{\begin{array}{ll}
+{1\over 3}, & \mbox{si $x=0,1,2$},\\ 0, & \mbox{en los otros
+casos.}
+\end{array}\right.
+$$
+
+
+1. Halla el momento de orden $n$ y el momento central de orden $n$ para la variable aleatoria $X$ con función de densidad:
+$$
+f(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+
+1. Halla el momento de orden $n$ y el momento central de orden $n$ para la variable aleatoria $Y$ con función de distribución:
+$$
+F_Y(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\
+\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
+\mbox{si $t>1$},
+\end{array}\right.
+$$
+
+1. Hallar los coeficientes de asimetría y apuntamiento para las variables aleatorias anteriores.
+Hacer un gráfico de la función de probabilidad (caso discreto) o función de densidad (caso continuo) para comprobar si los valores obtenidos concuerdan gráficamente con lo que se observa.
+
+## Función generatriz de momentos y función característica
+
+1. Halla la función generatriz de momentos $\FunGenMom$ y la función característica $\FunCar$ para las variables aleatorias de los problemas 1, 2 y 3 de la sección anterior. Comprobar que 
+$$
+E(X^n)= \FunGenMom_X^{(n)}(0),\ E(X^n)=\frac{1}{\mathrm{i}^n}\FunCar_X^{(n)}(0),
+$$
+para todo valor de $n$.
+
+## Métodos de transformación
+
+1. Para las variables de los problemas 3 y 4 de la sección de Momentos y con ayuda de `R`,
+    - usando el método de transformación, hallar muestras aleatorias de cada variable de tamaño $100$. 
+    - hacer lo mismo pero ahora usando el método de rechazo.
+En ambos casos realizar un histograma de frecuencias relativas de las muestras junto con la correspondiente función de densidad.

@@ -1,12 +1,22 @@
 ---
-title: "Ejercicios Tema 2 - Variables aleatorias"
+title: "Ejercicios Tema 2 - Variables aleatorias. Parte 1, 2  y 3"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  word_document: default
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
   html_document:
-    df_print: paged
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
+toccolor: blue
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -59,7 +69,7 @@ $$
 1. Un examen tipo test consta de cinco preguntas con tres posibles opciones cada una. Un alumno contesta al azar las cinco cuestiones.
 Suponiendo que cada respuesta acertada vale dos puntos, hallar la distribución de número de puntos obtenidos por el alumno.
 
-1. Continuamos con el ejercicio anterior pero ahora suponemos que restamos una cierta cantidad por respuesta incorrecta. Suponiendo que el examen tiene $n$ preguntas, cada pregunta tiene $k$ posibles respuestas, y que cada pregunta acertada vale 1 punto, ¿qué cantidad hay que restar a cada pregunta para que la esperanza de la nota de una pregunta contestada al azar sea 0? Repetir el ejercicio anterior pero ahora suponiendo que restamos a cada pregunta la cantidad obtenida en el caso en que éste se reponda de forma errónea.
+1. Continuamos con el ejercicio anterior pero ahora suponemos que restamos una cierta cantidad por respuesta incorrecta. Suponiendo que el examen tiene $n$ preguntas, cada pregunta tiene $k$ posibles respuestas, y que cada pregunta acertada vale 1 punto, ¿qué cantidad hay que restar a cada pregunta para que la esperanza de la nota de una pregunta contestada al azar sea 0? Repetir el ejercicio anterior pero ahora suponiendo que restamos a cada pregunta la cantidad obtenida en el caso en que éste se responda de forma errónea.
 
 1. Hallar la esperanza y la varianza de todas las variables que han aparecido en los ejercicios anteriores.
 

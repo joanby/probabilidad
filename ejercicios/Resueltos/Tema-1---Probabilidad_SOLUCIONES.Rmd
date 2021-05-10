@@ -1,0 +1,497 @@
+---
+title: 'SOLUCIONES:  Ejercicios Tema 1 - Probabilidad. Parte 1,2 y 3'
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
+toccolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#  Ejercicios de Espacios muestrales y sucesos
+
+## Problema 1
+
+Se seleccionan al azar tres cartas sin reposición de una baraja que contiene 3 cartas rojas, 3 azules, 3 verdes y 3 negras. Especifica un espacio muestral para este experimento y halla todos los sucesos siguientes:
+
+* $A$ = "Todas las cartas seleccionadas son rojas"
+* $B$ = "Una carta es roja, 1 es verde y otra es azul"
+* $C$ = "Salen tres cartas de colores diferentes"
+
+### Solución
+
+Codificamos el espacio muestral  por la inicial  del color y el número de carta de 1 a 3 por color
+$$\Omega=\{R1, R2, R3, V1, V2, V3, A1, A2, A3, N1, N2, N3 \}.$$
+
+
+Los sucesos que nos piden son:
+
+* $A=\{(R1, R2, R3),(R1, R3, R2),(R2, R1, R3),(R2, R3, R1),(R3, R1, R2), (R3, R2, R1)\}$, 
+* $B=\{(Ri,Vj,Ak),(Ri,Aj,Vk),(Vi,Rj,Ak),(Vi,Aj,Rk),(Ai,Vj,Rk),(Ai,Rj,Vk) | \mbox{ con } i,j,k\in\{1,2,3\}\}$. El cardinal de $\left|B\right|=6\cdot 3\cdot 3\cdot 3= `r 6*3^3`$
+*  Se selecciona tres colores de entre los 4 ${{4}\choose {3}}=4$ casos. Cada trío de colores tiene el mismo cardinal que $B$ por lo tanto en total con   son $4\cdot 6\cdot 3^3=`r 4*6*3^3`$. 
+
+Ejercicio idead un algoritmo que escriba los objetos combinatorios en cada caso.
+
+
+#  Ejercicios de Probabilidad
+
+## Problema 1
+
+Se lanzan al aire dos monedas iguales. Hallar la probabilidad de que salgan dos caras iguales.
+
+
+
+### Solución
+
+$P(CC)=\frac{\left|\{CC\}\right|}{\left|\{CC,C+,+C,++\}\right|}=\frac{1}{4}.$
+
+
+## Problema 2
+
+Suponer que se ha trucado un dado de modo que la probabilidad de que salga un número es proporcional al mismo.
+
+* Hallar la probabilidad de los sucesos elementales, de que salga un número par y también de que salga un número impar.
+* Repetir el problema pero suponiendo que la probabilidad de que salga un determinado número es inversamente proporcional al mismo.
+
+
+### Solución
+
+**PARTE I**
+
+Sea  $\Omega=\{1,2,3,4,5,6\}$ y nos dicen que  $P(k)= \alpha\cdot k$. 
+
+La suma de todas las probabilidades debe ser 1 así que \footnote{Utilizamos que
+$\sum_{k=1}^n k=\frac{n\cdot (n+1)}{2}$ } $1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot k=
+\alpha \sum_{k=1}^6 k = \alpha \frac{6\cdot (6+1)}{2}=\alpha\cdot 21$. Así  tenemos que $\alpha=\frac{1}{21}.$
+
+
+ 
+$P(\mbox{salir par})= P(2)+P(4)+P(6)=\frac{2}{21}+\frac{4}{21}+\frac{6}{21}=\frac{12}{21}=\frac{4}{7}=`r 4/7`.$
+
+$P(\mbox{salir impar})= 1- P(\mbox{salir par})=1-\frac{12}{21}=`r 1-12/21`.$
+
+**PARTE II**
+
+Sea  $\Omega=\{1,2,3,4,5,6\}$ y nos dicen que  $P(k)= \alpha\cdot \frac{1}{k}$. 
+La suma de todas las probabilidades debe ser 1 así que 
+$$
+1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot \frac{1}{k}=
+\alpha \sum_{k=1}^6 k = \alpha \left(\frac{1}{1}+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6}\right)=\alpha\cdot 2.45,
+$$
+Luego el valor buscado es $\alpha=\frac{1}{2.45}=0.4081633$.
+
+$P(\mbox{salir par})= P(2)+P(4)+P(6)=0.4081633\left(\frac{1}{2}+\frac{1}{4}+\frac{1}{6}\right)=`r 0.4081633 *(1/2+1/4+1/6)`.$
+
+$P(\mbox{salir impar})= 0.4081633\left(\frac{1}{1}+\frac{1}{3}+\frac{1}{5}\right)=`r 0.4081633 *(1/1+1/3+1/5)`.$
+
+Efectivamente $P(\mbox{salir impar})=1-P(\mbox{salir par})=1- 0.4081633=`r 1-0.4081633`.$
+
+## Problema 3
+
+En una prisión de 100 presos se seleccionan al azar dos personas para ponerlas en libertad. 
+
+* ¿Cual es la probabilidad de que el más viejo de los presos sea uno de los elegidos?
+* ¿Y que salga elegida la pareja formada por el más viejo y el más joven?
+
+### Solución 
+
+
+Supongamos que solo hay un mas viejo y un más joven.
+
+
+\begin{eqnarray*}
+P(\mbox{De entre dos elegidos al azar esté el más viejo}) &=&\\
+\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}=
+\frac{{{99}\choose {1}}}{{{100}\choose {2}}}=\frac{99}{\frac{100\cdot 99}{2}}&=&\\
+\frac{2\cdot 99}{100\cdot 99}=
+\frac{2}{100}=\frac{1}{50}.
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+P(\mbox{De los dos elegidos al azar sean  el más viejo y el más joven})&=&\\
+\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}=
+\frac{1}{{{100} \choose {2}}}=\frac{1}{\frac{100\cdot 99}{2}}&=&\\
+\frac{2}{100\cdot 99}
+=\frac{1}{`r 50*99`}.
+\end{eqnarray*}
+
+
+## Problema 4
+Se apuntan  tres corredores A, B y  C a una carrera.
+
+* ¿Cuál es la probabilidad de que A acabe antes que C si todos son igual de hábiles corriendo y no puede haber empates?
+* ¿Cuál es la probabilidad de que A acabe antes que B y C?
+
+### Solución
+Los casos posibles CP son $3!=6$
+
+El corredor A puede acabar antes de C siendo primero o segundo  en cada caso $2!$ casos (hacer un algoritmo que los escriba).
+
+
+$$P(\mbox{A acabe antes de C})=\frac{CF= \{ABC,ACB,BAC\}}{CP}=\frac{3}{3!}=\frac{3}{6}=\frac{1}{2}.$$
+
+
+
+$$P(\mbox{A acabe antes de B y C})=\frac{CF}{CP}=\frac{2!}{3!}=\frac{1}{3}.$$
+
+
+
+## Problema 5
+
+En una sala se hallan $n$ personas. ¿Cual es la probabilidad de que haya al menos dos personas con el mismo mes de nacimiento? Dar el resultado para los valores de  $n=3,4,5,6$.
+
+### Solución
+
+
+$$P(\mbox{Entre n personas al menos dos nazcan el mimo mes})=1-P(\mbox{Entre  n personas todas nazcan en distinto mes}).$$
+
+Casos Posibles (CP) todas las maneras de escoger $n$ meses de 12  esto son $VR_{12}^n=12^n.$.
+
+Casos Favorables  a que todas nazcan EN MESES DISTINTOS  $V_{12}^n=\frac{12!}{(12-n)!}$
+
+
+$$
+P(\mbox{De n personas menos dos nazcan el mimo mes})=
+1-P(\mbox{De personas todas nazcan en distinto mes})=
+1-\frac{\frac{12!}{(12-n)!}}{12^n}.
+$$
+
+Hagamos los calculamos con R para n=3,4,5,6
+
+```{r}
+n=3:6
+sapply(n,FUN=function(n) 1-((factorial(12)/factorial(12-n)))/(12^n))
+```
+
+
+
+## Problema 6
+
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se sacan dos bolas sin reposición. Sea  $A$ el suceso que la suma sea 5 y sea $B_i$ el suceso que la primera bola extraída tenga un $i$,con $i=1,2,3,4$. Hallar $P(A|B_i),\  i=1,2,3,4$ y $P(B_i|A), i=1,2,3,4$.
+
+
+### Solución
+Sin contamos el "orden de extracción"  el espacio muestral  son los pares no ordenados 
+$$\Omega =\{(1,2),(2,1),(1,3),(3,1),(1,4),(4,1),(2,3),(3,2),(2,4),(4,2),(3,4),(4,3)\}.$$
+
+Todos los pares son equiprobables y tienen por probabilidad $\frac{1}{6}.$
+
+
+
+
+El suceso de que la suma sea 5 es $A=\{(1,4),(4,1),(3,2),(2,3)\}$. Los sucesos  que empiezan por $i$  son $B_1=\{(1,2),(1,3),(i,14)\}$  y de forma similar se construyen el resto de $B_i$ $i=2,3,4$. Es evidente que $P(B_i)=\frac{3}{12}=\frac{1}{4}$
+
+
+
+$$
+P(A|B_1)=\frac{P(A\cap B_1)}{P(B_1)}=\frac{P((1,4))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+$$
+
+
+$$
+P(A|B_2)=\frac{P(A\cap B_2)}{P(B_2)}=\frac{P((2,3))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+$$
+
+
+
+$$
+P(A|B_3)=\frac{P(A\cap B_3)}{P(B_3)}=\frac{P((3,2))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+$$
+
+
+
+$$P(A|B_4)=\frac{P(A\cap B_4)}{P(B_4)}=\frac{P((4,1))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.$$
+
+
+
+Ahora para  hacer fácil la segunda  parte  para $i=1,2,3,4$ hacemos  
+
+$$
+P(B_i/A)=\frac{P(A/B_i)\cdot P(B_i)}{P(A)}=\frac{\frac{1}{3}\cdot \frac{3}{12}}{\frac{4}{12}}=\frac{1}{4}.
+$$
+
+
+
+
+
+## Problema 7
+
+Se lanza al aire una moneda no trucada.
+
+*  ¿Cuál es la probabilidad que la cuarta vez salga cara, si sale cara en las tres primeras tiradas?
+* ¿Y si salen 2 caras en las 4 tiradas?
+
+### Solución
+
+
+$$
+P(\mbox{C en la cuarta}|CCC)=
+\frac{P(\mbox{C en la cuarta}\cap \{CCC\})}{P(CCC)}=
+\frac{P(CCCC)}{P(CCC)}=\frac{0.5^4}{0.5^3}=0.5
+.$$
+ 
+ 
+El suceso $\mbox{2 caras en cuatro tiradas}=\{CC++,C+C+,C++C,+C+C,++CC\}.$
+
+
+\begin{eqnarray*}
+P(\mbox{C en la cuarta}|\{CC++,C+C+,C++C,+C+C,++CC\})&=&\\
+\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC\})}{P(CCC)}&=&\\
+\frac{P(\{C++C,+C+C,++CC\})}{P(CCC)}=\frac{3\cdot 0.5^4}{4\cdot 0.5^4}=\frac{3}{4}=0.75.
+\end{eqnarray*}
+
+## Problema 8
+
+La urna 1 contiene 2 bolas rojas y 4 de azules. La urna 2 contiene 10 bolas rojas y 2 de azules. Si escogemos al azar una urna y sacamos una bola, 
+
+* ¿Cuál es la probabilidad que la bola seleccionada sea azul? 
+* ¿Y que sea roja?
+
+### Solución
+
+Sea $U_i$  el suceso hemos es cogido la urna $i$ para $i=1,2$, y $A$ el suceso  la bola extraída es azul y $R$ roja. 
+
+Sabemos que $P(A/U_1)=\frac{4}{6}$, $P(A/U_2)=\frac{2}{12}$, $P(R/U_1)=\frac{2}{6}$ y $P(R/U_2)=\frac{10}{12}.$
+
+
+Nos piden en primer lugar $P(A)$ sin saber de qué urna se ha extraído. Utilizaremos el teorema de la probabilidad total
+
+$$
+P(A)=P(A|U_1)\cdot P(U_1)+P(A|U_2)\cdot P(U_2)=
+\frac{4}{6}\cdot \frac{1}{2}+\frac{2}{12}\cdot \frac{1}{2}
+=\frac{4}{12}+\frac{1}{12}=\frac{5}{12}.
+$$
+
+
+Por otra parte 
+
+$P(R)=1-P(A)=1-\frac{5}{12}=\frac{7}{12}.$
+
+
+
+
+
+## Problema 9
+
+Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstico de cáncer que tiene un 95\% de exactitud, tanto en los que tienen cáncer como en los que no. Si el 5 por mil de la población realmente tiene cáncer, encontrar la probabilidad que un determinado individuo tenga cáncer, si la prueba ha dado positiva.
+
+### Solución
+
+ Sea $C$ es el suceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
+ 
+ Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$ por lo tanto $P(T|C^c)=1-P(T^c|C^2)=0.05$ y $P(C^c)=1-P(C)=0.005$.
+ 
+
+
+Nos piden 
+$$
+P(C|T)=\frac{P(T|C)\cdot P(C)}{P(T)}= 
+\frac{P(T|C)\cdot P(C)}{P(T|C)\cdot P(C)+P(T|C^c)\cdot P(C^c)} =
+\frac{0.95\cdot 0.005}{0.95\cdot 0.005+(1-0.95)\cdot (1-0.005)}=
+`r 0.95* 0.005/(0.95* 0.005 + (1-0.95)* (1-0.005))`. 
+$$
+
+## Problema 10
+
+```{r contador, include=FALSE}
+contador=10
+```
+
+Se lanzan una sola vez dos dados. Si la suma de los dos dados es como mínimo 7, ¿cuál es la probabilidad que la suma sea igual a $i$, para $i=7,8,9,10,11,12$?
+
+### Solución
+
+
+Estos son los resultados de la suma sin la condición
+
+```{r}
+dado1=rep(1:6,times=6)# dado 1
+dado2=rep(1:6,each=6) #dado 2
+resultados=data.frame(dado1,dado2,suma=dado1+dado2)
+knitr::kable(resultados)
+table(resultados$suma)
+
+```
+
+
+
+Si condicionamos a que la suma es mayor o igual a 7
+
+```{r}
+table(resultados$suma[resultados$suma>=7])
+
+```
+
+La probabilidades pedidas son 
+
+```{r}
+prop.table(table(resultados$suma[resultados$suma>=7]))
+```
+
+
+Como ejercicio formalizar con teoría de la probabilidad básica alguno de los resultados y comprobad que es correcto.
+
+
+## Problema `r contador=contador+1;contador`.
+
+Se sabe que ${2 \over 3}$ de los internos de una cierta prisión son menores de 25 años. También se sabe que ${3\over 5}$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
+
+### Solución
+
+
+## Problema `r contador=contador+1;contador`.
+
+Consideremos una hucha con $2n$ bolas numeradas del $1$ al $2n$. Sacamos $2$ bolas de la urna sin reposición. Sabiendo que la segunda bola es par, ¿cuál es la probabilidad de que la primera bola sea impar?
+
+### Solución
+
+## Problema `r contador=contador+1;contador`.
+
+Consideramos el siguiente experimento aleatorio: sacamos $5$ números al azar sin reposición a partir de los números naturales $1,2,\dots,20$. Encontrad la probabilidad $p$ de que haya exactamente dos números tales que sean múltiplos de $3$
+
+### Solución  
+
+Da igual que los contemos extrayendo de uno en uno o  de golpe lo importante es que son sin reposición; de 1 a 20  hay 6 múltiplos de 3 
+$\{3,6,9,12,15,18\}$:
+
+
+**Metemos la mano y sacamos 5**:
+
+
+Casos Posibles (CP): ${20 \choose 5}$
+
+Casos Favorables (CF):  Escogemos dos múltiplos de 3  entre 6 y por cada elección escogemos 3 no múltiplos entre 20-6=14 número  por lo tanto hay ${6 \choose 2}\cdot{{20-6} \choose 3}={6 \choose 2}\cdot{{14} \choose 3}$.
+
+Luego la probabilidad de exactamente dos múltiplos de 3 es  
+
+$$
+P(\mbox{\{2 múltiplos de 3\}} )=\frac{CF}{CP}=\frac{{6 \choose 2}\cdot{14 \choose 3}}{{20 \choose 5}}=`r round(choose(6,2)*choose(14,3)/choose(20,5),7) `
+$$
+```{r}
+choose(6,2)
+choose(14,3)
+choose(20,5)
+
+# la probabilidad es 
+choose(6,2)*choose(14,3)/choose(20,5)
+```
+
+**Sacamos 5 en orden sin reposición**:
+
+
+Casos Posibles (CP): $V_{20}^{5}=\frac{20!}{(20-5)!}.$
+
+Casos Favorables (CF):  Escogemos dos posiciones para colocar  múltiplos de 3  ahora en esas posiciones hacemos $V_2^6$ de los 6 múltiplo y luego en las tres restantes hacemos variaciones de los 14 no múltiplos $V_3^{14}$  por lo tanto hay 
+${5 \choose 2}\cdot V_6^2\cdot V_{14}^{3}$.
+
+Luego la probabilidad de exactamente dos múltiplos de 3 es  
+
+$$
+P(\mbox{\{2 múltiplos de 3\}} )=\frac{CF}{CP}=\frac{{5\choose 2}\cdot V_{6}^{2}\cdot V_{14}^{3}}{V_{10}^{5}}=
+`r round(choose(5,2)*factorial(6)/factorial(6-2)*factorial(14)/factorial(14-3)/(factorial(20)/factorial(20-5)),7)`
+$$
+
+```{r}
+choose(5,2)
+factorial(6)/factorial(6-2)
+factorial(14)/factorial(14-3)
+factorial(20)/factorial(20-5)
+# La probabilidad es 
+
+choose(5,2)*factorial(6)/factorial(6-2)*
+  factorial(14)/factorial(14-3)/(factorial(20)/factorial(20-5))
+
+```
+
+
+Como se observa el resultado de la probabilidad es ¡¡el mismo!!.
+
+## Problema `r contador=contador+1;contador`.
+
+En una hucha hay $10$ bolas, numeradas del $1$ al $10$. Las $4$ primeras bolas, o sea, las bolas $1,2,3,4$ son blancas. Las bolas $5,6$ son negras y las bolas restantes son rojas. Sacamos dos bolas sin reposición. Sabiendo que la segunda bola es de color negro, encuentra la probabilidad $p$ de que la primera bola sea blanca.
+
+### Solución 
+
+## Problema `r contador=contador+1;contador`.
+
+Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad $p$ de que la suma de las 3 caras sea $10$.
+
+
+### Solución 
+
+## Problema `r contador=contador+1;contador`.
+
+Tenemos 4 cartas numeradas del 1 al 4 que están giradas boca abajo sobre una mesa. Una persona, supuestamente adivina, irá adivinando los valores de las 4 cartas una a una. Suponiendo que es un farsante y que lo que hace es decir los 4 números al azar, ¿cuál es la probabilidad de que acierte como mínimo 1? (Obviamente, no repite ningún número)
+
+### Solución
+
+## Problema `r contador=contador+1;contador`.
+
+Una forma de aumentar la fiabilidad de un sistema es mediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cuántos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.
+
+
+#  Ejercicios de Independencia de sucesos
+
+```{r contador2, include=FALSE}
+contador=0
+```
+
+
+## Problema `r contador=contador+1;contador`.
+
+Una moneda no trucada se lanza al aire 2 veces Consideremos los siguientes sucesos:
+
+* A: Sale una cara en la primera tirada.
+* B: Sale una cara en la segunda tirada.
+
+    ¿Son los sucesos A y B independientes?
+
+### Solución  
+
+## Problema `r contador=contador+1;contador`.
+
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraída tenga un 1 marcado y sea B el suceso que la segunda bola extraída tenga un 1 marcado. 
+
+* ¿Se puede decir que A y B son independientes?
+* ¿Y si el experimento fuera sin reposición?
+
+### Solución  
+
+## Problema `r contador=contador+1;contador`.
+
+Sea $\Omega$ un espacio muestral y $A,B,C$ tres sucesos. Probad que
+
+* Si $A$ y $B$ son independientes, también lo son $A$ y $B^c$
+* Si $A,B,C$ son independientes, también lo son $A,B$ y $C^c$
+* ¿Es cierto que si $A,B,C$ son independientes, también lo son $A,B^c$ y $C^c$? ¿Y $A^c, B^c$ y $C^c$? En caso de que la respuesta sea negativa, dad contra ejemplos donde la propiedad falle.
+
+### Solución  
+
+## Problema `r contador=contador+1;contador`.
+
+Dos empresas $A$ y $B$ fabrican el mismo producto. La empresa $A$ tiene un $2\%$ de productos defectuosos mientras que la empresa $B$ tiene un $1\%$. Un cliente recibe un pedido de una de las empresas (no sabe cuál) y comprueba que la primera pieza funciona. Si suponemos que el estado de las piezas de cada empresa es independiente, ¿cuál es la probabilidad de que la segunda pieza que pruebe sea buena? Comprobad que el estado de las dos piezas no es independiente, pero en cambio es condicionalmente independiente dada la empresa que las fabrica.
+
+### Solución 
+
+## Problema `r contador=contador+1;contador`. 
+
+Encuentra un ejemplo de tres sucesos $A,B,C$ tales que $A$ y $B$ sean independientes, pero en cambio no sean condicionalmente independientes dado $C$.
