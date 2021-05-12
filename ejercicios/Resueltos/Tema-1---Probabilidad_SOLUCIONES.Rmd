@@ -96,9 +96,11 @@ Luego el valor buscado es $\alpha=\frac{1}{2.45}=0.4081633$.
 
 $P(\mbox{salir par})= P(2)+P(4)+P(6)=0.4081633\left(\frac{1}{2}+\frac{1}{4}+\frac{1}{6}\right)=`r 0.4081633 *(1/2+1/4+1/6)`.$
 
-$P(\mbox{salir impar})= 0.4081633\left(\frac{1}{1}+\frac{1}{3}+\frac{1}{5}\right)=`r 0.4081633 *(1/1+1/3+1/5)`.$
+$P(\mbox{salir impar})= 0.4081633\left(\frac{1}{1}+\frac{1}{3}+\frac{1}{5}\right)=
+`r 0.4081633 *(1/1+1/3+1/5)`.$
 
-Efectivamente $P(\mbox{salir impar})=1-P(\mbox{salir par})=1- 0.4081633=`r 1-0.4081633`.$
+Efectivamente $P(\mbox{salir impar})=1-P(\mbox{salir par})=1-`r  0.4081633 *(1/2+1/4+1/6)`=
+`r 1-0.4081633 *(1/2+1/4+1/6)`.$
 
 ## Problema 3
 
