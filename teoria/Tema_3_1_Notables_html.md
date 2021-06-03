@@ -11,10 +11,7 @@ output:
 ---
 
 
-```{r setup0, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache = FALSE)
-library(reticulate)
-```
+
 
 # Distribuciones Notables I 
 
@@ -129,10 +126,29 @@ $E(X)=p$ | $Var(X)=p\cdot q$
 
 Veamos los cálculos básicos $Ber(p=0.25)$ en `R`.
 
-```{r binomialfunciones}
+
+```r
 dbinom(0,size=1,prob=0.25)
+```
+
+```
+## [1] 0.75
+```
+
+```r
 dbinom(1,size=1,prob=0.25)
+```
+
+```
+## [1] 0.25
+```
+
+```r
 rbinom(n=20,size = 1,prob=0.25)
+```
+
+```
+##  [1] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0
 ```
 
 ## Distribución Bernoulli. Ejemplo
@@ -140,7 +156,8 @@ rbinom(n=20,size = 1,prob=0.25)
 
 El siguiente código dibuja las función de probabilidad y la de distribución de una  $Ber(p=0.25)$
 
-```{r eval=FALSE}
+
+```r
 par(mfrow=c(1,2))
 plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
      ylim=c(0,1),xlim=c(-1,2),xlab="x",
@@ -155,22 +172,12 @@ par(mfrow=c(1,1))
 
 ## Distribución Bernoulli. Ejemplo
 
-```{r fig.align='center',echo=FALSE}
-par(mfrow=c(1,2))
-plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=0.25),
-     ylim=c(0,1),xlim=c(-1,2),xlab="x",
-     main="Función de probabilidad\n Ber(p=0.25)")
-lines(x=c(0,0,1,1),y=c(0,0.75,0,0.25), type = "h", lty = 2,col="blue")
-curve(pbinom(x,size=1,prob=0.25),
-      xlim=c(-1,2),col="blue",
-      main="Función de distribución\n Ber(p=0.25)")
-par(mfrow=c(1,1))
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 ## Gráficas interactivas $Ber(p)$
 
-```{r eval = FALSE}
 
+```r
 sliderInput("p_ber", label = "Probabilidad éxito p:",
               min = 0.01, max = 0.99, value = 0.25, step = 0.01)
 
@@ -257,21 +264,36 @@ Los números binomiales calculan el número de equipos de baloncesto distintos q
 Es decir cuántas  maneras distintas hay para elegir (*choose*) 5 jugadores en un conjunto de 6 jugadores. Todo el mundo diría 
 ¡¡¡6!!!. Efectivamente con R es 
 
-```{r}
+
+```r
 choose(6,5)
+```
+
+```
+## [1] 6
 ```
 
 ## Números binomiales con R
 
 Con 10 jugadores  el número de equipos de  5 distintos es bastante más grande
 
-```{r}
+
+```r
 choose(10,5)
+```
+
+```
+## [1] 252
 ```
 Y, por ejemplo, con un equipo de fútbol profesional  que tiene en plantilla 22 jugadores  (quitando los guardametas) se pueden formar ¡¡nada menos que!!
 
-```{r}
+
+```r
 choose(22,10)
+```
+
+```
+## [1] 646646
 ```
 un bonito número capicúa que nos da el número de equipos distintos que se pueden formar.
 
@@ -347,37 +369,65 @@ Veamos los cálculos básicos con funciones de R para una v.a $X$ con distribuci
 
 Si queremos calcular con `R` algún valor de la función de distribución como por ejemplo $F_X(0)=P(X\leq 0)$, tenemos que hacer:
 
-```{r binomialfuncionesA}
+
+```r
 pbinom(0,size=10,prob=0.25)
+```
+
+```
+## [1] 0.05631351
 ```
 
 y si queremos por ejemplo $F_X(4)=P(X\leq 4)$, tenemos que hacer:
 
-```{r}
+
+```r
 pbinom(4,size=10,prob=0.25)
+```
+
+```
+## [1] 0.9218731
 ```
 
 ## Cálculos binomial con R
 
 Sin embargo, si queremos calcular algún valor de la función de probabilidad como por ejemplo $P(X=0)$, tenemos que hacer:
 
-```{r binomialfunciones2A_dbinom}
+
+```r
 dbinom(0,size=10,prob=0.25)
+```
+
+```
+## [1] 0.05631351
 ```
 
 o por ejemplo para  $P(X=4)$:
 
-```{r}
+
+```r
 dbinom(4,size=10,prob=0.25)
+```
+
+```
+## [1] 0.145998
 ```
 
 ## Generación de muestras aleatorias con R
 
 Generaremos una muestra aleatoria  de  100 valores  de una población con distribución $B(20,0.5)$
 
-```{r semilla_binomial}
+
+```r
 set.seed(2019)
 rbinom(100,size = 20,prob=0.5)
+```
+
+```
+##   [1] 12 11  9 11  6  6 12  5  7 11 12 11  8  8 11 11  7 11  9 10  9 10 14  8  8
+##  [26]  5 11 14 11 10 11  5 12  8  6  7  9 10  5 12 11  9 12 11 12 10 13 13  8  8
+##  [51]  9  7  6  9 10  9 16 13  6  6  8  8 11  9 12 15  9  7 12 11  9  8  9  8 11
+##  [76] 15  7 10  9 12  6 13 14  8 10  8 10 11 11  9 10 11 12  8 10 12  9 13  9 13
 ```
 
 <div class="example"> 
@@ -392,13 +442,15 @@ Veamos los cálculos básicos con funciones de python para una v.a $X$ con distr
 
 Primero importamos la  función `binom` de la librería `scipy.stat`
 
-```{python binomialfunciones2A_python}
+
+```python
 from scipy.stats import binom
 ```
 
 En general en el paquete `scipy`, la función de probabilidad se invocará con el método `pmf`, la de distribución con el método `cdf` mientras que una muestra aleatoria que siga esta distribución con el método `rvs`. En todos ellos aparecerá siempre el parámetro `loc` que se utiliza para desplazar el dominio de la variable aleatoria. Por ejemplo, en este caso 
 
-```{python eval=F}
+
+```python
 binom.pmf(k, n, p, loc) =  binom.pmf(k - loc, n, p)
 ```
 
@@ -406,9 +458,21 @@ binom.pmf(k, n, p, loc) =  binom.pmf(k - loc, n, p)
 
 Para calcular los valores de la función de distribución como por ejemplo $F_X(0)=P(X\leq 0)$ y $F_X(4)=P(X\leq 4)$ utilizamos la función `cdf`
 
-```{python bino3_py}
+
+```python
 binom.cdf(0,n=10,p=0.25)
+```
+
+```
+## 0.056313514709472656
+```
+
+```python
 binom.cdf(4,n=10,p=0.25)
+```
+
+```
+## 0.9218730926513672
 ```
 
 Notemos que al no indicar el valor de `loc`, se le asume que toma el valor 0.
@@ -417,9 +481,21 @@ Notemos que al no indicar el valor de `loc`, se le asume que toma el valor 0.
 
 Para calcular los valores de la función de probabilidad $P(X=0)$ y $P(X=4)$ utilizamos la función `pmf`:
 
-```{python bino4_py_2}
+
+```python
 binom.pmf(0,n=10,p=0.25)
+```
+
+```
+## 0.056313514709472684
+```
+
+```python
 binom.pmf(4,n=10,p=0.25)
+```
+
+```
+## 0.14599800109863295
 ```
 
 Notemos que al no indicar el valor de `loc`, se le asume que toma el valor 0.
@@ -428,8 +504,18 @@ Notemos que al no indicar el valor de `loc`, se le asume que toma el valor 0.
 
 Si queremos generar una muestras aleatorias que siga una distribución binomial, podemos usar la función `rvs`. En este caso, generaremos una muestra aleatoria  de  100 valores  de una población $B(20,0.5)$
 
-```{python bino4_py_3}
+
+```python
 binom.rvs(n=20,p=0.25,size = 100)
+```
+
+```
+## array([ 2,  9,  6,  4,  6,  2,  6,  3,  4,  6,  3,  5,  7,  5,  2,  5,  3,
+##         2,  3,  5,  3,  6,  4,  2,  2,  4,  4,  8,  6,  4,  3,  3,  6,  2,
+##         5,  3,  3,  5,  5,  5,  4,  8,  6,  4,  5,  2,  4,  2,  6,  4,  6,
+##         6,  7,  6,  5,  4,  5,  4,  3,  3,  5,  6,  5,  2,  6,  6,  2,  4,
+##         3,  7, 10,  8,  5,  4,  2,  5,  9,  4,  7,  6,  5,  6,  3,  5,  3,
+##         4,  7,  6,  9,  3,  4,  7,  2,  4,  5,  6,  2,  5,  8,  7])
 ```
 
 ##  Cálculos distribución binomial con python
@@ -438,8 +524,17 @@ binom.rvs(n=20,p=0.25,size = 100)
 Notemos que la secuencia aleatoria generada no es la misma que con `R`. De hecho, si volvemos a ejecutar esta función obtendremos una muestra aleatoria distinta.
 
 
-```{python bino4_py}
+
+```python
 binom.rvs(n=20,p=0.25,size = 100)
+```
+
+```
+## array([3, 5, 7, 3, 8, 7, 3, 4, 8, 5, 5, 5, 1, 5, 6, 6, 5, 7, 7, 4, 6, 4,
+##        4, 6, 8, 8, 5, 3, 4, 6, 5, 5, 7, 5, 5, 1, 3, 4, 6, 5, 8, 5, 6, 4,
+##        3, 3, 4, 7, 6, 6, 5, 5, 4, 5, 3, 9, 5, 6, 4, 4, 7, 7, 4, 4, 2, 4,
+##        3, 6, 5, 6, 6, 2, 6, 3, 5, 5, 5, 7, 6, 3, 9, 7, 5, 4, 5, 6, 3, 5,
+##        6, 4, 5, 2, 5, 4, 7, 4, 7, 5, 5, 3])
 ```
 </div>
 
@@ -448,18 +543,38 @@ binom.rvs(n=20,p=0.25,size = 100)
 
 Veamos algunos cálculos básicos con funciones de python para la binomial  $B(n=10,p=0.25)$.
 
-```{python binomialfunciones2A_python2}
+
+```python
 binom.cdf(5,n=10,p=0.25)
+```
+
+```
+## 0.9802722930908203
+```
+
+```python
 binom.pmf(1,n=10,p=0.25)
+```
+
+```
+## 0.18771171569824247
+```
+
+```python
 binom.rvs(n=20,p=0.25,size=10)
 ```
 
+```
+## array([7, 3, 5, 5, 1, 2, 4, 4, 7, 5])
+```
+
 ## Gráficas de la distribución binomial con R 
 
 El siguiente código de R dibuja las función de probabilidad y la de distribución de una  $B(n=10,p=0.25)$
 
 
-```{r fig.align='center',echo=TRUE,eval=FALSE}
+
+```r
 par(mfrow=c(1,2))
 aux=rep(0,22)
 aux[seq(2,22,2)]=dbinom(c(0:10),size=10,prob=0.25)
@@ -479,25 +594,13 @@ par(mfrow=c(1,1))
 El siguiente código de R dibuja las función de probabilidad y la de distribución de una  $B(n=10,p=0.25)$
 
 
-```{r fig.align='center',echo=FALSE}
-par(mfrow=c(1,2))
-aux=rep(0,22)
-aux[seq(2,22,2)]=dbinom(c(0:10),size=10,prob=0.25)
-plot(x=c(0:10),y=dbinom(c(0:10),size=10,prob=0.25),
-  ylim=c(0,1),xlim=c(-1,11),xlab="x",
-  main="Función de probabilidad\n B(n=10,p=0.25)")
-lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
-curve(pbinom(x,size=10,prob=0.25),
-  xlim=c(-1,11),col="blue",
-  main="Función de distribución\n B(n=10,p=0.25)")
-par(mfrow=c(1,1))
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
 ## Gráficas interactivas binomial
 
 
-```{r  eval = FALSE}
 
+```r
 fluidPage(
 fluidRow(
   column(6,
@@ -527,7 +630,6 @@ renderPlot({
                     collapse = ""))
         par(mfrow=c(1,1))
 })
-
 ```
 
 ## Gráficos de la distribución binomial con python
@@ -541,7 +643,8 @@ Buscad en la documentación de python cómo se dibuja la función de probabilida
 <div class="exercise-sol">
 Pista: Necesitaremos investigar más librerías:
 
-```{python}
+
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 ```
@@ -549,7 +652,8 @@ import matplotlib.pyplot as plt
 
 ## Gráficos de la distribución binomial con python
 
-```{python dibu_python1,eval=FALSE}
+
+```python
 n, p = 10, 0.25
 x = np.arange(binom.ppf(0.01, n, p),binom.ppf(0.99, n, p))
 fig =plt.figure(figsize=(5, 2.7))
@@ -578,29 +682,7 @@ plt.show()
 
 <div class="center"> 
 
-```{python dibu_python2,echo=FALSE}
-n, p = 10, 0.25
-x = np.arange(binom.ppf(0.01, n, p),binom.ppf(0.99, n, p))
-
-fig =plt.figure(figsize=(5, 2.7))
-ax = fig.add_subplot(1,2,1)
-_=ax.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf')
-_=ax.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
-  
-ax = fig.add_subplot(1,2,2)
-_=ax.plot(x, binom.cdf(x, n, p), 'bo', ms=8, label='binom pmf')
-_=ax.vlines(x, 0, binom.cdf(x, n, p), colors='b', lw=5, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-_=fig.suptitle('Distribucion Binomial')
-plt.show()
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/dibu_python2-1.png" width="480" />
 </div>
 
 
@@ -646,14 +728,19 @@ Utilizando la función de probabilidad, tenemos que:
 \begin{eqnarray*}
 P(X=4)&=&{10\choose 4}\cdot 0.4^4\cdot (1-0.4)^{10-4}
 = \frac{10!}{(10-4)!\cdot 4!}\cdot 0.4^4\cdot 0.6^6\\
-&=& \frac{7\cdot 8\cdot 9\cdot 10}{1\cdot 2\cdot 3\cdot 4}\cdot 0.4^4\cdot 0.6^6=`r round(choose(10,4)* 0.4^4*0.6^6,7)`.
+&=& \frac{7\cdot 8\cdot 9\cdot 10}{1\cdot 2\cdot 3\cdot 4}\cdot 0.4^4\cdot 0.6^6=0.2508227.
 \end{eqnarray*}
 
 
 Con R
 
-```{r}
+
+```r
 dbinom(4,size=10,prob = 0.4)
+```
+
+```
+## [1] 0.2508227
 ```
 
 </div>
@@ -674,7 +761,7 @@ P(x\leq 3)&=& P(X=0)+P(X=1)+P(X=2)+P(X=3)\\
 &=& 
  {10\choose 0}\cdot 0.4^0\cdot (1-0.4)^{10-0}+ {10\choose 1}\cdot 0.4^1\cdot (1-0.4)^{10-1}\\
 &+&{10\choose 2}\cdot 0.4^2\cdot (1-0.4)^{10-2}+ {10\choose 3}\cdot 0.4^3\cdot (1-0.4)^{10-3}\\
-&=&`r round(pbinom(3,10,0.4),7)`.
+&=&0.3822806.
 \end{eqnarray*}
 $$
 
@@ -685,14 +772,19 @@ $$
 <div class="example-sol">
 Con `R`
 
-```{r}
+
+```r
 pbinom(3,10,0.4)
+```
+
+```
+## [1] 0.3822806
 ```
 
 
 Así que
 
-$$P(X \geq 4 )=1-P(X< 4)=1-P(X\leq 3)=1-`r round(pbinom(3,10,0.4),7)`=`r round(1-pbinom(3,10,0.4),7)`.$$
+$$P(X \geq 4 )=1-P(X< 4)=1-P(X\leq 3)=1-0.3822806=0.6177194.$$
 
 </div>
 
@@ -701,14 +793,24 @@ $$P(X \geq 4 )=1-P(X< 4)=1-P(X\leq 3)=1-`r round(pbinom(3,10,0.4),7)`=`r round(1
 <div class="example-sol">
 Otra manera usando `R` sería:
 
-```{r}
+
+```r
 1-pbinom(3,10,0.4)
+```
+
+```
+## [1] 0.6177194
 ```
 
 Aunque en estos casos el parámetro `lower.tail = FALSE` es sin duda nuestra mejor opción: 
 
-```{r}
+
+```r
 pbinom(3,10,0.4,lower.tail = FALSE)
+```
+
+```
+## [1] 0.6177194
 ```
 
 </div>
@@ -724,13 +826,25 @@ P(X< 3)&=& P(X\leq 2)=  P(X=0)+P(X=1)+P(X=2)\\
 {10\choose 0}\cdot 0.4^0\cdot (1-0.4)^{10-0}+ {10\choose 1}\cdot 0.4^1\cdot (1-0.4)^{10-1}\\
 &&+
 {10\choose 2}\cdot 0.4^2\cdot (1-0.4)^{10-2}\\
-&=&`r round(pbinom(2,10,0.4),7)`.
+&=&0.1672898.
 \end{eqnarray*}
 
 En `R`:
-```{r}
+
+```r
 dbinom(0,10,0.4)+dbinom(1,10,0.4)+dbinom(2,10,0.4)
+```
+
+```
+## [1] 0.1672898
+```
+
+```r
 pbinom(2,10,0.4)
+```
+
+```
+## [1] 0.1672898
 ```
 
 </div>
@@ -743,12 +857,17 @@ pbinom(2,10,0.4)
 
 Como  $X$ es una $B(n=10,p=0.4)$ sabemos que 
 
-$$E(X)=n\cdot p = 10\cdot 0.4=`r 10*0.4`.$$
+$$E(X)=n\cdot p = 10\cdot 0.4=4.$$
 
 Aunque en python tenemos la función `stats` que nos lo calcula directamente:
 
-```{python}
+
+```python
 print("E(X) = {m}".format(m=binom.stats(n = 10, p = 0.4, moments='m')))
+```
+
+```
+## E(X) = 4.0
 ```
 
 </div>
@@ -761,18 +880,23 @@ print("E(X) = {m}".format(m=binom.stats(n = 10, p = 0.4, moments='m')))
 
 La varianza es:
 $$
-Var(X)=n\cdot p \cdot(1-p)=10\cdot 0.4\cdot 0.6=`r 10*0.4*0.6`.
+Var(X)=n\cdot p \cdot(1-p)=10\cdot 0.4\cdot 0.6=2.4.
 $$
 
 
 Por lo  tanto la desviación típica es 
 
-$$\sqrt{Var(X)}=\sqrt{`r 10*0.4*0.6`}= `r sqrt(10*0.4*0.6)`.$$
+$$\sqrt{Var(X)}=\sqrt{2.4}= 1.5491933.$$
 
 Aunque en python tenemos la función `stats` que nos lo calcula directamente:
 
-```{python}
+
+```python
 print("Var(X) = {v}".format(v=binom.stats(n = 10, p = 0.4, moments='v')))
+```
+
+```
+## Var(X) = 2.4
 ```
 
 </div>
@@ -1179,7 +1303,7 @@ Var(X)=\frac{1-p}{p^2}=\frac{1-\frac{1}{10}}{\left(\frac{1}{10}\right)^2}=\frac{
 90.
 $$
 
-La desviación típica es $\sqrt{90}=`r sqrt(90)`.$
+La desviación típica es $\sqrt{90}=9.486833.$
 </div>
 
 ## Ejemplo: El clásico del fútbol
@@ -1213,17 +1337,17 @@ Nos hacemos las siguientes preguntas:
 
 Con los datos anteriores, podemos estimar que la probabilidad de que el Barça gane un clásico cualquiera es:
 
-$$P(\mbox{Barça})=\frac{72}{178}=`r round(72/178,4)`.$$
+$$P(\mbox{Barça})=\frac{72}{178}=0.4045.$$
 
 Por tanto, podemos modelar la variable $X$, que cuenta el número de veces consecutivas que en un partido de fútbol de la liga el Barça no gana al Madrid, con una ley  geométrica empezando en cero con probabilidad de éxito $p=P(\mbox{Barça})=\frac{72}{178}$,
 
-$$X=Ge\left(p=\frac{72}{178}=`r round(72/178,4)`\right)$$
+$$X=Ge\left(p=\frac{72}{178}=0.4045\right)$$
 
 Así que  lo que nos pregunta Aina es la siguiente probabilidad
 
-$$P(X\geq 3)=1-P(X\leq 2)=1-\left(1-\frac{72}{178}\right)^{2+1}=`r round(1-(1-72/178)^3,4)`.$$
+$$P(X\geq 3)=1-P(X\leq 2)=1-\left(1-\frac{72}{178}\right)^{2+1}=0.7888.$$
 
-Así que  Aina tiene una probabilidad del $`r round(1-(1-72/178)^3,4)*100.0`\%$ de no ver ganar al Barça en al menos 3 partidos antes de ver uno en el sí que gane.
+Así que  Aina tiene una probabilidad del $78.88\%$ de no ver ganar al Barça en al menos 3 partidos antes de ver uno en el sí que gane.
 
 </div>
 
@@ -1234,18 +1358,18 @@ Así que  Aina tiene una probabilidad del $`r round(1-(1-72/178)^3,4)*100.0`\%$ 
 
 Para responder a la segunda pregunta, usando que la distribución de $X$ es:
 
-$$X=Ge\left(p=\frac{72}{178}=`r round(72/178,4)`\right)$$
+$$X=Ge\left(p=\frac{72}{178}=0.4045\right)$$
 
 entonces 
 
-$$E(X)=\frac{1-p}{p}=\frac{1-`r round(72/178,4)`}{`r round(72/178,4)`}=`r round((1- (72/178))/(72/178),4)`$$
+$$E(X)=\frac{1-p}{p}=\frac{1-0.4045}{0.4045}=1.4722$$
 
 y
 
-$$Var(X)=\frac{1-p}{p^2}=\frac{1-`r round(72/178,4)`}{`r round(72/178,4)`^2}=`r round((1- (72/178))/(72/178)^2,4)`$$
+$$Var(X)=\frac{1-p}{p^2}=\frac{1-0.4045}{0.4045^2}=3.6397$$
 
 La desviación típica es 
-$$\sqrt{`r round((1- (72/178))/(72/178)^2,4)`}=`r round(sqrt((1- (72/178))/(72/178)^2),4)`.$$
+$$\sqrt{3.6397}=1.9078.$$
 
 </div>
 
@@ -1258,16 +1382,26 @@ Veamos los cálculos básicos con  R para la distribución geométrica  $Ge(p=0.
 
 $P(X=0)=(1-0.25)^0\cdot 0.25^1=0.25$
 
-```{r binomialfunciones01}
+
+```r
 dgeom(0,prob=0.25)
+```
+
+```
+## [1] 0.25
 ```
 
 $P(X\leq 0)=1- (1-0.25)^{0+1}=1-0.75=0.25$
 
 
 
-```{r binomialfunciones02}
+
+```r
 pgeom(0,prob=0.25)
+```
+
+```
+## [1] 0.25
 ```
 
 
@@ -1278,22 +1412,33 @@ pgeom(0,prob=0.25)
 
 
 
-$P(X\leq 4)=1-(1-0.25)^{4+1}=1-0.75=1-0.75^5=`r 1-0.75^5`.$
+$P(X\leq 4)=1-(1-0.25)^{4+1}=1-0.75=1-0.75^5=0.7626953.$
 
-```{r binomialfunciones1}
+
+```r
 pgeom(4,prob=0.25)
+```
+
+```
+## [1] 0.7626953
 ```
 
 
 Una muestra aleatoria de tamaño 25 de una $Ge(0.25)$
 
-```{r}
+
+```r
 rgeom(n=25,prob=0.25)
+```
+
+```
+##  [1]  5  4  1  6 10  0  0 10  7  0  6  2  1  3  0  2  5  0  0  5  5  3  3  2  2
 ```
 
 ## Gráficos con R el código
 
-```{r eval=FALSE}
+
+```r
 par(mfrow=c(1,2))
 x=c(0:10)
 plot(x=x,y=dgeom(x,prob=0.25),
@@ -1315,27 +1460,13 @@ par(mfrow=c(1,1))
 ##  Los gráficos con R
 
 
-```{r graficos22, fig.align='center',echo=FALSE}
-  par(mfrow=c(1,2))
-  p=0.25
-  n=30
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dgeom(c(0:n),prob=p)
-  plot(x=c(0:n),y=dgeom(c(0:n),prob=p),
-       ylim=c(0,1),xlim=c(-1,n+1),xlab="x",
-       main=paste0(c("Función de probabilidad\n Ge(p=",p,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 2,col="blue")
-  curve(pgeom(x,prob=p),
-        xlim=c(-1,n+1),col="blue",
-        main=paste0(c("Función de distribución\n Ge(p=",p,")"),collapse = ""))
-  par(mfrow=c(1,1))
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/graficos22-1.png" style="display: block; margin: auto;" />
 
 
 ## Gráficas interactivas geométrica
 
-```{r eval = FALSE}
- 
+
+```r
 sliderInput("p_geom", label = "Probabilidad de éxito:",
               min = 0.01, max = 0.99, value =0.25 , step = 0.01)
 renderPlot({
@@ -1364,7 +1495,8 @@ Veamos los cálculos básicos con  python para la distribución geométrica  $Ge
 
 Cargamos la  función de la librería 
 
-```{python geom1}
+
+```python
 from scipy.stats import geom
 ```
 
@@ -1384,28 +1516,48 @@ Veamos pues los cálculos para la $Ge(p)$ que empieza en $0$.
 
 $P(X=0)=(1-0.25)^0\cdot 0.25^1=0.25$
 
-```{python py_geom_funciones1}
+
+```python
 geom.pmf(0,p=0.25,loc=-1)
+```
+
+```
+## 0.25
 ```
 
 $P(X\leq 0)=1- (1-0.25)^{0+1}=1-0.75=0.25$
 
-```{python py_geom_funciones2}
+
+```python
 geom.cdf(0,p=0.25,loc=-1)
+```
+
+```
+## 0.24999999999999997
 ```
 
 ## Cálculos con python
 
-$P(X\leq 4)=1-(1-0.25)^{4+1}=1-0.75=1-0.75^5=`r 1-0.75^5`.$
+$P(X\leq 4)=1-(1-0.25)^{4+1}=1-0.75=1-0.75^5=0.7626953.$
 
-```{python py_geom_funciones3}
+
+```python
 geom.cdf(4,p=0.25,loc=-1)
+```
+
+```
+## 0.7626953125
 ```
 
 Una muestra aleatoria de tamaño 25 de una $Ge(0.25)$
 
-```{python py_random_binom}
+
+```python
 geom.rvs(p=0.25, size=20, loc=-1)
+```
+
+```
+## array([2, 0, 0, 9, 4, 1, 1, 3, 0, 6, 1, 0, 4, 2, 0, 0, 2, 0, 1, 1])
 ```
 
 ## Cálculos con python 
@@ -1417,9 +1569,21 @@ Qué probabilidades son las que calcula el siguiente código y qué tipo de vari
 
 </div>
 
-```{python}
+
+```python
 geom.cdf(range(5),p=0.3,loc=0)
+```
+
+```
+## array([0.    , 0.3   , 0.51  , 0.657 , 0.7599])
+```
+
+```python
 geom.cdf(range(5),p=0.3,loc=-1)
+```
+
+```
+## array([0.3    , 0.51   , 0.657  , 0.7599 , 0.83193])
 ```
 
 ## Cálculos con python  esperanza y  varianza
@@ -1427,9 +1591,21 @@ geom.cdf(range(5),p=0.3,loc=-1)
 Con python también podemos calcular directamente algunos parámetros asociado a una función de distribución predefinida
 
 
-```{python py_mean_var_stats}
+
+```python
 geom.stats(p=0.25, loc=0, moments='mv')
+```
+
+```
+## (array(4.), array(12.))
+```
+
+```python
 geom.stats(p=0.25, loc=-1, moments='mv')
+```
+
+```
+## (array(3.), array(12.))
 ```
 
 
@@ -1447,7 +1623,8 @@ empezando en $0$.
 
 ## Gráficos con python
 
-```{python geom2, eval=F}
+
+```python
 p = 0.25
 x = np.arange(geom.ppf(0.01, p),geom.ppf(0.99, p))
 fig =plt.figure(figsize=(5, 2.7))
@@ -1472,30 +1649,7 @@ plt.show()
 
 ## Gráficos con python
 
-```{python, echo=F}
-
-p = 0.25
-x = np.arange(geom.ppf(0.01, p),geom.ppf(0.99, p))
-
-fig =plt.figure(figsize=(5, 2.7))
-ax = fig.add_subplot(1,2,1)
-_=ax.plot(x, geom.pmf(x, p), 'bo', ms=5, label='geom pmf')
-_=ax.vlines(x, 0, geom.pmf(x, p), colors='b', lw=2, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
-  
-ax = fig.add_subplot(1,2,2)
-_=ax.plot(x, geom.cdf(x,p), 'bo', ms=5, label='geom cdf')
-_=ax.vlines(x, 0, geom.cdf(x, p), colors='b', lw=2, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-_=fig.suptitle('Distribucion Geometrica')
-_=plt.show()
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/unnamed-chunk-25-1.png" width="480" />
 
 
 # Distribución binomial negativa
@@ -1603,8 +1757,13 @@ $$
 $$
 
 Si realizamos el cálculo con `R` obtenemos el mismo resultado:
-```{r}
+
+```r
 choose(-6,4)
+```
+
+```
+## [1] 126
 ```
 
 ## Esperanza de una $BN(n,p)$
@@ -1783,7 +1942,7 @@ $$
 **Solución 3.**  ¿Cuál es la probabilidad de fallar  exactamente  5 veces antes de abrir la puerta?
 
 $$
-P(X=5)= 0.01\cdot (5+1) \cdot 0.9^{5}= 0.06 \cdot 0.9^{5}= `r 6*0.9^5*0.1^2`.
+P(X=5)= 0.01\cdot (5+1) \cdot 0.9^{5}= 0.06 \cdot 0.9^{5}= 0.0354294.
 $$
 
 </div>
@@ -1810,7 +1969,7 @@ $$
 P(X\leq 4) &=  \displaystyle\sum_{x=0}^{4} P(X=x)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)\\
 &= 0.01\cdot (0+1) \cdot 0.9^{0}+0.01\cdot (1+1) \cdot 0.9^{1}+0.01\cdot (2+1) \cdot 0.9^{2} \\ &\ \ 
 +0.01\cdot (3+1) \cdot 0.9^{3} + 0.01\cdot (4+1) \cdot 0.9^{4} \\ & =
-0.01 +`r 0.01*2*0.9`+`r 0.01*3*0.9^2`+`r 0.01*4*0.9^3`+`r 0.01*5*0.9^4` = `r 0.01+ 0.01*2*0.9+ 0.01*3*0.9^2+ 0.01*4*0.9^3+ 0.01*5*0.9^4`.
+0.01 +0.018+0.0243+0.02916+0.032805 = 0.114265.
 \end{array}
 $$
 </div>
@@ -1823,36 +1982,27 @@ $$
 Por lo tanto 
 
 $$
-P(X>4)=1-P(X\leq 4)=1-`r 0.1^2+ 2* 0.9 * 0.1^2+ 3*0.9^2* 0.1^2 +4*0.9^3* 0.1^2+5*0.9^4* 0.1^2`=
-`r 1- (0.1^2+ 2* 0.9 * 0.1^2+ 3*0.9^2* 0.1^2 +4*0.9^3* 0.1^2+5*0.9^4* 0.1^2)`.
+P(X>4)=1-P(X\leq 4)=1-0.114265=
+0.885735.
 $$
 
-```{r echo=FALSE,eval=FALSE}
-pnbinom(4-2,2,0.1)
-0.1^2+ 2* 0.9 * 0.1^2+ 3*0.9^2* 0.1^2
-dnbinom(0,2,0.1)
-0.1^2
-dnbinom(1,2,0.1)
-2* 0.9 * 0.1^2
-dnbinom(2,2,0.1)
-3*0.9^2* 0.1^2
-```
+
 
 **Solución 5.**  ¿Cuál es  el número esperado de fallos? ¿Y su desviación típica?
 
 
 Como $X$ sigue una ley $BN(n=2,p=0.1)$
 
-$$E(X)=n\cdot \frac{1-p}{p}=2\cdot \frac{1-0.1}{0.1}=`r 2*(1-0.1)/0.1`.$$
+$$E(X)=n\cdot \frac{1-p}{p}=2\cdot \frac{1-0.1}{0.1}=18.$$
 
-El número de fallos esperado es `r 2*(1-0.1)/0.1`.
+El número de fallos esperado es 18.
 
 La varianza será:
 $$
-Var(X)=n\cdot\frac{1-p}{p^2}=2 \cdot \frac{1-0.1}{0.1^2}=`r 2*(1-0.1)/0.1^2`.
+Var(X)=n\cdot\frac{1-p}{p^2}=2 \cdot \frac{1-0.1}{0.1^2}=180.
 $$
 
-La varianza de $X$ es `r 2*(1-0.1)/0.1^2` y su desviación típica $\sqrt{180}=`r round(sqrt(2*(1-0.1)/0.1^2),5)`.$
+La varianza de $X$ es 180 y su desviación típica $\sqrt{180}=13.41641.$
 
 </div>
 
@@ -1870,8 +2020,13 @@ donde `size` ($n$) es el número de éxitos y  `prob` ($p$), la probabilidad de 
 Así en el ejemplo de la puerta con dos cerraduras, $X$ es una $BN(n=size=2,p=prob=0.1)$. Por ejemplo, $P(X=5)$ que hemos calculado en el ejemplo anterior, vale:
 
 
-```{r}
+
+```r
 dnbinom(5,size=2,p=0.1)
+```
+
+```
+## [1] 0.0354294
 ```
 
 
@@ -1879,33 +2034,80 @@ dnbinom(5,size=2,p=0.1)
 
 De forma similar calculamos calculamos $P(X\leq 4)$, $P(X>4)=1-P(X\leq 4)$ y $P(X>4)$.
 
-```{r}
+
+```r
 pnbinom(4,size=2,p=0.1)
+```
+
+```
+## [1] 0.114265
+```
+
+```r
 1-pnbinom(4,size=2,p=0.1)
+```
+
+```
+## [1] 0.885735
+```
+
+```r
 pnbinom(4,size=2,p=0.1,lower.tail=FALSE)
+```
+
+```
+## [1] 0.885735
 ```
 
 ## Cálculos con python
 
 La función con python es `nbinom.pmf(k, n, p, loc)`. Hay que cargarla desde `scpi.stats`
 
-```{python}
+
+```python
 from scipy.stats import nbinom
 ```
 
 Recordemos que de nuevo se cumple que 
-```{python, eval=F}
+
+```python
 nbinom.pmf(k, n, p, loc) = nbinom.pmf(k-loc, n, p)`
 ```
 
 
 ## Cálculos $BN(n,p)$ con python
 
-```{python}
+
+```python
 nbinom.pmf(k=5,n=2,p=0.1)
+```
+
+```
+## 0.03542940000000002
+```
+
+```python
 nbinom.pmf(k=5,n=2,p=0.1,loc=0)
+```
+
+```
+## 0.03542940000000002
+```
+
+```python
 nbinom.cdf(k=4,n=2,p=0.1)
+```
+
+```
+## 0.11426500000000003
+```
+
+```python
 1-nbinom.cdf(k=4,n=2,p=0.1)
+```
+
+```
+## 0.8857349999999999
 ```
 
 
@@ -1913,19 +2115,41 @@ nbinom.cdf(k=4,n=2,p=0.1)
 
 Generemos 100 observaciones aleatorias de una $BN(n=2,0.1)$. Es decir serán las veces que hemos fallado hasta abrir la puerta 100 veces.
 
-```{python}
+
+```python
 nbinom.rvs(n=2, p=0.1, size=100)
+```
+
+```
+## array([ 6, 22, 18, 15, 18, 37,  1, 18,  4, 17, 10, 16, 30, 42,  3, 15, 13,
+##        52, 32, 37,  9, 15, 21, 16,  8, 14,  7, 17, 11, 12, 20, 20, 26, 10,
+##        46, 22,  3, 13, 12, 16, 12, 13, 36, 16, 24,  2,  7, 53, 89, 19, 20,
+##        16, 25, 15, 18, 16, 59, 25, 21, 15, 30,  8,  5, 13, 57,  1, 12,  4,
+##        20,  7,  5,  9, 29, 43, 31,  5,  4, 56, 13, 11, 22, 14, 20,  4,  9,
+##         4, 29, 19, 22, 14, 45, 30, 22, 15, 12, 43,  6, 21, 35, 21])
 ```
 
 ## Cálculos $BN(n,p)$ con python
 
 La **esperanza** y la **varianza**de una $BN(n=2,0.1)$ valen: 
 
-```{python}
+
+```python
 n, p=2,0.1
 params = nbinom.stats(n,p,moments='mv')
 print("E(X)={m}".format(m=params[0]))
+```
+
+```
+## E(X)=18.0
+```
+
+```python
 print("Var(X)={v}".format(v=params[1]))
+```
+
+```
+## Var(X)=180.0
 ```
 
 ## Gráficas de la binomial negativa con R 
@@ -1933,7 +2157,8 @@ print("Var(X)={v}".format(v=params[1]))
 El siguiente código de R dibuja las función de probabilidad y la de distribución de una  $BN(n=2,p=0.1)$
 
 
-```{r fig.align='center',echo=TRUE,eval=FALSE}
+
+```r
 par(mfrow=c(1,2))
 aux=rep(0,22)
 aux[seq(2,22,2)]=dnbinom(c(0:10),size=2,prob=0.1)
@@ -1953,25 +2178,13 @@ par(mfrow=c(1,1))
 El siguiente código de R dibuja las función de probabilidad y la de distribución de una  $BN(n=2,p=0.1)$
 
 
-```{r fig.align='center',echo=FALSE}
-par(mfrow=c(1,2))
-aux=rep(0,22)
-aux[seq(2,22,2)]=dnbinom(c(0:10),size=2,prob=0.1)
-plot(x=c(0:10),y=dnbinom(c(0:10),size=2,prob=0.1),
-  ylim=c(0,1),xlim=c(-1,11),xlab="x",
-  main="Función de probabilidad\n BN(n=2,p=0.1)")
-lines(x=rep(0:10,each=2),y=aux, type = "h", lty = 2,col="blue")
-curve(pnbinom(x,size=2,prob=0.1),
-  xlim=c(-1,11),col="blue",
-  main="Función de distribución\n BN(n=2,p=0.1)")
-par(mfrow=c(1,1))
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/unnamed-chunk-36-1.png" style="display: block; margin: auto;" />
 
 ## Gráficas interactivas binomial negativa
 
 
-```{r  GRAFICOS_binomial_negativa, eval = FALSE}
 
+```r
 fluidPage(
 fluidRow(
   column(6,
@@ -2001,7 +2214,6 @@ renderPlot({
                     collapse = ""))
   par(mfrow=c(1,1))
 })
-
 ```
 
 ## Gráficos de la binomial negativa con python
@@ -2017,7 +2229,8 @@ negativa
 <div class="exercise-sol">
 Necesitamos de nuevo más librerías
 
-```{python}
+
+```python
 import numpy as np
 from scipy.stats import nbinom
 import matplotlib.pyplot as plt
@@ -2027,7 +2240,8 @@ import matplotlib.pyplot as plt
 ## Gráficos de la binomial negativa con python
 
 
-```{python dibu_python2222,eval=FALSE}
+
+```python
 n, p = 10, 0.25
 x = np.arange(0,nbinom.ppf(0.99, n, p))
 fig =plt.figure(figsize=(5, 2.7))
@@ -2054,27 +2268,7 @@ plt.show()
 ## Gráficos de la binomial negativa con python
 
 
-```{python  negativa_py_show,echo=FALSE}
-n, p = 10, 0.25
-x = np.arange(0,nbinom.ppf(0.99, n, p))
-fig =plt.figure(figsize=(5, 2.7))
-ax = fig.add_subplot(1,2,1)
-_=ax.plot(x, nbinom.pmf(x, n, p), 'bo', ms=5, label='nbinom pmf')
-_=ax.vlines(x, 0, nbinom.pmf(x, n, p), colors='b', lw=2, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
-ax = fig.add_subplot(1,2,2)
-_=ax.plot(x, nbinom.cdf(x, n, p), 'bo', ms=5, label='nbinom pmf')
-_=ax.vlines(x, 0, nbinom.cdf(x, n, p), colors='b', lw=2, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-_=fig.suptitle('Distribucion Binomial Negativa')
-_=plt.show()
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/negativa_py_show-1.png" width="480" />
 
 
 ## Ejercicio:  Acceso aleatorio a un sistema con triple clave. 
@@ -2180,14 +2374,24 @@ $$
 
 Lo calcularemos operando  con R
 
-```{r}
+
+```r
 choose(152,2)*0.999^150*0.001^3
+```
+
+```
+## [1] 9.876743e-06
 ```
 
 con la función de R
 
-```{r}
+
+```r
 dnbinom(150,size=3,p=0.001)
+```
+
+```
+## [1] 9.876743e-06
 ```
 
 ## Solución  ejemplo  $BN(n=3,p=0.001)$ 
@@ -2205,10 +2409,22 @@ $$
 
 Pero también lo podemos hacer con python 
 
-```{python}
+
+```python
 from  scipy.special import binom
 binom(152,2)*0.999**150*0.001**3
+```
+
+```
+## 9.876743459670526e-06
+```
+
+```python
 nbinom.pmf(150,n=3,p=0.001)
+```
+
+```
+## 9.876743459670217e-06
 ```
 
 </div>
@@ -2232,16 +2448,26 @@ Calculemos $P(X\leq 150)$
 $$
 \begin{eqnarray*}
 P(X\leq 150) &=& P(X=0)+P(X=1)+P(X=2)+\ldots+P(X=150)= \sum_{k=0}^{150} {k+3-1\choose 3-1} \cdot (0.999)^{k}\cdot 0.001^3\\
-&=& \ldots = `r pnbinom(150,3,0.001)`
+&=& \ldots = 5.2320035\times 10^{-4}
 \end{eqnarray*}
 $$
 
-```{r}
+
+```r
 pnbinom(150,3,0.001)
 ```
 
-```{python}
+```
+## [1] 0.0005232003
+```
+
+
+```python
 nbinom.cdf(150,n=3,p=0.001)
+```
+
+```
+## 0.0005232003490824058
 ```
 </div>
 
@@ -2250,7 +2476,7 @@ nbinom.cdf(150,n=3,p=0.001)
 <div class="example-sol">
 El valor pedido será pues:
 $$
-P(X>150)=1-P(X\leq 150)=1-`r pnbinom(150,3,0.001)`=`r 1-pnbinom(150,3,0.001)`.
+P(X>150)=1-P(X\leq 150)=1-5.2320035\times 10^{-4}=0.9994768.
 $$
 Vemos que es muy probable que fallemos más de 150 veces antes de entrar en el sistema.
 </div>
@@ -2263,15 +2489,27 @@ Vemos que es muy probable que fallemos más de 150 veces antes de entrar en el s
 
 **Solución 5.**  ¿Cuál es  el número esperado de fallos antes de acceder al sistema? ¿Y su desviación típica?
 
-$$E(X)=n\cdot \frac{1-p}{p}=3\cdot \frac{1- 0.001}{0.001}=`r 3*(1- 0.001)/0.001`.$$
-$$Var(X)=n\cdot \frac{1-p}{p^2}=3\cdot \frac{1- 0.001^2}{0.001^2}=`r 3*(1- 0.001)/0.001^2`.$$
+$$E(X)=n\cdot \frac{1-p}{p}=3\cdot \frac{1- 0.001}{0.001}=2997.$$
+$$Var(X)=n\cdot \frac{1-p}{p^2}=3\cdot \frac{1- 0.001^2}{0.001^2}=2.997\times 10^{6}.$$
 
 Con python
 
-```{python}
+
+```python
 params = nbinom.stats(n=3,p=0.001,moments='mv')
 print("E(X) = {m}".format(m=params[0]))
+```
+
+```
+## E(X) = 2997.0
+```
+
+```python
 print("Var(X) = {v}".format(v=params[1]))
+```
+
+```
+## Var(X) = 2997000.0
 ```
 
 </div>
@@ -2299,14 +2537,14 @@ Si llamamos $X_9$  a la variable aleatoria que nos da el número de fallos antes
 Su valor esperado es
 
 $$
-E(X_9)=\frac{1-p}{p}=\frac{1-0.000000001}{0.000000001}=`r (1-0.000000001)/0.000000001`.
+E(X_9)=\frac{1-p}{p}=\frac{1-0.000000001}{0.000000001}=10\times 10^{8}.
 $$
 
  $1000 000 000$  son  1000 millones de fallos esperados hasta abrir la puerta.
  
  Recordemos que con tres contraseñas de 3 dígitos  el valor esperado de fallos es 
  
- $$3\cdot \frac{1-0.001}{0.001}=`r 3*(1-0.001)/0.001`.$$
+ $$3\cdot \frac{1-0.001}{0.001}=2997.$$
  
 Por lo tanto, desde el punto de vista de la seguridad, es mejor una clave larga de 9 dígitos que tres cortas si escribimos las contraseñas al azar.
 </div>
@@ -2493,7 +2731,8 @@ la aproximación  de una $B(n,p)$ por una $Po(n\cdot p)$ es buena. Sobre todo pa
 
 Condición deseable $n\geq 20$,  $n\cdot p < 10$, $p\leq 0.05$
 
-```{r  eval = FALSE}
+
+```r
 fluidPage(
 fluidRow(
   column(6,
@@ -2531,7 +2770,6 @@ renderPlot({
   legend("topleft",legend=c(aux_l,paste0("n=",n),paste0("n*p=",n*pr),paste0("p=",pr)),bg="transparent",cex=0.8,bty = "n")
   par(mfrow=c(1,1))
 })
-
 ```
 
 
@@ -2644,13 +2882,25 @@ $$
 
 Nos piden la probabilidad siguiente:
 $$
-P(X=21)=\frac{20^{21}}{21!} e^{-20}=`r 20^(21)/factorial(21)*exp(-20)`.
+P(X=21)=\frac{20^{21}}{21!} e^{-20}=0.0846051.
 $$
 
 Para realizar el cálculo anterior, podemos usar `R` como calculadora o usar la función `dpois` que nos calcula la función de distribución de la variable de Poisson:
-```{r}
+
+```r
 20^21/factorial(21)*exp(-20)
+```
+
+```
+## [1] 0.08460506
+```
+
+```r
 dpois(21,lambda = 20)
+```
+
+```
+## [1] 0.08460506
 ```
 
 </div>
@@ -2672,7 +2922,7 @@ $$
  1-e^{-20}\cdot \left(1+20+\frac{400}{4}+\frac{8000}{6}+\frac{160000}{24}+\frac{3200000}{120}\right)\\
  &=
  1-e^{-20} \cdot \left(\frac{1 \cdot 120+20\cdot 120+400\cdot 30+8000\cdot 20+160000\cdot 24+3200000\cdot 1}{120}\right)\\
- &= 1-e^{-20}\cdot\left(\frac{4186520}{120}\right)=1-`r exp(-20)+20*exp(-20)+200*exp(-20)+8000/6*exp(-20)+160000/24*exp(-20)+3200000*exp(-20)/120` =`r 1-( exp(-20)+20*exp(-20)+200*exp(-20)+8000/6*exp(-20)+160000/24*exp(-20)+3200000*exp(-20)/120)`.
+ &= 1-e^{-20}\cdot\left(\frac{4186520}{120}\right)=1-7.1908841\times 10^{-5} =0.9999281.
 \end{array}
 $$
 
@@ -2696,16 +2946,28 @@ Su varianza es
 $$Var(X)=\lambda=20$$
 
 y  su desviación típica vale
-$$\sqrt{Var(X)}=+\sqrt{\lambda}=+\sqrt{20}=`r round(sqrt(20),5)`.$$
+$$\sqrt{Var(X)}=+\sqrt{\lambda}=+\sqrt{20}=4.47214.$$
 </div>
 
 ## Cálculos con R
 
 Consideremos por ejemplo una v.a. $X$ con distribución $Po(\lambda=3)$. Calculemos $P_X(0)=P(X=0), P_X(1)=P(X=1)$ con `R`:
 
-```{r}
+
+```r
 dpois(0,lambda = 3)
+```
+
+```
+## [1] 0.04978707
+```
+
+```r
 dpois(1,lambda = 3)
+```
+
+```
+## [1] 0.1493612
 ```
 
 ## Cálculos con R
@@ -2713,28 +2975,75 @@ dpois(1,lambda = 3)
 Si quisiéramos hallar la función de distribución en los mismos valores anteriores, 
 $F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)$, haríamos lo siguiente:
 
-```{r}
+
+```r
 ppois(0,lambda = 3)
+```
+
+```
+## [1] 0.04978707
+```
+
+```r
 ppois(1,lambda = 3)
+```
+
+```
+## [1] 0.1991483
+```
+
+```r
 dpois(0,lambda = 3)+dpois(1,lambda = 3) ## es igual a ppois(1,lambda=3)
+```
+
+```
+## [1] 0.1991483
 ```
 
 ## Cálculos con R
 
 A continuación, comprobemos que $F_X(10)=\sum\limits_{x=0}^{10} P_X(x)$:
 
-```{r}
+
+```r
 dpois(0:10,3)
+```
+
+```
+##  [1] 0.0497870684 0.1493612051 0.2240418077 0.2240418077 0.1680313557
+##  [6] 0.1008188134 0.0504094067 0.0216040315 0.0081015118 0.0027005039
+## [11] 0.0008101512
+```
+
+```r
 sum(dpois(0:10,3))
+```
+
+```
+## [1] 0.9997077
+```
+
+```r
 ppois(10,3)
+```
+
+```
+## [1] 0.9997077
 ```
 
 ## Cálculos distribución Poisson con R
 
 Si quisiéramos generar una secuencia de $100$ observaciones para una distribución de Poisson de parámetro $\lambda=3$, $Po(3)$, tendríamos que hacer:
 
-```{r random_pois}
+
+```r
 rpois(n=100,lambda = 3)
+```
+
+```
+##   [1] 2 5 3 3 2 2 5 2 4 4 2 3 2 2 2 2 2 3 3 5 3 3 2 4 2 3 2 1 1 3 4 6 2 5 3 4 1
+##  [38] 1 6 3 4 1 4 3 4 3 0 2 1 4 3 0 2 4 2 3 5 2 1 3 3 4 2 5 0 3 1 1 4 6 4 5 0 4
+##  [75] 0 3 3 3 4 1 2 6 2 2 2 2 1 2 5 2 5 3 7 3 5 2 3 2 1 3
 ```
 
 ## Cálculos con R
@@ -2751,8 +3060,13 @@ En   el ejercicio de la trampa para insectos  teníamos que $X$ es una $Po(20)$.
 
 Recordemos que la probabilidad pedida es $P(X=21)$:
 
-```{r}
+
+```r
 dpois(21,lambda=20)# P(X=21)
+```
+
+```
+## [1] 0.08460506
 ```
 </div>
 
@@ -2763,16 +3077,36 @@ dpois(21,lambda=20)# P(X=21)
 
 Recordemos que la probabilidad pedida es $P(X\geq 6)=1-P(X<6)=1-P(X\leq 5)$:
 
-```{r}
+
+```r
 ppois(5,lambda=20)
+```
+
+```
+## [1] 7.190884e-05
+```
+
+```r
 1-ppois(5,lambda=20) # es 1-P(X<=5)=P(X>=6)
+```
+
+```
+## [1] 0.9999281
+```
+
+```r
 ppois(5,lambda=20,lower.tail =FALSE ) # acumula hacia arriba P(X>5)=P(X>=6)=P(X=6)+P(X=7)+...
+```
+
+```
+## [1] 0.9999281
 ```
 </div>
 
 ## Gráficos  de la distribución Poisson con R
 
-```{r  echo = TRUE,eval=FALSE}
+
+```r
 lambda=20
 par(mfrow=c(1,2))
 n=qpois(0.99,lambda=lambda)
@@ -2792,48 +3126,12 @@ par(mfrow=c(1,1))
 
 ## Gráficos  de la distribución Poisson con R
 
-```{r graficosPOISON, fig.align='center',echo=FALSE}
-lambda=20
-par(mfrow=c(1,2))
-n=qpois(0.99,lambda=lambda)
-aux=rep(0,(n+1)*2)
-aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),lambda=lambda)
-ymax=max(ppois(0:n,lambda=lambda))
-plot(x=c(0:n),y=dpois(c(0:n),lambda=lambda),
-     ylim=c(0,ymax),xlim=c(-1,n+1),xlab="x",ylab="Función de probabilidad",
-     main=paste0(c("Función de probabilidad\n  Po(lambda=",lambda,")"),collapse = ""))
-lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
-curve(ppois(x,lambda=lambda),
-      xlim=c(-1,n+1),col="blue",ylab="Función de Distribución",
-      main=paste0(c("Función de distribución \n Po(lambda=",lambda,")"),collapse = ""))
-par(mfrow=c(1,1))
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/graficosPOISON-1.png" style="display: block; margin: auto;" />
 
 
 ## Gráficos  interactivos con R
 
-```{r  pofrafico11,echo = FALSE,eval=FALSE}
 
-sliderInput("lambda", label = "Promedio de eventos lambda",
-              min = 1, max = 100, value =20 , step = 1)
-renderPlot({
-  lambda=input$lambda
-  par(mfrow=c(1,2))
-  n=qpois(0.99,lambda=lambda)
-  #n
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),lambda=lambda)
-  ymax=0.45
-  plot(x=c(0:n),y=dpois(c(0:n),lambda=lambda),
-       ylim=c(0,ymax),xlim=c(-1,n+1),xlab="x",ylab="Función de probabilidad",
-       main=paste0(c("Función de probabilidad\n  Po(lambda=",lambda,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
-  curve(ppois(x,lambda=lambda),
-        xlim=c(-1,n+1),col="blue",ylab="Función de Distribución",
-         main=paste0(c("Función de distribución \n Po(lambda=",lambda,")"),collapse = ""))
-  par(mfrow=c(1,1))
-})
-```
 
 
 ## Cálculos con python
@@ -2843,11 +3141,22 @@ Sea $X$ un una v.a. $Po(\lambda=3)$. Entonces
 $P_X(0)=P(X=0), P_X(1)=P(X=1)$   en este orden son 
 
 
-```{python poisson_python}
+
+```python
 from scipy.stats import poisson
 poisson.pmf(0,mu = 3)
-poisson.pmf(1,mu = 3)
+```
 
+```
+## 0.049787068367863944
+```
+
+```python
+poisson.pmf(1,mu = 3)
+```
+
+```
+## 0.14936120510359185
 ```
 
 
@@ -2858,21 +3167,67 @@ Sea $X$ un una v.a. $Po(\lambda=3)$. Entonces
 $F_X(0)=P(X\leq 0), F_X(1)=P(X\leq 1)$   en este orden son 
 
 
-```{python poisson_python_bis}
+
+```python
 poisson.cdf(0,mu = 3)
+```
+
+```
+## 0.04978706836786395
+```
+
+```python
 poisson.cdf(1,mu = 3)
+```
+
+```
+## 0.1991482734714558
+```
+
+```python
 poisson.pmf(0,mu = 3)+poisson.pmf(1,mu= 3) ## es igual a poisson.cdf(1,lambda=3)
+```
+
+```
+## 0.1991482734714558
 ```
 
 
 
 ## Cálculos con python
 Por ejemplo  podemos comprobar que $F_X(10)=\displaystyle\sum_{0}^{10} P_X(x)$
-```{python poisson_python2}
+
+```python
 range(0,10)
+```
+
+```
+## range(0, 10)
+```
+
+```python
 poisson.pmf(range(0,10),mu=3)
+```
+
+```
+## array([0.04978707, 0.14936121, 0.22404181, 0.22404181, 0.16803136,
+##        0.10081881, 0.05040941, 0.02160403, 0.00810151, 0.0027005 ])
+```
+
+```python
 sum(poisson.pmf(range(0,10),mu=3))
+```
+
+```
+## 0.9988975118698846
+```
+
+```python
 poisson.cdf(10,mu=3)
+```
+
+```
+## 0.9997076630493527
 ```
 ## Cálculos con python
 
@@ -2886,9 +3241,14 @@ En   el ejercicio de la trampa para insectos  teníamos que $X$ es una $Po(20)$.
 
  La  respuesta a la pregunta 3 es calcular  $P(X=21)$ 
 
-```{python poisson_py3}
+
+```python
 poisson.pmf(21,mu=20)
 # P(X=21)
+```
+
+```
+## 0.08460506418293791
 ```
 </div>
 
@@ -2899,9 +3259,14 @@ poisson.pmf(21,mu=20)
 
 La pregunta  4 nos pide calcular $P(X\geq 6)=1-P(X\leq 5)$
 
-```{python poisson_py4}
+
+```python
 1-poisson.cdf(5,mu=20) 
 # es 1-P(X<=5)=P(X>=6)
+```
+
+```
+## 0.9999280911594716
 ```
 </div>
 
@@ -2911,14 +3276,25 @@ Como ya hemos visto con `scipy.stats` podemos pedir los momentos de una variable
 $Po(3)$
 
 
-```{python momentosPOISOON}
+
+```python
 poisson.stats(mu=3, moments='mv')
+```
+
+```
+## (array(3.), array(3.))
 ```
 
 Y también generar secuencias de observaciones aleatorias de una población $Po(3)$
 
-```{python}
+
+```python
 poisson.rvs(mu=3,size=40)
+```
+
+```
+## array([4, 6, 7, 3, 2, 1, 2, 7, 6, 4, 6, 2, 4, 1, 4, 2, 5, 2, 0, 3, 1, 3,
+##        2, 3, 4, 2, 4, 0, 5, 5, 0, 2, 3, 2, 7, 2, 3, 4, 3, 4])
 ```
 
 
@@ -2929,7 +3305,8 @@ poisson.rvs(mu=3,size=40)
 
 <font size="3">
 
-```{python py_poiss1,eval=FALSE,echo=TRUE,size="scriptsize"}
+
+```python
 from scipy.stats import poisson
 mu = 10 # mu = lambda
 x = np.arange(poisson.ppf(0.01, mu),poisson.ppf(0.99, mu))
@@ -2955,28 +3332,7 @@ plt.show()
 
 ## Gráficos con python
 
-```{python py_poiss2,eval=TRUE,echo=FALSE}
-from scipy.stats import poisson
-mu = 10 # mu = lambda
-x = np.arange(poisson.ppf(0.01, mu),poisson.ppf(0.99, mu))
-fig =plt.figure(figsize=(5, 2.7))
-ax = fig.add_subplot(1,2,1)
-_=ax.plot(x, poisson.pmf(x, mu), 'bo', ms=5, label='poisson pmf')
-_=ax.vlines(x, 0, poisson.pmf(x, mu), colors='b', lw=2, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
-ax = fig.add_subplot(1,2,2)
-_=ax.plot(x, poisson.cdf(x, mu), 'bo', ms=5, label='poisson cdf')
-_=ax.vlines(x, 0, poisson.cdf(x, mu), colors='b', lw=2, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-_=fig.suptitle('Distribucion de Poisson')
-_=plt.show()
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/py_poiss2-1.png" width="480" />
 
 
 
@@ -2984,42 +3340,7 @@ _=plt.show()
 
 ## Gráficos interactivos  proceso $Po(\lambda\cdot t$)
 
-```{r  echo = FALSE,message=FALSE,warning=FALSE,eval=FALSE}
 
-fluidPage(
-fluidRow(
-  column(6,
-         sliderInput("lambdapp", label="Promedio eventos por unidad de tiempo",
-              min = 0.1, max = 50, value =10 , step = 0.01)
-         ),
-  column(6,
-          sliderInput("t", label = "Intervalo de tiempo (0,t]",
-                     min = 1, max = 120, value =1 , step = 0.5)
-         )
- )
-)
-
-
-renderPlot({
-  lambda1=input$lambdapp
-  t=input$t
-  lambda=lambda1*t# es lambda* t
-  par(mfrow=c(1,2))
-  n=qpois(0.99,lambda=lambda)
-  #n
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),lambda=lambda)
-  ymax=ppois(which.max(ppois(0:n,lambda))-1,lambda)*0.7
-  plot(x=c(0:n),y=dpois(c(0:n),lambda=lambda),
-       ylim=c(0,ymax),xlim=c(-1,n+1),xlab="x",ylab="Función de probabilidad",
-       main=paste0(c("Función de probabilidad\n  Po(lambda=",lambda,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
-  curve(ppois(x,lambda=lambda),
-        xlim=c(-1,n+1),col="blue",ylab="Función de Distribución",
-         main=paste0(c("Función de distribución \n Po(lambda=",lambda,")"),collapse = ""))
-  par(mfrow=c(1,1))
-  })
-```
 
 
 ## Ejemplo proceso Poisson
@@ -3060,8 +3381,13 @@ $$P(X>25)=1-P(X\leq 25)$$
 
 lo resolvemos con R
 
-```{r}
+
+```r
 1-ppois(25,lambda=30)
+```
+
+```
+## [1] 0.7916426
 ```
 
 </div>
@@ -3072,13 +3398,25 @@ lo resolvemos con R
 
 Otra pregunta interesante es  que tengamos que esperar más de 2 minutos para observar el primer impacto 
 
-$$P(X_2=0)=\frac{(3\cdot 2)^0}{0!}\cdot e^{-3\cdot 2}= e^{-6}=`r round(exp(-6),6)`.$$
+$$P(X_2=0)=\frac{(3\cdot 2)^0}{0!}\cdot e^{-3\cdot 2}= e^{-6}=0.002479.$$
 
 Con R
 
-```{r}
+
+```r
 6^0/factorial(0)*exp(-6)
+```
+
+```
+## [1] 0.002478752
+```
+
+```r
 ppois(0,lambda=3*2)
+```
+
+```
+## [1] 0.002478752
 ```
 
 
@@ -3238,16 +3576,19 @@ $$
 P(X=2)=\frac{\binom{15}{2}\cdot \binom{10}{3-2}}{\binom{25}{3}}
 $$ 
 
-```{r}
+
+```r
 c(choose(15,2), choose(10,1), choose(25,3))
 ```
 
-
-$P(X=2)=\frac{`r choose(15,2)`\cdot`r choose(10,1)` }{`r choose(25,3)`}=`r choose(15,2)*choose(10,1)/choose(25,3)`.$
-
-```{r eval=FALSE,echo=FALSE}
-phyper(2,15,10,3)
 ```
+## [1]  105   10 2300
+```
+
+
+$P(X=2)=\frac{105\cdot10 }{2300}=0.4565217.$
+
+
 
 </div>
 
@@ -3265,8 +3606,8 @@ P(X> 1)&= 1-P(X\leq 1)=1-(P(X=0)+P(X=1))\\
 \frac{\binom{15}{1}\cdot \binom{10}{2}}{\binom{25}{3}}\right)\\
 &=
 1-\left(
-\frac{`r choose(15,0)`\cdot`r choose(10,3)` }{`r choose(25,3)`}+\frac{`r choose(15,1)`\cdot`r choose(10,2)` }{`r choose(25,3)`}
-\right)=1-\frac{120+15\cdot 45}{2300}=`r 1-(choose(15,0)*choose(10,3)+choose(15,1)*choose(10,2))/choose(25,3)`.
+\frac{1\cdot120 }{2300}+\frac{15\cdot45 }{2300}
+\right)=1-\frac{120+15\cdot 45}{2300}=0.6543478.
 \end{array}
 $$
 
@@ -3280,7 +3621,7 @@ $$
 
 El número esperado de  bolas blancas extraídas para una v.a. $X$ $H(m=15,n=10,k=3)$ es 
 
-$$E(X)=\frac{k\cdot m}{m+n}=\frac{3\cdot 15}{15+10}=\frac{45}{35}=`r round(45/35,6)`.$$
+$$E(X)=\frac{k\cdot m}{m+n}=\frac{3\cdot 15}{15+10}=\frac{45}{35}=1.285714.$$
 
 
 
@@ -3293,14 +3634,14 @@ Var(X)&=k\cdot\frac{m}{m+n}\cdot\left(1-\frac{m}{m+n}\right) \cdot\frac{m+n-k}{m
 3\cdot\frac{15}{25}\cdot\left(1-\frac{15}{25}\right) \cdot\frac{22}{24}= 
 3\cdot\frac{15}{25}\cdot\frac{25-15}{25} \cdot\frac{22}{24}\\
 &=
-3\cdot\frac{15}{25}\cdot\frac{10}{25}\cdot\frac{22}{24}=`r 3*15/25*10/25*22/24`.
+3\cdot\frac{15}{25}\cdot\frac{10}{25}\cdot\frac{22}{24}=0.66.
 \end{array}
 $$
 
 Y por lo tanto su desviación típica es 
 
 $$
-+\sqrt{Var(X)}=+\sqrt{0.66}=`r round(sqrt(0.66),6)`.
++\sqrt{Var(X)}=+\sqrt{0.66}=0.812404.
 $$
 
 
@@ -3312,147 +3653,65 @@ Por ejemplo, si $X$ es una $H(m=15,n=10,k=3)$, los valores de $P(X=2)$ y que $P(
 
 ## Cálculos con R
 
-```{r}
+
+```r
 dhyper(x=2,m=15,10,k=3)
+```
+
+```
+## [1] 0.4565217
+```
+
+```r
 phyper(q=1,m=15,n=10,k=3)# sí, le han puesto q ya veremos el porqué
+```
+
+```
+## [1] 0.3456522
+```
+
+```r
 1-phyper(q=1,m=15,n=10,k=3)
+```
+
+```
+## [1] 0.6543478
 ```
 
 ## Cálculos con R
 
 Una muestra aleatoria de este experimento de tamaño 200 sería:
 
-```{r}
+
+```r
 rhyper(nn=200,m=15,n=10,k=3)
+```
+
+```
+##   [1] 2 3 1 3 1 2 2 3 2 2 1 2 1 2 2 3 3 1 1 1 1 0 2 3 2 1 3 2 2 2 2 3 2 3 3 2 0
+##  [38] 1 2 1 3 2 2 3 2 3 2 2 3 2 3 1 2 2 2 2 3 2 2 1 3 2 2 3 1 2 2 2 2 2 3 0 2 0
+##  [75] 3 2 2 2 1 2 2 3 1 1 1 2 2 2 2 1 1 3 2 2 3 2 2 1 1 1 3 3 2 2 2 1 3 2 2 2 1
+## [112] 1 2 3 2 2 1 2 2 2 2 2 2 3 1 2 3 3 1 1 2 2 1 1 3 2 1 1 2 2 3 1 1 1 2 1 1 3
+## [149] 1 2 2 3 3 2 3 1 2 1 2 2 2 1 2 3 1 3 3 3 2 2 1 3 3 1 1 2 2 2 2 2 3 2 1 2 1
+## [186] 1 1 1 2 1 1 2 2 2 2 3 3 1 0 2
 ```
 
 
 ## Gráficas  con R
 
-```{r fig.align='center',echo=FALSE}
-par(mfrow=c(1,2))
-m=15
-n=10
-k=3
-a=max(c(0,k-n))
-b=min(c(m,k))
-l=b-a+1
-aux=rep(0,2*l)
-aux[seq(2,2*l,2)]=dhyper(c(a:b),m=m,n=n,k=k)
-x=a:b
-plot(x,y=dhyper(x,m=m,n=n,k=k),
-  ylim=c(0,0.6),xlim=c(a-1,b+1),xlab="x",
-  main=paste0("Función de probabilidad\n H(m=",m,", n=",n,", k=",k,")"))
-lines(x=rep(a:b,each=2),y=aux, type = "h", lty = 2,col="blue")
-curve(phyper(x,m=m,n=n,k=k),
-  xlim=c(a-1,b+1),col="blue",
-  main=paste0("Función de distribución\n H(m=",m,", n=",n,", k=",k,")"))
-par(mfrow=c(1,1))
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/unnamed-chunk-60-1.png" style="display: block; margin: auto;" />
 
 ## Gráficos interactivos $H(m,n,k)$
 
 
-```{r  GRAFICOS_Hiper_interac_aprox, echo = FALSE,eval=FALSE}
-fluidPage(
-fluidRow(
-  column(4,
-         sliderInput("mh", label = "Número de bolas blancas m",
-              min = 1, max = 50, value =15, step = 1)),
-  column(4,
-         sliderInput("nh", label = "Número de bolas rojas n",
-              min = 1, max = 50, value =10 , step = 1)),
-  column(4,
-          sliderInput("kh", label = "Número bolas extraídas k",
-                     min = 1, max=25, value = 3, step = 1)
-         )
-  )
-)
 
-renderPlot({
-  m=input$mh
-  n=input$nh
-  k=input$kh
-  #n=10
-  #k=3
-  #m=15
-  par(mfrow=c(1,2))
-  a=max(c(0,k-n))
-  b=min(c(m,k))
-  l=b-a+1
-  aux=rep(0,times=2*l)
-  aux[seq(2,2*l,2)]=dhyper(c(a:b),m=m,n=n,k=k)
-  x=a:b
-  plot(x,y=dhyper(x,m=m,n=n,k=k),
-       ylim=c(0,0.6),xlim=c(a-1,b+1),xlab="x",
-       main=paste0("Función de probabilidad\n H(m=",m,", n=",n,", k=",k,")"))
-  lines(x=rep(a:b,each=2),y=aux, type = "h", lty = 2,col="blue")
-  curve(phyper(x,m=m,n=n,k=k),
-        xlim=c(a-1,b+1),col="blue",
-        main=paste0("Función de distribución\n H(m=",m,", n=",n,", k=",k,")"))
-  par(mfrow=c(1,1))
-})
-```
 
 
 
 ## Gráficos con R comparación $H(m,n,k)$ y $B(k,\frac{m}{n+m})$.
 
 
-```{r  GRAFICOS_Hiper_interac_compara, echo = FALSE,eval=FALSE}
 
-fluidPage(
-fluidRow(
-  column(4,
-         sliderInput("mh2", label = "Número de bolas blancas m",
-              min = 1, max = 50, value =15, step = 1)),
-  column(4,
-         sliderInput("nh2", label = "Número de bolas rojas n",
-              min = 1, max = 50, value =10 , step = 1)),
-  column(4,
-          sliderInput("kh2", label = "Número bolas extraídas k",
-                     min = 1, max=25, value = 3, step = 1)
-         )
-  )
-)
-
-renderPlot({
-  m=input$mh2
-  n=input$nh2
-  k=input$kh2
-  #n=10
-  #k=3
-  #m=15
-  pr=round(m/(n+m),4)
-  a=max(c(0,k-n))
-  b=min(c(m,k))
-  l=b-a+1
-  aux=rep(0,times=2*l)
-  auxB=rep(0,times=2*(k+1))
-  aux[seq(2,2*l,2)]=dhyper(c(a:b),m=m,n=n,k=k)
-  x=a:b
-  auxB[seq(2,2*(k+1),2)]=dbinom(0:k,k,pr)
-  par(mfrow=c(1,2))
-  plot(x=c(0:k),y=dbinom(c(0:k),size=k,prob=pr),
-       ylim=c(0,0.6),xlim=c(-1,k+1),xlab="x",ylab="Función de probabilidad",
-       main=paste0("Funciones de probabilidad\n B(n=",n,"p=",pr,")  H(m=",m,"n=", n,"k=",k,")"))
-  lines(x=rep(0:k,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
-  #aux=rep(0,(n+1)*2)
-  #aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),n*pr)
-  points(x=c(a:b),y=dhyper(c(a:b),m=m,n=n,k=k),
-         ylim=c(0,0.6),xlim=c(-1,k+1),xlab="x",pch=25,col="red")
-  lines(x=rep(0:(l-1),each=2),y=aux, type = "h", lty = 3,col="red")
-  legend("topleft",legend=c("Binomial","Hipergeométrica"),col=c("blue","red"),pch=c(21,25),lty=c(2,3))
-  curve(pbinom(x,size=k,p=pr),
-        xlim=c(-1,k+1), col="blue", ylab="Función de Distribución",
-         main=paste0("Funciones de distribución\n B(",k,",",pr,") H(m=",m,"n=", n,"k=",k,")"))
-  curve(phyper(x,m=m,n=n,k=k),
-        xlim=c(-1,k+1),col="red",add=TRUE)
-  #if(all(c(n>=20,n*pr<10,pr<= 0.05))){aux_l="Condición VERDADERA"} else {aux_l="Condición FALSA"}
-  #legend("topleft",legend=c(aux_l,paste0("n=",n),paste0("n*p=",n*pr),paste0("p=",pr)),bg="transparent",cex=0.5)
-  par(mfrow=c(1,1))
-})
-```
 
 
 ## Cálculos con python 
@@ -3465,30 +3724,60 @@ Sea $X$ una $H(m,n,k)$, las funciones de `scipy.stats` cambian los parámetros
 * $n$ es el número de bolas blancas. Con nuestra parametrización $n=m$.
 * $N$  es el número de extracciones. Con nuestra parametrización $N=k$.
 
-```{python}
+
+```python
 from scipy.stats import hypergeom
 ```
 
 ## Cálculos con python 
 
-```{python}
+
+```python
 hypergeom.pmf(1,M=15+10,n=15,N=3)
+```
+
+```
+## 0.29347826086956585
+```
+
+```python
 hypergeom.cdf(1,M=15+10,n=15,N=3)
+```
+
+```
+## 0.3456521739130442
+```
+
+```python
 1-hypergeom.cdf(1,M=15+10,n=15,N=3)
+```
+
+```
+## 0.6543478260869557
 ```
 
 ## Cálculos con python 
 
 Una muestra aleatoria de este experimento sería... 
-```{python}
+
+```python
 hypergeom.rvs(M=15+10,n=15,N=3,size=100)
+```
+
+```
+## array([2, 3, 3, 1, 3, 2, 2, 1, 3, 2, 3, 2, 1, 3, 1, 2, 2, 2, 2, 2, 1, 2,
+##        3, 3, 1, 0, 3, 2, 1, 2, 2, 2, 1, 2, 2, 0, 0, 3, 0, 1, 2, 1, 2, 2,
+##        1, 3, 0, 3, 3, 3, 2, 3, 1, 2, 1, 2, 2, 2, 2, 1, 1, 2, 3, 3, 2, 3,
+##        2, 0, 1, 2, 3, 1, 2, 2, 2, 2, 1, 0, 2, 0, 2, 2, 1, 1, 2, 1, 1, 1,
+##        1, 2, 2, 1, 2, 2, 2, 1, 3, 2, 2, 2])
 ```
 
 
 ## Gráficos con python
 
 
-```{python py_hyper2:1,eval=FALSE,echo=TRUE}
+
+```python
 from scipy.stats import hypergeom
 [M, n, N] = [20, 7, 12] ##20 elementos, 7 del tipo, extraemos 12
 x = np.arange(max(0, N-M+n),min(n, N))
@@ -3515,29 +3804,7 @@ for tick in ax.yaxis.get_major_ticks():
 ## Gráficos con python
 
 
-```{python py_hyper2,eval=TRUE,echo=FALSE}
-from scipy.stats import hypergeom
-[M, n, N] = [20, 7, 12] ##20 elementos, 7 del tipo, extraemos 12
-x = np.arange(max(0, N-M+n),min(n, N))
-fig =plt.figure(figsize=(5, 2.7))
-_=ax = fig.add_subplot(1,2,1)
-_=ax.plot(x, hypergeom.pmf(x, M, n, N), 'bo', ms=5, label='hypergeom pmf')
-_=ax.vlines(x, 0, hypergeom.pmf(x, M, n, N), colors='b', lw=2, alpha=0.5)
-_=ax.set_ylim([0, max(hypergeom.pmf(x, M, n, N))*1.1])
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
-ax = fig.add_subplot(1,2,2)
-_=ax.plot(x, hypergeom.cdf(x, M, n, N), 'bo', ms=5, label='hypergeom cdf')
-_=ax.vlines(x, 0, hypergeom.cdf(x, M, n, N), colors='b', lw=2, alpha=0.5)
-for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
-_=fig.suptitle('Distribucion Hipergeometrica')
-_=plt.show()
-```
+<img src="Tema_3_1_Notables_html_files/figure-html/py_hyper2-1.png" width="480" />
 
 
 
