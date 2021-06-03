@@ -2,7 +2,6 @@
 title: "Tema 3 - Distribuciones Notables Parte I:  Distribuciones Discretas"
 author: "Ricardo Alberich, Juan Gabriel Gomila y  Arnau Mir"
 date: 
-runtime: shiny
 output: 
   ioslides_presentation: 
     css: Mery_style.css
@@ -14,7 +13,7 @@ output:
 
 ```{r setup0, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache = FALSE)
-library(reticulate)
+library(reticulate,shiny)
 ```
 
 # Distribuciones Notables I 
