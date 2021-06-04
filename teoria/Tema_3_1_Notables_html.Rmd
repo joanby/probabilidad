@@ -169,7 +169,7 @@ par(mfrow=c(1,1))
 
 ## Gráficas interactivas $Ber(p)$
 
-```{r eval = FALSE}
+```{r eval = FALSE,echo=FALSE}
 
 sliderInput("p_ber", label = "Probabilidad éxito p:",
               min = 0.01, max = 0.99, value = 0.25, step = 0.01)
@@ -496,7 +496,7 @@ par(mfrow=c(1,1))
 ## Gráficas interactivas binomial
 
 
-```{r  eval = FALSE}
+```{r eval = FALSE,echo=FALSE}
 
 fluidPage(
 fluidRow(
@@ -1334,7 +1334,7 @@ par(mfrow=c(1,1))
 
 ## Gráficas interactivas geométrica
 
-```{r eval = FALSE}
+```{r eval = FALSE,echo=FALSE}
  
 sliderInput("p_geom", label = "Probabilidad de éxito:",
               min = 0.01, max = 0.99, value =0.25 , step = 0.01)
@@ -1970,7 +1970,7 @@ par(mfrow=c(1,1))
 ## Gráficas interactivas binomial negativa
 
 
-```{r  GRAFICOS_binomial_negativa, eval = FALSE}
+```{r  GRAFICOS_binomial_negativa, eval = FALSE,echo=FALSE}
 
 fluidPage(
 fluidRow(
@@ -2493,7 +2493,7 @@ la aproximación  de una $B(n,p)$ por una $Po(n\cdot p)$ es buena. Sobre todo pa
 
 Condición deseable $n\geq 20$,  $n\cdot p < 10$, $p\leq 0.05$
 
-```{r  eval = FALSE}
+```{r  eval = FALSE,echo=FALSE}
 fluidPage(
 fluidRow(
   column(6,

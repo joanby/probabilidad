@@ -148,7 +148,7 @@ rbinom(n=20,size = 1,prob=0.25)
 ```
 
 ```
-##  [1] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0
+##  [1] 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0
 ```
 
 ## Distribución Bernoulli. Ejemplo
@@ -177,31 +177,6 @@ par(mfrow=c(1,1))
 ## Gráficas interactivas $Ber(p)$
 
 
-```r
-sliderInput("p_ber", label = "Probabilidad éxito p:",
-              min = 0.01, max = 0.99, value = 0.25, step = 0.01)
-
-renderPlot({
-par(mfrow=c(1,2))
-  p=input$p_ber
-plot(x=c(0,1),y=dbinom(c(0,1),size=1,prob=p),
-     ylim=c(0,1),xlim=c(-0.5,2),xlab="x",pch=21,
-     main=paste0(c("Función de probabilidad\n
-                   Ber(p=",p,")"),collapse=""),bg="black")
-segments(x0=0,y0=0,x1=0,y1=1-p, col = "blue", lty =2)
-segments(x0=1,y0=0,x1=1,y1=p, col = "blue", lty =2)
-segments(x0=-1,y0=1-p,x1=0,y1=1-p, col = "blue", lty =2)
-segments(x0=-1,y0=p,x1=1,y1=p, col = "blue", lty =2)
-x=0:1
-y=pbinom(x,size=1,prob=p)
-curve(pbinom(x,size=1,prob=p),
-      xlim=c(-1,2),col="blue",
-      main=paste0(c("Función de distribución\n Ber(p=",p,")"),collapse="")
-      )
-
-par(mfrow=c(1,1))
-})
-```
 
 
 # Distribución binomial
@@ -510,12 +485,12 @@ binom.rvs(n=20,p=0.25,size = 100)
 ```
 
 ```
-## array([ 2,  9,  6,  4,  6,  2,  6,  3,  4,  6,  3,  5,  7,  5,  2,  5,  3,
-##         2,  3,  5,  3,  6,  4,  2,  2,  4,  4,  8,  6,  4,  3,  3,  6,  2,
-##         5,  3,  3,  5,  5,  5,  4,  8,  6,  4,  5,  2,  4,  2,  6,  4,  6,
-##         6,  7,  6,  5,  4,  5,  4,  3,  3,  5,  6,  5,  2,  6,  6,  2,  4,
-##         3,  7, 10,  8,  5,  4,  2,  5,  9,  4,  7,  6,  5,  6,  3,  5,  3,
-##         4,  7,  6,  9,  3,  4,  7,  2,  4,  5,  6,  2,  5,  8,  7])
+## array([ 2,  3,  7,  2,  5,  2,  7,  7,  5,  4,  6,  7,  4,  3,  4,  4,  6,
+##         6,  5,  1,  3,  3,  3,  9,  6,  3,  8,  3,  7,  5,  6,  3,  6,  7,
+##         5,  1,  4,  8,  6,  7,  3,  3,  7,  4,  4,  3,  8,  4,  6,  2,  4,
+##         6,  4,  5,  4,  4,  4,  4,  6,  6,  4,  5,  6,  7,  3,  3,  4,  3,
+##         6,  6,  9,  2,  4,  3,  7,  5,  5,  7,  6,  6,  6,  3,  5,  5,  5,
+##         5,  5,  4,  2,  4,  5,  5,  5,  6,  6,  7,  5,  6, 10,  3])
 ```
 
 ##  Cálculos distribución binomial con python
@@ -530,11 +505,12 @@ binom.rvs(n=20,p=0.25,size = 100)
 ```
 
 ```
-## array([3, 5, 7, 3, 8, 7, 3, 4, 8, 5, 5, 5, 1, 5, 6, 6, 5, 7, 7, 4, 6, 4,
-##        4, 6, 8, 8, 5, 3, 4, 6, 5, 5, 7, 5, 5, 1, 3, 4, 6, 5, 8, 5, 6, 4,
-##        3, 3, 4, 7, 6, 6, 5, 5, 4, 5, 3, 9, 5, 6, 4, 4, 7, 7, 4, 4, 2, 4,
-##        3, 6, 5, 6, 6, 2, 6, 3, 5, 5, 5, 7, 6, 3, 9, 7, 5, 4, 5, 6, 3, 5,
-##        6, 4, 5, 2, 5, 4, 7, 4, 7, 5, 5, 3])
+## array([ 3,  4,  4,  5,  6,  4,  6,  2,  6, 10,  6,  3,  3,  2,  6,  6,  4,
+##         5,  6,  5,  7,  5,  8,  8,  6,  8,  3,  4,  8,  8,  7,  4,  4,  4,
+##         3, 10,  5,  3,  2,  2,  3,  2,  8,  3,  2,  5,  7,  2,  7,  2,  3,
+##         2,  7,  5,  4,  7, 10,  2,  6,  4,  4,  5, 11,  8,  2,  7,  4,  4,
+##         5,  7,  6,  5,  6,  5,  5,  8,  3,  8,  3,  2,  7,  8,  6,  6,  3,
+##         6,  4,  5,  4,  3,  5,  5,  6,  6,  7,  8,  6,  4,  5,  3])
 ```
 </div>
 
@@ -565,7 +541,7 @@ binom.rvs(n=20,p=0.25,size=10)
 ```
 
 ```
-## array([7, 3, 5, 5, 1, 2, 4, 4, 7, 5])
+## array([10,  7,  5,  5,  5,  6,  3,  6,  3,  5])
 ```
 
 ## Gráficas de la distribución binomial con R 
@@ -600,37 +576,6 @@ El siguiente código de R dibuja las función de probabilidad y la de distribuci
 
 
 
-```r
-fluidPage(
-fluidRow(
-  column(6,
-         sliderInput("n_binom", label = "Número de repeticiones n:",
-              min = 1, max = 50, value =10 , step = 1)),
-  column(6,
-          sliderInput("p_binom", label = "Probabilidad éxito p:",
-                     min = 0.01, max = 0.99, value = 0.25, step = 0.01)
-         )
-  )
-)
-
-renderPlot({
-  n=input$n_binom
-  pr=input$p_binom
-  
-  par(mfrow=c(1,2))
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dbinom(c(0:n),size=n,prob=pr)
-  plot(x=c(0:n),y=dbinom(c(0:n),size=n,prob=pr),
-       ylim=c(0,1),xlim=c(-1,n+1),xlab="x",
-       main=paste0(c("Función de probabilidad\n B(n=",n,",p=",pr,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 2,col="blue")
-  curve(pbinom(x,size=n,p=pr),
-        xlim=c(-1,n+1),col="blue",
-        main=paste0(c("Función de distribución\n B(n=",n,",p=",pr,")"),
-                    collapse = ""))
-        par(mfrow=c(1,1))
-})
-```
 
 ## Gráficos de la distribución binomial con python
 
@@ -1466,25 +1411,6 @@ par(mfrow=c(1,1))
 ## Gráficas interactivas geométrica
 
 
-```r
-sliderInput("p_geom", label = "Probabilidad de éxito:",
-              min = 0.01, max = 0.99, value =0.25 , step = 0.01)
-renderPlot({
-  par(mfrow=c(1,2))
-  p=input$p_geom
-  n=30
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dgeom(c(0:n),prob=p)
-  plot(x=c(0:n),y=dgeom(c(0:n),prob=p),
-       ylim=c(0,1),xlim=c(-1,n+1),xlab="x",
-       main=paste0(c("Función de probabilidad\n Ge(p=",p,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 2,col="blue")
-  curve(pgeom(x,prob=p),
-        xlim=c(-1,n+1),col="blue",
-        main=paste0(c("Función de distribución\n Ge(p=",p,")"),collapse = ""))
-  par(mfrow=c(1,1))
-})
-```
 
 
 ## Cálculos con python
@@ -1557,7 +1483,8 @@ geom.rvs(p=0.25, size=20, loc=-1)
 ```
 
 ```
-## array([2, 0, 0, 9, 4, 1, 1, 3, 0, 6, 1, 0, 4, 2, 0, 0, 2, 0, 1, 1])
+## array([ 0,  3,  0,  5,  2,  3,  0,  1, 10,  0,  8,  2,  4,  4,  0,  4,  5,
+##         6,  4,  1])
 ```
 
 ## Cálculos con python 
@@ -2121,12 +2048,12 @@ nbinom.rvs(n=2, p=0.1, size=100)
 ```
 
 ```
-## array([ 6, 22, 18, 15, 18, 37,  1, 18,  4, 17, 10, 16, 30, 42,  3, 15, 13,
-##        52, 32, 37,  9, 15, 21, 16,  8, 14,  7, 17, 11, 12, 20, 20, 26, 10,
-##        46, 22,  3, 13, 12, 16, 12, 13, 36, 16, 24,  2,  7, 53, 89, 19, 20,
-##        16, 25, 15, 18, 16, 59, 25, 21, 15, 30,  8,  5, 13, 57,  1, 12,  4,
-##        20,  7,  5,  9, 29, 43, 31,  5,  4, 56, 13, 11, 22, 14, 20,  4,  9,
-##         4, 29, 19, 22, 14, 45, 30, 22, 15, 12, 43,  6, 21, 35, 21])
+## array([35, 14, 19,  1,  5,  1, 41, 26, 36,  2, 12, 15, 16, 10,  3,  2, 36,
+##        44, 15,  7, 21,  9, 18, 18, 12,  9, 50, 30,  3,  8,  9, 15, 27, 35,
+##         2,  7, 11,  6, 14, 45,  8,  7,  5, 29, 70, 28, 34, 11, 43,  1,  6,
+##        15,  1, 16,  9, 23, 21, 13,  3, 18,  5,  3,  4, 34,  5,  2, 14, 12,
+##         3, 15, 21, 31, 12, 21,  6,  3, 38, 13, 14,  8, 14, 12, 15,  7, 49,
+##        14,  8, 28,  4,  5, 26, 19, 12, 17,  4, 15, 70, 13, 26, 20])
 ```
 
 ## Cálculos $BN(n,p)$ con python
@@ -2184,37 +2111,6 @@ El siguiente código de R dibuja las función de probabilidad y la de distribuci
 
 
 
-```r
-fluidPage(
-fluidRow(
-  column(6,
-         sliderInput("n_nbinom", label = "Número de éxitos n:",
-              min = 1, max = 50, value =20 , step = 1)),
-  column(6,
-          sliderInput("p_nbinom", label = "Probabilidad de un éxito p:",
-                     min = 0.01, max = 0.99, value = 0.8, step = 0.01)
-         )
-  )
-)
-
-renderPlot({
-  n=input$n_nbinom
-  pr=input$p_nbinom
-  
-  par(mfrow=c(1,2))
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dnbinom(c(0:n),size=n,prob=pr)
-  plot(x=c(0:n),y=dnbinom(c(0:n),size=n,prob=pr),
-       ylim=c(0,1),xlim=c(-1,n+1),xlab="x",
-       main=paste0(c("Función de probabilidad\n BN(n=",n,",p=",pr,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 2,col="blue")
-  curve(pnbinom(x,size=n,p=pr),
-        xlim=c(-1,n+1),col="blue",
-        main=paste0(c("Función de distribución\n BN(n=",n,",p=",pr,")"),
-                    collapse = ""))
-  par(mfrow=c(1,1))
-})
-```
 
 ## Gráficos de la binomial negativa con python
 
@@ -2732,45 +2628,6 @@ la aproximación  de una $B(n,p)$ por una $Po(n\cdot p)$ es buena. Sobre todo pa
 Condición deseable $n\geq 20$,  $n\cdot p < 10$, $p\leq 0.05$
 
 
-```r
-fluidPage(
-fluidRow(
-  column(6,
-         sliderInput("n_binomP", label = "Número de repeticiones n:",
-              min = 1, max = 100, value =20 , step = 1)),
-  column(6,
-          sliderInput("p_binomP", label = "Probabilidad éxito p:",
-                     min = 0.001, max = 0.9, value = 0.05, step = 0.001)
-         )
-  )
-)
-
-renderPlot({
-  n=input$n_binomP
-  pr=input$p_binomP
-  par(mfrow=c(1,2))
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dbinom(c(0:n),size=n,prob=pr)
-  plot(x=c(0:n),y=dbinom(c(0:n),size=n,prob=pr),
-       ylim=c(0,0.6),xlim=c(-1,n+1),xlab="x",ylab="Función de probabilidad",
-       main=paste0(c("Funciones de probabilidad\n B(n=",n,",p=",pr,"), Po(lambda=",n*pr,")"),collapse = ""))
-  lines(x=rep(0:n,each=2),y=aux,pch=21, type = "h", lty = 2,col="blue")
-  aux=rep(0,(n+1)*2)
-  aux[seq(2,(n+1)*2,2)]=dpois(c(0:n),n*pr)
-  points(x=c(0:n),y=dpois(c(0:n),n*pr),
-       ylim=c(0,0.6),xlim=c(-1,n+1),xlab="x",pch=25,col="red")
-  lines(x=rep(0:n,each=2),y=aux, type = "h", lty = 3,col="red")
-  legend("topleft",legend=c("Binomial","Poisson"),col=c("blue","red"),pch=c(21,25),lty=c(2,3),bty = "n")
-  curve(pbinom(x,size=n,p=pr),
-        xlim=c(-1,n+1),col="blue",ylab="Función de Distribución",
-         main=paste0(c("Funciones de distribución \n B(n=",n,",p=",pr,"), Po(lambda=",n*pr,")"),collapse = ""))
-  curve(ppois(x,n*pr),
-        xlim=c(-1,n+1),col="red",add=TRUE)
-  if(all(c(n>=20,n*pr<10,pr<= 0.05))){aux_l="Condición\n TRUE"} else {aux_l="Condición\n FALSE"}
-  legend("topleft",legend=c(aux_l,paste0("n=",n),paste0("n*p=",n*pr),paste0("p=",pr)),bg="transparent",cex=0.8,bty = "n")
-  par(mfrow=c(1,1))
-})
-```
 
 
 
@@ -3293,8 +3150,8 @@ poisson.rvs(mu=3,size=40)
 ```
 
 ```
-## array([4, 6, 7, 3, 2, 1, 2, 7, 6, 4, 6, 2, 4, 1, 4, 2, 5, 2, 0, 3, 1, 3,
-##        2, 3, 4, 2, 4, 0, 5, 5, 0, 2, 3, 2, 7, 2, 3, 4, 3, 4])
+## array([1, 3, 2, 5, 3, 2, 0, 3, 5, 1, 2, 2, 2, 3, 6, 4, 0, 2, 6, 3, 4, 0,
+##        1, 1, 5, 3, 5, 2, 2, 3, 6, 2, 5, 4, 3, 3, 3, 1, 3, 5])
 ```
 
 
@@ -3765,11 +3622,11 @@ hypergeom.rvs(M=15+10,n=15,N=3,size=100)
 ```
 
 ```
-## array([2, 3, 3, 1, 3, 2, 2, 1, 3, 2, 3, 2, 1, 3, 1, 2, 2, 2, 2, 2, 1, 2,
-##        3, 3, 1, 0, 3, 2, 1, 2, 2, 2, 1, 2, 2, 0, 0, 3, 0, 1, 2, 1, 2, 2,
-##        1, 3, 0, 3, 3, 3, 2, 3, 1, 2, 1, 2, 2, 2, 2, 1, 1, 2, 3, 3, 2, 3,
-##        2, 0, 1, 2, 3, 1, 2, 2, 2, 2, 1, 0, 2, 0, 2, 2, 1, 1, 2, 1, 1, 1,
-##        1, 2, 2, 1, 2, 2, 2, 1, 3, 2, 2, 2])
+## array([1, 2, 2, 2, 3, 1, 3, 1, 2, 3, 3, 2, 2, 2, 3, 2, 2, 2, 2, 3, 2, 3,
+##        2, 1, 3, 3, 2, 2, 3, 2, 2, 3, 3, 3, 2, 2, 3, 0, 2, 3, 1, 3, 3, 0,
+##        2, 3, 2, 2, 1, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 1, 1, 3, 2, 3, 0,
+##        1, 0, 1, 2, 3, 3, 2, 3, 2, 1, 2, 2, 3, 3, 1, 3, 0, 1, 3, 3, 2, 1,
+##        2, 3, 2, 1, 2, 2, 2, 2, 2, 3, 1, 2])
 ```
 
 
