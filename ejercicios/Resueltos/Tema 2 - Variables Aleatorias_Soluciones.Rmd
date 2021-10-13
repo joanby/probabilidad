@@ -37,20 +37,43 @@ dos estudiantes seleccionados. Hallar la función de probabilidad para $X$.
 
 ### Solución
 
+Los valores que puede alcanzar $X$ son los siguientes:
 
+* $X=19$ si se eligen los dos estudiantes de 19 años.
+* $X=19.5$ si se elige un estudiante de 19 años y uno de 20 años.
+* $X=20$ si se eligen los dos estudiantes de 20 años o un estudiante de 19 años y el otro de 21 años.
+* $X=20.5$ si se elige un estudiante de 20 años y otro de 21 años.
+* $X=21.5$ si se elige un estudiante de 19 años y otro de 24 años.
+* $X=22$ si se elige un estudiante de 20 años y otro de 24 años.
+* $X=22.5$ si se elige un estudiante de 19 años y otro de 26 años o un estudiante de 21 años y otro de 24 años.
+* $X=23$ si se elige un estudiante de 20 años y otro de 26 años.
+* $X=23.5$ si se elige un estudiante de 21 años y otro de 26 años.
+* $X=25$ si se elige un estudiante de 24 años y otro de 26 años.
+
+La función de probabilidad de $X$ es la siguiente:
 $$
 P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 \left\{\begin{array}{ll}
-\frac{3}{10}, & \mbox{si } x=19,
- \\[0.1cm]
-\frac{4}{10}, & \mbox{si } x=20,
- \\[0.1cm]
-\frac{1}{10}, & \mbox{si } x=21,
- \\[0.1cm]
-{1\over 10}, & \mbox{si } x=24,
- \\[0.1cm] 
-{1\over 10}, & \mbox{si } x=26,
- \\[0.1cm] 
+\frac{\binom{3}{2}}{\binom{10}{2}}=\frac{`r choose(3,2)`}{`r choose(10,2)`}=`r choose(3,2)/choose(10,2)`, & \mbox{si } x=19,
+ \\[0.25cm]
+\frac{3\cdot 4}{\binom{10}{2}}=\frac{12}{`r choose(10,2)`}=`r 12/choose(10,2)`, & \mbox{si } x=19.5,
+ \\[0.25cm]
+ \frac{\binom{4}{2}}{\binom{10}{2}}+\frac{3}{\binom{10}{2}}=\frac{`r choose(4,2)`}{`r choose(10,2)`}+\frac{3}{`r choose(10,2)`}=`r (choose(4,2)+3)/choose(10,2)`, & \mbox{si } x=20,
+ \\[0.25cm]
+ \frac{4\cdot 1}{\binom{10}{2}}=\frac{4}{`r choose(10,2)`}=`r 4/choose(10,2)`, & \mbox{si } x=20.5,
+ \\[0.25cm]
+ \frac{3\cdot 1}{\binom{10}{2}}=\frac{3}{`r choose(10,2)`}=`r 3/choose(10,2)`, & \mbox{si } x=21.5,
+ \\[0.25cm]
+ \frac{4\cdot 1}{\binom{10}{2}}=\frac{4}{`r choose(10,2)`}=`r 4/choose(10,2)`, & \mbox{si } x=22,
+ \\[0.25cm]
+ \frac{3}{\binom{10}{2}}+\frac{1}{\binom{10}{2}}=\frac{3}{`r choose(10,2)`}+\frac{1}{`r choose(10,2)`}=`r 4/choose(10,2)`, & \mbox{si } x=22.5,
+ \\[0.25cm]
+ \frac{4\cdot 1}{\binom{10}{2}}=\frac{4}{`r choose(10,2)`}=`r 4/choose(10,2)`, & \mbox{si } x=23,
+ \\[0.25cm]
+ \frac{1}{\binom{10}{2}}=\frac{1}{`r choose(10,2)`}=`r 1/choose(10,2)`, & \mbox{si } x=23.5,
+ \\[0.25cm]
+ \frac{1}{\binom{10}{2}}=\frac{1}{`r choose(10,2)`}=`r 1/choose(10,2)`, & \mbox{si } x=25,
+ \\[0.25cm]
 0, & \mbox{ en cualquier otro caso},
 \end{array}\right.
 $$
@@ -100,16 +123,16 @@ La función $F_X$ cumple  todas las propiedades de una función de distribución
 *  Tiende asintóticamente a 1  cuando $x\to+\infty$ y a 0  cuandor $x\to-\infty$.
 
 
-El Dominio es $D_X=\{3,4,5,6}$
+El Dominio es $D_X=\{3,4,5,6\}$
 
 
-$P(X=3)=F_X(3)-F_X(3^{-})=F_X(3)-lim_{x-> 3^{-} F_X(x)=\frac{1}{3}=\frac{1}{3}-0=\frac{1}{3}.$
+$P(X=3)=F_X(3)-F_X(3^{-})=F_X(3)-lim_{x\to 3^{-}} F_X(x)=\frac{1}{3}=\frac{1}{3}-0=\frac{1}{3}.$
 
-$P(X=4)=F_X(4)-F_X(4^{-})=F_X(4)-lim_{x-> 4^{-} F_X(x)=\frac{1}{2}-\frac{1}{3}=\frac{1}{6}.$
+$P(X=4)=F_X(4)-F_X(4^{-})=F_X(4)-lim_{x\to 4^{-}} F_X(x)=\frac{1}{2}-\frac{1}{3}=\frac{1}{6}.$
 
-$P(X=5)=F_X(5)-F_X(5^{-})=F_X(5)-lim_{x-> 5^{-} F_X(x)=\frac{2}{3}-\frac{1}{2}=\frac{1}{6}.$
+$P(X=5)=F_X(5)-F_X(5^{-})=F_X(5)-lim_{x\to 5^{-}} F_X(x)=\frac{2}{3}-\frac{1}{2}=\frac{1}{6}.$
 
-$P(X=6)=F_X(6)-F_X(6^{-})=F_X(6)-lim_{x-> 5^{-} F_X(x)=1-\frac{2}{3}=\frac{1}{3}.$
+$P(X=6)=F_X(6)-F_X(6^{-})=F_X(6)-lim_{x\to 5^{-}} F_X(x)=1-\frac{2}{3}=\frac{1}{3}.$
 
 $P(X=x)=0$ si $x \not\in\{3,4,5,6\}.$
 
