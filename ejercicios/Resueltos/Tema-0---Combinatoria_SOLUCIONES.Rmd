@@ -97,7 +97,7 @@ nrow(palabras_byte)
 Con variaciones sin repetición de 50 miembros para dos puestos: director y subdirector
 
 $$
-VR_{n=50}^{k=2}=\frac{50!}{(50-2)!}=50\cdot 49=`r 50*49`.
+V_{n=50}^{k=2}=\frac{50!}{(50-2)!}=50\cdot 49=`r 50*49`.
 $$
 
 ## Problema 5 
@@ -405,7 +405,11 @@ Supongamos que las placas de matrícula de coches se componen de tres letras seg
 ### Solución
 
 
-Consideraremos 10 dígitos y 26 letras. Así son $VR_{n=10}^{k=3}\cdot VR_{n=26}^{k=3}=10^3\cdot 26^3=17576000.$ 
+Consideraremos 10 dígitos y 26 letras. Así son 
+
+$$
+{VR}_{n=10}^{k=3} \cdot {VR}_{n=26}^{k=3}=10^3\cdot 26^3=17576000.
+$$ 
 
 
 ## Problema 7
