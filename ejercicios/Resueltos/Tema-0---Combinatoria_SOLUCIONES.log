@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.8)  8 OCT 2021 11:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.8)  8 OCT 2021 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Tema-1---Probabilidad_SOLUCIONES.tex
-(./Tema-1---Probabilidad_SOLUCIONES.tex
+**Tema-0---Combinatoria_SOLUCIONES.tex
+(./Tema-0---Combinatoria_SOLUCIONES.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-08-27> (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
 dist/tex/latex/base/article.cls
@@ -409,52 +409,6 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen163
 \FrameSep=\dimen164
 )
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
-\LTleft=\skip55
-\LTright=\skip56
-\LTpre=\skip57
-\LTpost=\skip58
-\LTchunksize=\count287
-\LTcapwidth=\dimen165
-\LT@head=\box53
-\LT@firsthead=\box54
-\LT@foot=\box55
-\LT@lastfoot=\box56
-\LT@gbox=\box57
-\LT@cols=\count288
-\LT@rows=\count289
-\c@LT@tables=\count290
-\c@LT@chunks=\count291
-\LT@p@ftn=\toks27
-)
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.s
-ty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen166
-\lightrulewidth=\dimen167
-\cmidrulewidth=\dimen168
-\belowrulesep=\dimen169
-\belowbottomsep=\dimen170
-\aboverulesep=\dimen171
-\abovetopsep=\dimen172
-\cmidrulesep=\dimen173
-\cmidrulekern=\dimen174
-\defaultaddspace=\dimen175
-\@cmidla=\count292
-\@cmidlb=\count293
-\@aboverulesep=\dimen176
-\@belowrulesep=\dimen177
-\@thisruleclass=\count294
-\@lastruleclass=\count295
-\@thisrulewidth=\dimen178
-)
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.s
-ty
-Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box58
-\fn@width=\dimen179
-)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.s
 ty
 Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
@@ -471,44 +425,43 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen180
-\Gin@req@width=\dimen181
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend
 -pdftex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count296
-\l__pdf_internal_box=\box59
-)
-No file Tema-1---Probabilidad_SOLUCIONES.aux.
-\openout1 = `Tema-1---Probabilidad_SOLUCIONES.aux'.
+\l__color_backend_stack_int=\count287
+\l__pdf_internal_box=\box53
+) (./Tema-0---Combinatoria_SOLUCIONES.aux)
+\openout1 = `Tema-0---Combinatoria_SOLUCIONES.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Info: Redefining \microtypecontext on input line 121.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Info: Redefining \microtypecontext on input line 113.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 121.
+LaTeX Info: Redefining \showhyphens on input line 113.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -529,7 +482,7 @@ f-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 121.
+Package hyperref Info: Link coloring ON on input line 113.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.st
 y
@@ -543,13 +496,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count297
+\c@section@level=\count288
 )
-LaTeX Info: Redefining \ref on input line 121.
-LaTeX Info: Redefining \pageref on input line 121.
-LaTeX Info: Redefining \nameref on input line 121.
+LaTeX Info: Redefining \ref on input line 113.
+LaTeX Info: Redefining \pageref on input line 113.
+LaTeX Info: Redefining \nameref on input line 113.
+(./Tema-0---Combinatoria_SOLUCIONES.out) (./Tema-0---Combinatoria_SOLUCIONES.ou
+t)
 \@outlinefile=\write4
-\openout4 = `Tema-1---Probabilidad_SOLUCIONES.out'.
+\openout4 = `Tema-0---Combinatoria_SOLUCIONES.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -586,32 +541,32 @@ LaTeX Info: Redefining \nameref on input line 121.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-23.
+15.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-23.
+15.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-123.
+115.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-123.
+115.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 123.
+(Font)              <12> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 123.
+(Font)              <8> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 123.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 123
+(Font)              <6> on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 115
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -620,7 +575,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 g
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 123
+LaTeX Font Info:    Trying to load font information for U+msb on input line 115
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -628,76 +583,76 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cf
 g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) (./Tema-0---Combinatoria_SOLUCIONES.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
 )
 \tf@toc=\write5
-\openout5 = `Tema-1---Probabilidad_SOLUCIONES.toc'.
+\openout5 = `Tema-0---Combinatoria_SOLUCIONES.toc'.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-44.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 144.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 144.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 144.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+39.
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1
 
-Underfull \hbox (badness 1642) in paragraph at lines 165--168
-[]$\OML/lmm/m/it/10 B \OT1/lmr/m/n/10 (+20) = \OMS/lmsy/m/n/10 f\OT1/lmr/m/n/10
- (+20) (\OML/lmm/m/it/10 Ri; Vj; Ak\OT1/lmr/m/n/10 (+20) )\OML/lmm/m/it/10 ; \O
-T1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Ri; Aj; Vk\OT1/lmr/m/n/10 (+20) )\OML/lmm
-/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Vi; Rj; Ak\OT1/lmr/m/n/10 (+
-20) )\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Vi; Aj; Rk\OT1/
-lmr/m/n/10 (+20) )\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Ai
-; Vj; Rk\OT1/lmr/m/n/10 (+20) )\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/l
-mm/m/it/10 Ai; Rj; Vk\OT1/lmr/m/n/10 (+20) )\OMS/lmsy/m/n/10 j[]\OML/lmm/m/it/1
-0 i; j; k \OMS/lmsy/m/n/10 2
- []
-
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
+.map}]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 147.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 168.
+(amsmath)                 on input line 199.
 
-[1
-
-{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
-.map}] [2]
-Overfull \hbox (20.14015pt too wide) detected at line 312
-\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
-0 P\OT1/lmr/m/n/10 ([])\OML/lmm/m/it/10 :
- []
-
-
-Overfull \hbox (34.23099pt too wide) detected at line 324
-\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
-0 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ []\OML/lmm/m/it/10 :
- []
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-29.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 330.
-[3])
-Runaway argument?
-{P({CC++,C+C+,C++C,+C+C,++CC,+CC+\})}=\frac {3\cdot 0.5^4}{6*0.5^4}=\frac \ETC.
-! File ended while scanning use of \frac .
-<inserted text> 
-                \par 
-<*> Tema-1---Probabilidad_SOLUCIONES.tex
-                                         
+[2] [3] [4] [5] [6] [7] [8] [9]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
+94.
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [10] [11] (./Tema-0---Combinatoria_SOLUCIONES.aux)
+Package rerunfilecheck Info: File `Tema-0---Combinatoria_SOLUCIONES.out' has no
+t changed.
+(rerunfilecheck)             Checksum: B84A85A12B87F474825A5CDD85F67EF0;2711.
+ ) 
 Here is how much of TeX's memory you used:
- 12888 strings out of 480518
- 196712 string characters out of 5899798
- 561555 words of memory out of 5000000
- 30179 multiletter control sequences out of 15000+600000
- 462140 words of font info for 112 fonts, out of 8000000 for 9000
+ 12835 strings out of 480518
+ 196004 string characters out of 5899798
+ 559987 words of memory out of 5000000
+ 30047 multiletter control sequences out of 15000+600000
+ 454345 words of font info for 120 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,8n,66p,537b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,66p,537b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.e
+nc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-math
+sy.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
+mathex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
+/lm-ec.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
+/lm-rm.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
+/lm-mathit.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
+blic/lm/lmbx10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
+1/public/lm/lmbx12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/
+type1/public/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fo
+nts/type1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dis
+t/fonts/type1/public/lm/lmmi7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
+dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/tex
+mf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/
+texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/t169/AppData/Roaming/TinyT
+eX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roaming/Tin
+yTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roaming
+/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169/AppData/Roam
+ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/AppData/
+Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/t169/AppD
+ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Tema-0---Combinatoria_SOLUCIONES.pdf (11 pages, 294614 bytes)
+.
+PDF statistics:
+ 337 PDF objects out of 1000 (max. 8388607)
+ 291 compressed objects within 3 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 28849 words of extra memory for PDF output out of 29859 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!

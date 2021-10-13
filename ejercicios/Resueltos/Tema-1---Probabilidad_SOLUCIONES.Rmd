@@ -252,13 +252,13 @@ P(\mbox{C en la cuarta}|CCC)=
 .$$
  
  
-El suceso $\mbox{2 caras en cuatro tiradas}=\{CC++,C+C+,C++C,+C+C,++CC\}.$
+El suceso $\mbox{2 caras en cuatro tiradas}=\{CC++,C+C+,C++C,+C+C,++CC,+CC+\}.$
 
 
 \begin{eqnarray*}
-P(\mbox{C en la cuarta}|\{CC++,C+C+,C++C,+C+C,++CC\})&=&\\
-\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC\})}{P(CCC)}&=&\\
-\frac{P(\{C++C,+C+C,++CC\})}{P(CCC)}=\frac{3\cdot 0.5^4}{4\cdot 0.5^4}=\frac{3}{4}=0.75.
+P(\mbox{C en la cuarta}|\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})&=&\\
+\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC,,+CC+\})}{P(CCC)}&=&\\
+\frac{P(\{C++C,+C+C,++CC\})}{P({CC++,C+C+,C++C,+C+C,++CC,+CC+\})}=\frac{3\cdot 0.5^4}{6*0.5^4}=\frac{1}{2}=0.5.
 \end{eqnarray*}
 
 ## Problema 8
@@ -330,8 +330,8 @@ dado1=rep(1:6,times=6)# dado 1
 dado2=rep(1:6,each=6) #dado 2
 resultados=data.frame(dado1,dado2,suma=dado1+dado2)
 knitr::kable(resultados)
-table(resultados$suma)
-
+frecuencias_suma=table(resultados$suma)
+frecuencias_suma
 ```
 
 
@@ -339,14 +339,17 @@ table(resultados$suma)
 Si condicionamos a que la suma es mayor o igual a 7
 
 ```{r}
-table(resultados$suma[resultados$suma>=7])
-
+names(frecuencias_suma)
+suma_mayor_igual7=which(as.integer(names(frecuencias_suma))>=7)
+suma_mayor_igual7
+frecuencias_suma [suma_mayor_igual7]
 ```
 
 La probabilidades pedidas son 
 
 ```{r}
-prop.table(table(resultados$suma[resultados$suma>=7]))
+prop.table(frecuencias_suma)# todas las probabilidades.
+prop.table(frecuencias_suma)[suma_mayor_igual7]# probabilidades pedidas.
 ```
 
 

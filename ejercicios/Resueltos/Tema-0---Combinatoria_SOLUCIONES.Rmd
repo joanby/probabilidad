@@ -3,11 +3,11 @@ title: "SOLUCIONES: Ejercicios Tema 0 - Repaso de combinatoria y conjuntos"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  html_document: 
+  pdf_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2
-  pdf_document: 
+  html_document: 
     number_sections: yes
     toc: yes
     toc_depth: 2
@@ -97,7 +97,7 @@ nrow(palabras_byte)
 Con variaciones sin repetición de 50 miembros para dos puestos: director y subdirector
 
 $$
-VR_{n=50}^{k=2}=\frac{50!}{(50-2)!}=50\cdot 49=`r 50*49`.
+V_{n=50}^{k=2}=\frac{50!}{(50-2)!}=50\cdot 49=`r 50*49`.
 $$
 
 ## Problema 5 
@@ -268,7 +268,7 @@ Se han de repartir cinco becas entre diez españoles y seis extranjeros, de mane
 
 ### Solución
 
- Escojo de entre 10 españoles a 3 $C_{n=10}^{k=3}={ 5 \choose 3}$ y por cada una de estas elecciones escojo 2 extranjeros entre los  6 $C_{n=6}^{k=2}={6 \choose 2}$ en total ${10 \choose 3}\cdot { 6 \choose 2}=\frac{10!}{3!\cdot (10-3)!}\cdot \frac{6!}{2!\cdot (6-2)!}=`r choose(10,3)*choose(6,2)`.$
+ Escojo de entre 10 españoles a 3 $C_{n=10}^{k=3}={ 10 \choose 3}$ y por cada una de estas elecciones escojo 2 extranjeros entre los  6 $C_{n=6}^{k=2}={6 \choose 2}$ en total ${10 \choose 3}\cdot { 6 \choose 2}=\frac{10!}{3!\cdot (10-3)!}\cdot \frac{6!}{2!\cdot (6-2)!}=`r choose(10,3)*choose(6,2)`.$
  
  
  Con R
