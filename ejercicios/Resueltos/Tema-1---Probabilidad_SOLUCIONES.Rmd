@@ -1,5 +1,5 @@
 ---
-title: 'SOLUCIONES:  Ejercicios Tema 1 - Probabilidad. Parte 1,2 y 3'
+title: 'SOLUCIONES:  Ejercicios Tema 1 - Probabilidad. Parte 1, 2 y 3'
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
@@ -257,8 +257,9 @@ El suceso $\mbox{2 caras en cuatro tiradas}=\{CC++,C+C+,C++C,+C+C,++CC,+CC+\}.$
 
 \begin{eqnarray*}
 P(\mbox{C en la cuarta}|\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})&=&\\
-\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC,,+CC+\})}{P(CCC)}&=&\\
-\frac{P(\{C++C,+C+C,++CC\})}{P({CC++,C+C+,C++C,+C+C,++CC,+CC+\})}=\frac{3\cdot 0.5^4}{6*0.5^4}=\frac{1}{2}=0.5.
+\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC,,+CC+\})}{P(CCC)}&=&
+\\
+\frac{P(\{C++C,+C+C,++CC\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}=\frac{3\cdot 0.5^4}{6\cdot 0.5^4}=\frac{1}{2}=0.5.
 \end{eqnarray*}
 
 ## Problema 8
@@ -323,7 +324,7 @@ Se lanzan una sola vez dos dados. Si la suma de los dos dados es como mínimo 7,
 ### Solución
 
 
-Estos son los resultados de la suma sin la condición
+Estos son los resultados de la suma:
 
 ```{r}
 dado1=rep(1:6,times=6)# dado 1
@@ -336,24 +337,36 @@ frecuencias_suma
 
 
 
-Si condicionamos a que la suma es mayor o igual a 7
+La probabilidad de  las 11 posibles sumas son 
 
 ```{r}
-names(frecuencias_suma)
-suma_mayor_igual7=which(as.integer(names(frecuencias_suma))>=7)
-suma_mayor_igual7
-frecuencias_suma [suma_mayor_igual7]
+prop.table(frecuencias_suma)
 ```
+La probabilidad de suma mayor o igual que 7 es la suma de las probabilidades anteriores desde suma 7 a suma 12
 
-La probabilidades pedidas son 
+
 
 ```{r}
-prop.table(frecuencias_suma)# todas las probabilidades.
-prop.table(frecuencias_suma)[suma_mayor_igual7]# probabilidades pedidas.
+prop.table(frecuencias_suma)[6:11]
+prob_suma_mayor_igual_7=sum(prop.table(frecuencias_suma)[6:11])
+prob_suma_mayor_igual_7
+```
+
+La probabilidades pedidas son  
+
+
+$$P(\{\mbox{Suma  i}\}|\{\mbox{Suma\ mayor igual 7\}})
+=\frac{P(\mbox{\{Suma\ i\}}\cap 
+\{\mbox{Suma mayor igual 7 \}})}{P(\{\mbox{ Suma mayor igual 7 \}})} =\frac{P(\{ \mbox{Suma i \}})}{P(\{\mbox{Suma mayor igual 7 \}})}
+$$
+
+Que resolvemos así para $i=7,8,9,10,11,12$
+
+```{r}
+prop.table(frecuencias_suma)[6:11]/prob_suma_mayor_igual_7
 ```
 
 
-Como ejercicio formalizar con teoría de la probabilidad básica alguno de los resultados y comprobad que es correcto.
 
 
 ## Problema `r contador=contador+1;contador`.
