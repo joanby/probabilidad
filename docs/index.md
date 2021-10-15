@@ -11,8 +11,7 @@ Asienta las bases para convertirte en el Data Scientist del futuro con todo el c
 + [Prerrequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1).  
 
  
-1. [Probabilidad](https://joanby.github.io/probabilidad/Tema_1_Probabilidad#1). 
-  
+1. [Probabilidad](https://joanby.github.io/probabilidad/Tema_1_Probabilidad#1).
 2. [Variables aleatorias](https://joanby.github.io/probabilidad/Tema_2_VA#1)
 3. Distribuciones Notables
     + [Distribuciones notables discretas](https://joanby.github.io/probabilidad/Tema_3_1_Notables#1)
@@ -22,8 +21,9 @@ Asienta las bases para convertirte en el Data Scientist del futuro con todo el c
 6. [Variables multidimensionales](https://joanby.github.io/probabilidad/Tema_6_Varias_Variables#1)
 7. [Convergencia y Teorema Central del límite](https://joanby.github.io/probabilidad/Tema_7_TCL#1)
 
+## Problemas resueltos
 
-[Problemas propuestos y resueltos de todos los temas.](https://github.com/joanby/probabilidad/tree/master/ejercicios).
+[Problemas propuestos y resueltos de todos los temas](https://github.com/joanby/probabilidad/tree/master/ejercicios).
 
 
 Y todo con más de 40 horas de vídeo bajo demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.
