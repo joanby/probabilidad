@@ -9,11 +9,8 @@ También tienes todas las distribuciones de probabilidad en nuestro [Shiny inter
 Asienta las bases para convertirte en el Data Scientist del futuro con todo el contenido de probabilidad del curso. En particular verás los mismos contenidos que explicamos en primero de carrera a matemáticos, ingenieros, economistas, biólogos, médicos o informáticos. 
 
 + [Prerrequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1).  
-
-  + Problemas propuestos Tema Prerrequisitos [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema%200%20-%20Combinatoria.Rmd), [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria.pdf).
-  + Soluciones problemas propuestos Tema Prerrequisitos [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria_SOLUCIONES.Rmd),  [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria_SOLUCIONES.pdf),  [html](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria_SOLUCIONES.html)
-
-
+ [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema%200%20-%20Combinatoria.Rmd), [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria.pdf).
+ 
 1. [Probabilidad](https://joanby.github.io/probabilidad/Tema_1_Probabilidad#1). 
   + Problemas propuestos Tema Probabilidad [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema%201%20-%20Probabilidad.Rmd), [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-1---Probabilidad.pdf).
 2. [Variables aleatorias](https://joanby.github.io/probabilidad/Tema_2_VA#1)
@@ -24,6 +21,9 @@ Asienta las bases para convertirte en el Data Scientist del futuro con todo el c
 5. [Variables bidimensionales](https://joanby.github.io/probabilidad/Tema_5_Varias_Variables#1)
 6. [Variables multidimensionales](https://joanby.github.io/probabilidad/Tema_6_Varias_Variables#1)
 7. [Convergencia y Teorema Central del límite](https://joanby.github.io/probabilidad/Tema_7_TCL#1)
+
+
+[Problemas propuestos y resueltos de todos los temas.](https://github.com/joanby/probabilidad/tree/master/ejercicios).
 
 
 Y todo con más de 40 horas de vídeo bajo demanda, cientos de ejercicios, tareas, talleres y trucos de los profesores para que te conviertas en un experto de la materia.
