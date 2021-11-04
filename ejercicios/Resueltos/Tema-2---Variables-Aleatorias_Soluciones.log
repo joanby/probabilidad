@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.12)  20 OCT 2021 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.12)  27 OCT 2021 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Tema-1---Probabilidad_SOLUCIONES.tex
-(./Tema-1---Probabilidad_SOLUCIONES.tex
+**Tema-2---Variables-Aleatorias_Soluciones.tex
+(./Tema-2---Variables-Aleatorias_Soluciones.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base
 /article.cls
@@ -401,8 +401,9 @@ line 40.
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count282
 \l__pdf_internal_box=\box53
-) (./Tema-1---Probabilidad_SOLUCIONES.aux)
-\openout1 = `Tema-1---Probabilidad_SOLUCIONES.aux'.
+)
+No file Tema-2---Variables-Aleatorias_Soluciones.aux.
+\openout1 = `Tema-2---Variables-Aleatorias_Soluciones.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
 LaTeX Font Info:    ... okay on input line 120.
@@ -471,10 +472,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 120.
 LaTeX Info: Redefining \pageref on input line 120.
 LaTeX Info: Redefining \nameref on input line 120.
-(./Tema-1---Probabilidad_SOLUCIONES.out) (./Tema-1---Probabilidad_SOLUCIONES.ou
-t)
 \@outlinefile=\write4
-\openout4 = `Tema-1---Probabilidad_SOLUCIONES.out'.
+\openout4 = `Tema-2---Variables-Aleatorias_Soluciones.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -549,113 +548,58 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 122
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./Tema-1---Probabilidad_SOLUCIONES.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2.
 )
 \tf@toc=\write5
-\openout5 = `Tema-1---Probabilidad_SOLUCIONES.toc'.
+\openout5 = `Tema-2---Variables-Aleatorias_Soluciones.toc'.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-43.
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 1642) in paragraph at lines 164--167
-[]$\OML/lmm/m/it/10 B \OT1/lmr/m/n/10 (+20) = \OMS/lmsy/m/n/10 f\OT1/lmr/m/n/10
- (+20) (\OML/lmm/m/it/10 Ri; Vj; Ak\OT1/lmr/m/n/10 (+20) )\OML/lmm/m/it/10 ; \O
-T1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Ri; Aj; Vk\OT1/lmr/m/n/10 (+20) )\OML/lmm
-/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Vi; Rj; Ak\OT1/lmr/m/n/10 (+
-20) )\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Vi; Aj; Rk\OT1/
-lmr/m/n/10 (+20) )\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 Ai
-; Vj; Rk\OT1/lmr/m/n/10 (+20) )\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) (\OML/l
-mm/m/it/10 Ai; Rj; Vk\OT1/lmr/m/n/10 (+20) )\OMS/lmsy/m/n/10 j[]\OML/lmm/m/it/1
-0 i; j; k \OMS/lmsy/m/n/10 2
- []
-
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 167.
-
-[2]
-Overfull \hbox (20.14015pt too wide) detected at line 312
-\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
-0 P\OT1/lmr/m/n/10 ([])\OML/lmm/m/it/10 :
- []
-
-[3]
-Overfull \hbox (34.23099pt too wide) detected at line 324
-\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/1
-0 P\OT1/lmr/m/n/10 ([]) = 1 \OMS/lmsy/m/n/10 ^^@ []\OML/lmm/m/it/10 :
- []
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-29.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 138.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 138.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 138.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+45.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 330.
-[4]
-Overfull \hbox (35.33687pt too wide) detected at line 479
-\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 C\OMS/lmsy/m/n/10 j\OML/lmm
-/m/it/10 T\OT1/lmr/m/n/10 ) = [] = [] = [] = 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10
- 087156\OML/lmm/m/it/10 :
- []
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 146.
+[1
 
-[5] [6]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 592.
+(amsmath)                 on input line 431.
 
-[7] [8] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 887.
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 887.
-(./Tema-1---Probabilidad_SOLUCIONES.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 887.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 887.
-Package rerunfilecheck Info: File `Tema-1---Probabilidad_SOLUCIONES.out' has no
-t changed.
-(rerunfilecheck)             Checksum: A2CA5DE935D81503CA806B3D33A2718D;3352.
- ) 
+[5]
+<Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk-2-1.
+pdf, id=50, 436.63126pt x 248.93pt>
+File: Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk
+-2-1.pdf Graphic file (type pdf)
+<use Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk-
+2-1.pdf>
+Package pdftex.def Info: Tema-2---Variables-Aleatorias_Soluciones_files/figure-
+latex/unnamed-chunk-2-1.pdf  used on input line 462.
+(pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+69.
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.482 3\^{}\{-\}\} F\_X(x)=\frac{1}{3}
+                                      =\frac{1}{3}-0=\frac{1}{3}. \$ 
 Here is how much of TeX's memory you used:
- 13655 strings out of 481239
- 199550 string characters out of 5920377
- 508896 words of memory out of 5000000
- 28482 multiletter control sequences out of 15000+600000
- 591341 words of font info for 110 fonts, out of 8000000 for 9000
+ 13421 strings out of 481239
+ 196586 string characters out of 5920377
+ 506507 words of memory out of 5000000
+ 28406 multiletter control sequences out of 15000+600000
+ 579724 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,42p,838b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/f
-onts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Tema-1---Probabilidad_SOLUCIONES.pdf (10 pages, 328052 bytes)
-.
-PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
- 335 compressed objects within 4 object streams
- 108 named destinations out of 1000 (max. 500000)
- 12497 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 34i,8n,42p,846b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+!  ==> Fatal error occurred, no output PDF file produced!
