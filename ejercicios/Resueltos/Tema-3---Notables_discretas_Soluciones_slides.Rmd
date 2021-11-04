@@ -5,12 +5,12 @@ date: ''
 output:
   beamer_presentation:
     keep_tex: yes
+  slidy_presentation: default
   ioslides_presentation:
     css: Ric_style.css
     keep_md: no
     logo: Images/matriz_mov.gif
     widescreen: yes
-  slidy_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -98,10 +98,13 @@ Bajo estas condiciones y suponiendo independencia entre la probabilidad de  defe
 
 
 Nos piden 
+
 $$
 \small{
 \begin{array}{lll}
-P(\mbox{ningún defectuoso entre 10})&=& P(X=0)={10\choose 0} 0.1^0\cdot(1-0.1)^{10}=0.9^{10} \\&=&
+P(\mbox{ningún defectuoso entre 10})&=& P(X=0)={10\choose 0} 0.1^0\cdot(1-0.1)^{10}=
+\\&=&
+0.9^{10}=
 `r 0.9^(10)`.
 \end{array}
 }
@@ -139,15 +142,20 @@ $6  \left(1-\frac6n\right)= 4$,  $2 \cdot n =36$ y  finalmente  $n=18$. Sabiendo
 ## Ejercicio 4 
 
 
-<div class="exercise-sol"> 
+<div class="exercise"> 
 
-Un fabricante de *bombillas inteligentes*  controladas por *Bluetooth* las vende a sus distribuidores  en lotes de 20. Supongamos que la probabilidad de que una bombillas inteligentes esté defectuosa es del  $0.05$. 
-  + a) ¿Cuál es el número esperado de bombillas defectuosas por paquete.
-  + b) ¿Cuál  es la probabilidad de  que un determinado lote  no
-tenga ninguna bombilla  defectuosa?
+Un fabricante de **bombillas inteligentes**  controladas por **Bluetooth** las vende a sus distribuidores  en lotes de 20. Supongamos que la probabilidad de que una bombillas inteligentes esté defectuosa es del  $0.05$. 
+
+1. ¿Cuál es el número esperado de bombillas defectuosas por paquete.
+2. ¿Cuál  es la probabilidad de  que un determinado lote  no tenga ninguna bombilla  defectuosa?
 
 </div>
+
+
+
+
 ## Ejercicio 4 solución
+
 <div class="exercise-sol"> 
 
 Suponiendo independencia entre la probabilidad de defecto del lote $X=$ número de bombilla defectuosas en un o te de 20 
@@ -184,9 +192,10 @@ Ejercicio dar su función de distribución su valor esperado y su varianza.
 
 <div class="exercise"> 
 Se lanza una moneda al aire hasta que sale  cara. Supongamos que cada  tirada es independiente  de las otras y que la probabilidad de que salga  cara cada vez es $p$.  
-+ a) Demostrar que la probabilidad de que hagan falta un número impar de lanzamientos es ${p\over 1-q^2}$ donde $q=1-p$. 
-+ b) Encontrar  el valor de $p$ tal que la probabilidad de que  necesitemos un número impar de intentos sea $0.6$.
-+ c) ¿Existe un valor de $p$ tal que la probabilidad de que haga falta un número
+
+1. Demostrar que la probabilidad de que hagan falta un número impar de lanzamientos es ${p\over 1-q^2}$ donde $q=1-p$. 
+2. Encontrar  el valor de $p$ tal que la probabilidad de que  necesitemos un número impar de intentos sea $0.6$.
+3. ¿Existe un valor de $p$ tal que la probabilidad de que haga falta un número
 impar de intentos sea $0.5$?
 </div>
 
@@ -198,13 +207,15 @@ Claramente $X$ número de lanzamientos independientes  hasta que salga cara  (in
 Su función de probabilidad es $P(X=x)=(1-p)^{x-1}\cdot p$ para $x=1,2,3\ldots.$ 
 
 
-La probabilidad de impar sera 
+La probabilidad de impar es 
 
 $$
-\small{
-\sum_{k=0}^{+\infty}P(2\cdot k +1)=\sum_{k=0}^{+\infty} (1-p)^{2k+1-1}\cdot p=
-p \cdot \sum_{k=0}^{+\infty} \left((1-p)^{2}\right)^k=p\cdot \frac{1}{1-(1-p)^2}= \frac{p}{1-q^2}.
-}
+\begin{array}{lll}
+\sum_{k=0}^{+\infty}P(2\cdot k +1) & = & \sum_{k=0}^{+\infty} (1-p)^{2k+1-1}\cdot p\\ &=&
+p \cdot \sum_{k=0}^{+\infty} \left((1-p)^{2}\right)^k\\ &=&
+p\cdot \frac{1}{1-(1-p)^2}= 
+\frac{p}{1-q^2}.
+\end{array}
 $$
 
 </div>
@@ -235,7 +246,7 @@ Repitiendo la ecuación anterior para que la probabilidad de impar sea $0.5$ obt
 
 Se ha observado que el aforo  medio de  vehículos  en un determinado paso  de un camino rural es de 3 coches/hora.
 Suponer que los instantes en que pasan automóviles son independientes. Sea
-$X$ el número de coches  que pasas por este lugar  en un  intervalo de 20 minutos.
+$X$ el número de coches  que pasan por este lugar  en un  intervalo de 20 minutos.
 Calcular $P(X=0)$ y $P(X\geq 2)$.
 </div>
 
@@ -245,7 +256,9 @@ Calcular $P(X=0)$ y $P(X\geq 2)$.
 Bajo estas condiciones la variable aleatoria $X_t$ número  coches en $t$ horas  sólo puede seguir la distribución notable con promedio de llegadas  por hora $\lambda=3$ y por lo tanto el proceso de Poisson asociado $X_t$ sigue una ley de probabilidad   $Po(\lambda \cdot t =3\cdot t)$
 
 
-Como 20 minutos es un $\frac13$  de hora luego  $X_{\frac13}$ es una $Po(3\cdot \frac13=1)$. Nos piden  $P(X_{\frac13}=0)$ y que $P\left(X_{\frac{1}{3}}\geq 2 \right)$.
+Como 20 minutos es un $\frac13$  de hora luego  $X_{\frac13}$ es una $Po(3\cdot \frac13=1)$.
+
+Nos piden  $P(X_{\frac13}=0)$ y que $P\left(X_{\frac{1}{3}}\geq 2 \right)$.
 Sabemos que $P(X_{\frac13}=x)=\frac{1^x}{x!} e^{-1}$ para $x=0,1,2,\ldots.$
 
 
