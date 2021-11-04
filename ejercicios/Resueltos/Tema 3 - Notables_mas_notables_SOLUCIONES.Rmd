@@ -9,7 +9,7 @@ output:
     toc_depth: 2
   html_document: 
     number_sections: yes
-    toc: no
+    toc: yes
     toc_depth: 2
 toccolor: 'blue'
 ---
@@ -325,16 +325,18 @@ e)  Podemos  programar pero ya lo han hecho en el paquete  *Environmental Statis
 ```{r}
 par(mfrow=c(1,2))# el parámetro gamma es a y el parámetro m es b
 curve(extraDistr::dpareto(x,a=1,b=1),xlim=c(1,50),
-      ylim=c(0,0.04),lty=1,main="Densidad  Pareto.")
+      ylim=c(0,0.04),lty=1,main="Densidad  Pareto."
+      ,ylab="Densidad Pareto")
 curve(extraDistr::dpareto(x,a=3,b=4),
       add=TRUE,col="red",lty=2)
 curve(extraDistr::dpareto(x,a=4,b=10),
       add=TRUE,col="green",lty=3)
 legend("topright",pch=21,
-       legend=c("gamma=1 xm=1","gamma=1 xm=1","gamma=1 xm=1"),
+       legend=c("gamma=1 xm=1","gamma=3 xm=4","gamma=4 xm=10"),
        col=c("black","red","green"),lty=c(1,2,3),cex=0.5)
 curve(extraDistr::ppareto(x,a=1,b=1),
-      xlim=c(1,50),ylim=c(0,1),lty=1,main="Distribución  Pareto.")
+      xlim=c(1,50),ylim=c(0,1),lty=1,main="Distribución  Pareto.",
+      ylab="Distribución acumulada Pareto")
 curve(extraDistr::ppareto(x,a=3,b=4),
       add=TRUE,col="red",lty=2)
 curve(extraDistr::ppareto(x,a=4,b=10),

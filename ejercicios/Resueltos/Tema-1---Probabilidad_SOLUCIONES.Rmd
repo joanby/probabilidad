@@ -345,7 +345,6 @@ frecuencias_suma
 La probabilidad de  las 11 posibles sumas son 
 
 ```{r}
-<<<<<<< HEAD
 prop.table(frecuencias_suma)
 ```
 La probabilidad de suma mayor o igual que 7 es la suma de las probabilidades anteriores desde suma 7 a suma 12
@@ -356,9 +355,8 @@ La probabilidad de suma mayor o igual que 7 es la suma de las probabilidades ant
 prop.table(frecuencias_suma)[6:11]
 prob_suma_mayor_igual_7=sum(prop.table(frecuencias_suma)[6:11])
 prob_suma_mayor_igual_7
-=======
+
 table(resultados$suma)[6:11]
->>>>>>> 5f0b50396555c50c2342f8b2a781bf6fd0c48bbe
 ```
 
 La probabilidades pedidas son  
@@ -372,13 +370,9 @@ $$
 Que resolvemos así para $i=7,8,9,10,11,12$
 
 ```{r}
-<<<<<<< HEAD
 prop.table(frecuencias_suma)[6:11]/prob_suma_mayor_igual_7
-=======
 prop.table(table(resultados$suma))[6:11]
->>>>>>> 5f0b50396555c50c2342f8b2a781bf6fd0c48bbe
 ```
-
 
 
 
