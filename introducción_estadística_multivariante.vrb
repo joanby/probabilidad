@@ -1,0 +1,25 @@
+\frametitle{Matriz de correlaciones; ejemplo cálculo matricial}
+\protect\hypertarget{matriz-de-correlaciones-ejemplo-cuxe1lculo-matricial-4}{}
+\begin{itemize}
+\item
+  También podemos comprobar que esta matriz de correlaciones es la
+  matriz de covarianzas de su matriz de datos tipificados.
+\item
+  Recordemos que la matriz de datos tipificados la hemos calculado en el
+  Ejemplo anterior
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{H4=}\KeywordTok{diag}\NormalTok{(}\DecValTok{4}\NormalTok{)}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{/}\DecValTok{4}
+\NormalTok{Z=H4}\OperatorTok{\%*\%}\NormalTok{X}\OperatorTok{\%*\%}\NormalTok{Dm}
+\NormalTok{(}\DecValTok{3}\OperatorTok{/}\DecValTok{4}\NormalTok{)}\OperatorTok{*}\KeywordTok{cov}\NormalTok{(Z)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            [,1]       [,2]      [,3]
+## [1,]  1.0000000 -0.7745967 0.0000000
+## [2,] -0.7745967  1.0000000 0.6324555
+## [3,]  0.0000000  0.6324555 1.0000000
+\end{verbatim}
