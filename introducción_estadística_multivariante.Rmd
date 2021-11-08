@@ -555,11 +555,11 @@ Llamamos al resultado  la \red{matriz de datos centrados} de $\mathbf{X}$.
 ## Centralización de una matriz de datos; cálculo matricial
 
 Vamos a ver que esta igualdad admite un cálculo matricial  sencillo. 
-Sea $\mathbf{1}_n$ un vector fila formado por $n$ $1$'s, de manera que $\mathbf{1}^t_n$ es un vector columna de $n$ filas, cada una de las cuales es un 1.
+Sea $\mathbf{1}_n$ un vector columna formado por $n$ $1$'s, de manera que $\mathbf{1}^t_n$ es un vector fila de $n$ columnas, cada una de las cuales es un 1.
 Observemos que
 
 $$
-\mathbf{1}_n^t\cdot\overline{\mathbf{X}}
+\mathbf{1}_n\cdot\overline{\mathbf{X}}
 =\begin{pmatrix}1 \\ 1\\ \vdots \\ 1\end{pmatrix}\cdot
 (\overline{\mathbf{x}}_{\bullet 1},\overline{\mathbf{x}}_{\bullet 2},\ldots,\overline{\mathbf{x}}_{\bullet p})=
 \begin{pmatrix}
@@ -587,7 +587,7 @@ x_{n 1} & x_{n 2} &\ldots & x_{n p}
 \vdots & \vdots & \ddots& \vdots\\
 \overline{\mathbf{x}}_{\bullet 1} & \overline{\mathbf{x}}_{\bullet 2} & \ldots& \overline{\mathbf{x}}_{\bullet p}\\
 \end{pmatrix}
-=\mathbf{X}-\mathbf{1}_n^t\cdot\overline{\mathbf{X}}
+=\mathbf{X}-\mathbf{1}_n\cdot\overline{\mathbf{X}}
 $$
 
 
@@ -597,39 +597,31 @@ $$
 Vamos a calcular ahora $\overline{\mathbf{X}}$ de manera matricial a partir de $\mathbf{X}$.
 
 
-Observemos que cuando multiplicamos $\mathbf{1}_n$ por una matriz de $n$ filas, obtenemos un vector
+Observemos que cuando multiplicamos $\mathbf{1}_n^t$ por una matriz de $n$ filas, obtenemos un vector
 fila formado por las sumas de sus columnas:
 
 
 ## Centralización de una matriz de datos; cálculo matricial
 
-\begin{eqnarray*}
 \scriptsize
-(1,1,\ldots,1) &\cdot& \begin{pmatrix}
+\begin{eqnarray*}
+\frac{1}{n}\cdot\mathbf{1}_n^t \cdot \mathbf{X}
+&=&
+\frac{1}{n}\cdot (1,1,\ldots,1)  \cdot 
+\begin{pmatrix}
 x_{1 1} & x_{1 2} &\ldots &x_{1 p}\\
 x_{2 1} & x_{2 2} &\ldots & x_{2 p}\\
 \vdots & \vdots   &       &\vdots\\ 
 x_{n 1} &x_{n 2} &\ldots & x_{n p}
-\end{pmatrix}=
-\frac{1}{n}\cdot\mathbf{1}_n\cdot \mathbf{X}
-\\  &=&
-\frac{1}{n}(1,\ldots,1)\cdot
-\begin{pmatrix} x_{11} & \ldots & x_{1p}\\
-\vdots&  \ddots & \vdots\\
-x_{n1} & \ldots & x_{np}    \end{pmatrix} 
+\end{pmatrix}
 \\
 &=&
 \frac{1}{n}
 \big(x_{1 1} +\cdots + x_{n1},\ldots,x_{1 p} +\cdots + x_{np}\big)
-= (\overline{\mathbf{x}}_{\bullet 1},\ldots,\overline{\mathbf{x}}_{\bullet p})
 \\
-&=& 
-\overline{\mathbf{X}}
-\begin{pmatrix}
-x_{1 1} + x_{21} +\cdots + x_{n1},\ldots,
-x_{1p} + x_{2p}  +\cdots +x _{np}
-\end{pmatrix}
+&=& (\overline{\mathbf{x}}_{\bullet 1},\ldots,\overline{\mathbf{x}}_{\bullet p})
 \end{eqnarray*}
+\normalsize
 
 
 
@@ -641,17 +633,18 @@ x_{1p} + x_{2p}  +\cdots +x _{np}
 Combinando las igualdades
 
 $$
-\widetilde{\mathbf{X}}=\mathbf{X}-\mathbf{1}_n^t\cdot\overline{\mathbf{X}}\quad\mbox{ y }\quad
-\overline{\mathbf{X}}=\frac{1}{n} \mathbf{1}_n\cdot \mathbf{X}
+\widetilde{\mathbf{X}}=\mathbf{X}-\mathbf{1}_n\cdot\overline{\mathbf{X}}\quad\mbox{ y }\quad
+\overline{\mathbf{X}}=\frac{1}{n} \mathbf{1}_n^t\cdot \mathbf{X}
 $$
 concluimos que
 $$
-\widetilde{\mathbf{X}}=\mathbf{X}-\frac{1}{n}\mathbf{1}_n^t \cdot \mathbf{1}_n\cdot \mathbf{X}
-=(I_n-frac{1}{n}\mathbf{1}_n^t \cdot \mathbf{1}_n)\mathbf{X}
+\widetilde{\mathbf{X}}=\mathbf{X}-\frac{1}{n}\mathbf{1}_n \cdot \mathbf{1}_n^t\cdot \mathbf{X}
+=(I_n-\frac{1}{n}\mathbf{1}_n \cdot \mathbf{1}_n^t)\cdot \mathbf{X}
 $$
-Si definimos
+Definimos la matriz centralizadora como
+
 $$
-\mathbf{H}_n=I_n-\frac{1}{n} \mathbf{1}_n^t\cdot \mathbf{1}_n.
+\mathbf{H}_n=I_n-\frac{1}{n} \mathbf{1}_n\cdot \mathbf{1}_n^t.
 $$
 
 ## Centralización de una matriz de datos; cálculo matricial  propiedades
@@ -675,7 +668,7 @@ $$
 
 
 \begin{eqnarray*}
-... &=&
+&=&
 \begin{pmatrix}1 & 0 & \ldots & 0\\
 0 & 1 & \ldots & 0\\
 \vdots & \vdots &  & \vdots\\
@@ -810,9 +803,10 @@ X.centr
 ```
 
 
-## Observaciópn
+## Observación
 
-\blue{Observación}. \red{Si hubiéramos partido de la matriz de datos $\textbf{X}$ dada como un `data frame`, lo que será muy común en la práctica, lo más sencillo es primero convertir el `data frame`\ en una matriz aplicándole \texttt{as.matrix} (y cambiándole el nombre, para no reescribir el `data frame`) y luego operar con esta matriz.}
+\blue{Observación}. Si hubiéramos partido de la matriz de datos $\textbf{X}$ dada como un `data frame`, lo que será muy común en la práctica, lo más sencillo es primero convertir el `data frame` en una matriz aplicándole `as.matrix` (y cambiándole el nombre, para no reescribir el `data frame`) y luego operar con esta matriz.
+
 
 
 
@@ -1233,18 +1227,22 @@ cov(X)  #matriz de covarianzas muestrales
 Decimos que  en una matriz de datos hay \red{variables redundantes} cuando una o más
 columnas aportan la misma información que otra. 
 La redundancia de variables se puede manifestar por ejemplo si una columna
-$\mathbf{x}_{\bullet i}$ depende linealmente de otras columnas
-$\mathbf{x}_{\bullet i_1},\ldots ,\mathbf{x}_{\bullet i_k}$, es  decir, si existen $a_1,\ldots,a_k,b\in \mathbb{R}$  tales que
+$\mathbf{x}_{\bullet j}$ depende linealmente de otras columnas
+$$\mathbf{x}_{\bullet 1},\mathbf{x}_{\bullet 1},\ldots ,\mathbf{x}_{\bullet j-1},\mathbf{x}_{\bullet j+1},\ldots \mathbf{x}_{\bullet i_p},$$ es  decir, si existen $a_1,\ldots,a_{j-1},a_{j+1},\ldots a_p,b\in \mathbb{R}$ tales que
+
 $$
-\mathbf{x}_{\bullet i}=a_1 \mathbf{x}_{\bullet i_1}+\cdots+ a_k\mathbf{x}_{\bullet i_k}+b\cdot \mathbf{1}_n^t.
+\mathbf{x}_{\bullet j}=a_1\cdot  \mathbf{x}_{\bullet 1}+\cdots+
+a_{j-1} \cdot \mathbf{x}_{\bullet j-11}+a_{j+1}\cdot  +\mathbf{x}_{\bullet j+1}
++\cdots a_p\cdot \mathbf{x}_{\bullet i_p}+b\cdot \mathbf{1}_n
 $$
+para $i=1,2,\ldots,n$.
 
 ## Variables redundantes
 
 * En este caso diremos que se da \red{redundancia por dependencia lineal}, y es la única que consideraremos en esta lección, por lo que cuando hablemos de variables redundantes, nos referiremos realmente a  variables redundantes por dependencia lineal.
 
 
-* Diremos que una matriz de datos \red{{tiene $k$ variables redundantes}  $\mathbf{x}_{\bullet l_1},\ldots, \mathbf{x}_{\bullet l_k}$  cuando estas $k$ variables dependen linealmente del resto de variables,
+* Diremos que una matriz de datos \red{tiene $k$ variables redundantes}  $\mathbf{x}_{\bullet l_1},\ldots, \mathbf{x}_{\bullet l_k}$  cuando estas $k$ variables dependen linealmente del resto de variables,
 $\{\mathbf{x}_{\bullet  1},\ldots,\mathbf{x}_{\bullet p}\}-\{\mathbf{x}_{\bullet l_1},\ldots, \mathbf{x}_{\bullet l_k}\}$, pero no entre ellas.
 
 

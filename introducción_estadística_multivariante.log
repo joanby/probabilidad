@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.4)  8 NOV 2021 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.4)  8 NOV 2021 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1411,17 +1411,7 @@ Overfull \vbox (76.08418pt too high) detected at line 761
 
 ] [41
 
-]
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 887.
-
-
-
-Overfull \hbox (30.69449pt too wide) in alignment at lines 887--887
- [][][] []
- []
-
-[42
+] [42
 
 ] [43
 
@@ -1434,7 +1424,7 @@ Overfull \hbox (30.69449pt too wide) in alignment at lines 887--887
 ] [47
 
 ]
-Overfull \hbox (1.43156pt too wide) detected at line 1000
+Overfull \hbox (1.43156pt too wide) detected at line 994
 [] \OT1/lmss/m/n/10.95 = [] = []
  []
 
@@ -1443,7 +1433,7 @@ Overfull \hbox (1.43156pt too wide) detected at line 1000
 ] [49
 
 ]
-Overfull \hbox (145.42744pt too wide) in alignment at lines 1047--1047
+Overfull \hbox (145.42744pt too wide) in alignment at lines 1041--1041
  [][][] []
  []
 
@@ -1461,12 +1451,15 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 8.
 )
-Overfull \vbox (116.68623pt too high) detected at line 1096
+Overfull \vbox (116.68623pt too high) detected at line 1090
  []
 
 [51
 
-] [52
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb) [52
 
 ] [53
 
@@ -1477,7 +1470,7 @@ Overfull \vbox (116.68623pt too high) detected at line 1096
 ] [56
 
 ]
-Overfull \hbox (30.55504pt too wide) in alignment at lines 1230--1230
+Overfull \hbox (30.55504pt too wide) in alignment at lines 1228--1228
  [][][] []
  []
 
@@ -1487,7 +1480,7 @@ Overfull \hbox (30.55504pt too wide) in alignment at lines 1230--1230
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb)
-Overfull \vbox (29.71725pt too high) detected at line 1266
+Overfull \vbox (29.71725pt too high) detected at line 1264
  []
 
 [58
@@ -1496,7 +1489,7 @@ Overfull \vbox (29.71725pt too high) detected at line 1266
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb)
-Overfull \vbox (134.1918pt too high) detected at line 1316
+Overfull \vbox (134.1918pt too high) detected at line 1314
  []
 
 [59
@@ -1522,7 +1515,7 @@ Overfull \vbox (134.1918pt too high) detected at line 1316
 ] [66
 
 ]
-Overfull \hbox (20.09041pt too wide) in paragraph at lines 1480--1480
+Overfull \hbox (20.09041pt too wide) in paragraph at lines 1478--1478
  [] 
  []
 
@@ -1530,11 +1523,11 @@ Overfull \hbox (20.09041pt too wide) in paragraph at lines 1480--1480
 
 ]
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1509
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1507
 .
 
 
-Overfull \vbox (9.8522pt too high) detected at line 1509
+Overfull \vbox (9.8522pt too high) detected at line 1507
  []
 
 [68
@@ -1613,7 +1606,7 @@ Overfull \vbox (9.8522pt too high) detected at line 1509
 ] [94
 
 ]
-Overfull \vbox (84.69763pt too high) detected at line 2142
+Overfull \vbox (84.69763pt too high) detected at line 2144
  []
 
 [95
@@ -1656,16 +1649,16 @@ Package rerunfilecheck Info: File `introducción_estadística_multivariante.out
 (rerunfilecheck)             Checksum: 7E0379302044E07B4AA0CA1E45844690;354.
  ) 
 Here is how much of TeX's memory you used:
- 26627 strings out of 480498
- 497845 string characters out of 5899155
- 834781 words of memory out of 5000000
+ 26631 strings out of 480498
+ 497960 string characters out of 5899155
+ 834778 words of memory out of 5000000
  43209 multiletter control sequences out of 15000+600000
- 486825 words of font info for 161 fonts, out of 8000000 for 9000
+ 486961 words of font info for 162 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,15n,108p,1037b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
-y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-e
-c.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-r
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
+c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
+y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-r
 m.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
 athit.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
 lm-mathex.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pub
@@ -1687,8 +1680,8 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/t16
 sers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
 <c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on introducción_estadística_multivariante.pdf (100 pages, 3577
-79 bytes).
+Output written on introducción_estadística_multivariante.pdf (100 pages, 3573
+48 bytes).
 PDF statistics:
  806 PDF objects out of 1000 (max. 8388607)
  655 compressed objects within 7 object streams
