@@ -273,7 +273,9 @@ Si la desigualdad es estricta la matriz es \red{definida positiva},
 
 \blue{Demostración}
 
+Veamos cómo podemos demostralo
 
+## Covarianzas; propiedades demostración
 Sea 
 $\Sigma= 
 \begin{pmatrix}
@@ -293,15 +295,15 @@ $a=\begin{pmatrix} a_1\\ a_2\\ \vdots \\ a_p\end{pmatrix}\in \mathbb{R}^p$
 
 Se cumple que $a^t \cdot \Sigma \cdot a \geq 0$.
 
-Efectivamente recordemos que la variazd a de una suma (que siempre es positiva ) es  igual  una suma ponderada de todas las covarianzas, efectivamente 
+Efectivamente recordemos que la variaza de una suma (que siempre es positiva ) es  igual  una suma ponderada de todas las covarianzas, efectivamente 
 
 ## Covarianzas; propiedades demostración
 
 
+\scriptsize
 \begin{eqnarray*}
-0\leq \sum_{i=1}^p u_i\cot X_i)=\sum_{i}^p\sum_{j=1}^p a_i\cdot a_j \cdot Cov(X_i,X_j)=
-\begin{pmatrix}
-a_1 & a_2 & 0\ldots & a_p
+&&\begin{pmatrix}
+a_1 & a_2 & \ldots & a_p
 \end{pmatrix}
 \cdot
 \begin{pmatrix}
@@ -313,9 +315,10 @@ Cov(X_p,X_2) & Cov(X_p,X_2) & \ldots & Cov(X_p,X_p)\\
 \cdot
 \begin{pmatrix}
 a_1 \\ a_2 \\ \vdots\\  a_p
-\end{pmatrix}
+\end{pmatrix}\\ 
+&=&\sum_{i=1}^p\sum_{j=1}^p a_i\cdot a_j \cdot
+ Cov(X_i,X_j)=  Var\left(\sum_{i=1}^p a_i\cdot  X_i\right)\geq 0
 \end{eqnarray*}
-
 
 
 
