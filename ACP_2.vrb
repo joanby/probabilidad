@@ -1,0 +1,19 @@
+\frametitle{Ejemplo}
+\protect\hypertarget{ejemplo-35}{}
+Las componentes de los vectores que representarán las variables serán:
+\[
+\mbox{CP}_1 (32.764,-0.200),\mbox{CP}_2 (11.904,3.163),
+\] \[
+\mbox{CP}_3 (1.648,-2.212), \mbox{CP}_4 (3.409,-8.051).
+\]
+
+El código \texttt{biplot(solacp)} dibuja elbiplotde los dos primeros
+componentes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{biplot}\NormalTok{(solacp)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ACP_2_files/figure-beamer/biplot3-1.pdf}

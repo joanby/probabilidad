@@ -1,17 +1,15 @@
 ---
-title: "Introducción a la estadística multidmensional"
+title: "Reducción de la factorialidad. Componentes pricipales."
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
-date: ""
-lang: es-ES
+date: ''
 output:
   beamer_presentation:
-    incremental: yes
+    includes:
+      in_header: preamble1.tex
     theme: Rochester
     toc: no
-    includes: 
-header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
-                 \newcommand\blue[1]{\textcolor{blue}{#1}}
-                 \newcommand\red[1]{\textcolor{red}{#1}}
+  ioslides_presentation: default
+lang: es-ES
 ---
 
 

@@ -1,0 +1,564 @@
+
+
+
+## Ejemplo
+
+* En general, podemos escribir:
+
+$$
+\mathbf{u}\cdot \mbox{diag}(\sqrt{\lambda}) = \mbox{Cor}(\mathbf{Z},\mathbf{CP}),
+$$
+
+
+
+donde $\mathbf{u}$ es la matriz formada por los vectores propios de la
+matriz $\mathbf{R}$ y $\mbox{diag}(\sqrt{\lambda}) $ es una matriz diagonal con
+la raíz cuadrada de los valores propios de la matriz $\mathbf{R}$ en la diagonal.
+
+
+
+## Propiedades ACP correlaciones 
+
+* La primera componente principal es la recta que conserva
+mayor inercia de la nube de puntos.
+
+* Los dos primeros componentes principales forman el plano que conserva mayor
+inercia de la nube de puntos.
+
+* Lo mismo sucede con los espacios formados por los $k$ primeros
+componentes
+
+
+
+# Etapas de un ACP 
+
+## Etapas de un ACP
+
+
+* Determinar las variables e individuos que intervienen en el
+análisis, las variables de perfil y los individuos
+ilustrativos.
+*  Decidir si se realiza el análisis sobre los datos brutos
+(matriz de covarianzas) o sobre los datos tipificados (matriz de
+ correlaciones):
+
+* Cuando las variables originales $\mathbf{X}$ están medidas en distintas unidades,
+conviene aplicar el análisis de correlaciones. Si están en las mismas unidades,
+ambas alternativas son posibles.
+* Si las diferencias entre las varianzas son informativas y queremos
+tenerlas en cuenta en el análisis, no debemos estandarizar las variables.
+
+
+
+
+
+
+## Etapas de un ACP
+
+
+* Reducción de la dimensionalidad; tenemos que decidir cuántas
+componente retenemos. La cantidad de varianza retenida será:
+\vskip 0.5cm
+\begin{tabular}{|c|c|c|}\hline
+Comp. & Valor propio & Cantidad retenida\\\hline
+$Cp_1$& $\lambda_1$ & $\lambda_1/\sum_{i=1}^p \lambda_i$\\
+$Cp_2 $ & $\lambda_2$ & $(\lambda_1+\lambda_2)/\sum_{i=1}^p \lambda_i$\\
+$Cp_3$ & $\lambda_3$ &
+$(\lambda_1+\lambda_2+\lambda_3)/\sum_{i=1}^p
+\lambda_i$\\ $\ldots$ & $\ldots$ & $\ldots$\\
+$Cp_p$ & $\lambda_p$ &
+$(\lambda_1+\ldots+\lambda_p)/\sum_{i=1}^p=1$\\\hline
+\end{tabular}
+
+
+
+# Retención de componentes
+
+
+## Retención de componentes
+
+Una vez realizado el ACP tengo que decidir que número de componentes se
+retienen. Existen
+diversos métodos:
+\blue{Seleccionar una proporción fija de varianza}.Seleccionar componentes hasta cubrir una proporción determinada de
+varianza, como el $80\%$ o el $90\%$.
+
+
+* En el ejemplo que hemos desarrollado, tenemos que con un análisis de
+covarianzas, si sólo elegimos la primera componente, cubrimos el $93.4\%$ de la
+varianza. Si elegimos, las dos primeras, cubrimos el $99.5\%$ de la varianza.
+Con las tres primeras, cubrimos el $99.9\%$ de la varianza.
+* En cambio, con un análisis de correlaciones, con la primera componente,
+sólo cubrimos el $64\%$ de la varianza; con las dos primeras, el $94.7\%$ de la
+varianza y con las tres primeras, el $99.9\%$ de la varianza.
+
+
+
+
+# Técnicas de retención de reteción de componentes
+
+
+## Retención de componentes
+
+\blue{Método de la Media aritmética}. Se retienen todas las
+componentes $\mathbf{CP}_i$ que cumplan
+$\lambda_i\geq\overline{\lambda}=\frac{\sum_{i=1}^p \lambda_i}{p}$
+En el caso del análisis de correlaciones, la condición anterior equivale a
+retener los componentes con valores propios mayores que~1.
+
+* En nuestro ejemplo, para el análisis de covarianzas, tenemos que:
+$\overline{\lambda}=36.565$. Recordemos que los valores propios de la matriz de
+covarianzas $\mathbf{S}$ eran: $136.615,\ 8.861,\ 0.738,\ 0.0468$. Por tanto,
+tenemos que retener sólo la componente $\mathbf{CP}_1$.
+* Para el análisis de correlaciones, recordemos que los valores propios de
+la matriz~$\mathbf{R}$ eran: $2.560,\ 1.229,\ 0.208,\ 0.00324$. En este caso,
+tenemos que retener los componentes $\mathbf{CP}_1$ y $\mathbf{CP}_2$.
+
+
+## Gráfico de sedimentación, regla del codo
+
+Gráfico de sedimentación (*screeplot*) es una técnica gráfica de para la retención de componentes.
+Se representan los vectores propios
+ordenados de mayor a menor unidos por una poligonal o simplemente un diagrama de barras.
+Se retienen los componente hasta el que *sedimenta*. El códigoes el siguiente
+
+```{r screeplotcodigo,fig=F}
+screeplot(solacp,type="lines",main="Gráfico de sedimentación")
+screeplot(solacp,type="barplot",main="Gráfico de sedimentación")
+```
+
+
+
+
+
+```{r screeplotlines,fig=TRUE,echo=FALSE}
+screeplot(solacp,type="lines",main="Gráfico de sedimentación")
+```
+
+
+
+
+
+
+
+```{r screeplotbar,fig=TRUE,echo=FALSE}
+screeplot(solacp,type="barplot",main="Gráfico de sedimentación")
+```
+
+
+
+
+
+
+
+
+Hay muchas otras pruebas más com la pruebas de Hipótesis de Anderson:
+$$\left\{ \begin{array}{l}
+H_0: \lambda_m=\ldots\lambda_p\\ H_1: \mbox{no todos
+iguales}\end{array}\right.$$
+
+
+
+# Adecuación de los datos al ACP 
+
+
+## Adecuación de los datos al ACP
+
+
+* \red{Coeficiente de adecuación muestral (Kaiser Meyer y Olkin)}:
+
+$$KMO=\frac{\sum_j \sum_{i\not =j} r_{i j}^2}{\sum_j \sum_{i\not =j} r^2_{i j}+
+\sum_j \sum_{i\not =j} a^2_{i j}}$$
+
+
+donde $r_{i j}$ son los coef. de correlación entre las variables $i$ y $j$,
+mientras quelos $a_{i j}$ son los coef. de correlación parcial entre las
+variables $i$ y $j$ (equivalentes a las correlaciones entre los residuos de la
+ regresiones de estas dos variables con las restantes).
+
+
+* Niveles deKMO $\geq 0.5$ son considerados aceptables.
+
+
+
+
+En nuestro ejemplo, las correlaciones parciales son:
+
+```{r kmo0}
+library(corpcor)
+cor2pcor(cor(X))
+```
+
+
+
+
+
+
+
+En nuestro ejemplo el valor de KMO es (necesitamos crear una función que lo calcule):
+
+```{r kmo1}
+kmo.test <- function(df){
+cor.sq = cor(df)^2
+cor.sumsq = (sum(cor.sq)-dim(cor.sq)[1])
+pcor.sq = cor2pcor(cor(df))^2
+pcor.sumsq = (sum(pcor.sq)-dim(pcor.sq)[1])
+kmo = cor.sumsq/(cor.sumsq+pcor.sumsq)
+return(kmo)
+} 
+
+kmo.test(X)
+
+```
+
+
+
+
+
+
+
+
+
+El testde esfericidad de Barlett contrasta si la matriz de correlaciones es la identidad.
+
+$$\left\{ \begin{array}{l}
+H_0: \mbox{La matriz de correlaciones es la identidad}\\\\ H_1: \mbox{es
+distinta de la
+identidad}\end{array}\right.$$
+
+Para que el ACP sea útil interesa rechazar la hipótesis nula, pues si $\bR=I$ los componentes
+principales son las propias variables y no se produce una reducción de los factores.
+%
+
+Este test, al igual que casi todas las propiedades de los estimadores en ACP,
+requiere multinormalidad en la distribución de las variables.
+
+
+
+
+En nuestro ejemplo:
+
+```{r esfericidad}
+library(psych)
+cortest.bartlett(cor(X),n=n)
+```
+
+El $p$-valor es muy pequeño por lo que no podemos aceptar la hipóstesi nula,
+la matriz de correlaciones es significativamente distinta de la identidad.
+
+
+
+
+# Representaciones gráficas. Biplots
+
+## Biplots
+
+* El análisis de componentes principales se utiliza para representar gráficamente 
+latabla de datos. Entre otras representaciones gráficas la denominada
+{\bf biplot} es uno de los más útiles.
+* Este gráfico presenta los componentes principales junto con la proyección de las 
+variables originales *como si fueran vectores* que expresan la dirección en la que aumentan
+las variables.
+* Para obtener esta representación conjunta las coordenadas de los componentes principales
+y las variables es necesario modificarlas multiplicándolas por constante de escala. Esta constante puede variar 
+según el algoritmo que se utilice.
+
+
+
+## Ejemplo
+
+* En el mismo gráfico, se representan como vectores cada una de las
+variables iniciales~$\mathbf{X}$.
+Las coordenadas de dichas variables son las correlaciones de dichas variables
+con las componentes principales divididas por la raíz cuadrada del valor propio
+correspondiente a la componente principal.
+* Sea $\tilde{\mathbf{X}}_i$ es una variable inicial. Calculemos la
+coordenadas de dicha variable inicial como vector de dos componentes
+representado en el biplot. Dichas coordenadas valen:
+$$
+\frac{\mbox{Cor}(\tilde{\mathbf{X}}_i,\mathbf{CP}_j)}{\sqrt{\lambda_j}},
+$$
+para $j=1,2$ que son los ejes correspondientes a las dos componentes
+principales.
+
+
+
+
+
+## Ejemplo
+
+* Escrito en forma matricial, se calcula:
+$$
+\mbox{Cor}(\tilde{\mathbf{X}},\mathbf{CP})\cdot \mbox{diag}\left(\frac{1}{\sqrt{\lambda}}\right).
+$$
+
+* La expresión anterior, usando las propiedades de las componentes
+principales es equivalente a calcular
+$$
+\mathbf{u}\cdot\mbox{diag}\left(\sqrt{\lambda}\right).
+$$
+* Los vectores correspondientes a las variables iniciales se multiplican por
+un factor de escala dependiente de cada paquete estadístico que se use (en el
+caso de {\tt R}, dicho factor es~$3$).
+
+
+
+
+## Ejemplo
+
+* Vamos a realizar un biplot con los datos del ejemplo que hemos
+desarrollado en este capítulo. Se tendrá en cuenta el caso de ACP usando la
+matriz de covarianzas.
+* Las coordenadas de las componentes principales de nuestros datos eran las
+siguientes:
+$$
+\mathbf{CP}= 
+\left(
+\begin{array}{rrrr}
+-3.054 & 0.201 & -0.827 & 0.280 \\
+-12.719 & 2.480 & -0.333 & 0.103 \\
+-4.293 & -3.295 & -0.025 & -0.228 \\
+7.373 & -6.736 & -0.183 & 0.029 \\
+-15.299 & 0.565 & 1.029 & 0.183 \\
+-1.354 & 1.319 & 1.463 & -0.321 \\
+-6.997 & 1.411 & -1.460 & -0.233 \\
+13.677 & 0.437 & 0.629 & 0.282 \\
+22.666 & 3.618 & -0.292 & -0.095 
+\end{array}
+\right).
+$$
+
+
+
+## Ejemplo
+
+* Sólo representaremos las dos primeras componentes principales que
+corresponden a las dos primeras columnas de la matriz anterior.
+* Vamos a estandarizar los datos. Calculemos el módulo de cada componente
+principal:
+$$
+\begin{array}{rl}
+|\mathbf{CP}_1|= & \sqrt{(-3.054)^2+\cdots +(22.666)^2} = 35.065, \\
+|\mathbf{CP}_2|= & \sqrt{(0.201)^2+\cdots +(3.618)^2} = 8.930.
+\end{array}
+$$
+* Dividiendo cada una de las dos componentes principales por su módulo
+correspondiente, obtenemos las coordenadas del biplot de cada dato:
+
+
+
+
+
+## Ejemplo
+
+$$
+{\tiny
+\left(
+\begin{array}{rr}
+-3.054/35.065&0.201/8.903 \\
+-12.719/35.065&2.480/8.903 \\
+-4.293/35.065&-3.295/8.903 \\
+7.373/35.065&-6.736/8.903 \\
+-15.299/35.065&0.565/8.903 \\
+-1.354/35.065&1.319/8.903 \\
+-6.997/35.065&1.411/8.903 \\
+13.677/35.065&0.437/8.903 \\
+22.666/35.065&3.618/8.903 \\
+\end{array}
+\right)=
+\left(
+\begin{array}{rr}
+-0.087 & 0.023 \\
+-0.363 & 0.278 \\
+-0.122 & -0.369 \\
+0.210 & -0.754 \\
+-0.436 & 0.063 \\
+-0.039 & 0.148 \\
+-0.200 & 0.158 \\
+0.390 & 0.049 \\
+0.646 & 0.405 \\
+\end{array}
+\right).}
+$$
+* Seguidamente, vamos a encontrar las componentes de los vectores que
+representan las variables. Recordemos que la matriz de vectores propios de la
+matriz de covarianzas era:
+$$
+\mathbf{u}=
+\left(
+\begin{array}{rrrr}
+0.934 & -0.022 & 0.256 & 0.247 \\
+0.339 & 0.354 & -0.661 & -0.568 \\
+0.047 & -0.248 & 0.566 & -0.785 \\
+0.097 & -0.902 & -0.421 & -0.013 
+\end{array}
+\right),
+$$
+cuyos valores propios asociados eran $136.615,\quad 8.861,\quad 0.738,\quad
+0.0468.$
+
+
+
+
+
+## Ejemplo
+
+
+* Para hallar las coordenadas de los vectores que representarán las
+variables, hemos de multiplicar cada vector propio por la raíz cuadrada de su
+valor propio correspondiente y por~$3$:
+
+$$
+\mathbf{u}\cdot 3\cdot
+\begin{pmatrix}
+\sqrt{136.615}&0&0&0\\
+0&\sqrt{8.861}&0&0\\
+0&0&\sqrt{0.738}&0\\
+0&0&0&\sqrt{0.0468}\\
+\end{pmatrix} $$
+$$=
+\left(
+\begin{array}{rrrr}
+32.764 & -0.200 & 0.659 & 0.160 \\
+11.904 & 3.163 & -1.704 & -0.368 \\
+1.648 & -2.212 & 1.458 & -0.509 \\
+3.409 & -8.051 & -1.086 & -0.009 \\
+\end{array}
+\right).
+$$
+
+
+
+
+## Ejemplo
+
+
+Las componentes de los vectores que representarán las variables serán:
+$$
+\mbox{CP}_1 (32.764,-0.200),\mbox{CP}_2 (11.904,3.163),
+$$
+$$
+\mbox{CP}_3 (1.648,-2.212), \mbox{CP}_4 (3.409,-8.051).
+$$
+
+El código `biplot(solacp)` dibuja elbiplotde los dos 
+primeros componentes.
+
+
+
+
+
+
+```{r biplot3,echo=TRUE,fig=TRUE}
+biplot(solacp)
+```
+
+
+
+
+## Interpretación de un biplot
+
+* La representación de las observaciones o los datos en un biplot equivale a
+proyectar las observaciones sobre el plano de las componentes principales
+estandarizadas para que tengan varianza unidad.
+* La representación de variables mediante vectores de dos coordenadas cumple
+que la correlación entre dos variables iniciales $\mathbf{X}_i$ y $\mathbf{X}_j$ es
+aproximadamente el coseno del ángulo que forman en el biplot. Por tanto, si dos
+variables $\mathbf{X}_i$ y $\mathbf{X}_j$ están muy correlacionadas, el coseno será
+grande y el ángulo entre los vectores, pequeño. En caso contrario, si están poco
+correlacionadas, el coseno será pequeño y el ángulo entre los vectores estará
+próximo a un ángulo recto.
+
+
+
+
+## Comunalidades.
+
+En un ACP la comunalidad de la variable $X_j$ retenida por las $k$ primeras
+componentes es
+la proporción de varianza de la variable que queda explicada por esas
+componentes. Por
+ejemplo.
+
+
+* Si retenemos sólo el componente $CP_1$ la comunalidad de la variable
+$X_j$ es:
+
+$$h_j=r_{j 1}^2=\left( u_{1 j}\sqrt{\lambda_1}\right)^2$$
+* Si retenemos los componentes$CP_1$ y $CP_2$ la comunalidad de la
+variable $X_j$ es:
+
+$$h_j=r_{j 1}^2+r_{2 j}^2=\left( u_{1 j}\sqrt{\lambda_1}\right)^2+
+\left( u_{2 j}\sqrt{\lambda_2}\right)^2$$
+
+
+
+# Interpretación de las variables y los individuos 
+
+## Interpretación de las variables y los individuos 
+
+* Las variables también pueden representar de forma simultanea con los
+individuos en los
+componentes principales.
+
+* Esta representación se hace mediante las coordenadas que la matriz de
+componentes 
+%(cargasfactoriales) 
+que nos explican las correlaciones de cada factor con cada
+variable.
+
+
+
+
+
+En esta representación gráfica cada variable aparece como un punto de forma
+que :
+
+* Cada variable está representada por el vector que une el origen de
+coordenadas cono
+el punto.
+* Todosestán en círculo unidad (círculo de correlación).
+* A medida que cada variable se acerca a la circunferencia unidad está
+mejor representado
+por los componentes retenidas y viceversa.
+* El ángulo entre variables y componentes nos da una idea de su
+correlación, al nivel
+de retención de varianza total que tengamos.
+* Así variable perpendiculares tenderán a ser *incorreladas*.
+* Los valores de una variable crecen en la dirección de ésta.
+
+
+# Y muchas cosas más.. 
+
+
+## Y muchas cosas más.. 
+Para acabar...
+\blue{Análisis Factorial Confirmatorio yExploratorio}
+
+
+*  El Análisis factorial confirmatorio se realiza sobre modelos establecidos de
+factores y se
+hacen inferencias sobre sus propiedades.
+
+*  El análisis factorial descriptivo ayuda a la descripción de los datos
+y a la búsqueda de factores.
+
+
+
+\blue{Relación del ACP conotras técnicas de análisis de datos}
+
+*  Regresión Lineal Múltiple
+*  Clasificación.
+*  Análisis de correspondencias simples y múltiples.
+*  ... y muchas otras más
+
+
+
+
+
+
+
+
+
+
+ 
