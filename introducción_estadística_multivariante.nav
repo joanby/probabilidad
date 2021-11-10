@@ -201,8 +201,16 @@
 \headcommand {\beamer@framepages {99}{99}}
 \headcommand {\slideentry {1}{0}{99}{100/100}{}{0}}
 \headcommand {\beamer@framepages {100}{100}}
-\headcommand {\beamer@partpages {1}{100}}
-\headcommand {\beamer@subsectionpages {2}{100}}
-\headcommand {\beamer@sectionpages {2}{100}}
-\headcommand {\beamer@documentpages {100}}
-\headcommand {\gdef \inserttotalframenumber {100}}
+\headcommand {\slideentry {1}{0}{100}{101/101}{}{0}}
+\headcommand {\beamer@framepages {101}{101}}
+\headcommand {\slideentry {1}{0}{101}{102/102}{}{0}}
+\headcommand {\beamer@framepages {102}{102}}
+\headcommand {\slideentry {1}{0}{102}{103/103}{}{0}}
+\headcommand {\beamer@framepages {103}{103}}
+\headcommand {\slideentry {1}{0}{103}{104/104}{}{0}}
+\headcommand {\beamer@framepages {104}{104}}
+\headcommand {\beamer@partpages {1}{104}}
+\headcommand {\beamer@subsectionpages {2}{104}}
+\headcommand {\beamer@sectionpages {2}{104}}
+\headcommand {\beamer@documentpages {104}}
+\headcommand {\gdef \inserttotalframenumber {104}}

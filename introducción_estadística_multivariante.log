@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.4)  8 NOV 2021 21:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.9)  10 NOV 2021 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,7 +966,7 @@ Package: relsize 2013/03/29 ver 4.1
 \algocf@algoframe=\box86
 \algocf@algobox=\box87
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/10/19 3.65 The Babel package
+Package: babel 2021/11/08 3.66 The Babel package
 \babel@savecnt=\count349
 \U@D=\dimen318
 \l@unhyphenated=\language6
@@ -974,7 +974,7 @@ Package: babel 2021/10/19 3.65 The Babel package
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.de
 f)
 \bbl@readstream=\read4
-LaTeX Info: Redefining \textlatin on input line 3942.
+LaTeX Info: Redefining \textlatin on input line 3944.
 \bbl@dirlevel=\count350
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-spanish/spa
@@ -1315,7 +1315,20 @@ LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
 
 ] [7
 
-] [8
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 270.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 270.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 270.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 270.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 270.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 270.
+[8
 
 ] [9
 
@@ -1332,7 +1345,7 @@ LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
 ] [15
 
 ]
-Overfull \vbox (2.12955pt too high) detected at line 396
+Overfull \vbox (2.12955pt too high) detected at line 404
  []
 
 [16
@@ -1343,17 +1356,13 @@ Overfull \vbox (2.12955pt too high) detected at line 396
 
 ]
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 464.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 472.
 
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 464.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <5> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 464.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 464.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 472.
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 464.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 472.
 
 
 [19
@@ -1365,7 +1374,7 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 464.
 ] [22
 
 ]
-Overfull \hbox (20.9884pt too wide) in alignment at lines 528--528
+Overfull \hbox (18.42566pt too wide) in alignment at lines 536--536
  [][][] []
  []
 
@@ -1377,7 +1386,22 @@ Overfull \hbox (20.9884pt too wide) in alignment at lines 528--528
 
 ] [26
 
-] [27
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+.
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
+)
+Overfull \vbox (55.38123pt too high) detected at line 639
+ []
+
+[27
 
 ] [28
 
@@ -1395,13 +1419,13 @@ Overfull \hbox (20.9884pt too wide) in alignment at lines 528--528
 
 ] [35
 
+] [36
+
 ]
-Overfull \vbox (76.08418pt too high) detected at line 761
+Overfull \vbox (76.08418pt too high) detected at line 821
  []
 
-[36
-
-] [37
+[37
 
 ] [38
 
@@ -1423,45 +1447,32 @@ Overfull \vbox (76.08418pt too high) detected at line 761
 
 ] [47
 
+] [48
+
 ]
-Overfull \hbox (1.43156pt too wide) detected at line 994
+Overfull \hbox (1.43156pt too wide) detected at line 1054
 [] \OT1/lmss/m/n/10.95 = [] = []
  []
 
-[48
+[49
 
-] [49
+] [50
 
-]
-Overfull \hbox (145.42744pt too wide) in alignment at lines 1041--1041
- [][][] []
- []
-
-[50
+] [51
 
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
-(./introducción_estadística_multivariante.vrb
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 8.
-)
-Overfull \vbox (116.68623pt too high) detected at line 1090
+(./introducción_estadística_multivariante.vrb)
+Overfull \vbox (116.68623pt too high) detected at line 1151
  []
 
-[51
+[52
 
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
-(./introducción_estadística_multivariante.vrb) [52
-
-] [53
+(./introducción_estadística_multivariante.vrb) [53
 
 ] [54
 
@@ -1469,18 +1480,11 @@ Overfull \vbox (116.68623pt too high) detected at line 1090
 
 ] [56
 
+] [57
+
 ]
-Overfull \hbox (30.55504pt too wide) in alignment at lines 1228--1228
+Overfull \hbox (30.55504pt too wide) in alignment at lines 1292--1292
  [][][] []
- []
-
-[57
-
-]
-\openout4 = `introducción_estadística_multivariante.vrb'.
-
-(./introducción_estadística_multivariante.vrb)
-Overfull \vbox (29.71725pt too high) detected at line 1264
  []
 
 [58
@@ -1489,57 +1493,56 @@ Overfull \vbox (29.71725pt too high) detected at line 1264
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb)
-Overfull \vbox (134.1918pt too high) detected at line 1314
+Overfull \vbox (29.71725pt too high) detected at line 1328
  []
 
 [59
 
-] [60
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb)
+Overfull \vbox (134.1918pt too high) detected at line 1378
+ []
+
+[60
 
 ] [61
 
 ] [62
 
-]
-\openout4 = `introducción_estadística_multivariante.vrb'.
-
-(./introducción_estadística_multivariante.vrb) [63
+] [63
 
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb) [64
 
-] [65
-
-] [66
-
-]
-Overfull \hbox (20.09041pt too wide) in paragraph at lines 1478--1478
- [] 
- []
-
-[67
-
-]
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1507
-.
-
-
-Overfull \vbox (9.8522pt too high) detected at line 1507
- []
-
-[68
-
-] [69
-
-] [70
-
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
-(./introducción_estadística_multivariante.vrb) [71
+(./introducción_estadística_multivariante.vrb) [65
+
+] [66
+
+] [67
+
+] [68
+
+]
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1571
+.
+
+
+Overfull \vbox (9.8522pt too high) detected at line 1571
+ []
+
+[69
+
+] [70
+
+] [71
 
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
@@ -1551,7 +1554,10 @@ Overfull \vbox (9.8522pt too high) detected at line 1507
 
 (./introducción_estadística_multivariante.vrb) [73
 
-] [74
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb) [74
 
 ] [75
 
@@ -1561,28 +1567,28 @@ Overfull \vbox (9.8522pt too high) detected at line 1507
 
 ] [78
 
+] [79
+
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
-(./introducción_estadística_multivariante.vrb) [79
-
-] [80
+(./introducción_estadística_multivariante.vrb) [80
 
 ] [81
 
 ] [82
 
-]
-\openout4 = `introducción_estadística_multivariante.vrb'.
-
-(./introducción_estadística_multivariante.vrb) [83
+] [83
 
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb) [84
 
-] [85
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb) [85
 
 ] [86
 
@@ -1592,12 +1598,12 @@ Overfull \vbox (9.8522pt too high) detected at line 1507
 
 ] [89
 
+] [90
+
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
-(./introducción_estadística_multivariante.vrb) [90
-
-] [91
+(./introducción_estadística_multivariante.vrb) [91
 
 ] [92
 
@@ -1605,30 +1611,44 @@ Overfull \vbox (9.8522pt too high) detected at line 1507
 
 ] [94
 
+] [95
+
 ]
-Overfull \vbox (84.69763pt too high) detected at line 2144
+Overfull \vbox (9.19301pt too high) detected at line 2204
  []
 
-[95
+[96
 
-] [96
+] [97
 
-]
-\openout4 = `introducción_estadística_multivariante.vrb'.
-
-(./introducción_estadística_multivariante.vrb) [97
-
-]
-\openout4 = `introducción_estadística_multivariante.vrb'.
-
-(./introducción_estadística_multivariante.vrb) [98
+] [98
 
 ]
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb) [99
 
-] [100
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb) [100
+
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb) [101
+
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb) [102
+
+]
+\openout4 = `introducción_estadística_multivariante.vrb'.
+
+(./introducción_estadística_multivariante.vrb) [103
+
+] [104
 
 ]
 \tf@nav=\write7
@@ -1649,11 +1669,11 @@ Package rerunfilecheck Info: File `introducción_estadística_multivariante.out
 (rerunfilecheck)             Checksum: 7E0379302044E07B4AA0CA1E45844690;354.
  ) 
 Here is how much of TeX's memory you used:
- 26631 strings out of 480498
- 497960 string characters out of 5899155
- 834778 words of memory out of 5000000
- 43209 multiletter control sequences out of 15000+600000
- 486961 words of font info for 162 fonts, out of 8000000 for 9000
+ 26743 strings out of 480498
+ 500329 string characters out of 5899155
+ 835989 words of memory out of 5000000
+ 43279 multiletter control sequences out of 15000+600000
+ 506908 words of font info for 187 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,15n,108p,1037b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -1680,11 +1700,11 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/t16
 sers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
 <c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on introducción_estadística_multivariante.pdf (100 pages, 3573
-48 bytes).
+Output written on introducción_estadística_multivariante.pdf (104 pages, 3589
+39 bytes).
 PDF statistics:
- 806 PDF objects out of 1000 (max. 8388607)
- 655 compressed objects within 7 object streams
- 300 named destinations out of 1000 (max. 500000)
- 49203 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 678 compressed objects within 7 object streams
+ 312 named destinations out of 1000 (max. 500000)
+ 61491 words of extra memory for PDF output out of 61914 (max. 10000000)
 

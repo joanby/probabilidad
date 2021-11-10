@@ -1,2 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\beamer@sectionintoc {1}{Introducción a la estadística descriptiva multidimensional}{2}{0}{1}

@@ -12,7 +12,7 @@ output:
 lang: es-ES
 ---
             
-
+  
       
 
 # Introducción a la estadística descriptiva multidimensional
@@ -29,7 +29,7 @@ $$
 
 ## Vectores aleatorios
 
-* Por ejemplo, si llamamos $X_1$ a la variable aleatoria que da la edad de un individuo (en años), $X_2$ a la que da su altura (redondeada a cm) y $X_3$ a la que da su peso (redondeada a kg con una cifra decimal), entonces
+* Por ejemplo, si llamamos $X_1$ a la variable aleatoria que da la edad de un individuo (en años), $X_2$ a la que da su altura (redondeada a cm) y $X_3$ a la que da su peso (redondeada a Kg. con una cifra decimal), entonces
 
 $$
 \underline{X}=(X_1,X_2,X_3)
@@ -45,7 +45,7 @@ es un vector aleatorio de dimensión 3.
 
 * El \red{valor esperado}, o \red{vector de medias},  de  $\underline{X}$ es el vector formado por los valores esperados, o medias, de sus componentes:
 $$
-E(\underline{X})=(E(X_1),\ldots,E(X_p))=(\mu_1,\ldots,\mu_p)
+\mbox{E}(\underline{X})=(\mbox{E}(X_1),\ldots,\mbox{E}(X_p))=(\mu_1,\ldots,\mu_p)
 $$
 
 * También se suele denotar simplemente $\boldsymbol\mu$.
@@ -55,7 +55,7 @@ $$
 
 *  El \red{vector de varianzas}  de  $\underline{X}$ es el vector formado por las varianzas de sus componentes:
 $$
-Var(\underline{X})=(Var(X_1),\ldots,Var(X_p))=(\sigma_1^2,\ldots,\sigma_p^2)
+\mbox{Var}(\underline{X})=(\mbox{Var}(X_1),\ldots,\mbox{Var}(X_p))=(\sigma_1^2,\ldots,\sigma_p^2)
 $$
 
 * El \red{vector de desviaciones típicas}  de  $\underline{X}$ es el vector formado por las desviaciones típicas de sus componentes:
@@ -78,11 +78,11 @@ $$
 ## Vectores aleatorios; tipificación
 
 
-* Sea $X$  una variable aleatoria de media $\mu$ y desviación típica $\sigma$. Recordemos que si $a,b\in \mathbb{R}$, entonces $a\cdot X+b$ es una variable aleatoria de media, varianza y desviación típica, respectivamente,
+* Sea $X$  una variable aleatoria de media $\mu_X$ y desviación típica $\sigma_Y$. Recordemos que si $a,b\in \mathbb{R}$, entonces $\red{Y}=a\cdot X+b$ es una variable aleatoria cuya media, varianza y desviación típica, son:
   
-* $$E(a\cdot X+b)=a\cdot \mu+b$$
-* $$Var(a\cdot X+b)=a^2\cdot \sigma^2$$
-* $$\sigma(a\cdot X+b)=|a|\cdot \sigma.$$
+  * $\red{\mbox{E}(Y)=\mu_y=\mbox{E}(a\cdot X+b)=a\cdot \mu_X+b},$
+  * $\red{\sigma_Y^2=\mbox{Var}(Y)=\mbox{Var}(a\cdot X+b)=a^2\cdot \sigma_X^2},$
+  * $\red{\sigma_Y=|a|\cdot \sigma_X}.$
       
 
 
@@ -94,7 +94,7 @@ Z=\frac{X-\mu}{\sigma}.
 $$
 Por ejemplo, cuando construimos una variable aleatoria normal estándar $Z$ a partir de una variable normal $X$, lo que hacemos es \red{tipificar} esta última. 
 
-Las fórmulas anteriores  implican que si $Z$ es una variable tipificada, entonces $E(Z)=0$ y $\sigma(Z)=1$. 
+Las fórmulas anteriores  implican que si $Z$ es una variable tipificada, entonces $\mbox{E}(Z)=0$ y $\sigma(Z)=1$. 
 
 
 ## Tipificación de variables aleatorias
@@ -119,9 +119,12 @@ el vector de medias de $\underline{X}$ y ....
 ## Tipificación de variables aleatorias
 
 
-la matriz diagonal que tiene en la diagonal principal los inversos de las desviaciones típicas de las componentes de $\underline{X}$. Entonces,
+la matriz diagonal que tiene en la \red{diagonal principal los inversos de las desviaciones típicas} de las componentes de $\underline{X}$.
+
+Entonces,
+
 $$
-\underline{Z}=(\underline{X}-\boldsymbol\mu)\cdot A =\big(A(\underline{X}-\boldsymbol\mu)^t\big)^t.
+\underline{Z}=(\underline{X}-\boldsymbol\mu)\cdot A =\big(A\cdot (\underline{X}-\boldsymbol\mu)^t\big)^t.
 $$
 (Como ejercicio de manejo de matrices, comprobadlo para $p=3$.)
 Esta expresión es un caso particular de \red{transformación lineal
@@ -132,11 +135,11 @@ multivariante} de $\underline{X}$. Una transformación lineal general emplearía
 
 \red{Covarianzas}. Dadas dos variables aleatorias $X_1$ y $X_2$ de medias $\mu_1$ y $\mu_2$, respectivamente, se define su \red{covarianza} como 
 $$
-Cov(X_1,X_2)=E((X_1-\mu_1) ( X_2-\mu_2)).
+\mbox{Cov}(X_1,X_2)=\mbox{E}((X_1-\mu_1) ( X_2-\mu_2)).
 $$
 Es fácil comprobar que la covarianza también se puede calcular mediante la identidad
 $$
-Cov(X_1,X_2)=E(X_1\cdot X_2) -\mu_1\cdot \mu_2.
+\mbox{Cov}(X_1,X_2)=\mbox{E}(X_1\cdot X_2) -\mu_1\cdot \mu_2.
 $$
 
 
@@ -145,11 +148,11 @@ $$
 En efecto
 
 \begin{eqnarray*}
-Cov(X_1,X_2) & = & E((X_1-\mu_1)\cdot ( X_2-\mu_2))
+\mbox{Cov}(X_1,X_2) & = & \mbox{E}((X_1-\mu_1)\cdot ( X_2-\mu_2))
 \\ &=&
-E(X_1\cdot X_2-\mu_1\cdot X_2-\mu_2\cdot X_1+\mu_1\cdot \mu_2)\\ &=& 
-E(X_1\cdot X_2)-\mu_1\cdot E(X_2)-\mu_2\cdot E(X_1)+\mu_1\cdot \mu_2\\ &=&
-E(X_1\cdot X_2)-\mu_1\cdot \mu_2-\mu_2\cdot \mu_1+\mu_1\cdot \mu_2\\ &=& E(X_1\cdot X_2)-\mu_1\cdot \mu_2
+\mbox{E}(X_1\cdot X_2-\mu_1\cdot X_2-\mu_2\cdot X_1+\mu_1\cdot \mu_2)\\ &=& 
+\mbox{E}(X_1\cdot X_2)-\mu_1\cdot \mbox{E}(X_2)-\mu_2\cdot \mbox{E}(X_1)+\mu_1\cdot \mu_2\\ &=&
+\mbox{E}(X_1\cdot X_2)-\mu_1\cdot \mu_2-\mu_2\cdot \mu_1+\mu_1\cdot \mu_2\\ &=& \mbox{E}(X_1\cdot X_2)-\mu_1\cdot \mu_2
 \end{eqnarray*}
 
 
@@ -157,19 +160,19 @@ E(X_1\cdot X_2)-\mu_1\cdot \mu_2-\mu_2\cdot \mu_1+\mu_1\cdot \mu_2\\ &=& E(X_1\c
 
 * La covarianza de  $X_1$ y $X_2$ puede tomar cualquier valor real, y mide si las dos variables aleatorias se comportan igual, en el sentido siguiente: si valores grandes de una variable corresponden a valores grandes de la otra, su covarianza es positiva
 * En el caso opuesto, si valores grandes de una variable  corresponden a valores pequeños de la otra, su covarianza es negativa. 
-* Si las dos variables aleatorias son independientes, entonces su covarianza es 0, puesto que en este caso $E(X_1\cdot X_2) =E(X_1)\cdot E(X_2)=\mu_1\mu_2$.
+* Si las dos variables aleatorias son independientes, entonces su covarianza es 0, puesto que en este caso $\mbox{E}(X_1\cdot X_2) =\mbox{E}(X_1)\cdot \mbox{E}(X_2)=\mu_1\mu_2$.
 
 ## Covarianzas propiedades
 
-La covarianza es simétrica, $Cov(X_1,X_2)=Cov(X_2,X_1)$.
+La covarianza es simétrica, $\mbox{Cov}(X_1,X_2)=\mbox{Cov}(X_2,X_1)$.
 La covarianza de una variable aleatoria consigo misma es su varianza: 
 $$
-Cov(X,X)=E((X-\mu)^2)=Var(X).
+\mbox{Cov}(X,X)=\mbox{E}((X-\mu)^2)=Var(X).
 $$
 Para simplificar la notación, se suele utilizar $\sigma$ para indicar las covarianzas. Dadas dos variables aleatorias $X_i$ y $X_j$ que formen parte de un vector aleatorio, escribiremos
 $$
-\sigma_{i j}=Cov(X_i,X_j)\mbox{ y }
-\sigma_{ii}=Cov(X_i,X_i)=\sigma_i^2.
+\sigma_{i j}=\mbox{Cov}(X_i,X_j)\mbox{ y }
+\sigma_{ii}=\mbox{Cov}(X_i,X_i)=\sigma_i^2.
 $$
 
 
@@ -182,7 +185,7 @@ es su  \red{matriz de covarianzas}  y se define como
 
 
 \begin{eqnarray*}
-Cov(\underline{X})&=&E((\underline{X}-\boldsymbol\mu)^t\cdot (\underline{X}-\boldsymbol\mu)\\
+\mbox{Cov}(\underline{X})&=&\mbox{E}((\underline{X}-\boldsymbol\mu)^t\cdot (\underline{X}-\boldsymbol\mu)\\
 &=& E\left(\begin{pmatrix} X_1-\mu_1 \\  X_2-\mu_2\\  \vdots \\X_p-\mu_p\end{pmatrix}
 \cdot(X_1-\mu_1, X_2-\mu_2,\ldots,X_p-\mu_p)\right)\\ &=&
 \begin{pmatrix} \sigma_{1 1} & \sigma_{1 2} & \ldots & \sigma_{1
@@ -203,7 +206,7 @@ Es decir, la matriz de covarianzas de $\underline{X}$ tiene como entrada $(i,j)$
 Se puede comprobar fácilmente que esta matriz se puede calcular como
 
 $$
-Cov(\underline{X})=E((\underline{X}-\mathbf{\mu})^t\cdot (\underline{X}-\mathbf{\mu}))=E(\underline{X}^t\cdot \underline{X})-\boldsymbol\mu^t\cdot \boldsymbol\mu
+\mbox{Cov}(\underline{X})=\mbox{E}((\underline{X}-\mathbf{\mu})^t\cdot (\underline{X}-\mathbf{\mu}))=\mbox{E}(\underline{X}^t\cdot \underline{X})-\boldsymbol\mu^t\cdot \boldsymbol\mu
 $$
 
 La matriz de covarianzas de $\underline{X}$ también se suele representar 
@@ -271,20 +274,20 @@ Si la desigualdad es estricta la matriz es \red{definida positiva},
 * Las matrices de covarianzas son simétricas (y por lo tanto diagonalizables) y semidefinidas positivas.
 * Las matrices  reales semidefinidas positivas diagonalizan y todos sus valores propios $\lambda\geq 0$.
 
-\blue{Demostración}
+\color{green}{Demostración:}
 
-Veamos cómo podemos demostralo
+Veamos cómo podemos demostrarlo
 
 ## Covarianzas; propiedades demostración
 Sea 
 $\Sigma= 
 \begin{pmatrix}
-Cov(X_1,X_2) & Cov(X_1,X_2) & \ldots & Cov(X_1,X_p)\\
-Cov(X_2,X_2) & Cov(X_2,X_2) & \ldots & Cov(X_2,X_p)\\
+\mbox{Cov}(X_1,X_2) & \mbox{Cov}(X_1,X_2) & \ldots & \mbox{Cov}(X_1,X_p)\\
+\mbox{Cov}(X_2,X_2) & \mbox{Cov}(X_2,X_2) & \ldots & \mbox{Cov}(X_2,X_p)\\
 \vdots & \vdots  & \ddots  & \vdots \\
-Cov(X_p,X_2) & Cov(X_p,X_2) & \ldots & Cov(X_p,X_p)\\
+\mbox{Cov}(X_p,X_2) & \mbox{Cov}(X_p,X_2) & \ldots & \mbox{Cov}(X_p,X_p)\\
 \end{pmatrix}$
-la matrix de covarianzas del vector aleatorio $n$ dimensional $\underline{X}=\begin{pmatrix} X_1\\ X_2\\ \vdots \\ X_p\end{pmatrix}$.
+la matriz de covarianzas del vector aleatorio $n$ dimensional $\underline{X}=\begin{pmatrix} X_1\\ X_2\\ \vdots \\ X_p\end{pmatrix}$.
 
 ## Covarianzas; propiedades demostración
 
@@ -295,7 +298,7 @@ $a=\begin{pmatrix} a_1\\ a_2\\ \vdots \\ a_p\end{pmatrix}\in \mathbb{R}^p$
 
 Se cumple que $a^t \cdot \Sigma \cdot a \geq 0$.
 
-Efectivamente recordemos que la variaza de una suma (que siempre es positiva ) es  igual  una suma ponderada de todas las covarianzas, efectivamente 
+Efectivamente recordemos que la varianza de una suma (que siempre es positiva ) es  igual  una suma ponderada de todas las covarianzas, efectivamente 
 
 ## Covarianzas; propiedades demostración
 
@@ -307,17 +310,17 @@ a_1 & a_2 & \ldots & a_p
 \end{pmatrix}
 \cdot
 \begin{pmatrix}
-Cov(X_1,X_2) & Cov(X_1,X_2) & \ldots & Cov(X_1,X_p)\\
-Cov(X_2,X_2) & Cov(X_2,X_2) & \ldots & Cov(X_2,X_p)\\
+\mbox{Cov}(X_1,X_2) & \mbox{Cov}(X_1,X_2) & \ldots & \mbox{Cov}(X_1,X_p)\\
+\mbox{Cov}(X_2,X_2) & \mbox{Cov}(X_2,X_2) & \ldots & \mbox{Cov}(X_2,X_p)\\
 \vdots & \vdots  & \ddots  & \vdots \\
-Cov(X_p,X_2) & Cov(X_p,X_2) & \ldots & Cov(X_p,X_p)\\
+\mbox{Cov}(X_p,X_2) & \mbox{Cov}(X_p,X_2) & \ldots & \mbox{Cov}(X_p,X_p)\\
 \end{pmatrix}
 \cdot
 \begin{pmatrix}
 a_1 \\ a_2 \\ \vdots\\  a_p
 \end{pmatrix}\\ 
 &=&\sum_{i=1}^p\sum_{j=1}^p a_i\cdot a_j \cdot
- Cov(X_i,X_j)=  Var\left(\sum_{i=1}^p a_i\cdot  X_i\right)\geq 0
+ \mbox{Cov}(X_i,X_j)=  Var\left(\sum_{i=1}^p a_i\cdot  X_i\right)\geq 0
 \end{eqnarray*}
 
 
@@ -363,6 +366,24 @@ pendiente $\alpha$ tiene el mismo signo que la correlación.
 Notemos que la correlación es 0 si, y sólo si, la covarianza es 0. Por lo tanto, dos variables aleatorias independientes son incorreladas. El recíproco en general es falso.
  
 
+## Ejemplo correlación no implica independencia.
+
+Un ejemplo muy simple es 
+
+```{r}
+x=c(-1,0,1)
+x
+y=3*x^2+1
+y
+```
+Claramente \red{tienen una dependencia parabólica} pues así hemos definido $y$ en función de $x$
+
+Sin embargo su \red{correlación y su covarianza son cero}
+
+```{r}
+cov(x,y)
+cor(x,y)
+```
 
 ## Matriz de correlaciones
 
@@ -384,7 +405,7 @@ Cor(\underline{X})
 \blue{Teorema}
 La matriz de correlaciones de un vector aleatorio $\underline{X}$ es igual a la matriz de covarianzas de su vector tipificado $\underline{Z}$:
 $$
-Cor(\underline{X})=Cov(\underline{Z}).
+Cor(\underline{X})=\mbox{Cov}(\underline{Z}).
 $$
 Es decir, el \red{vector de medias} de $\mathbf{X}$ es la media aritmética de sus filas.
  
@@ -397,7 +418,7 @@ En efecto, si  $Z_i=\frac{X_i-\mu_i}{\sigma_i}$ y $Z_j=\frac{X_j-\mu_j}{\sigma_j
 
 
 \begin{eqnarray*}
-Cov(Z_i,Z_j)&=& Cor(Z_i,Z_j)=Cor\left(\frac{1}{\sigma_i}X_i-\frac{\mu_i}{\sigma_i},\frac{1}{\sigma_j}X_j-\frac{\mu_j}{\sigma_j},\right)
+\mbox{Cov}(Z_i,Z_j)&=& Cor(Z_i,Z_j)=Cor\left(\frac{1}{\sigma_i}X_i-\frac{\mu_i}{\sigma_i},\frac{1}{\sigma_j}X_j-\frac{\mu_j}{\sigma_j},\right)
 \\ &=& Cor(X_i,X_j)
 \end{eqnarray*}
 
@@ -527,7 +548,7 @@ $$
 
 * Los vectores de desviaciones típicas $s_{\mathbf{X}}$ y desviaciones típicas muestrales $\widetilde{s}_{\mathbf{X}}$ se definen como las raíces cuadradas positivas de los vectores de varianzas y varianzas muestrales, respectivamente.
  
-* Como en el caso unidimensional, $\overline{\mathbf{X}}$ es un estimador de $E(\underline{X})=\boldsymbol\mu$. 
+* Como en el caso unidimensional, $\overline{\mathbf{X}}$ es un estimador de $\mbox{E}(\underline{X})=\boldsymbol\mu$. 
 Tanto ${s}^2_{\mathbf{X}}$ como $\widetilde{s}^2_{\mathbf{X}}$ son estimadores del vector de varianzas de $\underline{X}$: el primero es el máximo verosímil y el segundo  es insesgado.Por lo tanto ambos son estimadores 
 del vector de desviaciones típicas de $\underline{X}$.
 
@@ -762,8 +783,9 @@ Para calcularla matricialmente, observemos que
 
 y por lo tanto
 \begin{eqnarray*}
-\widetilde{\mathbf{X}}=
-\mathbf{H}_4\cdot \mathbf{X}=
+\widetilde{\mathbf{X}}&=&
+\mathbf{H}_4\cdot \mathbf{X}
+\\ &=&
 \left(\begin{array}{rrrr}
 0.75 & -0.25 & -0.25 &   -0.25 \\
  -0.25 & 0.75 & -0.25 &   -0.25 \\
@@ -776,7 +798,7 @@ y por lo tanto
 2&3&0\\
 3&0&1
 \end{pmatrix}
-\\&=&
+\\ &=&
 \begin{pmatrix}
 -0.75&-1.5&1.25\\
 -0.75&-0.5&1.25\\
@@ -874,8 +896,9 @@ $$
 2&3&0\\
 3&0&1
 \end{pmatrix}
+.
 $$
-del Ejemplo R .
+
 Calculamos las varianzas de las columnas: son
 $$
 s^2_1=\frac{11}{16},\quad s^2_2=\frac{9}{4},\quad s^2_3=\frac{27}{16}
@@ -941,7 +964,7 @@ y por lo tanto
 
 Para tipificar con R , hay que recordar que para aplicar funciones a las columnas de una matriz, hay que usar la construcción `apply(matriz,MARGIN=2,fun)`.
 
-```{r tipi1}
+```{r tipi1,size="scriptsize"}
 X=cbind(c(1,1,2,3),c(-1,0,3,0),c(3,3,0,1))
 #Vector de medias
 m=apply(X,MARGIN=2,mean)  #o m=colMeans(X)
@@ -957,7 +980,7 @@ y ahora ...
 
 ## Ejemplo tipificación de datos
 
-```{r}
+```{r tipi2,size="scriptsize"}
 #Matriz diagonal de inversas de desviaciones típicas
 Dm=diag(1/desv.tip)
 Dm
@@ -979,7 +1002,7 @@ define la \red{covarianza} de las columnas $\mathbf{x}_{\bullet i}$ y
 $\mathbf{x}_{\bullet j}$ como
 $$
 s_{i j}=\frac{1}{n} \sum_{k =1}^n\big((x_{k i}-\overline{\mathbf{x}}_{\bullet i})(x_{kj}-\overline{\mathbf{x}}_{\bullet j})\big)= 
-\frac{1}{n} \Big(\sum_{k =1}^n x_{k i} x_{k j}\Big) - \overline{\mathbf{x}}_{\bullet i} \overline{\mathbf{x}}_{\bullet j}
+\frac{1}{n} \Big(\sum_{k =1}^n x_{k i}\cdot  x_{k j}\Big) - \overline{\mathbf{x}}_{\bullet i} \overline{\mathbf{x}}_{\bullet j}
 $$
 y se define la \red{covarianza muestral} de $\mathbf{x}_i$ y
 $\mathbf{x}_j$ como
@@ -1070,7 +1093,7 @@ $$
 
 ## Matriz de varianzas covarianzas; ejemplo
 
-\blue{Ejemplo.} Continuemos con el Ejemplo R , donde, recordemos,
+\blue{Ejemplo.} Continuemos con  la tabla de datos:
 
 $$
 \mathbf{X}=\begin{pmatrix}
@@ -1088,7 +1111,7 @@ Para realizar los cálculos a mano, es costumbre organizar los datos y los cálc
 \begin{center}
 \begin{tabular}{|r||r|r|r|r|r|r|r|r|r|}
 \hline
-$i$&$x_1$&$x_2$&$x_3$&$x_1^2$&$x_2^2$&$x_3^2$&$x_1\cot x_2$&$x_1\cot  x_3$&$x_2\cot x_3$
+$i$&$x_1$&$x_2$&$x_3$&$x_1^2$&$x_2^2$&$x_3^2$&$x_1\cdot x_2$&$x_1\cdot  x_3$&$x_2\cdot x_3$
 \\\hline\hline
 1&1&-1&3&1&1&9&-1&3&-3\\
 2&1&0&3&1&0&9&0&3&0\\
@@ -1232,7 +1255,7 @@ $$\mathbf{x}_{\bullet 1},\mathbf{x}_{\bullet 1},\ldots ,\mathbf{x}_{\bullet j-1}
 
 $$
 \mathbf{x}_{\bullet j}=a_1\cdot  \mathbf{x}_{\bullet 1}+\cdots+
-a_{j-1} \cdot \mathbf{x}_{\bullet j-11}+a_{j+1}\cdot  +\mathbf{x}_{\bullet j+1}
+a_{j-1} \cdot \mathbf{x}_{\bullet j-1}+a_{j+1}\cdot  +\mathbf{x}_{\bullet j+1}
 +\cdots a_p\cdot \mathbf{x}_{\bullet i_p}+b\cdot \mathbf{1}_n
 $$
 para $i=1,2,\ldots,n$.
@@ -1351,7 +1374,8 @@ Como este determinante es diferente de 0, esta matriz de datos no contiene varia
 Consideremos la tabla de datos siguiente:
 
 
-
+\begin{table}
+\centering
 \begin{tabular}{|r||r|r|r|}
 \hline
 $i$&$x_1$&$x_2$&$x_3$
@@ -1361,7 +1385,7 @@ $i$&$x_1$&$x_2$&$x_3$
 3 & 1 & 1 & 0 \\
 4 &0 & 3 & 0\\ \hline
 \end{tabular}
-
+\end{table}
 
 
 Deseamos saber si contiene variables redundantes. Vamos a calcular a manualmente  su matriz de covarianzas:
@@ -1450,7 +1474,9 @@ eigen(S)$values
 
 
 Obtenemos que el rango es 2, y también observamos que $\mathbf{S}$ tiene un solo valor propio igual a 0 
-(el último, `3.238150e-17` es 0 salvo por error de cálculo). Cada uno de estos dos resultados (equivalentes) implica que hay una variable redundante.
+(el último, `3.238150e-17` es 0 salvo por error de cálculo). 
+
+\red{Cada uno de estos dos resultados (equivalentes) implica que hay una variable redundante.}
 
 
 
@@ -1576,7 +1602,7 @@ propiedades que la matriz de covarianzas por lo que concierne a las variables re
  si $\det(\mathbf{R})=0$, entonces hay
 al menos una variable redundante.
 
-*$|\mathbf{R}|\leq 1$.
+* $|\mathbf{R}|\leq 1$.
 
 ## Matriz de correlaciones; cálculo matricial
  
@@ -1602,9 +1628,8 @@ $$
 ## Matriz de correlaciones; cálculo matricial 
 
 \blue{Propiedad}
-$\mathbf{R}=
-\mathbf{D}^{-1}\cdot\mathbf{S}\cdot \mathbf{D}^{-1}$.
- 
+$$\mathbf{R}=
+\mathbf{D}^{-1}\cdot\mathbf{S}\cdot \mathbf{D}^{-1}.$$
 
 De este resultado podemos despejar la matriz de covarianzas, y obtenemos  que
 $$
@@ -1614,12 +1639,13 @@ $$
 Tenemos también el resultado siguiente.
 
  \blue{Teorema}
-{\it Si $\mathbf{Z}$ es la matriz de datos tipificados de $\mathbf{X}$, entonces la matriz de covarianzas de $\mathbf{Z}$ es igual a la matriz de correlaciones de $\mathbf{X}$.} 
+ Si $\mathbf{Z}$ es la \red{matriz de datos tipificados} de $\mathbf{X}$, entonces \red{la matriz de covarianzas} de $\mathbf{Z}$ es igual a la \red{matriz de correlaciones} de $\mathbf{X}$.
  
 ## Matriz de correlaciones;  ejemplo cálculo matricial 
 
- \blue{Ejemplo}
-Continuemos con el ejemplo R , donde la matriz de datos es
+\blue{Ejemplo}
+
+Continuemos nuestra tabla/matriz  de datos:
 
 $$
 \mathbf{X}=\begin{pmatrix}
@@ -1640,8 +1666,15 @@ $$
 $$
 
 y su matriz de covarianzas...
-## Matriz de correlaciones;  ejemplo cálculo matricial 
 
+
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+ 
+... ya estaba calculada y es  
+ 
+ 
 $$
 \qquad
 \mathbf{S}= \begin{pmatrix}
@@ -1679,7 +1712,13 @@ y por lo tanto su matriz de correlaciones es
 0                             & \frac{1}{\sqrt{{9}/{4}}}& 0\\
 0                             & 0 &\frac{1}{\sqrt{{27}/{16}}}  
 \end{pmatrix}
-=\ldots
+\\
+&=&
+\begin{pmatrix}
+           1  & -0.7745967 & 0\\
+   -0.7745967 &          1 & 0.6324555\\
+            0 &  0.6324555 & 1.0000000
+\end{pmatrix}
 \end{eqnarray*}
 
 
@@ -1693,6 +1732,37 @@ X=matrix(c(1,0,-1,1,2,1,1,1,0,0,3,0),nrow=4,
          byrow=TRUE)
 cor(X)
 ```
+
+Naturalmente ... \red{obtenemos el mismo resultado}.
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+
+```{r}
+D=matrix(c(1/sqrt(11/16),
+           0,0,0,1/sqrt(9/4),
+           0,0,0,1/sqrt(27/16))
+  ,byrow=TRUE,ncol=3)
+D
+S=matrix(c(11/16,   3/8, -13/16,
+             3/8,   9/4, -13/8,
+          -13/16, -13/8,  27/16),nrow=3, 
+         byrow=TRUE)
+```
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+
+```{r}
+D_inv=solve(D)
+# inversa de la matriz D
+D_inv%*%S%*%D_inv
+
+```
+
+
+
 
 
 ## Matriz de correlaciones;  ejemplo cálculo matricial 
