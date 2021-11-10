@@ -220,22 +220,32 @@
 \headcommand {\beamer@framepages {92}{92}}
 \headcommand {\slideentry {12}{0}{11}{93/93}{}{0}}
 \headcommand {\beamer@framepages {93}{93}}
-\headcommand {\beamer@sectionpages {83}{93}}
-\headcommand {\beamer@subsectionpages {83}{93}}
-\headcommand {\sectionentry {13}{Interpretación de las variables y los individuos}{94}{Interpretación de las variables y los individuos}{0}}
-\headcommand {\slideentry {13}{0}{1}{94/94}{}{0}}
+\headcommand {\slideentry {12}{0}{12}{94/94}{}{0}}
 \headcommand {\beamer@framepages {94}{94}}
-\headcommand {\slideentry {13}{0}{2}{95/95}{}{0}}
+\headcommand {\slideentry {12}{0}{13}{95/95}{}{0}}
 \headcommand {\beamer@framepages {95}{95}}
-\headcommand {\beamer@sectionpages {94}{95}}
-\headcommand {\beamer@subsectionpages {94}{95}}
-\headcommand {\sectionentry {14}{Y muchas cosas más..}{96}{Y muchas cosas más..}{0}}
-\headcommand {\slideentry {14}{0}{1}{96/96}{}{0}}
+\headcommand {\beamer@sectionpages {83}{95}}
+\headcommand {\beamer@subsectionpages {83}{95}}
+\headcommand {\sectionentry {13}{Interpretación de las variables y los individuos}{96}{Interpretación de las variables y los individuos}{0}}
+\headcommand {\slideentry {13}{0}{1}{96/96}{}{0}}
 \headcommand {\beamer@framepages {96}{96}}
-\headcommand {\slideentry {14}{0}{2}{97/97}{}{0}}
+\headcommand {\slideentry {13}{0}{2}{97/97}{}{0}}
 \headcommand {\beamer@framepages {97}{97}}
-\headcommand {\beamer@partpages {1}{97}}
-\headcommand {\beamer@subsectionpages {96}{97}}
-\headcommand {\beamer@sectionpages {96}{97}}
-\headcommand {\beamer@documentpages {97}}
-\headcommand {\gdef \inserttotalframenumber {97}}
+\headcommand {\slideentry {13}{0}{3}{98/98}{}{0}}
+\headcommand {\beamer@framepages {98}{98}}
+\headcommand {\slideentry {13}{0}{4}{99/99}{}{0}}
+\headcommand {\beamer@framepages {99}{99}}
+\headcommand {\slideentry {13}{0}{5}{100/100}{}{0}}
+\headcommand {\beamer@framepages {100}{100}}
+\headcommand {\beamer@sectionpages {96}{100}}
+\headcommand {\beamer@subsectionpages {96}{100}}
+\headcommand {\sectionentry {14}{Y muchas cosas más..}{101}{Y muchas cosas más..}{0}}
+\headcommand {\slideentry {14}{0}{1}{101/101}{}{0}}
+\headcommand {\beamer@framepages {101}{101}}
+\headcommand {\slideentry {14}{0}{2}{102/102}{}{0}}
+\headcommand {\beamer@framepages {102}{102}}
+\headcommand {\beamer@partpages {1}{102}}
+\headcommand {\beamer@subsectionpages {101}{102}}
+\headcommand {\beamer@sectionpages {101}{102}}
+\headcommand {\beamer@documentpages {102}}
+\headcommand {\gdef \inserttotalframenumber {102}}

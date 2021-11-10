@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.9)  9 NOV 2021 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.9)  10 NOV 2021 08:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1591,34 +1591,49 @@ Overfull \vbox (41.82457pt too high) detected at line 1805
 ]
 \openout4 = `ACP_2.vrb'.
 
-(./ACP_2.vrb
-<ACP_2_files/figure-beamer/biplot3-1.pdf, id=701, 455.7025pt x 456.70625pt>
+(./ACP_2.vrb) [91
+
+]
+\openout4 = `ACP_2.vrb'.
+
+(./ACP_2.vrb) [92
+
+]
+<ACP_2_files/figure-beamer/biplot3-1.pdf, id=715, 709.65125pt x 352.31625pt>
 File: ACP_2_files/figure-beamer/biplot3-1.pdf Graphic file (type pdf)
 <use ACP_2_files/figure-beamer/biplot3-1.pdf>
 Package pdftex.def Info: ACP_2_files/figure-beamer/biplot3-1.pdf  used on input
- line 19.
-(pdftex.def)             Requested size: 215.66823pt x 216.14328pt.
-)
-Overfull \vbox (129.57176pt too high) detected at line 1877
- []
+ line 1892.
+(pdftex.def)             Requested size: 307.29893pt x 152.56284pt.
+[93
 
-[91
+ <./ACP_2_files/figure-beamer/biplot3-1.pdf>] [94
 
- <./ACP_2_files/figure-beamer/biplot3-1.pdf>] [92
-
-] [93
-
-] [94
-
-]
-Overfull \vbox (51.79099pt too high) detected at line 1958
- []
-
-[95
+] [95
 
 ] [96
 
 ] [97
+
+] [98
+
+]
+\openout4 = `ACP_2.vrb'.
+
+(./ACP_2.vrb) [99
+
+]
+<ACP_2_files/figure-beamer/biplor-1.pdf, id=767, 709.65125pt x 352.31625pt>
+File: ACP_2_files/figure-beamer/biplor-1.pdf Graphic file (type pdf)
+<use ACP_2_files/figure-beamer/biplor-1.pdf>
+Package pdftex.def Info: ACP_2_files/figure-beamer/biplor-1.pdf  used on input 
+line 1994.
+(pdftex.def)             Requested size: 307.29893pt x 152.56284pt.
+[100
+
+ <./ACP_2_files/figure-beamer/biplor-1.pdf>] [101
+
+] [102
 
 ]
 \tf@nav=\write7
@@ -1635,20 +1650,20 @@ Package rerunfilecheck Info: File `ACP_2.out' has not changed.
 (rerunfilecheck)             Checksum: D54158DF54EB3A31270ECB4E29F605B4;2788.
  ) 
 Here is how much of TeX's memory you used:
- 24934 strings out of 480498
- 463599 string characters out of 5899155
- 789132 words of memory out of 5000000
- 41604 multiletter control sequences out of 15000+600000
- 466352 words of font info for 132 fonts, out of 8000000 for 9000
+ 24973 strings out of 480498
+ 464295 string characters out of 5899155
+ 787745 words of memory out of 5000000
+ 41622 multiletter control sequences out of 15000+600000
+ 466671 words of font info for 133 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,13n,108p,1002b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.e
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
+c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.e
 nc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-math
 it.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
 mathsy.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
 /lm-rm.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
-/lm-mathex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvip
-s/lm/lm-ec.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
+/lm-mathex.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
 blic/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
 1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmmi6.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fon
@@ -1663,11 +1678,12 @@ oaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppDa
 ta/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/t169/Ap
 pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/t169
 /AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/
-t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ACP_2.pdf (97 pages, 372106 bytes).
+t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Us
+ers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on ACP_2.pdf (102 pages, 398055 bytes).
 PDF statistics:
- 896 PDF objects out of 1000 (max. 8388607)
- 729 compressed objects within 8 object streams
- 291 named destinations out of 1000 (max. 500000)
- 37054 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 943 PDF objects out of 1000 (max. 8388607)
+ 764 compressed objects within 8 object streams
+ 306 named destinations out of 1000 (max. 500000)
+ 37059 words of extra memory for PDF output out of 42996 (max. 10000000)
 

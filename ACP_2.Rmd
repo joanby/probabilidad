@@ -1609,7 +1609,7 @@ $$
 
 
 
-## Ejemplo
+## Ejemplo biplot
 
 
 Las componentes de los vectores que representarán las variables serán:
@@ -1620,19 +1620,46 @@ $$
 \mbox{CP}_3 (1.648,-2.212), \mbox{CP}_4 (3.409,-8.051).
 $$
 
-El código `biplot(solacp)` dibuja elbiplotde los dos 
+El código `biplot(solacp)` dibuja el biplot de los dos 
 primeros componentes.
 
 
+## Ejemplo biplot 
 
 
 
 
-```{r biplot3,echo=TRUE,fig=TRUE}
-biplot(solacp)
+
+```{r biplot3_0,echo=TRUE,fig=TRUE, fig.height=5,eval=FALSE}
+factoextra::fviz_pca_ind(solacp,
+             col.ind = "cos2", 
+             # Colorpor calidad de 
+             # la prepresentación
+             gradient.cols =
+                     c("#00AFBB", 
+                       "#E7B800", "#FC4E07"),
+             repel = TRUE
+             # permite  solapar texto
+             )
 ```
 
 
+
+
+
+## Ejemplo biplot 
+
+
+
+
+
+```{r biplot3,echo=FALSE,fig=TRUE, fig.height=5}
+factoextra::fviz_pca_ind(solacp,
+             col.ind = "cos2", # Color by the quality of representation
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE     # Avoid text overlapping
+             )
+```
 
 
 ## Interpretación de un biplot
@@ -1681,22 +1708,18 @@ individuos en los
 componentes principales.
 
 * Esta representación se hace mediante las coordenadas que la matriz de
-componentes 
-%(cargasfactoriales) 
-que nos explican las correlaciones de cada factor con cada
+componentes que nos explican las correlaciones de cada factor con cada
 variable.
 
 
 
 
-
-En esta representación gráfica cada variable aparece como un punto de forma
-que :
+## Circulo de correlación
 
 * Cada variable está representada por el vector que une el origen de
 coordenadas cono
 el punto.
-* Todosestán en círculo unidad (círculo de correlación).
+* Todos están en círculo unidad (círculo de correlación).
 * A medida que cada variable se acerca a la circunferencia unidad está
 mejor representado
 por los componentes retenidas y viceversa.
@@ -1705,6 +1728,34 @@ correlación, al nivel
 de retención de varianza total que tengamos.
 * Así variable perpendiculares tenderán a ser *incorreladas*.
 * Los valores de una variable crecen en la dirección de ésta.
+
+## Circulo de correlación
+
+
+```{r biplot2, fig.height=5,eval=FALSE}
+
+factoextra::fviz_pca_var(solacp,
+             col.var = "contrib",
+             # Color por contribución asl pca
+             gradient.cols = c("#00AFBB",
+                               "#E7B800",
+                               "#FC4E07"),
+             repel = TRUE    
+             )
+```
+
+
+## Circulo de correlación
+
+
+```{r biplor, fig.height=5,echo=FALSE}
+
+factoextra::fviz_pca_var(solacp,
+             col.var = "contrib", # Color por contribución asl pca
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE    
+             )
+```
 
 
 # Y muchas cosas más.. 

@@ -10,5 +10,5 @@
 \beamer@sectionintoc {10}{Técnicas de retención de reteción de componentes}{72}{0}{10}
 \beamer@sectionintoc {11}{Adecuación de los datos al ACP}{79}{0}{11}
 \beamer@sectionintoc {12}{Representaciones gráficas. Biplots}{83}{0}{12}
-\beamer@sectionintoc {13}{Interpretación de las variables y los individuos}{94}{0}{13}
-\beamer@sectionintoc {14}{Y muchas cosas más..}{96}{0}{14}
+\beamer@sectionintoc {13}{Interpretación de las variables y los individuos}{96}{0}{13}
+\beamer@sectionintoc {14}{Y muchas cosas más..}{101}{0}{14}

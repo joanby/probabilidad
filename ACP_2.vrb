@@ -1,19 +1,14 @@
-\frametitle{Ejemplo}
-\protect\hypertarget{ejemplo-35}{}
-Las componentes de los vectores que representarán las variables serán:
-\[
-\mbox{CP}_1 (32.764,-0.200),\mbox{CP}_2 (11.904,3.163),
-\] \[
-\mbox{CP}_3 (1.648,-2.212), \mbox{CP}_4 (3.409,-8.051).
-\]
-
-El código \texttt{biplot(solacp)} dibuja elbiplotde los dos primeros
-componentes.
-
+\frametitle{Circulo de correlación}
+\protect\hypertarget{circulo-de-correlaciuxf3n-1}{}
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{biplot}\NormalTok{(solacp)}
+\NormalTok{factoextra}\OperatorTok{::}\KeywordTok{fviz\_pca\_var}\NormalTok{(solacp,}
+             \DataTypeTok{col.var =} \StringTok{"contrib"}\NormalTok{,}
+             \CommentTok{\# Color por contribución asl pca}
+             \DataTypeTok{gradient.cols =} \KeywordTok{c}\NormalTok{(}\StringTok{"\#00AFBB"}\NormalTok{,}
+                               \StringTok{"\#E7B800"}\NormalTok{,}
+                               \StringTok{"\#FC4E07"}\NormalTok{),}
+             \DataTypeTok{repel =} \OtherTok{TRUE}
+\NormalTok{             )}
 \end{Highlighting}
 \end{Shaded}
-
-\includegraphics{ACP_2_files/figure-beamer/biplot3-1.pdf}
