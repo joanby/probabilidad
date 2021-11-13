@@ -274,31 +274,40 @@ Si la desigualdad es estricta la matriz es \red{definida positiva},
 * Las matrices de covarianzas son simétricas (y por lo tanto diagonalizables) y semidefinidas positivas.
 * Las matrices  reales semidefinidas positivas diagonalizan y todos sus valores propios $\lambda\geq 0$.
 
-\color{green}{Demostración:}
+\textcolor{green}{Demostración}:
+
 
 Veamos cómo podemos demostrarlo
 
 ## Covarianzas; propiedades demostración
 Sea 
-$\Sigma= 
+
+$$
+\Sigma= 
 \begin{pmatrix}
 \mbox{Cov}(X_1,X_2) & \mbox{Cov}(X_1,X_2) & \ldots & \mbox{Cov}(X_1,X_p)\\
 \mbox{Cov}(X_2,X_2) & \mbox{Cov}(X_2,X_2) & \ldots & \mbox{Cov}(X_2,X_p)\\
 \vdots & \vdots  & \ddots  & \vdots \\
 \mbox{Cov}(X_p,X_2) & \mbox{Cov}(X_p,X_2) & \ldots & \mbox{Cov}(X_p,X_p)\\
-\end{pmatrix}$
-la matriz de covarianzas del vector aleatorio $n$ dimensional $\underline{X}=\begin{pmatrix} X_1\\ X_2\\ \vdots \\ X_p\end{pmatrix}$.
+\end{pmatrix}
+$$
+
+la matriz de covarianzas del vector aleatorio $p$ dimensional 
+
+$$\underline{X}=\begin{pmatrix} X_1\\ X_2\\ \vdots \\ X_p\end{pmatrix}.$$
 
 ## Covarianzas; propiedades demostración
 
 Tenemos que demostrar  que para todo vector 
 
-$a=\begin{pmatrix} a_1\\ a_2\\ \vdots \\ a_p\end{pmatrix}\in \mathbb{R}^p$
+$$a=\begin{pmatrix} a_1\\ a_2\\ \vdots \\ a_p\end{pmatrix}\in \mathbb{R}^p$$
 
 
-Se cumple que $a^t \cdot \Sigma \cdot a \geq 0$.
+Se cumple que 
 
-Efectivamente recordemos que la varianza de una suma (que siempre es positiva ) es  igual  una suma ponderada de todas las covarianzas, efectivamente 
+$$a^t \cdot \Sigma \cdot a \geq 0.$$
+
+Recordemos que la varianza de una suma (que siempre es positiva ) es  igual  una suma ponderada de todas las covarianzas, efectivamente 
 
 ## Covarianzas; propiedades demostración
 
@@ -323,7 +332,7 @@ a_1 \\ a_2 \\ \vdots\\  a_p
  \mbox{Cov}(X_i,X_j)=  Var\left(\sum_{i=1}^p a_i\cdot  X_i\right)\geq 0
 \end{eqnarray*}
 
-
+Repasad estas propiedades de los temas de variables varias variables aleatorias.
 
 ## Correlaciones
 
@@ -403,6 +412,7 @@ Cor(\underline{X})
 
 
 \blue{Teorema}
+
 La matriz de correlaciones de un vector aleatorio $\underline{X}$ es igual a la matriz de covarianzas de su vector tipificado $\underline{Z}$:
 $$
 Cor(\underline{X})=\mbox{Cov}(\underline{Z}).

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.9)  10 NOV 2021 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.9)  13 NOV 2021 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1374,7 +1374,7 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 472.
 ] [22
 
 ]
-Overfull \hbox (18.42566pt too wide) in alignment at lines 536--536
+Overfull \hbox (18.42566pt too wide) in alignment at lines 551--551
  [][][] []
  []
 
@@ -1398,7 +1398,7 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
 )
-Overfull \vbox (55.38123pt too high) detected at line 639
+Overfull \vbox (55.38123pt too high) detected at line 654
  []
 
 [27
@@ -1422,7 +1422,7 @@ Overfull \vbox (55.38123pt too high) detected at line 639
 ] [36
 
 ]
-Overfull \vbox (76.08418pt too high) detected at line 821
+Overfull \vbox (76.08418pt too high) detected at line 836
  []
 
 [37
@@ -1450,7 +1450,7 @@ Overfull \vbox (76.08418pt too high) detected at line 821
 ] [48
 
 ]
-Overfull \hbox (1.43156pt too wide) detected at line 1054
+Overfull \hbox (1.43156pt too wide) detected at line 1069
 [] \OT1/lmss/m/n/10.95 = [] = []
  []
 
@@ -1464,7 +1464,7 @@ Overfull \hbox (1.43156pt too wide) detected at line 1054
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb)
-Overfull \vbox (116.68623pt too high) detected at line 1151
+Overfull \vbox (116.68623pt too high) detected at line 1166
  []
 
 [52
@@ -1483,7 +1483,7 @@ Overfull \vbox (116.68623pt too high) detected at line 1151
 ] [57
 
 ]
-Overfull \hbox (30.55504pt too wide) in alignment at lines 1292--1292
+Overfull \hbox (30.55504pt too wide) in alignment at lines 1307--1307
  [][][] []
  []
 
@@ -1493,7 +1493,7 @@ Overfull \hbox (30.55504pt too wide) in alignment at lines 1292--1292
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb)
-Overfull \vbox (29.71725pt too high) detected at line 1328
+Overfull \vbox (29.71725pt too high) detected at line 1343
  []
 
 [59
@@ -1502,7 +1502,7 @@ Overfull \vbox (29.71725pt too high) detected at line 1328
 \openout4 = `introducción_estadística_multivariante.vrb'.
 
 (./introducción_estadística_multivariante.vrb)
-Overfull \vbox (134.1918pt too high) detected at line 1378
+Overfull \vbox (134.1918pt too high) detected at line 1393
  []
 
 [60
@@ -1531,11 +1531,11 @@ Overfull \vbox (134.1918pt too high) detected at line 1378
 
 ]
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1571
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 1586
 .
 
 
-Overfull \vbox (9.8522pt too high) detected at line 1571
+Overfull \vbox (9.8522pt too high) detected at line 1586
  []
 
 [69
@@ -1614,7 +1614,7 @@ Overfull \vbox (9.8522pt too high) detected at line 1571
 ] [95
 
 ]
-Overfull \vbox (9.19301pt too high) detected at line 2204
+Overfull \vbox (9.19301pt too high) detected at line 2219
  []
 
 [96
@@ -1700,8 +1700,8 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/t16
 sers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
 <c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on introducción_estadística_multivariante.pdf (104 pages, 3589
-39 bytes).
+Output written on introducción_estadística_multivariante.pdf (104 pages, 3612
+89 bytes).
 PDF statistics:
  833 PDF objects out of 1000 (max. 8388607)
  678 compressed objects within 7 object streams
