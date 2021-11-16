@@ -1618,7 +1618,9 @@ al menos una variable redundante.
  
 La matriz de correlaciones de puede calcular de forma matricial de la manera siguiente.
 Recordemos que 
-$$\mathbf{D}=
+
+$$
+\mathbf{D}=
 \begin{pmatrix}
  s_1 & 0 & \ldots & 0\\
 0 & s_2  & \ldots & 0\\
@@ -1725,9 +1727,9 @@ y por lo tanto su matriz de correlaciones es
 \\
 &=&
 \begin{pmatrix}
-           1  & -0.7745967 & 0\\
-   -0.7745967 &          1 & 0.6324555\\
-            0 &  0.6324555 & 1.0000000
+           1  & 0.3015113 & -0.7543365\\
+   0.3015113 &          1 & -0.8339504\\
+   -0.7543365 &  -0.8339504 & 1.0000000
 \end{pmatrix}
 \end{eqnarray*}
 
@@ -1738,8 +1740,8 @@ La matriz de correlaciones de una matriz de datos se puede calcular con R con la
 
 
 ```{r}
-X=matrix(c(1,0,-1,1,2,1,1,1,0,0,3,0),nrow=4, 
-         byrow=TRUE)
+X=matrix(c(1,1,2,3,-1,0,3,0,3,3,0,1),nrow=4,
+         byrow=FALSE)
 cor(X)
 ```
 
@@ -1749,9 +1751,9 @@ Naturalmente ... \red{obtenemos el mismo resultado}.
 
 
 ```{r}
-D=matrix(c(1/sqrt(11/16),
-           0,0,0,1/sqrt(9/4),
-           0,0,0,1/sqrt(27/16))
+D=matrix(c(1/sqrt(11/16),0,0,
+           0,1/sqrt(9/4),0,
+           0,0,1/sqrt(27/16))
   ,byrow=TRUE,ncol=3)
 D
 S=matrix(c(11/16,   3/8, -13/16,
@@ -1765,10 +1767,7 @@ S=matrix(c(11/16,   3/8, -13/16,
 
 
 ```{r}
-D_inv=solve(D)
-# inversa de la matriz D
-D_inv%*%S%*%D_inv
-
+D%*%S%*%D
 ```
 
 
