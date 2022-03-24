@@ -1,13 +1,14 @@
 ---
 title: "Reducción de la factorialidad. Análisis de Componentes Principales."
-author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+author: "Análisis de Datos curso 2021/2122"
 date: ''
 output:
   beamer_presentation:
     includes:
       in_header: preamble1.tex
     theme: Rochester
-    toc: no
+    keep_tex: yes
+  ioslides_presentation: default
 ---
 
 
@@ -74,7 +75,7 @@ de interpretar}.
 * El problema es que si reducimos el número de variables es posible
 que \red{perdamos parte toda la variabilidad de los datos originales}.
 
-* Así la idea básica es \red{consentir una pérdida dei nformación para lograr una
+* Así la idea básica es \red{consentir una pérdida de información para lograr una
 ganancia en la significación}.
 
 
@@ -106,12 +107,12 @@ $$X_p=\alpha_{p 1} F_1+ \alpha_{p 2} F_2+\cdots +\alpha_{p k} F_k+ E_p+ A_p$$
 ## Análisis Factorial
 
 * Podríamos decir que en un Análisis Factorial se fija a priori la
-cantidad de varianza de cada variableque debe quedar interpretada por los
+cantidad de varianza de cada variable que debe quedar interpretada por los
 factores comunes. 
 * Este valor recibe el
-nombre de comunalidad y se suele representarcomo $h_i^2$.
+nombre de comunalidad y se suele representar como $h_i^2$.
 
-Así tenemos_
+Utilizaremos las siguientes notaciones:
 
 
 * La comunalidad de la variable $X_i$,$h_i^2$, es la varianza explicada por
@@ -165,7 +166,7 @@ varianzas.
 
 
 * Sobre los datos centrados: a cada variable se le resta su media
-$x_i-\overline{x}_i$.
+$x_i-\overline{x}_i$; \red{en estas notas solo consideraremos este caso}.
 * Sobre los datos tipificados $\frac{x_{i}-\overline{x}_i}{s_i}$.
 * En el primer caso las variables centradas tienen media cero y la misma
 varianza que las variables originales: se le suele llamar ACP de covarianzas.
@@ -177,20 +178,20 @@ correlaciones o normado.
  
 
 Recordemos que dada una matriz de datos $\mathbf{X}$ 
-($n\times p$ es decirde $n$ individuos y $p$ variables) representábamos por $\tilde{\mathbf{X}}$ la
+($n\times p$ es decir de $n$ individuos y $p$ variables) representábamos por $\tilde{\mathbf{X}}$ la
 matriz de datos centrada. Entonces:
 
 
 
 * La matriz de covarianzas de $\mathbf{X}$ viene dada por
 
-$$\mathbf{S}=1/n \tilde{\mathbf{X}}^\top \tilde{\mathbf{X}}$$
+$$\mathbf{S}=1/n \tilde{\mathbf{X}}^t\tilde{\mathbf{X}}$$
 
 * Si llamamos $\mathbf{Z}$ a la tabla de los datos tipificados, la matriz de
 correlaciones viene dada
 por
 
-$$\mathbf{R}=1/n \mathbf{Z}^\top \mathbf{Z}$$
+$$\mathbf{R}=1/n \mathbf{Z}^t\mathbf{Z}$$
 
 
 
@@ -203,6 +204,169 @@ $$\mathbf{R}=1/n \mathbf{Z}^\top \mathbf{Z}$$
 datos centrados) y de la matriz de correlaciones (para los datos tipificados).
 * Así en el ACP de covarianzas cada variable interviene con su propia
 varianza mientras que el ACP de correlaciones todas las variables tienen varianza 1.
+
+
+##  A.C.P: interpretación geométrica
+
+
+
+Supongamos que  $p=2$ y que la \red{nube de puntos} de nuestra tabla de datos es la de la siguiente figura:
+
+```{r inter_geom1,fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
+n=20
+m=10
+#xx <- c(-10,10)
+#yy <- c(-6,6)
+#par(mar=c(0,0,0,0))
+#plot(xx,yy,ann=F,type='n')
+#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
+dades=read.table("dades.txt")
+dades=as.matrix(dades)
+Hn=matrix(-1/n,n,n)
+diag(Hn)=rep(1-1/n,n)
+dades.cent=Hn%*%dades
+plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+```
+
+
+## Interpretación geométrica
+
+La siguiente figura muestra las dos \red{componentes principales}, es decir, las direcciones de las proyecciones que tienen máxima variabilidad.
+
+```{r inter2, fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
+n=20
+m=10
+#xx <- c(-10,10)
+#yy <- c(-6,6)
+#par(mar=c(0,0,0,0))
+#plot(xx,yy,ann=F,type='n')
+#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
+dades=read.table("dades.txt")
+dades=as.matrix(dades)
+Hn=matrix(-1/n,n,n)
+diag(Hn)=rep(1-1/n,n)
+dades.cent=Hn%*%dades
+plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+estudi.acp=prcomp(dades,scale.=FALSE)
+direccions=estudi.acp$rotation
+m.cov=t(dades.cent)%*%dades.cent
+vaps=eigen(m.cov)$values
+veps=eigen(m.cov)$vectors
+mag=10
+lines(c(0,mag*direccions[1,1]),c(0,mag*direccions[2,1]),col="red",lwd=3)
+lines(c(0,mag*direccions[1,2]),c(0,mag*direccions[2,2]),col="red",lwd=3)
+lines(c(0,-mag*direccions[1,1]),c(0,-mag*direccions[2,1]),col="red",lwd=3)
+lines(c(0,-mag*direccions[1,2]),c(0,-mag*direccions[2,2]),col="red",lwd=3)
+xaux=-6
+text(xaux,direccions[2,1]*xaux/direccions[1,1]-1,"CP1",cex=1)
+xaux=-1.5
+text(xaux,direccions[2,2]*xaux/direccions[1,2]-2,"CP2",cex=1)
+```
+
+
+## Interpretación geométrica
+
+Si projectamos en la dirección de la \red{primera componente}, obtendremos las proyecciones siguientes (en \blue{azul}):
+
+
+```{r inter3,fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
+n=20
+m=10
+#xx <- c(-10,10)
+#yy <- c(-6,6)
+#par(mar=c(0,0,0,0))
+#plot(xx,yy,ann=F,type='n')
+#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
+dades=read.table("dades.txt")
+dades=as.matrix(dades)
+Hn=matrix(-1/n,n,n)
+diag(Hn)=rep(1-1/n,n)
+dades.cent=Hn%*%dades
+plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+estudi.acp=prcomp(dades,scale.=FALSE)
+direccions=estudi.acp$rotation
+m.cov=t(dades.cent)%*%dades.cent
+vaps=eigen(m.cov)$values
+veps=eigen(m.cov)$vectors
+mag=10
+lines(c(0,mag*direccions[1,1]),c(0,mag*direccions[2,1]),col="red",lwd=3)
+lines(c(0,mag*direccions[1,2]),c(0,mag*direccions[2,2]),col="red",lwd=3)
+lines(c(0,-mag*direccions[1,1]),c(0,-mag*direccions[2,1]),col="red",lwd=3)
+lines(c(0,-mag*direccions[1,2]),c(0,-mag*direccions[2,2]),col="red",lwd=3)
+xaux=-6
+text(xaux,direccions[2,1]*xaux/direccions[1,1]-1,"CP1",cex=1)
+xaux=-1.5
+text(xaux,direccions[2,2]*xaux/direccions[1,2]-2,"CP2",cex=1)
+#arrows(0,0,mag*direccions[1,1],mag*direccions[2,1],col="red",lwd=3)
+#arrows(0,0,mag*direccions[1,2],mag*direccions[2,2],col="red",lwd=3)
+#arrows(0,0,-mag*direccions[1,1],-mag*direccions[2,1],col="red",lwd=3)
+#arrows(0,0,-mag*direccions[1,2],-mag*direccions[2,2],col="red",lwd=3)
+proj.ort=function(x0,y0,v1,v2,b){m=v2/v1;x1=(m*y0+x0-m*b)/(m^2+1);
+                        y1=(m^2*y0+m*x0+b)/(m^2+1);return(c(x1,y1))}
+#projecció sobre CP1
+for (i in 1:dim(dades)[1]){
+  aux=proj.ort(dades.cent[i,1],dades.cent[i,2],veps[1,1],veps[2,1],0)
+  points(aux[1],aux[2],pch=20,col="blue")
+  lines(c(dades.cent[i,1],aux[1]),c(dades.cent[i,2],aux[2]),lty=2)
+}
+```
+
+
+## Interpretación geométrica
+
+Lo que significa  que la varianza de los puntos azules  es máxima; en el sentido de que cualquier  otra dirección o recta   las proyecciones sobre ésta tendrán´n a lo más igual varianza.
+\medskip
+
+Los puntos  azules  representan las coordenadas que tienen los puntos de nuestra tabla de datos (centrada) tomando como eje de abcisas el \red{primer componente} $CP_1$.
+
+
+## Interpretación geométrica
+
+Si projectamos en la dirección del \red{segundo componente}, obtendremos las proyecciones siguientes (en \green{verde}):
+
+```{r inter4.1,fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
+n=20
+m=10
+#xx <- c(-10,10)
+#yy <- c(-6,6)
+#par(mar=c(0,0,0,0))
+#plot(xx,yy,ann=F,type='n')
+#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
+dades=read.table("dades.txt")
+dades=as.matrix(dades)
+Hn=matrix(-1/n,n,n)
+diag(Hn)=rep(1-1/n,n)
+dades.cent=Hn%*%dades
+plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+estudi.acp=prcomp(dades,scale.=FALSE)
+direccions=estudi.acp$rotation
+m.cov=t(dades.cent)%*%dades.cent
+vaps=eigen(m.cov)$values
+veps=eigen(m.cov)$vectors
+mag=10
+lines(c(0,mag*direccions[1,1]),c(0,mag*direccions[2,1]),col="red",lwd=3)
+lines(c(0,mag*direccions[1,2]),c(0,mag*direccions[2,2]),col="red",lwd=3)
+lines(c(0,-mag*direccions[1,1]),c(0,-mag*direccions[2,1]),col="red",lwd=3)
+lines(c(0,-mag*direccions[1,2]),c(0,-mag*direccions[2,2]),col="red",lwd=3)
+xaux=-6
+text(xaux,direccions[2,1]*xaux/direccions[1,1]-1,"CP1",cex=1)
+xaux=-1.5
+text(xaux,direccions[2,2]*xaux/direccions[1,2]-2,"CP2",cex=1)
+#arrows(0,0,mag*direccions[1,1],mag*direccions[2,1],col="red",lwd=3)
+#arrows(0,0,mag*direccions[1,2],mag*direccions[2,2],col="red",lwd=3)
+#arrows(0,0,-mag*direccions[1,1],-mag*direccions[2,1],col="red",lwd=3)
+#arrows(0,0,-mag*direccions[1,2],-mag*direccions[2,2],col="red",lwd=3)
+proj.ort=function(x0,y0,v1,v2,b){m=v2/v1;x1=(m*y0+x0-m*b)/(m^2+1);
+                        y1=(m^2*y0+m*x0+b)/(m^2+1);return(c(x1,y1))}
+#projecció sobre CP2
+for (i in 1:dim(dades)[1]){
+  aux=proj.ort(dades.cent[i,1],dades.cent[i,2],veps[1,2],veps[2,2],0)
+  points(aux[1],aux[2],pch=20,col="green")
+  lines(c(dades.cent[i,1],aux[1]),c(dades.cent[i,2],aux[2]),lty=2)
+}
+```
+
+
 
 
  
@@ -266,10 +430,9 @@ Donde:
 * $x_1:$ edad en días
 * $x_2:$ estatura al nacer en cm.
 * $x_3:$ peso en Kg. al nacer 
-* $x_4:$ aumento en tanto por ciento de su peso con respecto de su
-peso al nacer. 
-*El sexo es una variable de perfil que intentaremos explicar con
-nuestro análisis de componentes principales.
+* $x_4:$ aumento en tanto por ciento de su peso con respecto de su peso al nacer. 
+* El sexo es una variable de perfil que podría ayudarnos a explicar algunos  de los resultados del
+análisis de componentes principales.
 
  
 
@@ -346,19 +509,27 @@ $$
 
 ## Cálculos básicos
 
-```{r matrizcentradaACP1,echo=F,results='hide',size="tiny"}
+```{r matrizcentradaACP1,echo=TRUE,size="tiny"}
 colMeans(X)
-Hn=diag(rep(1,n))-1/n
-Hn
+n=dim(X)[1]
+n
+Hn=diag(rep(1,n))-1/n# matriz centralizadora
+dim(Hn)
+```
+
+## Cálculos básicos
+
+```{r matrizcentradaACP1.1,echo=TRUE,size="tiny"}
+# filas 1 a 9 y columnas 1 a 4 
+# de la matriz centralizadora
+round(Hn[1:9,1:4],4)
 ```
  
 ## Cálculos básicos
 
-```{r matrizcentradaACP2,echo=F,results='hide',size="tiny"}
-colMeans(X) #  medias de las variables/columna
+```{r matrizcentradaACP2.3,size="tiny"}
 cX=Hn%*%X # matriz centrada cálculo matricial
-cX=round(cX,3)
-cX
+round(cX,3)
 ```
 
  
@@ -378,7 +549,7 @@ $$
 
 * Los valores propios son: 
 
-$$\lambda_1=136.615,\quad \lambda_2 8.861,\quad \lambda_3 = 0.738,\quad \lambda_4 = 0.047.$$
+$$\lambda_1=136.615,\quad \lambda_2=8.861,\quad \lambda_3 = 0.738,\quad \lambda_4 = 0.047.$$
 
 
 ## Ejemplo
@@ -435,6 +606,7 @@ $$
 ## Ejemplo
 
 * La nueva matriz de datos respecto de las nuevas variables será:
+
 $$
 \mathbf{CP}= \tilde{\mathbf{X}} \mathbf{u} =
 \left(
@@ -455,7 +627,7 @@ $$
 ## Ejemplo 
 
 * Se puede observar que si se multiplican escalarmente dos columnas
-cualesquiera, es resultado es nulo. Es decir, las columnas de la nueva matriz de
+cualesquiera, el resultado es nulo. Es decir, las columnas de la nueva matriz de
 datos son ortogonales dos a dos.
 
 ```{r coordenadasACP,echo=F}
@@ -466,7 +638,7 @@ CP
  
 ## Ejemplo
 
-Como podemos observar, nuestro análisis ha explicado la variable de perfil sexo ya
+Como podemos observar, nuestro análisis que interpretado por la variable de perfil sexo ya
 que distingue entre niños y niñas con las dos primeras componentes.
  
 
@@ -480,14 +652,11 @@ legend(15,-4,legend=levels(Datos$Sexo),pch=21,pt.bg=c("red", "blue"),title="Sexo
 ```
 
 
- 
-
-
-
+## Ejemplo
 
 El siguiente código dibuja todos los componentes
 
-```{r pairsacptodos,fig=FALSE}
+```{r pairsacptodos,fig=FALSE,eval=FALSE}
 pairs(solacp$scores,pch=21,
 bg = c("red", "blue")[unclass(Datos$Sexo)],
 main="Diagrama matricial de 
@@ -499,10 +668,9 @@ los componentes principales")
 
 
 
+## Ejemplo
 
-
-
-```{r pairsacptodos1,echo=F,fig=T}
+```{r pairsacptodos1,echo=FALSE}
 pairs(solacp$scores,pch=21,bg = c("red", "blue")[unclass(Datos$Sexo)],
 main="Diagrama matricial de los componentes principales")
 ```
@@ -519,15 +687,17 @@ main="Diagrama matricial de los componentes principales")
  Sea $\mathbf{R}$ la matriz de correlaciones de orden $p$. Calcularemos sus
 valores propios
 
-$\lambda_1\geq \lambda_2\geq\ldots\geq\lambda_p$
+$$\lambda_1\geq \lambda_2\geq\ldots\geq\lambda_p.$$
 
 y los correspondientes vectores propios ortonormales.
 
-$\mathbf{u}_1,\mathbf{u}_2,\ldots,\mathbf{u}_p$
+$$\mathbf{u}_1,\mathbf{u}_2,\ldots,\mathbf{u}_p.$$
 
 Las direcciones de los componentes principales quedan determinadas por el vector
 propio
 correspondiente.
+
+## ACP correlaciones.
 
  \blue{Cálculo de las coordenadas de la nueva matriz de datos respecto de las
 nuevas variables $CP$:}
@@ -538,8 +708,8 @@ vectores propios.
  
 ## Ejemplo
 
-*Realicemos un análisis ACP de correlaciones con el ejemplo anterior.
-*La matriz tipificada de datos es:
+* Realicemos un análisis ACP de correlaciones con el ejemplo anterior.
+* La matriz tipificada de datos es:
 $$
 \mathbf{Z}=
 \left(
@@ -562,7 +732,7 @@ $$
  
 ## Ejemplo
 
-*La matriz de correlaciones $\mathbf{R}$ vale, en este caso:
+* La matriz de correlaciones $\mathbf{R}$ vale, en este caso:
 $$
 \mathbf{R} =
 \left(
@@ -574,11 +744,11 @@ $$
 \end{array}
 \right)
 $$
-*Los valores propios de dicha matriz son:
+* Los valores propios de dicha matriz son:
 $$
 2.560,\quad 1.229,\quad 0.208,\quad 0.00325.
 $$
-*La matriz de los vectores propios es:
+* La matriz de los vectores propios es:
 $$
 \left(
 \begin{array}{rrrr}
@@ -595,7 +765,7 @@ $$
  
 ## Ejemplo
 
-*Las expresiones de las variables nuevas $CP_i$ en función de las antiguas
+* Las expresiones de las variables nuevas $CP_i$ en función de las antiguas
 $Z_i$son:
 
 $$
@@ -617,7 +787,7 @@ $$
  
 ## Ejemplo
 
-*La nueva matriz de datos respecto de las nuevas variables será:
+* La nueva matriz de datos respecto de las nuevas variables será:
 
 $$
 \mathbf{CP} = \mathbf{Z} \mathbf{u} =
@@ -634,7 +804,7 @@ $$
 \end{pmatrix}
 $$
 
-*Se puede observar que si calculamos el productoescalar de dos columnas
+* Se puede observar que si calculamos el producto escalar de dos columnas
 cualesquiera, es resultado es nulo. Es decir, las columnas de la nueva matriz de
 datos son ortogonales dos a dos.
 
@@ -1263,7 +1433,7 @@ $\lambda_i\geq\overline{\lambda}=\frac{\sum_{i=1}^p \lambda_i}{p}$
 
 
 * En el caso del análisis de correlaciones, la condición anterior equivale a
-retener los componentes con valores propios mayores que~1.
+retener los componentes con valores propios mayores que 1.
 
 ## Retención de componentes
 
@@ -1289,7 +1459,7 @@ tenemos que retener los componentes $\mathbf{CP}_1$ y $\mathbf{CP}_2$.
 * Se representan los vectores propios ordenados de mayor a menor unidos por una poligonal o
 simplemente un diagrama de barras. 
 
-* Se retienen los componente hasta el que *sedimenta*. El códigoes el siguiente
+* Se retienen los componente hasta el que *sedimenta*. El código es el siguiente
 
 
 
@@ -1347,7 +1517,7 @@ $$KMO=\frac{\sum_j \sum_{i\not =j} r_{i j}^2}{\sum_j \sum_{i\not =j} r^2_{i j}+
 
 
 donde $r_{i j}$ son los coef. de correlación entre las variables $i$ y $j$,
-mientras quelos $a_{i j}$ son los coef. de correlación parcial entre las
+mientras que los $a_{i j}$ son los coef. de correlación parcial entre las
 variables $i$ y $j$ (equivalentes a las correlaciones entre los residuos de la
  regresiones de estas dos variables con las restantes).
 
@@ -1369,7 +1539,7 @@ cor2pcor(cor(X))
 
 
 
-Crearemos una funcióin quew calcule  el KMO:
+Crearemos una funcióin que calcule  el KMO:
 
 ```{r kmo1}
 kmo.test <- function(df){
@@ -1393,7 +1563,7 @@ kmo.test(X)
 
 
 
-El testde esfericidad de Barlett contrasta si la matriz de correlaciones es la identidad.
+El test esfericidad de Barlett contrasta si la matriz de correlaciones es la identidad.
 
 $$\left\{ \begin{array}{l}
 H_0: \mbox{La matriz de correlaciones es la identidad}\\\\ H_1: \mbox{es
@@ -1417,210 +1587,185 @@ library(psych)
 cortest.bartlett(cor(X),n=n)
 ```
 
-El $p$-valor es muy pequeño por lo que no podemos aceptar la hipóstesi nula,
+El $p$-valor es muy pequeño por lo que no podemos aceptar la hipótesis nula,
 la matriz de correlaciones es significativamente distinta de la identidad.
 
 
 
+# Descomposición en valores singulares (SVD)
 
-# Representaciones gráficas. Biplots
+## Descomposición en valores singulares
 
-## Biplots
-
-* El análisis de componentes principales se utiliza para representar gráficamente 
-latabla de datos. Entre otras representaciones gráficas la denominada
-\red{biplot} es uno de los más útiles.
-* Este gráfico presenta los componentes principales junto con la proyección de las 
-variables originales *como si fueran vectores* que \red{expresan la dirección en la que aumentan
-las variables}.
-* Para obtener esta \red{representación conjunta} las coordenadas de los componentes principales
-y las variables es \red{necesario modificarlas multiplicándolas por constante de escala}. Esta constante puede variar 
-según el algoritmo que se utilice.
-
-
-
-## Ejemplo
-
-* En el mismo gráfico, se representan como vectores cada una de las
-variables iniciales $\mathbf{X}$.
-Las coordenadas de dichas variables son las correlaciones de dichas variables
-con las componentes principales divididas por la raíz cuadrada del valor propio
-correspondiente a la componente principal.
-* Sea $\tilde{\mathbf{X}}_i$ es una variable inicial. Calculemos la
-coordenadas de dicha variable inicial como vector de dos componentes
-representado en el biplot. Dichas coordenadas valen:
-$$
-\frac{\mbox{Cor}(\tilde{\mathbf{X}}_i,\mathbf{CP}_j)}{\sqrt{\lambda_j}},
-$$
-para $j=1,2$ que son los ejes correspondientes a las dos componentes
-principales.
-
-
-
-
-
-## Ejemplo
-
-* Escrito en forma matricial, se calcula:
-$$
-\mbox{Cor}(\tilde{\mathbf{X}},\mathbf{CP})\cdot \mbox{diag}\left(\frac{1}{\sqrt{\lambda}}\right).
-$$
-
-* La expresión anterior, usando las propiedades de las componentes
-principales es equivalente a calcular
-$$
-\mathbf{u}\cdot\mbox{diag}\left(\sqrt{\lambda}\right).
-$$
-* Los vectores correspondientes a las variables iniciales se multiplican por
-un factor de escala dependiente de cada paquete estadístico que se use (en el
-caso de {\tt R}, dicho factor es $3$).
-
-
-
-
-## Ejemplo
-
-* Vamos a realizar un biplot con los datos del ejemplo que hemos
-desarrollado en este capítulo. Se tendrá en cuenta el caso de ACP usando la
-matriz de covarianzas.
-* Las coordenadas de las componentes principales de nuestros datos eran las
-siguientes:
+Dada un matriz de datos $\mathbf{X}$ de dimensiones $n\times p$, donde $n\geq p$ y  de rango
+$p$, se puede descomponer en producto de tres matrices:
 
 $$
-\mathbf{CP}= 
-\left(
-\begin{array}{rrrr}
--3.054 & 0.201 & -0.827 & 0.280 \\
--12.719 & 2.480 & -0.333 & 0.103 \\
--4.293 & -3.295 & -0.025 & -0.228 \\
-7.373 & -6.736 & -0.183 & 0.029 \\
--15.299 & 0.565 & 1.029 & 0.183 \\
--1.354 & 1.319 & 1.463 & -0.321 \\
--6.997 & 1.411 & -1.460 & -0.233 \\
-13.677 & 0.437 & 0.629 & 0.282 \\
-22.666 & 3.618 & -0.292 & -0.095 
-\end{array}
-\right).
+\mathbf{X}=\mathbf{U}\cdot \Sigma\cdot \mathbf{V}^t, \mbox{ donde}
 $$
 
 
-
-## Ejemplo
-
-* Sólo representaremos las dos primeras componentes principales que
-corresponden a las dos primeras columnas de la matriz anterior.
-* Vamos a estandarizar los datos. Calculemos el módulo de cada componente
-principal:
-$$
-\begin{array}{rl}
-|\mathbf{CP}_1|= & \sqrt{(-3.054)^2+\cdots +(22.666)^2} = 35.065, \\
-|\mathbf{CP}_2|= & \sqrt{(0.201)^2+\cdots +(3.618)^2} = 8.930.
-\end{array}
-$$
+* $\mathbf{U}$ es una matriz ortogonal $n\times p$ que tiene por columnas los $p$ vectores propios de la matriz $\mathbf{X}\mathbf{X}^t$ asociados a los $p$ valores propios no nulos.
+*  ${\Sigma}$ es una matriz diagonal $p\times p$ que tiene por diagonal las raíces cuadradas de los valores propios de la matriz $\mathbf{X}^t\mathbf{X}$.
+*  $\mathbf{V}$ es una matriz ortogonal $p\times p$ que tiene por columnas los vectores propios de la matriz $\mathbf{X}^t\cdot \mathbf{X}$ asociados a los $p$ valores propios no nulos.
 
 
 
-* Dividiendo cada una de las dos componentes principales por su módulo
-correspondiente, obtenemos las coordenadas del biplot de cada dato:
+
+
+## Descomposición en valores singulares (SVD): ejemplo
+
+```{r codigosvd, echo=FALSE}
+XtX=t(cX)%*%cX
+XXt=cX%*%t(cX)
+l2=eigen(XtX)$values
+m.u=eigen(XXt)$vectors[,1:4]
+m.v=eigen(XtX)$vectors
+m.Sigma=diag(sqrt(l2))
+library(xtable)
+```
+
+Consideramos la matriz $\mathbf{X}$ como la matriz  de datos centrada del ejemplo de los niños.
+
+```{r, echo=FALSE}
+cX
+```
+
+
+
+
+## Descomposición en valores singulares (SVD): ejemplo
+
+
+La matriz $\mathbf{X}^t\cdot \mathbf{X}$ vale:
+
 
 
 
 $$
-{\tiny
-\left(
-\begin{array}{rr}
--3.054/35.065&0.201/8.903 \\
--12.719/35.065&2.480/8.903 \\
--4.293/35.065&-3.295/8.903 \\
-7.373/35.065&-6.736/8.903 \\
--15.299/35.065&0.565/8.903 \\
--1.354/35.065&1.319/8.903 \\
--6.997/35.065&1.411/8.903 \\
-13.677/35.065&0.437/8.903 \\
-22.666/35.065&3.618/8.903 \\
-\end{array}
-\right)=
-\left(
-\begin{array}{rr}
--0.087 & 0.023 \\
--0.363 & 0.278 \\
--0.122 & -0.369 \\
-0.210 & -0.754 \\
--0.436 & 0.063 \\
--0.039 & 0.148 \\
--0.200 & 0.158 \\
-0.390 & 0.049 \\
-0.646 & 0.405 \\
-\end{array}
-\right).}
+\mathbf{X}^t\cdot \mathbf{X}=\begin{pmatrix}
+  1074.000 & 388.200 & 55.330 & 112.600 \\ 
+  388.200 & 154.736 & 10.330 & 16.977 \\ 
+  55.330 & 10.330 & 9.995 & 21.851 \\ 
+  112.600 & 16.977 & 21.851 & 77.620 
+\end{pmatrix}
 $$
 
-## Ejemplo
+## Descomposición en valores singulares (SVD): ejemplo
 
-
-* Ahora, vamos a encontrar las componentes de los vectores que
-representan las variables. Recordemos que la matriz de vectores propios de la
-matriz de covarianzas era:
-$$
-\mathbf{u}=
-\left(
-\begin{array}{rrrr}
-0.934 & -0.022 & 0.256 & 0.247 \\
-0.339 & 0.354 & -0.661 & -0.568 \\
-0.047 & -0.248 & 0.566 & -0.785 \\
-0.097 & -0.902 & -0.421 & -0.013 
-\end{array}
-\right),
-$$
-cuyos valores propios asociados eran $136.615,\quad 8.861,\quad 0.738,\quad
-0.0468.$
-
-
-
-
-
-## Ejemplo
-
-
-* Para hallar las coordenadas de los vectores que representarán las
-variables, hemos de multiplicar cada vector propio por la raíz cuadrada de su
-valor propio correspondiente y por $3$:
+La matriz $\mathbf{X}\cdot \mathbf{X}^t$ vale: (mostramos solo las 4 primeras columnas, la dimensión es $9\times 9$)
 
 $$
-\mathbf{u}\cdot 3\cdot
-\begin{pmatrix}
-\sqrt{136.615}&0&0&0\\
-0&\sqrt{8.861}&0&0\\
-0&0&\sqrt{0.738}&0\\
-0&0&0&\sqrt{0.0468}\\
-\end{pmatrix} $$
-$$=
-\left(
-\begin{array}{rrrr}
-32.764 & -0.200 & 0.659 & 0.160 \\
-11.904 & 3.163 & -1.704 & -0.368 \\
-1.648 & -2.212 & 1.458 & -0.509 \\
-3.409 & -8.051 & -1.086 & -0.009 \\
-\end{array}
-\right).
+{\footnotesize
+\mathbf{X}\cdot \mathbf{X}^t=\begin{pmatrix}
+10.128 & 39.643 & 12.403 & -23.708 \\ 
+  39.643 & 168.049 & 46.412 & -110.415 \\ 
+  12.403 & 46.412 & 29.334 & -9.455 \\ 
+  -23.708 & -110.415 & -9.455 & 99.768 \\ 
+  46.034 & 195.673 & 63.742 & -116.788 \\ 
+  3.100 & 19.974 & 1.502 & -19.147 \\ 
+  22.791 & 92.951 & 25.476 & -60.824 \\ 
+  -42.118 & -173.052 & -60.230 & 97.780 \\ 
+  -68.273 & -279.234 & -109.185 & 142.790
+\end{pmatrix}
+}
 $$
 
 
 
+## Descomposición en valores singulares (SVD): ejemplo
 
-## Ejemplo biplot
+Los valores propios de la matriz $\mathbf{X}^t\mathbf{X}$ son:
 
-
-Las componentes de los vectores que representarán las variables serán:
 $$
-\mbox{CP}_1 (32.764,-0.200),\mbox{CP}_2 (11.904,3.163),
-$$
-$$
-\mbox{CP}_3 (1.648,-2.212), \mbox{CP}_4 (3.409,-8.051).
+\lambda_1=1229.538,\quad \lambda_2=79.751,\quad \lambda_3=6.641, \quad  
+\lambda_4= 0.421. 
 $$
 
-El código `biplot(solacp)` dibuja el biplot de los dos 
-primeros componentes.
+Por lo tanto, la matriz $\Sigma$ será:
+
+$$
+\Sigma =\begin{pmatrix} 
+35.065 & 0.000 & 0.000 & 0.000 \\ 
+  0.000 & 8.930 & 0.000 & 0.000 \\ 
+  0.000 & 0.000 & 2.577 & 0.000 \\ 
+  0.000 & 0.000 & 0.000 & 0.649 
+  \end{pmatrix}
+$$
+
+
+## Descomposición en valores singulares (SVD): ejemplo
+
+La matriz $\mathbf{U}$ será la siguiente la matriz $10\times 4$ de los vectores propios de los valores propios no nulos de $X\cdot X^t$:
+
+$$
+\mathbf{U} =\begin{pmatrix}
+-0.087 & 0.017 & 0.332 & 0.426 \\ 
+  -0.362 & 0.279 & 0.129 & 0.159 \\ 
+  -0.123 & -0.360 & -0.003 & -0.354 \\ 
+  0.208 & -0.750 & 0.067 & 0.036 \\ 
+  -0.436 & 0.076 & -0.420 & 0.294 \\ 
+  -0.038 & 0.140 & -0.558 & -0.485 \\ 
+  -0.199 & 0.153 & 0.577 & -0.370 \\ 
+  0.391 & 0.022 & -0.203 & 0.434 \\ 
+  0.647 & 0.424 & 0.079 & -0.140 
+  \end{pmatrix}
+$$
+
+
+## Descomposición en valores singulares (SVD): ejemplo
+
+La matriz $\mathbf{V}$ será la siguiente matriz $4\times 4$ de los valores propios de $X^t\cdot X$ :
+
+$$
+\mathbf{V} =\begin{pmatrix}
+0.934 & -0.022 & 0.256 & 0.247 \\ 
+  0.339 & 0.354 & -0.661 & -0.568 \\ 
+  0.047 & -0.248 & 0.566 & -0.785 \\ 
+  0.097 & -0.902 & -0.421 & -0.013
+  \end{pmatrix}
+$$
+Comprobar que $\mathbf{X}=\mathbf{U}\Sigma\mathbf{V}t$.
+
+
+
+
+
+
+# Relación ACP con SVD
+
+## Relación ACP con SVD
+
+Consideramos una matriz de datos $\mathbf{X}$ $n\times p$ que puede ser centrada (\red{ACP de covarianzas}) o tipificada (\red{ACP de correlaciones}).
+
+Si consideramos su \red{SVD}, $\mathbf{X}=\mathbf{U}\Sigma\mathbf{V}t$, tenemos que las \red{componentes principales}, $\mathbf{Y}$, valen $\mathbf{CP}=\mathbf{U}\Sigma$.
+
+## Relación ACP con SVD
+
+La prueba es muy sencilla. Recordamos que las componentes principales son: $\mathbf{CP}=\mathbf{X}\mathbf{V}$, donde $\mathbf{V}$ era la matriz de vectores propios de la matriz de covarianzas 
+
+$$\mathbf{S}=\frac{1}{n}\mathbf{X}^t\cdot \mathbf{X}.$$ 
+
+Ahora bien, esta matriz coincidirá con la matriz de vectores propios de la matriz $\mathbf{X}t\mathbf{X}$ puesto que los vectores propios de la matriz anterior y de la matriz de covarianzas $\mathbf{S}$ son los mismos.
+
+Por lo tanto,
+
+$$\mathbf{Y}=\mathbf{X}\mathbf{V}=\mathbf{U}\Sigma\mathbf{V}t\mathbf{V}=\mathbf{U}\Sigma,$$
+puesto que la matriz $\mathbf{V}$ es ortogonal.
+
+
+## Relación ACP con SVD
+
+\blue{Teorema}
+
+El producto escalar de dos \blue{filas} de la matriz de datos $\mathbf{X}$ coincide con el producto escalar de dos \blue{filas} de la matriz de \red{componentes principales} $\mathbf{Y}$.
+
+**Prueba**
+
+El producto escalar de dos filas de la matriz $\mathbf{X}$ viene dada por la matriz $\mathbf{X}\cdot\mathbf{X}^t$ pero:
+$$
+\mathbf{X}\cdot \mathbf{X}^t= \mathbf{Y}\cdot \mathbf{V}^t\cdot\mathbf{V}\cdot\mathbf{Y}^t=\mathbf{Y}\cdot\mathbf{Y}^t,
+$$
+esta última matriz nos da el producto escalar de dos filas de la matriz de \red{componentes principales}.
 
 
 ## Ejemplo biplot 
@@ -1690,6 +1835,7 @@ ejemplo.
 $X_j$ es:
 
 $$h_j=r_{j 1}^2=\left( u_{1 j}\sqrt{\lambda_1}\right)^2$$
+
 * Si retenemos los componentes$CP_1$ y $CP_2$ la comunalidad de la
 variable $X_j$ es:
 
@@ -1774,7 +1920,7 @@ y a la búsqueda de factores.
 
 
 
-\blue{Relación del ACP conotras técnicas de análisis de datos}
+\blue{Relación del ACP con otras técnicas de análisis de datos}
 
 *  Regresión Lineal Múltiple
 *  Clasificación.

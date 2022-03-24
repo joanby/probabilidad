@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.9)  13 NOV 2021 19:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.12.14)  14 DEC 2021 18:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**AnalisisComponentesPrincipales.tex
-(./AnalisisComponentesPrincipales.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-10-18> (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
+**AnalisisComponentesPrincipales_fusion.tex
+(./AnalisisComponentesPrincipales_fusion.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2021-11-22> (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
 dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2021/10/18 v3.64 A class for typesetting presentations
 
@@ -14,20 +14,20 @@ des.sty
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.s
 ty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count182
+\etb@tempcnta=\count183
 )
 \beamer@tempbox=\box50
-\beamer@tempcount=\count183
-\c@beamerpauses=\count184
+\beamer@tempcount=\count184
+\c@beamerpauses=\count185
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbasede
 code.sty
-\beamer@slideinframe=\count185
-\beamer@minimum=\count186
+\beamer@slideinframe=\count186
+\beamer@minimum=\count187
 \beamer@decode@box=\box51
 )
 \beamer@commentbox=\box52
-\beamer@modecount=\count187
+\beamer@modecount=\count188
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
@@ -56,26 +56,26 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \beamer@sectionbox=\box56
 \beamer@logobox=\box57
 \beamer@linebox=\box58
-\beamer@sectioncount=\count188
-\beamer@subsubsectionmax=\count189
-\beamer@subsectionmax=\count190
-\beamer@sectionmax=\count191
-\beamer@totalheads=\count192
-\beamer@headcounter=\count193
-\beamer@partstartpage=\count194
-\beamer@sectionstartpage=\count195
-\beamer@subsectionstartpage=\count196
-\beamer@animationtempa=\count197
-\beamer@animationtempb=\count198
-\beamer@xpos=\count199
-\beamer@ypos=\count266
-\beamer@ypos@offset=\count267
-\beamer@showpartnumber=\count268
-\beamer@currentsubsection=\count269
-\beamer@coveringdepth=\count270
-\beamer@sectionadjust=\count271
-\beamer@toclastsection=\count272
-\beamer@tocsectionnumber=\count273
+\beamer@sectioncount=\count189
+\beamer@subsubsectionmax=\count190
+\beamer@subsectionmax=\count191
+\beamer@sectionmax=\count192
+\beamer@totalheads=\count193
+\beamer@headcounter=\count194
+\beamer@partstartpage=\count195
+\beamer@sectionstartpage=\count196
+\beamer@subsectionstartpage=\count197
+\beamer@animationtempa=\count198
+\beamer@animationtempb=\count199
+\beamer@xpos=\count266
+\beamer@ypos=\count267
+\beamer@ypos@offset=\count268
+\beamer@showpartnumber=\count269
+\beamer@currentsubsection=\count270
+\beamer@coveringdepth=\count271
+\beamer@sectionadjust=\count272
+\beamer@toclastsection=\count273
+\beamer@tocsectionnumber=\count274
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbaseop
 tions.sty
@@ -92,9 +92,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count274
-\Gm@cntv=\count275
-\c@Gm@tempcnt=\count276
+\Gm@cnth=\count275
+\Gm@cntv=\count276
+\c@Gm@tempcnt=\count277
 \Gm@bindingoffset=\dimen154
 \Gm@wd@mp=\dimen155
 \Gm@odd@mp=\dimen156
@@ -105,19 +105,19 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen161
 \Gm@dimlist=\toks17
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfc
 ore.sty
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.s
 ty
-Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.s
 ty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphi
 cs.cfg
@@ -179,14 +179,14 @@ keysfiltered.code.tex
 \pgf@yd=\dimen175
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count277
-\c@pgf@countb=\count278
-\c@pgf@countc=\count279
-\c@pgf@countd=\count280
+\c@pgf@counta=\count278
+\c@pgf@countb=\count279
+\c@pgf@countc=\count280
+\c@pgf@countd=\count281
 \t@pgf@toka=\toks22
 \t@pgf@tokb=\toks23
 \t@pgf@tokc=\toks24
-\pgf@sys@id@count=\count281
+\pgf@sys@id@count=\count282
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/p
 gf.cfg
@@ -205,8 +205,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/p
 gfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count282
-\pgfsyssoftpath@bigbuffer@items=\count283
+\pgfsyssoftpath@smallbuffer@items=\count283
+\pgfsyssoftpath@bigbuffer@items=\count284
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/p
 gfsysprotocol.code.tex
@@ -243,7 +243,7 @@ til.code.tex)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathp
 arser.code.tex
 \pgfmath@dimen=\dimen176
-\pgfmath@count=\count284
+\pgfmath@count=\count285
 \pgfmath@box=\box60
 \pgfmath@toks=\toks25
 \pgfmath@stack@operand=\toks26
@@ -269,7 +269,7 @@ unctions.misc.code.tex)
 unctions.integerarithmetics.code.tex)))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathf
 loat.code.tex
-\c@pgfmathroundto@lastzeros=\count285
+\c@pgfmathroundto@lastzeros=\count286
 ))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.c
 ode.tex)
@@ -309,7 +309,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box61
 \pgf@hbox=\box62
 \pgf@layerbox@main=\box63
-\pgf@picture@serial@count=\count286
+\pgf@picture@serial@count=\count287
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcoregraphicstate.code.tex
@@ -344,8 +344,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 fcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen256
-\pgf@sys@shading@range@num=\count287
-\pgf@shadingcount=\count288
+\pgf@sys@shading@range@num=\count288
+\pgf@shadingcount=\count289
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pg
 fcoreimage.code.tex
@@ -375,8 +375,8 @@ File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/xxcol
 or.sty
 Package: xxcolor 2003/10/24 ver 0.1
-\XC@nummixins=\count289
-\XC@countmixins=\count290
+\XC@nummixins=\count290
+\XC@countmixins=\count291
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.s
 ty
@@ -431,8 +431,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen257
-\Hy@linkcounter=\count291
-\Hy@pagecounter=\count292
+\Hy@linkcounter=\count292
+\Hy@pagecounter=\count293
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
@@ -452,7 +452,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 .sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count293
+\Hy@SavedSpaceFactor=\count294
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -469,7 +469,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count294
+\c@Hy@tempcnt=\count295
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -485,7 +485,7 @@ calc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count295
+\Fld@menulength=\count296
 \Field@Width=\dimen259
 \Fld@charsize=\dimen260
 Package hyperref Info: Hyper figures OFF on input line 6076.
@@ -497,7 +497,7 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6101.
 Package hyperref Info: PDF/A mode OFF on input line 6106.
 LaTeX Info: Redefining \ref on input line 6146.
 LaTeX Info: Redefining \pageref on input line 6150.
-\Hy@abspage=\count296
+\Hy@abspage=\count297
 
 Package hyperref Message: Stopped early.
 
@@ -510,12 +510,12 @@ File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.
 sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
 with kernel methods
 )
-\Fld@listcount=\count297
-\c@bookmark@seq@number=\count298
+\Fld@listcount=\count298
+\c@bookmark@seq@number=\count299
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/reru
 nfilecheck.sty
@@ -560,36 +560,36 @@ sc.sty)
 oscreens.sty)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbaseov
 erlay.sty
-\beamer@argscount=\count299
+\beamer@argscount=\count300
 \beamer@lastskipcover=\skip50
-\beamer@trivlistdepth=\count300
+\beamer@trivlistdepth=\count301
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbaseti
 tle.sty)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbasese
 ction.sty
-\c@lecture=\count301
-\c@part=\count302
-\c@section=\count303
-\c@subsection=\count304
-\c@subsubsection=\count305
+\c@lecture=\count302
+\c@part=\count303
+\c@section=\count304
+\c@subsection=\count305
+\c@subsubsection=\count306
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbasefr
 ame.sty
 \beamer@framebox=\box65
 \beamer@frametitlebox=\box66
 \beamer@zoombox=\box67
-\beamer@zoomcount=\count306
-\beamer@zoomframecount=\count307
+\beamer@zoomcount=\count307
+\beamer@zoomframecount=\count308
 \beamer@frametextheight=\dimen261
-\c@subsectionslide=\count308
+\c@subsectionslide=\count309
 \beamer@frametopskip=\skip51
 \beamer@framebottomskip=\skip52
 \beamer@frametopskipautobreak=\skip53
 \beamer@framebottomskipautobreak=\skip54
 \beamer@envbody=\toks29
 \framewidth=\dimen262
-\c@framenumber=\count309
+\c@framenumber=\count310
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbaseve
 rbatim.sty
@@ -598,7 +598,7 @@ rbatim.sty
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbasefr
 amesize.sty
 \beamer@splitbox=\box68
-\beamer@autobreakcount=\count310
+\beamer@autobreakcount=\count311
 \beamer@autobreaklastheight=\dimen263
 \beamer@frametitletoks=\toks30
 \beamer@framesubtitletoks=\toks31
@@ -642,8 +642,8 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks33
 )
 \beamer@bibiconwidth=\skip55
-\c@figure=\count311
-\c@table=\count312
+\c@figure=\count312
+\c@table=\count313
 \abovecaptionskip=\skip56
 \belowcaptionskip=\skip57
 )
@@ -654,12 +654,12 @@ vigation.sty
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbaseth
 eorems.sty
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2021/04/20 v2.17j AMS math features
+Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip58
 For additional information on amsmath, use the `?' option.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+Package: amstext 2021/08/26 v2.01 AMS text
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks34
@@ -670,15 +670,15 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen274
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.st
 y
-Package: amsopn 2016/03/08 v2.02 operator names
+Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count313
+\inf@bad=\count314
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count314
-\leftroot@=\count315
+\uproot@=\count315
+\leftroot@=\count316
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count316
-\DOTSCASE@=\count317
+\classnum@=\count317
+\DOTSCASE@=\count318
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -687,15 +687,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen275
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count318
-\c@MaxMatrixCols=\count319
+\macc@depth=\count319
+\c@MaxMatrixCols=\count320
 \dotsspace@=\muskip17
-\c@parentequation=\count320
-\dspbrk@lvl=\count321
+\c@parentequation=\count321
+\dspbrk@lvl=\count322
 \tag@help=\toks35
-\row@=\count322
-\column@=\count323
-\maxfields@=\count324
+\row@=\count323
+\column@=\count324
+\maxfields@=\count325
 \andhelp@=\toks36
 \eqnshift@=\dimen276
 \alignsep@=\dimen277
@@ -707,8 +707,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \multlinegap=\skip59
 \multlinetaggap=\skip60
 \mathdisplay@stack=\toks38
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks39
@@ -721,7 +721,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip63
 \dth@everypar=\toks44
 )
-\c@theorem=\count325
+\c@theorem=\count326
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/beamer/beamerbaseth
 emes.sty))
@@ -743,23 +743,23 @@ ges.sty
 Package: pgfpages 2011/01/05 ver 0.02
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count326
-\calc@Bcount=\count327
+\calc@Acount=\count327
+\calc@Bcount=\count328
 \calc@Adimen=\dimen284
 \calc@Bdimen=\dimen285
 \calc@Askip=\skip64
 \calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count328
+\calc@Ccount=\count329
 \calc@Cskip=\skip66
 )
-\pgf@logicalpages=\count329
-\pgf@firstshipout=\count330
-\pgf@lastshipout=\count331
-\pgf@currentshipout=\count332
-\pgf@cpn=\count333
-\pgf@shipoutnextto=\count334
+\pgf@logicalpages=\count330
+\pgf@firstshipout=\count331
+\pgf@lastshipout=\count332
+\pgf@currentshipout=\count333
+\pgf@cpn=\count334
+\pgf@shipoutnextto=\count335
 \pgfphysicalheight=\dimen286
 \pgfphysicalwidth=\dimen287
 \pgfpages@shipoutbox=\box75
@@ -797,13 +797,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-)
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.st
-y
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
@@ -837,54 +830,56 @@ tim
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .sty
-Package: microtype 2021/10/31 v3.0 Micro-typographical refinements (RS)
+Package: microtype 2021/12/10 v3.0b Micro-typographical refinements (RS)
 \MT@toks=\toks47
-\MT@count=\count335
+\MT@count=\count336
 \MT@tempbox=\box76
-\MT@leftmarginkern=\dimen290
-\MT@rightmarginkern=\dimen291
-LaTeX Info: Redefining \textls on input line 1114.
-\MT@outer@kern=\dimen292
-LaTeX Info: Redefining \textmicrotypecontext on input line 1700.
-\MT@listname@count=\count336
+LaTeX Info: Redefining \leftprotrusion on input line 1010.
+LaTeX Info: Redefining \rightprotrusion on input line 1018.
+LaTeX Info: Redefining \textls on input line 1173.
+\MT@outer@kern=\dimen290
+LaTeX Info: Redefining \textmicrotypecontext on input line 1759.
+\MT@listname@count=\count337
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 -pdftex.def
-File: microtype-pdftex.def 2021/10/31 v3.0 Definitions specific to pdftex (RS)
-LaTeX Info: Redefining \lsstyle on input line 915.
-LaTeX Info: Redefining \lslig on input line 915.
+File: microtype-pdftex.def 2021/12/10 v3.0b Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 897.
+LaTeX Info: Redefining \lslig on input line 897.
 \MT@outer@space=\skip67
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype
 .cfg
-File: microtype.cfg 2021/10/31 v3.0 microtype main configuration file (RS)
+File: microtype.cfg 2021/12/10 v3.0b microtype main configuration file (RS)
 ))
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.s
 ty
-Package: fancyvrb 2021/10/15 v3.9 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count337
+Package: fancyvrb 2021/11/24\nobreakspace {} 4.1a\nobreakspace {}verbatim text 
+(tvz,hv)
+\FV@CodeLineNo=\count338
 \FV@InFile=\read3
 \FV@TabBox=\box77
-\c@FancyVerbLine=\count338
-\FV@StepNumber=\count339
+\c@FancyVerbLine=\count339
+\FV@StepNumber=\count340
 \FV@OutFile=\write5
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip68
-\fb@frw=\dimen293
-\fb@frh=\dimen294
-\FrameRule=\dimen295
-\FrameSep=\dimen296
+\fb@frw=\dimen291
+\fb@frh=\dimen292
+\FrameRule=\dimen293
+\FrameSep=\dimen294
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
-\col@sep=\dimen297
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen295
 \ar@mcellbox=\box78
-\extrarowheight=\dimen298
+\extrarowheight=\dimen296
 \NC@list=\toks48
 \extratabsurround=\skip69
 \backup@length=\skip70
@@ -893,28 +888,28 @@ Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.s
 ty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen299
-\lightrulewidth=\dimen300
-\cmidrulewidth=\dimen301
-\belowrulesep=\dimen302
-\belowbottomsep=\dimen303
-\aboverulesep=\dimen304
-\abovetopsep=\dimen305
-\cmidrulesep=\dimen306
-\cmidrulekern=\dimen307
-\defaultaddspace=\dimen308
-\@cmidla=\count340
-\@cmidlb=\count341
-\@aboverulesep=\dimen309
-\@belowrulesep=\dimen310
-\@thisruleclass=\count342
-\@lastruleclass=\count343
-\@thisrulewidth=\dimen311
+\heavyrulewidth=\dimen297
+\lightrulewidth=\dimen298
+\cmidrulewidth=\dimen299
+\belowrulesep=\dimen300
+\belowbottomsep=\dimen301
+\aboverulesep=\dimen302
+\abovetopsep=\dimen303
+\cmidrulesep=\dimen304
+\cmidrulekern=\dimen305
+\defaultaddspace=\dimen306
+\@cmidla=\count341
+\@cmidlb=\count342
+\@aboverulesep=\dimen307
+\@belowrulesep=\dimen308
+\@thisruleclass=\count343
+\@lastruleclass=\count344
+\@thisrulewidth=\dimen309
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/algorithm2e/algorit
 hm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count344
+\c@AlgoLine=\count345
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
@@ -923,7 +918,7 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ifoddpage/ifoddpage
 .sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count345
+\c@checkoddpage=\count346
 ) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
@@ -938,12 +933,12 @@ Package: relsize 2013/03/29 ver 4.1
 \skiplength=\skip77
 \algomargin=\skip78
 \skipalgocfslide=\skip79
-\algowidth=\dimen312
-\inoutsize=\dimen313
-\inoutindent=\dimen314
-\interspacetitleruled=\dimen315
-\interspacealgoruled=\dimen316
-\interspacetitleboxruled=\dimen317
+\algowidth=\dimen310
+\inoutsize=\dimen311
+\inoutindent=\dimen312
+\interspacetitleruled=\dimen313
+\interspacealgoruled=\dimen314
+\interspacetitleboxruled=\dimen315
 \algocf@ruledwidth=\skip80
 \algocf@inoutbox=\box80
 \algocf@inputbox=\box81
@@ -960,38 +955,38 @@ Package: relsize 2013/03/29 ver 4.1
 \algoheightrule=\skip87
 \algotitleheightruledefault=\skip88
 \algotitleheightrule=\skip89
-\c@algocfline=\count346
-\c@algocfproc=\count347
-\c@algocf=\count348
+\c@algocfline=\count347
+\c@algocfproc=\count348
+\c@algocf=\count349
 \algocf@algoframe=\box86
 \algocf@algobox=\box87
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend
 -pdftex.def
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count349
+\l__color_backend_stack_int=\count350
 \l__pdf_internal_box=\box88
-) (./AnalisisComponentesPrincipales.aux)
-\openout1 = `AnalisisComponentesPrincipales.aux'.
+) (./AnalisisComponentesPrincipales_fusion.aux)
+\openout1 = `AnalisisComponentesPrincipales_fusion.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 153.
-LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1038,7 +1033,7 @@ f-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 153.
+Package hyperref Info: Link coloring OFF on input line 157.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.st
 y
@@ -1052,61 +1047,62 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count350
+\c@section@level=\count351
 )
-LaTeX Info: Redefining \ref on input line 153.
-LaTeX Info: Redefining \pageref on input line 153.
-LaTeX Info: Redefining \nameref on input line 153.
-(./AnalisisComponentesPrincipales.out) (./AnalisisComponentesPrincipales.out)
+LaTeX Info: Redefining \ref on input line 157.
+LaTeX Info: Redefining \pageref on input line 157.
+LaTeX Info: Redefining \nameref on input line 157.
+(./AnalisisComponentesPrincipales_fusion.out) (./AnalisisComponentesPrincipales
+_fusion.out)
 \@outlinefile=\write6
-\openout6 = `AnalisisComponentesPrincipales.out'.
+\openout6 = `AnalisisComponentesPrincipales_fusion.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 153.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 157.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 153.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 157.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 153.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 157.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 153.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 157.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 153.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 153.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 157.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 153.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 153.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 153.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 157.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 153.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 153.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 153.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 157.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 153.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 153.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 153.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 157.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 153.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 153.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 157.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 153.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 157.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 153.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 153.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 153.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 153.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 153.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 157.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 153.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 157.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/translator/translat
 or-basic-dictionary-English.dict
@@ -1132,12 +1128,12 @@ Dictionary: translator-numbers-dictionary, Language: English
 or-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 153.
-Package microtype Info: Applying patch `item' on input line 153.
-Package microtype Info: Applying patch `toc' on input line 153.
-Package microtype Info: Applying patch `eqnum' on input line 153.
+LaTeX Info: Redefining \microtypecontext on input line 157.
+Package microtype Info: Applying patch `item' on input line 157.
+Package microtype Info: Applying patch `toc' on input line 157.
+Package microtype Info: Applying patch `eqnum' on input line 157.
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 153.
+Package microtype Warning: Unable to apply patch `footnote' on input line 157.
 
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -1145,7 +1141,7 @@ Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 153.
+LaTeX Info: Redefining \showhyphens on input line 157.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1153,12 +1149,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-(./AnalisisComponentesPrincipales.nav) [1
+(./AnalisisComponentesPrincipales_fusion.nav) [1
 
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
 .map}]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-176.
+180.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1167,27 +1163,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-76.
+80.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-176.
+180.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-176.
+180.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 176.
+(Font)              <10.95> on input line 180.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 176.
+(Font)              <8> on input line 180.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 176.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 176
+(Font)              <6> on input line 180.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 180
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1196,7 +1192,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 g
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 176
+LaTeX Font Info:    Trying to load font information for U+msb on input line 180
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1206,11 +1202,11 @@ g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 176.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 180.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 176.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 180.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 176.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 180.
 [2
 
 ] [3
@@ -1237,226 +1233,264 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 372.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 377.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 372.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 377.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 372.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 377.
 [14
 
 ] [15
 
-] [16
-
 ]
-Overfull \vbox (44.02011pt too high) detected at line 423
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter_geom1-1.pdf, i
+d=176, 255.95625pt x 212.795pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter_geom1-1.p
+df Graphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter_geom1-1.pd
+f>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/inter_geom1-1.pdf  used on input line 404.
+(pdftex.def)             Requested size: 255.95561pt x 212.79446pt.
+
+Overfull \vbox (36.51448pt too high) detected at line 404
+ []
+
+[16
+
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter_geom1-1.pdf
+>]
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter2-1.pdf, id=190
+, 255.95625pt x 212.795pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter2-1.pdf Gr
+aphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter2-1.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/inter2-1.pdf  used on input line 413.
+(pdftex.def)             Requested size: 255.95561pt x 212.79446pt.
+
+Overfull \vbox (36.51448pt too high) detected at line 413
  []
 
 [17
 
-] [18
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter2-1.pdf>]
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter3-1.pdf, id=204
+, 255.95625pt x 212.795pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter3-1.pdf Gr
+aphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter3-1.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/inter3-1.pdf  used on input line 421.
+(pdftex.def)             Requested size: 255.95561pt x 212.79446pt.
 
-] [19
+Overfull \vbox (37.12283pt too high) detected at line 421
+ []
+
+[18
+
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter3-1.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
+432.
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [19
 
 ]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter4.1-1.pdf, id=2
+26, 255.95625pt x 212.795pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter4.1-1.pdf 
+Graphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter4.1-1.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/inter4.1-1.pdf  used on input line 440.
+(pdftex.def)             Requested size: 255.95561pt x 212.79446pt.
 
-(./AnalisisComponentesPrincipales.vrb
+Overfull \vbox (37.12283pt too high) detected at line 440
+ []
+
+[20
+
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter4.1-1.pdf>] 
+[21
+
+]
+Overfull \vbox (44.02011pt too high) detected at line 472
+ []
+
+[22
+
+] [23
+
+] [24
+
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
-) [20
+)) [25
 
 ]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
 
-(./AnalisisComponentesPrincipales.vrb) [21
+(./AnalisisComponentesPrincipales_fusion.vrb) [26
 
 ]
-<AnalisisComponentesPrincipales_files/figure-beamer/unnamed-chunk-2-1.pdf, id=2
-11, 672.5125pt x 464.73625pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/unnamed-chunk-2-1.pdf 
-Graphic file (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/unn
-amed-chunk-2-1.pdf  used on input line 509.
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/unnamed-chunk-2-1.pd
+f, id=278, 672.5125pt x 464.73625pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/unnamed-chunk-2
+-1.pdf Graphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/unnamed-chunk-2-
+1.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/unnamed-chunk-2-1.pdf  used on input line 560.
 (pdftex.def)             Requested size: 307.28664pt x 212.34882pt.
-[22
+[27
 
- <./AnalisisComponentesPrincipales_files/figure-beamer/unnamed-chunk-2-1.pdf>] 
-[23
-
-] [24
-
-] [25
-
-] [26
-
-] [27
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/unnamed-chunk-2-1
+.pdf>] [28
 
 ]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
 
-(./AnalisisComponentesPrincipales.vrb
+(./AnalisisComponentesPrincipales_fusion.vrb) [29
+
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb) [30
+
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb) [31
+
+] [32
+
+] [33
+
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb
 Overfull \hbox (26.13667pt too wide) in paragraph at lines 22--22
 []\T1/lmtt/m/n/10.95 ## [1] 136.61529623   8.86125966   0.73789460   0.04677667
 [] 
  []
 
-) [28
+) [34
 
-] [29
+] [35
 
-] [30
+] [36
 
 ]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
 
-(./AnalisisComponentesPrincipales.vrb
+(./AnalisisComponentesPrincipales_fusion.vrb
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
 []\T1/lmtt/m/n/10.95 ##             [,1]       [,2]        [,3]        [,4][] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [1,]  -3.053748  0.2006059 -0.82694086  0.28015137[] 
+[]\T1/lmtt/m/n/10.95 ##  [1,]  -3.053710  0.2010126 -0.82701014  0.28011692[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [2,] -12.719227  2.4794016 -0.33290064  0.10262352[] 
+[]\T1/lmtt/m/n/10.95 ##  [2,] -12.719190  2.4798083 -0.33296991  0.10258907[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [3,]  -4.292580 -3.2951470 -0.02537552 -0.22788270[] 
+[]\T1/lmtt/m/n/10.95 ##  [3,]  -4.292542 -3.2947403 -0.02544479 -0.22791715[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [4,]   7.372619 -6.7367152 -0.18337900  0.02878003[] 
+[]\T1/lmtt/m/n/10.95 ##  [4,]   7.372657 -6.7363084 -0.18344827  0.02874558[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [5,] -15.299363  0.5649058  1.02897164  0.18330688[] 
+[]\T1/lmtt/m/n/10.95 ##  [5,] -15.299325  0.5653125  1.02890237  0.18327243[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [6,]  -1.354065  1.3188263  1.46321590 -0.32046716[] 
+[]\T1/lmtt/m/n/10.95 ##  [6,]  -1.354027  1.3192330  1.46314663 -0.32050161[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [7,]  -6.996583  1.4101388 -1.46016599 -0.23337069[] 
+[]\T1/lmtt/m/n/10.95 ##  [7,]  -6.996545  1.4105455 -1.46023526 -0.23340514[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [8,]  13.676693  0.4370899  0.62871103  0.28191432[] 
+[]\T1/lmtt/m/n/10.95 ##  [8,]  13.676731  0.4374966  0.62864176  0.28187987[] 
  []
 
 
 Overfull \hbox (3.14174pt too wide) in paragraph at lines 22--22
-[]\T1/lmtt/m/n/10.95 ##  [9,]  22.665914  3.6172335 -0.29151312 -0.09474550[] 
+[]\T1/lmtt/m/n/10.95 ##  [9,]  22.665952  3.6176402 -0.29158239 -0.09477995[] 
  []
 
-) [31
+) [37
 
 ]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
-
-(./AnalisisComponentesPrincipales.vrb
-<AnalisisComponentesPrincipales_files/figure-beamer/plotACP1-1.pdf, id=283, 690
-.58pt x 176.66pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/plotACP1-1.pdf Graphic
- file (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/plotACP1-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/plo
-tACP1-1.pdf  used on input line 7.
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/plotACP1-1.pdf, id=3
+58, 690.58pt x 176.66pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/plotACP1-1.pdf 
+Graphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/plotACP1-1.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/plotACP1-1.pdf  used on input line 821.
 (pdftex.def)             Requested size: 307.29132pt x 78.6094pt.
-<AnalisisComponentesPrincipales_files/figure-beamer/pairsacptodos-1.pdf, id=284
-, 672.5125pt x 480.79625pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/pairsacptodos-1.pdf Gr
-aphic file (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/pairsacptodos-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/pai
-rsacptodos-1.pdf  used on input line 20.
-(pdftex.def)             Requested size: 302.3405pt x 216.15088pt.
-<AnalisisComponentesPrincipales_files/figure-beamer/pairsacptodos1-1.pdf, id=28
-5, 672.5125pt x 464.73625pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/pairsacptodos1-1.pdf G
-raphic file (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/pairsacptodos1-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/pai
-rsacptodos1-1.pdf  used on input line 22.
+[38
+
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/plotACP1-1.pdf>]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb) [39
+
+]
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/pairsacptodos1-1.pdf
+, id=379, 672.5125pt x 464.73625pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/pairsacptodos1-
+1.pdf Graphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/pairsacptodos1-1
+.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/pairsacptodos1-1.pdf  used on input line 840.
 (pdftex.def)             Requested size: 307.28664pt x 212.34882pt.
-)
-Overfull \vbox (444.86673pt too high) detected at line 709
- []
+[40
 
-[32
-
- <./AnalisisComponentesPrincipales_files/figure-beamer/plotACP1-1.pdf> <./Anali
-sisComponentesPrincipales_files/figure-beamer/pairsacptodos-1.pdf> <./AnalisisC
-omponentesPrincipales_files/figure-beamer/pairsacptodos1-1.pdf>] [33
-
-] [34
-
-] [35
-
-] [36
-
-] [37
-
-] [38
-
-] [39
-
-] [40
-
-] [41
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/pairsacptodos1-1.
+pdf>] [41
 
 ] [42
 
-]
+] [43
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 935.
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 935.
-LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <5> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 935.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 935.
-[43
-
-]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 965.
-
-[44
+] [44
 
 ] [45
 
 ] [46
 
 ]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1048.
+Overfull \vbox (3.69504pt too high) detected at line 981
+ []
 
 [47
 
-]
-Overfull \vbox (8.19505pt too high) detected at line 1071
- []
-
-[48
+] [48
 
 ] [49
 
@@ -1464,17 +1498,41 @@ Overfull \vbox (8.19505pt too high) detected at line 1071
 
 ] [51
 
-] [52
+]
 
-] [53
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1094.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 1094.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <5> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 1094.
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1094.
+
+[52
+
+]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1124.
+
+[53
 
 ] [54
 
 ] [55
 
-] [56
+]
 
-] [57
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1207.
+
+[56
+
+]
+Overfull \vbox (8.19505pt too high) detected at line 1230
+ []
+
+[57
 
 ] [58
 
@@ -1512,193 +1570,219 @@ Overfull \vbox (8.19505pt too high) detected at line 1071
 
 ] [75
 
-]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+] [76
 
-(./AnalisisComponentesPrincipales.vrb) [76
+] [77
 
-]
-<AnalisisComponentesPrincipales_files/figure-beamer/screeplotlines-1.pdf, id=59
-5, 685.56125pt x 438.63875pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/screeplotlines-1.pdf G
-raphic file (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/screeplotlines-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/scr
-eeplotlines-1.pdf  used on input line 1529.
-(pdftex.def)             Requested size: 307.2967pt x 196.6159pt.
-[77
+] [78
 
- <./AnalisisComponentesPrincipales_files/figure-beamer/screeplotlines-1.pdf>]
-<AnalisisComponentesPrincipales_files/figure-beamer/screeplotbar-1.pdf, id=610,
- 665.48625pt x 257.96375pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/screeplotbar-1.pdf Gra
-phic file (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/screeplotbar-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/scr
-eeplotbar-1.pdf  used on input line 1540.
-(pdftex.def)             Requested size: 307.29515pt x 119.11742pt.
-[78
-
- <./AnalisisComponentesPrincipales_files/figure-beamer/screeplotbar-1.pdf>] [79
+] [79
 
 ] [80
 
-]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+] [81
 
-(./AnalisisComponentesPrincipales.vrb) [81
-
-]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
-
-(./AnalisisComponentesPrincipales.vrb
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-49.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (31.8854pt too wide) in paragraph at lines 49--49
-[]\T1/lmtt/m/n/10.95 ## Warning: package \TS1/lmtt/m/n/10.95 '\T1/lmtt/m/n/10.9
-5 psych\TS1/lmtt/m/n/10.95 ' \T1/lmtt/m/n/10.95 was built under R version 4.0.5
-[] 
- []
-
-)
-Overfull \vbox (392.97627pt too high) detected at line 1660
- []
-
-[82
+] [82
 
 ] [83
 
 ] [84
 
-] [85
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
 
-] [86
+(./AnalisisComponentesPrincipales_fusion.vrb) [85
 
 ]
-Overfull \vbox (1.89082pt too high) detected at line 1755
- []
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotlines-1.pdf
+, id=680, 685.56125pt x 438.63875pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotlines-
+1.pdf Graphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotlines-1
+.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/screeplotlines-1.pdf  used on input line 1687.
+(pdftex.def)             Requested size: 307.2967pt x 196.6159pt.
+[86
 
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotlines-1.
+pdf>]
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotbar-1.pdf, 
+id=695, 665.48625pt x 257.96375pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotbar-1.
+pdf Graphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotbar-1.p
+df>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/screeplotbar-1.pdf  used on input line 1698.
+(pdftex.def)             Requested size: 307.29515pt x 119.11742pt.
 [87
 
-]
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1805.
-
-
-Overfull \vbox (41.82457pt too high) detected at line 1805
- []
-
-[88
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotbar-1.pd
+f>] [88
 
 ] [89
 
-] [90
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb) [90
 
 ]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
 
-(./AnalisisComponentesPrincipales.vrb) [91
+(./AnalisisComponentesPrincipales_fusion.vrb
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
+)
+Overfull \vbox (362.5387pt too high) detected at line 1809
+ []
+
+[91
+
+] [92
+
+] [93
 
 ]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
 
-(./AnalisisComponentesPrincipales.vrb) [92
-
-]
-<AnalisisComponentesPrincipales_files/figure-beamer/biplot3-1.pdf, id=715, 709.
-65125pt x 352.31625pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/biplot3-1.pdf Graphic 
-file (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/biplot3-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/bip
-lot3-1.pdf  used on input line 1892.
-(pdftex.def)             Requested size: 307.29893pt x 152.56284pt.
-[93
-
- <./AnalisisComponentesPrincipales_files/figure-beamer/biplot3-1.pdf>] [94
+(./AnalisisComponentesPrincipales_fusion.vrb) [94
 
 ] [95
 
-] [96
+]
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 18
+98.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 1898.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <9> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 1898.
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1898.
+
+[96
 
 ] [97
 
 ] [98
 
-]
-\openout4 = `AnalisisComponentesPrincipales.vrb'.
+] [99
 
-(./AnalisisComponentesPrincipales.vrb) [99
+] [100
 
-]
-<AnalisisComponentesPrincipales_files/figure-beamer/biplor-1.pdf, id=767, 709.6
-5125pt x 352.31625pt>
-File: AnalisisComponentesPrincipales_files/figure-beamer/biplor-1.pdf Graphic f
-ile (type pdf)
-<use AnalisisComponentesPrincipales_files/figure-beamer/biplor-1.pdf>
-Package pdftex.def Info: AnalisisComponentesPrincipales_files/figure-beamer/bip
-lor-1.pdf  used on input line 1994.
-(pdftex.def)             Requested size: 307.29893pt x 152.56284pt.
-[100
-
- <./AnalisisComponentesPrincipales_files/figure-beamer/biplor-1.pdf>] [101
+] [101
 
 ] [102
 
+] [103
+
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb) [104
+
+]
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplot3-1.pdf, id=82
+0, 709.65125pt x 352.31625pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplot3-1.pdf G
+raphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplot3-1.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/biplot3-1.pdf  used on input line 2028.
+(pdftex.def)             Requested size: 307.29893pt x 152.56284pt.
+[105
+
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplot3-1.pdf>] [
+106
+
+] [107
+
+] [108
+
+] [109
+
+] [110
+
+]
+\openout4 = `AnalisisComponentesPrincipales_fusion.vrb'.
+
+(./AnalisisComponentesPrincipales_fusion.vrb) [111
+
+]
+<AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplor-1.pdf, id=872
+, 709.65125pt x 352.31625pt>
+File: AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplor-1.pdf Gr
+aphic file (type pdf)
+<use AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplor-1.pdf>
+Package pdftex.def Info: AnalisisComponentesPrincipales_fusion_files/figure-bea
+mer/biplor-1.pdf  used on input line 2135.
+(pdftex.def)             Requested size: 307.29893pt x 152.56284pt.
+[112
+
+ <./AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplor-1.pdf>] [1
+13
+
+] [114
+
 ]
 \tf@nav=\write7
-\openout7 = `AnalisisComponentesPrincipales.nav'.
+\openout7 = `AnalisisComponentesPrincipales_fusion.nav'.
 
 \tf@toc=\write8
-\openout8 = `AnalisisComponentesPrincipales.toc'.
+\openout8 = `AnalisisComponentesPrincipales_fusion.toc'.
 
 \tf@snm=\write9
-\openout9 = `AnalisisComponentesPrincipales.snm'.
+\openout9 = `AnalisisComponentesPrincipales_fusion.snm'.
 
-(./AnalisisComponentesPrincipales.aux)
-Package rerunfilecheck Info: File `AnalisisComponentesPrincipales.out' has not 
-changed.
-(rerunfilecheck)             Checksum: D54158DF54EB3A31270ECB4E29F605B4;2788.
+(./AnalisisComponentesPrincipales_fusion.aux)
+Package rerunfilecheck Info: File `AnalisisComponentesPrincipales_fusion.out' h
+as not changed.
+(rerunfilecheck)             Checksum: 8CCB865F0ADFB5637D5B6E787F4EBAC9;2997.
  ) 
 Here is how much of TeX's memory you used:
- 24973 strings out of 480498
- 466645 string characters out of 5899155
- 787845 words of memory out of 5000000
- 41622 multiletter control sequences out of 15000+600000
- 466671 words of font info for 133 fonts, out of 8000000 for 9000
+ 26140 strings out of 480272
+ 513042 string characters out of 5893797
+ 789272 words of memory out of 5000000
+ 42943 multiletter control sequences out of 15000+600000
+ 480181 words of font info for 153 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,13n,108p,1027b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
-c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.e
-nc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-math
-it.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
-mathsy.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
-/lm-rm.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
-/lm-mathex.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
+ 99i,13n,104p,1034b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
+y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
+athit.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
+lm-ec.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
+lm-rm.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
+lm-mathex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
+/lm/lm-ts1.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
 blic/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
 1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmmi6.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fon
 ts/type1/public/lm/lmmi8.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/
-fonts/type1/public/lm/lmss10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-d
-ist/fonts/type1/public/lm/lmss12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/tex
-mf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/
-texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/t169/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/Users/t169/AppData/Roami
-ng/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso8.pfb><c:/Users/t169/AppData/R
-oaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppDa
-ta/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/t169/Ap
-pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/t169
-/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/
-t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Us
-ers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on AnalisisComponentesPrincipales.pdf (102 pages, 398457 bytes).
-
+fonts/type1/public/lm/lmmi9.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-di
+st/fonts/type1/public/lm/lmss10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texm
+f-dist/fonts/type1/public/lm/lmss12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/
+texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/t169/AppData/Roaming/TinyT
+eX/texmf-dist/fonts/type1/public/lm/lmss9.pfb><c:/Users/t169/AppData/Roaming/Ti
+nyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/t169/AppData/Roam
+ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/Users/t169/AppData
+/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsso8.pfb><c:/Users/t169/App
+Data/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169
+/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/t
+169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/User
+s/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy9.pfb><c:/U
+sers/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><
+c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
+fb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt
+i10.pfb>
+Output written on AnalisisComponentesPrincipales_fusion.pdf (114 pages, 440466 
+bytes).
 PDF statistics:
- 943 PDF objects out of 1000 (max. 8388607)
- 764 compressed objects within 8 object streams
- 306 named destinations out of 1000 (max. 500000)
- 37059 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1068 PDF objects out of 1200 (max. 8388607)
+ 861 compressed objects within 9 object streams
+ 342 named destinations out of 1000 (max. 500000)
+ 47322 words of extra memory for PDF output out of 51595 (max. 10000000)
 

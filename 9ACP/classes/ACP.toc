@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {catalan}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}}{2}{1}{1}
+\beamer@sectionintoc {2}{Components principals}{4}{1}{2}
+\beamer@sectionintoc {3}{Interpretaci\IeC {\'o} geom\IeC {\`e}trica}{7}{1}{3}
+\beamer@sectionintoc {4}{ACP sobre la matriu de covari\IeC {\`a}ncies}{14}{1}{4}
+\beamer@sectionintoc {5}{Propietats de l'ACP sobre la matriu de covari\IeC {\`a}ncies}{37}{1}{5}
+\beamer@sectionintoc {6}{ACP sobre la matriu de correlacions}{52}{1}{6}
+\beamer@sectionintoc {7}{Etapes d'un ACP}{64}{1}{7}
+\beamer@sectionintoc {8}{Descomposici\IeC {\'o} en valors singulars (SVD)}{68}{1}{8}
+\beamer@sectionintoc {9}{Relaci\IeC {\'o} ACP amb SVD}{74}{1}{9}
+\beamer@sectionintoc {10}{Biplots}{79}{1}{10}

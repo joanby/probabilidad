@@ -1,0 +1,1841 @@
+---
+title: "Introducción a la estadística multidmensional"
+author: "Análisi de datos curso 2021-2022"
+date: ''
+output:
+  beamer_presentation:
+    includes:
+      in_header: preamble1.tex
+    theme: Rochester
+    toc: no
+  ioslides_presentation: default
+lang: es-ES
+---
+            
+  
+      
+
+# Introducción a la estadística descriptiva multidimensional
+
+## Vectores aleatorios
+
+* \red{Vector aleatorio}. 
+Una \red{variable aleatoria} $p$-dimensional, o \red{vector aleatorio de dimensión} $p$, es un vector (fila) compuesto por $p$ variables aleatorias:
+$$
+\underline{X}=(X_1,X_2,\ldots,X_p)
+$$
+
+* Como en el caso de las variables aleatorias unidimensionales, es importante distinguir entre los vectores aleatorios (los modelos teóricos), y las realizaciones o  las muestras de los mismos, que corresponden a una o varias mediciones concretas de las variables que forman dichos vectores.
+
+## Vectores aleatorios
+
+* Por ejemplo, si llamamos $X_1$ a la variable aleatoria que da la edad de un individuo (en años), $X_2$ a la que da su altura (redondeada a cm) y $X_3$ a la que da su peso (redondeada a Kg. con una cifra decimal), entonces
+
+$$
+\underline{X}=(X_1,X_2,X_3)
+$$
+
+es un vector aleatorio de dimensión 3. 
+
+* Cada vez que medimos la edad, la altura y el peso de una persona, y organizamos estos datos en este orden como un vector numérico, obtenemos una realización de $\underline{X}$.
+
+## Vectores aleatorios
+
+* Sea ahora $\underline{X}=(X_1,X_2,\ldots,X_p)$ un vector aleatorio y, para cada $i=1,\ldots,p$, sean $\mu_i$ y $\sigma_i$ la media y la desviación típica, respectivamente, de su componente $X_i$.
+
+* El \red{valor esperado}, o \red{vector de medias},  de  $\underline{X}$ es el vector formado por los valores esperados, o medias, de sus componentes:
+$$
+\mbox{E}(\underline{X})=(\mbox{E}(X_1),\ldots,\mbox{E}(X_p))=(\mu_1,\ldots,\mu_p)
+$$
+
+* También se suele denotar simplemente $\boldsymbol\mu$.
+
+
+## Vectores aleatorios
+
+*  El \red{vector de varianzas}  de  $\underline{X}$ es el vector formado por las varianzas de sus componentes:
+$$
+\mbox{Var}(\underline{X})=(\mbox{Var}(X_1),\ldots,\mbox{Var}(X_p))=(\sigma_1^2,\ldots,\sigma_p^2)
+$$
+
+* El \red{vector de desviaciones típicas}  de  $\underline{X}$ es el vector formado por las desviaciones típicas de sus componentes:
+$$
+\sigma(\underline{X})=(\sigma(X_1),\ldots,\sigma(X_p))=(\sigma_1,\ldots,\sigma_p)
+$$
+
+
+
+
+## Vectores aleatorios; tipificación
+
+\red{Tipificación}.
+
+
+* Cuando sumamos una constante $b$ a una variable aleatoria $X$,  decimos que efectuamos un \red{cambio de origen},  puesto que desplazamos todos los valores de $X$ la cantidad $b$. 
+
+* Cuando multiplicamos una variable aleatoria $X$ por  una constante $a\neq 0$, decimos que efectuamos un \red{cambio de escala}, puesto que la agrandamos (si $|a|>1$) o la encogemos (si $0<|a|<1$) en el factor constante $a$. Si además $a<0$, cambiamos el signo de la variable.
+
+## Vectores aleatorios; tipificación
+
+
+* Sea $X$  una variable aleatoria de media $\mu_X$ y desviación típica $\sigma_Y$. Recordemos que si $a,b\in \mathbb{R}$, entonces $\red{Y}=a\cdot X+b$ es una variable aleatoria cuya media, varianza y desviación típica, son:
+  
+  * $\red{\mbox{E}(Y)=\mu_y=\mbox{E}(a\cdot X+b)=a\cdot \mu_X+b},$
+  * $\red{\sigma_Y^2=\mbox{Var}(Y)=\mbox{Var}(a\cdot X+b)=a^2\cdot \sigma_X^2},$
+  * $\red{\sigma_Y=|a|\cdot \sigma_X}.$
+      
+
+
+## Tipificación de variables aleatorias
+
+Llamaremos  la \red{variable tipificada} de $X$ a la variable aleatoria
+$$
+Z=\frac{X-\mu}{\sigma}.
+$$
+Por ejemplo, cuando construimos una variable aleatoria normal estándar $Z$ a partir de una variable normal $X$, lo que hacemos es \red{tipificar} esta última. 
+
+Las fórmulas anteriores  implican que si $Z$ es una variable tipificada, entonces $\mbox{E}(Z)=0$ y $\sigma(Z)=1$. 
+
+
+## Tipificación de variables aleatorias
+
+* Si $\underline{X}=(X_1,\ldots,X_p)$ es un vector aleatorio, su \red{vector tipificado} $\underline{Z}$ se obtiene substituyendo cada $X_i$ por su variable tipificada ${Z}_i$.
+
+
+*  Matricialmente, $\underline{Z}$ se puede obtener a partir de $\underline{X}$ de la manera siguiente. Para cada $i=1,\ldots, p$, sean $\mu_i$  y $\sigma_i$ la media y la desviación típica de $X_i$, respectivamente. Sean
+
+$$
+\boldsymbol\mu=(\mu_1, \mu_2,\ldots, \mu_p)
+\qquad
+A=\begin{pmatrix}
+\sigma_{1}^{-1} & 0 & \ldots & 0\\
+0 & \sigma_{2}^{-1}  &\ldots &0\\
+\vdots & \vdots &\ddots & \vdots\\
+0 & 0 & \ldots &\sigma_{p}^{-1}
+\end{pmatrix}
+$$
+el vector de medias de $\underline{X}$ y ....
+
+## Tipificación de variables aleatorias
+
+
+la matriz diagonal que tiene en la \red{diagonal principal los inversos de las desviaciones típicas} de las componentes de $\underline{X}$.
+
+Entonces,
+
+$$
+\underline{Z}=(\underline{X}-\boldsymbol\mu)\cdot A =\big(A\cdot (\underline{X}-\boldsymbol\mu)^t\big)^t.
+$$
+(Como ejercicio de manejo de matrices, comprobadlo para $p=3$.)
+Esta expresión es un caso particular de \red{transformación lineal
+multivariante} de $\underline{X}$. Una transformación lineal general emplearía  una  matriz real cualquiera de $p$ columnas con entradas números reales en el lugar de $A$, y un vector fila real cualquiera de dimensión $p$ en el lugar de $\boldsymbol\mu$.
+
+
+## Covarianzas
+
+\red{Covarianzas}. Dadas dos variables aleatorias $X_1$ y $X_2$ de medias $\mu_1$ y $\mu_2$, respectivamente, se define su \red{covarianza} como 
+$$
+\mbox{Cov}(X_1,X_2)=\mbox{E}((X_1-\mu_1) ( X_2-\mu_2)).
+$$
+Es fácil comprobar que la covarianza también se puede calcular mediante la identidad
+$$
+\mbox{Cov}(X_1,X_2)=\mbox{E}(X_1\cdot X_2) -\mu_1\cdot \mu_2.
+$$
+
+
+## Covarianzas
+
+En efecto
+
+\begin{eqnarray*}
+\mbox{Cov}(X_1,X_2) & = & \mbox{E}((X_1-\mu_1)\cdot ( X_2-\mu_2))
+\\ &=&
+\mbox{E}(X_1\cdot X_2-\mu_1\cdot X_2-\mu_2\cdot X_1+\mu_1\cdot \mu_2)\\ &=& 
+\mbox{E}(X_1\cdot X_2)-\mu_1\cdot \mbox{E}(X_2)-\mu_2\cdot \mbox{E}(X_1)+\mu_1\cdot \mu_2\\ &=&
+\mbox{E}(X_1\cdot X_2)-\mu_1\cdot \mu_2-\mu_2\cdot \mu_1+\mu_1\cdot \mu_2\\ &=& \mbox{E}(X_1\cdot X_2)-\mu_1\cdot \mu_2
+\end{eqnarray*}
+
+
+## Covarianzas propiedades
+
+* La covarianza de  $X_1$ y $X_2$ puede tomar cualquier valor real, y mide si las dos variables aleatorias se comportan igual, en el sentido siguiente: si valores grandes de una variable corresponden a valores grandes de la otra, su covarianza es positiva
+* En el caso opuesto, si valores grandes de una variable  corresponden a valores pequeños de la otra, su covarianza es negativa. 
+* Si las dos variables aleatorias son independientes, entonces su covarianza es 0, puesto que en este caso $\mbox{E}(X_1\cdot X_2) =\mbox{E}(X_1)\cdot \mbox{E}(X_2)=\mu_1\mu_2$.
+
+## Covarianzas propiedades
+
+La covarianza es simétrica, $\mbox{Cov}(X_1,X_2)=\mbox{Cov}(X_2,X_1)$.
+La covarianza de una variable aleatoria consigo misma es su varianza: 
+$$
+\mbox{Cov}(X,X)=\mbox{E}((X-\mu)^2)=Var(X).
+$$
+Para simplificar la notación, se suele utilizar $\sigma$ para indicar las covarianzas. Dadas dos variables aleatorias $X_i$ y $X_j$ que formen parte de un vector aleatorio, escribiremos
+$$
+\sigma_{i j}=\mbox{Cov}(X_i,X_j)\mbox{ y }
+\sigma_{ii}=\mbox{Cov}(X_i,X_i)=\sigma_i^2.
+$$
+
+
+## Covarianzas propiedades
+
+\blue{Definición.} Dado  un vector aleatorio $\underline{X}=(X_1,\ldots,X_p)$
+una medida de su dispersión respecto de su valor esperado $\boldsymbol\mu$
+es su  \red{matriz de covarianzas}  y se define como
+
+
+
+\begin{eqnarray*}
+\mbox{Cov}(\underline{X})&=&\mbox{E}((\underline{X}-\boldsymbol\mu)^t\cdot (\underline{X}-\boldsymbol\mu)\\
+&=& E\left(\begin{pmatrix} X_1-\mu_1 \\  X_2-\mu_2\\  \vdots \\X_p-\mu_p\end{pmatrix}
+\cdot(X_1-\mu_1, X_2-\mu_2,\ldots,X_p-\mu_p)\right)\\ &=&
+\begin{pmatrix} \sigma_{1 1} & \sigma_{1 2} & \ldots & \sigma_{1
+p}\\
+\sigma_{2 1} & \sigma_{2 2} & \ldots & \sigma_{2 p}\\
+\vdots & \vdots &  & \vdots\\
+\sigma_{p 1} & \sigma_{p 2} & \ldots & \sigma_{p p}\\
+\end{pmatrix}
+\end{eqnarray*}
+
+
+
+## Covarianzas; propiedades
+
+Es decir, la matriz de covarianzas de $\underline{X}$ tiene como entrada $(i,j)$ la covarianza $\sigma_{ij}$ de $X_i$ y $X_j$. 
+
+
+Se puede comprobar fácilmente que esta matriz se puede calcular como
+
+$$
+\mbox{Cov}(\underline{X})=\mbox{E}((\underline{X}-\mathbf{\mu})^t\cdot (\underline{X}-\mathbf{\mu}))=\mbox{E}(\underline{X}^t\cdot \underline{X})-\boldsymbol\mu^t\cdot \boldsymbol\mu
+$$
+
+La matriz de covarianzas de $\underline{X}$ también se suele representar 
+por $\Sigma$.
+
+## Covarianzas; Matriz semi-definida positiva
+
+Las matrices de covarianzas satisfacen la propiedad fundamental siguiente.
+
+
+
+\red{Definición}
+
+Diremos que  una matriz cuadrada de números reales
+
+$$
+M=\begin{pmatrix} a_{1 1} & a_{1 2} & \ldots & a_{1
+n}\\
+a_{2 1} & a_{2 2} & \ldots & a_{2 n}\\
+\vdots & \vdots &  & \vdots\\
+a_{n 1} & a_{n 2} & \ldots & a_{n n}\\
+ \end{pmatrix}
+ $$    
+
+es semi definida positiva  si ...
+
+
+## Covarianzas; Matriz semi-definida positiva
+
+
+para todo 
+
+$$
+\scriptsize
+\left(\begin{array}{c}
+y_1 \\ y_2 \\ \vdots\\  y_p
+\end{array}\right)\in\mathbb{R}^n
+$$
+
+$$
+\scriptsize
+\begin{pmatrix} y_{1} & y_{2} & \ldots y_{n} \end{pmatrix}
+\cdot 
+\begin{pmatrix} a_{1 1} & a_{1 2} & \ldots & a_{1
+n}\\
+a_{2 1} & a_{2 2} & \ldots & a_{2 n}\\
+\vdots & \vdots &  & \vdots\\
+a_{n 1} & a_{n 2} & \ldots & a_{n n}\\
+\end{pmatrix}\cdot 
+\begin{pmatrix} y_{1} \\
+y_{2}\\
+\vdots\\
+y_{n} 
+\end{pmatrix}=
+y^t\cdot M\cdot y\geq 0.
+$$
+
+Si la desigualdad es estricta la matriz es \red{definida positiva},
+
+
+## Covarianzas; propiedades
+
+\blue{Teorema}
+
+* Las matrices de covarianzas son simétricas (y por lo tanto diagonalizables) y semidefinidas positivas.
+* Las matrices  reales semidefinidas positivas diagonalizan y todos sus valores propios $\lambda\geq 0$.
+
+\textcolor{green}{Demostración}:
+
+
+Veamos cómo podemos demostrarlo
+
+## Covarianzas; propiedades demostración
+Sea 
+
+$$
+\Sigma= 
+\begin{pmatrix}
+\mbox{Cov}(X_1,X_2) & \mbox{Cov}(X_1,X_2) & \ldots & \mbox{Cov}(X_1,X_p)\\
+\mbox{Cov}(X_2,X_2) & \mbox{Cov}(X_2,X_2) & \ldots & \mbox{Cov}(X_2,X_p)\\
+\vdots & \vdots  & \ddots  & \vdots \\
+\mbox{Cov}(X_p,X_2) & \mbox{Cov}(X_p,X_2) & \ldots & \mbox{Cov}(X_p,X_p)\\
+\end{pmatrix}
+$$
+
+la matriz de covarianzas del vector aleatorio $p$ dimensional 
+
+$$\underline{X}=\begin{pmatrix} X_1\\ X_2\\ \vdots \\ X_p\end{pmatrix}.$$
+
+## Covarianzas; propiedades demostración
+
+Tenemos que demostrar  que para todo vector 
+
+$$a=\begin{pmatrix} a_1\\ a_2\\ \vdots \\ a_p\end{pmatrix}\in \mathbb{R}^p$$
+
+
+Se cumple que 
+
+$$a^t \cdot \Sigma \cdot a \geq 0.$$
+
+Recordemos que la varianza de una suma (que siempre es positiva ) es  igual  una suma ponderada de todas las covarianzas, efectivamente 
+
+## Covarianzas; propiedades demostración
+
+
+\scriptsize
+\begin{eqnarray*}
+&&\begin{pmatrix}
+a_1 & a_2 & \ldots & a_p
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\mbox{Cov}(X_1,X_2) & \mbox{Cov}(X_1,X_2) & \ldots & \mbox{Cov}(X_1,X_p)\\
+\mbox{Cov}(X_2,X_2) & \mbox{Cov}(X_2,X_2) & \ldots & \mbox{Cov}(X_2,X_p)\\
+\vdots & \vdots  & \ddots  & \vdots \\
+\mbox{Cov}(X_p,X_2) & \mbox{Cov}(X_p,X_2) & \ldots & \mbox{Cov}(X_p,X_p)\\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+a_1 \\ a_2 \\ \vdots\\  a_p
+\end{pmatrix}\\ 
+&=&\sum_{i=1}^p\sum_{j=1}^p a_i\cdot a_j \cdot
+ \mbox{Cov}(X_i,X_j)=  Var\left(\sum_{i=1}^p a_i\cdot  X_i\right)\geq 0
+\end{eqnarray*}
+
+Repasad estas propiedades de los temas de variables varias variables aleatorias.
+
+## Correlaciones
+
+\blue{Definición.} \red{Correlaciones}.
+Como las covarianzas son difíciles de comparar, para medir si dos variables aleatorias se comportan igual o no, se usa el llamado \red{coeficiente de correlación lineal de Pearson}, que  es una medida adimensional de
+la relación entre dos variables.
+
+Definimos la \red{correlación} de las variables $X_i$ y $X_j$ como
+
+$$
+Cor(X_i,X_j)=\frac{\sigma_{i j}}{\sigma_{i} \sigma_{j}}.
+$$
+A menudo denotaremos $Cor(X_i,X_j)$ por medio de $\rho_{ij}$.
+
+
+
+## Correlaciones; propiedades
+
+Las correlaciones  tienen las propiedades siguientes:
+
+* $-1\leq \rho_{i j}\leq 1$.
+* $\rho_{i j}= \rho_{j i}$ y $\rho_{ii}=1$.
+* Si $\sigma_i=\sigma_j=1$, entonces $\rho_{ij}=\sigma_{ij}$.
+
+* Salvo en el signo, $\rho_{i j}$ es invariante por cambios de origen y
+escala: es decir, si $a_i,a_j,b_i,b_j\in \mathbb{R}$ y $a_i,a_j\neq 0$,
+$$
+Cor(a_i\cdot X_i+b_i,a_j\cdot X_j+b_j)=\pm Cor(X_i,X_j)
+$$
+donde el signo que aparece es el del cociente $a_i/a_j$.
+
+
+
+## Correlaciones; propiedades
+
+* Si $\rho_{i j}=\pm 1$, las variables tienen una relación lineal perfecta, es decir, existen $\alpha\neq 0$ y $\beta$ tales que $X_i=\alpha X_j+\beta$. La
+pendiente $\alpha$ tiene el mismo signo que la correlación.
+
+* Si $\rho_{i j}=0$, decimos que las variables $X_i$ y $X_j$ son \red{incorreladas}.
+Notemos que la correlación es 0 si, y sólo si, la covarianza es 0. Por lo tanto, dos variables aleatorias independientes son incorreladas. El recíproco en general es falso.
+ 
+
+## Ejemplo correlación no implica independencia.
+
+Un ejemplo muy simple es 
+
+```{r}
+x=c(-1,0,1)
+x
+y=3*x^2+1
+y
+```
+Claramente \red{tienen una dependencia parabólica} pues así hemos definido $y$ en función de $x$
+
+Sin embargo su \red{correlación y su covarianza son cero}
+
+```{r}
+cov(x,y)
+cor(x,y)
+```
+
+## Matriz de correlaciones
+
+La \red{matriz de correlaciones de un vector aleatorio} $\underline{X}=(X_1,\ldots,X_p)$ como
+
+$$
+Cor(\underline{X})
+=\begin{pmatrix} 1 & \rho_{1 2} & \ldots & \rho_{1 p}\\
+\rho_{2 1} & 1 & \ldots & \rho_{2 p}\\
+\vdots & \vdots &  & \vdots\\
+\rho_{p 1} & \rho_{p 2} & \ldots & 1\\
+ \end{pmatrix}
+ $$
+
+## Matriz de correlaciones; propiedades
+
+
+
+\blue{Teorema}
+
+La matriz de correlaciones de un vector aleatorio $\underline{X}$ es igual a la matriz de covarianzas de su vector tipificado $\underline{Z}$:
+$$
+Cor(\underline{X})=\mbox{Cov}(\underline{Z}).
+$$
+Es decir, el \red{vector de medias} de $\mathbf{X}$ es la media aritmética de sus filas.
+ 
+
+En efecto, si  $Z_i=\frac{X_i-\mu_i}{\sigma_i}$ y $Z_j=\frac{X_j-\mu_j}{\sigma_j}$ son las variables tipificadas de $X_i$ y $X_j$, respectivamente, entonces
+
+
+
+## Matriz de correlaciones; propiedades
+
+
+\begin{eqnarray*}
+\mbox{Cov}(Z_i,Z_j)&=& Cor(Z_i,Z_j)=Cor\left(\frac{1}{\sigma_i}X_i-\frac{\mu_i}{\sigma_i},\frac{1}{\sigma_j}X_j-\frac{\mu_j}{\sigma_j},\right)
+\\ &=& Cor(X_i,X_j)
+\end{eqnarray*}
+
+donde la primera igualdad es consecuencia de la tercera propiedad de las correlaciones en la lista anterior, y la última igualdad es consecuencia de la cuarta propiedad en la misma.
+
+
+## Descripción de datos multivariantes
+
+* Los vectores aleatorios son el  modelo teórico que usaremos cuando manejemos simultáneamente diversas variables aleatorias  sobre los mismos individuos. 
+Las realizaciones de un vector aleatorio serán las observaciones de las variables que lo componen sobre individuos concretos de la población.
+
+* \red{Datos multivariantes}.
+ Supongamos  que hemos obtenido los valores de $p$ variables aleatorias $X_1,\ldots,X_p$ sobre un conjunto de $n$ individuos u objetos. Es decir, tenemos $n$ observaciones de $p$ variables. En cada observación, los valores que toman estas variables forman un vector que será una realización del vector aleatorio $\underline{X}=(X_1,X_2,\ldots,X_p)$.
+ 
+ 
+ 
+## Estadística descriptiva multivariante
+
+
+Las observaciones de vectores aleatorios multidimensionales dan lugar a muestras multivariantes que  se representan de manera matricial. 
+
+En general cada \red{fila} es una realización de $\underline{X}$:
+
+$$
+\mathbf{X}=\begin{pmatrix}
+x_{1 1} & x_{1 2} &\ldots & x_{1 p}\\
+x_{2 1} & x_{2 2} &\ldots & x_{2 p}\\
+\vdots & \vdots   &       &\vdots\\ 
+x_{n 1} & x_{n 2} &\ldots & x_{n p}
+\end{pmatrix}
+$$
+
+
+## Descripción de datos multivariantes; notación
+
+
+Utilizaremos las  notaciones siguientes:
+ 
+* Denotaremos por 
+$$
+\mathbf{x}_{i\bullet}=(x_{i 1},x_{i 2},\ldots, x_{i p})
+$$
+la $i$-ésima realización de $\underline{X}$, es decir,
+el vector fila compuesto por las observaciones de las $p$ variables sobre el $i$-ésimo individuo.
+
+* Denotaremos por
+ $$
+ \mathbf{x}_{\bullet j}=\begin{pmatrix}x_{1 j} \\ x_{2 j}\\ \vdots \\ x_{n j}
+\end{pmatrix}
+$$ el vector columna compuesto  por las $n$ observaciones de la  $j$-ésima variable.
+ 
+
+## Descripción de datos multivariantes; notación
+
+
+
+De esta manera, podremos expresar la matriz de datos $\mathbf{X}$ por filas o por columnas:
+$$
+\mathbf{X}=\begin{pmatrix}\mathbf{x}_{1\bullet}\\ \mathbf{x}_{2\bullet}\\\vdots \\
+\mathbf{x}_{n\bullet}\end{pmatrix},\qquad
+\mathbf{X}=(\mathbf{x}_{\bullet1},\mathbf{x}_{\bullet 2},\ldots,\mathbf{x}_{\bullet p})
+$$
+
+## Descripción de datos multivariantes; fórmulas matriciales
+
+
+Con estas notaciones  podemos generalizar al caso multidimensional algunas definiciones ya conocidas
+de los estadísticos más usuales de una muestra.
+Dada una matriz $\mathbf{X}$ de $n$ observaciones de un vector aleatorio $\underline{X}=(X_1,X_2,\ldots,X_p)$:
+ 
+* El \red{vector de medias} de $\mathbf{X}$ es el vector fila cuyas entradas son las medias aritméticas de las realizaciones de cada variable $X_i$:
+$$
+\overline{\mathbf{X}}=(\overline{{\mathbf{x}}}_{\bullet1}, \overline{\mathbf{x}}_{\bullet 2},\ldots,\overline{\mathbf{x}}_{\bullet p})
+$$
+donde,  para cada $j=1,\ldots,p$,
+
+## Descripción de datos multivariantes; fórmulas matriciales
+
+$$
+\overline{\mathbf{x}}_{\bullet j}=\frac{1}{n}\sum\limits_{i=1}^n x_{i j}.
+$$
+Observemos que
+$$
+\begin{array}{rl}
+\overline{\mathbf{X}} & \displaystyle = (\overline{{\mathbf{x}}}_{\bullet1}, \overline{\mathbf{x}}_{\bullet 2},\ldots,\overline{\mathbf{x}}_{\bullet p})
+= \frac{1}{n}
+\Big(\sum_{i=1}^n x_{i 1}, \sum_{i=1}^n x_{i 2},\ldots,
+\sum_{i=1}^n x_{i p}\Big)\\[1ex] & \displaystyle =\frac{1}{n} \sum_{i=1}^n
+(x_{i 1}, x_{i 2},\ldots,x_{i p} )
+=
+\frac{1}{n} \sum_{i=1}^n {\mathbf{x}_{i\bullet}}
+\end{array}
+$$
+
+## Descripción de datos multivariantes; fórmulas matriciales
+
+
+
+
+* El \red{vector de varianzas}  de $\mathbf{X}$ es el vector fila cuyas entradas son las varianzas de las realizaciones de cada variable $X_i$:
+
+$$
+s^2_{\mathbf{X}}=(s^2_{1},s^2_2,\ldots,s^2_p)
+$$
+
+donde 
+
+$$
+s_j^2=\frac{1}{n}\sum_{i=1}^n {(x_{ij}-\overline{\mathbf{x}}_{\bullet j})^2}=\frac{1}{n}\sum_{i=1}^n{x_{i j}^2}-\overline{\mathbf{x}}_{\bullet j}^2.
+$$
+
+* El \red{vector de varianzas muestrales}  de $\mathbf{X}$ es el vector fila cuyas entradas son las varianzas muestrales de las realizaciones de cada variable $X_i$:
+
+$$
+\widetilde{s}^2_{\mathbf{X}}=(\widetilde{s}^2_{1},
+\widetilde{s}^2_2,\ldots,\widetilde{s}^2_p)
+$$
+donde 
+
+$$
+\widetilde{s}_j^2=\frac{1}{n-1}\sum_{i=1}^n {(x_{ij}-\overline{\mathbf{x}}_{\bullet j})^2}=\frac{n}{n-1}s_j^2
+$$
+
+
+
+## Descripción de datos multivariantes; fórmulas matriciales
+
+* Los vectores de desviaciones típicas $s_{\mathbf{X}}$ y desviaciones típicas muestrales $\widetilde{s}_{\mathbf{X}}$ se definen como las raíces cuadradas positivas de los vectores de varianzas y varianzas muestrales, respectivamente.
+ 
+* Como en el caso unidimensional, $\overline{\mathbf{X}}$ es un estimador de $\mbox{E}(\underline{X})=\boldsymbol\mu$. 
+Tanto ${s}^2_{\mathbf{X}}$ como $\widetilde{s}^2_{\mathbf{X}}$ son estimadores del vector de varianzas de $\underline{X}$: el primero es el máximo verosímil y el segundo  es insesgado.Por lo tanto ambos son estimadores 
+del vector de desviaciones típicas de $\underline{X}$.
+
+* \red{Observación}. \red{Supondremos en lo que sigue que nuestras matrices de datos no tienen ninguna columna constante, es decir, ninguna columna de varianza 0.}
+
+## Centralización de una matriz de datos
+
+\red{Centralización de una matriz de datos.}
+Para centrar una matriz de datos $\mathbf{X}$, se resta a cada columna su media aritmética:
+
+$$
+\widetilde{\mathbf{X}}=
+\begin{pmatrix}
+x_{1 1}- \overline{\mathbf{x}}_{\bullet 1}& x_{1 2}- \overline{\mathbf{x}}_{\bullet 2} &\ldots & x_{1 p}-
+\overline{\mathbf{x}}_{\bullet p}\\
+x_{2 1} - \overline{\mathbf{x}}_{\bullet 1}& x_{2 2}- \overline{\mathbf{x}}_{\bullet 2} &\ldots & x_{2 p}-
+\overline{\mathbf{x}}_{\bullet p}\\
+\vdots & \vdots   & \ddots      &\vdots\\ 
+x_{n 1} - \overline{\mathbf{x}}_{\bullet 1}& x_{n 2}- \overline{\mathbf{x}}_{\bullet 2} &\ldots & x_{n p}-
+\overline{\mathbf{x}}_{\bullet p}
+\end{pmatrix}
+$$
+Llamamos al resultado  la \red{matriz de datos centrados} de $\mathbf{X}$.
+
+## Centralización de una matriz de datos; cálculo matricial
+
+Vamos a ver que esta igualdad admite un cálculo matricial  sencillo. 
+Sea $\mathbf{1}_n$ un vector columna formado por $n$ $1$'s, de manera que $\mathbf{1}^t_n$ es un vector fila de $n$ columnas, cada una de las cuales es un 1.
+Observemos que
+
+$$
+\mathbf{1}_n\cdot\overline{\mathbf{X}}
+=\begin{pmatrix}1 \\ 1\\ \vdots \\ 1\end{pmatrix}\cdot
+(\overline{\mathbf{x}}_{\bullet 1},\overline{\mathbf{x}}_{\bullet 2},\ldots,\overline{\mathbf{x}}_{\bullet p})=
+\begin{pmatrix}
+\overline{\mathbf{x}}_{\bullet 1} & \overline{\mathbf{x}}_{\bullet 2} & \ldots& \overline{\mathbf{x}}_{\bullet p}\\
+\overline{\mathbf{x}}_{\bullet 1} & \overline{\mathbf{x}}_{\bullet 2} & \ldots& \overline{\mathbf{x}}_{\bullet p}\\
+\vdots & \vdots & \ddots& \vdots\\
+\overline{\mathbf{x}}_{\bullet 1} & \overline{\mathbf{x}}_{\bullet 2} & \ldots& \overline{\mathbf{x}}_{\bullet p}\\
+\end{pmatrix}
+$$
+
+y por lo tanto
+
+## Centralización de una matriz de datos; cálculo matricial
+
+$$
+\widetilde{\mathbf{X}}=
+\begin{pmatrix}
+x_{1 1} & x_{1 2} &\ldots & x_{1 p}\\
+x_{2 1} & x_{2 2} &\ldots & x_{2 p}\\
+\vdots & \vdots   &       &\vdots\\ 
+x_{n 1} & x_{n 2} &\ldots & x_{n p}
+\end{pmatrix}-\begin{pmatrix}
+\overline{\mathbf{x}}_{\bullet 1} & \overline{\mathbf{x}}_{\bullet 2} & \ldots& \overline{\mathbf{x}}_{\bullet p}\\
+\overline{\mathbf{x}}_{\bullet 1} & \overline{\mathbf{x}}_{\bullet 2} & \ldots& \overline{\mathbf{x}}_{\bullet p}\\
+\vdots & \vdots & \ddots& \vdots\\
+\overline{\mathbf{x}}_{\bullet 1} & \overline{\mathbf{x}}_{\bullet 2} & \ldots& \overline{\mathbf{x}}_{\bullet p}\\
+\end{pmatrix}
+=\mathbf{X}-\mathbf{1}_n\cdot\overline{\mathbf{X}}
+$$
+
+
+
+## Centralización de una matriz de datos; cálculo matricial
+
+Vamos a calcular ahora $\overline{\mathbf{X}}$ de manera matricial a partir de $\mathbf{X}$.
+
+
+Observemos que cuando multiplicamos $\mathbf{1}_n^t$ por una matriz de $n$ filas, obtenemos un vector
+fila formado por las sumas de sus columnas:
+
+
+## Centralización de una matriz de datos; cálculo matricial
+
+\scriptsize
+\begin{eqnarray*}
+\frac{1}{n}\cdot\mathbf{1}_n^t \cdot \mathbf{X}
+&=&
+\frac{1}{n}\cdot (1,1,\ldots,1)  \cdot 
+\begin{pmatrix}
+x_{1 1} & x_{1 2} &\ldots &x_{1 p}\\
+x_{2 1} & x_{2 2} &\ldots & x_{2 p}\\
+\vdots & \vdots   &       &\vdots\\ 
+x_{n 1} &x_{n 2} &\ldots & x_{n p}
+\end{pmatrix}
+\\
+&=&
+\frac{1}{n}
+\big(x_{1 1} +\cdots + x_{n1},\ldots,x_{1 p} +\cdots + x_{np}\big)
+\\
+&=& (\overline{\mathbf{x}}_{\bullet 1},\ldots,\overline{\mathbf{x}}_{\bullet p})
+\end{eqnarray*}
+\normalsize
+
+
+
+
+
+
+## Centralización de una matriz de datos; cálculo matricial
+
+Combinando las igualdades
+
+$$
+\widetilde{\mathbf{X}}=\mathbf{X}-\mathbf{1}_n\cdot\overline{\mathbf{X}}\quad\mbox{ y }\quad
+\overline{\mathbf{X}}=\frac{1}{n} \mathbf{1}_n^t\cdot \mathbf{X}
+$$
+concluimos que
+$$
+\widetilde{\mathbf{X}}=\mathbf{X}-\frac{1}{n}\mathbf{1}_n \cdot \mathbf{1}_n^t\cdot \mathbf{X}
+=(I_n-\frac{1}{n}\mathbf{1}_n \cdot \mathbf{1}_n^t)\cdot \mathbf{X}
+$$
+Definimos la matriz centralizadora como
+
+$$
+\mathbf{H}_n=I_n-\frac{1}{n} \mathbf{1}_n\cdot \mathbf{1}_n^t.
+$$
+
+## Centralización de una matriz de datos; cálculo matricial  propiedades
+
+\blue{Teorema}
+$\widetilde{\mathbf{X}}=\mathbf{H}_n\cdot \mathbf{X}$.
+ 
+
+A esta matriz $\mathbf{H}_n$ se la llama la \red{matriz centralizadora}  de orden $n$. Notemos que
+
+$$
+\mathbf{H}_n = \begin{pmatrix}1 & 0 & \ldots & 0\\
+0 & 1 & \ldots & 0\\
+\vdots & \vdots &  & \vdots\\
+0 & 0 & \ldots & 1\\
+\end{pmatrix}-\frac{1}{n} \begin{pmatrix}1 \\ 1\\ \vdots \\ 1\end{pmatrix}\cdot
+(1,1,\ldots,1)=...
+$$
+
+## Centralización de una matriz de datos; cálculo matricial  propiedades
+
+
+\begin{eqnarray*}
+&=&
+\begin{pmatrix}1 & 0 & \ldots & 0\\
+0 & 1 & \ldots & 0\\
+\vdots & \vdots &  & \vdots\\
+0 & 0 & \ldots & 1\\
+\end{pmatrix}-\frac{1}{n} 
+\begin{pmatrix}1 & 1& \ldots & 1\\
+1 & 1 & \ldots & 1\\
+\vdots & \vdots &  & \vdots\\
+1 & 1 & \ldots & 1\\
+\end{pmatrix}
+\\
+&=& \begin{pmatrix}1-\frac{1}{n} & -\frac{1}{n}& \ldots & -\frac{1}{n}\\
+-\frac{1}{n} & 1-\frac{1}{n}& \ldots & -\frac{1}{n}\\
+\vdots & \vdots &  & \vdots\\
+-\frac{1}{n} & -\frac{1}{n} & \ldots & 1-\frac{1}{n}\\
+\end{pmatrix}
+\end{eqnarray*}
+
+
+## Centralización de una matriz de datos; cálculo matricial propiedades
+
+Se comprueban fácilmente las dos propiedades siguientes:
+
+* $\mathbf{H}_n\cdot \mathbf{H}_n = \mathbf{H}_n$; es decir,  $\mathbf{H}_n$ es una matriz \red{idempotente}.
+* $\mathbf{H}_n$ es simétrica, tiene rango $n-1$ y $\mathbf{H}_n \cdot \mathbf{1}_n^t=0$.
+ 
+
+
+## Ejemplo centrado matricial
+
+
+ \blue{Ejemplo}
+Consideremos la matriz de datos
+$$
+\mathbf{X}=\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+$$
+que contiene $n=4$ observaciones de   $p=3$ variables. Para centralizarla a mano, basta restar a cada columna su media aritmética. Como
+
+\begin{eqnarray*}
+\mathbf{x}_{\bullet 1}&=&\frac{1+1+2+3}{4}=1.75,\
+\mathbf{x}_{\bullet 2}=\frac{-1+0+3+0}{4}=0.5,\\
+\mathbf{x}_{\bullet 3}&=&\frac{3+3+0+1}{4}=1.75
+\end{eqnarray*}
+
+
+## Ejemplo centrado matricial
+
+
+su matriz centralizada es
+$$
+\widetilde{\mathbf{X}}=\begin{pmatrix}
+1-1.75&-1-0.5&3-1.75\\
+1-1.75&0-0.5&3-1.75\\
+2-1.75&3-0.5&0-1.75\\
+3-1.75&0-0.5&1-1.75
+\end{pmatrix}=
+\begin{pmatrix}
+-0.75&-1.5&1.25\\
+-0.75&-0.5&1.25\\
+0.25&2.5&-1.75\\
+1.25 &-0.5&-0.75
+\end{pmatrix}
+$$
+
+## Ejemplo centrado matricial
+
+Para calcularla matricialmente, observemos que
+\begin{eqnarray*}
+\mathbf{H}_4 &=& \left(
+\begin{array}{rrrr}
+ 3/4 & -1/4 & -1/4 &   -1/4 \\
+ -1/4 & 3/4 & -1/4 &   -1/4 \\
+ -1/4 & -1/4 & 3/4 &   -1/4 \\
+ -1/4 & -1/4 & -1/4 &   3/4
+\end{array}
+\right) \\ &=&
+\left(\begin{array}{rrrr}
+0.75 & -0.25 & -0.25 &   -0.25 \\
+ -0.25 & 0.75 & -0.25 &   -0.25 \\
+ -0.25 & -0.25 & 0.75 &   -0.25 \\
+ -0.25 & -0.25 & -0.25 &   0.75
+\end{array}\right)
+\end{eqnarray*}
+
+## Ejemplo centrado matricial
+
+y por lo tanto
+\begin{eqnarray*}
+\widetilde{\mathbf{X}}&=&
+\mathbf{H}_4\cdot \mathbf{X}
+\\ &=&
+\left(\begin{array}{rrrr}
+0.75 & -0.25 & -0.25 &   -0.25 \\
+ -0.25 & 0.75 & -0.25 &   -0.25 \\
+ -0.25 & -0.25 & 0.75 &   -0.25 \\
+ -0.25 & -0.25 & -0.25 &   0.75
+\end{array}\right)\cdot
+\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+\\ &=&
+\begin{pmatrix}
+-0.75&-1.5&1.25\\
+-0.75&-0.5&1.25\\
+0.25&2.5&-1.75\\
+1.25 &-0.5&-0.75
+\end{pmatrix}
+\end{eqnarray*}
+
+
+## Ejemplo centrado matricial
+
+Si queremos realizar estos cálculos con R , entramos la matriz de datos, definimos la matriz centralizadora y operamos:
+
+
+```{r centra4,size="scriptsize"}
+X=cbind(c(1,1,2,3),c(-1,0,3,0),c(3,3,0,1))
+# vector de medias
+colMeans(X)
+#Construimos la matriz centralizadora H4
+H4=diag(4)-1/4
+H4
+X.centr=H4%*%X
+X.centr
+```
+
+
+## Observación
+
+\blue{Observación}. Si hubiéramos partido de la matriz de datos $\textbf{X}$ dada como un `data frame`, lo que será muy común en la práctica, lo más sencillo es primero convertir el `data frame` en una matriz aplicándole `as.matrix` (y cambiándole el nombre, para no reescribir el `data frame`) y luego operar con esta matriz.
+
+
+
+
+## Tipificación de datos
+
+* Dado un vector de datos, llamaremos \red{vector de datos tipificados}  al vector que se obtiene restando
+ a cada valor la media aritmética del vector y dividiendo  el resultado por su desviación típica. 
+ De esta manera, se obtiene un vector de datos de  media aritmética $0$
+y varianza~$1$.
+
+* Dada una matriz de datos $\mathbf{X}$, llamaremos su \red{matriz tipificada}  a la matriz $\mathbf{Z}$ que se obtiene tipificando cada columna. Es decir, la tipificación de una matriz de datos $\mathbf{X}$ consiste en primero calcular  su matriz centrada $\widetilde{\mathbf{X}}$ y a continuación dividir cada columna de esta última por la desviación típica $s_i$ de la correspondiente columna de $\mathbf{X}$, es decir ...
+
+## Tipificación de datos
+
+$$
+\mathbf{Z}=\begin{pmatrix}
+\frac{x_{1 1}- \overline{\mathbf{x}}_{\bullet 1}}{s_1}& \frac{x_{1 2}- \overline{\mathbf{x}}_{\bullet 2}}{s_2} &\ldots & \frac{x_{1 p}- \overline{\mathbf{x}}_{\bullet p}}{s_p}\\[2ex]
+\frac{x_{2 1} - \overline{\mathbf{x}}_{\bullet 1}}{s_1}& \frac{x_{2 2}- \overline{\mathbf{x}}_{\bullet 2}}{s_2} &\ldots & \frac{x_{2 p}- \overline{\mathbf{x}}_{\bullet p}}{s_p}\\[2ex]
+\vdots & \vdots   & \ddots      &\vdots\\ 
+\frac{x_{n 1} - \overline{\mathbf{x}}_{\bullet 1}}{s_1}& \frac{x_{n 2}- \overline{\mathbf{x}}_{\bullet 2}}{s_2} &\ldots & \frac{x_{n p}-
+\overline{\mathbf{x}}_{\bullet p}}{s_p}
+\end{pmatrix}
+$$
+
+## Tipificación de datos
+
+
+Si llamamos $\mathbf{D}$ a la matriz diagonal $p\times p$ que tiene en su diagonal principal 
+las desviaciones típicas de las columnas correspondientes de $\mathbf{X}$, entonces 
+$\mathbf{D}^{-1}$ es la matriz diagonal $p\times p$ que tiene en su diagonal principal 
+los inversos de estas desviaciones típicas.
+$$
+\mathbf{D}=
+\begin{pmatrix} 
+{s_1} & 0 & \ldots & 0\\
+ 0 & {s_2}  & \ldots & 0\\
+ \vdots & \vdots & & \vdots\\
+ 0 & 0 & \ldots  & {s_p}
+\end{pmatrix}
+\qquad
+\mathbf{D}^{-1}=
+\begin{pmatrix} 
+\frac{1}{s_1} & 0 & \ldots & 0\\
+ 0 & \frac{1}{s_2}  & \ldots & 0\\
+ \vdots & \vdots & & \vdots\\
+ 0 & 0 & \ldots  & \frac{1}{s_p}
+\end{pmatrix}
+$$
+es inmediato comprobar que la matriz tipificada $\mathbf{Z}$  de $\mathbf{X}$ se obtiene como
+$$
+\mathbf{Z}=\widetilde{\mathbf{X}}\cdot
+\mathbf{D}^{-1}=\mathbf{H}_n\cdot \mathbf{X}\cdot \mathbf{D}^{-1}
+$$
+
+
+
+## Ejemplo tipificación de datos
+
+ \blue{Ejemplo}
+Vamos a tipificar la matriz de datos 
+$$
+\mathbf{X}=\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+.
+$$
+
+Calculamos las varianzas de las columnas: son
+$$
+s^2_1=\frac{11}{16},\quad s^2_2=\frac{9}{4},\quad s^2_3=\frac{27}{16}
+$$
+Entonces
+$$
+\mathbf{D}^{-1}=
+\begin{pmatrix}
+\frac{1}{\sqrt{{11}/{16}}} & 0                  & 0 \\
+0                             & \frac{1}{\sqrt{{9}/{4}}}& 0\\
+0                             & 0 &\frac{1}{\sqrt{{27}/{16}}}  
+\end{pmatrix}
+$$
+y por lo tanto
+
+
+
+## Ejemplo tipificación de datos
+
+\begin{eqnarray*}
+\mathbf{Z} & = &  \mathbf{H}_4\cdot \mathbf{X} \cdot  \mathbf{D}^{-1}
+\\
+& = & 
+ \left(
+\begin{array}{rrrr}
+ 3/4 & -1/4 & -1/4 &
+   -1/4 \\
+ -1/4 & 3/4 & -1/4 &
+   -1/4 \\
+ -1/4 & -1/4 & 3/4 &
+   -1/4 \\
+ -1/4 & -1/4 & -1/4 &
+   3/4
+\end{array}
+\right) \cdot 
+\left(
+\begin{array}{rrr}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{array}
+\right)
+\\ 
+&\cdot &
+\begin{pmatrix}
+\frac{1}{\sqrt{{11}/{16}}} & 0                  & 0 \\
+0                             & \frac{1}{\sqrt{{9}/{4}}}& 0\\
+0                             & 0 &\frac{1}{\sqrt{{27}/{16}}}  
+\end{pmatrix}
+=
+\left(
+\begin{array}{rrr}
+ -{3}/{\sqrt{11}} & -1 & {5}/({3 \sqrt{3}}) \\
+ -{3}/{\sqrt{11}} & -{1}/{3} & {5}/({3 \sqrt{3}}) \\
+ {1}/{\sqrt{11}} & {5}/{3} & -{7}/({3 \sqrt{3}}) \\
+ {5}/{\sqrt{11}} & -{1}/{3} & -{3}/({3 \sqrt{3}})
+\end{array}
+\right)
+\end{eqnarray*}
+
+## Ejemplo tipificación de datos
+
+Para tipificar con R , hay que recordar que para aplicar funciones a las columnas de una matriz, hay que usar la construcción `apply(matriz,MARGIN=2,fun)`.
+
+```{r tipi1,size="scriptsize"}
+X=cbind(c(1,1,2,3),c(-1,0,3,0),c(3,3,0,1))
+#Vector de medias
+m=apply(X,MARGIN=2,mean)  #o m=colMeans(X)
+m
+#Vector de desviaciones típicas
+desv.tip.muest=apply(X,MARGIN=2,sd)
+n=dim(X)[1]
+desv.tip=desv.tip.muest*sqrt((n-1)/n)
+desv.tip
+```
+
+y ahora ...
+
+## Ejemplo tipificación de datos
+
+```{r tipi2,size="scriptsize"}
+#Matriz diagonal de inversas de desviaciones típicas
+Dm=diag(1/desv.tip)
+Dm
+#Construimos la matriz centralizadora H4
+H4=diag(4)-1/4
+H4
+#Calculamos la matriz de datos tipificados de forma matricial
+Z=H4%*%X%*%Dm
+Z
+```
+
+
+
+## Covarianzas muestrales
+
+
+Dada una matriz de datos $\mathbf{X}=(\mathbf{x}_{\bullet 1},\mathbf{x}_{\bullet 2},\ldots,\mathbf{x}_{\bullet p})$, se 
+define la \red{covarianza} de las columnas $\mathbf{x}_{\bullet i}$ y
+$\mathbf{x}_{\bullet j}$ como
+$$
+s_{i j}=\frac{1}{n} \sum_{k =1}^n\big((x_{k i}-\overline{\mathbf{x}}_{\bullet i})(x_{kj}-\overline{\mathbf{x}}_{\bullet j})\big)= 
+\frac{1}{n} \Big(\sum_{k =1}^n x_{k i}\cdot  x_{k j}\Big) - \overline{\mathbf{x}}_{\bullet i} \overline{\mathbf{x}}_{\bullet j}
+$$
+y se define la \red{covarianza muestral} de $\mathbf{x}_i$ y
+$\mathbf{x}_j$ como
+$$
+\widetilde{s}_{ij} =
+\frac{1}{n-1} \sum_{k =1}^n\big((x_{k i}-\overline{\mathbf{x}}_{\bullet i})(x_{kj}-\overline{\mathbf{x}}_{\bullet j})\big)= 
+\frac{n}{n-1} s_{ij}
+$$
+
+
+## Matriz de covarianzas muestrales
+
+El estadístico $s_{i j}$ es el estimador máximo verosímil de la covarianza $\sigma_{i j}$ de las variables aleatorias $X_i$ y $X_j$, mientras que $\tilde{s}_{ij}$ es un estimador insesgado de dicha covarianza.
+
+Es inmediato comprobar que 
+$$ 
+s_{i j}= s_{j i},\ \widetilde{s}_{i j}= \widetilde{s}_{j i},\
+s_{i i}=s_{i}^2,\ \widetilde{s}_{ii}=\widetilde{s}_i^2
+$$
+
+
+## Ejemplo  cálculo de la matriz de covarianzas muestrales
+
+
+La covarianza de las dos primeras columnas de la matriz de datos
+$$
+\mathbf{X}=\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+$$
+
+
+se obtendría de la manera siguiente
+$$
+s_{12}=\frac{1}{4}(1\cdot (-1)+1\cdot 0+2\cdot 3+3\cdot 0)-1.75\cdot 0.5=1.25-0.875=0.375
+$$
+Su covarianza muestral se obtendría multiplicando por $4/3$ este valor
+$$
+\widetilde{s}_{12} = \frac{4}{3} s_{12}=0.5.
+$$
+
+
+## Ejemplo  cálculo de la matriz de covarianzas muestrales
+
+La covarianza muestral de dos vectores  de datos de la misma longitud se puede calcular con R  mediante la función `cov`:
+
+```{r}
+x1=c(1,1,2,3)
+x2=c(-1,0,3,0)
+cov(x1,x2)   #covarianza muestral
+(3/4)*cov(x1,x2)  #covarianza a secas
+sum(x1*x2)/4-mean(x1)*mean(x2)
+```
+
+## Ejemplo  cálculo de la matriz de covarianzas muestrales
+
+Recalquemos que, como en el caso de la varianza con `var`, R  calcula con `cov` la versión muestral de la covarianza. Para pasar de la covarianza muestral a la covarianza, hay que multiplicar por $(n-1)/n$.
+
+Dada una matriz de datos $\mathbf{X}$,  llamaremos su \red{matriz de covarianzas}  a  la matriz
+
+$$
+\mathbf{S}=(s_{i j})_{i,j=1,\ldots,p}=
+\begin{pmatrix}  
+ s_{1 1} & s_{1 2} & \ldots & s_{1 p}\\
+ s_{2 1} & s_{2 2} & \ldots & s_{2 p}\\
+  \vdots & \vdots  &        & \vdots\\
+ s_{p 1} & s_{p 2} & \ldots & s_{p p}
+\end{pmatrix}
+$$
+
+
+## Matriz de varinzas covarianzas; propiedades
+
+La matriz de covarianzas de  $\mathbf{X}$  representa la variabilidad conjunta de
+los datos de dicha matriz. Es una matriz simétrica y semidefinida positiva y por lo tanto tiene todos sus valores propios  $\geq 0$). Además, se tiene el resultado siguiente, que permite su cálculo matricial.
+
+\blue{Teorema}
+Si $\mathbf{S}$ es la matriz de covarianzas de $\mathbf{X}$, entonces
+
+$$
+\mathbf{S}=\frac{1}{n} \widetilde{\mathbf{X}}^t\cdot \widetilde{\mathbf{X}}= 
+\frac{1}{n} \mathbf{X}^t\cdot \mathbf{H}_n\cdot \mathbf{X}.
+$$
+ 
+
+## Matriz de varianzas covarianzas; ejemplo
+
+\blue{Ejemplo.} Continuemos con  la tabla de datos:
+
+$$
+\mathbf{X}=\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+$$
+Vamos a calcular a mano su matriz de covarianzas y comprobar que coincide con la dada por la fórmula anterior.
+Para realizar los cálculos a mano, es costumbre organizar los datos y los cálculos intermedios necesarios en una tabla como la siguiente:
+
+
+## Matriz de varianzas covarianzas; ejemplo
+\begin{center}
+\begin{tabular}{|r||r|r|r|r|r|r|r|r|r|}
+\hline
+$i$&$x_1$&$x_2$&$x_3$&$x_1^2$&$x_2^2$&$x_3^2$&$x_1\cdot x_2$&$x_1\cdot  x_3$&$x_2\cdot x_3$
+\\\hline\hline
+1&1&-1&3&1&1&9&-1&3&-3\\
+2&1&0&3&1&0&9&0&3&0\\
+3&2&3&0&4&9&0&6&0&0\\
+4&3&0&1&9&0&1&0&3&0\\\hline
+Suma&7&2&7&15&10&19&5&9&-3\\\hline
+\end{tabular}
+\end{center}
+
+Estos productos entre columnas reciben el nombre de \red{productos cruzados}.
+
+## Matriz de varianzas covarianzas; ejemplo
+
+
+Así tenemos que 
+$$
+\scriptsize
+\begin{array}{l}
+\displaystyle \overline{x}_1= \frac{7}{4},\quad \overline{x}_2= \frac{2}{4},\quad 
+\overline{x}_3= \frac{7}{4}\\[2ex]
+\displaystyle 
+s_1^2=\frac{1}{4}\sum_{i=1}^4 x_{i 1}^2-\overline{\mathbf{x}}_1^2=\frac{15}{4}
+-\left( \frac{7}{4}\right)^2=\frac{11}{16}\\[2ex]
+\displaystyle 
+s_2^2=\frac{1}{4}\sum_{i=1}^4 x_{i 2}^2-\overline{\mathbf{x}}_2^2=\frac{10}{4} -\left(
+\frac{2}{4}\right)^2=\frac{9}{4}\\[2ex]
+\displaystyle 
+s_3^2=\frac{1}{4}\sum_{i=1}^4 x_{i 3}^2-\overline{\mathbf{x}}_3^2=\frac{19}{4}
+-\left( \frac{7}{4}\right)^2=\frac{27}{16}\\[2ex]
+\displaystyle 
+s_{1 2}=\frac{1}{4}\sum_{i=1}^n x_{i 1} \cdot  x_{i 2} -\overline{\mathbf{x}}_1
+\overline{\mathbf{x}}_2=  \frac{5}{4}-\frac{7}{4}\cdot \frac{2}{4}=\frac{3}{8}\\[2ex]
+\displaystyle 
+s_{1 3}=\frac{1}{4}\sum_{i=1}^n x_{i 1} \cdot x_{i 3} -\overline{\mathbf{x}}_1
+\overline{\mathbf{x}}_3=  \frac{9}{4}-\frac{7}{4}\cdot  \frac{7}{4}=-\frac{13}{16}\\[2ex]
+\displaystyle 
+s_{2 3}=\frac{1}{4}\sum_{i=1}^n x_{i 2} \cdot x_{i 3} -\overline{\mathbf{x}}_2
+\overline{\mathbf{x}}_3=  \frac{-3}{4}-\frac{2}{4}\cdot  \frac{7}{4}=-\frac{13}{8}
+\end{array}
+$$
+
+## Matriz de varianzas covarianzas; ejemplo
+
+... por lo tanto, la matriz de covarianzas es 
+$$\mathbf{S}= \begin{pmatrix}
+ {11}/{16} & {3}/{8}& -{13}/{16} \\
+{3}/{8} & {9}/{4}  & -{13}/{8}\\
+   -{13}/{16} & -{13}/{8}&  {27}/{16}
+ \end{pmatrix}
+ $$
+
+## Matriz de varianzas covarianzas; ejemplo
+
+En forma matricial es 
+
+\begin{eqnarray*}
+\mathbf{S}&=& \frac{1}{4} \mathbf{X}^t\cdot \mathbf{H}_4\cdot \mathbf{X}\\
+& = & \frac{1}{4}\left(
+\begin{array}{cccc}
+ 1 & 1 & 2 & 3 \\
+ -1 & 0 & 3 & 0 \\
+ 3 & 3 & 0 & 1
+\end{array}
+\right)\cdot 
+\left(
+\begin{array}{cccc}
+ 3/4 & -1/4 & -1/4 &
+   -1/4 \\
+ -1/4 & 3/4 & -1/4 &
+   -1/4 \\
+ -1/4 & -1/4 & 3/4 &
+   -1/4 \\
+ -1/4 & -1/4 & -1/4 &
+   3/4
+\end{array}
+\right)
+\\ & \cdot &  
+\left(
+\begin{array}{ccc}
+ 1 & -1 & 3 \\
+ 1 & 0 & 3 \\
+ 2 & 3 & 0 \\
+ 3 & 0 & 1
+\end{array}
+\right) = \ldots =\left(
+\begin{array}{ccc}
+ {11}/{16} & {3}/{8} & -{13}/{16} \\
+ {3}/{8} & {9}/{4} & -{13}/{8} \\
+ -{13}/{16} & -{13}/{8} & {27}{/16}
+\end{array}
+\right)
+\end{eqnarray*}
+
+
+## Matriz de varianzas covarianzas; ejemplo
+
+Con R, efectuaríamos esta operación de la manera siguiente:
+
+```{r}
+X=cbind(c(1,1,2,3),c(-1,0,3,0),c(3,3,0,1))
+n=dim(X)[1]
+H4=diag(4)-1/4
+S=(1/n)*t(X)%*%H4%*%X
+S
+```
+
+## Matriz de varianzas covarianzas; la función cov
+
+La instrucción `cov` aplicada a una matriz de datos $\mathbf{X}$ calcula la matriz de \red{covarianzas muestrales} de $\mathbf{X}$
+$$
+\widetilde{\mathbf{S}}=(\widetilde{s}_{i j})_{i,j=1,\ldots,p}=
+\begin{pmatrix}  
+ \widetilde{s}_{1 1} & \widetilde{s}_{1 2} & \ldots & \widetilde{s}_{1 p}\\
+ \widetilde{s}_{2 1} & \widetilde{s}_{2 2} & \ldots & \widetilde{s}_{2 p}\\
+  \vdots & \vdots  &        & \vdots\\
+\widetilde{s}_{p 1} & \widetilde{s}_{p 2} & \ldots & \widetilde{s}_{p p}
+\end{pmatrix}
+$$
+
+## Matriz de varianzas covarianzas; ejemplo
+
+Para obtener la matriz de covarianzas, es suficiente multiplicar dicha matriz por $(n-1)/n$. Por ejemplo:
+
+
+```{r cov1,size="scriptsize"}
+X=cbind(c(1,1,2,3),c(-1,0,3,0),c(3,3,0,1))
+cov(X)  #matriz de covarianzas muestrales
+(3/4)*cov(X)  #matriz de covarianzas
+```
+
+
+## Variables redundantes
+
+\blue{Definición.}
+
+Decimos que  en una matriz de datos hay \red{variables redundantes} cuando una o más
+columnas aportan la misma información que otra. 
+La redundancia de variables se puede manifestar por ejemplo si una columna
+$\mathbf{x}_{\bullet j}$ depende linealmente de otras columnas
+$$\mathbf{x}_{\bullet 1},\mathbf{x}_{\bullet 1},\ldots ,\mathbf{x}_{\bullet j-1},\mathbf{x}_{\bullet j+1},\ldots \mathbf{x}_{\bullet i_p},$$ es  decir, si existen $a_1,\ldots,a_{j-1},a_{j+1},\ldots a_p,b\in \mathbb{R}$ tales que
+
+$$
+\mathbf{x}_{\bullet j}=a_1\cdot  \mathbf{x}_{\bullet 1}+\cdots+
+a_{j-1} \cdot \mathbf{x}_{\bullet j-1}+a_{j+1}\cdot  +\mathbf{x}_{\bullet j+1}
++\cdots a_p\cdot \mathbf{x}_{\bullet i_p}+b\cdot \mathbf{1}_n
+$$
+para $i=1,2,\ldots,n$.
+
+## Variables redundantes
+
+* En este caso diremos que se da \red{redundancia por dependencia lineal}, y es la única que consideraremos en esta lección, por lo que cuando hablemos de variables redundantes, nos referiremos realmente a  variables redundantes por dependencia lineal.
+
+
+* Diremos que una matriz de datos \red{tiene $k$ variables redundantes}  $\mathbf{x}_{\bullet l_1},\ldots, \mathbf{x}_{\bullet l_k}$  cuando estas $k$ variables dependen linealmente del resto de variables,
+$\{\mathbf{x}_{\bullet  1},\ldots,\mathbf{x}_{\bullet p}\}-\{\mathbf{x}_{\bullet l_1},\ldots, \mathbf{x}_{\bullet l_k}\}$, pero no entre ellas.
+
+
+## Variables redundantes; ejemplo
+
+Por ejemplo,en la tabla o  matriz de datos 
+
+$$
+\left(\begin{array}{ccc}
+1 & -1 & 2\\
+3 & 0 & 7\\
+-2 & 4 & 1
+\end{array}\right)
+$$
+$\mathbf{x}_{\bullet  3}$ es \red{redundante}, puesto que
+$$
+\left(\begin{array}{c}
+2\\
+7\\
+1
+\end{array}\right)
+=2\left(\begin{array}{c}
+1 \\
+3 \\
+-2 
+\end{array}\right)
++\left(\begin{array}{c}
+ -1 \\
+0 \\
+ 4 
+\end{array}\right)
++\left(\begin{array}{c}
+1 \\
+1\\
+1
+\end{array}\right)
+$$
+
+## Variables redundantes; ejemplo
+
+Despejando en esta igualdad cada una de las otras dos columnas, vemos que también son redundantes, pero esta redundancia se debe a la misma relación. Por tanto, no podemos decir que esta matriz tenga tres variables redundantes, sólo tiene  una.
+En cambio la matriz de datos
+$$
+\left(\begin{array}{ccccc}
+1 & 4 & 3&-5 & 4\\
+3 & 9 & 7& -13 & 8\\
+-2 & -2 & 0&4 & 1
+\end{array}\right)
+$$ 
+tiene \red{dos variables redundantes}, dadas por las relaciones lineales
+$$
+\mathbf{x}_{\bullet 4}=\mathbf{x}_{\bullet 1}-2\mathbf{x}_{\bullet 2}+2\cdot \mathbf{1}_3,\quad
+\mathbf{x}_{\bullet 5}=\mathbf{x}_{\bullet 3}+\mathbf{1}_3
+$$
+\red{Observad que}, en estas relaciones, $\mathbf{x}_{\bullet 4}$ no depende de $\mathbf{x}_{\bullet 5}$ ni viceversa.
+
+
+## Propiedades para detectar variables redundantes
+
+\red{¿Cómo detectar variables reduntantes?}
+
+\blue{Teorema.}
+Sea $\mathbf{S}$ la matriz de covarianzas de una matriz de datos $\mathbf{X}$ de $p$  variables. Entonces, 
+el número de variables redundantes de $\mathbf{X}$ es igual a la multiplicidad de 0 como valor propio de $\mathbf{S}$. En particular:
+ 
+* Si $|\mathbf{S}|\neq 0$, entonces no existe ninguna variable redundante.
+
+* Si $|\mathbf{S}|=0$, entonces existe al menos una variable redundante.
+
+* Si el rango de $\mathbf{S}$ es $k$, entonces existen $p-k$ variables redundantes.
+ 
+ 
+Como la matriz de covarianzas muestrales $\widetilde{\mathbf{S}}$ de $\mathbf{X}$ es un múltiplo escalar de 
+$\mathbf{S}$, este resultado también vale para $\widetilde{\mathbf{S}}$.
+
+
+## Variables redundantes; ejemplo
+
+Recordemos que en un ejemplo anterior 
+
+
+$$
+\mathbf{X}=\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+$$
+Para comprobar si tiene variables redundantes, vamos a calcular el determinante de su matriz de covarianzas muestrales:
+
+
+
+```{r}
+
+X=cbind(c(1,1,2,3),c(-1,0,3,0),c(3,3,0,1))
+det(cov(X))
+```
+
+Como este determinante es diferente de 0, esta matriz de datos no contiene variables redundantes.
+
+
+
+
+## Variables redundantes; ejemplo
+Consideremos la tabla de datos siguiente:
+
+
+\begin{table}
+\centering
+\begin{tabular}{|r||r|r|r|}
+\hline
+$i$&$x_1$&$x_2$&$x_3$
+\\\hline\hline
+1 & 1 & 0 & -1 \\
+2 & 1 & 2 & 1 \\
+3 & 1 & 1 & 0 \\
+4 &0 & 3 & 0\\ \hline
+\end{tabular}
+\end{table}
+
+
+Deseamos saber si contiene variables redundantes. Vamos a calcular a manualmente  su matriz de covarianzas:
+
+
+## Variables redundantes; ejemplo
+
+
+\begin{eqnarray*}
+\mathbf{S}&=&\frac{1}{4} \mathbf{X}^t\cdot \mathbf{H}_4\cdot \mathbf{X}\\
+& = & \frac{1}{4}\left(
+\begin{array}{cccc}
+  1 & 1 & 1 & 0 \\
+ 0 & 2 & 1 & 3 \\
+ -1 & 1 & 0 & 0
+\end{array}
+\right)\cdot 
+\left(
+\begin{array}{cccc}
+ 3/4 & -1/4 & -1/4 &
+   -1/4 \\
+ -1/4 & 3/4 & -1/4 &
+   -1/4 \\
+ -1/4 & -1/4 & 3/4 &
+   -1/4 \\
+ -1/4 & -1/4 & -1/4 &
+   3/4
+\end{array}
+\right)
+\\ &\cdot& 
+\left(
+\begin{array}{ccc}
+1 & 0 & -1 \\
+ 1 & 2 & 1 \\
+ 1 & 1 & 0 \\
+ 0 & 3 & 0
+ \end{array}
+\right)
+=\left(
+\begin{array}{rrr}
+ {3}/{16} & -{3}/{8} & 0 \\
+ -{3}/{8} & {5}/{4} & {1}/{2} \\
+ 0 & {1}/{2} & {1}/{2}
+\end{array}
+\right)
+\end{eqnarray*}
+
+
+
+## Variables redundantes; ejemplo
+
+Calculemos su determinate 
+
+$$
+\det(\mathbf{S})=
+\begin{vmatrix}
+ {3}/{16} & -{3}/{8} & 0 \\
+ -{3}/{8} & {5}/{4} & {1}/{2} \\
+ 0 & {1}/{2} & {1}/{2}
+\end{vmatrix}=0
+$$
+Por lo tanto, existe al menos una variable
+redundante. 
+
+
+
+* Ahora bien, por un lado,  $|\mathbf{S}|=0$ implica que el rango de $\mathbf{S}$ es $\leq 2$.
+* Por otra parte es claro que el rango de $\mathbf{S}$ es como mínimo 2, puesto que, por ejemplo, las dos primeras columnas son linealmente independientes (en la última fila, la primera columna tiene un 0 y la segunda, una entrada $\neq 0$).
+* Por lo tanto, el rango de $\mathbf{S}$ es 2 y $\mathbf{X}$ contiene una  única variable redundante.
+
+## Variables redundantes; ejemplo con R
+
+Para comprobar esto mismo con R, usaremos la matriz de covarianzas muestrales:
+
+```{r conRredu,size="scriptsize"}
+X=matrix(c(1,0,-1,1,2,1,1,1,0,0,3,0),nrow=4
+         , byrow=TRUE)
+S=cov(X)
+det(S)
+qr(S)$rank
+eigen(S)$values
+```
+
+
+## Variables redundantes; ejemplo con R
+
+
+Obtenemos que el rango es 2, y también observamos que $\mathbf{S}$ tiene un solo valor propio igual a 0 
+(el último, `3.238150e-17` es 0 salvo por error de cálculo). 
+
+\red{Cada uno de estos dos resultados (equivalentes) implica que hay una variable redundante.}
+
+
+
+## Varianza total, varianza media y varianza generalizada 
+
+Como la matriz de covarianzas como medida
+de variabilidad es difícil de interpretar, debido a que no es una única cantidad sino toda una matriz, es de desear la existencia de un índice que mida esta variabilidad. Hay diversas propuestas al respecto. Veamos varias:
+ 
+* La \red{varianza total} de $\mathbf{X}$ es la suma de las varianzas de sus columnas.
+
+* La \red{varianza media} de $\mathbf{X}$ es la media de las varianzas de sus columnas, es decir, la varianza total partida por el número de columnas.
+
+
+## Varianza total, varianza media y varianza generalizada 
+
+* La \red{varianza generalizada} de $\mathbf{X}$ es el determinante de su matriz de covarianzas. La  \red{desviación típica generalizada} de $\mathbf{X}$
+es la raíz cuadrada positiva de su varianza generalizada. Se puede demostrar que ésta última es el (hiper)volumen del (hiper)poliedro de $\mathbb{R}^p$ definido por las filas de $\mathbf{X}$ consideradas como puntos de $\mathbb{R}^p$.
+ 
+
+## Correlaciones
+
+\blue{Definición.} 
+Se define la \red{correlación lineal de Pearson} de las dos columnas 
+$\mathbf{x}_{\bullet i}$ y $\mathbf{x}_{\bullet j}$ de una matriz de datos $\underline{X}$
+como 
+$$
+r_{i j}=\frac{s_{i j}}{s_i s_j}
+$$
+Observad que 
+$$
+\frac{\widetilde{s}_{i j}}{\widetilde{s}_i\cdot \widetilde{s}_j}=
+\frac{\frac{n}{n-1}\cdot {s}_{i j}}{\sqrt{\frac{n}{n-1}}\cdot {s}_i \cdot\sqrt{\frac{n}{n-1}}\cdot{s}_j}=
+\frac{s_{i j}}{s_i \cdot s_j}=r_{i j}
+$$
+y por lo tanto este coeficiente de correlación se puede calcular también a partir de la covarianza y las desviaciones típicas muestrales por medio de esta misma fórmula.
+
+## Correlaciones; propiedades
+
+La correlación $r_{i j}$ estima el parámetro poblacional $\rho_{i
+j}=Cor(X_i,X_j)$, y tiene las propiedades siguientes:
+ 
+* $-1\leq r_{i j}\leq 1$.
+
+* $r_{i i}=1$.
+
+* $r_{i j}$ tiene el mismo signo que $s_{i j}$.
+
+* $r_{i j}=\pm 1$ si y, sólo si, existe una relación lineal perfecta entre las
+variables $\mathbf{x}_{\bullet i}$ y $\mathbf{x}_{\bullet j}$. O sea, si, y sólo si, existen valores $a,b\in \mathbb{R}$ tales que $\mathbf{x}_{\bullet j}= a \mathbf{x}_{\bullet i} +b\cdot \mathbf{1}_n$. 
+La pendiente $a$ de esta recta tiene el mismo signo
+que la correlación entre las variables.
+ 
+
+
+## Correlaciones; ejemplo
+
+En ejemplos anteriores hemos calculado la covarianza y las varianzas de las dos primeras columnas de la matriz de datos
+
+$$
+\mathbf{X}=\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+$$
+
+Hemos obtenido
+
+$$
+s_{12}=0.375,\quad s_1=\sqrt{\frac{11}{16}}=0.82916,\quad s_2=\sqrt{\frac{9}{4}}=1.5
+$$
+
+
+
+
+
+## Correlaciones:  ejemplo
+
+y por lo tanto su correlación es
+
+$$
+r_{1 2}=\frac{0.375}{0.82916\cdot 1.5}=0.3015.
+$$
+
+Con R, la correlación de Pearson de dos vectores se puede calcular por medio de la función `cor`:
+
+```{r}
+x1=c(1,1,2,3)
+x2=c(-1,0,3,0)
+cor(x1,x2)  
+```
+
+## Matriz de correlaciones
+
+
+\blue{Definición.}
+
+Llamaremos la \red{matriz de correlaciones} (\red{de pearson}) de la matriz de datos $\mathbf{X}$ a 
+$$
+\mathbf{R}=(r_{i j})_{i,j=1,\ldots,p}=
+\begin{pmatrix}
+1 & r_{1 2} & \ldots & r_{1 p}\\
+r_{2 1} & 1 & \ldots & r_{2 p}\\
+\vdots & \vdots & & \vdots\\
+r_{p 1} & r_{p 2} & \ldots & 1
+\end{pmatrix}
+$$
+
+## Matriz de correlaciones; propiedades
+
+\blue{Propiedades}
+
+Esta matriz tiene las propiedades siguientes:
+ 
+* La matriz $\mathbf{R}$ es semi-definida positiva.
+
+* Si todas las variables son incorreladas entonces $\mathbf{R}=I_p$ y
+$\det(\mathbf{R})=1$.
+
+* $\mathbf{R}$ cumple las mismas
+propiedades que la matriz de covarianzas por lo que concierne a las variables redundantes. Por ejemplo,
+ si $\det(\mathbf{R})=0$, entonces hay
+al menos una variable redundante.
+
+* $|\mathbf{R}|\leq 1$.
+
+## Matriz de correlaciones; cálculo matricial
+ 
+La matriz de correlaciones de puede calcular de forma matricial de la manera siguiente.
+Recordemos que 
+$$\mathbf{D}=
+\begin{pmatrix}
+ s_1 & 0 & \ldots & 0\\
+0 & s_2  & \ldots & 0\\
+\vdots & \vdots & & \vdots\\
+0 & 0 & \ldots  & s_p  
+\end{pmatrix}
+\qquad
+\mathbf{D}^{-1}=
+\begin{pmatrix} 
+\frac{1}{s_1} & 0 & \ldots & 0\\
+ 0 & \frac{1}{s_2}  & \ldots & 0\\
+ \vdots & \vdots & & \vdots\\
+ 0 & 0 & \ldots  & \frac{1}{s_p}
+\end{pmatrix}
+$$
+
+## Matriz de correlaciones; cálculo matricial 
+
+\blue{Propiedad}
+$$\mathbf{R}=
+\mathbf{D}^{-1}\cdot\mathbf{S}\cdot \mathbf{D}^{-1}.$$
+
+De este resultado podemos despejar la matriz de covarianzas, y obtenemos  que
+$$
+\mathbf{S}= \mathbf{D} \cdot\mathbf{R}\cdot \mathbf{D}
+$$
+
+Tenemos también el resultado siguiente.
+
+ \blue{Teorema}
+ Si $\mathbf{Z}$ es la \red{matriz de datos tipificados} de $\mathbf{X}$, entonces \red{la matriz de covarianzas} de $\mathbf{Z}$ es igual a la \red{matriz de correlaciones} de $\mathbf{X}$.
+ 
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+\blue{Ejemplo}
+
+Continuemos nuestra tabla/matriz  de datos:
+
+$$
+\mathbf{X}=\begin{pmatrix}
+1&-1&3\\
+1&0&3\\
+2&3&0\\
+3&0&1
+\end{pmatrix}
+$$
+En otros ejemplos ya hemos calculado su matriz de inversos de desviaciones típicas 
+$$
+\mathbf{D}^{-1}=
+\begin{pmatrix}
+\frac{1}{\sqrt{{11}/{16}}} & 0                  & 0 \\
+0                             & \frac{1}{\sqrt{{9}/{4}}}& 0\\
+0                             & 0 &\frac{1}{\sqrt{{27}/{16}}}  
+\end{pmatrix}
+$$
+
+y su matriz de covarianzas...
+
+
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+ 
+... ya estaba calculada y es  
+ 
+ 
+$$
+\qquad
+\mathbf{S}= \begin{pmatrix}
+ {11}/{16} & {3}/{8}& -{13}/{16} \\
+{3}/{8} & {9}/{4}  & -{13}/{8}\\
+   -{13}/{16} & -{13}/{8}&  {27}/{16}
+ \end{pmatrix}
+$$
+
+
+y por lo tanto su matriz de correlaciones es
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+
+\begin{eqnarray*}
+\mathbf{R}
+&=&
+\begin{pmatrix}
+\frac{1}{\sqrt{{11}/{16}}} & 0                  & 0 \\
+0                             & \frac{1}{\sqrt{{9}/{4}}}& 0\\
+0                             & 0 &\frac{1}{\sqrt{{27}/{16}}}  
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+ \frac{11}{16} & \frac{3}{8}& -\frac{13}{16} \\[1.5ex]
+\frac{3}{8} & \frac{9}{4}  & -\frac{13}{8}\\[1.5ex]
+   -\frac{13}{16} & -\frac{13}{8}&  \frac{27}{16}
+   \end{pmatrix}
+\\ 
+&\cdot &
+\begin{pmatrix}
+\frac{1}{\sqrt{{11}/{16}}} & 0                  & 0 \\
+0                             & \frac{1}{\sqrt{{9}/{4}}}& 0\\
+0                             & 0 &\frac{1}{\sqrt{{27}/{16}}}  
+\end{pmatrix}
+\\
+&=&
+\begin{pmatrix}
+           1  & -0.7745967 & 0\\
+   -0.7745967 &          1 & 0.6324555\\
+            0 &  0.6324555 & 1.0000000
+\end{pmatrix}
+\end{eqnarray*}
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+La matriz de correlaciones de una matriz de datos se puede calcular con R con la misma función `cor`.
+
+
+```{r}
+X=matrix(c(1,0,-1,1,2,1,1,1,0,0,3,0),nrow=4, 
+         byrow=TRUE)
+cor(X)
+```
+
+Naturalmente ... \red{obtenemos el mismo resultado}.
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+
+```{r}
+D=matrix(c(1/sqrt(11/16),
+           0,0,0,1/sqrt(9/4),
+           0,0,0,1/sqrt(27/16))
+  ,byrow=TRUE,ncol=3)
+D
+S=matrix(c(11/16,   3/8, -13/16,
+             3/8,   9/4, -13/8,
+          -13/16, -13/8,  27/16),nrow=3, 
+         byrow=TRUE)
+```
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+
+```{r}
+D_inv=solve(D)
+# inversa de la matriz D
+D_inv%*%S%*%D_inv
+
+```
+
+
+
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+Comprobemos que da lo mismo que el producto de matrices anterior
+
+```{r}
+#Matriz diagonal de inversas de desviaciones típicas
+desv.tip=apply(X,MARGIN=2,sd)*sqrt(3/4)
+Dm=diag(1/desv.tip)
+#Matriz de covarianzas
+S=(3/4)*cov(X)  
+Dm%*%S%*%Dm
+```
+
+
+## Matriz de correlaciones;  ejemplo cálculo matricial 
+
+* También podemos comprobar que esta matriz de correlaciones es la matriz de covarianzas de su matriz de datos tipificados. 
+
+* Recordemos que la matriz de datos tipificados  la hemos calculado en el Ejemplo  anterior
+
+```{r}
+H4=diag(4)-1/4
+Z=H4%*%X%*%Dm
+(3/4)*cov(Z)
+```
+
+
+## Ejercicio 
+
+Consideremos la siguiente matriz de datos 
+
+$$
+\mathbf{X}=
+\begin{pmatrix}
+ 1 & 0 & -1 \\
+ 1 & 1 & 1 \\
+ 1 & 1 & 0 \\
+ 0 & -2 & 0
+\end{pmatrix}
+$$
+Calculad de forma matricial las matrices siguientes:
+
+* Su matriz de datos tipificados $\mathbf{Z}$
+* Su matriz de covarianzas $\mathbf{S}$
+* Su matriz de correlaciones $\mathbf{R}$
+
+Determinad si esta matriz de datos tiene variables redundantes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
