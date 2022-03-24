@@ -11,15 +11,15 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{H4=}\KeywordTok{diag}\NormalTok{(}\DecValTok{4}\NormalTok{)}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{/}\DecValTok{4}
-\NormalTok{Z=H4}\OperatorTok{\%*\%}\NormalTok{X}\OperatorTok{\%*\%}\NormalTok{Dm}
-\NormalTok{(}\DecValTok{3}\OperatorTok{/}\DecValTok{4}\NormalTok{)}\OperatorTok{*}\KeywordTok{cov}\NormalTok{(Z)}
+\NormalTok{H4}\OtherTok{=}\FunctionTok{diag}\NormalTok{(}\DecValTok{4}\NormalTok{)}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{/}\DecValTok{4}
+\NormalTok{Z}\OtherTok{=}\NormalTok{H4}\SpecialCharTok{\%*\%}\NormalTok{X}\SpecialCharTok{\%*\%}\NormalTok{Dm}
+\NormalTok{(}\DecValTok{3}\SpecialCharTok{/}\DecValTok{4}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{cov}\NormalTok{(Z)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##            [,1]       [,2]      [,3]
-## [1,]  1.0000000 -0.7745967 0.0000000
-## [2,] -0.7745967  1.0000000 0.6324555
-## [3,]  0.0000000  0.6324555 1.0000000
+##            [,1]       [,2]       [,3]
+## [1,]  1.0000000  0.3015113 -0.7543365
+## [2,]  0.3015113  1.0000000 -0.8339504
+## [3,] -0.7543365 -0.8339504  1.0000000
 \end{verbatim}
