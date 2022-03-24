@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE,cache=TRUE)
 options(scipen=999)
 ```
 
-# Ejercicios de Combinatoria 1 con soluciones
+# Ejercicios de Combinatoria parte 1 con soluciones
 
 Breves soluciones de los problemas
 
@@ -38,6 +38,9 @@ Con `gttols` podemos  listar todas las maneras  en las que acaban los 4 primeros
 El código con R  es
 
 ```{r pr1}
+# Es necesario tener instalado "gtools". 
+# Descomenta y ejecuta la siguiente linea para instalarlo
+# install.packages("gtools")
 library(gtools)
 10*9*8*7
 cuatro_primeros_puestos=permutations(n=10,r=4,set=TRUE,repeats.allowed = FALSE) 
@@ -283,7 +286,7 @@ Se deja como ejercicio cómo generar todas las asignaciones de becas utilizando 
 
 \newpage
 
-# Ejercicios de Combinatoria 2
+# Ejercicios de Combinatoria parte 2
 
 En todas las resoluciones se deja como ejercicio cómo generar todos los objetos combinatorios con la librería `gtools` o de otra manera. 
 

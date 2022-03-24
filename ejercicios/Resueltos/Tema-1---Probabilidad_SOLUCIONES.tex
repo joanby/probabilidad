@@ -1,0 +1,1229 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\title{SOLUCIONES: Ejercicios Tema 1 - Probabilidad. Parte 1, 2 y 3}
+\author{Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir}
+\date{Curso de Probabilidad y Variables Aleatorias con R y Python}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={SOLUCIONES: Ejercicios Tema 1 - Probabilidad. Parte 1, 2 y 3},
+  pdfauthor={Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=blue}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{ejercicios-de-espacios-muestrales-y-sucesos}{%
+\section{Ejercicios de Espacios muestrales y
+sucesos}\label{ejercicios-de-espacios-muestrales-y-sucesos}}
+
+\hypertarget{problema-1}{%
+\subsection{Problema 1}\label{problema-1}}
+
+Se seleccionan al azar tres cartas sin reposición de una baraja que
+contiene 3 cartas rojas, 3 azules, 3 verdes y 3 negras. Especifica un
+espacio muestral para este experimento y halla todos los sucesos
+siguientes:
+
+\begin{itemize}
+\tightlist
+\item
+  \(A\) = ``Todas las cartas seleccionadas son rojas''
+\item
+  \(B\) = ``Una carta es roja, 1 es verde y otra es azul''
+\item
+  \(C\) = ``Salen tres cartas de colores diferentes''
+\end{itemize}
+
+\hypertarget{soluciuxf3n}{%
+\subsubsection{Solución}\label{soluciuxf3n}}
+
+Codificamos el espacio muestral por la inicial del color y el número de
+carta de 1 a 3 por color
+\[\Omega=\{R1, R2, R3, V1, V2, V3, A1, A2, A3, N1, N2, N3 \}.\]
+
+Los sucesos que nos piden son:
+
+\begin{itemize}
+\tightlist
+\item
+  \(A=\{(R1, R2, R3),(R1, R3, R2),(R2, R1, R3),(R2, R3, R1),(R3, R1, R2), (R3, R2, R1)\}\),
+\item
+  \(B=\{(Ri,Vj,Ak),(Ri,Aj,Vk),(Vi,Rj,Ak),(Vi,Aj,Rk),(Ai,Vj,Rk),(Ai,Rj,Vk) | \mbox{ con } i,j,k\in\{1,2,3\}\}\).
+  El cardinal de \(\left|B\right|=6\cdot 3\cdot 3\cdot 3= 162\)
+\item
+  Se selecciona tres colores de entre los 4 \({{4}\choose {3}}=4\)
+  casos. Cada trío de colores tiene el mismo cardinal que \(B\) por lo
+  tanto en total son \(4\cdot 6\cdot 3^3=648\).
+\end{itemize}
+
+Ejercicio idead un algoritmo que escriba los objetos combinatorios en
+cada caso.
+
+\hypertarget{ejercicios-de-probabilidad}{%
+\section{Ejercicios de Probabilidad}\label{ejercicios-de-probabilidad}}
+
+\hypertarget{problema-1-1}{%
+\subsection{Problema 1}\label{problema-1-1}}
+
+Se lanzan al aire dos monedas iguales. Hallar la probabilidad de que
+salgan dos caras iguales.
+
+\hypertarget{soluciuxf3n-1}{%
+\subsubsection{Solución}\label{soluciuxf3n-1}}
+
+\(P(CC)=\frac{\left|\{CC\}\right|}{\left|\{CC,C+,+C,++\}\right|}=\frac{1}{4}.\)
+
+\hypertarget{problema-2}{%
+\subsection{Problema 2}\label{problema-2}}
+
+Suponer que se ha trucado un dado de modo que la probabilidad de que
+salga un número es proporcional al mismo.
+
+\begin{itemize}
+\tightlist
+\item
+  Hallar la probabilidad de los sucesos elementales, de que salga un
+  número par y también de que salga un número impar.
+\item
+  Repetir el problema pero suponiendo que la probabilidad de que salga
+  un determinado número es inversamente proporcional al mismo.
+\end{itemize}
+
+\hypertarget{soluciuxf3n-2}{%
+\subsubsection{Solución}\label{soluciuxf3n-2}}
+
+\textbf{PARTE I}
+
+Sea \(\Omega=\{1,2,3,4,5,6\}\) y nos dicen que \(P(k)= \alpha\cdot k\).
+
+La suma de todas las probabilidades debe ser 1 así que
+\footnote{Utilizamos que
+$\sum_{k=1}^n k=\frac{n\cdot (n+1)}{2}$ }
+
+\[1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot k=
+\alpha\cdot  \sum_{k=1}^6 k = \alpha \cdot \frac{6\cdot (6+1)}{2}=\alpha\cdot 21.\]
+
+Por lo que obtenemos que \(\alpha=\frac{1}{21}.\)
+
+\(P(\mbox{salir par})= P(2)+P(4)+P(6)=\frac{2}{21}+\frac{4}{21}+\frac{6}{21}=\frac{12}{21}=\frac{4}{7}=0.5714286.\)
+
+\(P(\mbox{salir impar})= 1- P(\mbox{salir par})=1-\frac{12}{21}=0.4285714.\)
+
+\textbf{PARTE II}
+
+Sea \(\Omega=\{1,2,3,4,5,6\}\) y nos dicen que
+\(P(k)= \alpha\cdot \frac{1}{k}\). La suma de todas las probabilidades
+debe ser 1 así que \[
+1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot \frac{1}{k}=
+\alpha \sum_{k=1}^6 k = \alpha \left(\frac{1}{1}+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6}\right)=\alpha\cdot 2.45,
+\] Luego el valor buscado es \(\alpha=\frac{1}{2.45}=0.4081633\).
+
+\(P(\mbox{salir par})= P(2)+P(4)+P(6)=0.4081633\left(\frac{1}{2}+\frac{1}{4}+\frac{1}{6}\right)=0.3741497.\)
+
+\(P(\mbox{salir impar})= 0.4081633\left(\frac{1}{1}+\frac{1}{3}+\frac{1}{5}\right)= 0.6258504.\)
+
+Efectivamente
+\(P(\mbox{salir impar})=1-P(\mbox{salir par})=1-0.3741497= 0.6258503.\)
+
+\hypertarget{problema-3}{%
+\subsection{Problema 3}\label{problema-3}}
+
+En una prisión de 100 presos se seleccionan al azar dos personas para
+ponerlas en libertad.
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Cual es la probabilidad de que el más viejo de los presos sea uno de
+  los elegidos?
+\item
+  ¿Y que salga elegida la pareja formada por el más viejo y el más
+  joven?
+\end{itemize}
+
+\hypertarget{soluciuxf3n-3}{%
+\subsubsection{Solución}\label{soluciuxf3n-3}}
+
+Supongamos que solo hay un mas viejo y un más joven.
+
+\begin{eqnarray*}
+P(\mbox{De entre dos elegidos al azar esté el más viejo}) &=&
+\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}= \\
+&&\frac{{{99}\choose {1}}}{{{100}\choose {2}}}=\frac{99}{\frac{100\cdot 99}{2}}=\\
+&&\frac{2\cdot 99}{100\cdot 99}=
+\frac{2}{100}=\frac{1}{50}.
+\end{eqnarray*}
+
+\begin{eqnarray*}
+P(\mbox{De los dos elegidos al azar sean  el más viejo y el más joven})&=&\\
+\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}=
+\frac{1}{{{100} \choose {2}}}=\frac{1}{\frac{100\cdot 99}{2}}&=&\\
+\frac{2}{100\cdot 99}
+=\frac{1}{4950}.
+\end{eqnarray*}
+
+\hypertarget{problema-4}{%
+\subsection{Problema 4}\label{problema-4}}
+
+Se apuntan tres corredores A, B y C a una carrera.
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Cuál es la probabilidad de que A acabe antes que C si todos son igual
+  de hábiles corriendo y no puede haber empates?
+\item
+  ¿Cuál es la probabilidad de que A acabe antes que B y C?
+\end{itemize}
+
+\hypertarget{soluciuxf3n-4}{%
+\subsubsection{Solución}\label{soluciuxf3n-4}}
+
+Los casos posibles CP son \(3!=6\)
+
+El corredor A puede acabar antes de C siendo primero o segundo en cada
+caso \(2!\) casos (hacer un algoritmo que los escriba), si denotamos con
+CF a los casos favorables tenemos que:
+
+\[P(\mbox{A acabe antes de C})=\frac{CF= \{ABC,ACB,BAC\}}{CP}=\frac{3}{3!}=\frac{3}{6}=\frac{1}{2}.\]
+
+\[P(\mbox{A acabe antes de B y C})=\frac{CF}{CP}=\frac{2!}{3!}=\frac{1}{3}.\]
+
+\hypertarget{problema-5}{%
+\subsection{Problema 5}\label{problema-5}}
+
+En una sala se hallan \(n\) personas. ¿Cual es la probabilidad de que
+haya al menos dos personas con el mismo mes de nacimiento? Dar el
+resultado para los valores de \(n=3,4,5,6\).
+
+\hypertarget{soluciuxf3n-5}{%
+\subsubsection{Solución}\label{soluciuxf3n-5}}
+
+\[P(\mbox{"Entre n personas al menos dos nazcan el mimo mes"})=1-P(\mbox{"Entre  n personas todas nazcan en distinto mes"}).\]
+
+Casos Posibles (CP) todas las maneras de escoger \(n\) meses de 12 esto
+son \(VR_{12}^n=12^n.\).
+
+Casos Favorables a que todas nazcan EN MESES DISTINTOS
+\(V_{12}^n=\frac{12!}{(12-n)!}\)
+
+\begin{eqnarray*}
+P(\mbox{"Entre n personas al menos dos nazcan el mimo mes"})&=&\\
+1-P(\mbox{"Entre  n personas todas nazcan en distinto mes"})&=&\\
+1-\frac{\frac{12!}{(12-n)!}}{12^n}.
+\end{eqnarray*}
+
+Hagamos los calculamos con R para \(n=3,4,5,6\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n}\OtherTok{=}\DecValTok{3}\SpecialCharTok{:}\DecValTok{6}
+\FunctionTok{sapply}\NormalTok{(n,}\AttributeTok{FUN=}\ControlFlowTok{function}\NormalTok{(n) }\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{((}\FunctionTok{factorial}\NormalTok{(}\DecValTok{12}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{factorial}\NormalTok{(}\DecValTok{12}\SpecialCharTok{{-}}\NormalTok{n)))}\SpecialCharTok{/}\NormalTok{(}\DecValTok{12}\SpecialCharTok{\^{}}\NormalTok{n))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2361111 0.4270833 0.6180556 0.7771991
+\end{verbatim}
+
+\hypertarget{problema-6}{%
+\subsection{Problema 6}\label{problema-6}}
+
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4,
+respectivamente. Se sacan dos bolas sin reposición. Sea \(A\) el suceso
+que la suma sea 5 y sea \(B_i\) el suceso que la primera bola extraída
+tenga un \(i\),con \(i=1,2,3,4\). Hallar \(P(A|B_i),\  i=1,2,3,4\) y
+\(P(B_i|A), i=1,2,3,4\).
+
+\hypertarget{soluciuxf3n-6}{%
+\subsubsection{Solución}\label{soluciuxf3n-6}}
+
+Si contamos el ``orden de extracción'' el espacio muestral son los pares
+no ordenados
+\[\Omega =\{(1,2),(2,1),(1,3),(3,1),(1,4),(4,1),(2,3),(3,2),(2,4),(4,2),(3,4),(4,3)\}.\]
+
+Todos los pares son equiprobables y tienen por probabilidad
+\(\frac{1}{6}.\)
+
+El suceso de que la suma sea 5 es \(A=\{(1,4),(4,1),(3,2),(2,3)\}\). Los
+sucesos que empiezan por \(i\) son \(B_1=\{(1,2),(1,3),(1,4)\}\) y de
+forma similar se construyen el resto de \(B_i\) \(i=2,3,4\). Es evidente
+que \(P(B_i)=\frac{3}{12}=\frac{1}{4}\)
+
+\[
+P(A|B_1)=\frac{P(A\cap B_1)}{P(B_1)}=\frac{P((1,4))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+\]
+
+\[
+P(A|B_2)=\frac{P(A\cap B_2)}{P(B_2)}=\frac{P((2,3))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+\]
+
+\[
+P(A|B_3)=\frac{P(A\cap B_3)}{P(B_3)}=\frac{P((3,2))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.
+\]
+
+\[P(A|B_4)=\frac{P(A\cap B_4)}{P(B_4)}=\frac{P((4,1))}{\frac{3}{12}}=
+\frac{\frac{1}{12}}{\frac{3}{12}}=\frac{1}{3}.\]
+
+Ahora para hacer fácil la segunda parte para \(i=1,2,3,4\) hacemos
+
+\[
+P(B_i/A)=\frac{P(A/B_i)\cdot P(B_i)}{P(A)}=\frac{\frac{1}{3}\cdot \frac{3}{12}}{\frac{4}{12}}=\frac{1}{4}.
+\]
+
+\hypertarget{problema-7}{%
+\subsection{Problema 7}\label{problema-7}}
+
+Se lanza al aire una moneda no trucada.
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Cuál es la probabilidad que la cuarta vez salga cara, si sale cara en
+  las tres primeras tiradas?
+\item
+  ¿Y si salen 2 caras en las 4 tiradas?
+\end{itemize}
+
+\hypertarget{soluciuxf3n-7}{%
+\subsubsection{Solución}\label{soluciuxf3n-7}}
+
+Para la primera cuestión hacemos
+
+\[
+P(\mbox{C en la cuarta}|CCC)=
+\frac{P(\mbox{C en la cuarta}\cap \{CCC\})}{P(CCC)}=
+\frac{P(CCCC)}{P(CCC)}=\frac{0.5^4}{0.5^3}=0.5
+.
+\]
+
+En la primera cuestión hacemos tenemos que considerar el suceso
+\[\mbox{"2 caras en cuatro tiradas"}=\{CC++,C+C+,C++C,+C+C,++CC,+CC+\}.\]
+
+\begin{eqnarray*}
+P(\mbox{"C en la cuarta"}|\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})&=&\\
+\frac{P(\mbox{"C en la cuarta"}\cap \{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}{P(CCC)}&=&
+\\
+\frac{P(\{C++C,+C+C,++CC\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}&=&
+\\
+\frac{3\cdot 0.5^4}{6\cdot 0.5^4}=\frac{1}{2}=0.5.
+\end{eqnarray*}
+
+\hypertarget{problema-8}{%
+\subsection{Problema 8}\label{problema-8}}
+
+La urna 1 contiene 2 bolas rojas y 4 de azules. La urna 2 contiene 10
+bolas rojas y 2 de azules. Si escogemos al azar una urna y sacamos una
+bola,
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Cuál es la probabilidad que la bola seleccionada sea azul?
+\item
+  ¿Y que sea roja?
+\end{itemize}
+
+\hypertarget{soluciuxf3n-8}{%
+\subsubsection{Solución}\label{soluciuxf3n-8}}
+
+Sea \(U_i\) el suceso hemos es cogido la urna \(i\) para \(i=1,2\), y
+\(A\) el suceso la bola extraída es azul y \(R\) roja.
+
+Sabemos que \(P(A/U_1)=\frac{4}{6}\), \(P(A/U_2)=\frac{2}{12}\),
+\(P(R/U_1)=\frac{2}{6}\) y \(P(R/U_2)=\frac{10}{12}.\)
+
+Nos piden en primer lugar \(P(A)\) sin saber de qué urna se ha extraído.
+Utilizaremos el teorema de la probabilidad total
+
+\[
+P(A)=P(A|U_1)\cdot P(U_1)+P(A|U_2)\cdot P(U_2)=
+\frac{4}{6}\cdot \frac{1}{2}+\frac{2}{12}\cdot \frac{1}{2}
+=\frac{4}{12}+\frac{1}{12}=\frac{5}{12}.
+\]
+
+Por otra parte
+
+\(P(R)=1-P(A)=1-\frac{5}{12}=\frac{7}{12}.\)
+
+\hypertarget{problema-9}{%
+\subsection{Problema 9}\label{problema-9}}
+
+Supongamos que la ciencia médica ha desarrollado una prueba para el
+diagnóstico de cáncer que tiene un 95\% de exactitud, tanto en los que
+tienen cáncer como en los que no. Si el 5 por mil de la población
+realmente tiene cáncer, encontrar la probabilidad que un determinado
+individuo tenga cáncer, si la prueba ha dado positiva.
+
+\hypertarget{soluciuxf3n-9}{%
+\subsubsection{Solución}\label{soluciuxf3n-9}}
+
+Sea \(C\) es el suceso tener cáncer, y T el sucesos el diagnóstico da
+positivo en cáncer.
+
+Nos dicen que \(P(T|C)=P(T^c|C^c)=0.95\) y que \(P(C)=0.005\) por lo
+tanto \[P(T|C^c)=1-P(T^c|C^2)=0.0 \mbox{ y } P(C^c)=1-P(C)=0.005.\]
+
+Nos piden
+
+\begin{eqnarray*}
+P(C|T)&=&\frac{P(T|C)\cdot P(C)}{P(T)}= 
+\frac{P(T|C)\cdot P(C)}{P(T|C)\cdot P(C)+P(T|C^c)\cdot P(C^c)} =\\
+&&\frac{0.95\cdot 0.005}{0.95\cdot 0.005+(1-0.95)\cdot (1-0.005)}=\\
+&&
+0.087156. 
+\end{eqnarray*}
+
+\hypertarget{problema-10}{%
+\subsection{Problema 10}\label{problema-10}}
+
+Se lanzan una sola vez dos dados. Si la suma de los dos dados es como
+mínimo 7, ¿cuál es la probabilidad que la suma sea igual a \(i\), para
+\(i=7,8,9,10,11,12\)?
+
+\hypertarget{soluciuxf3n-10}{%
+\subsubsection{Solución}\label{soluciuxf3n-10}}
+
+Estos son los resultados de la suma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dado1}\OtherTok{=}\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\AttributeTok{times=}\DecValTok{6}\NormalTok{)}\CommentTok{\# dado 1}
+\NormalTok{dado2}\OtherTok{=}\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\AttributeTok{each=}\DecValTok{6}\NormalTok{) }\CommentTok{\#dado 2}
+\NormalTok{resultados}\OtherTok{=}\FunctionTok{data.frame}\NormalTok{(dado1,dado2,}\AttributeTok{suma=}\NormalTok{dado1}\SpecialCharTok{+}\NormalTok{dado2)}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(resultados)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}rrr@{}}
+\toprule
+dado1 & dado2 & suma \\
+\midrule
+\endhead
+1 & 1 & 2 \\
+2 & 1 & 3 \\
+3 & 1 & 4 \\
+4 & 1 & 5 \\
+5 & 1 & 6 \\
+6 & 1 & 7 \\
+1 & 2 & 3 \\
+2 & 2 & 4 \\
+3 & 2 & 5 \\
+4 & 2 & 6 \\
+5 & 2 & 7 \\
+6 & 2 & 8 \\
+1 & 3 & 4 \\
+2 & 3 & 5 \\
+3 & 3 & 6 \\
+4 & 3 & 7 \\
+5 & 3 & 8 \\
+6 & 3 & 9 \\
+1 & 4 & 5 \\
+2 & 4 & 6 \\
+3 & 4 & 7 \\
+4 & 4 & 8 \\
+5 & 4 & 9 \\
+6 & 4 & 10 \\
+1 & 5 & 6 \\
+2 & 5 & 7 \\
+3 & 5 & 8 \\
+4 & 5 & 9 \\
+5 & 5 & 10 \\
+6 & 5 & 11 \\
+1 & 6 & 7 \\
+2 & 6 & 8 \\
+3 & 6 & 9 \\
+4 & 6 & 10 \\
+5 & 6 & 11 \\
+6 & 6 & 12 \\
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{frecuencias\_suma}\OtherTok{=}\FunctionTok{table}\NormalTok{(resultados}\SpecialCharTok{$}\NormalTok{suma)}
+\NormalTok{frecuencias\_suma}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  2  3  4  5  6  7  8  9 10 11 12 
+##  1  2  3  4  5  6  5  4  3  2  1
+\end{verbatim}
+
+La probabilidad de las 11 posibles sumas son
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(frecuencias\_suma)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##          2          3          4          5          6          7          8 
+## 0.02777778 0.05555556 0.08333333 0.11111111 0.13888889 0.16666667 0.13888889 
+##          9         10         11         12 
+## 0.11111111 0.08333333 0.05555556 0.02777778
+\end{verbatim}
+
+La probabilidad de suma mayor o igual que 7 es la suma de las
+probabilidades anteriores desde suma 7 a suma 12
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(frecuencias\_suma)[}\DecValTok{6}\SpecialCharTok{:}\DecValTok{11}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##          7          8          9         10         11         12 
+## 0.16666667 0.13888889 0.11111111 0.08333333 0.05555556 0.02777778
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{prob\_suma\_mayor\_igual\_7}\OtherTok{=}\FunctionTok{sum}\NormalTok{(}\FunctionTok{prop.table}\NormalTok{(frecuencias\_suma)[}\DecValTok{6}\SpecialCharTok{:}\DecValTok{11}\NormalTok{])}
+\NormalTok{prob\_suma\_mayor\_igual\_7}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.5833333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(resultados}\SpecialCharTok{$}\NormalTok{suma)[}\DecValTok{6}\SpecialCharTok{:}\DecValTok{11}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  7  8  9 10 11 12 
+##  6  5  4  3  2  1
+\end{verbatim}
+
+La probabilidades pedidas son
+
+\[P(\{\mbox{Suma  i}\}|\{\mbox{Suma\ mayor igual 7\}})
+=\frac{P(\mbox{\{Suma\ i\}}\cap 
+\{\mbox{Suma mayor igual 7 \}})}{P(\{\mbox{ Suma mayor igual 7 \}})} =\frac{P(\{ \mbox{Suma i \}})}{P(\{\mbox{Suma mayor igual 7 \}})}
+\]
+
+Que resolvemos así para \(i=7,8,9,10,11,12\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(frecuencias\_suma)[}\DecValTok{6}\SpecialCharTok{:}\DecValTok{11}\NormalTok{]}\SpecialCharTok{/}\NormalTok{prob\_suma\_mayor\_igual\_7}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##          7          8          9         10         11         12 
+## 0.28571429 0.23809524 0.19047619 0.14285714 0.09523810 0.04761905
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(resultados}\SpecialCharTok{$}\NormalTok{suma))[}\DecValTok{6}\SpecialCharTok{:}\DecValTok{11}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##          7          8          9         10         11         12 
+## 0.16666667 0.13888889 0.11111111 0.08333333 0.05555556 0.02777778
+\end{verbatim}
+
+\hypertarget{problema-11.}{%
+\subsection{Problema 11.}\label{problema-11.}}
+
+Se sabe que \(=\frac23\) de los internos de una cierta prisión son
+menores de 25 años. También se sabe que \(=\frac35\) son hombres y que
+\({5\over 8}\) de los internos son mujeres o mayores de 25 años. ¿Cuál
+es la probabilidad de que un prisionero escogido al azar sea mujer y
+menor de 25 años?
+
+\hypertarget{soluciuxf3n-11}{%
+\subsubsection{Solución}\label{soluciuxf3n-11}}
+
+Sea \(Mayor_25\) el suceso ser menor de 25 años, \(H\) ser hombre y
+\(M=H^c\) ser mujer.
+
+Según dice el enunciado del problemas tenemos que
+\(P(Mayor_25)=\frac23\), \(P(H)=\frac35\), y por lo tanto
+\(P(M)=P(H^c)=1-P(H)=1-\frac35=\frac25.\) Además nos dicen que
+\(P(M\cup Mayor_25)=\frac58.\)
+
+Nos piden la probabilidad de ser mujer y menor de 25 es decir
+\(P(M\cap Mayor_25^c)=P(M-Mayor_25)=P(M)-P(M\cap Mayor_25)\).
+
+Como \(\frac58= P(M\cup Mayor_25)=P(M)+ P(Mayor_25)-P(M\cap Mayor_25))\)
+tenemos que \(\frac58=\frac25+ \frac23-P(M\cap Mayor_25)\) luego la
+probabilidad que se pide es
+\(P(M\cap Mayor_25)=\frac25+ \frac23-\frac58=\frac{53}{120}.\)
+
+\hypertarget{problema-12.}{%
+\subsection{Problema 12.}\label{problema-12.}}
+
+Consideremos una hucha con \(2n\) bolas numeradas del \(1\) al \(2n\).
+Sacamos \(2\) bolas de la urna sin reposición. Sabiendo que la segunda
+bola es par, ¿cuál es la probabilidad de que la primera bola sea impar?
+
+\hypertarget{soluciuxf3n-12}{%
+\subsubsection{Solución}\label{soluciuxf3n-12}}
+
+\[
+P(\mbox{\{primera par\}}|\mbox{\{segunda impar\}})=
+\frac{n^2}{n^2+n\cdot (n-1)}=
+\frac{n}{2n-1}
+\]
+
+\hypertarget{problema-13.}{%
+\subsection{Problema 13.}\label{problema-13.}}
+
+Consideramos el siguiente experimento aleatorio: sacamos \(5\) números
+al azar sin reposición a partir de los números naturales
+\(1,2,\dots,20\). Encontrad la probabilidad \(p\) de que haya
+exactamente dos números tales que sean múltiplos de \(3\)
+
+\hypertarget{soluciuxf3n-13}{%
+\subsubsection{Solución}\label{soluciuxf3n-13}}
+
+Da igual que los contemos extrayendo de uno en uno o de golpe lo
+importante es que son sin reposición; de 1 a 20 hay 6 múltiplos de 3
+\(\{3,6,9,12,15,18\}\):
+
+\textbf{Extraemos 5 de esos números}:
+
+Casos Posibles (CP): \({20 \choose 5}\)
+
+Casos Favorables (CF): Escogemos dos múltiplos de 3 entre 6 y por cada
+elección escogemos 3 no múltiplos entre 20-6=14 número por lo tanto hay
+\({6 \choose 2}\cdot{{20-6} \choose 3}={6 \choose 2}\cdot{{14} \choose 3}\).
+
+Luego la probabilidad de exactamente dos múltiplos de 3 es
+
+\[
+P(\mbox{\{2 múltiplos de 3\}} )=\frac{CF}{CP}=\frac{{6 \choose 2}\cdot{14 \choose 3}}{{20 \choose 5}}=0.3521672
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{choose}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{choose}\NormalTok{(}\DecValTok{14}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 364
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{choose}\NormalTok{(}\DecValTok{20}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15504
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# la probabilidad es }
+\FunctionTok{choose}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{2}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{choose}\NormalTok{(}\DecValTok{14}\NormalTok{,}\DecValTok{3}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{choose}\NormalTok{(}\DecValTok{20}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3521672
+\end{verbatim}
+
+\textbf{Sacamos 5 en orden sin reposición}:
+
+Casos Posibles (CP): \(V_{20}^{5}=\frac{20!}{(20-5)!}.\)
+
+Casos Favorables (CF): Escogemos dos posiciones para colocar múltiplos
+de 3 ahora en esas posiciones hacemos \(V_2^6\) de los 6 múltiplo y
+luego en las tres restantes hacemos variaciones de los 14 no múltiplos
+\(V_3^{14}\) por lo tanto hay
+\({5 \choose 2}\cdot V_6^2\cdot V_{14}^{3}\).
+
+Luego la probabilidad de exactamente dos múltiplos de 3 es
+
+\[
+P(\mbox{\{2 múltiplos de 3\}} )=\frac{CF}{CP}=\frac{{5\choose 2}\cdot V_{6}^{2}\cdot V_{14}^{3}}{V_{10}^{5}}=
+0.3521672
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{choose}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{factorial}\NormalTok{(}\DecValTok{6}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{factorial}\NormalTok{(}\DecValTok{6{-}2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 30
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{factorial}\NormalTok{(}\DecValTok{14}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{factorial}\NormalTok{(}\DecValTok{14{-}3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2184
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{factorial}\NormalTok{(}\DecValTok{20}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{factorial}\NormalTok{(}\DecValTok{20{-}5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1860480
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# La probabilidad es }
+
+\FunctionTok{choose}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{2}\NormalTok{)}\SpecialCharTok{*}\FunctionTok{factorial}\NormalTok{(}\DecValTok{6}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{factorial}\NormalTok{(}\DecValTok{6{-}2}\NormalTok{)}\SpecialCharTok{*}
+  \FunctionTok{factorial}\NormalTok{(}\DecValTok{14}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{factorial}\NormalTok{(}\DecValTok{14{-}3}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(}\FunctionTok{factorial}\NormalTok{(}\DecValTok{20}\NormalTok{)}\SpecialCharTok{/}\FunctionTok{factorial}\NormalTok{(}\DecValTok{20{-}5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3521672
+\end{verbatim}
+
+Como se observa el resultado de la probabilidad es ¡¡el mismo!!.
+
+\hypertarget{problema-14.}{%
+\subsection{Problema 14.}\label{problema-14.}}
+
+En una hucha hay \(10\) bolas, numeradas del \(1\) al \(10\). Las \(4\)
+primeras bolas, o sea, las bolas \(1,2,3,4\) son blancas. Las bolas
+\(5,6\) son negras y las bolas restantes son rojas. Sacamos dos bolas
+sin reposición. Sabiendo que la segunda bola es de color negro,
+encuentra la probabilidad \(p\) de que la primera bola sea blanca.
+
+\hypertarget{soluciuxf3n-14}{%
+\subsubsection{Solución}\label{soluciuxf3n-14}}
+
+Consideremos los sucesos \(R=\mbox{la bola extraída es roja}\),
+\(B=\mbox{la bola extraída es blanca}\) y
+\(N=\mbox{la bola extraída es negra}\). Si sacamos dos bolar
+representaremos los sucesos con las iniciales de las letras en el orden
+de extracción. Así que los resultados posibles del experimento son
+\(\{RR,RN,NR,RB,BR,NN,NB,BN,BB\}\)
+
+\begin{eqnarray*}
+P(RR)&=&\frac{4}{10}\cdot \frac{3}{9}=\frac{12}{90}
+\\ P(RN)&=&\frac{4}{10}\cdot \frac{2}{9}=\frac{8}{90}
+\\ P(NR)&=&\frac{2}{10}\cdot \frac{4}{9}=\frac{8}{90}
+\\  P(RB)&=&\frac{4}{10}\cdot \frac{4}{9}=\frac{16}{90}
+\\  P(BR)&=&\frac{4}{10}\cdot \frac{4}{9}=\frac{16}{90}
+\\  P(NN)&=&\frac{2}{10}\cdot \frac{1}{9}=\frac{2}{90}
+\\  P(NB)&=&\frac{2}{10}\cdot \frac{4}{9}=\frac{8}{90}
+\\  p(BN)&=&\frac{4}{10}\cdot \frac{2}{9}=\frac{8}{90}
+\\  P(BB)&=&\frac{4}{10}\cdot \frac{3}{9}=\frac{12}{90}
+\end{eqnarray*}
+
+Comprobemos que la suma de los sucesos elementales es 1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{casos}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{16}\NormalTok{,}\DecValTok{16}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{12}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(casos)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 90
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(casos}\SpecialCharTok{/}\DecValTok{90}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+Describamos los sucesos ``Primera bola
+blanca''=\(\{BB,BR,BN\} y el suceso "Segunda bola es negra"=\)\{NN,BN,RN\}.\$
+
+Nos piden
+
+\begin{eqnarray*}
+P(\mbox{"Primera bola blanca"}|\mbox{"Segunda bola es negra"})&=& P(\{BB,BR,BN\}|\{NN,BN,RN\})=\\
+&&\frac{P\left(\{BB,BR,BN\}\cap\{NN,BN,RN\}\right)}{P\left(\{NN,BN,RN\}\right)}=\\
+&&\frac{P\left(\{BN\}\right)}{P\left(\{NN,BN,RN\}\right)}=\\
+&& \frac{P(BN)}{P(NN)+P(BN)+P(RN)}=\\ 
+&&\frac{\frac{8}{90}}{\frac{2}{90}+\frac{8}{90}+\frac{8}{90}}.
+\end{eqnarray*}
+
+\hypertarget{problema-15.}{%
+\subsection{Problema 15.}\label{problema-15.}}
+
+Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad \(p\) de
+que la suma de las 3 caras sea \(10\).
+
+\hypertarget{soluciuxf3n-15}{%
+\subsubsection{Solución}\label{soluciuxf3n-15}}
+
+Lo haremos enumerando, se deja como ejercico hacerlo de forma analítica
+
+El sisguiente código genera todos las stiradas de tres dados y calcula
+su suma
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#n=6 LOS 6 OJECTOS 1,2,3,4,5,6}
+\CommentTok{\#r=3 las tres tiradas}
+\CommentTok{\# v=1:6 las etiquetas de las muestras,}
+\CommentTok{\# si fueran dados  de poquer serían A,K,Q,Negras,Rojas.}
+\NormalTok{tres\_dados}\OtherTok{=}\FunctionTok{as.data.frame}\NormalTok{(gtools}\SpecialCharTok{::}\FunctionTok{permutations}\NormalTok{(}\AttributeTok{n =} \DecValTok{6}\NormalTok{,}\AttributeTok{r =} \DecValTok{3}\NormalTok{,}\AttributeTok{v =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\AttributeTok{repeats.allowed =} \ConstantTok{TRUE}\NormalTok{))}
+\FunctionTok{names}\NormalTok{(tres\_dados)}\OtherTok{=}\FunctionTok{paste0}\NormalTok{(}\StringTok{"dado\_"}\NormalTok{,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{)}
+\FunctionTok{str}\NormalTok{(tres\_dados)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    216 obs. of  3 variables:
+##  $ dado_1: int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ dado_2: int  1 1 1 1 1 1 2 2 2 2 ...
+##  $ dado_3: int  1 2 3 4 5 6 1 2 3 4 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tres\_dados}\SpecialCharTok{$}\NormalTok{suma}\OtherTok{=}\FunctionTok{apply}\NormalTok{(tres\_dados,}\AttributeTok{MARGIN=}\DecValTok{1}\NormalTok{,sum)}
+\FunctionTok{str}\NormalTok{(tres\_dados)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    216 obs. of  4 variables:
+##  $ dado_1: int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ dado_2: int  1 1 1 1 1 1 2 2 2 2 ...
+##  $ dado_3: int  1 2 3 4 5 6 1 2 3 4 ...
+##  $ suma  : int  3 4 5 6 7 8 4 5 6 7 ...
+\end{verbatim}
+
+Ahora en la posición de la etiqueta suma 10, con el siguiente código
+obtenemos la probabilidad pedida
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(tres\_dados}\SpecialCharTok{$}\NormalTok{suma)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 
+##  1  3  6 10 15 21 25 27 27 25 21 15 10  6  3  1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(tres\_dados}\SpecialCharTok{$}\NormalTok{suma))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##          3          4          5          6          7          8          9 
+## 0.00462963 0.01388889 0.02777778 0.04629630 0.06944444 0.09722222 0.11574074 
+##         10         11         12         13         14         15         16 
+## 0.12500000 0.12500000 0.11574074 0.09722222 0.06944444 0.04629630 0.02777778 
+##         17         18 
+## 0.01388889 0.00462963
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(tres\_dados}\SpecialCharTok{$}\NormalTok{suma))[}\StringTok{"10"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    10 
+## 0.125
+\end{verbatim}
+
+La probabilidad de que al tirar tres dados sumen 10 es \(0.125\).
+
+\hypertarget{problema-16.}{%
+\subsection{Problema 16.}\label{problema-16.}}
+
+Tenemos 4 cartas numeradas del 1 al 4 que están giradas boca abajo sobre
+una mesa. Una persona, supuestamente adivina, irá adivinando los valores
+de las 4 cartas una a una. Suponiendo que es un farsante y que lo que
+hace es decir los 4 números al azar, ¿cuál es la probabilidad de que
+acierte como mínimo 1? (Obviamente, no repite ningún número)
+
+\hypertarget{soluciuxf3n-16}{%
+\subsubsection{Solución}\label{soluciuxf3n-16}}
+
+Supongamos cualquier orden de las 4 cartas el orden es irrelevanta así
+qeu supoindremos que es 1,2,3,4. Nosotros podemos lcolocar los números
+1,2 ,3 ,4 en cualquier permutación. Las calculamos con el siguiente
+código
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cartas\_4}\OtherTok{=}\FunctionTok{as.data.frame}\NormalTok{(gtools}\SpecialCharTok{::}\FunctionTok{permutations}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\AttributeTok{v=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{,}\AttributeTok{repeats.allowed =} \ConstantTok{FALSE}\NormalTok{))}
+\FunctionTok{str}\NormalTok{(cartas\_4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    24 obs. of  4 variables:
+##  $ V1: int  1 1 1 1 1 1 2 2 2 2 ...
+##  $ V2: int  2 2 3 3 4 4 1 1 3 3 ...
+##  $ V3: int  3 4 2 4 2 3 3 4 1 4 ...
+##  $ V4: int  4 3 4 2 3 2 4 3 4 1 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cartas\_4}\SpecialCharTok{$}\NormalTok{aciertos}\OtherTok{=}\FunctionTok{apply}\NormalTok{(cartas\_4,}\AttributeTok{MARGIN=}\DecValTok{1}\NormalTok{,}\AttributeTok{FUN=}\ControlFlowTok{function}\NormalTok{(x) \{}\FunctionTok{sum}\NormalTok{(x}\SpecialCharTok{==}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{))\})}
+\FunctionTok{str}\NormalTok{(cartas\_4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    24 obs. of  5 variables:
+##  $ V1      : int  1 1 1 1 1 1 2 2 2 2 ...
+##  $ V2      : int  2 2 3 3 4 4 1 1 3 3 ...
+##  $ V3      : int  3 4 2 4 2 3 3 4 1 4 ...
+##  $ V4      : int  4 3 4 2 3 2 4 3 4 1 ...
+##  $ aciertos: int  4 2 2 1 1 2 2 0 1 0 ...
+\end{verbatim}
+
+Ahora calculamos el número de aciertos, notemos que tres es imposible ya
+que no repetiremos las cartas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(cartas\_4}\SpecialCharTok{$}\NormalTok{aciertos)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 0 1 2 4 
+## 9 8 6 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{probabilidad\_aciertos}\OtherTok{=}\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(cartas\_4}\SpecialCharTok{$}\NormalTok{aciertos))}
+\NormalTok{probabilidad\_aciertos}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##          0          1          2          4 
+## 0.37500000 0.33333333 0.25000000 0.04166667
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(probabilidad\_aciertos[}\FunctionTok{c}\NormalTok{(}\StringTok{"1"}\NormalTok{,}\StringTok{"2"}\NormalTok{,}\StringTok{"4"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.625
+\end{verbatim}
+
+La probabilidad pedida es \(P(\mbox{"Acertar al menos 1"})=0.625\).
+
+\hypertarget{problema-17.}{%
+\subsection{Problema 17.}\label{problema-17.}}
+
+Una forma de aumentar la fiabilidad de un sistema es mediante la
+introducción de una copia de los componentes en una configuración
+paralela. Supongamos que la NASA quiere una probabilidad no menor que
+0.99999 de que el transbordador espacial entre en órbita alrededor de la
+Tierra con éxito. ¿Cuántos motores se deben configurar en paralelo para
+que se consiga dicha fiabilidad si se sabe que la probabilidad de que un
+motor funcione adecuadamente es 0.95? Supongamos que los motores
+funcionan de manera independiente los unos con los otros.
+
+\hypertarget{soluciuxf3n-17}{%
+\subsubsection{Solución}\label{soluciuxf3n-17}}
+
+Como \(p=P(\mbox{"fallar un motor"})=1-0.95=0.05\). Si hay \(n\) motores
+con probabilidad de fallo independiente la probabilidad de éxito es
+
+\begin{eqnarray*}
+P(\mbox{"Al menos un motor entre n funcione"})&=&\\
+&&1-P(\mbox{"Al menos un motor entre n funcione"}^c)=\\
+&&1-P(\mbox{"ningún motor entre n funcione"}))
+=\\ &&
+1-p^n=1-0.05^n
+\end{eqnarray*}
+
+El número \(n\) que nos piden es el entero más pequeño tal que
+\(1-0.05^n\leq 0.9999\).
+
+Resolviendo última inecuación tenemos que \(0.05^n=1-0.9999\) y entonces
+
+\[n=\left\lceil\frac{log(1-0.9999)}{\log{0.05}}\right\rceil=
+\lceil 3.0744871\rceil=
+4.\]
+
+\hypertarget{ejercicios-de-independencia-de-sucesos}{%
+\section{Ejercicios de Independencia de
+sucesos}\label{ejercicios-de-independencia-de-sucesos}}
+
+\hypertarget{problema-1.}{%
+\subsection{Problema 1.}\label{problema-1.}}
+
+Una moneda no trucada se lanza al aire 2 veces Consideremos los
+siguientes sucesos:
+
+\begin{itemize}
+\item
+  A: Sale una cara en la primera tirada.
+\item
+  B: Sale una cara en la segunda tirada.
+
+  ¿Son los sucesos A y B independientes?
+\end{itemize}
+
+\hypertarget{soluciuxf3n-18}{%
+\subsubsection{Solución}\label{soluciuxf3n-18}}
+
+Con la notación habitual los sucesos son \(A=\{CC,C+\}\) y
+\(B=\{CC,+C\}\). Es eviente que
+\(P(A)=P(B)= 2\cdot \left(\frac12\right)^2=\frac12\) y que\\
+\(P(A\cap B)=P(\{CC\})=\right(\frac12\left)^2=\frac14\).
+
+Así que
+
+\[P(A)\cdot P(B)=\frac12\cdot\frac12=\frac14=P(A\cap B),\]
+
+por lo que los sucesos \(A\) y \(B\) son independientes.
+
+\hypertarget{problema-2.}{%
+\subsection{Problema 2.}\label{problema-2.}}
+
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4,
+respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso
+que la primera bola extraída tenga un 1 marcado y sea B el suceso que la
+segunda bola extraída tenga un 1 marcado.
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Se puede decir que A y B son independientes?
+\item
+  ¿Y si el experimento fuera sin reposición?
+\end{itemize}
+
+\hypertarget{soluciuxf3n-19}{%
+\subsubsection{Solución}\label{soluciuxf3n-19}}
+
+\hypertarget{problema-3.}{%
+\subsection{Problema 3.}\label{problema-3.}}
+
+Sea \(\Omega\) un espacio muestral y \(A,B,C\) tres sucesos. Probad que
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(A\) y \(B\) son independientes, también lo son \(A\) y \(B^c\)
+\item
+  Si \(A,B,C\) son independientes, también lo son \(A,B\) y \(C^c\)
+\item
+  ¿Es cierto que si \(A,B,C\) son independientes, también lo son
+  \(A,B^c\) y \(C^c\)? ¿Y \(A^c, B^c\) y \(C^c\)? En caso de que la
+  respuesta sea negativa, dad contra ejemplos donde la propiedad falle.
+\end{itemize}
+
+\hypertarget{soluciuxf3n-20}{%
+\subsubsection{Solución}\label{soluciuxf3n-20}}
+
+Se deja como ejercicio.
+
+\hypertarget{problema-4.}{%
+\subsection{Problema 4.}\label{problema-4.}}
+
+Dos empresas \(A\) y \(B\) fabrican el mismo producto. La empresa \(A\)
+tiene un \(2\%\) de productos defectuosos mientras que la empresa \(B\)
+tiene un \(1\%\). Un cliente recibe un pedido de una de las empresas (no
+sabe cuál) y comprueba que la primera pieza funciona. Si suponemos que
+el estado de las piezas de cada empresa es independiente, ¿cuál es la
+probabilidad de que la segunda pieza que pruebe sea buena? Comprobad que
+el estado de las dos piezas no es independiente, pero en cambio es
+condicionalmente independiente dada la empresa que las fabrica.
+
+\hypertarget{soluciuxf3n-21}{%
+\subsubsection{Solución}\label{soluciuxf3n-21}}
+
+Se deja como ejercicio.
+
+\hypertarget{problema-5.}{%
+\subsection{Problema 5.}\label{problema-5.}}
+
+Encuentra un ejemplo de tres sucesos \(A,B,C\) tales que \(A\) y \(B\)
+sean independientes, pero en cambio no sean condicionalmente
+independientes dado \(C\).
+
+\end{document}

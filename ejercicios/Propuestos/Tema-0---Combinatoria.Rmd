@@ -1,19 +1,19 @@
 ---
-title: "Ejercicios Tema 0 - Repaso de combinatoria y conjuntos. Prate  1 y Parte 2"
+title: "Ejercicios Tema 0 - Repaso de combinatoria y conjuntos. Parte  1 y Parte 2"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python."
 output:
-  word_document:
-    toc: yes
-    toc_depth: '2'
-  html_document:
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
   pdf_document:
     number_sections: yes
     toc: yes
     toc_depth: 2
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
 toccolor: blue
 ---
 
@@ -23,7 +23,7 @@ options(scipen=999)
 ```
 
 
-# Ejercicios de Combinatoria 1
+# Ejercicios de Combinatoria parte 1
 
 Breves soluciones de los problemas
 
@@ -83,7 +83,7 @@ Se han de repartir cinco becas entre diez españoles y seis extranjeros, de mane
 
 \newpage
 
-# Ejercicios de Combinatoria 2
+# Ejercicios de Combinatoria parte 2
 
 En todas las resoluciones se deja como ejercicio cómo generar todos los objetos combinatorios con la librería `gtools` o de otra manera. 
 
