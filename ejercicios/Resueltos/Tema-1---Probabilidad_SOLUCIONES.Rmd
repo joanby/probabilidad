@@ -514,7 +514,7 @@ sum(casos)
 sum(casos/90)
 ```
 
-Describamos los sucesos "Primera bola blanca"=$\{BB,BR,BN\} y el suceso "Segunda bola es negra"=$\{NN,BN,RN\}.$
+Describamos los sucesos "Primera bola blanca"=$\{BB,BR,BN\}$ y el suceso "Segunda bola es negra"=$\{NN,BN,RN\}.$
 
 Nos piden
 
@@ -537,15 +537,15 @@ Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad $p$ de que la sum
 ### Solución 
 
 
-Lo haremos enumerando, se deja como ejercico hacerlo de forma analítica
+Lo haremos enumerando, se deja como ejercicio hacerlo de forma analítica
 
-El sisguiente código genera todos las stiradas de tres dados y calcula su suma
+El siguiente código genera todos las tiradas de tres dados y calcula su suma
 
 ```{r}
 #n=6 LOS 6 OJECTOS 1,2,3,4,5,6
 #r=3 las tres tiradas
 # v=1:6 las etiquetas de las muestras,
-# si fueran dados  de poquer serían A,K,Q,Negras,Rojas.
+# si fueran dados  de póquer serían A,K,Q,Negras,Rojas.
 tres_dados=as.data.frame(gtools::permutations(n = 6,r = 3,v = 1:6,repeats.allowed = TRUE))
 names(tres_dados)=paste0("dado_",1:3)
 str(tres_dados)
@@ -571,7 +571,7 @@ Tenemos 4 cartas numeradas del 1 al 4 que están giradas boca abajo sobre una me
 ### Solución
 
 
-Supongamos cualquier orden de las 4 cartas el orden es irrelevanta así qeu supoindremos que es 1,2,3,4. Nosotros podemos lcolocar los números 1,2 ,3 ,4 en cualquier permutación. Las calculamos con el siguiente código
+Supongamos cualquier orden de las 4 cartas el orden es irrelevante así que supondremos que es 1,2,3,4. Nosotros podemos colocar los números 1,2,3 ,4 en cualquier permutación. Las calculamos con el siguiente código
 
 ```{r}
 cartas_4=as.data.frame(gtools::permutations(4,4,v=1:4,repeats.allowed = FALSE))
@@ -640,8 +640,13 @@ Una moneda no trucada se lanza al aire 2 veces Consideremos los siguientes suces
 
 ### Solución  
 
-Con la notación habitual los sucesos son $A=\{CC,C+\}$ y $B=\{CC,+C\}$. Es eviente que $P(A)=P(B)= 2\cdot \left(\frac12\right)^2=\frac12$ y que  
-$P(A\cap B)=P(\{CC\})=\right(\frac12\left)^2=\frac14$.
+Con la notación habitual los sucesos son $A=\{CC,C+\}$ y $B=\{CC,+C\}$. Es evidente que
+
+$$P(A)=P(B)= 2\cdot \left(\frac12\right)^2=\frac12$$
+
+y que  
+
+$$P(A\cap B)=P(\{CC\})=\left(\frac12\right)^2=\frac14.$$
 
 Así que 
 
@@ -660,6 +665,9 @@ Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivament
 * ¿Y si el experimento fuera sin reposición?
 
 ### Solución  
+
+Se deja como ejercicio.
+
 
 ## Problema `r contador=contador+1;contador`.
 
