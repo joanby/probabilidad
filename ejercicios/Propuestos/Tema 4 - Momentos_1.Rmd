@@ -61,17 +61,3 @@ $$
 1. Hallar los coeficientes de asimetría y apuntamiento para las variables aleatorias anteriores.
 Hacer un gráfico de la función de probabilidad (caso discreto) o función de densidad (caso continuo) para comprobar si los valores obtenidos concuerdan gráficamente con lo que se observa.
 
-## Función generatriz de momentos y función característica
-
-1. Halla la función generatriz de momentos $\FunGenMom$ y la función característica $\FunCar$ para las variables aleatorias de los enuciados  1, 2 y 3  siguiwntes. Comprobar que 
-$$
-E(X^n)= \FunGenMom_X^{(n)}(0),\ E(X^n)=\frac{1}{\mathrm{i}^n}\FunCar_X^{(n)}(0),
-$$
-para todo valor de $n$.
-
-## Métodos de transformación
-
-1. Para las variables de los problemas 3 y 4 de la sección de Momentos y con ayuda de `R`,
-    - usando el método de transformación, hallar muestras aleatorias de cada variable de tamaño $100$. 
-    - hacer lo mismo pero ahora usando el método de rechazo.
-En ambos casos realizar un histograma de frecuencias relativas de las muestras junto con la correspondiente función de densidad.

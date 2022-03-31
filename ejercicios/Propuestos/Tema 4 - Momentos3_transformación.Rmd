@@ -1,0 +1,47 @@
+---
+title: "Ejercicios Tema 4 - Complementos de Variables aleatorias"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+
+
+## Métodos de transformación
+
+
+$$
+f_X(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+
+$$
+F_Y(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\
+\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
+\mbox{si $t>1$},
+\end{array}\right.
+$$
+
+
+Consideremos las DOS  variable $X$  e $Y$ con función de  densidad y  función de distribución las anteriores anteriores. Se pidede,  con ayuda de `R` que:  
+
+* Usando el método de transformación, hallar muestras aleatorias de cada variable de tamaño $100$. 
+* Hacer lo mismo pero ahora usando el método de rechazo.
+En ambos casos realizar un histograma de frecuencias relativas de las muestras junto con la correspondiente función de densidad.
+
+
+
+

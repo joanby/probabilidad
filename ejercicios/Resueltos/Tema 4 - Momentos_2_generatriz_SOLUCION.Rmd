@@ -1,0 +1,77 @@
+---
+title: "Ejercicios Tema 4 - Complementos de Variables aleatorias"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+
+# Función generatriz de momentos y función característica
+
+ Halla la función generatriz de momentos $\FunGenMom$ y la función característica $\FunCar$ para las variables aleatorias de los  tres enunciados siguientes. Comprobar que 
+$$
+E(X^n)= \FunGenMom_X^{(n)}(0),\ E(X^n)=\frac{1}{\mathrm{i}^n}\FunCar_X^{(n)}(0),
+$$
+para todo valor de $n$.
+
+
+
+## Enunciado 1
+
+Halla el momento de orden $n$ y el momento centrado de orden $n$ para la variable aleatoria $W$ con función de distribución:
+$$F_W (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<3$},
+ \\[0.1cm]
+{1\over 3}, & \mbox{si $3\leq t<4$},
+ \\[0.1cm]
+{1\over 2}, & \mbox{si $4\leq t<5$},
+ \\[0.1cm] 
+{2\over 3}, & \mbox{si $5\leq t<6$},
+ \\[0.1cm] 
+1, & \mbox{si $t\geq 6$},
+\end{array}\right.
+$$
+
+
+### Solución
+
+Fijaos que se trataría de una variable aleatoria discreta. Por tanto, el cálculo de la función generatriz de momentos y la función característica no es difícil. Para calcular los momentos de orden n a partir de dichas funciones, basta aplicar la fórmula que relaciona dichos momentos con las derivadas de dichas funciones.
+
+## Enunciado 2
+
+Halla el momento de orden $n$ y el momento central de orden $n$ para la variable aleatoria $Z$ con función de probabilidad:
+$$f_Z (x)=
+\left\{\begin{array}{ll}
+{1\over 3}, & \mbox{si $x=0,1,2$},\\ 0, & \mbox{en los otros
+casos.}
+\end{array}\right.
+$$
+
+### Solución
+
+En esta cuestión, la variable aleatoria también sería discreta. Leeros los comentarios de la cuestión anterior de cara a su resolución.
+
+## Enunciado 3
+
+Halla el momento de orden $n$ y el momento central de orden $n$ para la variable aleatoria $X$ con función de densidad:
+$$
+f(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+
+
+### Solución 
+
+En este caso, la variable aleatoria sería continua. Por tanto, para calcular la función generatriz de momentos y la función característica hay que integral. Id con cuidado con el valor absoluto de x ya que su valor cambia para x positivos y negativos.
