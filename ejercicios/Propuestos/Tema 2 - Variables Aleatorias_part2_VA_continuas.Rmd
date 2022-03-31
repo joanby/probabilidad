@@ -1,0 +1,77 @@
+---
+title: "Ejercicios Tema 2 - Variables aleatorias. Parte 2"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
+toccolor: blue
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Variables aleatorias continuas
+
+1. Verificar que:
+$$
+F_X (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+ \\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq
+t\leq 1$},
+ \\[0.1cm]
+1, & \mbox{si $t> 1$},
+\end{array}\right.
+$$
+es una función de distribución y hallar la función de densidad para $X$. Calcular también $P\left(-{1\over 2}\leq X\leq {1\over 2}\right)$.
+
+1. Sea $Y$ una variable continua con función de densidad:
+$$
+f_Y(y)=
+\left\{\begin{array}{ll}
+2(1-y), & \mbox{si $0<y<1$},\\ 0, & \mbox{en los otros casos}.
+\end{array}\right.
+$$
+Hallar la función de distribución $F_Y(t)$.
+
+
+1. Verificar que:
+$$
+F_Y(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\
+\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
+\mbox{si $t>1$},
+\end{array}\right.
+$$
+es una función de distribución y especificar la función de densidad
+para $Y$. Usar este resultado para hallar $P\left(-{1\over 2}<Y<{3\over 4}\right)$.
+
+1. Sea $X$ una variable aleatoria con función de densidad:
+$$
+f(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+    - Representar gráficamente dicha función.
+    - Hallar y dibujar la función de distribución.
+    - Calcular las siguientes probabilidades: $P(X\geq 0)$ y $P\left(|X|<\frac{1}{2}\right).$
+    
+1. Hallar la esperanza y la varianza de las variables de los ejercicios anteriores.
+
+

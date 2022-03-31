@@ -1,0 +1,233 @@
+---
+title: "Ejercicios Tema 2 - Variables aleatorias"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+    toc_depth: 4
+    keep_tex: yes
+  html_document: 
+    toc: yes
+    number_sections: yes
+  word_document:
+    toc: yes
+toccolor: 'blue'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Variables aleatorias continuas
+
+## Problema 1.
+
+Verificar que:
+$$
+F_X (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+ \\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq
+t\leq 1$},
+ \\[0.1cm]
+1, & \mbox{si $t> 1$},
+\end{array}\right.
+$$
+es una función de distribución y hallar la función de densidad para $X$. Calcular también $P\left(-{1\over 2}\leq X\leq {1\over 2}\right)$.
+
+
+### Solución
+
+
+La función de densidad de variables aleatoias continuas se puede obtener derivando la función de distribución respecto de la variable $t$:
+
+
+$$
+f_X(t)=\left(F_X (t)\right)'=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+ \\[0.1cm]
+\left({t+1\over 2}\right)'=\frac12, & \mbox{si $-1\leq
+t\leq 1$},
+ \\[0.1cm]
+0, & \mbox{si $t> 1$},
+\end{array}\right.=
+\left\{\begin{array}{ll}
+\frac12, & \mbox{si $-1\leq
+t\leq 1$},
+ \\[0.1cm]
+0, & \mbox{ en otro caso},
+\end{array}\right.
+$$
+
+
+
+## Problema 2.
+ Sea $Y$ una variable continua con función de densidad:
+
+$$
+f_Y(y)=
+\left\{\begin{array}{ll}
+2(1-y), & \mbox{si $0<y<1$},\\ 0, & \mbox{en los otros casos}.
+\end{array}\right.
+$$
+Hallar la función de distribución $F_Y(t)$.
+
+### Solución
+
+
+
+\begin{eqnarray*}
+F_Y(t)&=&\int_{-\infty}^t f_Y(y)\cdot  dy\\ &=&
+\left\{
+\begin{array}{ll}
+\int_{-\infty}^t 0\cdot dy=0 & \mbox{si } t<0\\
+\int_{0}^t 2\cdot (1-y)= \left[2\cdot y- y^2\right]_{y=0}^{y=t}=t-t^2, & \mbox{si } 0<y<1,\\ 
+1, & \mbox{en los otros casos}.
+\end{array}\right.\\
+&=&
+\left\{
+\begin{array}{ll}
+0 & \mbox{si } t<0\\
+t-t^2, & \mbox{si } 0<y<1,\\ 
+1, & \mbox{en los otros casos}.
+\end{array}\right.
+\end{eqnarray*}
+
+
+## Problema 3.
+
+Verificar que:
+$$
+F_Y(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\
+\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
+\mbox{si $t>1$},
+\end{array}\right.
+$$
+
+es una función de distribución y especificar la función de densidad
+para $Y$. Usar este resultado para hallar $P\left(-{1\over 2}<Y<{3\over 4}\right)$.
+
+
+### Solución
+
+Evidentemente $F_Y(t)>0$ para todo $t$ y $\lim_{t\to-\infty} F_Y(t)=0$ y 
+
+$$
+\lim_{t\to+\infty} F_Y(t)=\int_0^1 t^{\frac12} \cdot dt =
+\left[\frac{t^{\frac12+1}}{\frac12+1}\right]_{t=0}^{t=1}=1-0=1.
+$$
+
+La probabilidad que nos piden es
+
+$$
+P\left(-{1\over 2}<Y<{3\over 4}\right)=F_Y\left({3\over 4}\right)-F_Y\left(-{1\over 2}\right)=\sqrt{\frac34}-0=\sqrt{\frac34}=\sqrt{0.75}.
+$$
+
+
+## Problema 4.
+
+Sea $X$ una variable aleatoria con función de densidad:
+$$
+f(x)=\begin{cases}
+1-|x|, & \mbox{si }|x|\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+
+1. Representar gráficamente dicha función.
+2. Hallar y dibujar la función de distribución.
+3. Calcular las siguientes probabilidades: $P(X\geq 0)$ y $P\left(|X|<\frac{1}{2}\right).$
+    
+
+### Solución
+
+La representaremos con R
+
+```{r}
+fX=function(x){sapply(x,
+                      FUN=function(x){if(abs(x)<=1){1-abs(x)}
+                        else {0}})
+  }
+fX(c(-1,-1/2,0,1/2,1))
+```
+
+
+```{r}
+curve(fX,from=-1.5,to=1.5,col="red",ylab="fX",xlab="x",main="Función de densidad.")
+```
+
+para calcular la función de distribución hacemos 
+
+
+
+\begin{eqnarray*}
+F_X(x)&=&\int_{-\infty}^t f_X(t)\cdot  dy\\ &=&
+\left\{
+\begin{array}{ll}
+\int_{-\infty}^t 0\cdot dy=0 & \mbox{si } x<-1\\
+\int_{-1}^t  1-|t| \cdot dt= \int_{-1}^t  1+t \cdot dt=
+\left[t+\frac{t^2}{2}\right]_{t=-1}^{t=x}= & \mbox{si } -1\leq x\leq 0\\ 
+\int_{-1}^t  (1-|t|) \cdot dt= \int_{-1}^0  (1+t)\cdot dt+
+\int_{0}^x  (1-t) \cdot dt =\frac{1}{2} + 
+\left[t-\frac{t^2}{2}\right]_{t=0}^{t=x}, & \mbox{si } -\leq x\leq 0,\\ 
+1, & \mbox{si } x\geq 1.
+\end{array}\right.
+\\
+&=& 
+\left\{
+\begin{array}{ll}
+0 & \mbox{si } x\leq -1\\
+\left(x+\frac{x^2}{2}\right)- \left(-1+\frac{(-1)^2}{2}\right)=
+\left(x+\frac{x^2}{2}\right)+ \frac{1}{2}=\frac{x^2+2\cdot x+1}{2}=
+\frac{(x+1)^2}{2} & \mbox{si } -1\leq x\leq 0\\ 
+\frac{1}{2}+ \left[\left(x-\frac{x^2}{2}\right)- 0\right]=
+\frac{1}{2}+x-\frac{x^2}{2}, & \mbox{si } 0\leq x\leq 1,\\ 
+1, & \mbox{si } x\geq 1.
+\end{array}\right.
+\\
+&=&
+\left\{
+\begin{array}{ll}
+0 & \mbox{si } x\leq -1\\
+\frac{(x+1)^2}{2}, & \mbox{si } -1\leq x \leq 0,\\ 
+\frac{(1-x)^2}{2}, & \mbox{si } 0\leq x\leq 1,\\ 
+1, & \mbox{si } x\geq 1.
+\end{array}\right.
+\end{eqnarray*}
+
+
+Su gráfica es 
+
+```{r}
+FX=function(x){sapply(x,
+                      FUN=function(x){
+ifelse(x<=-1,0,ifelse(x>=1,1,ifelse(x<0 & x>-1, (x+1)^2/2, 1/2+x-x^2/2)))  
+})
+}
+
+                            
+                          
+FX(c(-20,-1,-1/2,0,1/2,1,20))
+```
+
+
+```{r}
+curve(FX,from=-2,to=2,col="red",ylab="fX",xlab="x",main="Función de densidad.")
+```
+
+## Problema 5.
+
+Hallar la esperanza y la varianza de las variables de los ejercicios anteriores.
+
+
+### Solución
+
+
+Estas integrales se dejan como ejercicio.

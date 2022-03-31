@@ -1,0 +1,105 @@
+---
+title: "Ejercicios Tema 1 - Probabilidad: Preguntas cortas sobre independencia"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document:
+    toc: yes
+    number_sections: yes
+  word_document:
+    toc: yes
+  html_document: 
+    toc: yes
+    number_sections: yes
+    keep_md: yes
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+toccolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Preguntas cortas sobre independencia
+
+## Pregunta 1
+Dos sucesos $A$ y $B$ disjuntos, ¿son necesariamente independientes?
+
+### Solución
+Piensa que si son disjuntos la intersección será el vacío...
+
+## Pregunta 2
+Dos sucesos $A$ y $B$ independientes, ¿son necesariamente disjuntos?
+
+### Solución
+Piensa que si son disjuntos la intersección será el vacío...
+
+## Pregunta 3
+$\emptyset$ y un suceso cualquiera $A$, ¿son necesariamente independientes?
+
+### Solución
+Piensa qué pasa cuando haces intersección con el vacío
+
+## Pregunta 4
+$\Omega$ y un suceso cualquiera $A$, ¿son necesariamente independientes?
+
+### Solución
+Piensa qué pasa cuando haces intersección con el espacio muestral
+
+## Pregunta 5
+¿Qué condiciones se tienen que dar para que un suceso $A$ sea independiente de si mismo?
+
+### Solución
+En este caso te quedará una ecuación con una incógnita que podrás resolver fácilmente
+
+## Pregunta 6
+Una moneda no trucada se lanza al aire 2 veces. Consideremos los siguientes sucesos:
+
+• $A$: Sale una cara en la primera tirada.
+
+• $B$: Sale una cara en la segunda tirada.
+
+¿Son los sucesos $A$ y $B$ independientes?
+
+### Solución
+Escribe el experimento y seguro que lo sacarás
+
+## Pregunta 7
+Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas con reposición. Sea $A$ el suceso que la primera bola extraída tenga un 1 marcado y sea $B$ el suceso que la segunda bola extraída tenga un 1 marcado.
+
+• ¿Se puede decir que $A$ y $B$ son independientes?
+
+• ¿Y si el experimento fuera sin reposición?
+
+### Solución
+Escribe el experimento y seguro que lo sacarás
+
+## Pregunta 8
+Sea $\Omega$ un espacio muestral y $A$, $B$, $C$ tres sucesos. Probad que
+
+1. Si $A$ y $B$ son independientes, también lo son $A$ y $B^c$
+2. Si $A$,$B$,$C$ son independientes, también lo son $A$,$B$ y $C^c$
+3. ¿Es cierto que si $A$,$B$,$C$ son independientes, también lo son $A$,$B^c$ y $C^c$? ¿Y $A^c$, $B^c$ y $C^c$? En caso de que la respuesta sea negativa, da un contra ejemplo donde la propiedad falle.
+
+### Solución
+Escribe el experimento y seguro que lo sacarás
+
+## Pregunta 9
+Dos empresas $A$ y $B$ fabrican el mismo producto. La empresa $A$ tiene un 2% de productos defectuosos mientras que la empresa $B$ tiene un 1%.
+
+Un cliente recibe un pedido de una de las empresas (no sabe cuál) y comprueba que la primera pieza funciona. Si suponemos que el estado de las piezas de cada empresa es independiente, ¿cuál es la probabilidad de que la segunda pieza que pruebe sea buena?
+
+Comprobad que el estado de las dos piezas no es independiente, pero en cambio es condicionalmente independiente dada la empresa que las fabrica
+
+### Solución
+Escribe el experimento y seguro que lo sacarás
+
+## Pregunta 10
+Encuentra un ejemplo de tres sucesos $A$,$B$,$C$ tales que $A$ y $B$ sean independientes, pero en cambio no sean condicionalmente independientes dado $C$.
+
+### Solución
+Escribe el experimento y seguro que lo sacarás
+

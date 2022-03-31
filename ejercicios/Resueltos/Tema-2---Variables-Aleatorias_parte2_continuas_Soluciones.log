@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.24)  31 MAR 2022 13:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.24)  31 MAR 2022 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Tema-2---Variables-Aleatorias_Soluciones.tex
-(./Tema-2---Variables-Aleatorias_Soluciones.tex
+**Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.tex
+(./Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
 dist/tex/latex/base/article.cls
@@ -400,73 +400,6 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen163
 \FrameSep=\dimen164
 )
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip55
-\LTright=\skip56
-\LTpre=\skip57
-\LTpost=\skip58
-\LTchunksize=\count290
-\LTcapwidth=\dimen165
-\LT@head=\box54
-\LT@firsthead=\box55
-\LT@foot=\box56
-\LT@lastfoot=\box57
-\LT@gbox=\box58
-\LT@cols=\count291
-\LT@rows=\count292
-\c@LT@tables=\count293
-\c@LT@chunks=\count294
-\LT@p@ftn=\toks26
-)
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.s
-ty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen166
-\lightrulewidth=\dimen167
-\cmidrulewidth=\dimen168
-\belowrulesep=\dimen169
-\belowbottomsep=\dimen170
-\aboverulesep=\dimen171
-\abovetopsep=\dimen172
-\cmidrulesep=\dimen173
-\cmidrulekern=\dimen174
-\defaultaddspace=\dimen175
-\@cmidla=\count295
-\@cmidlb=\count296
-\@aboverulesep=\dimen176
-\@belowrulesep=\dimen177
-\@thisruleclass=\count297
-\@lastruleclass=\count298
-\@thisrulewidth=\dimen178
-) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen179
-\ar@mcellbox=\box59
-\extrarowheight=\dimen180
-\NC@list=\toks27
-\extratabsurround=\skip59
-\backup@length=\skip60
-\ar@cellbox=\box60
-) (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count299
-\calc@Bcount=\count300
-\calc@Adimen=\dimen181
-\calc@Bdimen=\dimen182
-\calc@Askip=\skip61
-\calc@Bskip=\skip62
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count301
-\calc@Cskip=\skip63
-)
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.s
-ty
-Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box61
-\fn@width=\dimen183
-)
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.s
 ty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -483,47 +416,47 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen184
-\Gin@req@width=\dimen185
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
 )
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend
 -pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count302
-\l__pdf_internal_box=\box62
-) (./Tema-2---Variables-Aleatorias_Soluciones.aux)
-\openout1 = `Tema-2---Variables-Aleatorias_Soluciones.aux'.
+\l__color_backend_stack_int=\count290
+\l__pdf_internal_box=\box54
+) (./Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.aux)
+\openout1 = `Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Info: Redefining \microtypecontext on input line 125.
-Package microtype Info: Applying patch `item' on input line 125.
-Package microtype Info: Applying patch `toc' on input line 125.
-Package microtype Info: Applying patch `eqnum' on input line 125.
-Package microtype Info: Applying patch `footnote' on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Info: Redefining \microtypecontext on input line 115.
+Package microtype Info: Applying patch `item' on input line 115.
+Package microtype Info: Applying patch `toc' on input line 115.
+Package microtype Info: Applying patch `eqnum' on input line 115.
+Package microtype Info: Applying patch `footnote' on input line 115.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 125.
+LaTeX Info: Redefining \showhyphens on input line 115.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -544,7 +477,7 @@ f-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 125.
+Package hyperref Info: Link coloring ON on input line 115.
 
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.st
 y
@@ -558,15 +491,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count303
+\c@section@level=\count291
 )
-LaTeX Info: Redefining \ref on input line 125.
-LaTeX Info: Redefining \pageref on input line 125.
-LaTeX Info: Redefining \nameref on input line 125.
-(./Tema-2---Variables-Aleatorias_Soluciones.out) (./Tema-2---Variables-Aleatori
-as_Soluciones.out)
+LaTeX Info: Redefining \ref on input line 115.
+LaTeX Info: Redefining \pageref on input line 115.
+LaTeX Info: Redefining \nameref on input line 115.
+(./Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.out) (./Tema-2---V
+ariables-Aleatorias_parte2_continuas_Soluciones.out)
 \@outlinefile=\write4
-\openout4 = `Tema-2---Variables-Aleatorias_Soluciones.out'.
+\openout4 = `Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -603,32 +536,32 @@ as_Soluciones.out)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-27.
+17.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-27.
+17.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-127.
+117.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-127.
+117.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 127.
+(Font)              <12> on input line 117.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 127.
+(Font)              <8> on input line 117.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 127.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 127
+(Font)              <6> on input line 117.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 117
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -637,7 +570,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 g
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 127
+LaTeX Font Info:    Trying to load font information for U+msb on input line 117
 .
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -645,7 +578,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cf
 g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./Tema-2---Variables-Aleatorias_Soluciones.toc
+) (./Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -654,82 +587,85 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
 )
 \tf@toc=\write5
-\openout5 = `Tema-2---Variables-Aleatorias_Soluciones.toc'.
+\openout5 = `Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.toc'.
+
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 135.
 
 [1
 
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
 .map}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-55.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-06.
+61.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2] [3] [4] [5] [6]
-
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 492.
-
+)
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 508.
-<Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk-2-1.
-pdf, id=219, 436.63126pt x 248.93pt>
-File: Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk
--2-1.pdf Graphic file (type pdf)
-<use Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk-
-2-1.pdf>
-Package pdftex.def Info: Tema-2---Variables-Aleatorias_Soluciones_files/figure-
-latex/unnamed-chunk-2-1.pdf  used on input line 523.
-(pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-[7 <./Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk
--2-1.pdf>] [8] [9] [10] [11] (./Tema-2---Variables-Aleatorias_Soluciones.aux)
-Package rerunfilecheck Info: File `Tema-2---Variables-Aleatorias_Soluciones.out
-' has not changed.
-(rerunfilecheck)             Checksum: E4A7DEFC8272738C4AAE284BFBAFDAE7;4158.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 262.
+[2]
+<Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-latex/u
+nnamed-chunk-2-1.pdf, id=96, 436.63126pt x 284.06125pt>
+File: Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-la
+tex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-lat
+ex/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: Tema-2---Variables-Aleatorias_parte2_continuas_Solucio
+nes_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 280.
+(pdftex.def)             Requested size: 436.63019pt x 284.06053pt.
+[3 <./Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-la
+tex/unnamed-chunk-2-1.pdf>]
+<Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-latex/u
+nnamed-chunk-4-1.pdf, id=109, 436.63126pt x 284.06125pt>
+File: Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-la
+tex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-lat
+ex/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: Tema-2---Variables-Aleatorias_parte2_continuas_Solucio
+nes_files/figure-latex/unnamed-chunk-4-1.pdf  used on input line 345.
+(pdftex.def)             Requested size: 436.63019pt x 284.06053pt.
+[4 <./Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones_files/figure-la
+tex/unnamed-chunk-4-1.pdf>] (./Tema-2---Variables-Aleatorias_parte2_continuas_S
+oluciones.aux)
+Package rerunfilecheck Info: File `Tema-2---Variables-Aleatorias_parte2_continu
+as_Soluciones.out' has not changed.
+(rerunfilecheck)             Checksum: 793BB210F78A856CCE7556C097EAE2D4;1326.
  ) 
 Here is how much of TeX's memory you used:
- 14195 strings out of 480195
- 230001 string characters out of 5892230
- 585203 words of memory out of 5000000
- 31758 multiletter control sequences out of 15000+600000
- 519169 words of font info for 112 fonts, out of 8000000 for 9000
+ 13648 strings out of 480195
+ 221643 string characters out of 5892230
+ 578739 words of memory out of 5000000
+ 31314 multiletter control sequences out of 15000+600000
+ 517512 words of font info for 95 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,13n,63p,1037b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathi
-t.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
-athsy.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
-lm-ec.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
-lm-rm.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
-lm-mathex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
-/lm/lm-ts1.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pu
-blic/lm/lmbx10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
-1/public/lm/lmbx12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/
-type1/public/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fo
-nts/type1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dis
-t/fonts/type1/public/lm/lmmi5.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/tex
-mf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/
-texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/t169/AppData/Roaming/TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/t169/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/t169/AppData/Roaming/
-TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roamin
-g/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Ro
-aming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/Users/t169/AppData
-/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169/AppD
-ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/
-AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/t
-169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb>
-Output written on Tema-2---Variables-Aleatorias_Soluciones.pdf (11 pages, 30462
-6 bytes).
+ 60i,14n,63p,1054b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
+c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.en
+c}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-maths
+y.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
+athex.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
+lm-mathit.enc}<c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/pub
+lic/lm/lmbx10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
+/public/lm/lmbx12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
+ype1/public/lm/lmex10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fon
+ts/type1/public/lm/lmmi10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist
+/fonts/type1/public/lm/lmmi7.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texmf-d
+ist/fonts/type1/public/lm/lmr10.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/texm
+f-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/t169/AppData/Roaming/TinyTeX/t
+exmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/t169/AppData/Roaming/TinyTe
+X/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/t169/AppData/Roaming/Tiny
+TeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/t169/AppData/Roaming/Ti
+nyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/t169/AppData/Roamin
+g/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/t169/AppData/Roa
+ming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/AppData
+/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Tema-2---Variables-Aleatorias_parte2_continuas_Soluciones.pdf
+ (4 pages, 271403 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
- 28950 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 199 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 26723 words of extra memory for PDF output out of 29859 (max. 10000000)
 

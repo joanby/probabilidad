@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.24)  31 MAR 2022 13:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.24)  31 MAR 2022 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Tema-2---Variables-Aleatorias_Soluciones.tex
-(./Tema-2---Variables-Aleatorias_Soluciones.tex
+**Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.tex
+(./Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-
 dist/tex/latex/base/article.cls
@@ -491,8 +491,8 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box62
-) (./Tema-2---Variables-Aleatorias_Soluciones.aux)
-\openout1 = `Tema-2---Variables-Aleatorias_Soluciones.aux'.
+) (./Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.aux)
+\openout1 = `Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
 LaTeX Font Info:    ... okay on input line 125.
@@ -563,10 +563,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 125.
 LaTeX Info: Redefining \pageref on input line 125.
 LaTeX Info: Redefining \nameref on input line 125.
-(./Tema-2---Variables-Aleatorias_Soluciones.out) (./Tema-2---Variables-Aleatori
-as_Soluciones.out)
+(./Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.out) (./Tema-2---V
+ariables-Aleatorias_parte1_discretas_Soluciones.out)
 \@outlinefile=\write4
-\openout4 = `Tema-2---Variables-Aleatorias_Soluciones.out'.
+\openout4 = `Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -645,7 +645,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cf
 g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./Tema-2---Variables-Aleatorias_Soluciones.toc
+) (./Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -654,22 +654,21 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
 )
 \tf@toc=\write5
-\openout5 = `Tema-2---Variables-Aleatorias_Soluciones.toc'.
+\openout5 = `Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.toc'.
 
-[1
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+54.
+(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1
 
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex
 .map}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-55.
-(c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-06.
+05.
 (c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2] [3] [4] [5] [6]
+) [2] [3] [4] [5]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
@@ -677,29 +676,36 @@ Package amsmath Warning: Foreign command \over;
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 508.
-<Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk-2-1.
-pdf, id=219, 436.63126pt x 248.93pt>
-File: Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk
--2-1.pdf Graphic file (type pdf)
-<use Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk-
-2-1.pdf>
-Package pdftex.def Info: Tema-2---Variables-Aleatorias_Soluciones_files/figure-
-latex/unnamed-chunk-2-1.pdf  used on input line 523.
+[6]
+<Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones_files/figure-latex/u
+nnamed-chunk-2-1.pdf, id=107, 436.63126pt x 248.93pt>
+File: Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones_files/figure-la
+tex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones_files/figure-lat
+ex/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: Tema-2---Variables-Aleatorias_parte1_discretas_Solucio
+nes_files/figure-latex/unnamed-chunk-2-1.pdf  used on input line 523.
 (pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-[7 <./Tema-2---Variables-Aleatorias_Soluciones_files/figure-latex/unnamed-chunk
--2-1.pdf>] [8] [9] [10] [11] (./Tema-2---Variables-Aleatorias_Soluciones.aux)
-Package rerunfilecheck Info: File `Tema-2---Variables-Aleatorias_Soluciones.out
-' has not changed.
-(rerunfilecheck)             Checksum: E4A7DEFC8272738C4AAE284BFBAFDAE7;4158.
+[7 <./Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones_files/figure-la
+tex/unnamed-chunk-2-1.pdf>] [8]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 638.
+
+[9] (./Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.aux)
+Package rerunfilecheck Info: File `Tema-2---Variables-Aleatorias_parte1_discret
+as_Soluciones.out' has not changed.
+(rerunfilecheck)             Checksum: 4667AAC2D43F2CCC1FBB9FDACD81EC04;1326.
  ) 
 Here is how much of TeX's memory you used:
- 14195 strings out of 480195
- 230001 string characters out of 5892230
- 585203 words of memory out of 5000000
- 31758 multiletter control sequences out of 15000+600000
- 519169 words of font info for 112 fonts, out of 8000000 for 9000
+ 14081 strings out of 480195
+ 228739 string characters out of 5892230
+ 585365 words of memory out of 5000000
+ 31712 multiletter control sequences out of 15000+600000
+ 518339 words of font info for 102 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,13n,63p,1037b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,1054b,648s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathi
 t.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
 athsy.enc}{c:/Users/t169/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
@@ -725,11 +731,11 @@ ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/t169/
 AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/t
 169/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb>
-Output written on Tema-2---Variables-Aleatorias_Soluciones.pdf (11 pages, 30462
-6 bytes).
+Output written on Tema-2---Variables-Aleatorias_parte1_discretas_Soluciones.pdf
+ (9 pages, 295158 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
- 28950 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 228 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 28766 words of extra memory for PDF output out of 29859 (max. 10000000)
 

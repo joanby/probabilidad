@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios Tema 2 - Variables aleatorias"
+title: "Ejercicios Tema 2 - Variables aleatorias. Parte 1 discretas"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
@@ -38,7 +38,6 @@ dos estudiantes seleccionados. Hallar la función de probabilidad para $X$.
 
 ### Solución
 
-<<<<<<< HEAD
 Los valores que puede alcanzar $X$ son los siguientes:
 
 * $X=19$ si se eligen los dos estudiantes de 19 años.
@@ -97,7 +96,8 @@ CF
 
 probs=prop.table(table(casos_edad$media))
 probs
-sol_df=data.frame(Media_Edad=x,Freq_Absolutas=as.numeric(CF),Probababilidades=as.numeric(probs))
+sol_df=data.frame(Media_Edad=x,Freq_Absolutas=as.numeric(CF),
+                  Probababilidades=as.numeric(probs))
 knitr::kable(sol_df)
 ```
 
@@ -178,7 +178,16 @@ $$
 
 ### Solución
 
-Es discreta.
+Es discreta así que:
+
+$$F_Z(x)=P(Z\leq x)= \sum_{z=0}^x f_Z (x)=
+\left\{\begin{array}{ll}
+0 & \mbox{si }  x<0 \\
+{1\over 3}, & \mbox{si } 0\leq z< 1,\\ 
+{2\over 3}, & \mbox{si } 1\leq z< 2,\\ 
+1 & \mbox{si }  2 \leq x.
+\end{array}\right.
+$$
 
 
 
@@ -192,11 +201,43 @@ k\cdot i, & \mbox{si }i=1,2\ldots,n, \\
 0, & \mbox{en caso contrario.}
 \end{cases}
 $$
-    - Hallar el valor de $k$ y la función de distribución de $X$.
-    - Calcular la probabilidad de que $X$ tome un valor par.
+* Hallar el valor de $k$ y la función de distribución de $X$.
+* Calcular la probabilidad de que $X$ tome un valor par.
     
     
 ### Solución
+
+Tenemos que $\sum_{i=1}^n k\cdot i=1$ y tenemos que determinar $k$ en función de $n$, tenemos que 
+
+$$
+1=\sum_{i=1}^n k\cdot i= k\cdot \sum_{i=1}^n = k\cdot \frac{n\cdot (n+1)}{2}
+$$
+
+luego 
+
+$$k= \frac{2}{n\cdot (n+1)}.$$
+
+
+Nos piden $P(X\mbox{ sea par})$ si $n$  es par  
+
+
+\begin{eqnarray*}
+P(X\mbox{ sea par})&=&\sum_{i=1}^{\frac{n}{2}} P(X=2\cdot i)=
+\sum_{i=1}^{\frac{n}{2}}  \frac{2}{n\cdot (n+1)}\cdot 2\cdot i\\
+&=& \frac{2}{n\cdot (n+1)}\cdot2 \cdot  \sum_{i=1}^{\frac{n}{2}} i=
+\frac{2}{n\cdot (n+1)}\cdot2 \cdot  \frac{\frac{n}{2}\cdot (\frac{n}{2}+1)}{2}\\
+&=& \frac{n\cdot (\frac{n}{2}+1)}{n\cdot(n+1)}=
+\frac{\frac{n}{2}+1}{n+1}.
+\end{eqnarray*}
+
+
+
+Se deja como ejercicio el caso en el que  $n$ es impar, se tiene que sumar 
+
+$$
+P(X\mbox{ sea par})=\sum_{i=1}^{\frac{n-1}{2}} P(X=2\cdot i).
+$$
+ 
 
 ## Problema `r num=num+1;num`.
 
@@ -205,186 +246,25 @@ Suponiendo que cada respuesta acertada vale dos puntos, hallar la distribución 
 
 ### Solución
 
-## Problema `r num=num+1;num`.
+El dominio de la variable $X=$ número de puntos es $D_X=\{0,2,4,6,8,10\}$. Calculamos primero la probabilidad de la variables $Y$= número de preguntas acertadas 
+$D_Y=\{0,1,2,3,4,5\}$
 
-Continuamos con el ejercicio anterior pero ahora suponemos que restamos una cierta cantidad por respuesta incorrecta. Suponiendo que el examen tiene $n$ preguntas, cada pregunta tiene $k$ posibles respuestas, y que cada pregunta acertada vale 1 punto, ¿qué cantidad hay que restar a cada pregunta para que la esperanza de la nota de una pregunta contestada al azar sea 0? Repetir el ejercicio anterior pero ahora suponiendo que restamos a cada pregunta la cantidad obtenida en el caso en que éste se reponda de forma errónea.
+Prbabilidad de acertar $n\in D_Y$  preguntas es 
+$P(Y=n)={5 \choose n}\cdot \left(\frac1k\right)^n\cdot \left(1-\frac1k\right)^{5-n}$
 
-### Solución
 
-## Problema 6.
 
-Hallar la esperanza y la varianza de todas las variables que han aparecido en los ejercicios anteriores.
 
-# Variables aleatorias continuas
+Luego 
 
-## Problema 1.
-
-Verificar que:
 $$
-F_X (t)=
-\left\{\begin{array}{ll}
-0, & \mbox{si $t<-1$},
- \\[0.1cm]
-{t+1\over 2}, & \mbox{si $-1\leq
-t\leq 1$},
- \\[0.1cm]
-1, & \mbox{si $t> 1$},
-\end{array}\right.
-$$
-es una función de distribución y hallar la función de densidad para $X$. Calcular también $P\left(-{1\over 2}\leq X\leq {1\over 2}\right)$.
-
-
-### Solución
-
-## Problema 2.
- Sea $Y$ una variable continua con función de densidad:
-$$
-f_Y(y)=
-\left\{\begin{array}{ll}
-2(1-y), & \mbox{si $0<y<1$},\\ 0, & \mbox{en los otros casos}.
-\end{array}\right.
-$$
-Hallar la función de distribución $F_Y(t)$.
-
-### Solución
-
-## Problema 3.
-
-Verificar que:
-$$
-F_Y(t)=
-\left\{\begin{array}{ll}
-0, & \mbox{si $t<0$},\\
-\sqrt{t}, & \mbox{si $0\leq t\leq 1$},\\ 1, &
-\mbox{si $t>1$},
-\end{array}\right.
-$$
-es una función de distribución y especificar la función de densidad
-para $Y$. Usar este resultado para hallar $P\left(-{1\over 2}<Y<{3\over 4}\right)$.
-
-
-### Solución
-
-## Problema 4.
-
-Sea $X$ una variable aleatoria con función de densidad:
-$$
-f(x)=\begin{cases}
-1-|x|, & \mbox{si }|x|\leq 1,\\
+P(X=x)=P\left(Y=\frac{x}{2}\right)=\begin{cases}
+\left(\begin{array}{c}5\\\frac{x}{2}\end{array}\right)\cdot \left(\frac1k\right)^\frac{x}{2}\cdot \left(1-\frac1k\right)^{\left(5-\frac{x}{2}\right)}, & \mbox{si }x=0,2,4,6,8,10 \\
 0, & \mbox{en caso contrario.}
 \end{cases}
 $$
-1. Representar gráficamente dicha función.
-2. Hallar y dibujar la función de distribución.
-3.  Calcular las siguientes probabilidades: $P(X\geq 0)$ y $P\left(|X|<\frac{1}{2}\right).$
-    
-
-### Solución
-
-## Problema 5.
-
-Hallar la esperanza y la varianza de las variables de los ejercicios anteriores.
 
 
-### Solución
 
 
-# Transformación de variables aleatorias
 
-## Problema 1.
-
-A partir de 
-$$
-F_X(t)=
-\left\{\begin{array}{ll}
-0, & \mbox{si $t<-1$},
-\\[0.1cm]
-{t+1\over 2}, & \mbox{si $-1\leq t\leq
-1$},
- \\[0.1cm]
-1, & \mbox{si $t>1$},
-\end{array}\right.
-$$
-
-hallar la función de distribución para $Y=15+2X$ y la función de densidad para $Y$.
-
-
-### Solución
-
-
-Como $D_X=[-1,1]$ entonces $Y=15+2 X$ varía desde $Y=15+2\cdot (-1)=13$ hasta $Y=15+2\cdot 1=17$ y por lo tanto su dominio es $D_Y=[13,17].$
-
-
-\begin{eqnarray*}
-F_Y(y)&=& P(Y\leq y) =P(15+2\cdot X\leq y )=P(X\leq \frac{y-15}{2})
-\\&=& 
-F_X(y\frac{y-15}{2})=
-\left\{\begin{array}{ll}
-0, & \mbox{si } \frac{y-15}{2}<-1,
-\\[0.1cm]
-{\frac{y-15}{2}+1\over 2}, & \mbox{si } -1\leq y \leq
-1,
- \\[0.1cm]
-1, & \mbox{si } \frac{y-15}{2}>1,
-\end{array}\right.
-\\&=& 
-\left\{\begin{array}{ll}
-0, & \mbox{si } y<-2-15=13
-,
-\\[0.1cm]
-\frac{y-13}{4}, & \mbox{si } 13\leq y \leq
-17,
- \\[0.1cm]
-1, & \mbox{si } y>17,
-\end{array}\right.
-\end{eqnarray*}
-
-
-$$
-f_Y(y)=(F_Y(y))'=
-\left\{\begin{array}{ll}
-\frac{1}{4}, & \mbox{si } 13\leq y \leq
-17,
- \\[0.1cm]
-0, & \mbox{ en cualquier otro caso}.
-\end{array}\right.
-$$
-
-## Problema 2. 
-
-
-Si
-$$
-F_X(t)=
-\left\{\begin{array}{ll}
-0, & \mbox{si $t<0$},\\ t, &
-\mbox{si $0\leq t\leq 1$},\\ 1, & \mbox{si
-$t>1$},
-\end{array}\right.
-$$
-hallar la función de distribución y la función de densidad de la forma
-estándar de $X$ ($Z={X-\mu_X\over \sigma_X}$), donde $\mu_X =E(X)$ y $\sigma_X=\sqrt{\mathrm{Var}(X)}$.
-
-### Solución
-
-
-## Problema 3. 
-
- Para formar un jardín circular, un jardinero corta una cuerda, la ata a una
-estaca y  marca el perímetro. Suponer que la longitud de la
-cuerda tiene la misma verosimilitud de estar en el intervalo comprendido entre $r-0.1$
-y $r+0.1$. ¿Cuál es la distribución de $X$, el área de la superficie del jardín?
-¿Cuál es la probabilidad de que el área de la superficie sea mayor que $\pi r^2$?
-
-### Solución
-
-
-## Problema 4. 
-
-
-Sea $X$ una variable aleatoria continua con función de densidad
-$f_X(x)$.
-Consideramos la variable aleatoria $Y=\mathrm{e}^X$. Hallar la función de densidad
-de la variable aleatoria $Y$, $f_Y(y)$.
-
-### Solución

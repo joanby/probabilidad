@@ -1,0 +1,71 @@
+---
+title: "Ejercicios Tema 2 - Variables aleatorias. Parte 1"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
+toccolor: blue
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Variables aleatorias discretas
+
+1. Hay 10 estudiantes inscritos en una clase de Estadística, de entre los cuales 3
+tienen 19 años, 4 tienen 20 años, 1 tiene 21 años, 1 tiene 24 años y 1 tiene 26 años. De esta
+clase se seleccionan dos estudiantes sin reposición. Sea $X$ la edad media de los
+dos estudiantes seleccionados. Hallar la función de probabilidad para $X$.
+
+1. Verificar que:
+$$F_W (t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<3$},
+ \\[0.1cm]
+{1\over 3}, & \mbox{si $3\leq t<4$},
+ \\[0.1cm]
+{1\over 2}, & \mbox{si $4\leq t<5$},
+ \\[0.1cm] 
+{2\over 3}, & \mbox{si $5\leq t<6$},
+ \\[0.1cm] 
+1, & \mbox{si $t\geq 6$},
+\end{array}\right.
+$$
+es una función de distribución y especificar
+la función de probabilidad para $W$. Hallar
+también $P(3<W\leq 5)$.
+
+1. La variable aleatoria $Z$ tiene por función de probabilidad:
+$$f_Z (x)=
+\left\{\begin{array}{ll}
+{1\over 3}, & \mbox{si $x=0,1,2$},\\ 0, & \mbox{en los otros
+casos.}
+\end{array}\right.
+$$
+¿Cuál es la función de distribución para $Z$?
+
+1. Sea $X_n$ una variable aleatoria dependiendo de un valor natural $n$ cuya función de probabilidad es:
+$$
+f(x)=\begin{cases}
+k\cdot i, & \mbox{si }i=1,2\ldots,n, \\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+    - Hallar el valor de $k$ y la función de distribución de $X$.
+    - Calcular la probabilidad de que $X$ tome un valor par.
+    
+1. Un examen tipo test consta de cinco preguntas con tres posibles opciones cada una. Un alumno contesta al azar las cinco cuestiones.
+Suponiendo que cada respuesta acertada vale dos puntos, hallar la distribución de número de puntos obtenidos por el alumno.
+
