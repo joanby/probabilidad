@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Variables aleatorias multidimensionales discretas}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problema 1}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Solución}{1}{subsubsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problema 2.}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Solución}{2}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Problema 3.}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Solución}{3}{subsubsection.1.3.1}%
+\contentsline {section}{\numberline {2}Variables aleatorias multidimensionales continuas}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problema 4}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Solución}{3}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Problema 5.}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Solución}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Independencia de variables aleatorias}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problema 6.}{5}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Momentos}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Problema 7.}{5}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Variable aleatoria normal multidimensional}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Problema 8.}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Solución:}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Problema 9.}{6}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Solución}{6}{subsubsection.5.3.1}%

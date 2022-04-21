@@ -1,0 +1,94 @@
+---
+title: "Ejercicios Tema 5 - Variables aleatorias bidimensionales"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+    toc_depth: 4
+  word_document:
+    toc: yes
+  html_document: 
+    toc: yes
+    number_sections: yes
+    keep_md: yes
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+toccolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+
+# Variables aleatorias multidimensionales momentos
+
+## Pregunta 1
+
+Una urna contiene una bola negra y dos bolas blancas. Se sacan tres bolas de la urna.
+Sea la variable $I_k$ que vale 1 si el resultado de la extracción $k$-ésima es la bola negra y vale 0 en caso contrario. Definimos las siguientes tres variables aleatorias:
+$$
+\begin{array}{rl}
+X & = I_1+I_2+I_3, \\
+Y & = \min\{I_1,I_2,I_3\},\\
+Z & = \max\{I_1,I_2,I_3\}.
+\end{array}
+$$
+
+1. Especificar el rango de valores de la variable $3$ dimensional $(X,Y,Z)$ si las extracciones son con reposición. Hallar la función de probabilidad conjunta $P_{XYZ}$.
+2. ¿Son las variables $X$, $Y$ y $Z$ independientes? ¿Son las variables $X$ e $Y$ independientes?
+3.  Repetir el primer apartado suponiendo ahora que las extracciones son sin reposición.
+   
+### Solución 
+
+Indicaciones para la solución
+
+Para hallar las probabilidades pedidas, tenéis que tener en cuenta que, como las variables $X$, $Y$ y $Z$ son independientes, podéis "separar" las probabilidades pedidas de la forma siguiente:
+
+$$
+P(X \mbox{ cumple condición } X, Y \mbox{ cumple condición } Y, Z \mbox{ cumple condición } Z)=P(X \mbox{ cumple condición } X)
+\cdot P(Y \mbox{ cumple condición } Y)\cdot P(Z \mbox{ cumple condición } Z),
+$$
+
+donde condición X, condición Y y condición Z dependerá de cada apartado. Por ejemplo, en el primer apartado:
+
+condición $X:$ $|X|<5$,
+
+condición $Y:$ $Y <4$ y
+
+condición $Z:$ $Z^3>8$.
+
+El siguiente paso es escribir las probabilidades $P(X cumple condición X)$, $P(Y cumple condición Y)$ y $P(Z cumple condición Z)$ en función de las correspondientes funciones de distribución.
+
+Por ejemplo, para hallar $P(|X|<5)$ consideraré dos casos:
+
+* Caso $X$ continua: $P(|X| <5) = P(-5 < X < 5)= P(X < 5) - P(X <=-5)=  F_X(5) - F_(-5)$.
+* Caso $X$ discreta con valores enteros: $P(|X| <5) = P(-5 < X < 5)= P(X <5)- P(X=5)  - P(X <=-5)= P(X<=4)-P(X<=-5)=F_X(4)-F_X(-5)$.
+
+
+
+En el caso de calcular $P(\min(X,Y,Z)<2)$ es mejor calcular el complementario:
+
+$P(min(X,Y,Z)<2)=1-P(min(X,Y,Z)>=2)$.
+
+Decir que el mínimo de tres cantidades es mayor o igual que 2 es equivalente a decir que todas son mayores que 2. Por tanto,
+
+$P(min(X,Y,Z)<2)=1-P(min(X,Y,Z)>=2)=1-P(X >=2, Y>=2, Z>=2)$,  y a partir de aquí ya que se puede aplicar lo dicho anteriormente.
+
+
+
+En el caso de calcular P(max(X,Y,Z)>6), también es mejor usar el complementario:
+
+$$P(\max(X,Y,Z)>6)=1-P(\max(X,Y,Z)<=6)$$ .
+
+Decir que el máximo de tres cantidades es menor o igual que $6$ es equivalente a decir que todas son menores que 6. Por tanto,
+$P(max(X,Y,Z)>6)=1-P(max(X,Y,Z)<=6) =1-P(X<=6, Y<=6, Z<=6)$, y a partir de aquí ya que se puede aplicar lo dicho anteriormente.
