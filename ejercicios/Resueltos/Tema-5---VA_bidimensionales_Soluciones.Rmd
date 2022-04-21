@@ -1,0 +1,240 @@
+---
+title: "Ejercicios Tema 5 - Variables aleatorias bidimensionales"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+    toc_depth: 4
+  word_document:
+    toc: yes
+  html_document: 
+    toc: yes
+    number_sections: yes
+    keep_md: yes
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+toccolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+
+# Variables aleatorias bidimensionales discretas
+
+## Pregunta 1.
+
+Una moneda no trucada tiene un 1 pintado en una cara y un 2
+en la otra cara. Se llanza al aire dos veces la moneda. Sea $X$ la suma de los dos números 
+obtenidos y sea $Y$ la diferencia de los dos
+números (el primero menos el segundo). Hallar la función de probabilidad
+conjunta $P_{XY}(x,y)$, la función de probabilidad de $X$, $P_X(x)$ y la función de probabilidad 
+de $Y$, $P_Y(y)$.
+
+### Solución
+
+Indicaciones para la solución:
+
+En primer lugar, tenéis que averiguar los valores que alcanzan las variables $X$ e $Y$. Luego para cada par de valores $(x_i,y_j)$ de la variable aleatoria $(X,Y)$, tenéis que calcular la probabilidad de que $X=x_i$ e $Y=y_j$ para todos los pares de valores $(x_i,y_j)$ y ya tendréis hallada la función de probabilidad conjunta. A continuación, construir la tabla correspondiente. Las marginales serán las sumas de las filas y de las columnas, respectivamente.
+
+
+
+
+## Pregunta 2.
+
+Suponemos que se pinta un "+1" en una cara
+de una moneda no trucada y un "-1" en la otra cara. La moneda se lanza al aire dos veces. Sea $X$ el número que sale la primera
+vez y $Y$ el número que sale la segunda vez. Hallar
+$P_{XY}(x,y)$, $E(X)$, $E(Y)$ y $E\left({X\over Y}\right)$.
+
+### Solución
+Indicaciones para la solución:
+
+En este ejercicio los valores de $X$ e $Y $son claros. Por tanto, la dificultad está en hallar la función de probabilidad conjunta. Una vez hallada ésta debemos calcular  la tabla correspondiente, podemos hallar las distribuciones marginales y, a partir de éstas, $E(X)$ y $E(Y)$. Para hallar $E(X/Y)$, hay que hallar en primer lugar la función de probabilidad  condicionada  de la variable $X/Y=y$ y de esta variable calcular su valor medio.
+
+## Pregunta 3.
+
+ Se lanza 3 veces una moneda no trucada. Sea $X$ el número de caras
+que se obtienen e $Y$ el número de cruces. Hallar la función de probabilidad
+conjunta para $(X,Y)$ y hallar $\sigma_{XY}=E(XY)-E(X)\cdot E(Y)$.
+
+### Solución
+Indicaciones para la solución:
+
+Leer los comentarios de las soluciones de los dos problemas anteriores de cara a hallar la función de probabilidad conjunta. Una vez hallada ésta, calcular $E(X\cdot Y)$, $E(X)$ y $E(Y)$. Por último, calcular la expresión $Cov(X,Y)=E(X\cdot Y)-E(X)\cdot E(Y)$ para hallar la covarianza de $(X,Y)$.
+
+## Pregunta 4.
+
+Sean $X$ y $Y$ variables aleatorias discretas con función de probabilidad
+conjunta: 
+$$
+P_{XY}(x,y)=
+\left\{\begin{array}{ll}
+{1\over n^2}, & \mbox{por $x=1,2,\ldots,n,\quad
+y=1,2,\ldots,n$},\\
+0, & \mbox{en los otros casos.}
+\end{array}\right.
+$$
+Comprobar que $X$ e $Y$ son independientes.
+
+### Solución
+
+Indicaciones para la solución:
+
+Para comprobar la independencia, como nos dan la función de probabilidad conjunta,
+hay que hallar las marginales $P_X$ y $P_Y$ y verificar que para todo $(i,j)$, 
+para $i=1,2,\ldots , n$ y $j=1,2,\ldots , n$, $P_{XY}(i,j)=P_X(i)\cdot P_Y(j)$.
+
+## Pregunta 5.
+
+ Si la probabilidad conjunta para $(X,Y)$ no se anula en exactamente 3 puntos, ¿qué se tiene que
+cumplir para que $X$ y $Y$ sean independientes?
+
+### Solución
+
+Indicaciones para la solución:
+
+Resuelve el proplema para una variable $(X,Y)$ con dominio en los puntos $\{(x_1,y_1),(x_2,y_2),(x_3,y_3)\}$ con propobabilidad de que cada para para $p1,p2,p3$ tales que $\sum_{i=1}^n p_i=1$.
+
+Ahora nos preguntaros: ¿cuántos valores pueden tener como máximo X e Y para que la variable aleatoria $(X,Y)$ sea no nula en exactamente tres puntos? Pensad en la tabla de la función de probabilidad conjunta. Una vez analizados todos los casos (se pueden reducir a dos), estudiarlos y sacad las conclusiones que se derivan de cada caso.
+
+
+## Pregunta 6.
+
+Sea $(X,Y)$ la variable aleatoria
+bidimensional con función de probabilidad conjunta:
+
+$$
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|ccc}
+$Y\backslash X$&$-1$&$0$&$1$ \\
+\hline
+$-1$&$\frac{1}{9}$&$\frac{1}{18}$&$\frac{1}{9}$ \\
+$0$&$\frac{1}{9}$&$\frac{1}{9}$&$\frac{1}{18}$ \\
+$1$&$\frac{2}{9}$&$0$&$\frac{2}{9}$ \\\hline
+\end{tabular}
+$$
+Hallar $E (Y|X=1)$.
+
+
+### Solución
+
+Indicaciones para la solución:
+
+En primer lugar hay que hallar la función de probabilidad marginal $P_X$ y, a partir de ésta, hallar la función de probabilidad condicional de la variable $Y|X=1$. Para finalizar el ejercicio, hay que hallar la esperanza de la última variable aleatoria.
+
+
+# Variables aleatorias bidimensionales continuas
+
+## Pregunta 7.
+
+ ¿Cuál es el valor de $A$ si se quiere que la siguiente función
+$$
+f_{XY}(x,y)=
+\left\{\begin{array}{ll}
+A {x\over y}, & \mbox{si $0<x<1$, $1<y<2$}, \\ 0, & \mbox{en los
+otros casos,}
+\end{array}\right.
+$$
+sea una función de densidad para la variable aleatoria conjunta $(X,Y)$.
+
+### Solución
+
+
+Indicaciones para la solución:
+
+Para hallar el valor de A hay que usar que la integral (doble) de la función de densidad sobre todo el plano tiene que valer 1. En este caso, basta integrar en el rectángulo (de hecho, el cuadrado) $[0,1]\times [1,2]$. Usando la expresión de la función de densidad, podemos "separar" las variables $X$ e $Y$. Por tanto, la integral doble simplemente sería un producto de dos integrales simples. Calculando el valor de dicha integral doble e imponiendo que tiene que valer 1, es bastante sencillo hallar el valor de $A$.
+
+## Pregunta 8.
+
+ Suponemos que $(X,Y)$ es una variable aleatoria bidimensional
+continua con función de densidad: 
+$$
+f_{XY}(x,y)=
+\left\{\begin{array}{ll}
+{1\over x}, & \mbox{si
+$0<y<x$, $0<x<1$},\\
+0, & \mbox{en los otros casos.}
+\end{array}\right.
+$$
+Hallar las funciones de densidad marginales para $X$ y $Y$.
+### Solución
+
+Indicaciones para la solución:
+
+En primer lugar, dibujar la región del plano donde la función de densidad conjunta no se anula para tener claro que si fijamos x, en qué valores tenemos que situar la y para que dicha función no se anule y si fijamos y, en qué valores tenemos que situar la x para que dicha función no se anule. Una vez realizado este paso, para calcular $f_X(x)$ y $f_Y(y)$ es bastante sencillo usando la expresión correspondiente vista en los apuntes.
+
+## Pregunta 9.
+
+Suponemos que
+$(X,Y)$ tiene  densidad $f_{XY}=c$ para $(x,y)$ en el cuadrilátero de vértices
+$(0,0)$, $(1,1)$, $(a,1-a)$ y $(1-a,a)$ donde $0\leq a\leq \frac{1}{2}$.
+1. Hallar el valor de $c$.
+2.  Hallar $\rho_{XY}$ si $a=0$ y $a=\frac{1}{2}$.
+
+### Solución 
+
+Indicaciones para la solución:
+
+Para hallar el valor de $c$ hay que usar que la integral de la función de densidad conjunta en la región donde ésta no se anula debe ser $1$. Como la función de densidad conjunta es constante, la integral anterior valdrá $c\cdot \mbox{área(R)}$, donde $R$ es la región donde $f_{XY}$ no se anula. Por tanto, en primer lugar dibujar $R$ en el plano y hallar el área correspondiente. Entonces $c$ será $c=1/\mbox{área(R)}$. Para resolver la segunda parte del ejercicio, notemos  que para $a=0$, la región es un cuadrado y las cosas se simplifican mucho para calcular covarianzas y esperanzas marginales. El caso $a=\frac{1}{2}$ no tiene sentido ya que la región degenera hasta un segmento. Como el segmento tiene área 0, no tiene sentido considerar la variable aleatoria $(X,Y)$ ya que la región donde $f_{XY}$ no se anule debe tener área estrictamente positiva.
+
+## Pregunta 10
+
+Consideramos la función:
+$$
+f(x,y)=
+\left\{\begin{array}{ll}
+3x, & \mbox{si $0\leq x\leq 1$ y $x\leq y\leq 1$},\\
+3y, & \mbox{si
+$0\leq x\leq 1$ y $0\leq y\leq x$},\\ 0, & \mbox{en caso contrario.}
+\end{array}\right.
+$$
+1. Comprobar que es una función de densidad.
+2. Hallar la función de distribución.
+3. Hallar la función de densidad de $X$, $Y$, $X|Y=y$ y $Y|X=x$.
+
+
+### Solución 
+
+Indicaciones  para la solución:
+
+Mismos comentarios que en la pregunta 8; en primer lugar, dibujar la región del plano donde la función de densidad conjunta no se anula para tener claro que si fijamos x, en qué valores tenemos que situar la y para que dicha función no se anule y si fijamos y, en qué valores tenemos que situar la x para que dicha función no se anule. Una vez realizado este paso, para calcular $f_X(x)$ y $f_Y(y)$ es bastante sencillo usando la expresión correspondiente vista en los apuntes. Id con cuidado con este ejercicio ya que la función de densidad conjunta está definida a trozos y por tanto, hay que tener claro en que "trozo" estamos de cara a calcular marginales.
+
+Para calcular la función de distribución, hay que considerar un conjunto de casos como el ejemplo que hay en los apuntes y analizar en cada caso fijado un punto $(x,y)$ la intersección del rectángulo infinito $(-\infty,x]x(-\infty,y]$ con la región donde $f_{XY}$ no se anula.
+
+La tercera parte del ejercicio se calcula usando las densidades marginales y las densidades condicionales. Id con ojo con las condicionales ya que por ejemplo para condicionar $X|Y=y$, hay que suponer que $f_Y(y)>0$.
+
+## Pregunta 11
+
+La variable $(X,Y)$ está distribuida uniformemente en el círculo
+$x^2+y^2\leq 4$. Calcular:
+1. $P(Y>k X)$, para cualquier valor de $k$.
+2. Densidad marginal de la variable aleatoria $X$.
+3.  Densidad para la variable aleatoria condicionada $X|Y=1$.
+4. $P(|X|<1|Y=0.5)$.
+
+### Solución 
+
+Indicaciones para la resolución:
+
+Como $(X,Y)$ es uniforme en el círculo de centro $(0,0)$ y radio $2$, su función de densidad será $f_{XY}(x,y)=c,$ si $(x,y)$ pertenece al círculo anterior y 0, en caso contrario. El valor de $c$, (mirar el ejercicio 9 ya que el razonamiento es parecido) será $c=1/\mbox{área(círculo)}=1/(4\cdot\pi)$ ya que el área del círculo será $pi\cdot r^2=\pi\cdot2^2=4\cdot\pi$.
+
+Ahora que tenemos claro cuál es la función de densidad conjunta, resolvamos cada apartado:
+
+1. Para hallar la probabilidad $P(Y>k\cdot X)$, considerad la recta $Y=k\cdot X$ y dibujad cómo corta dicha recta al círculo anterior. La probabilidad anterior sería el valor de $c=(1/(4\cdot pi))$ por el área donde $y>k x$, para cada $(x,y)$ perteneciente  al círculo anterior. Mirad el dibujo que habéis hecho: ¿qué valdrá dicha área?
+
+2. Para hallar la densidad marginal de $X$, hay que calcular la región de los valores $x$ tal que la recta vertical $X=x$ corta al círculo de centro $(0,0)$ y radio $2$. Dichos valores de x serian los pertenecientes al intervalo $[-2,2]$. Por tanto, basta considerar que x está entre $-2$ y $2$ ya que, en caso contrario, $f_X(x)=0$. Dado $x$ entre $-2$ y $2$, ¿entre qué valores y está la intersección de la recta $X=x$ y el círculo de centro $(0,0)$ y radio $2$? Una vez hallados estos valores, el cálculo de la función de densidad marginal de $X$ es inmediato.
+
+3. Para calcular la función de densidad condicionada de la variable $X|Y=1$ hay que calcular en primer lugar la función de densidad marginal de $Y$ y ver qué vale $f_Y(1)$. Fijaos que por simetría la función de densidad de Y será la misma que la de $X$ cambiando la $x$ por la $y$. Una vez hallada la función de densidad marginal $f_Y(1)$, para hallar la función de densidad condicionada de $X|Y=1$, basta hacer $f_{XY}(x,1)/f_Y(1)$, para $x$ perteneciente al intervalo obtenido de la intersección de la recta vertical $Y=1$ con el círculo de centro $(0,0)$ y radio $2$.
+
+4. Para realizar el cálculo de la probabilidad $P(|X|<1|Y=0.5)$, hay que hallar en primer lugar la función de densidad condicionada de la variable $X|Y=0$.5 usando el método indicado en el apartado anterior. Una vez hallada dicha función de densidad la probabilidad pedida será la integral entre $-1$ y $1$ de la función de densidad anterior. Ojo: basta integrar para aquellos valores $x $en los que la función de densidad no sea nula.
