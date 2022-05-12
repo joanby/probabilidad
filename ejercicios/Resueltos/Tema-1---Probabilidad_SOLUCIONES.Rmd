@@ -266,7 +266,7 @@ tenemos que considerar el suceso $$\mbox{"2 caras en cuatro tiradas"}=\{CC++,C+C
 
 \begin{eqnarray*}
 P(\mbox{"C en la cuarta"}|\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})&=&\\
-\frac{P(\mbox{"C en la cuarta"}\cap \{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}{P(CCC)}&=&
+\frac{P(\mbox{"C en la cuarta"}\cap \{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}&=&
 \\
 \frac{P(\{C++C,+C+C,++CC\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}&=&
 \\
