@@ -1,48 +1,48 @@
 \contentsline {section}{\numberline {1}Ejercicios de Espacios muestrales y sucesos}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Problema 1}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Solución}{2}{subsubsection.1.1.1}%
-\contentsline {section}{\numberline {2}Ejercicios de Probabilidad}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Problema 1}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Solución}{3}{subsubsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.2}Problema 2}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {2}Ejercicios de Probabilidad}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problema 1}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Solución}{2}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Problema 2}{2}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Solución}{3}{subsubsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.3}Problema 3}{4}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Solución}{4}{subsubsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3}Problema 3}{3}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Solución}{3}{subsubsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.4}Problema 4}{4}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Solución}{4}{subsubsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.5}Problema 5}{5}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Solución}{5}{subsubsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.6}Problema 6}{5}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.5}Problema 5}{4}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Solución}{4}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Problema 6}{4}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}Solución}{5}{subsubsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.7}Problema 7}{6}{subsection.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}Solución}{6}{subsubsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7}Problema 7}{5}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Solución}{5}{subsubsection.2.7.1}%
 \contentsline {subsection}{\numberline {2.8}Problema 8}{6}{subsection.2.8}%
-\contentsline {subsubsection}{\numberline {2.8.1}Solución}{7}{subsubsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.9}Problema 9}{7}{subsection.2.9}%
-\contentsline {subsubsection}{\numberline {2.9.1}Solución}{7}{subsubsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.10}Problema 10}{7}{subsection.2.10}%
-\contentsline {subsubsection}{\numberline {2.10.1}Solución}{7}{subsubsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.11}Problema 11.}{9}{subsection.2.11}%
-\contentsline {subsubsection}{\numberline {2.11.1}Solución}{10}{subsubsection.2.11.1}%
-\contentsline {subsection}{\numberline {2.12}Problema 12.}{10}{subsection.2.12}%
-\contentsline {subsubsection}{\numberline {2.12.1}Solución}{10}{subsubsection.2.12.1}%
-\contentsline {subsection}{\numberline {2.13}Problema 13.}{10}{subsection.2.13}%
-\contentsline {subsubsection}{\numberline {2.13.1}Solución}{10}{subsubsection.2.13.1}%
-\contentsline {subsection}{\numberline {2.14}Problema 14.}{12}{subsection.2.14}%
-\contentsline {subsubsection}{\numberline {2.14.1}Solución}{12}{subsubsection.2.14.1}%
-\contentsline {subsection}{\numberline {2.15}Problema 15.}{13}{subsection.2.15}%
-\contentsline {subsubsection}{\numberline {2.15.1}Solución}{13}{subsubsection.2.15.1}%
-\contentsline {subsection}{\numberline {2.16}Problema 16.}{14}{subsection.2.16}%
-\contentsline {subsubsection}{\numberline {2.16.1}Solución}{14}{subsubsection.2.16.1}%
-\contentsline {subsection}{\numberline {2.17}Problema 17.}{15}{subsection.2.17}%
-\contentsline {subsubsection}{\numberline {2.17.1}Solución}{15}{subsubsection.2.17.1}%
-\contentsline {section}{\numberline {3}Ejercicios de Independencia de sucesos}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Problema 1.}{16}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Solución}{16}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Problema 2.}{16}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Solución}{16}{subsubsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.3}Problema 3.}{16}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Solución}{17}{subsubsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.4}Problema 4.}{17}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Solución}{17}{subsubsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.5}Problema 5.}{17}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {2.8.1}Solución}{6}{subsubsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.9}Problema 9}{6}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Solución}{6}{subsubsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.10}Problema 10}{6}{subsection.2.10}%
+\contentsline {subsubsection}{\numberline {2.10.1}Solución}{6}{subsubsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.11}Problema 11.}{8}{subsection.2.11}%
+\contentsline {subsubsection}{\numberline {2.11.1}Solución}{8}{subsubsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.12}Problema 12.}{9}{subsection.2.12}%
+\contentsline {subsubsection}{\numberline {2.12.1}Solución}{9}{subsubsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.13}Problema 13.}{9}{subsection.2.13}%
+\contentsline {subsubsection}{\numberline {2.13.1}Solución}{9}{subsubsection.2.13.1}%
+\contentsline {subsection}{\numberline {2.14}Problema 14.}{10}{subsection.2.14}%
+\contentsline {subsubsection}{\numberline {2.14.1}Solución}{10}{subsubsection.2.14.1}%
+\contentsline {subsection}{\numberline {2.15}Problema 15.}{11}{subsection.2.15}%
+\contentsline {subsubsection}{\numberline {2.15.1}Solución}{11}{subsubsection.2.15.1}%
+\contentsline {subsection}{\numberline {2.16}Problema 16.}{12}{subsection.2.16}%
+\contentsline {subsubsection}{\numberline {2.16.1}Solución}{12}{subsubsection.2.16.1}%
+\contentsline {subsection}{\numberline {2.17}Problema 17.}{13}{subsection.2.17}%
+\contentsline {subsubsection}{\numberline {2.17.1}Solución}{13}{subsubsection.2.17.1}%
+\contentsline {section}{\numberline {3}Ejercicios de Independencia de sucesos}{14}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problema 1.}{14}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Solución}{14}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Problema 2.}{14}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Solución}{15}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Problema 3.}{15}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Solución}{15}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Problema 4.}{15}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Solución}{15}{subsubsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.5}Problema 5.}{15}{subsection.3.5}%

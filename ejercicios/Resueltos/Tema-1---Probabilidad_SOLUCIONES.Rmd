@@ -392,20 +392,22 @@ prop.table(table(resultados$suma))[6:11]
 
 ## Problema `r contador=contador+1;contador`.
 
-Se sabe que $=\frac23$ de los internos de una cierta prisión son menores de 25 años. También se sabe que $=\frac35$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
+Se sabe que $\frac23$ de los internos de una cierta prisión son menores de 25 años. También se sabe que $\frac35$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
 
 ### Solución
 
-Sea $Mayor_25$ el suceso ser menor de 25 años, $H$ ser hombre y $M=H^c$ ser mujer.
+Sea $Menor_{25}, Mayor_{25}$ los sucesos "ser menor de 25 años" y "ser mayor de 25 años", respectivamente, $H$ ser hombre y $M=H^c$ ser mujer.
 
-Según dice el enunciado del problemas tenemos que $P(Mayor_25)=\frac23$, $P(H)=\frac35$, y por lo tanto $P(M)=P(H^c)=1-P(H)=1-\frac35=\frac25.$  Además nos dicen que $P(M\cup Mayor_25)=\frac58.$
+Según dice el enunciado del problemas tenemos que $P(Menor_{25})=\frac23$, $P(H)=\frac35$, y por lo tanto $P(M)=P(H^c)=1-P(H)=1-\frac35=\frac25$ y $P(Mayor_{25})=1-P(Menor_{25})=1-\frac{2}{3}=\frac{1}{3}$.  Además nos dicen que $P(M\cup Mayor_{25})=\frac58.$
 
 Nos piden la probabilidad de ser mujer y menor de 25 es decir 
-$P(M\cap Mayor_25^c)=P(M-Mayor_25)=P(M)-P(M\cap Mayor_25)$.
+$P(M\cap Menor_{25})=P(M)-P(M\cap Mayor_{25})$.
 
-Como $\frac58= P(M\cup Mayor_25)=P(M)+ P(Mayor_25)-P(M\cap Mayor_25))$ tenemos que 
- $\frac58=\frac25+ \frac23-P(M\cap Mayor_25)$ luego  la probabilidad que se pide es 
- $P(M\cap Mayor_25)=\frac25+ \frac23-\frac58=\frac{53}{120}.$ 
+Como $\frac58= P(M\cup Mayor_{25})=P(M)+ P(Mayor_{25})-P(M\cap Mayor_{25}))$ tenemos que 
+ $$\frac58=\frac25+ \frac13-P(M\cap Mayor_{25}),$$ luego  la probabilidad de ser mujer y mayor de 25 años es 
+ $P(M\cap Mayor_{25})=\frac25+ \frac13-\frac58=\frac{13}{120}.$ 
+ 
+La probabilidad pedida será, pues, $P(M\cap Menor_{25})=P(M)-P(M\cap Mayor{25})=\frac{2}{5}-\frac{13}{120}=\frac{7}{24}$.
 
  
 
