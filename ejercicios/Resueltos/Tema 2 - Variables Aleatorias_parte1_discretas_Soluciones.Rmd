@@ -250,7 +250,7 @@ El dominio de la variable $X=$ número de puntos es $D_X=\{0,2,4,6,8,10\}$. Calc
 $D_Y=\{0,1,2,3,4,5\}$
 
 Prbabilidad de acertar $n\in D_Y$  preguntas es 
-$P(Y=n)={5 \choose n}\cdot \left(\frac1k\right)^n\cdot \left(1-\frac1k\right)^{5-n}$
+$P(Y=n)={5 \choose n}\cdot \left(\frac13\right)^n\cdot \left(1-\frac13\right)^{5-n}$
 
 
 
@@ -259,7 +259,7 @@ Luego
 
 $$
 P(X=x)=P\left(Y=\frac{x}{2}\right)=\begin{cases}
-\left(\begin{array}{c}5\\\frac{x}{2}\end{array}\right)\cdot \left(\frac1k\right)^\frac{x}{2}\cdot \left(1-\frac1k\right)^{\left(5-\frac{x}{2}\right)}, & \mbox{si }x=0,2,4,6,8,10 \\
+\left(\begin{array}{c}5\\\frac{x}{2}\end{array}\right)\cdot \left(\frac13\right)^\frac{x}{2}\cdot \left(1-\frac13\right)^{\left(5-\frac{x}{2}\right)}, & \mbox{si }x=0,2,4,6,8,10 \\
 0, & \mbox{en caso contrario.}
 \end{cases}
 $$
