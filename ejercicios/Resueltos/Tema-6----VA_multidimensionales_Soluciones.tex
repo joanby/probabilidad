@@ -1,0 +1,517 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\title{Ejercicios Tema 6 - Variables aleatorias muldidimensionales}
+\author{Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir}
+\date{Curso de Probabilidad y Variables Aleatorias con R y Python}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Ejercicios Tema 6 - Variables aleatorias muldidimensionales},
+  pdfauthor={Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir},
+  colorlinks=true,
+  linkcolor={red},
+  filecolor={Maroon},
+  citecolor={blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\renewcommand{\contentsname}{Contenidos}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=blue}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+\hypertarget{variables-aleatorias-multidimensionales-discretas}{%
+\section{Variables aleatorias multidimensionales
+discretas}\label{variables-aleatorias-multidimensionales-discretas}}
+
+\hypertarget{problema-1}{%
+\subsection{Problema 1}\label{problema-1}}
+
+Una urna contiene una bola negra y dos bolas blancas. Se sacan tres
+bolas de la urna. Sea la variable \(I_k\) que vale 1 si el resultado de
+la extracción \(k\)-ésima es la bola negra y vale 0 en caso contrario.
+Definimos las siguientes tres variables aleatorias: \[
+\begin{array}{rl}
+X & = I_1+I_2+I_3, \\
+Y & = \min\{I_1,I_2,I_3\},\\
+Z & = \max\{I_1,I_2,I_3\}.
+\end{array}
+\] 1. Especificar el rango de valores de la variable \(3\) dimensional
+\((X,Y,Z)\) si las extracciones son con reposición. Hallar la función de
+probabilidad conjunta \(P_{XYZ}\). 1. ¿Son las variables \(X\), \(Y\) y
+\(Z\) independientes? ¿Son las variables \(X\) e \(Y\) independientes?
+1. Repetir el primer apartado suponiendo ahora que las extracciones son
+sin reposición.
+
+\hypertarget{soluciuxf3n}{%
+\subsubsection{Solución}\label{soluciuxf3n}}
+
+Indicaciones para la solución:
+
+Para resolver este ejercicio, os ayudará mucho ver el ejemplo que tenéis
+en los apuntes.
+
+En primer lugar, para cada variable X, Y o Z, hay que calcular el
+conjunto de valores que alcanza cada variable.
+
+Daremos los detalles para la variable X. Para las demás, hay que razonar
+de forma parecida. Para la variable X, el rango de valores sería el
+conjunto sería: \(\{0,1,2,3\}\) ya que pueden salir desde 3 bolas
+blancas en cuyo caso la suma sería mínima, 0 hasta 3 bolas negras, en
+cuyo caso la suma sería máxima, 3. Ahora para cada para valor entre 0 y
+3, hay que estudiar cuantas tripletas \((i,j,k)\) dan como suma dicho
+valor, calcular la probabilidad para cada tripleta y sumar todas las
+probabilidades.
+
+Para ver si \(X\),\(Y\) y \(Z\) son independientes, hay que hallar en
+primer lugar las marginales de cada una de ellas y ver para cada
+triplete de valores \((x,y,z)\) si
+\(P_{XYZ}(x,y,z)=P_X(x)\cdot P_Y(y)\cdot P_Z(z)\). Si falla en uno, ya
+no serían independientes.
+
+Para ver si \(X\) e \(Y\) son independientes hay que ver para cada par
+de valores \((x,y)\) si \(P_{XY}(x,y)=P_X(x)\cdot P_Y(y)\), calculando
+previamente \(P_{X Y}\), la función de probabilidad conjunta de la
+variable \((X,Y)\).
+
+Para resolver el problema pero suponiendo que las extracciones son sin
+reposición, hay que tener en cuenta que
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  hay casos que no se pueden dar como por ejemplo \((1,1,0)\) ya que si
+  sale una bola negra, y no la volvemos a poner en la urna ya no pueden
+  salir más bolas negras y,
+\item
+  las probabilidades también cambian respecto a las extracciones con
+  reposición.
+\end{enumerate}
+
+\hypertarget{problema-2.}{%
+\subsection{Problema 2.}\label{problema-2.}}
+
+Sean \(X_1, X_2,\ldots, X_n\) variables binarias aleatorias que toman
+valores 0 o 1 para indicar si un altavoz está en silencio (0) o activo
+(1). Si un altavoz está en silencio, permanece inactivo en el siguiente
+intervalo de tiempo con probabilidad 3/4, y un altavoz activo permanece
+activo con probabilidad 1/2. Hallar la función de probabilidad conjunta
+\(P_{X_1X_2X_3}\) y la función de probabilidad marginal de \(X_3\).
+Suponga que el altavoz empieza en el estado silencioso.
+
+\hypertarget{soluciuxf3n-1}{%
+\subsubsection{Solución}\label{soluciuxf3n-1}}
+
+Indicaciones para la resolución:
+
+Para resolver este problema, os puede ser de gran ayuda hacer un árbol
+binario cuya raíz sea el valor 0 (estado silencioso) y para cada nodo,
+indicar que sus hijos pueden ser 0 (estado silencioso) o 1 (estado
+activo). Escribir en cada arista la probabilidad que ocurra cada cosa.
+Al final escribir el conjunto de resultados posibles junto con su
+probabilidad. Por ejemplo, el resultado (0,0,0) tendría probabilidad
+\((3/4)\cdot (3/4)\cdot (3/4)=27/64\) y el resultado \((1,1,0)\) tendría
+probabilidad \((1/4)\cdot (1/2)\cdot (1/2)=1/16\).
+
+De esta forma, podéis calcular \(P_{X1 X_2 X_3}\).
+
+\hypertarget{problema-3.}{%
+\subsection{Problema 3.}\label{problema-3.}}
+
+Un experimento aleatorio tiene cuatro resultados posibles. Supongamos
+que el experimento se repite \(n\) veces de forma independiente y sea
+\(X_k\) el número de veces que se produce el resultado \(k\)-ésimo. La
+función de probabilidad conjunta de la variable \(3\)-dimensional
+\((X_1,X_2,X_3)\), \(P_{X_1X_2X_3}\) es la siguiente:
+
+\[
+P_{X_1 X_2 X_3}(k_1,k_2,k_3)=\frac{n!\cdot 3!}{(n+3)!}=\binom{n+3}{3}^{-1}, \ \mbox{para }k_i\geq 0,\mbox{ y }k_1+k_2+k_3\leq n.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Hallar la función de probabilidad marginal de la variable
+  bidimensional \((X_1,X_2)\).
+\item
+  Hallar la función de probabilidad marginal de la variable \(X_1\).
+\item
+  Hallar la función de probabilidad condicional de la variable
+  \((X_2,X_3)\) dado \(X_1=m\), para \(0\leq m\leq n\).
+\end{enumerate}
+
+\hypertarget{soluciuxf3n-2}{%
+\subsubsection{Solución}\label{soluciuxf3n-2}}
+
+Indicaciones para la resolución:
+
+\textbf{Este ejercicio tiene nivel muy avanzado.}
+
+Para hallar la función de probabilidad marginal para \((X_1,X_2)\), hay
+que hallar en primer lugar el conjunto de valores de la variable
+\((X_1,X_2)\) y fijado \((k_1,k_2)\) dentro de dicho conjunto de valores
+para hallar \(P_{X_1 X_2}(k_1,k_2)\) hay que sumar los valores
+\(P_{X_1 X_2 X_3}(k_1,k_2,k_3)\) para todos los \(k_3\) tal que
+\((k_1,k_2,k_3)\) esté en el conjunto de valores de la variable
+3-dimensional \((X_1,X_2,X_3)\).
+
+Para la marginal \(X_1\), una vez hallado el conjunto de valores de la
+variable \(X_1\) y fijado \(k_1\) en dicho conjunto, para hallar
+\(P_{X_1}(k_1)\) hay que sumar todos los valores
+\(P_{X_1 X_2 X_3}(k_1,k_2,k_3)\) para todos los \((k_2,k_3)\) tal que
+\((k_1,k_2,k_3)\) esté en el conjunto de valores de la variable
+3-dimensional \((X_1,X_2,X_3)\).
+
+Para hallar la distribución de la variable condicional de \((X_2,X_3)\)
+dado \(X_1=m\), hay en un valor \((k_2,k_3)\) hay que usar la expresión
+\(P_{X_1 X_2 X_3}(m,k_2,k_3)/P_{X_1}(m)\).
+
+\hypertarget{variables-aleatorias-multidimensionales-continuas}{%
+\section{Variables aleatorias multidimensionales
+continuas}\label{variables-aleatorias-multidimensionales-continuas}}
+
+\hypertarget{problema-4}{%
+\subsection{Problema 4}\label{problema-4}}
+
+El punto \(\mathbf{X} = (X, Y, Z)\) se distribuye uniformemente dentro
+de una esfera de radio 1 alrededor del origen. Hallar la probabilidad de
+los siguientes eventos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbf{X}\) está dentro de una esfera de radio \(r\), \(r >0\).
+\item
+  \(\mathbf{X}\) está dentro de un cubo de longitud \(2/\sqrt{3}\)
+  centrado alrededor del origen.
+\item
+  Todas las componentes de \(\mathbf{X}\) son positivas.
+\item
+  \(Z\) es negativa.
+\item
+  Hallar la distribución marginal de \(Y\) y \(Z\).
+\item
+  Hallar la distribución marginal de \(Y\).
+\item
+  Hallar la distribución condicional de \(X\) e \(Y\) dada \(Z\).
+\item
+  ¿Son independientes las variables \(X\), \(Y\) y \(Z\)?
+\item
+  Hallar los valores esperados y la matriz de covarianzas de la variable
+  \((X,Y,Z)\).
+\end{enumerate}
+
+\hypertarget{soluciuxf3n-3}{%
+\subsubsection{Solución}\label{soluciuxf3n-3}}
+
+Indicaciones para la resolución:
+
+La función de densidad conjunta será de la forma \(f_X(x,y,z)=c\), si
+\((x,y,z)\) está en la esfera de radio 1 centrada en el origen y
+\(f_X(x,y,z)=0\), en caso contrario. Para hallar \(c\), hay que imponer
+que la integral triple de la función \(f_X\) tiene que ser \(1\) en la
+esfera anterior. Dicha integral valdrá
+
+\[c\cdot Volumen(esfera)=c\cdot (4/3)\cdot \pi=1, de donde se deduce que c=1/((4/3)\cdot \pi)=3/(4\cdot \pi).\]
+
+Hallemos las probabilidades pedidas:
+
+La probabilidad de que X esté en una esfera de radio \(r\), será \(1\)
+si \(r\) es mayor que \(1\) ya que la esfera de radio \(r\) para \(r>1\)
+incluye la esfera de radio \(1\) y valdrá
+\(c\cdot 4\cdot \pi\cdot r^3/3\) si \(r<1\), ya que la integral sobre un
+esfera más pequeña de la función de densidad conjunta sería
+\(c\cdot \mbox{Volumen(esfera radio r)}\) y por tanto, la probabilidad
+valdrá: \(r^3\).
+
+El cubo considerado sería
+\((-1/\sqrt{3},1/\sqrt{3})x( (-1/\sqrt{3},1/\sqrt{3})x (-1/\sqrt{3},1/\sqrt{3})\).
+Los vértices del cubo estarían en la superficie de la esfera ya que
+\((1/\sqrt{3})^2+(1/\sqrt{3})^2+(1/\sqrt{3})^2=1\). En pocas palabras,
+el cubo estaría incluído en la esfera. La probabilidad pedida sería
+entonces:
+
+\[c\cdot \mbox{Volumen(cubo)}=3/(4\cdot\pi)\cdot (2/\sqrt{3})^3=2/(\pi\cdot \sqrt{3}).\]
+
+La probabilidad de que todas las componentes de X sean positivas sería
+equivalente a calcular el volumen del octante donde X,Y y Z son
+positivos. Dejamos los detalles para vosotros.
+
+La probabilidad de que Z sea negativa sería equivalente a calcular el
+volumen de la media esfera del hemisferio sur.
+
+Para hallar la distribución marginal de \((Y,Z)\), primero tenemos que
+proyectar la esfera sobre el plano \((Y,Z)\) y ver qué figura 2D sale.
+Si os fijáis, saldría el círculo de centro \((0,0)\) y radio 1. Ahora
+para cada valor (y,z) dentro del círculo hay que hallar la integral para
+todos los x tal que (x,y,z) esté en la esfera de centro \((0,0,0)\) y
+radio \(1\) de la función constante \(c\). Dicha integral sería
+\(c\cdot \mbox{longitud del segmento donde están las } x\).
+
+Para hallar la distribución marginal de \(Y\), hay que fijarse que los
+valores de y para los que f\_Y no se anula sería el intervalo
+\((-1,1)\). Entonces para cada valor y entre \(-1\) y \(1\) hay que
+hacer la integral doble de f\_X(x,y,z) para todos los (x,z) tal que
+\((x,y,z)\) esté en la esfera de centro \((0,0,0)\) y radio \(1\) de la
+función constante \(c\). Dicha integral sería
+\(c\cdot \mbox{área de la región de los } (x,z)\).
+
+Para hallar la distribución condicional de \((X,Y)\) dado \(Z=z\) hay
+que usar la fórmula \(f_X(x,y,z)/f_Z(z)\), calculando previamente
+\(f_Z(z)\) cuya expresión será la misma que \(f_Y(y)\) cambiando \(y\)
+por \(z\) e \(Y\) por \(Z\) por simetría.
+
+Ver si \(X\), \(Y\) y \(Z\) son independientes es equivalente a
+comprobar si \(f_X(x,y,z)=f_X(x)\cdot f_Y(y)\cdot f_Z(z)\), para todos
+los valores \(x,y,z\).
+
+Para hallar los valores esperados de cada variable lo podéis hacer de
+dos formas: integrando las funciones de densidad marginales o integrando
+la función de densidad conjunta. Por ejemplo, para hallar \(E(X)\)
+podéis hacer integral desde ``donde toque'' hasta ``donde toque'' de
+\(x\cdot f_X(x)\) o integral triple de la función \(x\cdot f_X(x,y,z)\)
+sobre la esfera centrada en el origen de radio 1.
+
+Para hallar la matriz de covarianzas, tenéis que calcular previamente
+los valores \(E(X\cdot Y)\), \(E(Y\cdot Z)\) y \(E(X\cdot Z)\). Yo lo
+haría directamente a partir de la función de densidad conjunta. A partir
+de dichos valores, las covarianzas son sencillas de calcular.
+
+\hypertarget{problema-5.}{%
+\subsection{Problema 5.}\label{problema-5.}}
+
+Sea la variable \(3\) dimensional \((X, Y, Z)\) con función de densidad
+conjunta: \[
+f_{XYZ}(x,y,z)=\begin{cases}
+k(x+y+z), & \mbox{si }0\leq x\leq 1,\ 0\leq y\leq 1,\ 0\leq z\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+\] 1. Hallar \(k\). 1. Hallar \(f_X(x)\), \(f_Y(y)\) y \(f_Z(z)\). 1.
+Calcular matriz de covarianzas de \((X,Y,Z)\).
+
+\hypertarget{soluciuxf3n-4}{%
+\subsection{Solución}\label{soluciuxf3n-4}}
+
+Indicaciones para la resolución:
+
+Fijaos que el dominio donde la función de densidad conjunta no se anula
+es el cuadrado unidad \([0,1]x[0,1]x[0,1]\).
+
+Para hallar \(k\), hay que integrar la función \(k(x+y+z)\) en el
+cuadrado anterior e imponer que dicha integral debe valer \(1\). Los
+límites de integración para cada una de las variables serían \(0\) y
+\(1\). Por tanto, la integral triple es sencilla de calcular y no
+tendría demasiada dificultad hallar \(k\).
+
+Para hallar las marginales, fijaos que por simetría basta hallar una, ya
+que las demás tendrían la misma expresión. Por ejemplo, para hallar
+\(f_X(x)\), hay que fijarse que \(x\) tiene que estar entre \(0\) y
+\(1\) para que \(f_X(x)\) no se anule. El valor de \(f_X(x)\) sería la
+integral doble de \(f_{XYZ}(x,y,z)\) para los \(y\), \(z\)
+pertenecientes al cuadrado unidad \([0,1]x[0,1]\). Os dejamos los
+detalles.
+
+Para el ccáculo de la matriz de covarianzas utilizad los comentarios del
+problema anterior pero usando la correspondiente función de densidad
+conjunta y el correspondiente dominio donde dicha función no se anula
+(cubo unidad).
+
+\hypertarget{independencia-de-variables-aleatorias}{%
+\section{Independencia de variables
+aleatorias}\label{independencia-de-variables-aleatorias}}
+
+\hypertarget{problema-6.}{%
+\subsection{Problema 6.}\label{problema-6.}}
+
+Supongamos que las variables aleatorias \(X\), \(Y\) y \(Z\) son
+independientes. Hallar las probabilidades siguientes en términos de
+\(F_X\), \(F_Y\) y \(F_Z\): 1. \(P(|X|<5,\ Y<4,\ Z^3>8)\). 1.
+\(P(X=5,\ Y>0,\ Z>1)\). 1. \(P(\min(X,Y,Z)<2)\). 1.
+\(P(\max(X, Y, Z)>6)\).
+
+\hypertarget{momentos}{%
+\section{Momentos}\label{momentos}}
+
+\hypertarget{problema-7.}{%
+\subsection{Problema 7.}\label{problema-7.}}
+
+Hallar los valores esperados y la matriz de covarianzas para los
+problemas 1 y 2 de la sección de variables aleatorias multidimensionales
+continuas.
+
+\hypertarget{variable-aleatoria-normal-multidimensional}{%
+\section{Variable aleatoria normal
+multidimensional}\label{variable-aleatoria-normal-multidimensional}}
+
+\hypertarget{problema-8.}{%
+\subsection{Problema 8.}\label{problema-8.}}
+
+Sea \(\mathbf{X}=(X_1,X_2,X_3)\) una variable normal \(3\)-dimensional
+con vector de medias y matriz de covarianzas dadas por: \[
+\mathbf{\mu}_{\mathbf{X}} =\begin{pmatrix}1\\0\\2\end{pmatrix},\quad \mathbf{M}_{\mathbf{X}} =\begin{pmatrix}3/2 & 0 & 1/2 \\ 0 & 1 & 0 \\ 1/2 & 0 & 3/2\end{pmatrix}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Hallar la función de densidad conjunta para la variable
+  \(\mathbf{X}\).
+\item
+  Hallar las distribuciones marginales de las variables \(X_1\), \(X_2\)
+  y \(X_3\).
+\item
+  Hallar una transformación lineal \(\mathbf{A}\) tal que la variable
+  aleatoria \(3\)-dimensional \(\mathbf{Y}=\mathbf{A}\mathbf{X}\)
+  consiste en variables normales independientes.
+\item
+  Hallar la función de densidad conjunta para la variable
+  \(\mathbf{Y}\).
+\end{enumerate}
+
+\hypertarget{soluciuxf3n-5}{%
+\subsection{Solución:}\label{soluciuxf3n-5}}
+
+Indicaciones par la resolución:
+
+La función de densidad conjunta se calcula de forma sencilla utilizando
+el vector de medias y la matriz de covarianzas dado.
+
+Para hallar las marginales, fijaos que por ejemplo
+\(X_1=(1,0,0)\cdot (X_1,X_2,X_3)^t=(1,0,0)\cdot \begin{pmatrix}X_1\\ X_2\\ X_3\end{pmatrix}\)
+. Ahora usando la matrix fila \(C=(1,0,0)\) y aplicando la proposición
+de los apuntes que nos dice cómo se transforma \(C\cdot X\), o sea,
+cuáles son la media y la varianza de la variable \(X_1\), podemos hallar
+los parámetros de las marginales \(X_1, X_2\) y \(X_3\).
+
+Para resolver el tercer apartado, hay que calcular una matriz \(A\) tal
+que la matriz de covarianzas de la variable \(Y = A\cdot X\) tiene que
+ser diagonal ya que como las componentes de la variable \(Y\) deben ser
+independientes, las covarianzas de dos de ellas cualesquiera debe ser
+\(0\). La proposición de los apuntes que nos dice cómo se transforma
+\(A\cdot X\) nos da la expresión de la matriz de covarianzas de la
+variable 3-dimensional Y en función de \(A\) y de la matriz de
+covarianzas de la variable 3-dimensional X. Hay que imponer que dicha
+matriz de covarianzas de \(Y\) debe ser diagonal. Indicación: pensad en
+los valores propios y vectores propios de la matriz de covarianzas de la
+variable 3-dimensional \(X\).
+
+Una vez hallada el vector de medias y la matriz de covarianzas de la
+variable 3-dimensional \(Y\), hallar la función de densidad conjunta es
+sencillo aplicando la definición de una normal 3-dimensional.
+
+\hypertarget{problema-9.}{%
+\subsection{Problema 9.}\label{problema-9.}}
+
+Supongamos que \(X_1, X_2, X_3\) y \(X_4\) son variables aleatorias
+normales independientes de media cero y varianza 1 que se procesan de la
+siguiente manera: \[
+Y_1 = X_1 + X_2,\  Y_2 = X_2 + X_3,\  Y_3 = X_3 + X_4.
+\] 1. Hallar la matriz de covarianzas de la variable \(3\)-dimensional
+\(\mathbf{Y} = (Y_1, Y_2, Y_3)\). 1. Hallar la función de densidad
+conjunta para la variable \(\mathbf{Y}\). 1. Hallar la función de
+densidad conjunta para \(Y_1\) e \(Y_2\) y para \(Y_1\) e \(Y_3\). 1.
+Hallar una transformación \(\mathbf{A}\) tal que el vector
+\(\mathbf{Z} = \mathbf{A}\mathbf{Y}\) consista en variables aleatorias
+normales independientes.
+
+\hypertarget{soluciuxf3n-6}{%
+\subsubsection{Solución}\label{soluciuxf3n-6}}
+
+Indicaciones para la resolución:
+
+Para hallar la matriz de covarianzas de la variable 3-dimensional Y, hay
+que hallar la matriz de transformación \(C\) tal que \(Y=C\cdot X\).
+Luego, usando la proposición de los apuntes que nos da el vector de
+medias y la matriz de covarianzas de la variable \(Y\) a partir de las
+de \(X\) y la matriz de transformación \(C\), es bastante sencillo
+hallar dicha matriz de covarianzas. Pensad que la matriz de covarianzas
+de \(X\) es la matriz identidad 4x4 ya que nos dicen que las componentes
+de la variable 4-dimensional \(X\) son independientes de media \(0\) y
+varianza \(1\).
+
+Una vez hallada la matriz de covarianzas y el vector de medias de la
+variable 3-dimensional Y, basta aplicar la definición de una normal
+3-dimensional para calcular la función de densidad conjunta.
+
+Para hallar la función de densidad conjunta para \(Y_1\) e \(Y_2\),
+mirar el ejemplo de los apuntes que calcula el vector de medias y la
+matriz de covarianzas de las componentes \((X_2,X_4,X_5)\) de una
+variable 5-dimensional normal \(X=(X_1,X_2,X_3,X_4,X_5)\). La técnica a
+aplicar es la misma. Una vez hallado el vector de medias y la matriz de
+covarianzas, hallar la función de densidad es sencillo como ya hemos
+comentado.
+
+Para hacer el último apartado, leeros cómo se hace el cuarto apartado
+del problema anterior. Se hace de forma parecida.
+
+\end{document}

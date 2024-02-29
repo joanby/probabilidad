@@ -6,14 +6,14 @@ output:
   pdf_document:
     number_sections: yes
     toc: yes
-    toc_depth: 2
+    toc_depth: 3
   html_document:
     number_sections: yes
     toc: yes
-    toc_depth: 2
+    toc_depth: 3
   word_document:
     toc: yes
-    toc_depth: '2'
+    toc_depth: '3'
 toccolor: blue
 ---
 
@@ -75,8 +75,12 @@ Suponer que se ha trucado un dado de modo que la probabilidad de que salga un n�
 Sea  $\Omega=\{1,2,3,4,5,6\}$ y nos dicen que  $P(k)= \alpha\cdot k$. 
 
 La suma de todas las probabilidades debe ser 1 así que \footnote{Utilizamos que
-$\sum_{k=1}^n k=\frac{n\cdot (n+1)}{2}$ } $1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot k=
-\alpha \sum_{k=1}^6 k = \alpha \frac{6\cdot (6+1)}{2}=\alpha\cdot 21$. Así  tenemos que $\alpha=\frac{1}{21}.$
+$\sum_{k=1}^n k=\frac{n\cdot (n+1)}{2}$ } 
+
+$$1=\sum_{k=1}^6 P(k)=\sum_{k=1}^6 \alpha \cdot k=
+\alpha\cdot  \sum_{k=1}^6 k = \alpha \cdot \frac{6\cdot (6+1)}{2}=\alpha\cdot 21.$$
+
+Por lo que obtenemos que  $\alpha=\frac{1}{21}.$
 
 
  
@@ -116,10 +120,10 @@ Supongamos que solo hay un mas viejo y un más joven.
 
 
 \begin{eqnarray*}
-P(\mbox{De entre dos elegidos al azar esté el más viejo}) &=&\\
-\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}=
-\frac{{{99}\choose {1}}}{{{100}\choose {2}}}=\frac{99}{\frac{100\cdot 99}{2}}&=&\\
-\frac{2\cdot 99}{100\cdot 99}=
+P(\mbox{De entre dos elegidos al azar esté el más viejo}) &=&
+\frac{\mbox{Casos Favorables}}{\mbox{Casos posibles}}= \\
+&&\frac{{{99}\choose {1}}}{{{100}\choose {2}}}=\frac{99}{\frac{100\cdot 99}{2}}=\\
+&&\frac{2\cdot 99}{100\cdot 99}=
 \frac{2}{100}=\frac{1}{50}.
 \end{eqnarray*}
 
@@ -160,20 +164,20 @@ En una sala se hallan $n$ personas. ¿Cual es la probabilidad de que haya al men
 ### Solución
 
 
-$$P(\mbox{Entre n personas al menos dos nazcan el mimo mes})=1-P(\mbox{Entre  n personas todas nazcan en distinto mes}).$$
+$$P(\mbox{"Entre n personas al menos dos nazcan el mimo mes"})=1-P(\mbox{"Entre  n personas todas nazcan en distinto mes"}).$$
 
 Casos Posibles (CP) todas las maneras de escoger $n$ meses de 12  esto son $VR_{12}^n=12^n.$.
 
 Casos Favorables  a que todas nazcan EN MESES DISTINTOS  $V_{12}^n=\frac{12!}{(12-n)!}$
 
 
-$$
-P(\mbox{De n personas menos dos nazcan el mimo mes})=
-1-P(\mbox{De personas todas nazcan en distinto mes})=
+\begin{eqnarray*}
+P(\mbox{"Entre n personas al menos dos nazcan el mimo mes"})&=&\\
+1-P(\mbox{"Entre  n personas todas nazcan en distinto mes"})&=&\\
 1-\frac{\frac{12!}{(12-n)!}}{12^n}.
-$$
+\end{eqnarray*}
 
-Hagamos los calculamos con R para n=3,4,5,6
+Hagamos los calculamos con R para $n=3,4,5,6$
 
 ```{r}
 n=3:6
@@ -188,7 +192,7 @@ Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivament
 
 
 ### Solución
-Sin contamos el "orden de extracción"  el espacio muestral  son los pares no ordenados 
+Si contamos el "orden de extracción"  el espacio muestral  son los pares no ordenados 
 $$\Omega =\{(1,2),(2,1),(1,3),(3,1),(1,4),(4,1),(2,3),(3,2),(2,4),(4,2),(3,4),(4,3)\}.$$
 
 Todos los pares son equiprobables y tienen por probabilidad $\frac{1}{6}.$
@@ -196,7 +200,10 @@ Todos los pares son equiprobables y tienen por probabilidad $\frac{1}{6}.$
 
 
 
-El suceso de que la suma sea 5 es $A=\{(1,4),(4,1),(3,2),(2,3)\}$. Los sucesos  que empiezan por $i$  son $B_1=\{(1,2),(1,3),(i,14)\}$  y de forma similar se construyen el resto de $B_i$ $i=2,3,4$. Es evidente que $P(B_i)=\frac{3}{12}=\frac{1}{4}$
+El suceso de que la suma sea 5 es $A=\{(1,4),(4,1),(3,2),(2,3)\}$.
+Los sucesos  que empiezan por $i$  son $B_1=\{(1,2),(1,3),(1,4)\}$ 
+y de forma similar se construyen el resto de $B_i$ $i=2,3,4$.
+Es evidente que $P(B_i)=\frac{3}{12}=\frac{1}{4}$
 
 
 
@@ -244,28 +251,30 @@ Se lanza al aire una moneda no trucada.
 
 ### Solución
 
+Para la primera cuestión hacemos
 
 $$
 P(\mbox{C en la cuarta}|CCC)=
 \frac{P(\mbox{C en la cuarta}\cap \{CCC\})}{P(CCC)}=
 \frac{P(CCCC)}{P(CCC)}=\frac{0.5^4}{0.5^3}=0.5
-.$$
- 
- 
-El suceso $\mbox{2 caras en cuatro tiradas}=\{CC++,C+C+,C++C,+C+C,++CC,+CC+\}.$
+.
+$$
+
+En  la primera cuestión hacemos
+tenemos que considerar el suceso $$\mbox{"2 caras en cuatro tiradas"}=\{CC++,C+C+,C++C,+C+C,++CC,+CC+\}.$$
 
 
 \begin{eqnarray*}
-P(\mbox{C en la cuarta}|\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})&=&\\
-<<<<<<< HEAD
-\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC,,+CC+\})}{P(CCC)}&=&
+P(\mbox{"C en la cuarta"}|\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})&=&\\
+\frac{P(\mbox{"C en la cuarta"}\cap \{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}&=&
 \\
-\frac{P(\{C++C,+C+C,++CC\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}=\frac{3\cdot 0.5^4}{6\cdot 0.5^4}=\frac{1}{2}=0.5.
-=======
-\frac{P(\mbox{C en la cuarta}\cap \{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}&=&\\
-\frac{P(\{C++C,+C+C,++CC\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}=\frac{3\cdot 0.5^4}{4\cdot 0.5^4}=\frac{3}{4}=0.75.
->>>>>>> 5f0b50396555c50c2342f8b2a781bf6fd0c48bbe
+\frac{P(\{C++C,+C+C,++CC\})}{P(\{CC++,C+C+,C++C,+C+C,++CC,+CC+\})}&=&
+\\
+\frac{3\cdot 0.5^4}{6\cdot 0.5^4}=\frac{1}{2}=0.5.
 \end{eqnarray*}
+
+
+
 
 ## Problema 8
 
@@ -306,17 +315,22 @@ Supongamos que la ciencia médica ha desarrollado una prueba para el diagnóstic
 
  Sea $C$ es el suceso tener cáncer, y T el sucesos el diagnóstico da positivo en cáncer. 
  
- Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$ por lo tanto $P(T|C^c)=1-P(T^c|C^2)=0.05$ y $P(C^c)=1-P(C)=0.005$.
+ Nos dicen que $P(T|C)=P(T^c|C^c)=0.95$ y que $P(C)=0.005$ por lo tanto
+ $$P(T|C^c)=1-P(T^c|C^2)=0.0 \mbox{ y } P(C^c)=1-P(C)=0.005.$$
  
 
 
 Nos piden 
-$$
-P(C|T)=\frac{P(T|C)\cdot P(C)}{P(T)}= 
-\frac{P(T|C)\cdot P(C)}{P(T|C)\cdot P(C)+P(T|C^c)\cdot P(C^c)} =
-\frac{0.95\cdot 0.005}{0.95\cdot 0.005+(1-0.95)\cdot (1-0.005)}=
+
+
+\begin{eqnarray*}
+P(C|T)&=&\frac{P(T|C)\cdot P(C)}{P(T)}= 
+\frac{P(T|C)\cdot P(C)}{P(T|C)\cdot P(C)+P(T|C^c)\cdot P(C^c)} =\\
+&&\frac{0.95\cdot 0.005}{0.95\cdot 0.005+(1-0.95)\cdot (1-0.005)}=\\
+&&
 `r 0.95* 0.005/(0.95* 0.005 + (1-0.95)* (1-0.005))`. 
-$$
+\end{eqnarray*}
+
 
 ## Problema 10
 
@@ -378,9 +392,24 @@ prop.table(table(resultados$suma))[6:11]
 
 ## Problema `r contador=contador+1;contador`.
 
-Se sabe que ${2 \over 3}$ de los internos de una cierta prisión son menores de 25 años. También se sabe que ${3\over 5}$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
+Se sabe que $\frac23$ de los internos de una cierta prisión son menores de 25 años. También se sabe que $\frac35$ son hombres y que ${5\over 8}$ de los internos son mujeres o mayores de 25 años. ¿Cuál es la probabilidad de que un prisionero escogido al azar sea mujer y menor de 25 años?
 
 ### Solución
+
+Sea $Menor_{25}, Mayor_{25}$ los sucesos "ser menor de 25 años" y "ser mayor de 25 años", respectivamente, $H$ ser hombre y $M=H^c$ ser mujer.
+
+Según dice el enunciado del problemas tenemos que $P(Menor_{25})=\frac23$, $P(H)=\frac35$, y por lo tanto $P(M)=P(H^c)=1-P(H)=1-\frac35=\frac25$ y $P(Mayor_{25})=1-P(Menor_{25})=1-\frac{2}{3}=\frac{1}{3}$.  Además nos dicen que $P(M\cup Mayor_{25})=\frac58.$
+
+Nos piden la probabilidad de ser mujer y menor de 25 es decir 
+$P(M\cap Menor_{25})=P(M)-P(M\cap Mayor_{25})$.
+
+Como $\frac58= P(M\cup Mayor_{25})=P(M)+ P(Mayor_{25})-P(M\cap Mayor_{25}))$ tenemos que 
+ $$\frac58=\frac25+ \frac13-P(M\cap Mayor_{25}),$$ luego  la probabilidad de ser mujer y mayor de 25 años es 
+ $P(M\cap Mayor_{25})=\frac25+ \frac13-\frac58=\frac{13}{120}.$ 
+ 
+La probabilidad pedida será, pues, $P(M\cap Menor_{25})=P(M)-P(M\cap Mayor{25})=\frac{2}{5}-\frac{13}{120}=\frac{7}{24}$.
+
+ 
 
 
 ## Problema `r contador=contador+1;contador`.
@@ -405,7 +434,7 @@ Da igual que los contemos extrayendo de uno en uno o  de golpe lo importante es 
 $\{3,6,9,12,15,18\}$:
 
 
-**Metemos la mano y sacamos 5**:
+**Extraemos  5 de esos números**:
 
 
 Casos Posibles (CP): ${20 \choose 5}$
@@ -462,6 +491,46 @@ En una hucha hay $10$ bolas, numeradas del $1$ al $10$. Las $4$ primeras bolas, 
 
 ### Solución 
 
+
+Consideremos los sucesos $R=\mbox{la bola extraída es roja}$, $B=\mbox{la bola extraída es blanca}$ y $N=\mbox{la bola extraída es negra}$. Si sacamos dos bolar representaremos los sucesos con las iniciales de las letras en el orden de extracción. Así que los resultados posibles del  experimento son $\{RR,RN,NR,RB,BR,NN,NB,BN,BB\}$
+
+
+\begin{eqnarray*}
+P(RR)&=&\frac{4}{10}\cdot \frac{3}{9}=\frac{12}{90}
+\\ P(RN)&=&\frac{4}{10}\cdot \frac{2}{9}=\frac{8}{90}
+\\ P(NR)&=&\frac{2}{10}\cdot \frac{4}{9}=\frac{8}{90}
+\\  P(RB)&=&\frac{4}{10}\cdot \frac{4}{9}=\frac{16}{90}
+\\  P(BR)&=&\frac{4}{10}\cdot \frac{4}{9}=\frac{16}{90}
+\\  P(NN)&=&\frac{2}{10}\cdot \frac{1}{9}=\frac{2}{90}
+\\  P(NB)&=&\frac{2}{10}\cdot \frac{4}{9}=\frac{8}{90}
+\\  p(BN)&=&\frac{4}{10}\cdot \frac{2}{9}=\frac{8}{90}
+\\  P(BB)&=&\frac{4}{10}\cdot \frac{3}{9}=\frac{12}{90}
+\end{eqnarray*}
+
+
+Comprobemos que la suma de los sucesos elementales es 1
+
+```{r}
+casos=c(12,8,8,16,16,2,8,8,12)
+sum(casos)
+sum(casos/90)
+```
+
+Describamos los sucesos "Primera bola blanca"=$\{BB,BR,BN\}$ y el suceso "Segunda bola es negra"=$\{NN,BN,RN\}.$
+
+Nos piden
+
+
+\begin{eqnarray*}
+P(\mbox{"Primera bola blanca"}|\mbox{"Segunda bola es negra"})&=& P(\{BB,BR,BN\}|\{NN,BN,RN\})=\\
+&&\frac{P\left(\{BB,BR,BN\}\cap\{NN,BN,RN\}\right)}{P\left(\{NN,BN,RN\}\right)}=\\
+&&\frac{P\left(\{BN\}\right)}{P\left(\{NN,BN,RN\}\right)}=\\
+&& \frac{P(BN)}{P(NN)+P(BN)+P(RN)}=\\ 
+&&\frac{\frac{8}{90}}{\frac{2}{90}+\frac{8}{90}+\frac{8}{90}}.
+\end{eqnarray*}
+
+
+
 ## Problema `r contador=contador+1;contador`.
 
 Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad $p$ de que la suma de las 3 caras sea $10$.
@@ -469,15 +538,90 @@ Lanzamos un dado no trucado 3 veces. Encontrad la probabilidad $p$ de que la sum
 
 ### Solución 
 
+
+Lo haremos enumerando, se deja como ejercicio hacerlo de forma analítica
+
+El siguiente código genera todos las tiradas de tres dados y calcula su suma
+
+```{r}
+#n=6 LOS 6 OJECTOS 1,2,3,4,5,6
+#r=3 las tres tiradas
+# v=1:6 las etiquetas de las muestras,
+# si fueran dados  de póquer serían A,K,Q,Negras,Rojas.
+tres_dados=as.data.frame(gtools::permutations(n = 6,r = 3,v = 1:6,repeats.allowed = TRUE))
+names(tres_dados)=paste0("dado_",1:3)
+str(tres_dados)
+tres_dados$suma=apply(tres_dados,MARGIN=1,sum)
+str(tres_dados)
+```
+
+Ahora en la posición de la etiqueta suma 10, con el siguiente código obtenemos la probabilidad pedida
+
+
+```{r}
+table(tres_dados$suma)
+prop.table(table(tres_dados$suma))
+prop.table(table(tres_dados$suma))["10"]
+```
+
+La probabilidad de que al tirar tres dados sumen 10 es $0.125$.
+
 ## Problema `r contador=contador+1;contador`.
 
 Tenemos 4 cartas numeradas del 1 al 4 que están giradas boca abajo sobre una mesa. Una persona, supuestamente adivina, irá adivinando los valores de las 4 cartas una a una. Suponiendo que es un farsante y que lo que hace es decir los 4 números al azar, ¿cuál es la probabilidad de que acierte como mínimo 1? (Obviamente, no repite ningún número)
 
 ### Solución
 
+
+Supongamos cualquier orden de las 4 cartas el orden es irrelevante así que supondremos que es 1,2,3,4. Nosotros podemos colocar los números 1,2,3 ,4 en cualquier permutación. Las calculamos con el siguiente código
+
+```{r}
+cartas_4=as.data.frame(gtools::permutations(4,4,v=1:4,repeats.allowed = FALSE))
+str(cartas_4)
+cartas_4$aciertos=apply(cartas_4,MARGIN=1,FUN=function(x) {sum(x==c(1,2,3,4))})
+str(cartas_4)
+```
+
+
+Ahora calculamos el número de aciertos, notemos que tres es imposible ya que no repetiremos las cartas.
+
+
+```{r}
+table(cartas_4$aciertos)
+probabilidad_aciertos=prop.table(table(cartas_4$aciertos))
+probabilidad_aciertos
+sum(probabilidad_aciertos[c("1","2","4")])
+```
+
+
+La probabilidad pedida es $P(\mbox{"Acertar al menos 1"})=`r sum(probabilidad_aciertos[c("1","2","4")])`$.
+
 ## Problema `r contador=contador+1;contador`.
 
 Una forma de aumentar la fiabilidad de un sistema es mediante la introducción de una copia de los componentes en una configuración paralela. Supongamos que la NASA quiere una probabilidad no menor que 0.99999 de que el transbordador espacial entre en órbita alrededor de la Tierra con éxito. ¿Cuántos motores se deben configurar en paralelo para que se consiga dicha fiabilidad si se sabe que la probabilidad de que un motor funcione adecuadamente es 0.95? Supongamos que los motores funcionan de manera independiente los unos con los otros.
+
+### Solución
+
+
+Como $p=P(\mbox{"fallar un motor"})=1-0.95=0.05$. Si hay $n$ motores con probabilidad de fallo independiente la probabilidad de  éxito es 
+
+\begin{eqnarray*}
+P(\mbox{"Al menos un motor entre n funcione"})&=&\\
+&&1-P(\mbox{"Al menos un motor entre n funcione"}^c)=\\
+&&1-P(\mbox{"ningún motor entre n funcione"}))
+=\\ &&
+1-p^n=1-0.05^n
+\end{eqnarray*}
+
+El  número $n$ que nos piden es el entero más pequeño tal que $1-0.05^n\leq 0.9999$.
+
+Resolviendo última  inecuación tenemos que  $0.05^n=1-0.9999$  y entonces 
+
+$$n=\left\lceil\frac{log(1-0.9999)}{\log{0.05}}\right\rceil=
+\lceil `r log(1-0.9999)/log(0.05)`\rceil=
+`r ceiling(log(1-0.9999)/log(0.05))`.$$
+
+
 
 
 #  Ejercicios de Independencia de sucesos
@@ -498,6 +642,23 @@ Una moneda no trucada se lanza al aire 2 veces Consideremos los siguientes suces
 
 ### Solución  
 
+Con la notación habitual los sucesos son $A=\{CC,C+\}$ y $B=\{CC,+C\}$. Es evidente que
+
+$$P(A)=P(B)= 2\cdot \left(\frac12\right)^2=\frac12$$
+
+y que  
+
+$$P(A\cap B)=P(\{CC\})=\left(\frac12\right)^2=\frac14.$$
+
+Así que 
+
+$$P(A)\cdot P(B)=\frac12\cdot\frac12=\frac14=P(A\cap B),$$
+
+por lo que los sucesos $A$ y $B$ son independientes.
+
+
+
+
 ## Problema `r contador=contador+1;contador`.
 
 Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivamente. Se extraen dos bolas sin reposición. Sea A el suceso que la primera bola extraída tenga un 1 marcado y sea B el suceso que la segunda bola extraída tenga un 1 marcado. 
@@ -506,6 +667,9 @@ Una urna contiene 4 bolas numeradas con los números 1, 2, 3 y 4, respectivament
 * ¿Y si el experimento fuera sin reposición?
 
 ### Solución  
+
+Se deja como ejercicio.
+
 
 ## Problema `r contador=contador+1;contador`.
 
@@ -517,11 +681,16 @@ Sea $\Omega$ un espacio muestral y $A,B,C$ tres sucesos. Probad que
 
 ### Solución  
 
+Se deja como ejercicio.
+
+
 ## Problema `r contador=contador+1;contador`.
 
 Dos empresas $A$ y $B$ fabrican el mismo producto. La empresa $A$ tiene un $2\%$ de productos defectuosos mientras que la empresa $B$ tiene un $1\%$. Un cliente recibe un pedido de una de las empresas (no sabe cuál) y comprueba que la primera pieza funciona. Si suponemos que el estado de las piezas de cada empresa es independiente, ¿cuál es la probabilidad de que la segunda pieza que pruebe sea buena? Comprobad que el estado de las dos piezas no es independiente, pero en cambio es condicionalmente independiente dada la empresa que las fabrica.
 
 ### Solución 
+
+Se deja como ejercicio.
 
 ## Problema `r contador=contador+1;contador`. 
 

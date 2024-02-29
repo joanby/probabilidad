@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Variables aleatorias discretas}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problema 1.}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Solución}{1}{subsubsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problema 2.}{6}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Solución}{6}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Problema 3.}{8}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Solución}{8}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}Problema 4.}{8}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Solución}{8}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Problema 5.}{9}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Solución}{9}{subsubsection.1.5.1}%

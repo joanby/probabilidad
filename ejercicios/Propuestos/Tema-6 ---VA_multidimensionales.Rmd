@@ -1,0 +1,146 @@
+---
+title: "Ejercicios Tema 6 - Variables aleatorias muldidimensionales"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '3'
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+toccolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+# Variables aleatorias multidimensionales discretas
+
+## Problema 1
+
+Una urna contiene una bola negra y dos bolas blancas. Se sacan tres bolas de la urna.
+Sea la variable $I_k$ que vale 1 si el resultado de la extracción $k$-ésima es la bola negra y vale 0 en caso contrario. Definimos las siguientes tres variables aleatorias:
+$$
+\begin{array}{rl}
+X & = I_1+I_2+I_3, \\
+Y & = \min\{I_1,I_2,I_3\},\\
+Z & = \max\{I_1,I_2,I_3\}.
+\end{array}
+$$
+1. Especificar el rango de valores de la variable $3$ dimensional $(X,Y,Z)$ si las extracciones son con reposición. Hallar la función de probabilidad conjunta $P_{XYZ}$.
+1. ¿Son las variables $X$, $Y$ y $Z$ independientes? ¿Son las variables $X$ e $Y$ independientes?
+1. Repetir el primer apartado suponiendo ahora que las extracciones son sin reposición.
+    
+### Solución
+    
+## Problema 2.
+
+Sean $X_1, X_2,\ldots, X_n$ variables binarias aleatorias que toman valores 0 o 1 para indicar si un altavoz está en silencio (0) o activo (1). Si un altavoz está en silencio, permanece inactivo en el siguiente intervalo de tiempo con probabilidad 3/4, y un altavoz activo permanece activo con probabilidad 1/2. Hallar la función de probabilidad conjunta $P_{X_1X_2X_3}$ y la función de probabilidad marginal de $X_3$. Suponga que el altavoz empieza en el estado silencioso.
+
+### Solución
+    
+## Problema 3.
+
+Un experimento aleatorio tiene cuatro resultados posibles. Supongamos que el experimento se repite $n$ veces de forma independiente y sea $X_k$ el número de veces que se produce el resultado $k$-ésimo. La función de probabilidad conjunta de la variable $3$-dimensional $(X_1,X_2,X_3)$, $P_{X_1X_2X_3}$ es la siguiente:
+$$
+P_{X_1X_2X_3}(k_1,k_2,k_3)=\frac{n! 3!}{(n+3)!}=\binom{n+3}{3}^{-1}, \ \mbox{para }k_i\geq 0,\mbox{ y }k_1+k_2+k_3\leq n.
+$$
+
+1. Hallar la función de probabilidad marginal de la variable bidimensional $(X_1,X_2)$.
+1. Hallar la función de probabilidad marginal de la variable $X_1$.
+1. Hallar la función de probabilidad condicional de la variable $(X_2,X_3)$ dado $X_1=m$, para $0\leq m\leq n$.
+    
+    
+# Variables aleatorias multidimensionales continuas
+
+
+    
+## Problema 4
+
+ El punto $\mathbf{X} = (X, Y, Z)$ se distribuye uniformemente dentro de una esfera de radio 1 alrededor del origen. Hallar la probabilidad de los siguientes eventos:
+ 
+1. $\mathbf{X}$ está dentro de una esfera de radio $r$, $r >0$.
+1. $\mathbf{X}$ está dentro de un cubo de longitud $2/\sqrt{3}$ centrado alrededor del origen.
+1. Todas las componentes de $\mathbf{X}$ son positivas.
+1. $Z$ es negativa.
+1. Hallar la distribución marginal de $Y$ y $Z$.
+1. Hallar la distribución marginal de $Y$.
+1. Hallar la distribución condicional de $X$ e $Y$ dada $Z$.
+1. ¿Son independientes las variables $X$, $Y$ y $Z$?
+1. Calcular las esperanzas y la mariz de covarianzas de $(X,Y,Z).$
+
+### Solución
+    
+## Problema 5.
+
+Sea la variable $3$ dimensional $(X, Y, Z)$ con función de densidad conjunta:
+$$
+f_{XYZ}(x,y,z)=\begin{cases}
+k(x+y+z), & \mbox{si }0\leq x\leq 1,\ 0\leq y\leq 1,\ 0\leq z\leq 1,\\
+0, & \mbox{en caso contrario.}
+\end{cases}
+$$
+1. Hallar $k$.
+1. Hallar $f_X(x)$, $f_Y(y)$ y $f_Z(z)$.
+1. Calcular la matriz de covarianzas de $(X,Y,Z).$    
+
+# Independencia de variables aleatorias
+
+## Problema 6. 
+
+Supongamos que las variables aleatorias $X$, $Y$ y $Z$ son independientes. Hallar las probabilidades siguientes en términos de $F_X$, $F_Y$ y $F_Z$:
+
+1. $P(|X|<5,\ Y<4,\ Z^3>8)$.
+1. $P(X=5,\ Y>0,\ Z>1)$.
+1. $P(\min(X,Y,Z)<2)$.
+1. $P(\max(X, Y, Z)>6)$.
+    
+    
+# Momentos
+
+## Problema 7.
+
+Hallar los valores esperados y la matriz de covarianzas para los problemas 1 y 2 de la sección de variables aleatorias multidimensionales continuas.
+
+
+# Variable aleatoria normal multidimensional
+
+## Problema 8.
+
+Sea $\mathbf{X}=(X_1,X_2,X_3)$ una variable normal $3$-dimensional con vector de medias y matriz de covarianzas dadas por:
+$$
+\mathbf{\mu}_{\mathbf{X}} =\begin{pmatrix}1\\0\\2\end{pmatrix},\quad \mathbf{M}_{\mathbf{X}} =\begin{pmatrix}3/2 & 0 & 1/2 \\ 0 & 1 & 0 \\ 1/2 & 0 & 3/2\end{pmatrix}.
+$$
+
+1. Hallar la función de densidad conjunta para la variable $\mathbf{X}$.
+1. Hallar las distribuciones marginales de las variables $X_1$, $X_2$ y $X_3$.
+1. Hallar una transformación lineal $\mathbf{A}$ tal que la variable aleatoria $3$-dimensional $\mathbf{Y}=\mathbf{A}\mathbf{X}$ consiste en variables normales independientes.
+1. Hallar la función de densidad conjunta para la variable $\mathbf{Y}$.
+    
+1. Supongamos que $X_1, X_2, X_3$ y $X_4$ son variables aleatorias normales independientes de media cero y varianza 1 que se procesan de la siguiente manera:
+$$
+Y_1 = X_1 + X_2,\  Y_2 = X_2 + X_3,\  Y_3 = X_3 + X_4.
+$$
+
+## Problema 9.
+
+Hallar la matriz de covarianzas de la variable $3$-dimensional $\mathbf{Y} = (Y_1, Y_2, Y_3)$.
+1. Hallar la función de densidad conjunta para la variable $\mathbf{Y}$.
+1. Hallar la función de densidad conjunta para $Y_1$ e $Y_2$ y para $Y_1$ e $Y_3$.
+1. Hallar una transformación $\mathbf{A}$ tal que el vector $\mathbf{Z} = \mathbf{A}\mathbf{Y}$ consista en variables aleatorias normales independientes.

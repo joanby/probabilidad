@@ -23,9 +23,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## **Ley de Bendford** 
 La ley de Benford es una curiosa distribución de probabilidad que suele aparecer en la distribución del primer dígito de las cantidades registradas en  contabilidades y  en observaciones científicas o datos numéricos.
-La variable $X$ sigue una distribución discreta Benford con dominio $D_X=\{1,2,3,4,5,7,8,9\}$ son 9 dígitos (se elimina el cero) y sin función de probabilidad es 
+La variable $X$ sigue una distribución discreta Benford con dominio $D_X=\{1,2,3,4,5,7,8,9\}$ son 9 dígitos (se elimina el cero) y su función de probabilidad es (donde $\log$ es el logaritmo en base 10) 
 $$
-P_X(x)=P(X=x)=\log(d+1)-\log(d).
+P_X(x)=P(X=x)=\log(x+1)-\log(x).
 $$
 
 + a) Calcular la media y la varianza de $X$.

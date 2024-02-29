@@ -1,0 +1,50 @@
+---
+title: "Ejercicios Tema 5 - Variables aleatorias bidimensionales"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+    toc_depth: 4
+  word_document:
+    toc: yes
+  html_document: 
+    toc: yes
+    number_sections: yes
+    keep_md: yes
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+toccolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand\momento{m}
+\newcommand{\momentocentral}{\mu}
+\newcommand{\FunGenMom}{m}
+\newcommand{\FunCar}{\phi}
+
+
+# Variables aleatorias multidimensionales momentos
+
+## Pregunta 1
+
+Una urna contiene una bola negra y dos bolas blancas. Se sacan tres bolas de la urna.
+Sea la variable $I_k$ que vale 1 si el resultado de la extracción $k$-ésima es la bola negra y vale 0 en caso contrario. Definimos las siguientes tres variables aleatorias:
+$$
+\begin{array}{rl}
+X & = I_1+I_2+I_3, \\
+Y & = \min\{I_1,I_2,I_3\},\\
+Z & = \max\{I_1,I_2,I_3\}.
+\end{array}
+$$
+
+1. Especificar el rango de valores de la variable $3$ dimensional $(X,Y,Z)$ si las extracciones son con reposición. Hallar la función de probabilidad conjunta $P_{XYZ}$.
+2. ¿Son las variables $X$, $Y$ y $Z$ independientes? ¿Son las variables $X$ e $Y$ independientes?
+3.  Repetir el primer apartado suponiendo ahora que las extracciones son sin reposición.
+   

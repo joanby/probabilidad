@@ -1,0 +1,15 @@
+\beamer@sectionintoc {1}{Análisis de Componentes Principales}{3}{0}{1}
+\beamer@sectionintoc {2}{El problema de los Componentes Principales}{9}{0}{2}
+\beamer@sectionintoc {3}{Tipos de A.C.P.}{12}{0}{3}
+\beamer@sectionintoc {4}{ACP covarianzas:}{21}{0}{4}
+\beamer@sectionintoc {5}{ACP correlaciones.}{41}{0}{5}
+\beamer@sectionintoc {6}{Propiedades ACP covarianzas.}{48}{0}{6}
+\beamer@sectionintoc {7}{Propiedades ACP correlaciones.}{60}{0}{7}
+\beamer@sectionintoc {8}{Etapas de un ACP}{76}{0}{8}
+\beamer@sectionintoc {9}{Retención de componentes}{79}{0}{9}
+\beamer@sectionintoc {10}{Técnicas de retención de reteción de componentes}{81}{0}{10}
+\beamer@sectionintoc {11}{Adecuación de los datos al ACP}{88}{0}{11}
+\beamer@sectionintoc {12}{Descomposición en valores singulares (SVD)}{92}{0}{12}
+\beamer@sectionintoc {13}{Relación ACP con SVD}{100}{0}{13}
+\beamer@sectionintoc {14}{Interpretación de las variables y los individuos}{108}{0}{14}
+\beamer@sectionintoc {15}{Y muchas cosas más..}{113}{0}{15}

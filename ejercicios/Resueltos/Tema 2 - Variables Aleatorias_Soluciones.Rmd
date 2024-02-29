@@ -3,14 +3,14 @@ title: "Ejercicios Tema 2 - Variables aleatorias"
 author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
 output:
-  html_document: 
-    toc: yes
-    number_sections: yes
   pdf_document: 
     toc: yes
     number_sections: yes
     toc_depth: 4
     keep_tex: yes
+  html_document: 
+    toc: yes
+    number_sections: yes
   word_document:
     toc: yes
 toccolor: 'blue'

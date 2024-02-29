@@ -63,7 +63,7 @@ Hacer un gráfico de la función de probabilidad (caso discreto) o función de d
 
 ## Función generatriz de momentos y función característica
 
-1. Halla la función generatriz de momentos $\FunGenMom$ y la función característica $\FunCar$ para las variables aleatorias de los problemas 1, 2 y 3 de la sección anterior. Comprobar que 
+1. Halla la función generatriz de momentos $\FunGenMom$ y la función característica $\FunCar$ para las variables aleatorias de los enuciados  1, 2 y 3  siguiwntes. Comprobar que 
 $$
 E(X^n)= \FunGenMom_X^{(n)}(0),\ E(X^n)=\frac{1}{\mathrm{i}^n}\FunCar_X^{(n)}(0),
 $$

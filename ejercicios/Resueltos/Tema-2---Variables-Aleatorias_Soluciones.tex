@@ -1,14 +1,18 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
 ]{article}
+\title{Ejercicios Tema 2 - Variables aleatorias}
+\author{Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir}
+\date{Curso de Probabilidad y Variables Aleatorias con R y Python}
+
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -40,10 +44,10 @@
   pdftitle={Ejercicios Tema 2 - Variables aleatorias},
   pdfauthor={Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir},
   colorlinks=true,
-  linkcolor=Maroon,
-  filecolor=Maroon,
-  citecolor=Blue,
-  urlcolor=Blue,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
@@ -87,7 +91,8 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -113,10 +118,9 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-
-\title{Ejercicios Tema 2 - Variables aleatorias}
-\author{Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir}
-\date{Curso de Probabilidad y Variables Aleatorias con R y Python}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 
 \begin{document}
 \maketitle
@@ -200,7 +204,7 @@ P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{edades=}\KeywordTok{c}\NormalTok{(}\DecValTok{19}\NormalTok{,}\DecValTok{19}\NormalTok{,}\DecValTok{19}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{21}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{26}\NormalTok{)}
+\NormalTok{edades}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\DecValTok{19}\NormalTok{,}\DecValTok{19}\NormalTok{,}\DecValTok{19}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{21}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{26}\NormalTok{)}
 \NormalTok{edades}
 \end{Highlighting}
 \end{Shaded}
@@ -211,7 +215,7 @@ P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{casos=gtools}\OperatorTok{::}\KeywordTok{permutations}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DataTypeTok{r=}\DecValTok{2}\NormalTok{)}
+\NormalTok{casos}\OtherTok{=}\NormalTok{gtools}\SpecialCharTok{::}\FunctionTok{permutations}\NormalTok{(}\DecValTok{10}\NormalTok{,}\AttributeTok{r=}\DecValTok{2}\NormalTok{)}
 \NormalTok{casos}
 \end{Highlighting}
 \end{Shaded}
@@ -312,9 +316,9 @@ P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{casos\_edad=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{uno=}\NormalTok{edades[casos[,}\DecValTok{1}\NormalTok{]],}
-                      \DataTypeTok{dos=}\NormalTok{edades[casos[,}\DecValTok{2}\NormalTok{]])}
-\NormalTok{casos\_edad}\OperatorTok{$}\NormalTok{media=}\KeywordTok{apply}\NormalTok{(casos\_edad,}\DecValTok{1}\NormalTok{,mean)}
+\NormalTok{casos\_edad}\OtherTok{=}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{uno=}\NormalTok{edades[casos[,}\DecValTok{1}\NormalTok{]],}
+                      \AttributeTok{dos=}\NormalTok{edades[casos[,}\DecValTok{2}\NormalTok{]])}
+\NormalTok{casos\_edad}\SpecialCharTok{$}\NormalTok{media}\OtherTok{=}\FunctionTok{apply}\NormalTok{(casos\_edad,}\DecValTok{1}\NormalTok{,mean)}
 \NormalTok{casos\_edad}
 \end{Highlighting}
 \end{Shaded}
@@ -415,7 +419,7 @@ P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x=}\KeywordTok{sort}\NormalTok{(}\KeywordTok{unique}\NormalTok{(casos\_edad}\OperatorTok{$}\NormalTok{media))}
+\NormalTok{x}\OtherTok{=}\FunctionTok{sort}\NormalTok{(}\FunctionTok{unique}\NormalTok{(casos\_edad}\SpecialCharTok{$}\NormalTok{media))}
 \NormalTok{x}
 \end{Highlighting}
 \end{Shaded}
@@ -426,7 +430,7 @@ P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{CF=}\KeywordTok{table}\NormalTok{(casos\_edad}\OperatorTok{$}\NormalTok{media)}
+\NormalTok{CF}\OtherTok{=}\FunctionTok{table}\NormalTok{(casos\_edad}\SpecialCharTok{$}\NormalTok{media)}
 
 \NormalTok{CF}
 \end{Highlighting}
@@ -440,7 +444,7 @@ P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{probs=}\KeywordTok{prop.table}\NormalTok{(}\KeywordTok{table}\NormalTok{(casos\_edad}\OperatorTok{$}\NormalTok{media))}
+\NormalTok{probs}\OtherTok{=}\FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(casos\_edad}\SpecialCharTok{$}\NormalTok{media))}
 \NormalTok{probs}
 \end{Highlighting}
 \end{Shaded}
@@ -455,26 +459,26 @@ P_X(x)=P(X=x)=\frac{\mbox{Casos favorables}}{\mbox{Casos posibles}}=
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{sol\_df=}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Media\_Edad=}\NormalTok{x,}\DataTypeTok{Freq\_Absolutas=}\KeywordTok{as.numeric}\NormalTok{(CF),}\DataTypeTok{Probababilidades=}\KeywordTok{as.numeric}\NormalTok{(probs))}
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(sol\_df)}
+\NormalTok{sol\_df}\OtherTok{=}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Media\_Edad=}\NormalTok{x,}\AttributeTok{Freq\_Absolutas=}\FunctionTok{as.numeric}\NormalTok{(CF),}\AttributeTok{Probababilidades=}\FunctionTok{as.numeric}\NormalTok{(probs))}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(sol\_df)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{longtable}[]{@{}rrr@{}}
 \toprule
-Media\_Edad & Freq\_Absolutas & Probababilidades\tabularnewline
+Media\_Edad & Freq\_Absolutas & Probababilidades \\
 \midrule
 \endhead
-19.0 & 6 & 0.0666667\tabularnewline
-19.5 & 24 & 0.2666667\tabularnewline
-20.0 & 18 & 0.2000000\tabularnewline
-20.5 & 8 & 0.0888889\tabularnewline
-21.5 & 6 & 0.0666667\tabularnewline
-22.0 & 8 & 0.0888889\tabularnewline
-22.5 & 8 & 0.0888889\tabularnewline
-23.0 & 8 & 0.0888889\tabularnewline
-23.5 & 2 & 0.0222222\tabularnewline
-25.0 & 2 & 0.0222222\tabularnewline
+19.0 & 6 & 0.0666667 \\
+19.5 & 24 & 0.2666667 \\
+20.0 & 18 & 0.2000000 \\
+20.5 & 8 & 0.0888889 \\
+21.5 & 6 & 0.0666667 \\
+22.0 & 8 & 0.0888889 \\
+22.5 & 8 & 0.0888889 \\
+23.0 & 8 & 0.0888889 \\
+23.5 & 2 & 0.0222222 \\
+25.0 & 2 & 0.0222222 \\
 \bottomrule
 \end{longtable}
 
@@ -501,18 +505,18 @@ probabilidad para \(W\). Hallar también \(P(3<W\leq 5)\).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{FX=}\ControlFlowTok{function}\NormalTok{(x)\{}
-\NormalTok{  aux=}\ControlFlowTok{function}\NormalTok{(t)\{}
-    \ControlFlowTok{if}\NormalTok{(t}\OperatorTok{\textless{}}\DecValTok{3}\NormalTok{) \{}\KeywordTok{return}\NormalTok{(}\DecValTok{0}\NormalTok{)\}}
-    \ControlFlowTok{if}\NormalTok{(}\DecValTok{3}\OperatorTok{\textless{}=}\NormalTok{t }\OperatorTok{\&}\StringTok{ }\NormalTok{t}\OperatorTok{\textless{}}\DecValTok{4}\NormalTok{) \{}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\DecValTok{3}\NormalTok{)\}}
-    \ControlFlowTok{if}\NormalTok{(}\DecValTok{4}\OperatorTok{\textless{}=}\StringTok{ }\NormalTok{t }\OperatorTok{\&}\StringTok{ }\NormalTok{t}\OperatorTok{\textless{}}\StringTok{ }\DecValTok{5}\NormalTok{) \{}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\DecValTok{2}\NormalTok{)\}}
-    \ControlFlowTok{if}\NormalTok{(}\DecValTok{5}\OperatorTok{\textless{}=}\StringTok{ }\NormalTok{t }\OperatorTok{\&}\StringTok{ }\NormalTok{t}\OperatorTok{\textless{}}\StringTok{ }\DecValTok{6}\NormalTok{) \{}\KeywordTok{return}\NormalTok{(}\DecValTok{2}\OperatorTok{/}\DecValTok{3}\NormalTok{)\}}
-    \ControlFlowTok{if}\NormalTok{(t}\OperatorTok{\textgreater{}=}\DecValTok{6}\NormalTok{)\{}\KeywordTok{return}\NormalTok{(}\DecValTok{1}\NormalTok{)\}}
+\NormalTok{FX}\OtherTok{=}\ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  aux}\OtherTok{=}\ControlFlowTok{function}\NormalTok{(t)\{}
+    \ControlFlowTok{if}\NormalTok{(t}\SpecialCharTok{\textless{}}\DecValTok{3}\NormalTok{) \{}\FunctionTok{return}\NormalTok{(}\DecValTok{0}\NormalTok{)\}}
+    \ControlFlowTok{if}\NormalTok{(}\DecValTok{3}\SpecialCharTok{\textless{}=}\NormalTok{t }\SpecialCharTok{\&}\NormalTok{ t}\SpecialCharTok{\textless{}}\DecValTok{4}\NormalTok{) \{}\FunctionTok{return}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{)\}}
+    \ControlFlowTok{if}\NormalTok{(}\DecValTok{4}\SpecialCharTok{\textless{}=}\NormalTok{ t }\SpecialCharTok{\&}\NormalTok{ t}\SpecialCharTok{\textless{}} \DecValTok{5}\NormalTok{) \{}\FunctionTok{return}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)\}}
+    \ControlFlowTok{if}\NormalTok{(}\DecValTok{5}\SpecialCharTok{\textless{}=}\NormalTok{ t }\SpecialCharTok{\&}\NormalTok{ t}\SpecialCharTok{\textless{}} \DecValTok{6}\NormalTok{) \{}\FunctionTok{return}\NormalTok{(}\DecValTok{2}\SpecialCharTok{/}\DecValTok{3}\NormalTok{)\}}
+    \ControlFlowTok{if}\NormalTok{(t}\SpecialCharTok{\textgreater{}=}\DecValTok{6}\NormalTok{)\{}\FunctionTok{return}\NormalTok{(}\DecValTok{1}\NormalTok{)\}}
 \NormalTok{    \}}
-  \KeywordTok{sapply}\NormalTok{(x,}\DataTypeTok{FUN=}\NormalTok{aux)}
+  \FunctionTok{sapply}\NormalTok{(x,}\AttributeTok{FUN=}\NormalTok{aux)}
 \NormalTok{\}}
 
-\KeywordTok{curve}\NormalTok{(FX,}\DecValTok{0}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DataTypeTok{col=}\StringTok{"blue"}\NormalTok{)}
+\FunctionTok{curve}\NormalTok{(FX,}\DecValTok{0}\NormalTok{,}\DecValTok{7}\NormalTok{,}\AttributeTok{col=}\StringTok{"blue"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 

@@ -1,0 +1,10 @@
+---
+title: "Contraejemplo correlación  nula no implica independencia"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+El ejemplo clásico  en el que  correlación  cero o nula no implica independencia  es considerar $X$ e $Y=X^2$ variables discretas   tal que $P(X=x)=\frac13$ para $x=−1,0,1$ e $Y=X^2$.  Su correlación es cero pero obviamente no son independientes.

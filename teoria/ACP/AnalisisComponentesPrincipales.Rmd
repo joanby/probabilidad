@@ -8,7 +8,6 @@ output:
       in_header: preamble1.tex
     theme: Rochester
     toc: no
-  '': default
 ---
 
 

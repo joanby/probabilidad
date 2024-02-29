@@ -1,0 +1,91 @@
+---
+title: "Ejercicios Tema 2 - Variables aleatorias. Parte 3"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso de Probabilidad y Variables Aleatorias con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  word_document:
+    toc: yes
+    toc_depth: '2'
+toccolor: blue
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Transformación de variables aleatorias
+
+## Pregunta 1. 
+
+A partir de 
+
+$$
+F_X(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<-1$},
+\\[0.1cm]
+{t+1\over 2}, & \mbox{si $-1\leq t\leq
+1$},
+ \\[0.1cm]
+1, & \mbox{si $t>1$},
+\end{array}\right.
+$$
+hallar la función de distribución para $Y=15+2X$ y la función de densidad para $Y$.
+
+### Solución 
+
+Se deja como ejercicio. Si lo haces lo corrijo y subo la solución
+
+## Pregunta 2.  
+
+Si
+$$
+F_X(t)=
+\left\{\begin{array}{ll}
+0, & \mbox{si $t<0$},\\ t, &
+\mbox{si $0\leq t\leq 1$},\\ 1, & \mbox{si
+$t>1$},
+\end{array}\right.
+$$
+hallar la función de distribución y la función de densidad de la forma
+estándar de $X$ ($Z={X-\mu_X\over \sigma_X}$), donde $\mu_X =E(X)$ y $\sigma_X=\sqrt{\mathrm{Var}(X)}$.
+
+### Solución 
+
+Se deja como ejercicio. Si lo haces lo corrijo y subo la solución
+
+## Pregunta 3 
+
+Para formar un jardín circular, un jardinero corta una cuerda, la ata a una
+estaca y  marca el perímetro. Suponer que la longitud de la
+cuerda tiene la misma verosimilitud de estar en el intervalo comprendido entre $r-0.1$
+y $r+0.1$. ¿Cuál es la distribución de $X$, el área de la superficie del jardín?
+¿Cuál es la probabilidad de que el área de la superficie sea mayor que $\pi r^2$?
+
+### Solución 
+
+Se deja como ejercicio. Si lo haces lo corrijo y subo la solución
+
+## Pregunta 4
+
+
+Sea $X$ una variable aleatoria continua con función de densidad
+$f_X(x)$.
+Consideramos la variable aleatoria $Y=\mathrm{e}^X$. Hallar la función de densidad
+de la variable aleatoria $Y$, $f_Y(y)$.
+
+### Solución 
+
+Se deja como ejercicio. Si lo haces lo corrijo y subo la solución
+

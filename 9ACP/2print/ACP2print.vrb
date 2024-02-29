@@ -1,0 +1,17 @@
+\frametitle{ACP sobre la \red{matriu de covariàncies}}
+\begin{exemple}
+Considerem la següent matriu de dades:
+\[
+\mathbf{X}=
+\left(
+% latex table generated in R 3.1.2 by xtable 1.7-4 package
+% Sat Oct 24 13:16:05 2015
+\begin{tabular}{rrr}
+  1 & -1 & 3 \\
+  1 & 0 & 3 \\
+  2 & 3 & 0 \\
+  3 & 0 & 1 \\
+  \end{tabular}\right)
+\]
+
+\end{exemple}
