@@ -1,6 +1,6 @@
 ---
 title: "Reducción de la factorialidad. Análisis de Componentes Principales."
-author: "Análisis de Datos curso 2021/2122"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
 date: ''
 output:
   beamer_presentation:
@@ -169,10 +169,10 @@ varianzas.
 $x_i-\overline{x}_i$; \red{en estas notas solo consideraremos este caso}.
 * Sobre los datos tipificados $\frac{x_{i}-\overline{x}_i}{s_i}$.
 * En el primer caso las variables centradas tienen media cero y la misma
-varianza que las variables originales: se le suele llamar ACP de covarianzas.
+varianza que las variables originales centradas: se le suele llamar ACP de covarianzas.
 * En el segundo caso las
 variables tipificadas tienen media cero y varianza 1: se le suele llamar ACP de
-correlaciones o normado.
+correlaciones.
 
 ## Tipos de A.C.P:
  
@@ -215,17 +215,12 @@ Supongamos que  $p=2$ y que la \red{nube de puntos} de nuestra tabla de datos es
 ```{r inter_geom1,fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
 n=20
 m=10
-#xx <- c(-10,10)
-#yy <- c(-6,6)
-#par(mar=c(0,0,0,0))
-#plot(xx,yy,ann=F,type='n')
-#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
-dades=read.table("dades.txt")
-dades=as.matrix(dades)
+datos2=read.table("datos_2_ACP.txt")
+datos2=as.matrix(datos2)
 Hn=matrix(-1/n,n,n)
 diag(Hn)=rep(1-1/n,n)
-dades.cent=Hn%*%dades
-plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+datos2.cent=Hn%*%datos2
+plot(datos2.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
 ```
 
 
@@ -236,85 +231,78 @@ La siguiente figura muestra las dos \red{componentes principales}, es decir, las
 ```{r inter2, fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
 n=20
 m=10
-#xx <- c(-10,10)
-#yy <- c(-6,6)
-#par(mar=c(0,0,0,0))
-#plot(xx,yy,ann=F,type='n')
-#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
-dades=read.table("dades.txt")
-dades=as.matrix(dades)
+datos2=read.table("datos_2_ACP.txt")
+datos2=as.matrix(datos2)
 Hn=matrix(-1/n,n,n)
 diag(Hn)=rep(1-1/n,n)
-dades.cent=Hn%*%dades
-plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
-estudi.acp=prcomp(dades,scale.=FALSE)
-direccions=estudi.acp$rotation
-m.cov=t(dades.cent)%*%dades.cent
+datos2.cent=Hn%*%datos2
+plot(datos2.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+estudio.acp=prcomp(datos2,scale.=FALSE)
+direcciones=estudio.acp$rotation
+m.cov=t(datos2.cent)%*%datos2.cent
 vaps=eigen(m.cov)$values
 veps=eigen(m.cov)$vectors
 mag=10
-lines(c(0,mag*direccions[1,1]),c(0,mag*direccions[2,1]),col="red",lwd=3)
-lines(c(0,mag*direccions[1,2]),c(0,mag*direccions[2,2]),col="red",lwd=3)
-lines(c(0,-mag*direccions[1,1]),c(0,-mag*direccions[2,1]),col="red",lwd=3)
-lines(c(0,-mag*direccions[1,2]),c(0,-mag*direccions[2,2]),col="red",lwd=3)
+lines(c(0,mag*direcciones[1,1]),c(0,mag*direcciones[2,1]),col="red",lwd=3)
+lines(c(0,mag*direcciones[1,2]),c(0,mag*direcciones[2,2]),col="red",lwd=3)
+lines(c(0,-mag*direcciones[1,1]),c(0,-mag*direcciones[2,1]),col="red",lwd=3)
+lines(c(0,-mag*direcciones[1,2]),c(0,-mag*direcciones[2,2]),col="red",lwd=3)
 xaux=-6
-text(xaux,direccions[2,1]*xaux/direccions[1,1]-1,"CP1",cex=1)
+text(xaux,direcciones[2,1]*xaux/direcciones[1,1]-1,
+"CP1",cex=1)
 xaux=-1.5
-text(xaux,direccions[2,2]*xaux/direccions[1,2]-2,"CP2",cex=1)
+text(xaux,direcciones[2,2]*xaux/direcciones[1,2]-2,"CP2",cex=1)
 ```
 
 
 ## Interpretación geométrica
 
-Si projectamos en la dirección de la \red{primera componente}, obtendremos las proyecciones siguientes (en \blue{azul}):
+Si proyectamos en la dirección de la \red{primera componente}, obtendremos las proyecciones siguientes (en \blue{azul}):
 
 
 ```{r inter3,fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
 n=20
 m=10
-#xx <- c(-10,10)
-#yy <- c(-6,6)
-#par(mar=c(0,0,0,0))
-#plot(xx,yy,ann=F,type='n')
-#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
-dades=read.table("dades.txt")
-dades=as.matrix(dades)
+datos2=read.table("datos_2_ACP.txt")
+datos2=as.matrix(datos2)
 Hn=matrix(-1/n,n,n)
 diag(Hn)=rep(1-1/n,n)
-dades.cent=Hn%*%dades
-plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
-estudi.acp=prcomp(dades,scale.=FALSE)
-direccions=estudi.acp$rotation
-m.cov=t(dades.cent)%*%dades.cent
+datos2.cent=Hn%*%datos2
+plot(datos2.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+estudio.acp=prcomp(datos2,scale.=FALSE)
+direcciones=estudio.acp$rotation
+m.cov=t(datos2.cent)%*%datos2.cent
 vaps=eigen(m.cov)$values
 veps=eigen(m.cov)$vectors
 mag=10
-lines(c(0,mag*direccions[1,1]),c(0,mag*direccions[2,1]),col="red",lwd=3)
-lines(c(0,mag*direccions[1,2]),c(0,mag*direccions[2,2]),col="red",lwd=3)
-lines(c(0,-mag*direccions[1,1]),c(0,-mag*direccions[2,1]),col="red",lwd=3)
-lines(c(0,-mag*direccions[1,2]),c(0,-mag*direccions[2,2]),col="red",lwd=3)
+lines(c(0,mag*direcciones[1,1]),c(0,mag*direcciones[2,1]),col="red",lwd=3)
+lines(c(0,mag*direcciones[1,2]),c(0,mag*direcciones[2,2]),col="red",lwd=3)
+lines(c(0,-mag*direcciones[1,1]),c(0,-mag*direcciones[2,1]),col="red",lwd=3)
+lines(c(0,-mag*direcciones[1,2]),c(0,-mag*direcciones[2,2]),col="red",lwd=3)
 xaux=-6
-text(xaux,direccions[2,1]*xaux/direccions[1,1]-1,"CP1",cex=1)
+text(xaux,direcciones[2,1]*xaux/direcciones[1,1]-1,"CP1",cex=1)
 xaux=-1.5
-text(xaux,direccions[2,2]*xaux/direccions[1,2]-2,"CP2",cex=1)
-#arrows(0,0,mag*direccions[1,1],mag*direccions[2,1],col="red",lwd=3)
-#arrows(0,0,mag*direccions[1,2],mag*direccions[2,2],col="red",lwd=3)
-#arrows(0,0,-mag*direccions[1,1],-mag*direccions[2,1],col="red",lwd=3)
-#arrows(0,0,-mag*direccions[1,2],-mag*direccions[2,2],col="red",lwd=3)
-proj.ort=function(x0,y0,v1,v2,b){m=v2/v1;x1=(m*y0+x0-m*b)/(m^2+1);
+text(xaux,direcciones[2,2]*xaux/direcciones[1,2]-2,"CP2",cex=1)
+#arrows(0,0,mag*direcciones[1,1],mag*direcciones[2,1],col="red",lwd=3)
+#arrows(0,0,mag*direcciones[1,2],mag*direcciones[2,2],col="red",lwd=3)
+#arrows(0,0,-mag*direcciones[1,1],-mag*direcciones[2,1],col="red",lwd=3)
+#arrows(0,0,-mag*direcciones[1,2],-mag*direcciones[2,2],col="red",lwd=3)
+proy.ort=function(x0,y0,v1,v2,b){m=v2/v1;x1=(m*y0+x0-m*b)/(m^2+1);
                         y1=(m^2*y0+m*x0+b)/(m^2+1);return(c(x1,y1))}
-#projecció sobre CP1
-for (i in 1:dim(dades)[1]){
-  aux=proj.ort(dades.cent[i,1],dades.cent[i,2],veps[1,1],veps[2,1],0)
+#proyección sobre CP1
+for (i in 1:dim(datos2)[1]){
+  aux=proy.ort(datos2.cent[i,1],datos2.cent[i,2],veps[1,1],veps[2,1],0)
   points(aux[1],aux[2],pch=20,col="blue")
-  lines(c(dades.cent[i,1],aux[1]),c(dades.cent[i,2],aux[2]),lty=2)
+  lines(c(datos2.cent[i,1],aux[1]),c(datos2.cent[i,2],aux[2]),lty=2)
 }
 ```
 
 
 ## Interpretación geométrica
 
-Lo que significa  que la varianza de los puntos azules  es máxima; en el sentido de que cualquier  otra dirección o recta   las proyecciones sobre ésta tendrán´n a lo más igual varianza.
+Lo que significa  que la varianza de los puntos azules  es máxima; 
+en el sentido de que cualquier  otra dirección o recta
+las proyecciones sobre ésta tendrán a lo más igual varianza.
 \medskip
 
 Los puntos  azules  representan las coordenadas que tienen los puntos de nuestra tabla de datos (centrada) tomando como eje de abcisas el \red{primer componente} $CP_1$.
@@ -322,47 +310,42 @@ Los puntos  azules  representan las coordenadas que tienen los puntos de nuestra
 
 ## Interpretación geométrica
 
-Si projectamos en la dirección del \red{segundo componente}, obtendremos las proyecciones siguientes (en \green{verde}):
+Si proyectamos en la dirección del \red{segundo componente}, obtendremos las proyecciones siguientes (en \green{verde}):
 
 ```{r inter4.1,fig=TRUE,fig.align="center",fig.width=4,fig.height=4,echo=FALSE}
 n=20
 m=10
-#xx <- c(-10,10)
-#yy <- c(-6,6)
-#par(mar=c(0,0,0,0))
-#plot(xx,yy,ann=F,type='n')
-#dades=matrix(sample(1:m,2*n,replace=TRUE),n,2)
-dades=read.table("dades.txt")
-dades=as.matrix(dades)
+datos2=read.table("datos_2_ACP.txt")
+datos2=as.matrix(datos2)
 Hn=matrix(-1/n,n,n)
 diag(Hn)=rep(1-1/n,n)
-dades.cent=Hn%*%dades
-plot(dades.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
-estudi.acp=prcomp(dades,scale.=FALSE)
-direccions=estudi.acp$rotation
-m.cov=t(dades.cent)%*%dades.cent
+datos2.cent=Hn%*%datos2
+plot(datos2.cent,asp=1,xlab="X",ylab="Y",xlim=c(-10,10),ylim=c(-5.5,5.5))
+estudio.acp=prcomp(datos2,scale.=FALSE)
+direcciones=estudio.acp$rotation
+m.cov=t(datos2.cent)%*%datos2.cent
 vaps=eigen(m.cov)$values
 veps=eigen(m.cov)$vectors
 mag=10
-lines(c(0,mag*direccions[1,1]),c(0,mag*direccions[2,1]),col="red",lwd=3)
-lines(c(0,mag*direccions[1,2]),c(0,mag*direccions[2,2]),col="red",lwd=3)
-lines(c(0,-mag*direccions[1,1]),c(0,-mag*direccions[2,1]),col="red",lwd=3)
-lines(c(0,-mag*direccions[1,2]),c(0,-mag*direccions[2,2]),col="red",lwd=3)
+lines(c(0,mag*direcciones[1,1]),c(0,mag*direcciones[2,1]),col="red",lwd=3)
+lines(c(0,mag*direcciones[1,2]),c(0,mag*direcciones[2,2]),col="red",lwd=3)
+lines(c(0,-mag*direcciones[1,1]),c(0,-mag*direcciones[2,1]),col="red",lwd=3)
+lines(c(0,-mag*direcciones[1,2]),c(0,-mag*direcciones[2,2]),col="red",lwd=3)
 xaux=-6
-text(xaux,direccions[2,1]*xaux/direccions[1,1]-1,"CP1",cex=1)
+text(xaux,direcciones[2,1]*xaux/direcciones[1,1]-1,"CP1",cex=1)
 xaux=-1.5
-text(xaux,direccions[2,2]*xaux/direccions[1,2]-2,"CP2",cex=1)
-#arrows(0,0,mag*direccions[1,1],mag*direccions[2,1],col="red",lwd=3)
-#arrows(0,0,mag*direccions[1,2],mag*direccions[2,2],col="red",lwd=3)
-#arrows(0,0,-mag*direccions[1,1],-mag*direccions[2,1],col="red",lwd=3)
-#arrows(0,0,-mag*direccions[1,2],-mag*direccions[2,2],col="red",lwd=3)
+text(xaux,direcciones[2,2]*xaux/direcciones[1,2]-2,"CP2",cex=1)
+#arrows(0,0,mag*direcciones[1,1],mag*direcciones[2,1],col="red",lwd=3)
+#arrows(0,0,mag*direcciones[1,2],mag*direcciones[2,2],col="red",lwd=3)
+#arrows(0,0,-mag*direcciones[1,1],-mag*direcciones[2,1],col="red",lwd=3)
+#arrows(0,0,-mag*direcciones[1,2],-mag*direcciones[2,2],col="red",lwd=3)
 proj.ort=function(x0,y0,v1,v2,b){m=v2/v1;x1=(m*y0+x0-m*b)/(m^2+1);
                         y1=(m^2*y0+m*x0+b)/(m^2+1);return(c(x1,y1))}
 #projecció sobre CP2
-for (i in 1:dim(dades)[1]){
-  aux=proj.ort(dades.cent[i,1],dades.cent[i,2],veps[1,2],veps[2,2],0)
+for (i in 1:dim(datos2)[1]){
+  aux=proj.ort(datos2.cent[i,1],datos2.cent[i,2],veps[1,2],veps[2,2],0)
   points(aux[1],aux[2],pch=20,col="green")
-  lines(c(dades.cent[i,1],aux[1]),c(dades.cent[i,2],aux[2]),lty=2)
+  lines(c(datos2.cent[i,1],aux[1]),c(datos2.cent[i,2],aux[2]),lty=2)
 }
 ```
 
@@ -1539,7 +1522,7 @@ cor2pcor(cor(X))
 
 
 
-Crearemos una funcióin que calcule  el KMO:
+La siguiente  función `kmo.test` calcula  el KMO:
 
 ```{r kmo1}
 kmo.test <- function(df){
@@ -1881,7 +1864,7 @@ de retención de varianza total que tengamos.
 
 factoextra::fviz_pca_var(solacp,
              col.var = "contrib",
-             # Color por contribución asl pca
+             # Color por contribución de cada   componente
              gradient.cols = c("#00AFBB",
                                "#E7B800",
                                "#FC4E07"),
@@ -1896,7 +1879,7 @@ factoextra::fviz_pca_var(solacp,
 ```{r biplor, fig.height=5,echo=FALSE}
 
 factoextra::fviz_pca_var(solacp,
-             col.var = "contrib", # Color por contribución asl pca
+             col.var = "contrib", # Color por contribución  de cada componente 
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
              repel = TRUE    
              )

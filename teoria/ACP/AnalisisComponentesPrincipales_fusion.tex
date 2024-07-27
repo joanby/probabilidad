@@ -5,11 +5,6 @@
 \documentclass[
   ignorenonframetext,
 ]{beamer}
-\title{Reducción de la factorialidad. Análisis de Componentes
-Principales.}
-\author{Análisis de Datos curso 2021/2122}
-\date{}
-
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
@@ -49,18 +44,21 @@ Principales.}
   \frame{\subsectionpage}
 }
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
+\usepackage{lmodern}
 \usetheme[]{Rochester}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{% use microtype if available
@@ -78,14 +76,6 @@ Principales.}
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Reducción de la factorialidad. Análisis de Componentes Principales.},
-  pdfauthor={Análisis de Datos curso 2021/2122},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \newif\ifbibliography
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -98,13 +88,13 @@ Principales.}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -112,7 +102,7 @@ Principales.}
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -121,7 +111,7 @@ Principales.}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -153,12 +143,25 @@ Principales.}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Reducción de la factorialidad. Análisis de Componentes Principales.},
+  pdfauthor={Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Reducción de la factorialidad. Análisis de Componentes
+Principales.}
+\author{Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir}
+\date{}
 
 \begin{document}
 \frame{\titlepage}
 
 \begin{frame}{Introducción}
-\protect\hypertarget{introducciuxf3n}{}
+\phantomsection\label{introducciuxf3n}
 \begin{itemize}
 \tightlist
 \item
@@ -179,12 +182,11 @@ Principales.}
 \end{itemize}
 \end{frame}
 
-\hypertarget{anuxe1lisis-de-componentes-principales}{%
 \section{Análisis de Componentes
-Principales}\label{anuxe1lisis-de-componentes-principales}}
+Principales}\label{anuxe1lisis-de-componentes-principales}
 
 \begin{frame}{Introducción: Matriz (tabla) de datos.}
-\protect\hypertarget{introducciuxf3n-matriz-tabla-de-datos.}{}
+\phantomsection\label{introducciuxf3n-matriz-tabla-de-datos.}
 \begin{table}
 \centering
 \begin{tabular}{c|cccc|cc|}
@@ -204,7 +206,7 @@ $su_2$   &$su_{21}$ &$su_{22}$ & $\ldots$  &$su_{2p}$ &\multicolumn{2}{|c}{}\\
 \end{frame}
 
 \begin{frame}{Introducción: Matriz (tabla) de datos.}
-\protect\hypertarget{introducciuxf3n-matriz-tabla-de-datos.-1}{}
+\phantomsection\label{introducciuxf3n-matriz-tabla-de-datos.-1}
 \begin{itemize}
 \item
   Donde las variables \(x_1,\ldots, x_n\)
@@ -220,7 +222,7 @@ $su_2$   &$su_{21}$ &$su_{22}$ & $\ldots$  &$su_{2p}$ &\multicolumn{2}{|c}{}\\
 \end{frame}
 
 \begin{frame}{Objetivos del análisis}
-\protect\hypertarget{objetivos-del-anuxe1lisis}{}
+\phantomsection\label{objetivos-del-anuxe1lisis}
 \blue{Objetivos del análisis}
 
 \begin{itemize}
@@ -240,7 +242,7 @@ $su_2$   &$su_{21}$ &$su_{22}$ & $\ldots$  &$su_{2p}$ &\multicolumn{2}{|c}{}\\
 \end{frame}
 
 \begin{frame}{Análisis Factorial}
-\protect\hypertarget{anuxe1lisis-factorial}{}
+\phantomsection\label{anuxe1lisis-factorial}
 \begin{itemize}
 \tightlist
 \item
@@ -265,7 +267,7 @@ $su_2$   &$su_{21}$ &$su_{22}$ & $\ldots$  &$su_{2p}$ &\multicolumn{2}{|c}{}\\
 \end{frame}
 
 \begin{frame}{Análisis Factorial}
-\protect\hypertarget{anuxe1lisis-factorial-1}{}
+\phantomsection\label{anuxe1lisis-factorial-1}
 \begin{itemize}
 \tightlist
 \item
@@ -292,12 +294,11 @@ Utilizaremos las siguientes notaciones:
 \[\color{red}{\mbox{Var. observada = Var. común + Var. específica y aleatorios}}.\]
 \end{frame}
 
-\hypertarget{el-problema-de-los-componentes-principales}{%
 \section{El problema de los Componentes
-Principales}\label{el-problema-de-los-componentes-principales}}
+Principales}\label{el-problema-de-los-componentes-principales}
 
 \begin{frame}{El problema de los Componentes Principales}
-\protect\hypertarget{el-problema-de-los-componentes-principales-1}{}
+\phantomsection\label{el-problema-de-los-componentes-principales-1}
 \red{Todos los factores son comunes}
 
 \[X_1=\alpha_{1 1} CP_1+ \alpha_{1 2} CP_2+\cdots +\alpha_{1 p} CP_p\]
@@ -310,7 +311,7 @@ que llamaremos componentes principales, de forma que:
 \end{frame}
 
 \begin{frame}{El problema de los Componentes Principales}
-\protect\hypertarget{el-problema-de-los-componentes-principales-2}{}
+\phantomsection\label{el-problema-de-los-componentes-principales-2}
 \begin{itemize}
 \tightlist
 \item
@@ -319,8 +320,8 @@ que llamaremos componentes principales, de forma que:
   El origen de las variables esté situado en el vector de medias o
   centro de gravedad de las observaciones.
 \item
-  Sean incorreladas entre si \(Cor(CP_i,CP_j)=0\) para
-  \(i\not= j, i,j =1,\ldots,p\).
+  Sean incorreladas entre si \(Cor(CP_i,CP_j)=0\) para \(i\not= j, i,j
+  =1,\ldots,p\).
 \item
   Se cumple que \(Var(CP_1)\geq Var(CP_2)\geq\cdots\geq Var(CP_p)\) y
   hagan máximas estas varianzas.
@@ -329,11 +330,10 @@ que llamaremos componentes principales, de forma que:
 \end{itemize}
 \end{frame}
 
-\hypertarget{tipos-de-a.c.p.}{%
-\section{Tipos de A.C.P.}\label{tipos-de-a.c.p.}}
+\section{Tipos de A.C.P.}\label{tipos-de-a.c.p.}
 
 \begin{frame}{Tipos de A.C.P:}
-\protect\hypertarget{tipos-de-a.c.p}{}
+\phantomsection\label{tipos-de-a.c.p}
 \begin{itemize}
 \tightlist
 \item
@@ -344,16 +344,16 @@ que llamaremos componentes principales, de forma que:
   Sobre los datos tipificados \(\frac{x_{i}-\overline{x}_i}{s_i}\).
 \item
   En el primer caso las variables centradas tienen media cero y la misma
-  varianza que las variables originales: se le suele llamar ACP de
-  covarianzas.
+  varianza que las variables originales centradas: se le suele llamar
+  ACP de covarianzas.
 \item
   En el segundo caso las variables tipificadas tienen media cero y
-  varianza 1: se le suele llamar ACP de correlaciones o normado.
+  varianza 1: se le suele llamar ACP de correlaciones.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Tipos de A.C.P:}
-\protect\hypertarget{tipos-de-a.c.p-1}{}
+\phantomsection\label{tipos-de-a.c.p-1}
 Recordemos que dada una matriz de datos \(\mathbf{X}\) (\(n\times p\) es
 decir de \(n\) individuos y \(p\) variables) representábamos por
 \(\tilde{\mathbf{X}}\) la matriz de datos centrada. Entonces:
@@ -377,7 +377,7 @@ decir de \(n\) individuos y \(p\) variables) representábamos por
 \end{frame}
 
 \begin{frame}{A.C.P propiedades}
-\protect\hypertarget{a.c.p-propiedades}{}
+\phantomsection\label{a.c.p-propiedades}
 \blue{Propiedades}
 
 \begin{itemize}
@@ -396,7 +396,7 @@ decir de \(n\) individuos y \(p\) variables) representábamos por
 \end{frame}
 
 \begin{frame}{A.C.P: interpretación geométrica}
-\protect\hypertarget{a.c.p-interpretaciuxf3n-geomuxe9trica}{}
+\phantomsection\label{a.c.p-interpretaciuxf3n-geomuxe9trica}
 Supongamos que \(p=2\) y que la \red{nube de puntos} de nuestra tabla de
 datos es la de la siguiente figura:
 
@@ -404,7 +404,7 @@ datos es la de la siguiente figura:
 \end{frame}
 
 \begin{frame}{Interpretación geométrica}
-\protect\hypertarget{interpretaciuxf3n-geomuxe9trica}{}
+\phantomsection\label{interpretaciuxf3n-geomuxe9trica}
 La siguiente figura muestra las dos \red{componentes principales}, es
 decir, las direcciones de las proyecciones que tienen máxima
 variabilidad.
@@ -413,18 +413,18 @@ variabilidad.
 \end{frame}
 
 \begin{frame}{Interpretación geométrica}
-\protect\hypertarget{interpretaciuxf3n-geomuxe9trica-1}{}
-Si projectamos en la dirección de la \red{primera componente},
+\phantomsection\label{interpretaciuxf3n-geomuxe9trica-1}
+Si proyectamos en la dirección de la \red{primera componente},
 obtendremos las proyecciones siguientes (en \blue{azul}):
 
 \begin{center}\includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter3-1} \end{center}
 \end{frame}
 
 \begin{frame}{Interpretación geométrica}
-\protect\hypertarget{interpretaciuxf3n-geomuxe9trica-2}{}
+\phantomsection\label{interpretaciuxf3n-geomuxe9trica-2}
 Lo que significa que la varianza de los puntos azules es máxima; en el
 sentido de que cualquier otra dirección o recta las proyecciones sobre
-ésta tendrán´n a lo más igual varianza. \medskip
+ésta tendrán a lo más igual varianza. \medskip
 
 Los puntos azules representan las coordenadas que tienen los puntos de
 nuestra tabla de datos (centrada) tomando como eje de abcisas el
@@ -432,18 +432,17 @@ nuestra tabla de datos (centrada) tomando como eje de abcisas el
 \end{frame}
 
 \begin{frame}{Interpretación geométrica}
-\protect\hypertarget{interpretaciuxf3n-geomuxe9trica-3}{}
-Si projectamos en la dirección del \red{segundo componente}, obtendremos
+\phantomsection\label{interpretaciuxf3n-geomuxe9trica-3}
+Si proyectamos en la dirección del \red{segundo componente}, obtendremos
 las proyecciones siguientes (en \green{verde}):
 
 \begin{center}\includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/inter4.1-1} \end{center}
 \end{frame}
 
-\hypertarget{acp-covarianzas}{%
-\section{ACP covarianzas:}\label{acp-covarianzas}}
+\section{ACP covarianzas:}\label{acp-covarianzas}
 
 \begin{frame}{ACP covarianzas:}
-\protect\hypertarget{acp-covarianzas-1}{}
+\phantomsection\label{acp-covarianzas-1}
 \begin{itemize}
 \tightlist
 \item
@@ -472,7 +471,7 @@ de norma 1)
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo}{}
+\phantomsection\label{ejemplo}
 Vamos a realizar un ACP sobre el ejemplo de la estatura de un niño
 recién nacido.
 
@@ -497,7 +496,7 @@ $x_1$ & $x_2$ & $x_3$ & $x_4$&Sexo\\
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-1}{}
+\phantomsection\label{ejemplo-1}
 Donde:
 
 \begin{itemize}
@@ -518,7 +517,7 @@ Donde:
 \end{frame}
 
 \begin{frame}[fragile]{Código para la carga de datos}
-\protect\hypertarget{cuxf3digo-para-la-carga-de-datos}{}
+\phantomsection\label{cuxf3digo-para-la-carga-de-datos}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{n }\OtherTok{=} \DecValTok{9}
@@ -537,7 +536,7 @@ Donde:
 \end{frame}
 
 \begin{frame}[fragile]{Código diagrama matricial}
-\protect\hypertarget{cuxf3digo-diagrama-matricial}{}
+\phantomsection\label{cuxf3digo-diagrama-matricial}
 El siguiente código dibuja un diagrama matricial de las variables.
 
 \begin{Shaded}
@@ -555,12 +554,12 @@ que producen este gráfico\ldots{}
 \end{frame}
 
 \begin{frame}{Diagrama matricial}
-\protect\hypertarget{diagrama-matricial}{}
+\phantomsection\label{diagrama-matricial}
 \includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/unnamed-chunk-2-1.pdf}
 \end{frame}
 
 \begin{frame}{Cálculos básicos}
-\protect\hypertarget{cuxe1lculos-buxe1sicos}{}
+\phantomsection\label{cuxe1lculos-buxe1sicos}
 En lo que sigue todos los datos se redondean al tercer decimal.
 
 Daremos el código de R que realiza el cálculo, en el código no se
@@ -585,7 +584,7 @@ redondea: La matriz centrada de los datos anteriores es:
 \end{frame}
 
 \begin{frame}[fragile]{Cálculos básicos}
-\protect\hypertarget{cuxe1lculos-buxe1sicos-1}{}
+\phantomsection\label{cuxe1lculos-buxe1sicos-1}
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{colMeans}\NormalTok{(X)}
@@ -620,7 +619,7 @@ redondea: La matriz centrada de los datos anteriores es:
 \end{frame}
 
 \begin{frame}[fragile]{Cálculos básicos}
-\protect\hypertarget{cuxe1lculos-buxe1sicos-2}{}
+\phantomsection\label{cuxe1lculos-buxe1sicos-2}
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# filas 1 a 9 y columnas 1 a 4 }
@@ -644,7 +643,7 @@ redondea: La matriz centrada de los datos anteriores es:
 \end{frame}
 
 \begin{frame}[fragile]{Cálculos básicos}
-\protect\hypertarget{cuxe1lculos-buxe1sicos-3}{}
+\phantomsection\label{cuxe1lculos-buxe1sicos-3}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{cX}\OtherTok{=}\NormalTok{Hn}\SpecialCharTok{\%*\%}\NormalTok{X }\CommentTok{\# matriz centrada cálculo matricial}
@@ -667,7 +666,7 @@ redondea: La matriz centrada de los datos anteriores es:
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-2}{}
+\phantomsection\label{ejemplo-2}
 \begin{itemize}
 \tightlist
 \item
@@ -694,7 +693,7 @@ redondea: La matriz centrada de los datos anteriores es:
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-3}{}
+\phantomsection\label{ejemplo-3}
 \begin{itemize}
 \tightlist
 \item
@@ -715,7 +714,7 @@ redondea: La matriz centrada de los datos anteriores es:
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo}
-\protect\hypertarget{ejemplo-4}{}
+\phantomsection\label{ejemplo-4}
 \begin{verbatim}
 ##            [,1]      [,2]     [,3]      [,4]
 ## [1,] 119.333333 43.133333 6.147778 12.511111
@@ -739,7 +738,7 @@ redondea: La matriz centrada de los datos anteriores es:
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-5}{}
+\phantomsection\label{ejemplo-5}
 \begin{itemize}
 \tightlist
 \item
@@ -762,7 +761,7 @@ CP_4 = & 0.247 \cdot \tilde{X}_1 - 0.568\cdot \tilde{X}_2 - 0.785\cdot
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-6}{}
+\phantomsection\label{ejemplo-6}
 \begin{itemize}
 \tightlist
 \item
@@ -788,7 +787,7 @@ CP_4 = & 0.247 \cdot \tilde{X}_1 - 0.568\cdot \tilde{X}_2 - 0.785\cdot
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo}
-\protect\hypertarget{ejemplo-7}{}
+\phantomsection\label{ejemplo-7}
 \begin{itemize}
 \tightlist
 \item
@@ -812,7 +811,7 @@ CP_4 = & 0.247 \cdot \tilde{X}_1 - 0.568\cdot \tilde{X}_2 - 0.785\cdot
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-8}{}
+\phantomsection\label{ejemplo-8}
 Como podemos observar, nuestro análisis que interpretado por la variable
 de perfil sexo ya que distingue entre niños y niñas con las dos primeras
 componentes.
@@ -821,7 +820,7 @@ componentes.
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo}
-\protect\hypertarget{ejemplo-9}{}
+\phantomsection\label{ejemplo-9}
 El siguiente código dibuja todos los componentes
 
 \begin{Shaded}
@@ -835,15 +834,14 @@ El siguiente código dibuja todos los componentes
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-10}{}
+\phantomsection\label{ejemplo-10}
 \includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/pairsacptodos1-1.pdf}
 \end{frame}
 
-\hypertarget{acp-correlaciones.}{%
-\section{ACP correlaciones.}\label{acp-correlaciones.}}
+\section{ACP correlaciones.}\label{acp-correlaciones.}
 
 \begin{frame}{ACP correlaciones.}
-\protect\hypertarget{acp-correlaciones.-1}{}
+\phantomsection\label{acp-correlaciones.-1}
 Sea \(\mathbf{R}\) la matriz de correlaciones de orden \(p\).
 Calcularemos sus valores propios
 
@@ -858,7 +856,7 @@ el vector propio correspondiente.
 \end{frame}
 
 \begin{frame}{ACP correlaciones.}
-\protect\hypertarget{acp-correlaciones.-2}{}
+\phantomsection\label{acp-correlaciones.-2}
 \blue{Cálculo de las coordenadas de la nueva matriz de datos respecto de las
 nuevas variables $CP$:} \[\mathbf{CP}= \mathbf{Z} \mathbf{u},\] donde
 \(Z\) es la matriz de datos tipificados y \(\mathbf{u}\) es la matriz de
@@ -866,7 +864,7 @@ los vectores propios.
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-11}{}
+\phantomsection\label{ejemplo-11}
 \begin{itemize}
 \tightlist
 \item
@@ -892,7 +890,7 @@ los vectores propios.
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-12}{}
+\phantomsection\label{ejemplo-12}
 \begin{itemize}
 \tightlist
 \item
@@ -926,7 +924,7 @@ los vectores propios.
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-13}{}
+\phantomsection\label{ejemplo-13}
 \begin{itemize}
 \tightlist
 \item
@@ -949,7 +947,7 @@ Z_4.
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-14}{}
+\phantomsection\label{ejemplo-14}
 \begin{itemize}
 \tightlist
 \item
@@ -980,12 +978,11 @@ Z_4.
 \end{itemize}
 \end{frame}
 
-\hypertarget{propiedades-acp-covarianzas.}{%
 \section{Propiedades ACP
-covarianzas.}\label{propiedades-acp-covarianzas.}}
+covarianzas.}\label{propiedades-acp-covarianzas.}
 
 \begin{frame}{Propiedades ACP covarianzas.}
-\protect\hypertarget{propiedades-acp-covarianzas.-1}{}
+\phantomsection\label{propiedades-acp-covarianzas.-1}
 Sea \(\mathbf{X}\) una matriz de datos \(n\times p\) y sea
 
 \[
@@ -1005,15 +1002,16 @@ Además la \(\mbox{Varianza Total}= tr(\mathbf{S})=\sum_{i=1}^p s_i^2\)
 \end{frame}
 
 \begin{frame}{Propiedades ACP covarianzas.}
-\protect\hypertarget{propiedades-acp-covarianzas.-2}{}
+\phantomsection\label{propiedades-acp-covarianzas.-2}
 \begin{itemize}
 \tightlist
 \item
   \(Var(\mathbf{CP}_i)= \lambda_i\). La varianza de cada componente
   principal es su valor propio.
 \item
-  \(\sum_{i=1}^n Var(\mathbf{CP}_i)=\sum_{i=1}^n \lambda_i=tr(\mathbf{S})=\sum_{i=1}^n s_i^2\).
-  Por lo tanto los componentes principales reproducen la varianza total
+  \(\sum_{i=1}^n Var(\mathbf{CP}_i)=\sum_{i=1}^n
+  \lambda_i=tr(\mathbf{S})=\sum_{i=1}^n s_i^2\). Por lo tanto los
+  componentes principales reproducen la varianza total
 \item
   Los componentes principales tienen correlación cero entre sí (son
   \emph{incorrelados}) por lo tanto su matriz de covarianzas es
@@ -1028,7 +1026,7 @@ Además la \(\mbox{Varianza Total}= tr(\mathbf{S})=\sum_{i=1}^p s_i^2\)
 \end{frame}
 
 \begin{frame}{Propiedades ACP covarianzas.}
-\protect\hypertarget{propiedades-acp-covarianzas.-3}{}
+\phantomsection\label{propiedades-acp-covarianzas.-3}
 \begin{itemize}
 \item
   \(\det(\mathbf{S}_{CP})=\prod_{i=1}^n \lambda_i =\det(\mathbf{S})\).
@@ -1053,7 +1051,7 @@ Además al ser* incorrelados* la proporción de varianza explicada por los
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-15}{}
+\phantomsection\label{ejemplo-15}
 Vamos a comprobar las propiedades anteriores con nuestro ejemplo.
 Recordemos las matrices de datos de las variables originales
 \(\mathbf{X}\) (centradas) y de las variables en componentes principales
@@ -1094,7 +1092,7 @@ Recordemos las matrices de datos de las variables originales
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-16}{}
+\phantomsection\label{ejemplo-16}
 \begin{itemize}
 \item
   La matriz de los vectores propios de la matriz \(\mathbf{S}\) era: \[
@@ -1124,7 +1122,7 @@ Recordemos las matrices de datos de las variables originales
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-17}{}
+\phantomsection\label{ejemplo-17}
 \begin{itemize}
 \tightlist
 \item
@@ -1160,7 +1158,7 @@ la matriz \(\mathbf{S}\) en la diagonal.
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-18}{}
+\phantomsection\label{ejemplo-18}
 La proporción de varianza explicada por los componentes es:
 
 \begin{tabular}{|l|l|}\hline
@@ -1173,7 +1171,7 @@ $\mathbf{CP}_{1,2,3,4}$&$1$\\\hline
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-19}{}
+\phantomsection\label{ejemplo-19}
 \begin{itemize}
 \tightlist
 \item
@@ -1207,7 +1205,7 @@ Recuperemos la matriz de vectores propios de la matriz \(\mathbf{S}\):
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-20}{}
+\phantomsection\label{ejemplo-20}
 Si multiplicamos la primera columna de la matriz anterior
 
 \[
@@ -1230,7 +1228,7 @@ primera columna de la matriz
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-21}{}
+\phantomsection\label{ejemplo-21}
 \begin{itemize}
 \tightlist
 \item
@@ -1247,7 +1245,7 @@ con los valores propios de la matriz \(\mathbf{S}\) en la diagonal.
 \end{frame}
 
 \begin{frame}{Propiedades ACP covarianzas.}
-\protect\hypertarget{propiedades-acp-covarianzas.-4}{}
+\phantomsection\label{propiedades-acp-covarianzas.-4}
 \begin{itemize}
 \item
   La \red{primer componente principal} es la recta que \red{conserva
@@ -1261,12 +1259,11 @@ con los valores propios de la matriz \(\mathbf{S}\) en la diagonal.
 \end{itemize}
 \end{frame}
 
-\hypertarget{propiedades-acp-correlaciones.}{%
 \section{Propiedades ACP
-correlaciones.}\label{propiedades-acp-correlaciones.}}
+correlaciones.}\label{propiedades-acp-correlaciones.}
 
 \begin{frame}{Propiedades ACP correlaciones.}
-\protect\hypertarget{propiedades-acp-correlaciones.-1}{}
+\phantomsection\label{propiedades-acp-correlaciones.-1}
 Sea \(\mathbf{X}\) una matriz de datos \(n\times p\) y sea
 
 \[\mathbf{R}=\left(\begin{array}{cccc}
@@ -1280,7 +1277,7 @@ propiedades:
 \end{frame}
 
 \begin{frame}{Propiedades ACP correlaciones}
-\protect\hypertarget{propiedades-acp-correlaciones}{}
+\phantomsection\label{propiedades-acp-correlaciones}
 \begin{itemize}
 \item
   Recordemos que la diagonal es \(1\) pues es la varianza de los datos
@@ -1292,14 +1289,15 @@ propiedades:
   \(Var(\mathbf{CP}_i)= \lambda_i\). El valor propio del componente es
   igual a su varianza
 \item
-  \(\sum_{i=1}^n var(\mathbf{CP}_i)=\sum_{i=1}^n \lambda_i=tr(\mathbf{R})=p\).
-  Por lo tanto los componentes principales reproducen la varianza total
-  y ésta es igual al numero de variables \(p\).
+  \(\sum_{i=1}^n var(\mathbf{CP}_i)=\sum_{i=1}^n
+  \lambda_i=tr(\mathbf{R})=p\). Por lo tanto los componentes principales
+  reproducen la varianza total y ésta es igual al numero de variables
+  \(p\).
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Propiedades ACP correlaciones.}
-\protect\hypertarget{propiedades-acp-correlaciones.-2}{}
+\phantomsection\label{propiedades-acp-correlaciones.-2}
 \begin{itemize}
 \tightlist
 \item
@@ -1318,7 +1316,7 @@ propiedades:
 \end{frame}
 
 \begin{frame}{Propiedades ACP correlaciones.}
-\protect\hypertarget{propiedades-acp-correlaciones.-3}{}
+\phantomsection\label{propiedades-acp-correlaciones.-3}
 \begin{itemize}
 \item
   \(\det(\mathbf{S}_{CP})=\prod_{i=1}^n \lambda_i =\det(\mathbf{R})\).
@@ -1342,7 +1340,7 @@ por los \(k\) primeros componentes es
 \end{frame}
 
 \begin{frame}{Propiedades ACP correlaciones.}
-\protect\hypertarget{propiedades-acp-correlaciones.-4}{}
+\phantomsection\label{propiedades-acp-correlaciones.-4}
 Vamos a comprobar las propiedades anteriores con nuestro ejemplo.
 Recordemos las matrices de datos estandarizada\(\mathbf{Z}\)y de las
 variables en componentes principales \(\mathbf{CP}\):
@@ -1364,7 +1362,7 @@ variables en componentes principales \(\mathbf{CP}\):
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-22}{}
+\phantomsection\label{ejemplo-22}
 \[
 \mathbf{CP}=
 \begin{pmatrix}
@@ -1382,7 +1380,7 @@ variables en componentes principales \(\mathbf{CP}\):
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-23}{}
+\phantomsection\label{ejemplo-23}
 \red{Las varianzas de las variables}
 \(\textcolor{red}{\mathbf{CP}_i=\lambda_{i}}\) son las siguientes:
 
@@ -1398,7 +1396,7 @@ Estos valores son los
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-24}{}
+\phantomsection\label{ejemplo-24}
 Se puede comprobar que su
 \textcolor{red}{suma vale $4$, que es el valor de $p$} en nuestro caso.
 
@@ -1419,7 +1417,7 @@ matriz \(\mathbf{R}\) calculados anteriormente:
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-25}{}
+\phantomsection\label{ejemplo-25}
 \textcolor{red}{El determinante de la matriz}
 \(\textcolor{red}{\mathbf{S}_{\mathbf{CP}}}\) \textcolor{red}{ es:}
 
@@ -1434,7 +1432,7 @@ valores propios de la matriz} \(\textcolor{red}{\mathbf{R}}\):
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-26}{}
+\phantomsection\label{ejemplo-26}
 La \textcolor{red}{proporción de varianza explicada por los componentes}
 es:
 
@@ -1451,7 +1449,7 @@ $\mathbf{CP}_{1,2,3,4}$&$1$\\\hline
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-27}{}
+\phantomsection\label{ejemplo-27}
 La matriz de correlaciones entre las variables \(\mathbf{Z}\) y
 \(\mathbf{CP}\) es:
 
@@ -1478,7 +1476,7 @@ La matriz de vectores propios de la matriz \(\mathbf{ R}\) es:
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-28}{}
+\phantomsection\label{ejemplo-28}
 Si multiplicamos la primera columna de la matriz anterior
 
 \[\begin{pmatrix}0.573 \\ 0.478\\ 0.499 \\ 0.442\end{pmatrix}\]
@@ -1493,7 +1491,7 @@ efectivamente
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-29}{}
+\phantomsection\label{ejemplo-29}
 \[
 \sqrt{2.560}\cdot \begin{pmatrix}0.573 \\ 0.478\\ 0.499 \\ 0.442\end{pmatrix} =
 \textcolor{red}{\begin{pmatrix}0.916 \\ 0.764\\ 0.798 \\ 0.706\end{pmatrix}}
@@ -1511,7 +1509,7 @@ Cor(\mathbf{Z},\mathbf{CP}) =
 \end{frame}
 
 \begin{frame}{Ejemplo}
-\protect\hypertarget{ejemplo-30}{}
+\phantomsection\label{ejemplo-30}
 \begin{itemize}
 \tightlist
 \item
@@ -1529,7 +1527,7 @@ diagonal con la raíz cuadrada de los valores propios de la matriz
 \end{frame}
 
 \begin{frame}{Propiedades ACP correlaciones}
-\protect\hypertarget{propiedades-acp-correlaciones-1}{}
+\phantomsection\label{propiedades-acp-correlaciones-1}
 \begin{itemize}
 \item
   La primera componente principal es la recta que conserva mayor inercia
@@ -1543,11 +1541,10 @@ diagonal con la raíz cuadrada de los valores propios de la matriz
 \end{itemize}
 \end{frame}
 
-\hypertarget{etapas-de-un-acp}{%
-\section{Etapas de un ACP}\label{etapas-de-un-acp}}
+\section{Etapas de un ACP}\label{etapas-de-un-acp}
 
 \begin{frame}{Etapas de un ACP}
-\protect\hypertarget{etapas-de-un-acp-1}{}
+\phantomsection\label{etapas-de-un-acp-1}
 \begin{itemize}
 \item
   Determinar las variables e individuos que intervienen en el análisis,
@@ -1567,7 +1564,7 @@ diagonal con la raíz cuadrada de los valores propios de la matriz
 \end{frame}
 
 \begin{frame}{Etapas de un ACP}
-\protect\hypertarget{etapas-de-un-acp-2}{}
+\phantomsection\label{etapas-de-un-acp-2}
 \begin{itemize}
 \tightlist
 \item
@@ -1590,11 +1587,10 @@ $(\lambda_1+\ldots+\lambda_p)/\sum_{i=1}^p\lambda_i=1$\\\hline
 \end{table}
 \end{frame}
 
-\hypertarget{retenciuxf3n-de-componentes}{%
-\section{Retención de componentes}\label{retenciuxf3n-de-componentes}}
+\section{Retención de componentes}\label{retenciuxf3n-de-componentes}
 
 \begin{frame}{Retención de componentes}
-\protect\hypertarget{retenciuxf3n-de-componentes-1}{}
+\phantomsection\label{retenciuxf3n-de-componentes-1}
 Una vez realizado el ACP tengo que decidir que número de componentes se
 retienen. Existen diversos métodos:
 \blue{Seleccionar una proporción fija de varianza}.Seleccionar
@@ -1617,12 +1613,11 @@ componentes hasta cubrir una proporción determinada de varianza, como el
 \end{itemize}
 \end{frame}
 
-\hypertarget{tuxe9cnicas-de-retenciuxf3n-de-reteciuxf3n-de-componentes}{%
 \section{Técnicas de retención de reteción de
-componentes}\label{tuxe9cnicas-de-retenciuxf3n-de-reteciuxf3n-de-componentes}}
+componentes}\label{tuxe9cnicas-de-retenciuxf3n-de-reteciuxf3n-de-componentes}
 
 \begin{frame}{Retención de componentes}
-\protect\hypertarget{retenciuxf3n-de-componentes-2}{}
+\phantomsection\label{retenciuxf3n-de-componentes-2}
 \blue{Método de la Media aritmética}.
 
 \begin{itemize}
@@ -1636,7 +1631,7 @@ componentes}\label{tuxe9cnicas-de-retenciuxf3n-de-reteciuxf3n-de-componentes}}
 \end{frame}
 
 \begin{frame}{Retención de componentes}
-\protect\hypertarget{retenciuxf3n-de-componentes-3}{}
+\phantomsection\label{retenciuxf3n-de-componentes-3}
 \blue{Método de la Media aritmética}.
 
 \begin{itemize}
@@ -1655,7 +1650,7 @@ componentes}\label{tuxe9cnicas-de-retenciuxf3n-de-reteciuxf3n-de-componentes}}
 \end{frame}
 
 \begin{frame}{Gráfico de sedimentación, regla del codo}
-\protect\hypertarget{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo}{}
+\phantomsection\label{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo}
 \begin{itemize}
 \item
   Gráfico de sedimentación (\emph{screeplot}) es una técnica gráfica de
@@ -1670,7 +1665,7 @@ componentes}\label{tuxe9cnicas-de-retenciuxf3n-de-reteciuxf3n-de-componentes}}
 \end{frame}
 
 \begin{frame}[fragile]{Gráfico de sedimentación, regla del codo, código}
-\protect\hypertarget{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo-cuxf3digo}{}
+\phantomsection\label{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo-cuxf3digo}
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{screeplot}\NormalTok{(solacp,}\AttributeTok{type=}\StringTok{"lines"}\NormalTok{,}
@@ -1682,12 +1677,12 @@ componentes}\label{tuxe9cnicas-de-retenciuxf3n-de-reteciuxf3n-de-componentes}}
 \end{frame}
 
 \begin{frame}{Gráfico de sedimentación, regla del codo, poligonal.}
-\protect\hypertarget{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo-poligonal.}{}
+\phantomsection\label{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo-poligonal.}
 \includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotlines-1.pdf}
 \end{frame}
 
 \begin{frame}{Gráfico de sedimentación, regla del codo, barras.}
-\protect\hypertarget{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo-barras.}{}
+\phantomsection\label{gruxe1fico-de-sedimentaciuxf3n-regla-del-codo-barras.}
 \includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/screeplotbar-1.pdf}
 
 Hay muchas otras pruebas más como la pruebas de Hipótesis de Anderson:
@@ -1697,12 +1692,11 @@ H_0: \lambda_m=\ldots=\lambda_p\\ H_1: \mbox{no todos
 iguales}\end{array}\right.\]
 \end{frame}
 
-\hypertarget{adecuaciuxf3n-de-los-datos-al-acp}{%
 \section{Adecuación de los datos al
-ACP}\label{adecuaciuxf3n-de-los-datos-al-acp}}
+ACP}\label{adecuaciuxf3n-de-los-datos-al-acp}
 
 \begin{frame}{Adecuación de los datos al ACP}
-\protect\hypertarget{adecuaciuxf3n-de-los-datos-al-acp-1}{}
+\phantomsection\label{adecuaciuxf3n-de-los-datos-al-acp-1}
 \begin{itemize}
 \tightlist
 \item
@@ -1720,7 +1714,7 @@ variables con las restantes).
 \end{frame}
 
 \begin{frame}[fragile]{Adecuación de los datos al ACP}
-\protect\hypertarget{adecuaciuxf3n-de-los-datos-al-acp-2}{}
+\phantomsection\label{adecuaciuxf3n-de-los-datos-al-acp-2}
 \begin{itemize}
 \tightlist
 \item
@@ -1746,8 +1740,8 @@ En nuestro ejemplo, las correlaciones parciales son:
 \end{frame}
 
 \begin{frame}[fragile]{Adecuación de los datos al ACP}
-\protect\hypertarget{adecuaciuxf3n-de-los-datos-al-acp-3}{}
-Crearemos una funcióin que calcule el KMO:
+\phantomsection\label{adecuaciuxf3n-de-los-datos-al-acp-3}
+La siguiente función \texttt{kmo.test} calcula el KMO:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1788,6 +1782,15 @@ En nuestro ejemplo:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(psych)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'psych' was built under R version 4.4.1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{cortest.bartlett}\NormalTok{(}\FunctionTok{cor}\NormalTok{(X),}\AttributeTok{n=}\NormalTok{n)}
 \end{Highlighting}
 \end{Shaded}
@@ -1808,12 +1811,11 @@ nula, la matriz de correlaciones es significativamente distinta de la
 identidad.
 \end{frame}
 
-\hypertarget{descomposiciuxf3n-en-valores-singulares-svd}{%
 \section{Descomposición en valores singulares
-(SVD)}\label{descomposiciuxf3n-en-valores-singulares-svd}}
+(SVD)}\label{descomposiciuxf3n-en-valores-singulares-svd}
 
 \begin{frame}{Descomposición en valores singulares}
-\protect\hypertarget{descomposiciuxf3n-en-valores-singulares}{}
+\phantomsection\label{descomposiciuxf3n-en-valores-singulares}
 Dada un matriz de datos \(\mathbf{X}\) de dimensiones \(n\times p\),
 donde \(n\geq p\) y de rango \(p\), se puede descomponer en producto de
 tres matrices:
@@ -1843,7 +1845,7 @@ tres matrices:
 
 \begin{frame}[fragile]{Descomposición en valores singulares (SVD):
 ejemplo}
-\protect\hypertarget{descomposiciuxf3n-en-valores-singulares-svd-ejemplo}{}
+\phantomsection\label{descomposiciuxf3n-en-valores-singulares-svd-ejemplo}
 Consideramos la matriz \(\mathbf{X}\) como la matriz de datos centrada
 del ejemplo de los niños.
 
@@ -1862,7 +1864,7 @@ del ejemplo de los niños.
 \end{frame}
 
 \begin{frame}{Descomposición en valores singulares (SVD): ejemplo}
-\protect\hypertarget{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-1}{}
+\phantomsection\label{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-1}
 La matriz \(\mathbf{X}^t\cdot \mathbf{X}\) vale:
 
 \[
@@ -1876,7 +1878,7 @@ La matriz \(\mathbf{X}^t\cdot \mathbf{X}\) vale:
 \end{frame}
 
 \begin{frame}{Descomposición en valores singulares (SVD): ejemplo}
-\protect\hypertarget{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-2}{}
+\phantomsection\label{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-2}
 La matriz \(\mathbf{X}\cdot \mathbf{X}^t\) vale: (mostramos solo las 4
 primeras columnas, la dimensión es \(9\times 9\))
 
@@ -1898,7 +1900,7 @@ primeras columnas, la dimensión es \(9\times 9\))
 \end{frame}
 
 \begin{frame}{Descomposición en valores singulares (SVD): ejemplo}
-\protect\hypertarget{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-3}{}
+\phantomsection\label{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-3}
 Los valores propios de la matriz \(\mathbf{X}^t\mathbf{X}\) son:
 
 \[
@@ -1919,7 +1921,7 @@ Por lo tanto, la matriz \(\Sigma\) será:
 \end{frame}
 
 \begin{frame}{Descomposición en valores singulares (SVD): ejemplo}
-\protect\hypertarget{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-4}{}
+\phantomsection\label{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-4}
 La matriz \(\mathbf{U}\) será la siguiente la matriz \(10\times 4\) de
 los vectores propios de los valores propios no nulos de \(X\cdot X^t\):
 
@@ -1939,7 +1941,7 @@ los vectores propios de los valores propios no nulos de \(X\cdot X^t\):
 \end{frame}
 
 \begin{frame}{Descomposición en valores singulares (SVD): ejemplo}
-\protect\hypertarget{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-5}{}
+\phantomsection\label{descomposiciuxf3n-en-valores-singulares-svd-ejemplo-5}
 La matriz \(\mathbf{V}\) será la siguiente matriz \(4\times 4\) de los
 valores propios de \(X^t\cdot X\) :
 
@@ -1953,11 +1955,10 @@ valores propios de \(X^t\cdot X\) :
 \] Comprobar que \(\mathbf{X}=\mathbf{U}\Sigma\mathbf{V}t\).
 \end{frame}
 
-\hypertarget{relaciuxf3n-acp-con-svd}{%
-\section{Relación ACP con SVD}\label{relaciuxf3n-acp-con-svd}}
+\section{Relación ACP con SVD}\label{relaciuxf3n-acp-con-svd}
 
 \begin{frame}{Relación ACP con SVD}
-\protect\hypertarget{relaciuxf3n-acp-con-svd-1}{}
+\phantomsection\label{relaciuxf3n-acp-con-svd-1}
 Consideramos una matriz de datos \(\mathbf{X}\) \(n\times p\) que puede
 ser centrada (\red{ACP de covarianzas}) o tipificada
 (\red{ACP de correlaciones}).
@@ -1969,7 +1970,7 @@ Si consideramos su \red{SVD},
 \end{frame}
 
 \begin{frame}{Relación ACP con SVD}
-\protect\hypertarget{relaciuxf3n-acp-con-svd-2}{}
+\phantomsection\label{relaciuxf3n-acp-con-svd-2}
 La prueba es muy sencilla. Recordamos que las componentes principales
 son: \(\mathbf{CP}=\mathbf{X}\mathbf{V}\), donde \(\mathbf{V}\) era la
 matriz de vectores propios de la matriz de covarianzas
@@ -1988,7 +1989,7 @@ puesto que la matriz \(\mathbf{V}\) es ortogonal.
 \end{frame}
 
 \begin{frame}{Relación ACP con SVD}
-\protect\hypertarget{relaciuxf3n-acp-con-svd-3}{}
+\phantomsection\label{relaciuxf3n-acp-con-svd-3}
 \blue{Teorema}
 
 El producto escalar de dos \blue{filas} de la matriz de datos
@@ -2005,7 +2006,7 @@ matriz de \red{componentes principales}.
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo biplot}
-\protect\hypertarget{ejemplo-biplot}{}
+\phantomsection\label{ejemplo-biplot}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{factoextra}\SpecialCharTok{::}\FunctionTok{fviz\_pca\_ind}\NormalTok{(solacp,}
@@ -2023,12 +2024,12 @@ matriz de \red{componentes principales}.
 \end{frame}
 
 \begin{frame}{Ejemplo biplot}
-\protect\hypertarget{ejemplo-biplot-1}{}
+\phantomsection\label{ejemplo-biplot-1}
 \includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplot3-1.pdf}
 \end{frame}
 
 \begin{frame}{Interpretación de un biplot}
-\protect\hypertarget{interpretaciuxf3n-de-un-biplot}{}
+\phantomsection\label{interpretaciuxf3n-de-un-biplot}
 \begin{itemize}
 \tightlist
 \item
@@ -2049,7 +2050,7 @@ matriz de \red{componentes principales}.
 \end{frame}
 
 \begin{frame}{Comunalidades.}
-\protect\hypertarget{comunalidades.}{}
+\phantomsection\label{comunalidades.}
 En un ACP la comunalidad de la variable \(X_j\) retenida por las \(k\)
 primeras componentes es la proporción de varianza de la variable que
 queda explicada por esas componentes. Por ejemplo.
@@ -2074,12 +2075,11 @@ queda explicada por esas componentes. Por ejemplo.
 \left( u_{2 j}\sqrt{\lambda_2}\right)^2\]
 \end{frame}
 
-\hypertarget{interpretaciuxf3n-de-las-variables-y-los-individuos}{%
 \section{Interpretación de las variables y los
-individuos}\label{interpretaciuxf3n-de-las-variables-y-los-individuos}}
+individuos}\label{interpretaciuxf3n-de-las-variables-y-los-individuos}
 
 \begin{frame}{Interpretación de las variables y los individuos}
-\protect\hypertarget{interpretaciuxf3n-de-las-variables-y-los-individuos-1}{}
+\phantomsection\label{interpretaciuxf3n-de-las-variables-y-los-individuos-1}
 \begin{itemize}
 \item
   Las variables también pueden representar de forma simultanea con los
@@ -2092,7 +2092,7 @@ individuos}\label{interpretaciuxf3n-de-las-variables-y-los-individuos}}
 \end{frame}
 
 \begin{frame}{Circulo de correlación}
-\protect\hypertarget{circulo-de-correlaciuxf3n}{}
+\phantomsection\label{circulo-de-correlaciuxf3n}
 \begin{itemize}
 \tightlist
 \item
@@ -2114,12 +2114,12 @@ individuos}\label{interpretaciuxf3n-de-las-variables-y-los-individuos}}
 \end{frame}
 
 \begin{frame}[fragile]{Circulo de correlación}
-\protect\hypertarget{circulo-de-correlaciuxf3n-1}{}
+\phantomsection\label{circulo-de-correlaciuxf3n-1}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{factoextra}\SpecialCharTok{::}\FunctionTok{fviz\_pca\_var}\NormalTok{(solacp,}
              \AttributeTok{col.var =} \StringTok{"contrib"}\NormalTok{,}
-             \CommentTok{\# Color por contribución asl pca}
+             \CommentTok{\# Color por contribución de cada   componente}
              \AttributeTok{gradient.cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#00AFBB"}\NormalTok{,}
                                \StringTok{"\#E7B800"}\NormalTok{,}
                                \StringTok{"\#FC4E07"}\NormalTok{),}
@@ -2130,15 +2130,14 @@ individuos}\label{interpretaciuxf3n-de-las-variables-y-los-individuos}}
 \end{frame}
 
 \begin{frame}{Circulo de correlación}
-\protect\hypertarget{circulo-de-correlaciuxf3n-2}{}
+\phantomsection\label{circulo-de-correlaciuxf3n-2}
 \includegraphics{AnalisisComponentesPrincipales_fusion_files/figure-beamer/biplor-1.pdf}
 \end{frame}
 
-\hypertarget{y-muchas-cosas-muxe1s..}{%
-\section{Y muchas cosas más..}\label{y-muchas-cosas-muxe1s..}}
+\section{Y muchas cosas más..}\label{y-muchas-cosas-muxe1s..}
 
 \begin{frame}{Y muchas cosas más..}
-\protect\hypertarget{y-muchas-cosas-muxe1s..-1}{}
+\phantomsection\label{y-muchas-cosas-muxe1s..-1}
 Para acabar\ldots{}
 \blue{Análisis Factorial Confirmatorio yExploratorio}
 
