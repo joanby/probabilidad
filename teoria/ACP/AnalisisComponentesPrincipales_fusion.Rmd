@@ -341,7 +341,7 @@ text(xaux,direcciones[2,2]*xaux/direcciones[1,2]-2,"CP2",cex=1)
 #arrows(0,0,-mag*direcciones[1,2],-mag*direcciones[2,2],col="red",lwd=3)
 proj.ort=function(x0,y0,v1,v2,b){m=v2/v1;x1=(m*y0+x0-m*b)/(m^2+1);
                         y1=(m^2*y0+m*x0+b)/(m^2+1);return(c(x1,y1))}
-#projecció sobre CP2
+#projecció sobre CP2  
 for (i in 1:dim(datos2)[1]){
   aux=proj.ort(datos2.cent[i,1],datos2.cent[i,2],veps[1,2],veps[2,2],0)
   points(aux[1],aux[2],pch=20,col="green")
