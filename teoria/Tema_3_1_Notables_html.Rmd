@@ -557,16 +557,16 @@ ax = fig.add_subplot(1,2,1)
 ax.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf')
 ax.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5) 
+  tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
 ax.plot(x, binom.cdf(x, n, p), 'bo', ms=8, label='binom pmf')
 ax.vlines(x, 0, binom.cdf(x, n, p), colors='b', lw=5, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 fig.suptitle('Distribucion Binomial')
 plt.show()
 ```
@@ -587,17 +587,17 @@ ax = fig.add_subplot(1,2,1)
 _=ax.plot(x, binom.pmf(x, n, p), 'bo', ms=8, label='binom pmf')
 _=ax.vlines(x, 0, binom.pmf(x, n, p), colors='b', lw=5, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
+  _=tick.label1.set_fontsize(5) 
   
 ax = fig.add_subplot(1,2,2)
 _=ax.plot(x, binom.cdf(x, n, p), 'bo', ms=8, label='binom pmf')
 _=ax.vlines(x, 0, binom.cdf(x, n, p), colors='b', lw=5, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 _=fig.suptitle('Distribucion Binomial')
 plt.show()
 ```
@@ -1455,16 +1455,16 @@ ax = fig.add_subplot(1,2,1)
 ax.plot(x, geom.pmf(x, p), 'bo', ms=5, label='geom pmf')
 ax.vlines(x, 0, geom.pmf(x, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5) 
+  tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
 ax.plot(x, geom.cdf(x, p), 'bo', ms=5, label='geom pmf')
 ax.vlines(x, 0, geom.cdf(x, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 fig.suptitle('Distribucion Geometrica')
 plt.show()
 ```
@@ -1482,17 +1482,17 @@ ax = fig.add_subplot(1,2,1)
 _=ax.plot(x, geom.pmf(x, p), 'bo', ms=5, label='geom pmf')
 _=ax.vlines(x, 0, geom.pmf(x, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
+  _=tick.label1.set_fontsize(5) 
   
 ax = fig.add_subplot(1,2,2)
 _=ax.plot(x, geom.cdf(x,p), 'bo', ms=5, label='geom cdf')
 _=ax.vlines(x, 0, geom.cdf(x, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 _=fig.suptitle('Distribucion Geometrica')
 _=plt.show()
 ```
@@ -2035,16 +2035,16 @@ ax = fig.add_subplot(1,2,1)
 ax.plot(x, nbinom.pmf(x, n, p), 'bo', ms=5, label='nbinom pmf')
 ax.vlines(x, 0, nbinom.pmf(x, n, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5) 
+  tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
 ax.plot(x, nbinom.cdf(x, n, p), 'bo', ms=5, label='nbinom pmf')
 ax.vlines(x, 0, nbinom.cdf(x, n, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 fig.suptitle('Distribucion Binomial Negativa')
 plt.show()
 ```
@@ -2062,16 +2062,16 @@ ax = fig.add_subplot(1,2,1)
 _=ax.plot(x, nbinom.pmf(x, n, p), 'bo', ms=5, label='nbinom pmf')
 _=ax.vlines(x, 0, nbinom.pmf(x, n, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
+  _=tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
 _=ax.plot(x, nbinom.cdf(x, n, p), 'bo', ms=5, label='nbinom pmf')
 _=ax.vlines(x, 0, nbinom.cdf(x, n, p), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 _=fig.suptitle('Distribucion Binomial Negativa')
 _=plt.show()
 ```
@@ -2938,16 +2938,16 @@ ax = fig.add_subplot(1,2,1)
 ax.plot(x, poisson.pmf(x, mu), 'bo', ms=5, label='poisson pmf')
 ax.vlines(x, 0, poisson.pmf(x, mu), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5) 
+  tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
 ax.plot(x, poisson.cdf(x, mu), 'bo', ms=5, label='poisson cdf')
 ax.vlines(x, 0, poisson.cdf(x, mu), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  tick.label.set_fontsize(5)
+  tick.label1.set_fontsize(5)
 fig.suptitle('Distribucion de Poisson')
 plt.show()
 ```
@@ -2964,16 +2964,16 @@ ax = fig.add_subplot(1,2,1)
 _=ax.plot(x, poisson.pmf(x, mu), 'bo', ms=5, label='poisson pmf')
 _=ax.vlines(x, 0, poisson.pmf(x, mu), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
+  _=tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
 _=ax.plot(x, poisson.cdf(x, mu), 'bo', ms=5, label='poisson cdf')
 _=ax.vlines(x, 0, poisson.cdf(x, mu), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 _=fig.suptitle('Distribucion de Poisson')
 _=plt.show()
 ```
@@ -3498,16 +3498,16 @@ fig =plt.figure(figsize=(5, 2.7))
  =ax.vlines(x, 0, hypergeom.pmf(x, M, n, N), colors='b', lw=2, alpha=0.5)
  =ax.set_ylim([0, max(hypergeom.pmf(x, M, n, N))*1.1])
 for tick in ax.xaxis.get_major_ticks():
-   =tick.label.set_fontsize(5)
+   =tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  =tick.label.set_fontsize(5) 
+  =tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
  =ax.plot(x, hypergeom.cdf(x, M, n, N), 'bo', ms=5, label='hypergeom cdf')
  =ax.vlines(x, 0, hypergeom.cdf(x, M, n, N), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-   =tick.label.set_fontsize(5)
+   =tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-   =tick.label.set_fontsize(5)
+   =tick.label1.set_fontsize(5)
  =fig.suptitle('Distribucion Hipergeometrica')
  =plt.show()
 ```
@@ -3525,16 +3525,16 @@ _=ax.plot(x, hypergeom.pmf(x, M, n, N), 'bo', ms=5, label='hypergeom pmf')
 _=ax.vlines(x, 0, hypergeom.pmf(x, M, n, N), colors='b', lw=2, alpha=0.5)
 _=ax.set_ylim([0, max(hypergeom.pmf(x, M, n, N))*1.1])
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5) 
+  _=tick.label1.set_fontsize(5) 
 ax = fig.add_subplot(1,2,2)
 _=ax.plot(x, hypergeom.cdf(x, M, n, N), 'bo', ms=5, label='hypergeom cdf')
 _=ax.vlines(x, 0, hypergeom.cdf(x, M, n, N), colors='b', lw=2, alpha=0.5)
 for tick in ax.xaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 for tick in ax.yaxis.get_major_ticks():
-  _=tick.label.set_fontsize(5)
+  _=tick.label1.set_fontsize(5)
 _=fig.suptitle('Distribucion Hipergeometrica')
 _=plt.show()
 ```
