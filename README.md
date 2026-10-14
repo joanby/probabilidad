@@ -1,5 +1,7 @@
 # Probabilidad y variables aleatorias para ML con R y Python
 
+> **🆕 Octubre de 2026 — rama [`update-2026`](https://github.com/joanby/probabilidad/tree/update-2026):** el mismo código del curso, adaptado a R y los paquetes de hoy (R 4.5, matplotlib 3.11 en los bloques de Python). Qué ha cambiado y por qué: [`CAMBIOS-2026.md`](https://github.com/joanby/probabilidad/blob/update-2026/CAMBIOS-2026.md).
+
 Consulta el curso completo creado por Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir solamente en [Frogames Formación](https://cursos.frogamesformacion.com/courses/probabilidad).
 
 Puedes consultar todas las transparencias del curso en formato HTML desde nuestro [Github.io](https://joanby.github.io/bookdown-probabilidad/).
